@@ -1,0 +1,67 @@
+<style>
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        display: block;
+    }
+</style>
+
+<p>This meta uses all of the answers from the Athletics round, as well as the three sub-metas.</p>
+
+<p>Looking at the regular puzzle answers, all of the leading letters are unique, and include all of the letters A through Z, except for J. The meta shell itself includes a 5&times;5 square, and a reference to getting on “the same playing field”. These elements, combined with the flavor of various athletics teams coming together, clue the Playfair cipher.</p>
+
+<p>Intuitively, we’d like to place the 25 leading letters of the answers into the grid somehow to create a Playfair cipher key.</p>
+
+<p>The sub-meta answers provide a clue as to how to do this. Solvers may notice that the baseball meta answer contains PRIME while the basketball meta answer contains SQUARE. Numbering the grid from 1 to 25 in left-to-right, top-to-bottom order (as the letters in a Playfair cipher are ordered), the prime-numbered squares should be reserved for the initial letters from the baseball round and the square numbers should be reserved for the basketball round. There are exactly 9 prime numbers between 1 and 25, and 5 square numbers in this range, which matches the number of answers in those rounds exactly. The remaining answer THE GAPS suggests that the 11 football answers are placed in the gaps between the basketball and baseball answers. The idea of using numbers somehow is also clued by the reference to jerseys (i.e. jersey numbers) in the flavor text.</p>
+
+<img class="center" alt="Five by five grid of squares colored by meta association" style="height:6cm" src="{{sroot}}number-grid.svg">
+
+<table>
+    <tr><th>Round</th><th>Answer starting letters</th></tr>
+    <tr style="background-color:#55ddff"><td>Basketball</td><td>I, L, P, S, Y</td></tr>
+    <tr style="background-color:#ffdd55"><td>Baseball</td><td>A, C, E, F, K, Q, U, W, Z</td></tr>
+    <tr style="background-color:#5fd35f"><td>Football</td><td>B, D, G, H, M, N, O, R, T, V, X</td></tr>
+</table>
+
+<p>The next step is to use the fact that Playfair cipher grids are typically constructed by taking a word or phrase, stripping away duplicates and using the remaining letters at the start of the grid (indicated as the first nine letters here), and then placing the rest of the letters in the alphabet (except J) in alphabetic order. So it’s natural to impose the constraint that the letters outside of the boxed region are in alphabetic order.</p>
+
+<p>Now placing the constrained sets of letters in the grid becomes a logic puzzle of sorts. One way to proceed:</p>
+
+<ul>
+    <li>Cell 25 must be Y, since the other basketball letters are too far from the end of the alphabet (i.e. it’s impossible to place all the letters after S in the first 9).</li>
+    <li>Cell 19 cannot be K or earlier, as it is impossible to place the 15 letters after K either later in the grid, or in the first nine cells, and it cannot be U since it is too close to the end of the alphabet, so it must be Q.</li>
+    <li>This constrains cells 20, 21, 22, and 24 to R, T, V, X, since these are the only football letters after Q.</li>
+    <li>This gives that cell 23 is W.</li>
+    <li>Cell 17 must be K, since F is too close to the start of the alphabet.</li>
+    <li>Cell 16 must be I, since that is the only basketball answer before K.</li>
+    <li>There are only four football letters preceding I, so cells 10, 12, 14, and 15 are B, D, G, H respectively.</li>
+    <li>Cell 11 is C, since it’s between B and D.</li>
+</ul>
+
+<p>Trying to place the letters somewhat greedily and then adjusting where necessary will also work here, as the solution is quite intuitive.</p>
+
+<p>This gives us the following grid: </p>
+
+<img class="center" alt="Five by five grid with most letters of the Playfair key placed" style="height:5cm" src="{{sroot}}wide-grid.svg">
+
+<p>The only reasonable phrase that we can make in the box is PUZZLE NAMES, which gives the completed grid. In testsolving, teams generally found this by first noticing that PUZZLE can be made using the Z, but a more exhaustive search also finds no satisfactory alternatives.</p>
+
+<p>This gives us our completed Playfair grid:</p>
+
+<img class="center" alt="Five by five grid for a Playfair cipher with key PUZZLE NAMES" style="height:6cm" src="{{sroot}}letter-grid.svg">
+
+<p>“Puzzle names” suggests that we should apply this Playfair cipher grid, which we have yet to use, to the puzzle names. In particular, we decode the 25 starting letters of the puzzle names in order of their use in the grid itself. This is an intuitive approach as this ordering was &ldquo;enumerated&rdquo; in the puzzle, the first letter distribution is a little odd, and anything more than starting letters would likely be too strong of a constraint.</p>
+
+<p>This gives the final answer, the reason why the teams kept losing: they <span class="answer">THREW THE GAME AND NOT THE BALL</span>.</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>While brainstorming for an Athletics round, one very natural idea we came up with was to use the Playfair cipher somehow. At some point, we also noticed that the sum of the number of players on the field at once in the three biggest American sports summed up to 25, which felt like too strong of a flavor connection to not try to use somehow.</p>
+
+<p>We also realised a rather interesting fact about Playfair grids, which is that the full grid can generally be re-created from limited constraining information, because the fact that most of the letters in the grid need to be in alphabetical order is very limiting.</p>
+
+<p>Initially, we tried to use actual field positions in each of the sports to constrain locations on the Playfair grid, but it ended up being quite difficult to actually create a puzzle around this, due to the data here being too nonspecific in most cases. Instead, we settled on using numbers after finding that we could use squares and primes to clue sets of 5 and 9 numbers in the range 1 to 25.</p>
+
+<p>An earlier version of this puzzle had an additional novel first step to actually find the letters associated with each puzzle, but after testing we felt that the puzzle was more fun and cohesive in this form.</p>
+</div>

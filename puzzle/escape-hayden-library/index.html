@@ -1,0 +1,14 @@
+{% load hunt_state_tests %}
+{% load static %}
+
+<div class="projdev">Yew Labs anticipates that you will need to use the Projection Device for this puzzle.</div>
+
+{% include "round/override-codes.tmpl" with code1="oLFCMwiOyq61NQn2xBi7hlxFpBhC9l5e+YdBj2c6V2ra3RUcAjwY7CJIw2k=" %}
+
+{% if completed_interactions|interactionCheck:"escape-hayden-library" %}
+<p>Please proceed to <b>Hayden Library</b> via Building 14 with at least two team members.</p>
+<p>After you're done, talk to the &perp;IW Puzzle Club member directly outside the room for your prize!</p>
+{% else %}
+<p>Thanks for signing up for the first-ever <b>IAP Hayden Escape Room</b>, run by the &perp;IW Puzzle Club!</p>
+<p>When you're ready to start, email {{ submission_email|safe }} Please meet in Building 14 of &perp;IW by the donuts. Bring at least two team members.</p>
+{% endif %}

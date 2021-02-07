@@ -1,0 +1,787 @@
+{% load hunt_state_tests %}
+
+{% if completed_interactions|interactionCheck:"questionable-answers" %}
+<style> /* "stolen" from j-archive.com */
+
+table, td {
+    font-family: arial, verdana, helvetica, sans-serif;
+    font-size: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+.round a:link {
+  color: #E5A561;
+  text-decoration: none;
+}
+
+.round a:visited {
+  color: #E5A561;
+  text-decoration: none;
+}
+
+.round a:hover {
+  color: #FDF7D5;
+  text-decoration: underline;
+}
+
+
+table.round {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+td.category {
+  background-color: #0000AF; /* Clue screen blue */
+  border-width: 2px;            /* Comment out for no depth. */
+  border-style: outset;         /* Comment out for no depth. */
+  border-bottom-color: #000088; /* Comment out for no depth. */
+  border-left-color:   #0000EE; /* Comment out for no depth. */
+  border-right-color:  #000099; /* Comment out for no depth. */
+  border-top-color:    #0000FF; /* Comment out for no depth. */
+  width: 142px;                 /* Comment out for no depth. */
+ /* width: 160px; Pre-depth value */
+}
+
+td.category_name {
+  /* width: 160px; Pre-depth value */
+  width: 142px;
+  font-size: 125%;
+  color: #FFFFFF;
+  text-shadow: 2px 2px 0px #000000;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+td.category_comments {
+  font-size: 80%;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+table.clue_header {
+  /* width: 145px; Pre-border width */
+  width: 140px;
+  border: 0px;
+}
+
+td.clue {
+  vertical-align: top;
+  background-color: #0000AF; /* Clue screen blue */
+  border-width: 2px;            /* Comment out for no depth. */
+  border-style: outset;         /* Comment out for no depth. */
+  border-bottom-color: #000088; /* Comment out for no depth. */
+  border-left-color:   #0000EE; /* Comment out for no depth. */
+  border-right-color:  #000099; /* Comment out for no depth. */
+  border-top-color:    #0000FF; /* Comment out for no depth. */
+  width: 142px;                 /* Comment out for no depth. */
+ /* width: 160px; Pre-depth value */
+}
+
+td.clue_value {
+  width: 100%;
+  color: #FAB85B; /* yellow - formerly #FFFF00 */
+  text-shadow: 1px 1px 0px #000000;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+td.clue_text {
+  height: 100px;
+  width: 142px;
+  color: #FFFFFF;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 90%;
+}
+
+.clue td {
+  border: none;
+}
+
+</style>
+
+<div class="fourthwall">During the hunt, teams were invited to send 3 members to play a game of Jeopardy hosted by us, which used the single Jeopardy clues below. After finishing the interaction, the page was updated to include the single and double Jeopardy clues below, which form the puzzle.</div>
+
+<h2>Jeopardy!</h2>
+<table class="round">
+    <tr>
+        <td class="category">
+            <table>
+                <tr><td class="category_name">ANAGRAMS</td></tr>
+                <tr><td class="category_comments"></td></tr>
+            </table>
+        </td>
+        <td class="category">
+            <table>
+                <tr><td class="category_name">FREQUENCY ANALYSIS</td></tr>
+                <tr><td class="category_comments">(given a word cloud, identify the source)</td></tr>
+            </table>
+        </td>
+        <td class="category">
+            <table>
+                <tr><td class="category_name">GOOD CONTENT</td></tr>
+                <tr><td class="category_comments">(name the Wikipedia article from its table of contents)</td></tr>
+            </table>
+        </td>
+        <td class="category">
+            <table>
+                <tr><td class="category_name">IDENTIFY THAT DITTY</td></tr>
+                <tr><td class="category_comments">(name the song, given some lyrics where individual words are replaced with synonyms)</td></tr>
+            </table>
+        </td>
+        <td class="category">
+            <table>
+                <tr><td class="category_name">N+7</td></tr>
+                <tr><td class="category_comments">(every noun in the answer is replaced with the seventh one after it in a dictionary)</td></tr>
+            </table>
+        </td>
+        <td class="category">
+            <table>
+                <tr><td class="category_name">POTPOURRI</td></tr>
+                <tr><td class="category_comments"></td></tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This restaurant slogan: FEATHERS</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}frequency200.png" target="_blank">This sci-fi book</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}contents200.png" target="_blank">This video game</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This song released in the 90s: "Utter my appellation, utter my appellation"</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This Fortune 500 company slogan: LIKE A GOOD NESTLE, STATISTIC FARROW IS THERE</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This comic book: made into a 2007 Zack Snyder film of the same title starring Gerard Butler as Leonidas</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This English phrase originally from Latin: HAZIEST EYED</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}frequency400.png" target="_blank">This comedy sketch</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}contents400.png" target="_blank">This comedy film</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This Disney song: "You desire to smooch the lass"</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This nursery rhyme: OLD KIPPER COLLARBONE</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This sitcom: starred Ray Romano as a Newsday sportswriter with the same first name</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This TV catchphrase: A BAOBAB DAD BOY</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}frequency600.png" target="_blank">This 2000s song</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}contents600.png" target="_blank">This game show</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This 60s Billboard top-ten song: "Discover what it signifies to me"</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This advertising campaign: REAL MENTION OF GENTLEWOMEN</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This 2019 album: titled for the "Four Freedoms" American artist along with an expletive in the middle</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This movie quote: OH EPEE MONTH</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}frequency800.png" target="_blank">This musical number</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}contents800.png" target="_blank">This panel show</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This song by a supergroup: "It's factual we'll create a superior 24 hours, just you and me"</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This biopic: ON THE BASTION OF SHACKLE</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This play: garnered controversy for a 2007 production that saw Daniel Radcliffe nude on stage</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This crime film: BANJO WICKER</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}frequency1000.png" target="_blank">This short story</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text"><a href="{{sroot}}contents1000.png" target="_blank">This punk song</a></td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This alternative rock song: "This is what you'll receive when you meddle with us"</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This hit 60s album: RHESUS</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">This motivational book: written by Richard Bach and subject of the parody "Marvin Stanley Pigeon"</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<h2>Double Jeopardy!</h2>
+<table class="round">
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">We don't know yet, but we can observe him in exactly one day and find out</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">The person who's speaking next, I guess</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Probably in the parking lot, bro</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">I don't know, but based on the name I'd start searching in California</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">The player that just hit a single</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$400</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">A strong emotional feeling</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Thou wilt find me at the family reunion</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">The person in charge</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Maybe, if you're truly sorry</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">I certainly hope so, given that I graduated!</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Whatever amount he requires to live on</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$800</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Yes, I'd say I have a lot of practice</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Yes, the karaoke party is very audible</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">My diagnosis is...the sky</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Inside your cranium</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">It depends on whether their circuits can generate the necessary ovine imagery</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Not sure, but they must have the keys to the kennel</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1200</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Some cash and my driver's license</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">At the very least, people traumatized by modern English literature</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">No, I'm not very superstitious in general</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Your turophile roommate who can't keep their hands to themselves</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">You can find out by checking who has crumbs on their fingers</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Yes, I'll get the carrot and tree branches!</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$1600</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Inside the patty</td></tr>
+            </table>
+        </td>
+    </tr>
+
+    <tr>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$2000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">It depends on how worthwhile you think your presence is</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$2000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">You all stay in bed until you wake up</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$2000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">The other people on patrol, possibly</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$2000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Probably, most people are aware of Santa Claus</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$2000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Because that pirate drank it</td></tr>
+            </table>
+        </td>
+        <td class="clue">
+            <table>
+                <tr><td>
+                    <table class="clue_header">
+                        <tr><td class="clue_value">$2000</td></tr>
+                    </table>
+                </td></tr>
+                <tr><td class="clue_text">Yeah, I bought a carton yesterday</td></tr>
+            </table>
+        </td>
+    </tr>
+</table>
+{% else %}
+<p>Send 3 team members who enjoy trivia to play a round of Jeopardy! Contestants must be able to use Zoom.</p>
+
+<p>{{ submission_instructions|safe }}</p>
+{% endif %}

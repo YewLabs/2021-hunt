@@ -1,0 +1,58 @@
+<p>Solvers are presented with a list of blanks and a list of words.</p>
+
+<p>We can assemble the words into lyrics that fit into the blanks, with slashes corresponding to line breaks (sometimes approximately, as sources differ on where “line breaks” go in lyrics) and other punctuation preserved. If words are capitalized because they’re proper nouns or variations of “I”, their capitalization is preserved, but the capitalization of words at the beginning of lines is not preserved. For Puzzle 3, for example, this gives:</p>
+
+<ul>
+<li>‘neath the halo of a streetlamp / [I turned my collar] to the cold and damp</li>
+<li>[I’ve been staring at] the edge of the water / long as I can remember / never really knowing why</li>
+<li>her mind is [Tiffany-twisted] / she got the Mercedes Benz</li>
+<li>[if there’s something strange] / in your neighborhood / who you gonna call?</li>
+</ul>
+
+<p>In addition, some words are bracketed in each line. The key observation solvers must make is that in each line, the bracketed words consist of five syllables and five notes in total, and the notes have exactly two distinct pitches. Solvers who make any attempt to transcribe the notes of the lines should be able to make this observation fairly quickly, or they might observe that the lengths of the bracketed fragments are broadly similar and happen upon counting syllables by trying different ways to measure their length. The title is also a very faint nod to this, referencing the song “Unchained Melody” to suggest that solvers might look at the melody (in addition to loosely describing the way the words in the lyrics have been scrambled.)</p>
+
+<p>Those five notes can be translated into five-bit binary by treating the low pitch as 0 and the high pitch as 1, and then to letters via A = 1, B = 2, etc. Doing this gives:</p>
+
+<table>
+<tr>
+<th>Lyric</th>
+<th>Pitches</th>
+<th>Letter</th>
+</tr>
+<tr>
+<td>‘neath the halo of a streetlamp / [I turned my collar] to the cold and damp</td>
+<td>00011</td>
+<td>C</td>
+</tr>
+<tr>
+<td>[I’ve been staring at] the edge of the water / long as I can remember / never really knowing why</td>
+<td>10101</td>
+<td>U</td>
+</tr>
+<tr>
+<td>her mind is [Tiffany-twisted] / she got the Mercedes Benz</td>
+<td>10010</td>
+<td>R</td>
+</tr>
+<tr>
+<td>[if there’s something strange] / in your neighborhood / who you gonna call?</td>
+<td>00101</td>
+<td>E</td>
+</tr>
+</table>
+
+<p>The answer, <span class="answer">CURE</span>, can be read off one letter per lyric fragment.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>I had been thinking about the seed of this puzzle idea, interpreting pitches in fragments of popular songs as five-bit binary, since at least <a href="https://2018.galacticpuzzlehunt.com/">Galactic Puzzle Hunt 2018</a>, but I didn’t have any puzzle steps to put before this interpretation step that I was happy with. Even if I did, I thought the puzzle idea was somewhat inelegantly underconstrained, as there were many songs with any given five-bit pattern, but I didn’t have a systematic way to find such songs and any natural puzzle-relevant constraint I could think of would immediately make it overconstrained. So the context of the Infinite Corridor actually provided a nice cover for this puzzle by making the underconstrained nature of the construction a feature — it enabled us to automatically generate dozens of unrelated instances of the puzzle.</p>
+
+<p>I like music puzzles and was prompted to make this puzzle because I felt that there aren’t many puzzles that use already-existing music as “data”, particularly puzzles that don’t directly contain any musical content themselves. I think this is maybe one of the simplest possible ways to use music this way.</p>
+
+<p>In case you’re wondering, all the data for this puzzle was generated manually by listening to songs and keeping an ear out for fragments with two pitches. The letters E, T, I, and R were the hardest to get. I generated most of the data myself by listening to random songs, but a large group of factcheckers listening to all the songs again to catch errors and ambiguities (any remaining errors are, of course, my own). Thanks to Jenna in particular for adding a handful of the rarer patterns at the eleventh hour. In total we used 250 lyric fragments from around 120 distinct songs.</p>
+
+<p>Here's a playlist of all the Unchained songs:</p>
+
+<iframe src="https://open.spotify.com/embed/playlist/4S1PPDufVgFGbSICghct8o" width="500" height="400" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+</div>

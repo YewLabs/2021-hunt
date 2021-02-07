@@ -1,0 +1,1028 @@
+<style>
+    .big-grid td {
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .small-grid td {
+        height: 18px;
+        width: 18px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .ctrsq {
+        background-color: black;
+        color: white;
+    }
+
+    .ctrtxt {
+        text-align: center;
+    }
+
+    .box {
+        text-align: center;
+        border: solid black 4px;
+        padding: 10px 10px 10px 10px;
+        margin: 15px
+    }
+</style>
+
+<p>Answers used in this round:
+<pre>
+ATE DINNER
+DARN IT ALL
+END LOADED
+LATE ONSET
+NET LOSSES
+RED DIESEL
+SALTON SEA
+TASTINESS
+</pre>
+</p>
+
+<p>We're presented with a 3&times;3 grid with some letters in it. The flavortext, combined with the diagram, suggests the <a
+        href="https://en.wikipedia.org/wiki/Sierpi%C5%84ski_carpet">Sierpi&#324;ski Carpet</a>. Further confirmation is
+    provided by the fact that the three-dimensional version of this, the <a
+        href="https://en.wikipedia.org/wiki/Menger_sponge">Menger Sponge</a>, looks a lot like Simmons Hall, which is
+    also sometimes called &ldquo;The Sponge&rdquo;.</p>
+
+<p>Now we must figure out what to do with this carpet and with the answers. The first key insight comes from the
+    answers. Each of them is nine letters long, and they are composed of the same set of eight letters on the outside (ADELNRST),
+    plus an I or an O in the middle. Finally, there is one answer that starts with each of those eight letters. The
+    combination of these facts with the idea of fractals suggests that we can take the original 3&times;3 grid and "expand" it to another layer by replacing each of the letters with a 9-letter
+    block corresponding to the answer beginning with that letter.</p>
+
+<p>For example, we might expand
+<table class="grid big-grid">
+    <tr>
+        <td>N</td>
+    </tr>
+</table> to get the following grid:
+<table class="grid big-grid">
+    <tbody>
+        <tr>
+            <td>N</td>
+            <td>E</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>L</td>
+            <td class="ctrsq">O</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>S</td>
+            <td>E</td>
+            <td>S</td>
+        </tr>
+    </tbody>
+</table>
+</p>
+
+<p>Thus, we could expand the initial grid to get, after one iteration:
+
+<table class="grid small-grid">
+    <tr>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+    </tr>
+</table>
+</p>
+
+<p>Note that this is identical to the Sierpinski carpet after one iteration, where we shade the Is and Os (the only letters that cannot be further expanded) black.</p>
+
+<p>The Is and Os in the black squares can be read as ones and zeros in row order to get <code>01000001</code>, which is ASCII for <code>A</code>. Suspiciously, the puzzle tells us that 1.1 also corresponds to <code>A</code>.</p>
+
+<p>Expanding to a second iteration, we get:</p>
+
+<table class="grid small-grid">
+    <tr>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+        <td>D</td>
+        <td>A</td>
+        <td>R</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+        <td>N</td>
+        <td class='ctrsq'>I</td>
+        <td>T</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>L</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>A</td>
+        <td>R</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>D</td>
+        <td>A</td>
+        <td>R</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td class='ctrsq'>I</td>
+        <td>T</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>N</td>
+        <td class='ctrsq'>I</td>
+        <td>T</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>L</td>
+        <td>L</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>A</td>
+        <td>L</td>
+        <td>L</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>L</td>
+        <td>A</td>
+        <td>T</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>E</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+        <td>S</td>
+        <td>E</td>
+        <td>T</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+        <td>D</td>
+        <td>A</td>
+        <td>R</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+        <td>N</td>
+        <td class='ctrsq'>I</td>
+        <td>T</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>L</td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td class='ctrsq'></td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>A</td>
+        <td>T</td>
+        <td>E</td>
+        <td>S</td>
+        <td>A</td>
+        <td>L</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>T</td>
+        <td>A</td>
+        <td>S</td>
+        <td>N</td>
+        <td>E</td>
+        <td>T</td>
+        <td>E</td>
+        <td>N</td>
+        <td>D</td>
+        <td>R</td>
+        <td>E</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>T</td>
+        <td class='ctrsq'>O</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>T</td>
+        <td class='ctrsq'>I</td>
+        <td>N</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>S</td>
+        <td>L</td>
+        <td class='ctrsq'>O</td>
+        <td>A</td>
+        <td>D</td>
+        <td class='ctrsq'>I</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>N</td>
+        <td>E</td>
+        <td>R</td>
+        <td>S</td>
+        <td>E</td>
+        <td>A</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>E</td>
+        <td>S</td>
+        <td>S</td>
+        <td>S</td>
+        <td>E</td>
+        <td>S</td>
+        <td>D</td>
+        <td>E</td>
+        <td>D</td>
+        <td>S</td>
+        <td>E</td>
+        <td>L</td>
+    </tr>
+</table>
+
+<p>We can now read out more binary in row-major order. Breaking the binary into bytes, the first byte is <code>01011001</code>, which is ASCII for <code>Y</code>, and the second byte is <code>01010100</code>, which is ASCII for <code>T</code>. The puzzle tells us that 2.1 corresponds to <code>Y</code> and 2.2 corresponds to <code>T</code>; we now have enough information to understand that x.y refers to the yth byte of the xth iteration. We can confirm that the next few provided characters match up as well.</p>
+
+<p>Once we've confirmed that, we can start calculating our own values for the
+    positions in the box at the bottom. We can either manually expand the box to enormous sizes, write a program to do
+    that for us, or selectively expand individual areas that we know will lead us to the spots that we want to get the
+    values of. Either way, the ASCII values we get out are as follows:
+</p>
+<table>
+    <tr>
+        <td>3.6</td>
+        <td>3.55</td>
+        <td>4.23</td>
+        <td>4.129</td>
+        <td>5.1881</td>
+        <td>3.13</td>
+        <td>3.33</td>
+        <td>3.60</td>
+        <td>2.6</td>
+        <td>5.510</td>
+    </tr>
+    <tr>
+        <td><code>01000001</code></td>
+        <td><code>00100000</code></td>
+        <td><code>01010010</code></td>
+        <td><code>01001111</code></td>
+        <td><code>01010111</code></td>
+        <td><code>00100000</code></td>
+        <td><code>01000010</code></td>
+        <td><code>01001100</code></td>
+        <td><code>01001111</code></td>
+        <td><code>01010111</code></td>
+    </tr>
+    <tr>
+        <td><code>A</code></td>
+        <td><code> </code></td>
+        <td><code>R</code></td>
+        <td><code>O</code></td>
+        <td><code>W</code></td>
+        <td><code> </code></td>
+        <td><code>B</code></td>
+        <td><code>L</code></td>
+        <td><code>O</code></td>
+        <td><code>W</code></td>
+    </tr>
+</table>
+
+<p>Thus, to dry out the carpets we need <span class="answer">A ROW BLOW</span>, using the cold winds from Dorm Row!</p>

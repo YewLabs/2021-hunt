@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg:svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="600"
+   height="300"
+   viewBox="0 0 12 6"
+   version="1.1"
+   id="svg939"
+   sodipodi:docname="2-bosnia-and-herzegovina-2.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <svg:metadata
+     id="metadata945">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </svg:metadata>
+  <svg:defs
+     id="defs943" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1287"
+     inkscape:window-height="1044"
+     id="namedview941"
+     showgrid="false"
+     inkscape:zoom="1.2020815"
+     inkscape:cx="225.2693"
+     inkscape:cy="238.09099"
+     inkscape:window-x="629"
+     inkscape:window-y="16"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g959" />
+  <svg:g
+     id="g959"
+     transform="matrix(0.75,0,0,0.75,0,1.4981108)">
+    <svg:rect
+       style="fill:#002395"
+       y="-2"
+       x="0"
+       id="rect925"
+       height="8"
+       width="16" />
+    <svg:path
+       style="fill:#fecb00"
+       inkscape:connector-curvature="0"
+       id="path927"
+       d="m 4.24,-2 h 8 v 8 z" />
+    <svg:g
+       transform="translate(0,-2)"
+       id="g">
+      <svg:path
+         style="fill:#ffffff"
+         inkscape:connector-curvature="0"
+         id="s"
+         d="M 2.353283,0.5248529 2.8,-0.85 3.246717,0.524853 2.077197,-0.324853 h 1.445606 z" />
+      <svg:use
+         height="100%"
+         width="100%"
+         id="use930"
+         y="1"
+         x="1"
+         xlink:href="#s" />
+      <svg:use
+         height="100%"
+         width="100%"
+         id="use932"
+         y="2"
+         x="2"
+         xlink:href="#s" />
+    </svg:g>
+    <svg:use
+       height="100%"
+       width="100%"
+       id="use935"
+       y="3"
+       x="3"
+       xlink:href="#g" />
+    <svg:path
+       sodipodi:nodetypes="cccsssc"
+       inkscape:connector-curvature="0"
+       id="path1492"
+       d="m 11.60942,-0.95801712 -6.3045765,0 V 3.6537475 c 0,0 -0.2048732,1.9322664 1.2843714,1.9322664 0.7571811,0 1.2344922,-0.571545 1.2102359,-1.0438578 -0.03613,-0.7035175 -0.7287191,-1.3571216 -1.2934249,-1.3571216 -0.5647058,0 -1.2011824,0.468713 -1.1902538,1.0467125"
+       style="fill:none;stroke:#ff00ff;stroke-width:0.42666668;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <svg:use
+       height="100%"
+       width="100%"
+       id="use937"
+       y="6"
+       x="6"
+       xlink:href="#g" />
+  </svg:g>
+  <script>try {
+                        Object.defineProperty(screen, &quot;availTop&quot;, { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;availLeft&quot;, { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;availWidth&quot;, { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;availHeight&quot;, { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;colorDepth&quot;, { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;pixelDepth&quot;, { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, &quot;hardwareConcurrency&quot;, { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, &quot;appVersion&quot;, { value: &quot;5.0 (X11)&quot; });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, &quot;doNotTrack&quot;, { value: &quot;unspecified&quot; });
+                    } catch (e) {}
+                    
+            try {
+                window.screenY = 16
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 16
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = 1044
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 956
+            } catch (e) { }
+        </script>
+</svg:svg>

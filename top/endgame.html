@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Endgame</title>
+  </head>
+  <body>
+    <h3>{{ team.name }}</h3>
+    {% if status %}
+    <h4>{{ status }}</h4>
+    {% endif %}
+    <p>
+      <center>
+        <table>
+          <tr><th>Device</th><th style="width:128px">Location</th><th>Status</th><th style="width:128px"></th></tr>
+          {% for device in devices %}
+          <tr style="background-color:{% if device.enabled %}green{% else %}red{% endif %};">
+            <td>{{ device.device }}</td>
+            <td>{{ device.location }}</td>
+            <td>{% if device.enabled %}Enabled{% else %}Disabled{% endif %}</td>
+            <td>
+              <center>
+                <form action="." method="POST">
+                  {% csrf_token %}
+                  <input type="hidden" name="device" value="{{ device.device }}">
+                  {% if not device.enabled %}
+                  <input type="hidden" name="state" value="ENABLE">
+                  <input type="submit" name="enable" value="Enable">
+                  {% else %}
+                  <input type="hidden" name="state" value="DISABLE">
+                  <input type="submit" name="disable" value="Disable">
+                  {% endif %}
+                </form>
+              </center>
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </center>
+    </p>
+  </body>
+</html>

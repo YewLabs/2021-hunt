@@ -1,0 +1,66 @@
+Stacks: b1 w2 r3 g4 y5
+Alice: b2 w3 r4 g5
+Bobby: y1 y1 w1 b5
+Carol: g1 g1 b2 r4
+David: r1 w3 w4 w5
+Wins: 4
+Deck: r5 .. w4 b3 b4 .. kt kt
+Line: g5 .. r4 w3 r5 .. b2 b3 b4 b5 w4 w5
+Plan: F  I  V  E  S  W  I  N  T  H  I  S
+Display: Fives win this
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[F] Turn  1 ..... Alice plays [W] green 5 and draws [U] red 5
+[I] Turn  2 ..... Bobby stalls by spending a clue
+[V] Turn  3 ..... Carol plays [P] red 4 and draws [T] white 4
+[E] Turn  4 ..... David plays [O] white 3 and draws [N] blue 3
+[S] Turn  5 ..... Alice plays [U] red 5 and draws [S] blue 4
+[W] Turn  6 ..... Bobby stalls by spending a clue
+[I] Turn  7 ..... Carol plays [I] blue 2 and draws any card
+[N] Turn  8 ..... David plays [N] blue 3 and draws any card
+[T] Turn  9 ..... Alice plays [S] blue 4 on their last turn
+[H] Turn 10 ..... Bobby plays [X] blue 5 on their last turn
+[I] Turn 11 ..... Carol plays [T] white 4 on their last turn
+[S] Turn 12 ..... David plays [Y] white 5 on their last turn
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+PROOF OF UNIQUENESS
+
+The initial pace is 0.
+Therefore, no discards are permitted and every player
+must play in the final round.
+
+Bobby starts with no playable cards,
+so until Bobby has a playable card, he must be given clues to spend.
+
+Thus, Alice must play g5 to begin.
+Bobby then spends a clue.
+
+Looking ahead, the only way to complete a 5 before Bobby's next turn
+is for r5 to be played since no other 5 is close enough.
+So Alice must have drawn r5,
+and Carol must play r4 into it.
+David plays his only option w3,
+and thus Alice plays r5.
+Bobby spends a clue.
+
+At this point, there are two cards remaining in the deck, and zero clues.
+As no player may discard, this means Bobby gets at most one more turn.
+Thus, the blue 5 must be playable by Bobby's next turn.
+Hence Carol, David, Alice must play b2, b3, b4 in that order,
+so that Bobby can play b5.
+
+At this point, only two turns remain, so Carol and David must play w4 and w5.
+
+Examining the deck ordering, we see there are two unused cards.
+One of them must be David's final draw.
+The other is one of Carol's draws --- she must draw w4,
+but the w4 and her unused draw can come in either order.
+Of course, the two unused cards are interchangable.
+This means there are 2 * 2 = 4 orderings of the deck
+which lead to victory,
+according to which of the two trash card Carol draws,
+and which position it is in.

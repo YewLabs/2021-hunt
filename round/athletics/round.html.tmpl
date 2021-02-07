@@ -1,0 +1,197 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block stylesheets %}
+<style>
+  body {
+    background-color: #71A871;
+  }
+
+  .content {
+    background-image: url({% static 'art/athleticsbg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    margin-top: 300px;
+    background: none;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+  }
+
+  .athletics-flavor {
+    color: #ffffffe0;
+  }
+</style>
+{% endblock %}
+
+{% block round_top %}
+<center>
+  <h2 class="athletics-flavor">Puzzles unlock at various times and after progress in the Projection Device.</h2>
+  <h3 class="athletics-flavor">*These pictures are only for helping you locate the athletes and are otherwise not used in any puzzle.</h3>
+</center>
+{% endblock %}
+
+{% block round_puzzles %}
+<div class="round-table-container">
+  {% for puzzle in all_puzzles %}
+  {% if puzzle.puzzle.y2021puzzledata and puzzle.puzzle.y2021puzzledata.tempest_id == 309 %}
+  <table>
+    <tr><th>Puzzle</th><th>Answer</th></tr>
+    {% if puzzle.found %}
+    <tr>
+      <td>
+        <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+      <td>
+        {% if puzzle.solved %}
+        <div>{{ puzzle.puzzle.answer|safe}}</div>
+        {% endif %}
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan=2>
+        {% if mmo_disabled %}
+        <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+        {% elif puzzle.puzzle.y2021puzzledata.tempest_id == 309 %}
+        <center><span class="mhtooltiptext">Find this puzzle in &perp;IW!</span></center>
+        {% else %}
+        <center><a href="{{ puzzle.uimage }}" target="_blank"><img alt="Find this puzzle in ⊥IW!" style="width:128px;" src="{{ puzzle.uimage_small }}"></a></center>
+        {% endif %}
+      </td>
+    </tr>
+    {% endif %}
+  </table>
+  <hr>
+  {% endif %}
+  {% endfor %}
+  <center>
+    <h3>Baseball</h3>
+    <h4>The baseball players enjoy running around their bases, among other things.</h4>
+  </center>
+  <table>
+    <tr><th>Puzzle</th><th>Answer</th></tr>
+    {% for puzzle in all_puzzles %}
+    {% if puzzle.puzzle.y2021puzzledata and puzzle.puzzle.answer in "KESHORN WALCOTT,ZONE PLATE,AUTUMN ORCHID,CILANTRO,FIRST VOLUMES,UGLY SIMPLE,WATER IMPACT,QUIZMASTER,ECTOPLASMIC,PRIME TIME INTERVIEW"%}
+    {% if puzzle.found %}
+    <tr>
+      <td>
+        <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+      <td>
+        {% if puzzle.solved %}
+        <div>{{ puzzle.puzzle.answer|safe}}</div>
+        {% endif %}
+      </td>
+    </tr>
+    {% elif mmo_disabled %}
+    <tr>
+      <td colspan=2>
+        <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan=2>
+        <center><a href="{{ puzzle.uimage }}" target="_blank"><img alt="Find this puzzle in ⊥IW!" style="width:128px;" src="{{ puzzle.uimage_small }}"></a></center>
+      </td>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </table>
+  <hr>
+  <center>
+    <h3>Basketball</h3>
+    <h4>The basketball players enjoy working as a team.</h4>
+  </center>
+  <table>
+    <tr><th>Puzzle</th><th>Answer</th></tr>
+    {% for puzzle in all_puzzles %}
+    {% if puzzle.puzzle.y2021puzzledata and puzzle.puzzle.answer in "INTEL MOTHERBOARD,LEWIS CARROLL,YOSHIMITSU,SECOND GRAND ALLIANCE,PANASONIC Q,SQUARE BALL" %}
+    {% if puzzle.found %}
+    <tr>
+      <td>
+        <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+      <td>
+        {% if puzzle.solved %}
+        <div>{{ puzzle.puzzle.answer|safe}}</div>
+        {% endif %}
+      </td>
+    </tr>
+    {% elif mmo_disabled %}
+    <tr>
+      <td colspan=2>
+        <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan=2>
+        <center><a href="{{ puzzle.uimage }}" target="_blank"><img alt="Find this puzzle in ⊥IW!" style="width:128px;" src="{{ puzzle.uimage_small }}"></a></center>
+      </td>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </table>
+  <hr>
+  <center>
+    <h3>Football</h3>
+    <h4>The football players enjoy scoring field goals.</h4>
+  </center>
+  <table>
+    <tr><th>Puzzle</th><th>Answer</th></tr>
+    {% for puzzle in all_puzzles %}
+    {% if puzzle.puzzle.y2021puzzledata and puzzle.puzzle.answer in "VIVIPARITY,GRADE LEVEL,NINJA BOOTS,O'DONOGHUE'S,HYPOCERCAL,ROUGHING UP,DATA BACKUP,THINKING OF,XY RECORDER,BITTER BLOW,MASS MATRIX,THE GAPS" %}
+    {% if puzzle.found %}
+    <tr>
+      <td>
+        <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+      <td>
+        {% if puzzle.solved %}
+        <div>{{ puzzle.puzzle.answer|safe}}</div>
+        {% endif %}
+      </td>
+    </tr>
+    {% elif mmo_disabled %}
+    <tr>
+      <td colspan=2>
+        <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {{puzzle.puzzle.name|safe}}
+        </a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan=2>
+        <center><a href="{{ puzzle.uimage }}" target="_blank"><img alt="Find this puzzle in ⊥IW!" style="width:128px;" src="{{ puzzle.uimage_small }}"></a></center>
+      </td>
+    </tr>
+    {% endif %}
+    {% endif %}
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

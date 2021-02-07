@@ -1,0 +1,206 @@
+<style>
+    #sudoku-grid td {
+        border: none;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+    }
+</style>
+
+<p>First we try to solve the clues. After researching a few of them we'll realize the following things:</p>
+
+<ul>
+  <li>Each of the answers can be described as some kind of "miracle".</li>
+  <li>The numbers of symbols in the parentheses are the number of words in each of the answers.</li>
+  <li>&#x2605;—which is always the first symbol—always represents the word MIRACLE.</li>
+  <li>Numbers represent words of the corresponding enumeration.</li>
+  <li>The clues are sorted alphabetically by the final word of each answer—represented by one of nine unique symbols.</li>
+</ul>
+
+<p>The answers are as follows:</p>
+
+<table>
+  <colgroup>
+    <col width="70%">
+    <col>
+    <col>
+  </colgroup>
+<tr>
+  <th>Clue</th>
+  <th>Symbols</th>
+  <th>Answer</th>
+</tr>
+<tr>
+  <td>This fruit&rsquo;s signature effect works via a protein that binds to certain mouth receptors in low pH environments.</td>
+  <td>&#x2605; &#x271C;</td>
+  <td>MIRACLE BERRY</td>
+</tr>
+<tr>
+  <td>The coiner of this term credits the result to a group of men who studied at his university and subsequently returned to their home country to implement economic reforms.</td>
+  <td>&#x2605; 2 &#x2724;</td>
+  <td>MIRACLE OF CHILE</td>
+</tr>
+<tr>
+  <td>This event was made possible in part by a lengthy halt order made by the leader of the opposition, which was considered to be an enormous tactical blunder.</td>
+  <td>&#x2605; 2 &#x25C9;</td>
+  <td>MIRACLE OF DUNKIRK</td>
+</tr>
+<tr>
+  <td>Despite the fact that the vehicle involved in this incident sunk fully, it was eventually recovered and is now on display in a museum in North Carolina.</td>
+  <td>&#x2605; 2 3 &#8225;</td>
+  <td>MIRACLE ON THE HUDSON</td>
+</tr>
+<tr>
+  <td>Although this event refers to a critical game played between the two geopolitical rivals, the underdog didn't clinch the gold medal until two days later.</td>
+  <td>&#x2605; 2 &#x273F;</td>
+  <td>MIRACLE ON ICE</td>
+</tr>
+<tr>
+  <td>This bird managed to survive the incident that made it famous largely because its jugular vein and brain stem remained intact and the wound itself clotted over.</td>
+  <td>&#x2605; &#x2318;</td>
+  <td>MIRACLE MIKE</td>
+</tr>
+<tr>
+  <td>This local-area bar is known for its distinctive menu which is formatted like a periodic table.</td>
+  <td>&#x2605; 2 &#x2609;</td>
+  <td>MIRACLE OF SCIENCE</td>
+</tr>
+<tr>
+  <td>This condiment made its debut at the 1933 Chicago World&rsquo;s Fair and quickly became a huge success.</td>
+  <td>&#x2605; &#x274A;</td>
+  <td>MIRACLE WHIP</td>
+</tr>
+<tr>
+  <td>Of the papers published during this time period, the author is best known for the last two, but won his Nobel Prize for the first.</td>
+  <td>&#x2605; &#x25C8;</td>
+  <td>MIRACLE YEAR</td>
+</tr>
+</table>
+
+
+<p>Now we can turn our attention to the Sudoku. It's titled "&#x2605; Sudoku", and since we've realized that &#x2605; represents "Miracle," we can conclude that it in fact is a <a href="https://www.youtube.com/watch?v=yKf9aUIxdb4" target="_blank">Miracle Sudoku</a>, a variant Sudoku format popularized by a viral <em>Cracking the Cryptic</em> YouTube video.</p>
+
+<p>A Miracle Sudoku adds two constraints on top of the usual Sudoku ones:<p>
+
+<ul>
+  <li>No two of the same number can be either a King's move or a Knight's move away from each other.</li>
+  <li>No two consecutive numbers can be adjacent to each other.</li>
+</ul>
+
+
+<p>If we treat our given grid (ignoring the symbols for now) like a Miracle Sudoku with two given digits, we can in fact solve it uniquely:</p>
+
+<table id="sudoku-grid">
+  <tr style="color: red">
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">3</td><td style="border-top: 2px solid black">9</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">6</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">8</td><td style="border-top: 2px solid black">5</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">2</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">4</td><td style="border-top: 2px solid black">1</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">7</td>
+  </tr>
+  <tr>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">7</td><td style="border: 1px solid lightgray">4</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">1</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">3</td><td style="border: 1px solid lightgray">9</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">6</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">8</td><td style="border: 1px solid lightgray">5</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">2</td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">2</td><td style="border-bottom: 2px solid black">8</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">5</td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">7</td><td style="border-bottom: 2px solid black">4</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">1</td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">3</td><td style="border-bottom: 2px solid black">9</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">6</td>
+  </tr>
+  <tr>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">6</td><td style="border-top: 2px solid black">3</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">9</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">2</td><td style="border-top: 2px solid black">8</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">5</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">7</td><td style="border-top: 2px solid black">4</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black; color: blue;">1</td>
+  </tr>
+  <tr>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">1</td><td style="border: 1px solid lightgray">7</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">4</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">6</td><td style="border: 1px solid lightgray; color: blue;">3</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">9</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">2</td><td style="border: 1px solid lightgray">8</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">5</td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">5</td><td style="border-bottom: 2px solid black">2</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">8</td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">1</td><td style="border-bottom: 2px solid black">7</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">4</td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">6</td><td style="border-bottom: 2px solid black">3</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">9</td>
+  </tr>
+  <tr>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">9</td><td style="border-top: 2px solid black">6</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">3</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">5</td><td style="border-top: 2px solid black">2</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">8</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">1</td><td style="border-top: 2px solid black">7</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black; color: blue;">4</td>
+  </tr>
+  <tr>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">4</td><td style="border: 1px solid lightgray">1</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">7</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">9</td><td style="border: 1px solid lightgray">6</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">3</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">5</td><td style="border: 1px solid lightgray">2</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray">8</td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">8</td><td style="border-bottom: 2px solid black">5</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">2</td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">4</td><td style="border-bottom: 2px solid black">1</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">7</td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">9</td><td style="border-bottom: 2px solid black">6</td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">3</td>
+  </tr>
+</table>
+
+<p>Finally, we can turn to the symbols in the Sudoku grid:</p>
+
+<table id="sudoku-grid">
+  <tr style="color: red">
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">&#x25C9;</td><td style="border-top: 2px solid black">&#x2724;</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">&#x273F;</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">&#x2318;</td><td style="border-top: 2px solid black">&#x274A;</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">&#x271C;</td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray">&#8225;</td><td style="border-top: 2px solid black">&#x25C8;</td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black">&#x2609;</td>
+  </tr>
+  <tr>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">&#x25C9;</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">&#x274A;</td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">&#x271C;</td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+  </tr>
+  <tr>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-top: 2px solid black"></td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-top: 2px solid black"></td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-top: 2px solid black"></td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black; color: blue;">&#x2609;</td>
+  </tr>
+  <tr>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">&#x2318;</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray; color: blue;">&#8225;</td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+  </tr>
+  <tr>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-top: 2px solid black"></td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-top: 2px solid black"></td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-top: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-top: 2px solid black"></td><td style="border-top: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black; color: blue;">&#x25C8;</td>
+  </tr>
+  <tr>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">&#x2724;</td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray; color: blue;">&#x273F;</td>
+    <td style="border-left: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td><td style="border: 1px solid lightgray"></td><td style="border-right: 2px solid black; border-top: 1px solid lightgray; border-bottom: 1px solid lightgray"></td>
+  </tr>
+  <tr>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+    <td style="border-bottom: 2px solid black; border-left: 2px solid black; border-right: 1px solid lightgray"></td><td style="border-bottom: 2px solid black"></td><td style="border-bottom: 2px solid black; border-left: 1px solid lightgray; border-right: 2px solid black"></td>
+  </tr>
+</table>
+
+<p>The numbers in the positions of the nine red symbols in the first row obviously span the numbers 1 through 9, and can give us an ordering. The numbers in the positions of the nine blue symbols can then act as indices into the word corresponding to the symbol:</p>
+
+<table>
+  <tr><th>Order</th><th>Symbol</th><th>Index</th><th>Word</th><th>Letter</th></tr>
+  <tr><td style="color: red;">1</td><td>◈</td><td style="color: blue;">4</td><td>YEAR</td><td>R</td></tr>
+  <tr><td style="color: red;">2</td><td>✜</td><td style="color: blue;">2</td><td>BERRY</td><td>E</td></tr>
+  <tr><td style="color: red;">3</td><td>◉</td><td style="color: blue;">1</td><td>DUNKIRK</td><td>D</td></tr>
+  <tr><td style="color: red;">4</td><td>‡</td><td style="color: blue;">3</td><td>HUDSON</td><td>D</td></tr>
+  <tr><td style="color: red;">5</td><td>❊</td><td style="color: blue;">3</td><td>WHIP</td><td>I</td></tr>
+  <tr><td style="color: red;">6</td><td>✿</td><td style="color: blue;">3</td><td>ICE</td><td>E</td></tr>
+  <tr><td style="color: red;">7</td><td>☉</td><td style="color: blue;">1</td><td>SCIENCE</td><td>S</td></tr>
+  <tr><td style="color: red;">8</td><td>⌘</td><td style="color: blue;">4</td><td>MIKE</td><td>E</td></tr>
+  <tr><td style="color: red;">9</td><td>✤</td><td style="color: blue;">4</td><td>CHILE</td><td>L</td></tr>
+</table>
+
+<p>The indexed letters in order give us our answer: <span class="answer">RED DIESEL</span>.</p>

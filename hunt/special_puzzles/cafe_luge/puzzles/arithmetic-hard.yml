@@ -1,0 +1,30 @@
+name: arithmetic-hard
+difficulty: 3/10
+coolness: 1/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "Which of these numbers *is* prime: 127, 143, 161, 169?"
+
+        - answer: 127
+
+    - question:
+        - text: "Which of these numbers *is not* prime: 179, 181, 197, 217?"
+
+        - answer: 217
+
+    - question:
+        - text: "What is the smallest perfect square which is greater than 600?"
+
+        - answer: 625
+
+    - question:
+        - text: "What is the smallest perfect square which is greater than 1000?"
+
+        - answer: 1024
+
+    - question:
+        - text: "What is the square root of 78961?"
+
+        - answer: 281

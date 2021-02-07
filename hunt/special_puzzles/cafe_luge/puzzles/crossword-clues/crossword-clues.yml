@@ -1,0 +1,50 @@
+name: crossword-clues
+difficulty: 3/10
+coolness: 4/10
+time: 2:00
+
+questions:
+    - question:
+        - text: 'What is the four-letter word that matches the clues "quality of wine" and "main part of a text"?'
+
+        - answer: body
+
+    - question:
+        - text: 'What is the six-letter word that matches the clues "great outdoors" and "demeanor"?'
+
+        - answer: nature
+
+    - question:
+        - text: 'What is the ten-letter word that matches the clues "fine cut of meat" and "red-light district in New York"?'
+
+        - answer: tenderloin
+
+    - question:
+        - text: 'What is the five-letter word that matches the clues "diva''s gig" and "web browser"?'
+
+        - answer: opera
+
+    - question:
+        - text: 'What is the six-letter word that matches the clues "a landlady, for example" and "alphabet unit"?'
+
+        - answer: letter
+
+    - question:
+        - text: 'What is the five-letter word that matches the clues "what bears like" and "dear relative"?'
+
+        - answer: honey
+
+    - question:
+        - text: 'What is the six-letter word that matches the clues "material substance" and "have significance"?'
+
+        - answer: matter
+
+    - question:
+        - text: 'What is the six-letter word that matches the clues "two-base hit" and "lookalike"?'
+
+        - answer: double
+
+    - question:
+        - text: 'What is the four-letter word that matches the clues "part of a bicycle toolkit" and "low-cut, slip-on shoe"?'
+
+        - answer: pump

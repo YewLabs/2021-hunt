@@ -1,0 +1,44 @@
+{% load hunt_state_tests %}
+<p>
+Maker ID: <b>3XJ-3FF-FSF</b>
+</p>
+<p>
+Go to Course World, enter the Maker ID, and press Play on the Super World on the right.
+</p>
+
+<hr>
+
+<p>
+Individual levels can be replayed on the Maker profile (or with codes below):
+</p><p>
+1-1 <i>Wigging Out</i>: <b>H76-C50-4JG</b>
+</p><p>
+1-2 <i>Picture That</i>: <b>75H-5GK-BRF</b>
+</p><p>
+1-3 <i>Luigi wins by doing nothing?</i>: <b>9N0-J5J-TXF</b>
+</p><p>
+1-4 <i>Boo-m Boo-m Breakout</i>: <b>9BH-DBG-8JF</b>
+</p><p>
+1-M <i>Gobeetle Desert</i>: <b>CKL-QWH-DQG</b>
+</p>
+
+<hr>
+{% if not puzzle|minutesAvailable:480 %}
+<div class="fourthwall">
+<p>
+For archival purposes, these levels are also available on this Maker ID: <b>CKQ-93T-1TG</b>.
+</p>
+<p>
+If you don't have Super Mario Maker 2, a video substitute for this puzzle will unlock in {{ puzzle|minutesRemaining:480 }} minutes.
+</p>
+</div>
+{% else %}
+<div class="fourthwall">
+<p>
+For archival purposes, these levels are also available on this Maker ID: <b>CKQ-93T-1TG</b>.
+</p>
+<p>
+If you don't have Super Mario Maker 2, watch <a href="https://youtu.be/n24D-bUcoiA" target="_blank">this video</a> instead.
+</p>
+</div>
+{% endif %}

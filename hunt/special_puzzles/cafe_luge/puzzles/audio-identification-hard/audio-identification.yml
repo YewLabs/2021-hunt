@@ -1,0 +1,12 @@
+name: audio-identification-hard
+difficulty: 5/10
+coolness: 6/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What key is this clip in? (Include minor or major!)"
+
+        - audio: audio-identification-hard/glade.mp3
+
+        - answer: d minor

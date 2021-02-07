@@ -1,0 +1,37 @@
+<style>
+    .ctr {
+        text-align: center;
+    }
+
+    .imgctr {
+        max-width: 80%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<img class="imgctr" style="width:160px;" src="{{sroot}}bill.png">
+<p class="ctr">It&rsquo;s Bill, the Pok&eacute;mon storage system inventor!</p>
+<p class="ctr">Hey there! I was experimenting with the ol&rsquo; pok&eacute;mon teleporter again, and something foreign must have gotten mixed up in there, because the machine jammed and everyone came out strange! Can you help me figure out what&rsquo;s jamming the machine?</p>
+</br></br></br></br></br>
+<img class="pokeimg imgctr">
+
+<script>
+    var urllist = ['0NNqOa1.png', '3itr9yI.png', '8jO4ex6.png', '9BceEcU.png', 'a8tSQVU.png', 'EdDZNlF.png', 'EPEyQPi.png', 'hAc5JBY.png', 'Im7rSN0.png', 'JAvuY8b.png', 'JGOlbyW.png', 'Ls1tLSS.png', 'mKdMFEr.png', 'p1vMV3w.png', 'PtHhtPW.png', 'SKdjYyi.png', 'uxTl1vh.png', 'vXwyxLu.png', 'w4sy2Lt.png', 'yztFTUX.png'];
+
+    for (e of urllist) {
+        new Image().src='{{sroot}}poke/'+e;
+    }
+
+    function randomPoke() {
+        var pokeImage = document.getElementsByClassName('pokeimg')[0].src = '{{sroot}}poke/'+urllist[Math.floor(Math.random() * urllist.length)];
+    }
+    randomPoke();
+</script>
+
+<p class="ctr"><button onclick="randomPoke();">Who&rsquo;s That Pok&eacute;mon?</button></p>
+</br></br></br></br></br>
+<p>Here&rsquo;s who was <i>supposed</i> to be in the teleporter&hellip;</p>
+
+<img class="imgctr" src="{{sroot}}supposed.png">

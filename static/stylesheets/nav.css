@@ -1,0 +1,295 @@
+body {
+  background-color: #3C2F3D;
+}
+
+.content {
+  background-image: url(/static/art/yewlabsdarkmode.png);
+  background-size: 100% auto;
+}
+
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  color: white;
+  background-color: #202018;
+  position: relative;
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+  margin: 14px 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar-list a {
+  padding: 14px 20px;
+}
+
+.navbar-subtext {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.nav-links-dropdown-menu {
+  position: absolute;
+  background-color: #202018;
+  list-style-type: none;
+  padding: 12px;
+  margin: 0;
+  z-index: 10;
+  display: none;
+}
+
+.navbar-list .nav-links-dropdown-toggle:hover {
+  text-decoration: none;
+}
+
+.navbar-list .nav-links-dropdown-menu {
+  margin-top: 12px;
+  padding-top: 0;
+}
+
+.nav-links-dropdown-menu a {
+  padding: 6px 2px;
+  width: 100%;
+  display: block;
+}
+
+.nav-links-dropdown-toggle:after {
+  border: solid white;
+  border-width: 0 0.2em 0.2em 0;
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.2em;
+  transform: rotate(45deg);
+  position: relative;
+  top: -0.2em;
+}
+
+.nav-account-panel {
+  flex-grow: 1;
+  margin: 5px 20px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.nav-account-panel-team-actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.team-action-item {
+  padding: 0 0 0 12px;
+}
+
+.nav-links-dropdown-toggle img {
+  height: 2em;
+  vertical-align: middle;
+  margin: -0.5em;
+}
+
+#submit-popup {
+  background-color: white;
+  border: none;
+  max-height: 40vh;
+  height: 400px;
+  width: 100%;
+  display: none;
+}
+
+#submit-popup-close {
+  position: sticky;
+  background: inherit;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 40px;
+  font-weight: bold;
+  color: #fee638;
+  display: none;
+}
+
+#submit-popup-close:after {
+  content: "\2715";
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.no-bookmarks {
+  font-weight: normal;
+  line-height: 1.25;
+}
+
+#bookmarks .nav-links-dropdown-menu {
+  max-width: 300px;
+}
+
+#bookmarks .nav-links-dropdown-menu a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#bookmarks .nav-links-dropdown-menu span {
+  float: right;
+  margin-left: 0.5em;
+  color: #f0eca3;
+}
+
+#bookmark {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  cursor: pointer;
+  background-image: url(/static/bookmark.png);
+  width: 60px;
+  height: 60px;
+  background-size: 120%;
+  background-position: 50% 75%;
+}
+
+#bookmark, .nav-links-dropdown-toggle img {
+  transition: filter 0.1s;
+  filter: grayscale(0.5) drop-shadow(0 0 0 transparent);
+}
+
+#bookmark.bookmarked:not(:hover) {
+  filter: grayscale(0.0) drop-shadow(0 0 0 transparent);
+}
+
+#bookmark:not(.bookmarked):hover {
+  filter: grayscale(0.4) drop-shadow(0 2px 2px white);
+}
+
+#bookmark.bookmarked:hover {
+  filter: grayscale(0.1) drop-shadow(0 2px 2px white);
+}
+
+.nav-links-dropdown-toggle:hover img {
+  filter: grayscale(0.0) drop-shadow(0 0 2px white);
+}
+
+#notifications {
+  position: fixed;
+  left: 0;
+  width: 300px;
+  z-index: 9;
+}
+
+#notifications .notification {
+  margin: 20px;
+  padding: 10px;
+  display: block;
+  background-color: #202018;
+  font-weight: bold;
+  text-decoration: none;
+  transition: opacity 0.1s;
+  position: relative;
+}
+
+#notifications .notification:not(:hover):not(:focus-within) {
+  opacity: 0.9;
+}
+
+#notifications .notification a {
+  color: #f0eca3;
+  display: block;
+  margin-right: 25px;
+}
+
+#notifications .notification a:hover,
+#notifications .notification a:focus {
+  color: white;
+  text-decoration: none;
+}
+
+#notifications .notification button {
+  background: none;
+  border: none;
+  color: #f0eca3;
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 40px;
+  width: 40px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#notifications .notification button:after {
+  content: "";
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  position: absolute;
+  margin: 8px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#notifications .notification button:hover,
+#notifications .notification button:focus {
+  color: white;
+}
+
+#notifications .notification.important {
+  background-color: #6308d7;
+  width: 120%;
+  font-size: 120%;
+  padding: 20px 10px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 10px;
+  background: #555555;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #f4e0f3;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #f4e0f3;
+  cursor: pointer;
+}

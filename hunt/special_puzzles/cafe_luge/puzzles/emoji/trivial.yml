@@ -1,0 +1,96 @@
+name: emoji
+difficulty: 1/10
+coolness: 3/10
+time: 1:30
+
+
+questions:
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/seedling.png
+
+        - answer: "\U0001F331"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/dragonface.png
+
+        - answer: "\U0001F432"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/tropicaldrink.png
+
+        - answer: "\U0001F379"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/musicalnotes.png
+
+        - answer: "\U0001F3B6"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/curlingstone.png
+
+        - answer: "\U0001F94C"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/guitar.png
+
+        - answer: "\U0001F3B8"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/mangameat.png
+
+        - answer: "\U0001F356"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/fishcake.png
+
+        - answer: "\U0001F365"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/shavedice.png
+
+        - answer: "\U0001F367"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/dumpling.png
+
+        - answer: "\U0001F95F"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/japanesecastle.png
+
+        - answer: "\U0001F3EF"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/fireworks.png
+
+        - answer: "\U0001F386"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/volcano.png
+
+        - answer: "\U0001F30B"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/ferriswheel.png
+
+        - answer: "\U0001F3A1"
+
+    - question:
+        - text: "Please enter the emoji that represents this image."
+        - image: emoji/twohumpcamel.png
+
+        - answer: "\U0001F42B"

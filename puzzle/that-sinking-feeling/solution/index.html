@@ -1,0 +1,85 @@
+<style>
+
+    #grid td {
+        background-color: #c9daf8;
+        padding: 5px;
+    }
+
+    #grid-spaced td {
+        background-color: #c9daf8;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .white {
+        color: white;
+    }
+
+    .red {
+        color: red;
+    }
+
+    .redh {
+        background-color: red !important; 
+    }
+</style>
+<p>
+    Each column of words (which is in alphabetical order) can be rearranged to make 10 clues of 10 words each, reading across:
+</p>
+
+<table id="grid">
+    <tr><th>Clue</th><th>Answer</th></tr>
+    <tr><td>Adjective describing indigenous people whose languages include Warlpiri and <span class="white">Pitjantjatjara</span></td><td>ABORIGINAL</td></tr>
+    <tr><td>Alternate name <span class="white">for</span> a jawbreaker <span class="red">notably</span> used by <span class="white">Willy</span> Wonka</td><td>GOBSTOPPER</td></tr>
+    <tr><td>English heavy <span class="white">metal</span> band that's named for a torture device</td><td>IRON MAIDEN</td></tr>
+    <tr><td>Game <span class="red">published</span> by <span class="white">Milton</span> Bradley that involves guessing fleet <span class="red">locations</span></td><td>BATTLESHIP</td></tr>
+    <tr><td>Olympic <span class="white">events</span> that included dressage and show jumping in <span class="white">2016</span></td><td>EQUESTRIAN</td></tr>
+    <tr><td>Science <span class="white">Channel</span> <span class="red">television</span> series <span class="white">explaining</span> the manufacturing of common objects</td><td>HOW ITS MADE</td></tr>
+    <tr><td>Type of art exemplified by <span class="red">Joseph</span> Kosuth and Sol <span class="red">LeWitt</span></td><td>CONCEPTUAL</td></tr>
+    <tr><td>Urban theorist who opposed Robert Moses' plans <span class="white">for</span> <span class="red">Greenwich</span> Village</td><td>JANE JACOBS</td></tr>
+    <tr><td>With <span class="red">"muscle",</span> disorder where <span class="white">someone</span> <span class="red">perceives</span> their <span class="white">body</span> as small</td><td>DYSMORPHIA</td></tr>
+    <tr><td>Young wedding figure whose dress should match with the bride's</td><td>FLOWER GIRL</td></tr>
+</table>
+
+<p>Each answer is 10 letters long and begins with a different letter from A-J, so we can reorder them in alphabetical order and color the letters red or white if the corresponding word in the clue is red or white.</p>
+
+<table id="grid-spaced">
+    <tr><td>A</td><td>B</td><td>O</td><td>R</td><td>I</td><td>G</td><td>I</td><td>N</td><td>A</td><td class="white">L</td></tr>
+    <tr><td>B</td><td class="red">A</td><td>T</td><td class="white">T</td><td>L</td><td>E</td><td>S</td><td>H</td><td>I</td><td class="red">P</td></tr>
+    <tr><td>C</td><td>O</td><td>N</td><td>C</td><td>E</td><td class="red">P</td><td>T</td><td>U</td><td>A</td><td class="red">L</td></tr>
+    <tr><td>D</td><td class="red">Y</td><td>S</td><td>M</td><td class="white">O</td><td class="red">R</td><td>P</td><td class="white">H</td><td>I</td><td>A</td></tr>
+    <tr><td>E</td><td class="white">Q</td><td>U</td><td>E</td><td>S</td><td>T</td><td>R</td><td>I</td><td>A</td><td class="white">N</td></tr>
+    <tr><td>F</td><td>L</td><td>O</td><td>W</td><td>E</td><td>R</td><td>G</td><td>I</td><td>R</td><td>L</td></tr>
+    <tr><td>G</td><td>O</td><td class="white">B</td><td>S</td><td>T</td><td class="red">O</td><td>P</td><td>P</td><td class="white">E</td><td>R</td></tr>
+    <tr><td>H</td><td class="white">O</td><td class="red">W</td><td>I</td><td class="white">T</td><td>S</td><td>M</td><td>A</td><td>D</td><td>E</td></tr>
+    <tr><td>I</td><td>R</td><td class="white">O</td><td>N</td><td>M</td><td>A</td><td>I</td><td>D</td><td>E</td><td>N</td></tr>
+    <tr><td>J</td><td>A</td><td>N</td><td>E</td><td>J</td><td>A</td><td>C</td><td class="white">O</td><td class="red">B</td><td>S</td></tr>
+</table>
+
+<p>The red letters, read from top to bottom, spell out APPLY ROW B. The answer beginning with B is BATTLESHIP, which clues that the red and white words correspond to guesses in a game of <a href="https://en.wikipedia.org/wiki/Battleship_(game)#Description">Battleship</a> (where red and white pegs are used to represent hits and misses, respectively, and which also labels rows with A-J). This is also hinted at by the title and the light blue background.</p>
+
+<p>In the Milton Bradley game Battleship, there are 5 ships, of sizes 5, 4, 3, 3, and 2. We can uniquely determine the positions of these ships in the given grid, using fairly simple logic (e.g., the red W needs to be part of the size-2 ship, which means the red B and P/L must be size 3 ships, and then the red A/Y is the size 4 ship and P/R/O is the size 5 ship).</p>
+
+<p>The remaining ship cells, highlighted in red below, spell out the answer <span class="answer">BOAT RIDE</span>.</p>
+
+<table id="grid-spaced">
+    <tr><td>A</td><td class="redh">B</td><td>O</td><td>R</td><td>I</td><td>G</td><td>I</td><td>N</td><td>A</td><td class="white">L</td></tr>
+    <tr><td>B</td><td class="red">A</td><td>T</td><td class="white">T</td><td>L</td><td>E</td><td>S</td><td>H</td><td>I</td><td class="red">P</td></tr>
+    <tr><td>C</td><td class="redh">O</td><td>N</td><td>C</td><td>E</td><td class="red">P</td><td>T</td><td>U</td><td>A</td><td class="red">L</td></tr>
+    <tr><td>D</td><td class="red">Y</td><td>S</td><td>M</td><td class="white">O</td><td class="red">R</td><td>P</td><td class="white">H</td><td>I</td><td class="redh">A</td></tr>
+    <tr><td>E</td><td class="white">Q</td><td>U</td><td>E</td><td>S</td><td class="redh">T</td><td>R</td><td>I</td><td>A</td><td class="white">N</td></tr>
+    <tr><td>F</td><td>L</td><td>O</td><td>W</td><td>E</td><td class="redh">R</td><td>G</td><td>I</td><td>R</td><td>L</td></tr>
+    <tr><td>G</td><td>O</td><td class="white">B</td><td>S</td><td>T</td><td class="red">O</td><td>P</td><td>P</td><td class="white">E</td><td>R</td></tr>
+    <tr><td>H</td><td class="white">O</td><td class="red">W</td><td class="redh">I</td><td class="white">T</td><td>S</td><td>M</td><td>A</td><td class="redh">D</td><td>E</td></tr>
+    <tr><td>I</td><td>R</td><td class="white">O</td><td>N</td><td>M</td><td>A</td><td>I</td><td>D</td><td class="redh">E</td><td>N</td></tr>
+    <tr><td>J</td><td>A</td><td>N</td><td>E</td><td>J</td><td>A</td><td>C</td><td class="white">O</td><td class="red">B</td><td>S</td></tr>
+</table>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>
+        In early brainstorming for this puzzle, I wanted to have pictures (tinted red or white) represent coordinates, inspired by ET TU sounding like A2, but had trouble coming up with a good way of doing so for arbitrary coordinates. The current idea came around from brainstorming potential extractions involving a grid of letters and thinking about how the grid itself could be clued with 10-word crossword clues (and also that BATTLESHIP was 10 letters long and began with one of the first 10 letters of the alphabet).
+    </p>
+</div>

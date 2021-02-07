@@ -1,0 +1,21 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% block title %}Link to Discord &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Link to Discord</h1>
+  <main>
+    <div class="info">
+      <center>
+        {% if registered_team %}
+        <h4>This discord account has been registered to {{ team }}.</h4>
+        {% endif %}
+        {% if error %}
+        <h4>{{ error }}</h4>
+        {% endif %}
+      </center>
+    </div>
+  </main>
+</div>
+{% endblock %}

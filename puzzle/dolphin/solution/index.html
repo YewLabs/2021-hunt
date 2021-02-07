@@ -1,0 +1,657 @@
+<style>
+      .img5 {
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;
+        width: 64px;
+      }
+      .img6 {
+        max-height: 240px;
+      }
+</style>
+
+<p>This is a puzzle about Nintendo GameCube trivia as clued by the title Dolphin which is the codename for the Nintendo GameCube.
+The first image is a clue for extraction and is a metapuzzle that uses the answers to the 6 subpuzzles, one for each face of the
+indicated die.</p>
+
+<p> The first subpuzzle is a Numberlink logic puzzle. Each link connects two squares of the same color or pattern. Each color or pattern
+clues a specific GameCube console color variation and the length of the color variation's name matches the length of its corresponding link.
+We can therefore fill in the color variation names along each link, using the starting and ending letters to orient each link. Below are the
+console color variation names and the filled out Numberlink.</p>
+
+<ul>
+<li><span class="monospace">INDIGO</span></li>
+<li><span class="monospace">JET BLACK</span></li>
+<li><span class="monospace">PLATINUM SILVER</span></li>
+<li><span class="monospace">SPICE ORANGE</span></li>
+<li><span class="monospace">PEARL WHITE</span></li>
+<li><span class="monospace">TALES OF SYMPHONIA</span></li>
+<li><span class="monospace">HANSHIN TIGERS</span></li>
+<li><span class="monospace">STARLIGHT GOLD</span></li>
+</ul>
+
+<div>
+<img src="{{sroot}}1_01.png"/>
+</div>
+
+<p>Reading the letters on the numbered squares in the order from 1 to 15 spells out the answer to the first subpuzzle: <b>CONSOLE BRAGGING</b>.</p>
+
+<p>If we try searching some of the strange names such as test11 or I_TestM in the second subpuzzle, we might discover that each line refers to a specific unused test or
+debugging map from a GameCube game. Below is a table listing the test map names and the game they come from.</p>
+
+<div>
+<table>
+<tr>
+  <th>Test Map Name</th>
+  <th>Gamecube Game</th>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?v=FVqTE3L1sTE">newtest</a></td>
+  <td>Pikmin 2</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?v=EMBvax210-4">I_TestM</a></td>
+  <td>The Legend of Zelda: The Wind Waker</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?v=mSZnB6Eofw4">test11</a></td>
+  <td>Super Mario Sunshine</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?v=bHyFR0OvDfw">SIMPLE</a></td>
+  <td>Kirby Air Ride</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?v=l6xw41W-PQg">TEST</a></td>
+  <td>Super Smash Bros. Melee</td>
+</tr>
+</table>
+</div>
+
+<p>Each line in the second subpuzzle asks a question about items or trivia regarding the specified test level. The answer is always a number between 1 and 26 or a single letter. To
+extract we convert the numbers from 1 to 26 to letters and read in order of the questions given. Most of these questions can be answered through careful viewing of YouTube videos that
+walk through the test levels. There is also a site called <a href="https://noclip.website/">noclip</a> that renders the debug levels for some of the above games in our browser and lets
+us explore the level freely. The answer to each question and the extracted letter is shown in the table below.</p>
+
+<div>
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Extracted Letter</th>
+  </tr>
+  <tr>
+      <td>newtest: How many green tree stumps are there? Multiply that number by 3.</td>
+      <td>21</td>
+      <td>U</td>
+  </tr>
+  <tr>
+      <td>I_TestM: In the walled off section, how many fully visible 15's are there in between the 20's?</td>
+      <td>14</td>
+      <td>N</td>
+  </tr>
+  <tr>
+      <td>I_TestM: How many rungs are on the 4th tallest ladder?</td>
+      <td>16</td>
+      <td>P</td>
+  </tr>
+  <tr>
+      <td>newtest: What is the last letter of the word between "grass" and "sand"?</td>
+      <td>SOIL &rarr; L</td>
+      <td>L</td>
+  </tr>
+  <tr>
+      <td>test11: How many shiny collectibles are there?</td>
+      <td>1 Shine Sprite</td>
+      <td>A</td>
+  </tr>
+  <tr>
+      <td>test11: There are a number of red objects in a row. What is the square of that number?</td>
+      <td>5 Red Coins &rarr; 25</td>
+      <td>Y</td>
+  </tr>
+  <tr>
+      <td>SIMPLE: How many question marks are there?</td>
+      <td>5</td>
+      <td>E</td>
+  </tr>
+  <tr>
+      <td>I_TestM: What number is on the orange blocks by the pool?</td>
+      <td>4</td>
+      <td>D</td>
+  </tr>
+  <tr>
+      <td>TEST: How many connected components are there in this stage?</td>
+      <td>12</td>
+      <td>L</td>
+  </tr>
+  <tr>
+      <td>test11: This sports item is found here. What is its second letter?</td>
+      <td>SOCCER BALL &rarr; O</td>
+      <td>O</td>
+  </tr>
+  <tr>
+      <td>newtest: How many tree stumps are on the slide?</td>
+      <td>3</td>
+      <td>C</td>
+  </tr>
+  <tr>
+      <td>TEST: What is the last letter of the cafe this takes place in?</td>
+      <td>CAFE VERONA &rarr; A</td>
+      <td>A</td>
+  </tr>
+  <tr>
+      <td>SIMPLE: How many blue ring check H boards are there?</td>
+      <td>12</td>
+      <td>L</td>
+  </tr>
+  <tr>
+      <td>SIMPLE: How many boost panels are there on thin air?</td>
+      <td>5</td>
+      <td>E</td>
+  </tr>
+  <tr>
+      <td>TEST: Music from this series plays. What is the first letter of the series's name?</td>
+      <td>STAR FOX &rarr; S</td>
+      <td>S</td>
+  </tr>
+</table>
+
+<p>Thus, we get <b>UNPLAYED LOCALES</b> as the answer to the second subpuzzle.</p>
+
+<p>In the third subpuzzle, the strange punctuation and 2's that appear in some lines suggest that these might be titles of video game that have been transformed in some way.
+The image of the memory card also points us in this direction and we will want to extract by looking up the number of memory blocks each game takes up. A possible break-in for this
+subpuzzle is "Inhabitant sin 2" which sounds very similar to the relatively well-known "Resident Evil 2". This suggests that each line transforms a video game title by replacing each
+word with a synonym or short crossword-esque clue. Indeed this is the case and the games are as per the table below.</p>
+
+<table>
+<tr>
+  <th>Transformed Title</th>
+  <th>Original Title</th>
+</tr>
+<tr>
+      <td>Plumber club sport: frog chair journey</td>
+      <td>Mario Golf: Toadstool Tour</td>
+</tr>
+<tr>
+      <td>Sound related people on horseback</td>
+      <td>Sonic Riders</td>
+</tr>
+<tr>
+      <td>Royalty of Iran: the duo chairs</td>
+      <td>Prince of Persia: The Two Thrones</td>
+</tr>
+<tr>
+      <td>Lead sly animal: strike</td>
+      <td>Star Fox: Assault</td>
+</tr>
+<tr>
+      <td>Motocross abbreviation for adults</td>
+      <td>BMX XXX</td>
+</tr>
+<tr>
+      <td>Hat top-level domain against Playmore corporation 2 exec. order</td>
+      <td>Capcom vs. SNK 2 EO</td>
+</tr>
+<tr>
+      <td>Inhabitant sin 2</td>
+      <td>Resident Evil 2</td>
+</tr>
+<tr>
+      <td>Correct offense: The Big Apple</td>
+      <td>True Crime: New York City</td>
+</tr>
+<tr>
+      <td>Let go symbol: trail of luster</td>
+      <td>Fire Emblem: Path of Radiance</td>
+</tr>
+<tr>
+      <td>Yonder moral &amp; corrupt</td>
+      <td>Beyond Good &amp; Evil</td>
+</tr>
+<tr>
+      <td>Forever in shadow: mental soundness's elegy</td>
+      <td>Eternal Darkness: Sanity's Requiem</td>
+</tr>
+<tr>
+      <td>Magician Franco actor Philip's expert cycle sport 2</td>
+      <td>Mat Hoffman's Pro BMX 2</td>
+</tr>
+<tr>
+      <td>Beast abode</td>
+      <td>Monster House</td>
+</tr>
+<tr>
+      <td>Excellent former NY governor daylight</td>
+      <td>Super Mario Sunshine</td>
+</tr>
+<tr>
+      <td>Styles ceramist and the hall of mysteries</td>
+      <td>Harry Potter and the Chamber of Secrets</td>
+</tr>
+</table>
+</div>
+
+<p>Once we've identified all these games we need to figure out how many memory blocks each game uses up for a save file. There are various sites and forums that list inaccurate information unfortunately.
+The icon hints at how we can verify we have the right number. The back of each game's cover has a memory card icon identical to the one shown in the puzzle. Instead of question marks the required number
+of memory blocks is displayed. As an example, here is the back of the cover of Super Mario Sunshine.</p>
+
+<img src="{{sroot}}3_01.jpg" style="max-width: 480px"/>
+
+<p>So to figure out the number of memory blocks each game uses, we can search up the back of each game's cover and read off the number of memory blocks. There are also a couple sites that accurately list
+the number of memory blocks required based off of the game's back cover. Two such sites that we could reference are the specs section of <a href="https://www.mobygames.com/">MobyGames</a> or <a href="http://www.gamespy.com/">GameSpy</a>. To extract we convert the number of memory blocks used for each game alphanumerically into letters. The table below shows the number of memory blocks each game uses and the corresponding extracted letter.</p>
+
+<div>
+<table>
+<tr>
+  <th>Game</th>
+  <th>Memory Blocks</th>
+  <th>Extracted Letter</th>
+</tr>
+<tr>
+  <td>Mario Golf: Toadstool Tour</td>
+  <td>13</td>
+  <td>M</td>
+</tr>
+<tr>
+      <td>Sonic Riders</td>
+      <td>1</td>
+      <td>A</td>
+</tr>
+<tr>
+      <td>Prince of Persia: The Two Thrones</td>
+  <td>20</td>
+  <td>T</td>
+</tr>
+<tr>
+      <td>Star Fox: Assault</td>
+  <td>5</td>
+  <td>E</td>
+</tr>
+<tr>
+      <td>BMX XXX</td>
+  <td>18</td>
+  <td>R</td>
+</tr>
+<tr>
+      <td>Capcom vs. SNK 2 EO</td>
+  <td>9</td>
+  <td>I</td>
+</tr>
+<tr>
+      <td>Resident Evil 2</td>
+  <td>1</td>
+  <td>A</td>
+</tr>
+<tr>
+      <td>True Crime: New York City</td>
+  <td>12</td>
+  <td>L</td>
+</tr>
+<tr>
+      <td>Fire Emblem: Path of Radiance</td>
+  <td>19</td>
+  <td>S</td>
+</tr>
+<tr>
+      <td>Beyond Good &amp; Evil</td>
+  <td>20</td>
+  <td>T</td>
+</tr>
+<tr>
+      <td>Eternal Darkness: Sanity's Requiem</td>
+  <td>15</td>
+  <td>O</td>
+</tr>
+<tr>
+      <td>Mat Hoffman's Pro BMX 2</td>
+  <td>18</td>
+  <td>R</td>
+</tr>
+<tr>
+      <td>Monster House</td>
+  <td>1</td>
+  <td>A</td>
+</tr>
+<tr>
+      <td>Super Mario Sunshine</td>
+  <td>7</td>
+  <td>G</td>
+</tr>
+<tr>
+      <td>Harry Potter and the Chamber of Secrets</td>
+  <td>5</td>
+  <td>E</td>
+</tr>
+</table>
+</div>
+
+<p>Thus the third subpuzzle has answer <b>MATERIAL STORAGE</b>.</p>
+
+<p>The fourth subpuzzle shows us a series of images and quotes missing a word. Most of the images are fairly nondescript. We might try reverse image searching some of these images and realize that the second image is a frame from a Zelda commercial. It turns out that all of these images are frames from GameCube game commercials. If we listen to the commercials we'll hear the quotes in them and can fill in the missing word. The quotes are fairly short and the missing word is always last, suggesting that the length of each quote is significant. Indeed, to extract we index into the missing word by the number of words in the corresponding quote. The data
+for this subpuzzle is summarized in the table below.</p>
+
+<div>
+<table>
+<tr>
+  <th>Game</th>
+  <th>Missing Word</th>
+  <th>Length of Quote</th>
+  <th>Extracted Letter</th>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?t=2&v=uq0AXdQOR90&feature=youtu.be">Sonic Adventure 2 Battle</a></td>
+  <td>POWERS</td>
+  <td>3</td>
+  <td>W</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/LRESd37Jbgg?t=11">The Legend of Zelda: Collector's Edition</a></td>
+  <td>TIGHTS</td>
+  <td>2</td>
+  <td>I</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?t=20&v=C2m3NgZk7eE&feature=youtu.be">Pikmin 2</a></td>
+  <td>MUSTARD</td>
+  <td>4</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/135rHDgux2A?t=15">Kirby Air Ride</a></td>
+  <td>EAT</td>
+  <td>3</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/HunCJsXJVQ4?t=10">Super Mario Sunshine</a></td>
+  <td>FLY</td>
+  <td>3</td>
+  <td>Y</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?t=2&v=bkIRna_jdMY&feature=youtu.be">Super Monkey Ball 2</a></td>
+  <td>RACES</td>
+  <td>3</td>
+  <td>C</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?v=MN7xsiRneS4&feature=youtu.be">Pok&eacute; Colosseum</a></td>
+  <td>POK&Eacute;MON</td>
+  <td>6</td>
+  <td>O</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/R7ssMpTFiQA?t=19">Wario World</a></td>
+  <td>ENEMIES</td>
+  <td>4</td>
+  <td>M</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?t=11&v=bVCuUkf-SO0&feature=youtu.be">Metroid Prime 2</a></td>
+  <td>PRIME</td>
+  <td>4</td>
+  <td>M</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/mJQlqgdd7dY?t=14">Mario Party 5</a></td>
+  <td>STANCE</td>
+  <td>6</td>
+  <td>E</td>
+</tr>
+<tr>
+  <td><a href="https://www.youtube.com/watch?t=2&v=mVJIG6knmD0&feature=youtu.be">Dance Dance Revolution: Mario Mix</a></td>
+  <td>TRY</td>
+  <td>2</td>
+  <td>R</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/tngO1-ozBLY?t=11">Soulcalibur II</a></td>
+  <td>STICK</td>
+  <td>4</td>
+  <td>C</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/gyOhZbqjhEk?t=29">Need for Speed: Underground</a></td>
+  <td>NIGHT</td>
+  <td>2</td>
+  <td>I</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/8EVeHRhRdaU?t=2">Animal Crossing</a></td>
+  <td>GARBAGE</td>
+  <td>5</td>
+  <td>A</td>
+</tr>
+<tr>
+  <td><a href="https://youtu.be/4MDQVRvRPmY?t=4">Madden NFL 2004</a></td>
+  <td>DEMOLITION</td>
+  <td>5</td>
+  <td>L</td>
+</tr>
+</table>
+</div>
+
+<p>Thus the fourth subpuzzle has answer <b>WITTY COMMERCIAL</b>.</p>
+
+<p>The fifth subpuzzle consists of pixel art of what look to be various GameCube components. We probably can recognize the GameCube controller and the WaveBird wireless controller. Depending on our knowledge
+of GameCube games we may also recognize the Donkey Kong bongos and DDR dance pad. Most likely we will need to do some searching in order to figure out what is depicted in the other images. Also of note is
+that each image has a black pixel in the top left corner. Since these images are presented in pixel art format the individual pixels may be important. Opening up each image in an image editor and inspecting
+the top left black pixel reveals that they are actually not pure black. Instead their hex color codes are numbers between 1 and 26 when converted to decimal numbers. Converting these hex values to letters gives us the phrase <span class="monospace">DOL MODEL NUMBERS</span>.</p>
+
+<p>If we look up DOL model numbers related to the Nintendo GameCube, we will find that official Nintendo released GameCube hardware have model numbers that are prefixed by DOL (short for "Dolphin"). There are exactly 26 hardware components ranging from DOL-001 to DOL-025 followed by DOL-101. One such site that catalogs this information accurately is <a href="https://maru-chang.com/hard/dol/english.htm">MiragePalace</a>. Now that we know exactly what components we are looking for, it is easier to match up the pixel art images with the hardware components. To extract we convert the DOL model numbers alphanumerically to letters. Below is a table summarizing the hardware components, their DOL model number, and the extracted letter.</p>
+
+<div>
+<table>
+<tr>
+<th>Image</th>
+<th>Hardware Component</th>
+<th>DOL Number</th>
+<th>Extracted Letter</th>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_01.png" class="img5"/></td>
+  <td>WaveBird Wireless Receiver</td>
+  <td>DOL-005</td>
+  <td>E</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_02.png" class="img5"/></td>
+  <td>Action Pad</td>
+  <td>DOL-024</td>
+  <td>X</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_03.png" class="img5"/></td>
+  <td>Telephone Cord</td>
+  <td>DOL-016</td>
+  <td>P</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_04.png" class="img5"/></td>
+  <td>Broadband Adapter</td>
+  <td>DOL-015</td>
+  <td>O</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_05.png" class="img5"/></td>
+  <td>AC Adapter</td>
+  <td>DOL-002</td>
+  <td>B</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_06.png" class="img5"/></td>
+  <td>Broadband Adapter</td>
+  <td>DOL-015</td>
+  <td>O</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_07.png" class="img5"/></td>
+  <td>Memory Card 251</td>
+  <td>DOL-014</td>
+  <td>N</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_08.png" class="img5"/></td>
+  <td>DK Bongos Controller</td>
+  <td>DOL-021</td>
+  <td>U</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_09.png" class="img5"/></td>
+  <td>SD Card Adapter</td>
+  <td>DOL-019</td>
+  <td>S</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_10.png" class="img5"/></td>
+  <td>WaveBird Wireless Controller</td>
+  <td>DOL-004</td>
+  <td>D</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_11.png" class="img5"/></td>
+  <td>WaveBird Wireless Receiver</td>
+  <td>DOL-005</td>
+  <td>E</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_12.png" class="img5"/></td>
+  <td>GameCube Microphone</td>
+  <td>DOL-022</td>
+  <td>V</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_13.png" class="img5"/></td>
+  <td>D-Terminal Video Cable</td>
+  <td>DOL-009</td>
+  <td>I</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_14.png" class="img5"/></td>
+  <td>Controller</td>
+  <td>DOL-003</td>
+  <td>C</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}5_15.png" class="img5"/></td>
+  <td>WaveBird Wireless Receiver</td>
+  <td>DOL-005</td>
+  <td>E</td>
+</tr>
+</table>
+</div>
+
+<p>Thus the fifth subpuzzle has answer <b>EXPO BONUS DEVICE</b>.</p>
+
+<p>The sixth and final subpuzzle appears to be traced images of video game covers. However none of the well-known GameCube games seem to have covers that match the given images. If we look a bit more closely
+we may notice that all the traced images have a box in the top right whereas the typical game covers we look up do not. This is a regional difference in GameCube cover images. Japanese GameCube games have covers that display the GameCube name and logo in a box in the top right whereas American and European game covers have a centered circular region that displays the GameCube name and logo. Once we notice this we
+might start looking at Japanese only GameCube games. Indeed if we pull up game covers for Japanese only GameCube games we can soon start to match the covers. The red circle in each of the images in the puzzle
+line up exactly with an English letter on the corresponding game cover. The table below lists the names of each game and the traced image overlaid on top of the video game cover.</p>
+
+<div>
+<table>
+<tr>
+  <th>Game Cover</th>
+  <th>Game Title</th>
+  <th>Extracted Letter</th>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_01.png" class="img6"/></td>
+  <td>Kururin Squash!</td>
+  <td>C</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_02.png" class="img6"/></td>
+  <td>Giftpia</td>
+  <td>A</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_03.png" class="img6"/></td>
+  <td>Homeland</td>
+  <td>N</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_04.png" class="img6"/></td>
+  <td>DreamMix TV World Fighters</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_05.png" class="img6"/></td>
+  <td>Dokapon DX: Wataru Sekai wa Oni Darake</td>
+  <td>P</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_06.png" class="img6"/></td>
+  <td>Donkey Konga 3</td>
+  <td>A</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_07.png" class="img6"/></td>
+  <td>Nintendo Puzzle Collection</td>
+  <td>S</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_08.png" class="img6"/></td>
+  <td>Mutsu to Nohohon</td>
+  <td>S</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_09.png" class="img6"/></td>
+  <td>Ohenro-San</td>
+  <td>C</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_10.png" class="img6"/></td>
+  <td>Bomberman Land 2</td>
+  <td>U</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_11.png" class="img6"/></td>
+  <td>Doshin the Giant</td>
+  <td>S</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_12.png" class="img6"/></td>
+  <td>Mr. Driller Drill Land</td>
+  <td>T</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_13.png" class="img6"/></td>
+  <td>Tensai Bit-Kun: Gramon Battle</td>
+  <td>O</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_14.png" class="img6"/></td>
+  <td>Radirgy</td>
+  <td>M</td>
+</tr>
+<tr>
+  <td><img src="{{sroot}}6_15.png" class="img6"/></td>
+  <td>Legend of Golfer</td>
+  <td>S</td>
+</tr>
+</table>
+</div>
+
+<p>Thus the answer to the sixth subpuzzle is <b>CAN'T PASS CUSTOMS</b>.</p>
+
+<p>As we solve the various subpuzzles we may notice that each answer is exactly 15 letters long. The only information we are given in the meta is a screenshot of something related to the GameCube. This screenshot is the beginning of the <a href="https://www.youtube.com/watch?v=ksZh-FHuKpk">startup animation</a> for the GameCube. The startup animation consists of a purple cube rolling 15 times to draw out the GameCube logo. In the meta, there are dice pips on each face of the cube and given the 3 faces visible, we can infer the orientation of the dice at each point in the GameCube startup animation. More specifically, we can figure out which face of the die is "upwards" at each point in the startup animation. To extract, if the Nth face is facing upwards at the Mth point in the startup animation, the Mth letter in our answer is the Mth letter from the Nth subpuzzle's answer. This information is summarized below with the extracted letters in bold and the "upwards" die face in the first row.</p>
+
+<p>
+<span class="monospace">135423512651365</span>
+<br/>
+<span class="monospace"><b>C</b>ONSOLE<b>B</b>RAG<b>G</b>ING</span>
+<br/>
+<span class="monospace">UNPL<b>A</b>YED<b>L</b>OCALES</span>
+<br/>
+<span class="monospace">M<b>A</b>TER<b>I</b>ALSTOR<b>A</b>GE</span>
+<br/>
+<span class="monospace">WIT<b>T</b>YCOMMERCIAL</span>
+<br/>
+<span class="monospace">EX<b>P</b>OBO<b>N</b>USD<b>E</b>VIC<b>E</b></span>
+<br/>
+<span class="monospace">CANTPASSC<b>U</b>STO<b>M</b>S</span>
+</p>
+
+<p>Thus we extract the clue CAPTAIN BLUE GAME which gives us the answer to this puzzle: <span class="answer">VIEWTIFUL JOE</span>.</p>

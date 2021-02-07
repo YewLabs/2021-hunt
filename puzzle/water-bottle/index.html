@@ -1,0 +1,33 @@
+{% load hunt_state_tests %}
+<div class="fourthwall">
+  <p>
+    This puzzle is not currently solvable.
+  </p>
+<p>This is a physical puzzle, consisting of a metal MIT Mystery Hunt water bottle and five factory-sealed clear plastic bottles numbered 1 through 5. If your team has access to the water bottle swag, you should feel free to open and solve it now. If you believe any part of your physical puzzle is missing or damaged, or you have not received it even though you ordered it, please contact us immediately. We have unlocked hints for all physical puzzles for this purpose.</p>
+{% if not puzzle|minutesAvailable:120 %}
+
+<p>A virtual substitute for the physical portion of this puzzle will unlock in {{ puzzle|minutesRemaining:120 }} minutes.</p>
+
+</div>
+{% else %}
+<p>To work on a virtual version of the puzzle, watch the video below.</p>
+</div>
+
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/X66nyxIhzp0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="{{sroot}}image.png" class="bottle">
+<div class="label"><i>A scan of the water bottle</i></div>
+
+<style>
+.bottle {
+    max-width: calc(100% - 140px);
+    margin: 30px 30px 0 30px;
+    background-color: black;
+    padding: 20px 40px;
+}
+.label {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+}
+{% endif %}

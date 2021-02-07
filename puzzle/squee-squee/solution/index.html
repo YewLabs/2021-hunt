@@ -1,0 +1,339 @@
+<p>This is a physical puzzle that teams receive in the mail. When we open up the box we have received, there is <a href="https://www.amazon.com/Saver-Favor-Ceramic-Mini-Piggy-Polka-Dot/dp/B001LOSDXA">a small ceramic piggy bank</a> inside. The bank sounds like it has some coins in it, and looking through the coin slot we can also see a crumpled piece of paper. The piggy bank has a fender washer epoxied across the bottom hole which prevents us from using that hole to get at the contents of the pig. There’s not really anything obvious to do with the pig by itself, except possibly smash it since supposedly that’s what one does with piggy banks full of money—but we shouldn’t do this yet.</p>
+<p>The webpage takes the form of an interactive story with the pig, taking place in several subpuzzle parts, and there is a textbox to submit a subpuzzle answer to unlock the next part. Each subpuzzle uses the pig in a different physical way. The first thing the story asks is to name our pig. For the rest of this solution, the pig will be named Hamlet and will go by “it”.</p>
+<h3 id="pigsaw-puzzle">Pigsaw Puzzle</h3>
+<p>First we are given a “pigsaw puzzle” to solve. In a pigsaw puzzle (a punny combination of “pig” and “jigsaw”), you assemble the pieces of the puzzle around the pig itself. We should print out the pigsaw PDF, cut out the pieces of the puzzle, and figure out how to arrange them on the outside of the pig so that they cover the surface. The pieces don’t fit together in a perfect way because of the curvature of the pig, but we do our best. Rough description of solution: (4) is over the eyes, (8) is below the tail, (1) and (2) are ears, and (9) goes under the pig's left side.</p>
+<div style="display: flex">
+    <img src="{{sroot}}pigsaw1.jpg" style="max-width:33%">
+    <img src="{{sroot}}pigsaw2.jpg" style="max-width:33%">
+    <img src="{{sroot}}pigsaw3.jpg" style="max-width:33%">
+</div>
+<p>Hamlet also gives us a proposal for the layout of the pigsaw pieces, but this doesn’t match up with the true solution. Hamlet’s proposal actually corresponds to cuts of pork, with the letters inside each region of its proposal spelling out the name of the cut (grisly!). There are circles labeled 1 through 9 on the pigsaw pieces, and these align with some of the letters on Hamlet’s proposal (imagining the letters are duplicated on both sides of the pig).</p>
+<p>In order from 1 to 9, these letters spell out <b>EAT DINNER</b>, which is the answer to this subpuzzle. After submitting the answer to the pigsaw puzzle, the story tells us to feed Hamlet three quarters for dinner.</p>
+<h3 id="health-check">Health Check</h3>
+<p>For the next puzzle, we must do a health check for our pig. The subpuzzle asks us to measure the heart girth, weight, and height of Hamlet, and compare these to various measurements of other pig-related objects. Googling tells us the heart girth is measured around the tummy of the pig, just behind the front legs. The heart girth is 7 and 11/16 inches (±1/16) and the height is 2.75 inches (±1/16). </p>
+<p>The best way to measure the weight of Hamlet is with a food scale, but if you don’t have a scale like our testers, you can <a href="https://www.wikihow.com/Make-a-Balance-Scale-for-Kids">rig a balance</a> to estimate the weight. The weight at this point is 165 grams (±several grams). The other objects’ measurements can be found through Googling.</p>
+
+<table>
+    <tr><th>Object</th><th>Object's measure</th><th>Explanation</th><th>Closest ratio</th><th>Letter</th></tr>
+    <tr><td>one-ounce lug of pig iron</td><td>1 oz</td><td/><td>6</td><td>F</td></tr>
+    <tr><td>long edge of a 16oz pack of Oscar Mayer bacon</td><td>10.7 in</td><td><a href="https://www.walmart.com/ip/Oscar-Mayer-Naturally-Hardwood-Smoked-Bacon-16-oz-Vacuum-Pack/10292659">Available at Walmart</a></td><td>1</td><td>A</td></tr>
+    <tr><td>circumference of a Trans-Alaska pipeline cleaning pig</td><td>150.7 in</td><td>The diameter of the TAPS is 48 in</td><td>20</td><td>T</td></tr>
+    <tr><td>circumference of a quarter</td><td>3 in</td><td/><td>1</td><td>A</td></tr>
+    <tr><td>weight of $100 in quarters</td><td>2268 g</td><td/><td>14</td><td>N</td></tr>
+    <tr><td>weight of a mint-condition copy of Chickapig</td><td>1.3 lbs</td><td><a href="https://www.amazon.com/Chickapig-Board-Game-Chicken-Pig-Ever-Menacing/dp/B06XXS4QZB">Available on Amazon</a></td><td>4</td><td>D</td></tr>
+    <tr><td>(short) circumference of an inflated pigskin</td><td>21 to 21.25 in</td><td><a href="https://static.nfl.com/static/content/public/image/rulebook/pdfs/5_2013_Ball.pdf">NFL official rules</a></td><td>8</td><td>H</td></tr>
+    <tr><td>heart girth of a Pass the Pigs: Big Pigs pig</td><td>appx. 9 in</td><td><a href="https://www.amazon.com/Winning-Moves-Games-Pass-Pigs/dp/B01A6Z7UYC">Amazon Q&amp;A</a> says the pig is 3.25" from ear to ear, and using the listing video and images we can see the pig has similar heart girth to our pig</td><td>1</td><td>A</td></tr>
+    <tr><td>height of a 0.65-ton feed capacity Osborne outdoor bulk feeder </td><td>44 in</td><td>The <a href="https://osbornelivestockequipment.com/product/ro25-outdoor-bulk-feeder/">RO25</a> has 0.65-ton feed capacity</td><td>16</td><td>P</td></tr>
+    <tr><td>weight of 2/3 gallon of whole-fat milk (without carton)</td><td>5.73 lbs</td><td><a href="https://www.quora.com/How-much-does-a-gallon-of-milk-weigh">1 gal weighs 8.6 lbs</a></td><td>16</td><td>P</td></tr>
+    <tr><td>height of Kevin Bacon</td><td>5'10"</td><td/><td>25</td><td>Y</td></tr>
+</table>
+
+<p>Converting each ratio via A=1, B=2,... spells out the result of the health check, <b>FAT AND HAPPY</b>.</p>
+<p>Submitting the answer, Hamlet says it is hungry again. The story asks us to feed it four pennies. After we do this (and wait for it to chew), it’s not full, so we have to feed another two quarters. Then we can proceed to the next subpuzzle.</p>
+<h3 id="coin-logic">Coin Logic</h3>
+<p>Hamlet says it’s not feeling well as a result of all the metal we’ve fed it, and the story now tells us to remove all the coins from the piggy bank without breaking it. We’re also given a PDF with a logic puzzle, with Hamlet telling us the rules.</p>
+<p>It turns out piggy banks are not very good at securing coins; they’re much better at holding crumpled paper. To get the coins out, it’s easiest to hold the bank upside down, and then use a combination of shaking and tipping the coins with a narrow object such as a knife. The story tells us there should be $1.72 total: five quarters, two dimes, four nickels, and seven pennies.</p>
+<p>We then print out the logic puzzle and solve it using the set of given coins. A full logical path is at the end of this solution. The solution is:</p>
+<div style="margin:auto; max-width:40%">
+    <img style="max-width:100%" src="{{sroot}}coin-logic-solution.png">
+</div>
+<p>Hamlet also suggests a way to extract an answer from the logic puzzle: first read the letters from the regions with quarters, then the dimes, then the nickels, and then the pennies (reading each from top to bottom). This produces IGOTM, YQ, UART, ERSBACK, i.e., <b>I GOT MY QUARTERS BACK</b>.</p>
+<h3 id="photo-op">Photo Op</h3>
+<p>The next piece of story instructs us to take a picture of Hamlet with another pig and send it in. The story is fairly self-explanatory here: the pig should be three-dimensional, but doesn’t have to be alive. Some options are using a stuffed animal or toy, dressing someone up as a pig, taking a picture with bacon, or actually finding a real pig. It was also ok to Zoom call one of those options and submit a screenshot.</p>
+<p>Once we submit the photo, we receive back an email with the answer <b>PIGPEN PALS</b>.</p>
+<h3 id="smashing-finale">Smashing Finale</h3>
+<p>The next and final piece of story we receive sends two messages. First, we should use our answers above as a metapuzzle. Second, and more ominously, the story strongly suggests that we need to smash Hamlet in order to get the second half of the answer. There’s also no submission box any more, further suggesting this is the last part of the puzzle and that the answer here is the final answer.</p>
+<p>For the first half, Hamlet suggests using its five favorite numbers along with the subpuzzle answers. We have so far submitted five correct phrases, including Hamlet’s name. Take the first letters of these answers and shift them by the numbers to get the first half of the final answer, WATER.</p>
+<p>For the second half, we smash the pig to get <a href="{{sproot}}paper.pdf">the paper</a> out (sorry Hamlet!). Depending on how secure the washer is and how much the hunters want to avoid smashing the pig, it may also be possible to remove the washer and pull the paper out of the bottom of the pig. The paper has a message written in pigpen describing Hamlet’s experience at Mystery Hunt this year. There are several blanks which we can fill in with the four subpuzzle answers (not including Hamlet’s name) to complete the story. Six of the blanks have dots above them which enumerate the word IMPACT. The final answer is the combination of these two halves, <span class="answer">WATER IMPACT</span>.</p>
+
+<div style="margin: 0 auto; max-width: 25em; padding: 1em; border: 1px solid black;">
+<pre>
+MYSTERY HUNT HAS BEEN A BLAST.
+I WAS PUZZLING SO MUCH I ALMOST
+DIDN’T EAT D<ruby>I<rp>(</rp><rt>1</rt><rp>)</rp></ruby>NNER. FORTUNATELY I
+REMEMBERED AND NOW I’M FA<ruby>T<rp>(</rp><rt>6</rt><rp>)</rp></ruby> AND H<ruby>A<rp>(</rp><rt>4</rt><rp>)</rp></ruby>PPY.
+WE DIDNT FIND THE COIN YET. MY
+TEAMMATES THOUGHT I HAD IT BUT
+EVENTUALLY I GOT <ruby>M<rp>(</rp><rt>2</rt><rp>)</rp></ruby>Y QUARTERS BA<ruby>C<rp>(</rp><rt>5</rt><rp>)</rp></ruby>K. NEXT
+YEAR I CAN’T WAIT TO SEE MY PIG<ruby>P<rp>(</rp><rt>3</rt><rp>)</rp></ruby>EN PALS
+AGAIN.
+</pre>
+</div>
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+    <p>What. A. Journey. Shipping and assembling the pigs ended up taking a huge amount of stress and effort on the part of many different people and anyone who has held a pig in their hands has witnessed a minor miracle.</p>
+
+    <p>Planning on this puzzle didn't start until October when the team made an effort to change the fact that we had no physical puzzles in our Hunt. We ordered the pigs off of Alibaba, shipping to Joanna in Palo Alto. Suffice it to say, we should have done this months earlier. Earlier may also have given us time to manufacture pigs without holes on the bottom (though this option promised extra international shipping complications).</p>
+
+    <p>The main shipment of pigs was indefinitely delayed due to pandemic-related shipping delays, spending exactly a month stuck at the Port of Los Angeles (between November 22 and December 22). The original guaranteed arrival date was December 24, but as time went on and the pigs did not move, it became more and more clear that making this date was a tossup. On December 21, Jakob et al ordered a fresh shipment of 240 pigs from Amazon with a logistically incredible two-day delivery time. On December 22, the pigs finally got on a FedEx truck in Los Angeles and claimed an arrival date of December 24. Since Chris had all the materials collected in Nevada, he took a one-day trip to the Bay Area on December 24 to distribute everything. Unfortunately, the pigs did not show up that day, and we made the decision to abandon using Deliverr (a third-party shipping service that would package, label, and mail the pigs to individual teams) and switch to mailing out the pigs individually. In hindsight this was probably a wise move because of potential shipping delays from us to Deliverr, and then from Deliverr to teams.</p>
+
+    <p>The Alibaba pigs made it to Palo Alto on December 28. But as Joanna was out of town until New Years, FedEx wouldn't let us pick them up! After many pleading phone calls by Joanna, the kind manager of the Stanford FedEx agreed to receive the package for us (apparently the manager of a FedEx store can receive any package mailed to that store). So we mailed the pigs overnight from Palo Alto to Stanford.</p>
+
+    <p>When the pigs arrived, about a third of them were broken! Fortunately we had ordered enough extras that this wasn't a big issue. Justine, Jenna, and Rahul helped assemble and glue the pigs. Rahul acquired packing materials, drop-tested, labeled, and mailed the pigs (bringing 50 to the post office at a time). In all, we only received three reports of teams receiving broken pigs. We ended up returning the Amazon pigs.</p>
+
+    <p>The first draft of the puzzle was written for a piggy bank purchaseable at Michael's (n.b. 10x the price of Alibaba). The second draft was written on a test shipment of five Alibaba pigs, so the pigsaw and weighing puzzle had to be made twice (and almost a third time for the Amazon pigs). The pigsaw and logic puzzle PDFs were designed in Figma.</p>
+
+    <p>From the beginning it wasn't clear whether or not we could secure the plug on the bottom of the pig in a way that solvers couldn't remove. Several tests of glue and material led to the conclusion that epoxy is extremely strong. Unfortunately, when the main shipment arrived, the hole was significantly larger than for the pigs in the test shipment, and so the washers we had just fell through the hole. We ended up buying new, bigger washers or using the small washer in combination with the existing stopper to plug the hole, but we're not entirely sure how effective the final product was. Let us know the fate of your pig!</p>
+
+</div>
+<h3>Virtual Pig</h3>
+<style>
+#virtual-pig-wrapper {
+  margin-top: 30px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pig {
+  perspective: 100px;
+  position: relative;
+  margin-bottom: 60px;
+}
+.coins {
+  display: flex;
+  flex-direction: column;
+}
+.coins p {
+  text-align: center;
+  width: 100%;
+}
+.coin {
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+.coin img {
+  border-radius: 50%;
+  position: absolute;
+  touch-action: none;
+  transform: scale(0.5);
+  z-index: 2;
+}
+img.highlight {
+  filter: contrast(140%);
+}
+.pig-hole {
+  position: absolute;
+  width: 27%;
+  height: 15%;
+  top: 3%;
+  left: 33%;
+  box-sizing: border-box;
+}
+.pig-hole.dashed {
+  border: 5px dashed black;
+}
+#coindrop {
+  left: 35%;
+  position: absolute;
+  top: -15%;
+  transition: opacity 0.2s;
+}
+#buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pig .scale {
+  background: #c1c2bf;
+  bottom: 0;
+  height: 20%;
+  transform: rotateX(40deg);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.measurements {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+.measurements p {
+  margin: 1em;
+}
+</style>
+
+<div id="virtual-pig-wrapper">
+  <div class="coins">
+    <div class="coin"><img id="quarter" src="{{sproot}}virtual-pig/25.png" alt="A quarter." /></div>
+    <div class="coin"><img id="dime" src="{{sproot}}virtual-pig/10.png" alt="A dime." /></div>
+    <div class="coin"><img id="nickel" src="{{sproot}}virtual-pig/5.png" alt="A nickel." /></div>
+    <div class="coin"><img id="penny" src="{{sproot}}virtual-pig/1.png" alt="A penny." /></div>
+  </div>
+  <div class="pig" style="height:376px; width: 376px">
+      <img id="pig-image0" src="{{sproot}}virtual-pig/pig.png" alt="A piggy bank." draggable="false" style="position:absolute"/>
+      <img id="pig-image1" src="{{sproot}}virtual-pig/pig1.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image2" src="{{sproot}}virtual-pig/pig2.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image3" src="{{sproot}}virtual-pig/pig3.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image4" src="{{sproot}}virtual-pig/pig4.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image5" src="{{sproot}}virtual-pig/pig5.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image6" src="{{sproot}}virtual-pig/pig6.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+    <img id="coindrop" src="{{sproot}}virtual-pig/coindrop.png" style="opacity: 0" />
+    <div class="pig-hole"></div>
+    <div class="scale" style="display: none">
+    </div>
+  </div>
+  <div class="counter">
+    <table>
+      <tr><th>Contents</th><th></th></tr>
+      <tr><td>Quarters</td><td id="quarter-count">0</td></tr>
+      <tr><td>Dimes</td><td id="dime-count">2</td></tr>
+      <tr><td>Nickels</td><td id="nickel-count">4</td></tr>
+      <tr><td>Pennies</td><td id="penny-count">3</td></tr>
+    </table>
+  </div>
+</div>
+<div id="buttons">
+  <button id="scale-button" onclick="toggleScale()">Show scale</button>
+  <button id="hammer-button" onclick="toggleHammer()">Activate hammer</button>
+</div>
+<div class="measurements" style="display: none">
+  <p>Height: 7.0 cm</p>
+  <p>Girth: 19.5 cm</p>
+  <p>Weight: <span id="weight">0</span> g</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+<script>
+const gcnz = (c) => document.getElementsByClassName(c)[0];
+const gid = (i) => document.getElementById(i);
+function toggleScale() {
+  let scale = gcnz("scale");
+  let measurements = gcnz("measurements");
+  if (scale.style.display === "none") {
+    scale.style.display = "block";
+    measurements.style.display = "flex";
+    computeWeight();
+    gid("scale-button").innerHTML = "Hide scale";
+  } else {
+    scale.style.display = "none";
+    measurements.style.display = "none";
+    gid("scale-button").innerHTML = "Show scale";
+  }
+}
+
+var hammer = false;
+var cracks = 0;
+gid('hammer-button').innerHTML = hammer ? "Deactivate hammer" : "Activate hammer";
+
+function toggleHammer() {
+  if (gcnz("scale").style.display !== "none")
+    toggleScale();
+  if (!hammer) {
+    for (let i = 0; i < 6; i++) {
+      const elt = gid('pig-image'+i);
+      if (elt) {
+        elt.style.cursor = "pointer";
+        elt.addEventListener("click", smash);
+      }
+    }
+    gid("hammer-button").innerHTML = "Deactivate hammer";
+  } else {
+    for (let i = 0; i < 6; i++) {
+      const elt = gid('pig-image'+i);
+      if (elt) {
+        elt.style.cursor = "default";
+        elt.removeEventListener("click", smash);
+      }
+    }
+    gid("hammer-button").innerHTML = "Activate hammer";
+  }
+  hammer = !hammer;
+}
+
+function smash(e) {
+  if (cracks < 6) {
+    const elt = document.getElementById("pig-image" + String(cracks));
+    const newElt = document.getElementById("pig-image" + String(cracks+1));
+    newElt.style.visibility = "visible";
+    elt.style.visibility = "hidden";
+    cracks++;
+    if (cracks === 6) {
+        interact(".pig-hole").unset(); 
+    }
+  }
+}
+interact(".coin img").draggable({
+  inertia: true,
+  listeners: {
+    move: dragMoveListener,
+  },
+});
+
+interact(".pig-hole").dropzone({
+  overlap: 0.1,
+  ondropactivate: function (e) {
+    e.target.classList.add("dashed");
+  },
+  ondragenter: function (e) {
+    e.relatedTarget.classList.add("highlight");
+  },
+  ondragleave: function (e) {
+    e.relatedTarget.classList.remove("highlight");
+  },
+  ondrop: function (e) {
+    const t = e.relatedTarget;
+    incrementCoin(t.id);
+    t.style.transform = "translate(0, 0) scale(0.5)";
+    t.setAttribute("data-x", 0);
+    t.setAttribute("data-y", 0); 
+    t.classList.remove("highlight");
+    const cd = document.getElementById("coindrop");
+    cd.style.opacity = "1";
+    setTimeout(() => {
+      cd.style.opacity = "0";
+    }, 500);
+    computeWeight();
+  },
+  ondropdeactivate: function (e) {
+    e.target.classList.remove("dashed");
+  },
+});
+
+function dragMoveListener(e) {
+  const t = e.target;
+  const x = (parseFloat(t.getAttribute("data-x")) || 0) + e.dx;
+  const y = (parseFloat(t.getAttribute("data-y")) || 0) + e.dy;
+  t.style.transform = "translate(" + x + "px, " + y + "px) scale(0.5)";
+  t.setAttribute("data-x", x);
+  t.setAttribute("data-y", y);
+}
+
+function incrementCoin(coin) {
+  const elt = document.getElementById(`${coin}-count`);
+  elt.textContent = Number(elt.textContent) + 1;
+}
+
+function computeWeight() {
+  let total = 116;
+  [
+    ["quarter", 5.67],
+    ["dime", 2.268],
+    ["nickel", 5],
+    ["penny", 2.5],
+  ].forEach(([coin, weight]) => {
+    const elt = document.getElementById(`${coin}-count`);
+    total += Number(elt.textContent) * weight;
+  });
+  document.getElementById("weight").textContent = Math.round(total);
+}
+</script>
+
+
+<h3>Logical Path for the Coin Subpuzzle</h3>
+<p>We must place five quarters (Q), two dimes (D), four nickels (N), and seven pennies (P) in total to match the clues.</p>
+<p>First, we can deduce that the 51 clue must be QQP. It must include at least one quarter (since the total value of non-quarters is 47). If it had only one quarter, the only other possibility using at most five coins is QDDNP. We can rule this out since 35 and 40 cannot be made using no remaining dimes and three remaining nickels. The two quarters must go in the I and G boxes, since the T and N both are part of the horizontal 6 clue.</p>
+<p>The horizontal 6 clue is either NP or PPPPPP. The latter is incompatible with the 51 clue. The nickel for this clue can only go in the U box.</p>
+<p>Looking at the vertical 6 clue, it must be NP. The N cannot go in the top T box, so the only other box it fits in is the A region. Since this is also part of the 26 clue, we conclude that the 26 clue does not have a quarter (in particular, the Y box is not Q).</p>
+<p>In order to fit the five total quarters, there must be one in the 35 clue, one in the 40 clue, and one in the unchecked, right-hand O box.</p>
+<p>Therefore, the 35 clue is QNN and the 40 clue is QDN.</p>
+<p>The 26 clue must be DDNP. The dimes are forced in the Y and Q regions.</p>
+<p>Since there are no dimes left, the 50 clue must be QQ. Since the 35 clue is QNN, the R/T boxes are Q/N in some order. The 50 clue disambiguates that R is N and T is Q.</p>
+<p>We have a lot of pennies left to place. The 30 clue is either QN or QPPPPP. In the first case, there are not enough total remaining regions to put the seven pennies, so it must be QPPPPP. Since the 40 clue has no P, the five pennies' positions must be the RSBAK boxes.</p>
+<p>Finally, we can place the Q and N in the 40 clue in the M and T boxes respectively. The two remaining pennies must be placed in the bottom-most C and the top-most E.</p>

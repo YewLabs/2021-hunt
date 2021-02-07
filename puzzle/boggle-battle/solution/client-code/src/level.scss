@@ -1,0 +1,135 @@
+@import "vars";
+
+#mainContainer > .level {
+  align-items: stretch;
+  display: grid;
+  gap: 1em;
+  grid-template: 2em 1fr / 400px 1fr;
+  justify-items: stretch;
+
+  .toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    grid-column: 1 / 3;
+
+    .stop {
+      position: relative;
+
+      .message {
+        background: $wrong-color;
+        border-radius: 5px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 2px 2px rgba(0, 0, 0, 0.2);
+        display: none;
+        left: 0;
+        padding: 10px;
+        position: absolute;
+        top: 120%;
+        width: 300%;
+        z-index: 1;
+      }
+
+      &:hover .message {
+        display: block;
+      }
+    }
+  }
+
+  .timerwrapper {
+    background-color: $secondary-color;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+    position: relative;
+    width: 60%;
+
+    .bartimer {
+      background-color: $theme-color;
+      grid-column: 1 / 3;
+      height: 2em;
+      transition: width 0.1s;
+
+      .time {
+        color: #fff;
+        font-weight: bold;
+        left: calc(50% - 1em);
+        position: absolute;
+        text-align: center;
+        top: 0.4em;
+      }
+    }
+  }
+
+  .score {
+    width: 25%;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+
+    .words {
+      align-content: start;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      height: 540px;
+      overflow-x: auto;
+      margin-bottom: 10px;
+
+      > span {
+        border-bottom: 1px solid rgba($secondary-color, 0.5);
+        height: 1.5rem;
+        margin-top: 0.5rem;
+        padding-right: 1rem;
+
+        &.correct0 {
+          animation: fadein 1s;
+        }
+        &.duplicate0 {
+          animation: fadeduplicate 1s;
+        }
+        &.special {
+          color: $theme-color;
+        }
+        &.found {
+          font-weight: bold;
+        }
+        &.unfound {
+          color: $secondary-color;
+        }
+
+        .score {
+          color: $secondary-color;
+          display: inline-block;
+          font-weight: normal;
+          text-align: right;
+          width: 2.5rem;
+
+          &.small {
+            font-size: 0.8em;
+          }
+        }
+      }
+    }
+
+    form {
+      display: flex;
+
+      input {
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5),
+          0px 2px 4px rgba(0, 0, 0, 0.3);
+        width: 100%;
+
+        &.wrong {
+          animation: shake 0.2s;
+        }
+        &.correct {
+          animation: inputcorrect 0.2s;
+        }
+        &.duplicate {
+          animation: inputduplicate 0.2s;
+        }
+      }
+    }
+  }
+}

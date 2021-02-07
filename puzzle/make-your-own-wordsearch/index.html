@@ -1,0 +1,63 @@
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<p> Hello! We would like you to make a word search with the following properties:</p>
+
+<ol>
+    <li> Your word search must be a rectangular word search with {{extra.constraints.dimensions.0}} rows and {{extra.constraints.dimensions.1}} columns.</li>
+    {% if extra.constraints.has_letter_constraint %}
+    <li> Your word search may only contain the following letters: {{extra.constraints.letters|join:" "}}.</li>
+    {% endif %}
+    <li> In addition to sending us your grid, you must also include the list of words you would like us to find. Words must
+        be at least 4 letters long and be "common" words. A list of "common" words (with at least 4 letters) can be found at this <a href="https://storage.googleapis.com/infinite-corridor/wordlist.txt">link</a>.</li>
+    <li> Words are allowed to appear in the grid running horizontally, diagonally, or vertically, forward or backwards.
+        Each word you list must appear uniquely in the grid. You are not allowed to use words which are entirely
+        contained within other words you list (e.g. both APPLE and PINEAPPLE, or both ROSE and RESORT), even if they
+        appear separately in the grid.</li>
+    <li> You are not allowed to use any words which are palindromes (e.g. EWE, ROTOR). </li>
+    {% for rule in extra.constraints.text_rules %}
+    <li> {{rule}} </li>
+    {% endfor %}
+</ol>
+
+<p>
+To submit your word search, please first enter your grid (each row on its own line) followed by a list of words to find (each word on its own line).
+</p>
+
+<form id="solve_form">
+    Grid:<br>
+    <textarea id="solve_grid" rows=12 cols=20></textarea><br>
+    Words:<br>
+    <textarea id="solve_words" rows=12 cols=20></textarea><br>
+    <input type="submit" value="Submit">
+</form>
+
+<div id="solve_response">
+
+</div>
+
+<hr>
+
+<script>
+
+$("#solve_form").submit(function(e) {
+    e.preventDefault();
+
+    var url = "/puzzle/{{ puzzle.puzzle.y2021puzzledata.parent.url }}/dynamic/{{ puzzle.puzzle.y2021puzzledata.tempest_id }}";
+    var payload = {
+        'grid': $("#solve_grid").val(),
+        'words': $("#solve_words").val()
+    }
+    $("#solve_response").html("<i>Checking word search...</i>")
+    $.get(url, payload,
+        function(data) {
+            $("#solve_response").html(data);
+        }).fail(function() {
+            $("#solve_response").html("Error submitting puzzle.");
+        });
+});
+
+</script>
+{% endif %}

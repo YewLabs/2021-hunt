@@ -1,0 +1,61 @@
+name: morse
+difficulty: 2/10
+coolness: 1/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/almonds.png
+
+        - answer: almonds
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/bastille.png
+
+        - answer: bastille
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/company.png
+
+        - answer: company
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/disperse.png
+
+        - answer: disperse
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/medicine.png
+
+        - answer: medicine
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/nucleus.png
+
+        - answer: nucleus
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/project.png
+
+        - answer: project
+
+    - question:
+        - text: "What is the word represented in Morse code here?"
+
+        - image: simple-codes/morse/skeleton.png
+
+        - answer: skeleton

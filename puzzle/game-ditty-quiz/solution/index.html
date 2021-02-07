@@ -1,0 +1,289 @@
+<p>The first step is to identify all of the songs. The first number for each
+song will be used as an index. The second number is a year, but it doesn&rsquo;t
+correspond to the release year of the video game. Finally, each song is sped up
+(or, in a few cases, slowed down) by a different factor.</p>
+
+<p>The title and flavortext point us to GDQ (Games Done Quick), a semiannual
+speedrunning marathon. As it turns out, each video game was shown during GDQ in
+the given year, with a completion time (in hours and minutes) corresponding to
+the adjusted length of the song (in minutes and seconds). This lets us match
+each song with a unique GDQ run, and we can index into the name of the person
+who played each one (&ldquo;the runners&rdquo;). The
+<a href="https://gdqvods.com/">gdqvods</a> database may be helpful here.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Event</th>
+      <th>Time</th>
+      <th>Runner</th>
+      <th>Index</th>
+      <th>Letter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Super Metroid</td>
+      <td>CGDQ<a href="#footnote">*</a></td>
+      <td>1:10:00</td>
+      <td>Vorpaledge</td>
+      <td>1</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <td>Celeste</td>
+      <td>AGDQ 2019</td>
+      <td>1:28:03</td>
+      <td>TGH</td>
+      <td>2</td>
+      <td>G</td>
+    </tr>
+    <tr>
+      <td>Octopath Traveler</td>
+      <td>SGDQ 2019</td>
+      <td>1:15:51</td>
+      <td>altabiscuit</td>
+      <td>2</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <td>Donkey Kong Country</td>
+      <td>AGDQ 2014</td>
+      <td>0:58:17</td>
+      <td>NewAgeRetroHippie</td>
+      <td>8</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>Super Mario Galaxy</td>
+      <td>AGDQ 2012</td>
+      <td>2:35:20</td>
+      <td>Yoshifan</td>
+      <td>7</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>Kirby&rsquo;s Adventure</td>
+      <td>SGDQ 2018</td>
+      <td>0:49:06</td>
+      <td>swordsmankirby</td>
+      <td>5</td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td>Portal</td>
+      <td>SGDQ 2020</td>
+      <td>0:16:07</td>
+      <td>Shizzal</td>
+      <td>1</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td>The Legend of Zelda: Link&rsquo;s Awakening</td>
+      <td>SGDQ 2020</td>
+      <td>0:52:22</td>
+      <td>mghtymth</td>
+      <td>8</td>
+      <td>H</td>
+    </tr>
+    <tr>
+      <td>Pokémon Gold &amp; Silver</td>
+      <td>AGDQ 2013</td>
+      <td>2:04:52</td>
+      <td>Werster</td>
+      <td>6</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>Final Fantasy IV</td>
+      <td>AGDQ 2018</td>
+      <td>2:03:27</td>
+      <td>riversmccown</td>
+      <td>4</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>Chrono Trigger</td>
+      <td>AGDQ 2011<a href="#footnote">*</a></td>
+      <td>6:36:18</td>
+      <td>Essentia</td>
+      <td>6</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>DuckTales</td>
+      <td>SGDQ 2015</td>
+      <td>0:08:48</td>
+      <td>mashystrr</td>
+      <td>3</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+
+<p id="footnote">(*) Note: CGDQ was the first GDQ event, in 2010. Prior to
+2012, GDQ apparently did not run timers, so the times are approximate.</p>
+
+<p>Now we have an intermediate message pointing us at
+<a href="https://www.vgleadsheets.com/">vgleadsheets</a>: a repository of
+fan-transcribed sheet music (&ldquo;the staff&rdquo;) that so happens to
+include all the songs in this puzzle. (If we&rsquo;re missing some song
+identifications but know which games they&rsquo;re from, browsing through this
+site might help.) After tracking down each song, we can use the same index as
+before on the name of the person who transcribed it (&ldquo;everyone who helps
+arrange&rdquo;).</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Game</th>
+      <th>Song</th>
+      <th>Arranger</th>
+      <th>Index</th>
+      <th>Letter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Super Metroid</td>
+      <td>Theme of Super Metroid</td>
+      <td>Mike Matarazzo</td>
+      <td>1</td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <td>Celeste</td>
+      <td>First Steps</td>
+      <td>AarekMG</td>
+      <td>2</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>Octopath Traveler</td>
+      <td>Primrose, The Dancer</td>
+      <td>mkafie</td>
+      <td>2</td>
+      <td>K</td>
+    </tr>
+    <tr>
+      <td>Donkey Kong Country</td>
+      <td>Gang-Plank Galleon</td>
+      <td>Jer Roque</td>
+      <td>8</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>Super Mario Galaxy</td>
+      <td>Gusty Garden Galaxy</td>
+      <td>Jer Roque</td>
+      <td>7</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <td>Kirby&rsquo;s Adventure</td>
+      <td>Butter Building</td>
+      <td>JohnStacy</td>
+      <td>5</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td>Portal</td>
+      <td>Still Alive</td>
+      <td>Amy Hsieh</td>
+      <td>1</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>The Legend of Zelda: Link&rsquo;s Awakening</td>
+      <td>Mabe Village</td>
+      <td>JohnStacy</td>
+      <td>8</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <td>Pokémon Gold &amp; Silver</td>
+      <td>New Bark Town</td>
+      <td>Zack Wong</td>
+      <td>6</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>Final Fantasy IV</td>
+      <td>Theme of Love</td>
+      <td>Bao Vuong</td>
+      <td>4</td>
+      <td>V</td>
+    </tr>
+    <tr>
+      <td>Chrono Trigger</td>
+      <td>Millennial Fair</td>
+      <td>DoubleMark</td>
+      <td>6</td>
+      <td>E</td>
+    </tr>
+    <tr>
+      <td>DuckTales</td>
+      <td>The Moon</td>
+      <td>Jer Roque</td>
+      <td>3</td>
+      <td>R</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Finally, submitting this yields an instruction to &ldquo;Send us a recording
+of your team performing any song from a video game to the best of your
+ability.&rdquo; Doing this is rewarded with the answer
+<span class="answer">ORTHOGONAL</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>One discarded idea for this puzzle was to use numbers in the names of video
+games or speedrunners as indices. Another was to hide the instructions for the
+second half in a GDQ donation comment. This was too hard to clue to work it
+into the solve path, but the comment is still there in the archives if anyone
+feels like looking for it.</p>
+
+<p>Thank you to everyone who sent in their covers! Here is a selection of
+entries that we received permission to share.</p>
+
+<style>
+.submissions td {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+}
+</style>
+
+<table class="submissions">
+<colgroup>
+<col width="50%">
+<col width="50%">
+</colgroup>
+<tr>
+<td>
+<p>Amateur Hour<br><br><audio controls src="{{sroot}}AmateurHour.mp3"></audio></p>
+<p>Death and Mayhem<br><br><audio controls src="{{sroot}}deathandmayhem.mp3"></audio></p>
+<p>ET Phone in Answer<br><br><audio controls src="{{sroot}}etphoneinanswer.m4a"></audio></p>
+<p>Frumious Bandersnatch<br><br><audio controls src="{{sroot}}Frumious.mp3"></audio></p>
+<p>😈💣🍫 Immoral, Illegal, and Fattening 😈💣🍫<br><br><audio controls src="{{sroot}}iif1.m4a"></audio><audio controls src="{{sroot}}iif2.m4a"></audio></p>
+<p>Misremembered Apple<br><br><audio controls src="{{sroot}}MApple.mp3"></audio></p>
+<p>Non-Abelian Rage Theory<br><br><audio controls src="{{sroot}}rage.mp3"></audio></p>
+<p>Small Llama Malls<br><br><audio controls src="{{sroot}}llamas1.m4a"></audio><audio controls src="{{sroot}}llamas2.m4a"></audio></p>
+<p>teammate<br><br><audio controls src="{{sroot}}teammate.mp3"></audio></p>
+<p>Test Solution Bees Ignore<br><br><audio controls src="{{sroot}}IgnoreTheBees.wav"></audio></p>
+<p>The Providence Plant Translations<br><br><audio controls src="{{sroot}}waltkidney.mp3"></audio></p>
+<p>We Can't Hear You You're On Mute<br><br><audio controls src="{{sroot}}canthearu.mp3"></audio></p>
+</td>
+<td>
+<p>Donner Party of N<br><br><video controls src="{{sroot}}donnerhunt.mp4"></video></p>
+<p>Metaphysical Plant<br><br><video controls src="{{sroot}}Plant.mp4"></video></p>
+<p>Palindrome<br><br><video controls src="{{sroot}}Palindrome.mp4"></video></p>
+<p>Super Team Awesome<br><br><video controls src="{{sroot}}superteamawesome1.mp4"></video><video controls src="{{sroot}}superteamawesome2.mp4"></video></p>
+<p>Team Left Out<br><br><video controls src="{{sroot}}teamleftout.mp4"></video></p>
+</td>
+</tr>
+</table>
+</div>

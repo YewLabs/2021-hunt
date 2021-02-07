@@ -1,0 +1,88 @@
+Stacks: r1 y5 b5
+Alice: b1 b2 b3 b4
+Bobby: r1 r1 y1 r2
+Carol: y2 y3 g4 g4
+David: r3 w3 w3 g5 
+Wins: 2
+Deck: r4 r5 .. g1 g2 g3 .. kt w4 w1 w2 kt .. w5
+Line: dc r2 .. r3 r4 r5 .. g1 g2 g3 g4 g5 .. w1 w2 w3 w4 w5
+Plan: P  Y  R  O  P  H  O  R  I  C  R  O  O  F  T  O  P  S
+Display: Pyrophoric rooftops
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[P] Turn  1 ..... Alice discards a stale card and draws [P] red 4
+[Y] Turn  2 ..... Bobby plays [F] red 2 and draws [U] red 5
+[R] Turn  3 ..... Carol stalls by spending a clue
+[O] Turn  4 ..... David plays [K] red 3 and draws [C] green 1
+[P] Turn  5 ..... Alice plays [P] red 4 and draws [H] green 2
+[H] Turn  6 ..... Bobby plays [U] red 5 and draws [M] green 3
+[O] Turn  7 ..... Carol stalls by spending a clue
+[R] Turn  8 ..... David plays [C] green 1 and draws any card
+[I] Turn  9 ..... Alice plays [H] green 2 and draws [T] white 4
+[C] Turn 10 ..... Bobby plays [M] green 3 and draws [E] white 1
+[R] Turn 11 ..... Carol plays [R] green 4 and draws [J] white 2
+[O] Turn 12 ..... David plays [W] green 5 and draws any card
+[O] Turn 13 ..... Alice stalls by spending a clue
+[F] Turn 14 ..... Bobby plays [E] white 1 and draws [Y] white 5
+[T] Turn 15 ..... Carol plays [J] white 2 on their last turn
+[O] Turn 16 ..... David plays [O] white 3 on their last turn
+[P] Turn 17 ..... Alice plays [T] white 4 on their last turn
+[S] Turn 18 ..... Bobby plays [Y] white 5 on their last turn
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+PROOF OF UNIQUENESS
+
+Despite the long length of this sub-puzzle,
+it is actually fairly straightforward compared
+to the preceding two sub-puzzles,
+because it is more constrained.
+
+The starting pace is +1,
+so at most one discard is possible.
+However, Alice has no cards to begin, so she must discard,
+and thereafter no more discards are possible.
+However, Carol has no plays to begin, so she must be given clues
+until her green 4 is playable.
+
+On the first round, Bobby should play r2 (his only playable card),
+Carol uses a clue, and then David can play r3 (his only playable card).
+
+At this point, there are only two plays now
+(Alice and Bobby's drawn cards),
+so it is not possible to get Carol's g4 to play.
+Thus the team needs to generate a clue for Carol.
+This can only happen if Alice plays r4 and Bobby plays r5,
+giving Carol a clue to spend.
+
+This gives the players another three turns to either reach a 5
+or give Carol a play.
+Since both the green and white stacks are empty,
+the former is impossible,
+but the latter is possible in exactly one way:
+David plays g1, Alice plays g2, Bobby plays g3,
+letting Carol play g4.
+
+At this point, David cannot be the one to play (or draw) w1,
+because David holds both w3's --- meaning that if David plays w1,
+only one of Alice, Bobby, Carol would have a play on the next three turns,
+causing the players to lose since the pace is zero and no clues remain.
+Therefore, David should play g5.
+
+Now the only cards to play are the white cards.
+David holds both w3's, so among Alice, Bobby, Carol,
+two of them play w1 and w2 and one of them should burn a clue.
+However, there is only one card remaining,
+so whoever plays w1 will trigger the final round.
+If Alice triggers the final round, there is not enough time
+after David's turn to play w4 and w5, so Alice must spend a clue,
+and let Bobby and Carol play w1 and w2.
+Then David plays w3, Alice plays w4, and Bobby plays w5.
+
+Looking at the deck order,
+all the cards are constrained except for two unused cards,
+namely David's last two draws.
+These two unused cards can come in either order,
+so 2 of the deck orders lead to wins.

@@ -1,0 +1,53 @@
+name: logos
+difficulty: 2/10
+coolness: 4/10
+time: 1:00
+
+questions:
+    - question:
+        - text: What company is associated with this logo?
+        - image: image-identification/tiktok.png
+        - answer: tiktok
+
+    - question:
+        - text: What company is associated with this logo?
+        - image: image-identification/slack.jpg
+        - answer: slack
+
+    - question:
+        - text: What company is associated with this logo?
+        - image: image-identification/mailchimp.jpg
+        - answer: mailchimp
+
+    - question:
+        - text: What company is associated with this logo?
+        - image: image-identification/snapchat.png
+        - answer: snapchat
+
+    - question:
+        - text: What company is associated with this logo?
+        - image: image-identification/mercedesbenz.png
+        - answer: mercedes-benz
+        - answer: mercedes
+
+    - question:
+        - text: What programming language is associated with this logo?
+        - image: image-identification/python.png
+        - answer: python
+
+    - question:
+        - text: What video game is associated with this logo?
+        - image: image-identification/hearthstone.png
+        - answer: hearthstone
+
+    - question:
+        - text: What video game is associated with this logo?
+        - image: image-identification/skyrim.jpg
+        - answer: skyrim
+        - answer: the elder scrolls v skyrim
+
+    - question:
+        - text: What video game series is associated with this logo?
+        - image: image-identification/portal.jpg
+        - answer: portal
+        - answer: portal 2

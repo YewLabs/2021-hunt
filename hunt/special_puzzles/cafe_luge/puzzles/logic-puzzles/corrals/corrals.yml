@@ -1,0 +1,75 @@
+name: corral
+difficulty: 5/10
+coolness: 5/10
+time: 7:00
+
+questions:
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/1.jpg
+
+        - answer: 11
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/2.jpg
+
+        - answer: 11
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/3.jpg
+
+        - answer: 10
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/4.jpg
+
+        - answer: 14
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/5.jpg
+
+        - answer: 11
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/6.jpg
+
+        - answer: 14
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/7.jpg
+
+        - answer: 13
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/8.jpg
+
+        - answer: 13
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/9.jpg
+
+        - answer: 15
+
+    - question:
+        - text: "How many squares from the two diagonals are inside the loop in the solution to this Corral?"
+
+        - image: logic-puzzles/corrals/10.jpg
+
+        - answer: 16

@@ -1,0 +1,214 @@
+<p>Infinite Corridor Simulator is the fifth and final type of puzzle unlocked in the Infinite Corridor round. True to its name, each Infinite Corridor Simulator puzzle looks a lot like a summary of the Infinite Corridor Round itself &mdash; more specifically, each Infinite Corridor Simulator puzzle contains a list of 100,000 similarly named and numbered puzzles along with their answers. For example, Puzzle 5 (the first Infinite Corridor Simulator Puzzle &mdash; we will use it as a running example throughout this solution) begins as follows:</p>
+
+<table>
+<tr><td>Puzzle 1</td><td>Unchained</td><td>DELIRIUM</td></tr>
+<tr><td>Puzzle 2</td><td>Make Your Own Word Search</td><td>EPISTLE</td></tr>
+<tr><td>Puzzle 3</td><td>Library of Images</td><td>COP</td></tr>
+<tr><td>Puzzle 4</td><td>Unchained</td><td>OBLITERATION</td></tr>
+<tr><td>Puzzle 5</td><td>Infinite Corridor Simulator</td><td>DUSKY</td></tr>
+<tr><td>Puzzle 6</td><td>Unchained</td><td>ETHICS</td></tr>
+<tr><td>Puzzle 7</td><td>Library of Images</td><td>E</td></tr>
+<tr><td>Puzzle 8</td><td>Unchained</td><td>ANTEROOM</td></tr>
+<tr><td>Puzzle 9</td><td>Library of Images</td><td>CUSP</td></tr>
+<tr><td>Puzzle 10</td><td>Unchained</td><td>HYPOTHESES</td></tr>
+<tr><td>Puzzle 11</td><td>Unchained</td><td>PROM</td></tr>
+<tr><td>Puzzle 12</td><td>Infinite Corridor Simulator</td><td>UDDER</td></tr>
+<tr><td>Puzzle 13</td><td>Library of Images</td><td>Z</td></tr>
+<tr><td>Puzzle 14</td><td>Unchained</td><td>ZITHER</td></tr>
+<tr><td>Puzzle 15</td><td>Library of Images</td><td>LEVEL</td></tr>
+<tr><td>Puzzle 16</td><td>Unchained</td><td>ENCROACH</td></tr>
+<tr><td>Puzzle 17</td><td>Cafe Five</td><td>SEED</td></tr>
+<tr><td>Puzzle 18</td><td>Make Your Own Word Search</td><td>WEAN</td></tr>
+<tr><td>Puzzle 19</td><td>Infinite Corridor Simulator</td><td>KETCH</td></tr>
+<tr><td>Puzzle 20</td><td>Unchained</td><td>SUPERHIGHWAY</td></tr>
+<tr><td colspan="3">...</td></tr>
+<table>
+
+<p>These answer/puzzle pairings differ between different instances of Infinite Corridor Simulator and do not match the puzzles and answers in the Infinite Corridor round (with one notable exception). However, all Infinite Corridor Simulator puzzles use the same puzzle mechanics as each other.</p>
+
+<p>If we take the first letters of each answer, we get the message DECODE EACH PUZZLE (after which the first letters devolve into nonsense). This suggests looking at all the answers of each type separately. When we do this, we find that we can solve each stream of answers as a subpuzzle to get an answer phrase of the form “[ordinal number] [digit]” (e.g. FIRST SEVEN). The solutions to each subpuzzle are detailed below.</p>
+
+<p>The five ordinal numbers we obtain always include each of FIRST, SECOND, THIRD, FOURTH, and FIFTH exactly once. For example, in Puzzle 5, we obtain the five subpuzzle answers:</p>
+
+<pre style="text-align: center">
+FIRST ONE
+SECOND SEVEN
+THIRD ZERO
+FOURTH THREE
+FIFTH ONE
+</pre>
+
+<p>This allows us to form a five-digit number <i>n</i> by placing each digit at its corresponding location (17031 for the above example). Looking up Puzzle <i>n</i> in our list of puzzles, we find it is an Infinite Corridor Simulator puzzle &mdash; for example, in Puzzle 5, we observe:</p>
+
+<table>
+<tr><td colspan="3">...</td></tr>
+<tr><td>Puzzle 17030</td><td>Library of Images</td><td>DUN</td></tr>
+<tr style="font-weight: bold"><td>Puzzle 17031</td><td>Infinite Corridor Simulator</td><td>DRESS</td></tr>
+<tr><td>Puzzle 17032</td><td>Infinite Corridor Simulator</td><td>EXILE</td></tr>
+<tr><td colspan="3">...</td></tr>
+</table>
+
+<p>The answer to Puzzle <i>n</i> is the answer to this Infinite Corridor Simulator puzzle (and so for the specific example of Puzzle 5, the answer is <span class="answer">DRESS</span>).</p>
+
+<h2>Subpuzzle solutions</h2>
+
+<h3>Unchained</h3>
+
+<p>The first few answers to Unchained puzzles in Puzzle 5 are:</p>
+
+<table>
+<tr><td>Puzzle 1</td><td>Unchained</td><td>DELIRIUM</td></tr>
+<tr><td>Puzzle 4</td><td>Unchained</td><td>OBLITERATION</td></tr>
+<tr><td>Puzzle 6</td><td>Unchained</td><td>ETHICS</td></tr>
+<tr><td>Puzzle 8</td><td>Unchained</td><td>ANTEROOM</td></tr>
+<tr><td>Puzzle 10</td><td>Unchained</td><td>HYPOTHESES</td></tr>
+<tr><td>Puzzle 11</td><td>Unchained</td><td>PROM</td></tr>
+<tr><td>Puzzle 14</td><td>Unchained</td><td>ZITHER</td></tr>
+<tr><td>Puzzle 16</td><td>Unchained</td><td>ENCROACH</td></tr>
+<tr><td>Puzzle 20</td><td>Unchained</td><td>SUPERHIGHWAY</td></tr>
+<tr><td>Puzzle 26</td><td>Unchained</td><td>FAROFF</td></tr>
+<tr><td>Puzzle 31</td><td>Unchained</td><td>ASPIRATE</td></tr>
+<tr><td>Puzzle 37</td><td>Unchained</td><td>OVERDO</td></tr>
+<tr><td>Puzzle 42</td><td>Unchained</td><td>ASPIRANT</td></tr>
+<tr><td colspan="3">...</td></tr>
+</table>
+
+<p>All of these answers have even length. In addition, the central bigrams of these answers often repeat (IR, ER, HI, ER, TH, RO, TH, ...). These central bigrams are randomly selected from the answer phrase &mdash; in particular, they alternate between being chosen from the first word of the answer phrase and being chosen from the second word of the answer phrase. From this, we can reconstruct the answer to this subpuzzle. For this specific puzzle (Puzzle 5), this leads to the subpuzzle answer <b>THIRD ZERO</b>.</p>
+
+<h3>Cafe Five</h3>
+
+<p>The first few answers to Cafe Five puzzles in Puzzle 5 are:</p>
+
+<table>
+<tr><td>Puzzle 17</td><td>Cafe Five</td><td>SEED</td></tr>
+<tr><td>Puzzle 22</td><td>Cafe Five</td><td>SELFMADE</td></tr>
+<tr><td>Puzzle 27</td><td>Cafe Five</td><td>LAM</td></tr>
+<tr><td>Puzzle 32</td><td>Cafe Five</td><td>STREAMLINE</td></tr>
+<tr><td>Puzzle 36</td><td>Cafe Five</td><td>RESENT</td></tr>
+<tr><td>Puzzle 40</td><td>Cafe Five</td><td>TRANSFERENCE</td></tr>
+<tr><td>Puzzle 44</td><td>Cafe Five</td><td>CRANE</td></tr>
+<tr><td>Puzzle 50</td><td>Cafe Five</td><td>RECTANGLE</td></tr>
+<tr><td>Puzzle 57</td><td>Cafe Five</td><td>LEG</td></tr>
+<tr><td>Puzzle 61</td><td>Cafe Five</td><td>PENLIGHT</td></tr>
+<tr><td>Puzzle 67</td><td>Cafe Five</td><td>PINT</td></tr>
+<tr><td>Puzzle 71</td><td>Cafe Five</td><td>TREPIDATION</td></tr>
+<tr><td>Puzzle 76</td><td>Cafe Five</td><td>TIRADE</td></tr>
+<tr><td>Puzzle 79</td><td>Cafe Five</td><td>ANTIDEPRESSANT</td></tr>
+<tr><td>Puzzle 84</td><td>Cafe Five</td><td>APTNESS</td></tr>
+<tr><td>Puzzle 89</td><td>Cafe Five</td><td>PARENTHESES</td></tr>
+<tr><td>Puzzle 94</td><td>Cafe Five</td><td>HER</td></tr>
+<tr><td>Puzzle 99</td><td>Cafe Five</td><td>HALFBREED</td></tr>
+<tr><td>Puzzle 103</td><td>Cafe Five</td><td>BLADE</td></tr>
+<tr><td colspan="3">...</td></tr>
+</table>
+
+<p>Every other answer in this stream can be formed by anagramming its two surrounding answers along with an additional letter (for example, SELFMADE = SEED + LAM + F). Reading off these additional letters reveals the subpuzzle answer repeated endlessly. For this specific puzzle (Puzzle 5), this leads to the subpuzzle answer <b>FIFTH ONE</b>.</p>
+
+<h3>Library of Images</h3>
+
+<p>The first few answers to Library of Images puzzles in Puzzle 5 are:</p>
+
+<table>
+<tr><td>Puzzle 3</td><td>Library of Images</td><td>COP</td></tr>
+<tr><td>Puzzle 7</td><td>Library of Images</td><td>E</td></tr>
+<tr><td>Puzzle 9</td><td>Library of Images</td><td>CUSP</td></tr>
+<tr><td>Puzzle 13</td><td>Library of Images</td><td>Z</td></tr>
+<tr><td>Puzzle 15</td><td>Library of Images</td><td>LEVEL</td></tr>
+<tr><td>Puzzle 21</td><td>Library of Images</td><td>MERRIMENT</td></tr>
+<tr><td>Puzzle 24</td><td>Library of Images</td><td>AX</td></tr>
+<tr><td>Puzzle 29</td><td>Library of Images</td><td>FRIDAY</td></tr>
+<tr><td>Puzzle 33</td><td>Library of Images</td><td>JUMBO</td></tr>
+<tr><td>Puzzle 38</td><td>Library of Images</td><td>AMP</td></tr>
+<tr><td>Puzzle 43</td><td>Library of Images</td><td>CATCH</td></tr>
+<tr><td>Puzzle 48</td><td>Library of Images</td><td>TRICOLOR</td></tr>
+<tr><td>Puzzle 54</td><td>Library of Images</td><td>MORTGAGEE</td></tr>
+<tr><td>Puzzle 59</td><td>Library of Images</td><td>HASHISH</td></tr>
+<tr><td>Puzzle 62</td><td>Library of Images</td><td>CYNICALLY</td></tr>
+<tr><td>Puzzle 65</td><td>Library of Images</td><td>WOE</td></tr>
+<tr><td>Puzzle 70</td><td>Library of Images</td><td>AX</td></tr>
+<tr><td>Puzzle 74</td><td>Library of Images</td><td>CUR</td></tr>
+<tr><td>Puzzle 80</td><td>Library of Images</td><td>HOCKSHOP</td></tr>
+<tr><td>Puzzle 86</td><td>Library of Images</td><td>THAW</td></tr>
+<tr><td>Puzzle 91</td><td>Library of Images</td><td>SLOPPY</td></tr>
+<tr><td>Puzzle 96</td><td>Library of Images</td><td>ON</td></tr>
+<tr><td>Puzzle 101</td><td>Library of Images</td><td>AROUSE</td></tr>
+<tr><td>Puzzle 106</td><td>Library of Images</td><td>HACK</td></tr>
+<tr><td>Puzzle 111</td><td>Library of Images</td><td>IRE</td></tr>
+<tr><td>Puzzle 116</td><td>Library of Images</td><td>NAB</td></tr>
+<tr><td>Puzzle 121</td><td>Library of Images</td><td>ENVIABLE</td></tr>
+<tr><td>Puzzle 126</td><td>Library of Images</td><td>SLY</td></tr>
+<tr><td>Puzzle 132</td><td>Library of Images</td><td>SN</td></tr>
+<tr><td>Puzzle 137</td><td>Library of Images</td><td>CONVICT</td></tr>
+<tr><td>Puzzle 142</td><td>Library of Images</td><td>MILITANCY</td></tr>
+<tr><td>Puzzle 146</td><td>Library of Images</td><td>LIKEN</td></tr>
+<tr><td>Puzzle 153</td><td>Library of Images</td><td>F</td></tr>
+<tr><td>Puzzle 158</td><td>Library of Images</td><td>BE</td></tr>
+<tr><td colspan="3">...</td></tr>
+</table>
+
+<p>If we look at the lengths of these answers, we see that in order they are 3, 1, 4, 1, 5, 9, 2, 6, …, which we can recognize as the digits of pi. Indeed, the lengths of the answers match up with the digits of pi, with the exception that where the corresponding digit would be 0, the answer is a single character. The first such instance occurs at the 33rd digit of pi (counting the leading 3 as the first digit) &mdash; in the above example, this corresponds to the 33rd instance of Library of Images, which is Puzzle 153 with the answer F. Taking these characters in order reveals the answer to this subpuzzle. For this specific puzzle (Puzzle 5), this leads to the subpuzzle answer <b>FOURTH THREE</b>.</p>
+
+<h3>Make Your Own Word Search</h3>
+
+<p>The first few answers to Make Your Own Word Search puzzles in Puzzle 5 are:</p>
+
+<table>
+<tr><td>Puzzle 2</td><td>Make Your Own Word Search</td><td>EPISTLE</td></tr>
+<tr><td>Puzzle 18</td><td>Make Your Own Word Search</td><td>WEAN</td></tr>
+<tr><td>Puzzle 23</td><td>Make Your Own Word Search</td><td>SPECKLE</td></tr>
+<tr><td>Puzzle 28</td><td>Make Your Own Word Search</td><td>EGYPTIAN</td></tr>
+<tr><td>Puzzle 34</td><td>Make Your Own Word Search</td><td>WEEKNIGHT</td></tr>
+<tr><td>Puzzle 39</td><td>Make Your Own Word Search</td><td>SANDAL</td></tr>
+<tr><td>Puzzle 46</td><td>Make Your Own Word Search</td><td>FLANK</td></tr>
+<tr><td>Puzzle 49</td><td>Make Your Own Word Search</td><td>SYLPH</td></tr>
+<tr><td>Puzzle 53</td><td>Make Your Own Word Search</td><td>SAVIOR</td></tr>
+<tr><td>Puzzle 58</td><td>Make Your Own Word Search</td><td>DEVIANCE</td></tr>
+<tr><td>Puzzle 64</td><td>Make Your Own Word Search</td><td>NOSTRIL</td></tr>
+<tr><td>Puzzle 69</td><td>Make Your Own Word Search</td><td>NITWIT</td></tr>
+<tr><td>Puzzle 75</td><td>Make Your Own Word Search</td><td>ENFEEBLE</td></tr>
+<tr><td>Puzzle 81</td><td>Make Your Own Word Search</td><td>STARK</td></tr>
+<tr><td>Puzzle 85</td><td>Make Your Own Word Search</td><td>WORKING</td></tr>
+<tr><td>Puzzle 90</td><td>Make Your Own Word Search</td><td>SEANCE</td></tr>
+<tr><td>Puzzle 95</td><td>Make Your Own Word Search</td><td>TYPOGRAPHY</td></tr>
+<tr><td colspan="3">...</td></tr>
+</table>
+
+<p>Many of these answers start with a compass direction (N, S, E, W) and some (e.g. SEANCE) even start with one of the four diagonal compass directions (NE, NW, SE, SW &mdash; however, NW will not appear in any puzzle). These answers are divided into chunks by answers that do not start with any compass direction (e.g. FLANK). The path we obtain by following the compass directions for a single chunk draws out a letter. For example, in the first chunk of six puzzles before FLANK, we have the directions E, W, S, E, W, S, which results in the following path:</p>
+
+<p style="text-align: center"><img src="{{sroot}}f.png"></p>
+
+<p>This path draws out the letter F. Drawing out these paths and reading the letters formed reveals the answer to this subpuzzle. For this specific puzzle (Puzzle 5), this leads to the subpuzzle answer <b>FIRST ONE</b>.</p>
+
+<h3>Infinite Corridor Simulator</h3>
+
+<p>The first few answers to Infinite Corridor Simulator puzzles in Puzzle 5 are:</p>
+
+<table>
+<tr><td>Puzzle 5</td><td>Infinite Corridor Simulator</td><td>DUSKY</td></tr>
+<tr><td>Puzzle 12</td><td>Infinite Corridor Simulator</td><td>UDDER</td></tr>
+<tr><td>Puzzle 19</td><td>Infinite Corridor Simulator</td><td>KETCH</td></tr>
+<tr><td>Puzzle 25</td><td>Infinite Corridor Simulator</td><td>YOUNG</td></tr>
+<tr><td>Puzzle 30</td><td>Infinite Corridor Simulator</td><td>UNWED</td></tr>
+<tr><td>Puzzle 35</td><td>Infinite Corridor Simulator</td><td>DOWSE</td></tr>
+<tr><td>Puzzle 41</td><td>Infinite Corridor Simulator</td><td>DIVER</td></tr>
+<tr><td>Puzzle 45</td><td>Infinite Corridor Simulator</td><td>RAPID</td></tr>
+<tr><td>Puzzle 51</td><td>Infinite Corridor Simulator</td><td>KNEAD</td></tr>
+<tr><td>Puzzle 56</td><td>Infinite Corridor Simulator</td><td>ENSUE</td></tr>
+<tr><td>Puzzle 63</td><td>Infinite Corridor Simulator</td><td>TONIC</td></tr>
+<tr><td>Puzzle 68</td><td>Infinite Corridor Simulator</td><td>HUMOR</td></tr>
+<tr><td>Puzzle 73</td><td>Infinite Corridor Simulator</td><td>YEARN</td></tr>
+<tr><td>Puzzle 77</td><td>Infinite Corridor Simulator</td><td>UNWED</td></tr>
+<tr><td>Puzzle 82</td><td>Infinite Corridor Simulator</td><td>GRIST</td></tr>
+<tr><td>Puzzle 88</td><td>Infinite Corridor Simulator</td><td>UNDUE</td></tr>
+<tr><td colspan="3">...</td></tr>
+</table>
+
+<p>If we read the first letters of these answers, we find that this almost matches the string we get by concatenating all the answers in order. For example, the string we get by reading the first letters of the above answers is</p>
+
+<pre style="text-align: center">DUKYUDDRKETHYUGU…</pre>
+
+<p>and the string we get by simply concatenating the answers is</p>
+
+<pre style="text-align: center">DU<b><u>S</u></b>KYUDD<b><u>E</u></b>RKET<b><u>C</u></b>HY<b><u>O</u></b>U<b><u>N</u></b>GU…</pre>
+
+<p>It is possible to transform the second string into the first string by deleting some letters (approximately one per word, but occasionally more, and occasionally fewer). Reading the deleted letters, we find the subpuzzle answer. For this specific puzzle, the answer is <b>SECOND SEVEN</b>.</p>

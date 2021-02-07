@@ -1,0 +1,52 @@
+<p>We first solve the jigsaw puzzle. The assembled image looks like this:</p>
+
+<p><img src="{{sroot}}image1.png" style="width: 80%; margin: 0 10%;" alt="Assembled jigsaw puzzle."></p>
+
+<p>The background image is quite literally a red herring, suggesting that it&rsquo;s not important, so we turn to the digits and symbols. Each one is located in the center of a jigsaw piece, suggesting that they should map to the individual pieces. From here, we see that there are 11 unique symbols: the 10 digits from 0&ndash;9, plus a capital sigma. The jigsaw puzzle itself has dimensions 11&times;11, which means that this could be a logic puzzle where you have to assign a symbol to each jigsaw piece so that every row and column contains all symbols (i.e., a <a href="https://en.wikipedia.org/wiki/Latin_square">Latin square</a>). This is also encouraged by the fact that no existing symbol repeats in a row or column.</p>
+
+<p>If we try to solve the Latin square as is, we&rsquo;ll quickly find that there is not nearly enough information to have a unique solution (indeed, we can&rsquo;t even place a single symbol), so there must be additional constraints somewhere. The additional constraints aren&rsquo;t coming from the red herring, and the only other data from the jigsaw is the shapes of the pieces and how they connect to each other. This leads to the first main aha: the directions the pieces &ldquo;poke into&rdquo; each other is important! In particular, the pieces with 9's have all 4 sides &ldquo;poking out&rdquo;, while the pieces with 0's have all 4 sides &ldquo;poking in&rdquo;, implying that this is on the right track.</p>
+
+<p>We also notice that the smaller numbers like 1 and 2 generally have more sides poking in, while the larger numbers generally have more sides poking out. This, combined with the title (and perhaps the layout of the given numbers, which looks like a less-than sign), leads to the second aha, which is that if piece X pokes into piece Y, then the digit on X must be greater than the digit on Y. This property holds for the existing adjacent digits, and additionally there are no &ldquo;cycles&rdquo; of pieces that point into each other, strongly suggesting that this is the correct interpretation.</p>
+
+<p>The only uncertainty left in the rules is how sigma works. It can&rsquo;t represent a single number, because among the given symbols, a 3 points into a sigma (in the 4th row), and a sigma also points into a 3 (in the 10th row). So, the safest assumption is that there are no constraints on the sigmas: they can point in any direction. We can make additional assumptions like &ldquo;sigma is always less than 9 or greater than 0&rdquo; or &ldquo;if X points into sigma which points into Y, then X is greater than Y&rdquo;—it turns out all of these are true due to how extraction works, but they are not needed to uniquely solve the logic puzzle and we don&rsquo;t expect the typical solve path to use them (though if you do accidentally make such an assumption, it won&rsquo;t hurt you).</p>
+
+<p>We now solve the logic puzzle—a walkthrough is included in the video below, and if you want to try just the logic puzzle itself, here&rsquo;s a <a href="https://rjrudman.github.io/penpa-edit/?m=solve&p=3ZjNijs3EMTvfow5z2E0Gmk0viabU8ghH4RgTMjhT1hYdvN5WJt991VXWDx46/cCwbYwKld3q0ujbvnvP//97a8vY0rxzm2cxv5tXErVJ6U5PofT1IH+Oh9OQxrGYe6fNJwP18v3x+vl1+Pp/DZefrp9/eF47eN3x+uQt+F4GvLQjQZjHJY5JtbbRCkxUXYTNSYebhO13VGqjE63iVVGe1QfEy3duW36xc7ottzZ2BTHdptI03rHSZMi2flJs8z0nNxmZGfPWhTMnvVfEva+iizvspCKFtl2M/V+DWn95GtV8nYLT012lt3MJjv1Y6YrlaTXL12vRYmax+Hx+UvfGk+P/7z234VuLRMQKVgcENFZIIK0QGTc+oj0WEaszjG2iYBQwwKxcudji6gsQFFtEZUByhRRWQCiKhPoUSbQo0ygR5lCD8sIPSwAKy8JclUSRZUiKgtQVAl2SUkYFehREuySMpMec+hhAVr5DHu3zBTVTLskw94tmaLKtEsy6ZFpl2TSI5MemVauY84CEZUztdAuWeAsKQvt3QWjCj0sQHoU2iWF9Ci0SwpFpQJgAYqqUlSVolIBsQDpUUmPSnpU2iWVVq7ibQGKaqWoVA8tQFGtGBXpsdJZ0kgPNSMWID1UBy1AZ4nqoANUBy1AFYfqYNnoLFEvZQHSYyM9qNZW1UELwC6pqoPGeaU6WFUHrSnYJVUNoQVAj5pAj5pAj6paawGKSnXQAhQV1cGqOuhMUR2sM+mhVtkCcJbUGc72qlprGKuE6m3tZyBSYoFISTaAhLJApMQCkRLnQ02RZURKLBApsaYiJQ6QHs6U9LAAOZceFkDnkXbLoLSr93EM9T6Ood7HMsh5Jue6lDpgIee6wjkfanEsg9KuFscyKO1qcRygLsOZKuS8kHPdwi0DndOjpk7GAqS5OhnHUCdjGeRc/xVYBmm+0nO+hnPLoEdNDYtlUNrVsFhTlHb1DBYg57qfW4AOGd3PLUBpV19io6K0qy+xAGmu1sAyyLmu4YbRdA23AGje1H4YH03th2VA2pvaDwtA2psKi3OuwmIZ5FyFxZpC53C8NnUZlgHPeVOX4RjqMixAzlVYLEDOqbA0KixNl2rLoLTrUm1NUdp1qXamVFgcQ4XFMsi5CotloHN41JruzhagtOvubAHSnApLU2Gxpsg5FZZGhaXpimwZlHZdka0pSruuyJ8Y/Q/Yb/Q37Kzxx/5P+njJGr/WOMU4/PHy9Pr7y3O30Ke+1U8fNP6s8SuNSx/fDodT7n/fm1f5/86e3wE=">pen-pa link with all the data transcribed</a> (sigmas are represented by &ldquo;E&rdquo;).</p>
+
+<p><iframe style="width: 60%; height: 581px;" src="https://www.youtube.com/embed/pCnIFnM12YU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+<p>This is the solution:</p>
+
+<p><img src="{{sroot}}image2.png" style="width: 60%; margin: 0 20%;" alt="Solution to the logic puzzle."></p>
+
+<p>We see that every sigma can be replaced with at least one number such that the adjacent inequalities are satisfied—for example, the sigma in the second row is greater than 2, 3, and 5 and less than 8 so it can be 6 or 7. The fact that the symbol is a sigma suggests <a href="https://en.wikipedia.org/wiki/Summation#Capital-sigma_notation">summing</a>, so we add up the possible replacements for each sigma (e.g., for the second row, 6+7=13). In row order, these are:</p>
+
+<table>
+<tr><th>Possibilities</th><th>Sum</th><th>Letter</th></tr>
+<tr><td>1,2,3,4</td><td>10</td><td>J</td></tr>
+<tr><td>6,7</td><td>13</td><td>M</td></tr>
+<tr><td>2</td><td>2</td><td>B</td></tr>
+<tr><td>0,1</td><td>1</td><td>A</td></tr>
+<tr><td>5,6,7</td><td>18</td><td>R</td></tr>
+<tr><td>3,4,5,6</td><td>18</td><td>R</td></tr>
+<tr><td>2,3,4</td><td>9</td><td>I</td></tr>
+<tr><td>5</td><td>5</td><td>E</td></tr>
+<tr><td>1,2,3</td><td>6</td><td>F</td></tr>
+<tr><td>4,5,6</td><td>15</td><td>O</td></tr>
+<tr><td>2,3</td><td>5</td><td>E</td></tr>
+</table>
+
+<p>Converting these sums to letters alphanumerically gives the phrase JMBARRIEFOE. <a href="https://en.wikipedia.org/wiki/J._M._Barrie">J. M. Barrie</a> is most known for being the creator of Peter Pan, whose foe is <span class="answer">CAPTAIN HOOK</span>.</p>
+
+<p>(Note: another possibility is to sum all the neighbors instead of the possible digit replacements, but this is ruled out by the sigma in the 8th row having sum 9+8+6+4=27 which is larger than 26.)</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+<p>The core idea of this puzzle (a jigsaw puzzle where the direction of which pieces poke into each other matters) was suggested by Mitchell very early in the year, but we only seriously worked on it later on when we were figuring out what to do for physical puzzles.</p>
+
+<p>Other ideas we considered for the puzzle included various sudokus, but given how powerful the inequality constraints are, we decided that relaxing it to a Latin square would make for more interesting logic, and would also allow us to make the puzzle slightly bigger than 9&times;9, which we thought would be small for a jigsaw puzzle. The extraction we decided on unfortunately couldn&rsquo;t support a few letters including P, so we had to use a more awkward cluephrase instead of directly spelling out CAPTAIN HOOK.</p>
+
+<p>We wanted to avoid the background image being confused for part of the puzzle, but also wanted the image to be something more interesting than a color gradient that solvers would enjoy having as a keepsake. After tossing around a few ideas, we decided to go with a literal red herring. Lillian painted the fish based on an alewife herring using watercolors. Shout out to <a href="https://www.dodgechrome.com/">Dodge Chrome</a> for scanning the artwork on short notice just two days before Thanksgiving!</p>
+
+<p>The process of getting the jigsaw made was quite a journey: we contacted several places and eventually found a custom jigsaw provider (<a href="https://www.upinpieces.com/">Up in Pieces</a>) that could support our requirements of customizing the directionality and having the digits/sigmas appear on the correct pieces. Shoutouts to them for handling our unusual order and also being willing to attach barcodes and ship the puzzles directly to Deliverr when we were very worried about things arriving on time!</p>
+</div>

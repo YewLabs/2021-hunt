@@ -1,0 +1,56 @@
+name: image-id-animals
+difficulty: 2/10
+coolness: 4/10
+time: 1:00
+
+questions:
+    - question:
+        - text: What is the name of this animal?
+        - image: image-identification/pig.jpg
+
+        - answer: pig
+
+    - question:
+        - text: What is the name of this animal?
+        - image: image-identification/snail.jpg
+
+        - answer: snail
+
+    - question:
+        - text: What is the name of this animal?
+        - image: image-identification/buffalo.jpg
+
+        - answer: buffalo
+        - answer: bison
+
+    - question:
+        - text: What is the name of this bird?
+        - image: image-identification/cardinal.jpg
+
+        - answer: cardinal
+
+    - question:
+        - text: What is the name of this bird?
+        - image: image-identification/goldfinch.jpg
+
+        - answer: goldfinch
+        - answer: american goldfinch
+
+    - question:
+        - text: What is the name of this bird?
+        - image: image-identification/blue-jay.jpg
+
+        - answer: blue jay
+        - answer: bluejay
+
+    - question:
+        - text: What is the name of this bird?
+        - image: image-identification/hummingbird.jpg
+
+        - answer: hummingbird
+
+    - question:
+        - text: What is the name of this animal?
+        - image: image-identification/hedgehog.jpg
+
+        - answer: hedgehog

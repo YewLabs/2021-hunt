@@ -1,0 +1,98 @@
+@import "vars";
+
+.grid {
+  display: flex;
+  position: relative;
+
+  img {
+    width: 400px;
+    max-height: 550px;
+    position: relative;
+  }
+
+  .letter {
+    @include flex-ccc;
+    background-color: darken($secondary-color, 20%);
+    border-radius: 50%;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.24);
+    color: #fff;
+    cursor: pointer;
+    height: 2em;
+    position: absolute;
+    user-select: none;
+    width: 2em;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+    &.bonus-2 {
+      background-color: $bonus2-color;
+      &:hover {
+        background-color: lighten($bonus2-color, 20%);
+      }
+    }
+    &.bonus-3 {
+      background-color: $bonus3-color;
+      &:hover {
+        background-color: lighten($bonus3-color, 20%);
+      }
+    }
+    &.selected {
+      // background-color: desaturate(darken($theme-color, 10%), 10%);
+      background-color: #558b2f;
+    }
+    &.last {
+      // background-color: adjust-hue(saturate($theme-color, 10%), -40deg);
+      background-color: #afb42b;
+    }
+    &.wrong {
+      animation: wrong 0.25s;
+    }
+    &.duplicate {
+      animation: duplicate 0.25s;
+    }
+    &.correct {
+      animation: correct 0.25s;
+    }
+  }
+}
+
+.level1 {
+  img {
+    top: 80px;
+    left: 70px;
+  }
+  .letters {
+    transform: scale(1.35) translate(-358px, 76px);
+  }
+}
+
+.level2 {
+  img {
+    top: 65px;
+    left: 40px;
+  }
+  .letters {
+    transform: scale(1.25) translate(-373px, 78px);
+  }
+}
+
+.level3 {
+  img {
+    top: 30px;
+    left: 30px;
+  }
+  .letters {
+    transform: translate(-414px, -20px);
+  }
+}
+
+.level4 {
+  img {
+    top: 30px;
+    left: 20px;
+  }
+  .letters {
+    transform: scale(1.1) translate(-392px, 75px);
+  }
+}

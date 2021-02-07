@@ -1,0 +1,568 @@
+<style>
+  .ticket {
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 40px;
+    background: no-repeat -20px 0px / cover url({{sroot}}background.jpg);
+    background-clip: content-box;
+    padding: 16px;
+    height: 336px;
+    margin: 40px auto;
+    max-width: 800px;
+    width: 100%;
+    position: relative;
+  }
+
+  .airlines {
+    color: #fff;
+    font: bold 1.5em "Metropolis";
+    position: absolute;
+    left: 30px;
+    top: 30px;
+  }
+
+  .flight,
+  .ticket-info {
+    display: flex;
+    font-size: 1.75rem;
+    font-weight: bold;
+    justify-content: space-between;
+    line-height: 1.2;
+    position: absolute;
+    text-align: center;
+  }
+
+  .label {
+    color: #555 !important;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  .flight .label,
+  .ticket-info .label {
+    display: block;
+  }
+
+  .flight {
+    left: 150px;
+    top: 95px;
+    width: 250px;
+  }
+
+  .ticket-info {
+    width: 440px;
+    left: 50px;
+    top: 160px;
+  }
+
+  .status {
+    color: #c62828;
+    font-weight: bold;
+    top: 230px;
+    width: 480px;
+    left: 30px;
+    position: absolute;
+  }
+
+  .reason {
+    top: 255px;
+    width: 480px;
+    line-height: 1.25;
+    left: 30px;
+    position: absolute;
+  }
+
+  .puzzle img {
+    border: 10px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.3), 0 3px 6px rgba(0, 0, 0, 0.15);
+    display: block;
+    max-width: 70%;
+    margin: 40px auto;
+  }
+</style>
+
+<span class="flavor">The planes are at the front of the line and ready for takeoff, but it looks like something unusual’s going on.</span>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      CDG
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      3/2006
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    We just checked the airplane and it turns out it's actually a hologram.
+    Whoops.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      CDG
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      3/2020
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    The airstrip is submerged under several inches of water. Also, the sky looks
+    really weird right now.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      JFK
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      2/2018
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    Someone made way too much popcorn and now there's popcorn everywhere.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      CDG
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      10/2015
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    Just kidding, everything looks normal.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      PEK
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      10/2007
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    We just noticed the Great Wall of China cuts right through the middle of our
+    landing strip.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      MXP
+    </div>
+
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      2/2018
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    Looks like some surgeons set up an office on the tarmac. Also, whoever built
+    our airplanes attached an extra cockpit to a bunch of them?
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      CDG
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      10/2011
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    Instead of going on your flight, you should go ride the merry-go-round
+    outside!
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      JFK
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      2/2018
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    There's an alien invasion!! We're being attacked by a giant robot!!
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      JFK
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      9/2019
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    There's a large choir outside that won't stop singing and let us take off.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      CDG
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      3/2012
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    Someone replaced our landing lights with two bars of fire.
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      JFK
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      2/2012
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    Someone left a bunch of coffins outside… Wait, are people rising from the
+    dead?
+  </div>
+</div>
+
+<div class="ticket">
+  <span class="airlines no-copy">Mystery Airlines</span>
+
+  <div class="flight">
+    <div class="from">
+      <span class="label no-copy">From</span>
+      LHR
+    </div>
+    <div class="to no-copy">
+      <span class="label no-copy">To</span>
+      BOS
+    </div>
+  </div>
+
+  <div class="ticket-info">
+    <div class="subticket">
+      <span class="label no-copy">Date</span>
+      1/2014
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Gate</span>
+      MH21
+    </div>
+    <div class="subticket no-copy">
+      <span class="label no-copy">Seat</span>
+      1A
+    </div>
+  </div>
+  <div class="status no-copy">
+    <span class="label no-copy">Status:</span>
+    Canceled
+  </div>
+  <div class="reason">
+    <span class="label">Reason:</span>
+    It's raining.
+  </div>
+</div>
+
+<img src="{{sroot}}1.png" />
+<img src="{{sroot}}2.png" />
+<img src="{{sroot}}3.png" />
+<img src="{{sroot}}4.png" />
+<img src="{{sroot}}5.png" />
+<img src="{{sroot}}6.png" />
+<img src="{{sroot}}7.png" />
+<img src="{{sroot}}8.png" />
+<img src="{{sroot}}9.png" />
+<img src="{{sroot}}10.png" />
+<img src="{{sroot}}11.png" />
+<img src="{{sroot}}12.png" />
+
+<button
+  id="clipboard-button"
+  data-spanreset="false"
+  data-styleinline="false"
+></button>

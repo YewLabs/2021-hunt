@@ -1,0 +1,72 @@
+name: image-id-other
+difficulty: 3/10
+coolness: 5/10
+time: 3:00
+
+questions:
+    - question:
+        - text: What is the name of the movie which this image is from?
+        - image: image-identification/gladiator.png
+        - answer: gladiator
+
+    - question:
+        - text: What is the name of the movie which this image is from?
+        - image: image-identification/lofigirl.jpg
+        - answer: whisper of the heart
+        - answer: mimi o sumaseba
+
+    - question:
+        - text: What is the name of the 2018 game which this image is from?
+        - image: image-identification/amongus.png
+        - answer: among us
+
+    - question:
+        - text: What is the name of the 2017 game which this image is from?
+        - image: image-identification/hollowknight.png
+        - answer: hollow knight
+
+    - question:
+        - text: What is the name of the 2015 game which this image is from?
+        - image: image-identification/snakebird.png
+        - answer: snakebird
+
+    - question:
+        - text: What is the name of the 2019 game which this image is from?
+        - image: image-identification/babaisyou.png
+        - answer: baba is you
+
+    - question:
+        - text: What is the name of the 1994 game which this image is from?
+        - image: image-identification/supermetroid.png
+        - answer: super metroid
+
+    - question:
+        - text: What food is this?
+        - image: image-identification/ramen.png
+        - answer: ramen
+        - answer: tonkotsu ramen
+
+    - question:
+        - text: "What Pok\U000000E9mon is this?"
+        - image: image-identification/onix.png
+        - answer: onix
+
+    - question:
+        - text: "What Pok\U000000E9mon is this?"
+        - image: image-identification/riolu.png
+        - answer: riolu
+
+    - question:
+        - text: "What Pok\U000000E9mon is this?"
+        - image: image-identification/piplup.png
+        - answer: piplup
+
+    - question:
+        - text: "What Pok\U000000E9mon is this?"
+        - image: image-identification/scorbunny.png
+        - answer: scorbunny
+
+    - question:
+        - text: "What Pok\U000000E9mon is this?"
+        - image: image-identification/tyranitar.png
+        - answer: tyranitar

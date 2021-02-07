@@ -1,0 +1,42 @@
+<style>
+.sol-img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+</style>
+
+<p>
+Looking at the maps carefully, solvers might notice that one of the maps uses assets from the video game Celeste. In fact, all the maps are constructed using assets (actually, screenshots) from real video games. The first step is to identify the video games. To narrow the search, it helps to notice that these are all retro-graphics video games, and, in particular, relatively recent indie games. Title enumerations are provided at the bottom of the page to further help with this step. Additionally, one could use the fact that the maps are sorted alphabetically by the game the assets were taken from.
+</p>
+
+<p>
+The next step is to notice that each map is constructed using the geometry of another video game, perhaps by observing that some of the top-down maps look surprisingly like platformer maps. In fact, each map uses the geometry of another map in the set to form a cycle, as clued by the "(begin/end)" marking.
+</p>
+
+<p>
+Next, as clued by the title, solvers need to identify the item ("treasure") that can be obtained at each "X" on the maps. This step (as well as the cycle reconstruction step) is made a lot easier with the observation that the assets and geometry for each edge in the cycle are taken from the same location in each video game. Since the games (apart from Celeste) were specifically chosen not to have "strategy guide"-style maps already publicly available, the best way to approach this is to scroll through Let's Plays. For the larger games, it helps to search specifically for walkthroughs for item locations.
+</p>
+
+<p>
+Finally, as clued by the "0" at the start point and the negative numbers, solvers need to add up the "scores" along the path to get an index into each item. While there are two possible directions the cycle could go, the order chosen by this puzzle seems the most natural, particularly with Celeste as the first edge. In the order that they appear in the cycle, the extracted letters spell the answer <span class="answer">TEXTILE</span>.
+</p>
+
+<table>
+<tr><th>Order</th><th>Score</th><th>Index</th><th>Map source</th><th>Assets source</th><th>Item</th><th>Extracted letter</th></tr>
+<tr><td>1</td><td>0</td><td>0</td><td>Celeste</td><td>Rakuen</td><td>(none)</td><td>(none)</td></tr>
+<tr><td>2</td><td>+3</td><td>3</td><td>Minit</td><td>Celeste</td><td>Watering Can</td><td>T</td></tr>
+<tr><td>3</td><td>+3</td><td>6</td><td>Shovel Knight</td><td>Minit</td><td>Mobile Gear</td><td>E</td></tr>
+<tr><td>4</td><td>+1</td><td>7</td><td>Axiom Verge</td><td>Shovel Knight</td><td>Bioflux Accelerator</td><td>X</td></tr>
+<tr><td>5</td><td>-6</td><td>1</td><td>To the Moon</td><td>Axiom Verge</td><td>Tree Branch</td><td>T</td></tr>
+<tr><td>6</td><td>+4</td><td>5</td><td>Cave Story</td><td>To the Moon</td><td>Missile Launcher</td><td>I</td></tr>
+<tr><td>7</td><td>+3</td><td>8</td><td>OneShot</td><td>Cave Story</td><td>Rubber Gloves</td><td>L</td></tr>
+<tr><td>8</td><td>-2</td><td>6</td><td>Rakuen</td><td>OneShot</td><td>Card Key</td><td>E</td></tr>
+</table>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>
+This puzzle is jokingly a response to all the music ID puzzles that I find impossible to solve. Apart from Celeste (which was provided to help with the break-in), I tried to choose games that were not too popular but also hopefully not too obscure.
+</p>
+</div>

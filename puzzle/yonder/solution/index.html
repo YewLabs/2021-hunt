@@ -1,0 +1,275 @@
+Solvers are presented with nine pictures that are ostensibly screenshots of Google Street View and nine clues that resemble runaround instructions. On each of the pictures, there are a red dot and a blue dot indicating certain locations on the image. The red dot has a line extending from it vertically and the blue dot has a similar horizontal line. Where these lines intersect, there is a purple dot. At this point we can start to see that the photos aren't as seamless as they seem at first glance and that it looks like different locations are stitched together to make up the image. Each location either corresponds to the buildings marked by the red dot or the blue dot and we can identify them using various solve paths to get their coordinates.		
+<br/>
+<table>
+<tr><th>Image</th><th>Location 1 (Blue)</th><th>Coordinates</th><th>Example solve path</th><th>Location 2 (Red)</th><th>Coordinates</th><th>Example Solve Path</th></tr>
+<tr>
+	<td>A</td>
+	<td>Kek Lok Si Temple, Malaysia</td>
+	<td>5.397963, 100.272677</td>
+	<td>Search Google Images for large temples in South East Asia. Use the 'Kek' on the van to key in on this one.</td>
+	<td>Isle de Batz, France</td>
+	<td>48.740703, -4.007897</td>
+	<td>Note the French language and water, then scan the French coast until you find an island matching the one on the map.</td>
+</tr>
+<tr>
+	<td>B</td>
+	<td>Panama City, Panama</td>
+	<td>8.986038, -79.502680 </td>
+	<td>Search 'Atlapa' to find the one in Panama City. Scan for similar buildings near Atlapa.</td>
+	<td>Maungu, Kenya</td>
+	<td>-3.560324, 38.755375</td>
+	<td>Search "Kitui Flour Mills" to find the one in Mombasa. Then search "Maalesh Cafe" while in Kenya to find the right spot.</td>
+</tr>
+<tr>
+	<td>C</td>
+	<td>Gul' Market Almaty, Kazakhstan </td>
+	<td>43.270167, 76.957243</td>
+	<td>Find Almaty bus route 74. Look for the Photo Sphere on that route that matches.</td>
+	<td>Otto's Pizza Liverpool, UK</td>
+	<td>53.373388, -2.933868</td>
+	<td>Search "Otto's England." Use Liverpool FC logo on building for confirmation. </td>
+</tr>
+<tr>
+	<td>D</td>
+	<td>Nagoya, Japan</td>
+	<td>35.185784, 136.89077</td>
+	<td>Translate "Nagoya" from Japanese. Search for "2f coco" over the city on Google Maps. Find one by a high-speed roadway. </td>
+	<td>SA/WA quarantine checkpoint, Australia</td>
+	<td>-31.63847, 129.00191</td>
+	<td>Note the environment and the left-side driving. Search "Quarantine road Australia."</td>
+</tr>
+<tr>
+	<td>E</td>
+	<td>Fayhaa Swimming Pool Damascus, Syria</td>
+	<td>33.530671, 36.297446</td>
+	<td>Note the Syrian flag. Search "Damascus outdoor pool." Scrub for Photo Spheres.</td>
+	<td>Church in Tavira, Portugal</td>
+	<td>37.125425, -7.651811 </td>
+	<td>Note the Portugal flag. Image search "Church clocktower portugal." It is one of the first results.</td>
+</tr>
+<tr>
+	<td>F</td>
+	<td>Calgary Sun Newspaper, Canada</td>
+	<td>51.076289, -114.02707</td>
+	<td>Identify Calgary's downtown via the buildings, then search "Calgary Sun" on Google Maps to pinpoint the location of the sign.</td>
+	<td>Hecka Wirt, Austria</td>
+	<td>47.766753, 13.717616</td>
+	<td>Google Maps search "Hecka Wirt" from the two banners.</td>
+</tr>
+<tr>
+	<td>G</td>
+	<td>Queen's Pyramids Giza, Egypt</td>
+	<td>29.972100, 31.128277</td>
+	<td>Recognize the Giza Necropolis on the right. Look for smaller pyramids beside the more prominent ones on Google Maps. </td>
+	<td>I64, St. Louis, USA </td>
+	<td>38.625857, -90.13660</td>
+	<td>Notice the Gateway Arch. Use highway signs to orient. Backtrack from Highway 70/55 interchange until you find the right bridge.</td>
+</tr>
+<tr>	
+	<td>H</td>
+	<td>Pharmacy in Bangkok, Thailand</td>
+	<td>13.7123, 100.526821</td>
+	<td>Note the language. Assume Bangkok. Search "Kashi Ya Bangkok" on Google Maps. It's the only one.</td>
+	<td>Terry Fox Memorial, Thunder Bay, Canada</td>
+	<td>48.48440, -89.168044</td>
+	<td>For those unfamiliar with Terry Fox, search "amputee statue Canada." Then match the correct memorial.</td>
+</tr>
+<tr>
+	<td>I</td>
+	<td>Apartments in Chicago, USA</td>
+	<td>41.9022, -87.624800</td>
+	<td>Deduce location from the John Hancock Center orientation in regards to the Westin.</td>
+	<td>Rødovre, Denmark</td>
+	<td>55.677823, 12.455071</td>
+	<td>Search "Tårnvej" on Google Maps. Pan down the street until you see the tower. </td>
+</tr>
+</table>
+<br/>
+
+From here, the only information we've yet to use from the images are the purple dots. The horizontal and vertical lines inform us that we need the latitude from the blue dot and the longitude from the red dot to reveal a third location that matches the numbered clues with the images ordered alphabetically by extracted city.
+
+<table>
+<tr><th>Letter</th><th>Table 1 Coordinates</th><th>Combined Coordinates</th><th>City </th></tr>
+<tr><td>A</td>
+	<td><b>5.397963</b>, 100.272677 <br/>48.740703, <b>-4.007897</b></td>
+	<td>5.397963, -4.007897</td>
+	<td>Abidjan, Côte d’Ivoire</td>
+</tr>
+<tr>
+	<td>B</td>
+	<td><b>8.986038</b>, -79.502680 <br/> -3.560324, <b>38.755375</b></td>
+	<td>8.9860389,38.7553757</td>
+	<td>Addis Ababa, Ethiopia</td>
+</tr>
+<tr>
+	<td>C</td>
+	<td><b>43.270167</b>, 76.957243 <br/>53.373388, <b>-2.933868</b></td>
+	<td>43.270167, -2.933868</td>
+	<td>Bilbao, Spain</td>
+</tr>
+<tr>
+	<td>D</td>
+	<td><b>35.185784</b>, 136.89077 <br/>-31.63847, <b>129.00191</b></td>
+	<td>35.185784,129.001911</td>
+	<td>Busan, South Korea</td>
+</tr>
+<tr>
+	<td>E</td>
+	<td><b>33.530671</b>, 36.297446 <br/>37.125425, <b>-7.651811</b> </td>
+	<td>33.530671, -7.651910</td>
+	<td>Casablanca, Morocco</td>
+</tr>
+<tr>
+	<td>F</td>
+	<td><b>51.076289</b>, -114.02707 <br/>47.766753, <b>13.717616</b></td>
+	<td>51.076289, 13.717616</td>
+	<td>Dresden, Germany</td>
+</tr>
+<tr>
+	<td>G</td>
+	<td><b>29.972100</b>, 31.128277 <br/>38.625857, <b>-90.13660</b></td>
+	<td>29.972100, -90.1366 </td>
+	<td>New Orleans, USA</td>
+</tr>
+<tr>
+	<td>H</td>
+	<td><b>13.7123</b>, 100.526821 <br/>48.48440, <b>-89.168044</b></td>
+	<td>13.7123, -89.168044</td>
+	<td>San Salvador, El Salvador</td>
+</tr>
+<tr>
+	<td>I</td>
+	<td><b>41.9022</b>, -87.624800 <br/>55.677823, <b>12.455071</b></td>
+	<td>41.9022, 12.455071</td>
+	<td>Vatican City</td>
+</tr>
+</table>
+<br/>
+After inputting the coordinates in Google Maps, the surroundings can be matched to the instructions on the main puzzle page. By following the specific directions given, letters begin to be elucidated, and once all of the images are matched to the clues, the final answer is revealed: <span class="answer">ZONE PLATE</span>.	
+<br/>
+<table>
+<table style="width: 100%">
+    <colgroup>
+       <col span="1" style="width: 3%;">
+    </colgroup>
+	<tr><th>No.</th><th>Coordinates </th><th>Instructions</th><th>Explanation</th><th>Extracted Letter</th><th>Google Maps Link</th></tr>
+	<tr>
+		<td style="text-align:center">1-I</td>
+		<td style="text-align:center"> 41.9022, 12.455071</td>
+		<td>Start from the east doors of the church, walk forward until you reach the border. Directly in front of you, there should be a light blue car. Record the fifth letter of the large word plastering the side of the car, then get in and head to the Whitehouse.</td>
+		<td>You're at the doors of St. Peter's Basilica. Walk across the piazza until you reach the Italian border. At the border, there are many Streetview angles, but the vast majority of them include a police car. Take the fifth  letter of the word written across the side of the car: "POLIZIA."</td>
+		<td style="text-align:center">Z</td>
+		<td><a href="https://www.google.com/maps/@41.902273,12.4583983,3a,48.8y,87.71h,70.46t/data=!3m6!1e1!3m4!1s0fYGkOqadFvssrEB8TfiTw!2e0!7i13312!8i6656">Map</a></td>
+	</tr>
+	<tr>
+		<td style="text-align:center">2-E</td>
+		<td style="text-align:center">33.530671, -7.651910</td><td>From your position in the Whitehouse, enter the nearest Photo Sphere and rotate until you reach a green wall. There is a colorful word on the wall; record the last letter, then head toward the river.</td>
+		<td>The coordinates are ones in Casablanca, but there is only one Photo Sphere nearby. Enter the Photo Sphere and rotate until you see the green wall with red and white windows. On the wall, the name of the establishment is written in rainbow letters "PEDAGO." Take the last letter.</td>
+		<td style="text-align:center">O</td>
+		<td><a href="https://www.google.com/maps/@33.5310322,-7.6519127,3a,16.4y,322.28h,101.27t/data=!3m8!1e1!3m6!1sAF1QipOELYyHsdAPIn2VWtcKAaWlIHS8rsn3JUASc6N8!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOELYyHsdAPIn2VWtcKAaWlIHS8rsn3JUASc6N8%3Dw203-h100-k-no-pi-0-ya308.9627-ro0-fo100!7i8704!8i4352">Map</a></td>
+	</tr>
+	<tr>
+		<td style="text-align:center">3-C</td>
+		<td style="text-align:center">43.270167, -2.933868</td>
+		<td>You're now across the river from the museum. Record the last letter of the name of the metal creature you can see by the staircase on the other bank. Try not to fall in.</td>
+		<td>You're across the river from the Guggenheim museum in Bilbao, Spain. Without moving the Street View, you can see a metal statue of a spider by the stairs leading up to the museum. The statue's name is "MAMAN." Take the last letter.</td>
+		<td style="text-align:center">N</td>
+		<td><a href="https://www.google.com/maps/@43.2700898,-2.9334728,3a,43.2y,158.98h,87.66t/data=!3m7!1e1!3m5!1swjVTTueF9byamrszGjohJQ!2e0!6s%2F%2Fgeo3.ggpht.com%2Fcbk%3Fpanoid%3DwjVTTueF9byamrszGjohJQ%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D346.15515%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656">Map</a></td>
+	</tr>
+	<tr>
+		<td style="text-align:center">4-F</td>
+		<td style="text-align:center">51.076289, 13.717616</td>
+		<td>You've fallen into the Elbe! Swim downstream to the next bridge and record the fifth letter of its name and then get out and dry yourself off.</td><td>You're in the middle of the Elbe River in Dresden. Swimming downstream will lead you to the bridge "FLÜGELWEGBRÜCKE," in which the fifth letter is E. (If you go upstream, the 5th letter of the next bridge is also E).</td>
+		<td style="text-align:center">E</td>
+		<td><a href="https://www.google.com/maps/place/Fl%C3%BCgelwegbr%C3%BCcke/@51.0642282,13.6877057,17z/data=!3m1!4b1!4m5!3m4!1s0x4709cf3812c60b17:0x2d7f524ef702c569!8m2!3d51.0642282!4d13.6898944">Map</a></td></tr>
+	<tr>
+		<td style="text-align:center">5-G</td>
+		<td style="text-align:center">29.972100 -90.1366 </td>
+		<td>Great, you've ended up on the railroad tracks. Hurry on to the road directly south before you get hit by a train. Note the graffiti of a pharaoh on the train car in front of you and then turn 180 degrees until you're facing the white van. Record the first letter above the windshield of the van. Take the van and drive to Africa.</td>
+		<td>You're on the tracks of a railyard in New Orleans. You move on to "L and A Road" directly south of your position. The train car on Street View has graffiti of a pharaoh's skeleton on it. Turn around and face "PGW AUTOGLASS" building and the van with the same branding on it. </td>
+		<td style="text-align:center">P</td>
+		<td><a href="https://www.google.com/maps/@29.9719791,-90.1366657,3a,15.3y,208.26h,86.99t/data=!3m6!1e1!3m4!1siKfE4hVkMxolz65dPAKaOg!2e0!7i16384!8i8192">Map</a></td>
+	</tr>
+	<tr>
+		<td style="text-align:center">6-A</td>
+		<td style="text-align:center">5.397963, -4.007897</td>
+		<td>You ditch the van and start walking due east. Turn right and use the Photo Sphere just outside of the supermarché. Look up to the black flag and record the last letter of the word preceding the "+". Get back to the van and drive northeast. </td>
+		<td>There aren't many Photo Spheres in Abidjan. From the dropped coordinates, there are two Photo Spheres in the vicinity. Use the one closest to the Bon Panier. On a flag to the north, it says "CANAL+".</td>
+		<td style="text-align:center">L</td>
+		<td><a href="https://www.google.com/maps/@5.3973348,-4.0063667,3a,41y,19.19h,90.57t/data=!3m8!1e1!3m6!1sAF1QipM8gsGIXc3Wfn0Ouz7I-0P40iWU8i-yRHziRLg!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipM8gsGIXc3Wfn0Ouz7I-0P40iWU8i-yRHziRLg%3Dw203-h100-k-no-pi5.7568884-ya259.49573-ro-16.84135-fo100!7i5376!8i2688">Map</a></td></tr>
+	<tr>
+		<td style="text-align:center">7-D</td>
+		<td style="text-align:center">35.185784, 129.001911</td>
+		<td>Perfect, you've passed the road toll! Now keep following the road towards the tunnel, and before you get there, record the first letter after the hyphen on the green cargo bin on the back of the semi-truck and keep driving.</td>
+		<td>The coordinates lead to a freeway in Busan, Korea, just past a road toll. Following the road to the tunnel will have the google car drive by a truck hauling a green cargo bin that reads "HEUNG-A." The letter after the hyphen is A.</td>
+		<td style="text-align:center">A</td>
+		<td><a href="https://www.google.com/maps/@35.1857469,129.0016585,3a,75y,19.99h,85.65t/data=!3m6!1e1!3m4!1scYGeskL_wXsrLFGBLpqKzg!2e0!7i13312!8i6656">Map</a></td>
+	</tr>
+	<tr>
+		<td style="text-align:center">8-B</td>
+		<td style="text-align:center">8.9860389, 38.7553757</td>
+		<td>Ditch the vehicle and walk towards the burger shack to the southeast. Enter the Photo Sphere by the condominiums. Record the first letter of the white word outlined in red and continue on your way.</td>
+		<td>Again the coordinates aren't exactly on a Photo Sphere, but nearby are locations tagged "Burger Shack" and "Gotera Condominium." Enter the Photo Sphere on the condominium pin and take the first letter of the restaurant's name (TOMINO'S).</td>
+		<td style="text-align:center">T</td>
+		<td><a href="https://www.google.com/maps/@8.9847827,38.7557975,3a,15y,218.98h,95.21t/data=!3m8!1e1!3m6!1sAF1QipOzyFHhhfbonHRl0STGXL6SWALW5nkXOrHvqjDZ!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOzyFHhhfbonHRl0STGXL6SWALW5nkXOrHvqjDZ%3Dw203-h100-k-no-pi-0-ya267.93658-ro0-fo100!7i7680!8i3840">Map</a></td>
+	</tr>
+	<tr>
+		<td style="text-align:center">9-H</td>
+		<td style="text-align:center">13.7123, -89.168044</td>
+		<td>After a while, you find yourself to the left of the only nearby Photo Sphere and so you enter it. You're in the middle of a residential area with barbed wire topping most property lines. Note a poster attached to a telephone pole. Record the last letter of the first line on that poster and return home. </td>
+		<td>The only nearby Photo Sphere is the one on Calle I-B to the right of the coordinates. In the Photo Sphere, there are a few banners hanging from the telephone poles, but they're illegible. The only legible poster attached to a pole is the one at eye level that has a phone number on it. The last letter of the top line is E.</td>
+		<td style="text-align:center">E</td>
+		<td><a href="https://www.google.com/maps/@13.7122972,-89.1674269,3a,15y,105.95h,94.52t/data=!3m8!1e1!3m6!1sAF1QipPG1ZncyVPW7A6t-IK4kTdjOm3oAa3T59hdhOZL!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPG1ZncyVPW7A6t-IK4kTdjOm3oAa3T59hdhOZL%3Dw203-h100-k-no-pi-0-ya215.71297-ro-0-fo100!7i10240!8i5120">Map</a></td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

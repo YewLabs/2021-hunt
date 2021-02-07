@@ -1,0 +1,105 @@
+name: jeopardy
+difficulty: 2/10
+coolness: 3/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "What movie is this quote from?"
+
+        - text: "\"A census taker once tried to test me. I ate his liver with some fava beans and a nice Chianti.\""
+
+        - answer: the silence of the lambs
+
+    - question:
+        - text: "Who was President of the United States in 1871?"
+
+        - answer: ulysses grant
+        - answer: ulysses s grant
+        - answer: grant
+
+    - question:
+        - text: "Stocks not listed on exchanges are said to be sold this way, like nonprescription drugs."
+
+        - answer: over the counter
+
+    - question:
+        - text: "When it comes before \"the burden\" or \"the blame\", this word is a synonym for \"assume\". What's the word?"
+
+        - answer: shoulder
+
+    - question:
+        - text: "In the underworld, which mythological figure is still busy pushing a rock to the top of a hill?"
+
+        - answer: sisyphus
+
+    - question:
+        - text: "In August of 1590, 2 words carved on trees -- \"CROATOAN\" and \"CRO\" -- were the last traces of the 100 colonists on which island?"
+
+        - answer: roanoke
+        - answer: roanoke island
+
+    - question:
+        - text: "Which Middle Eastern president was assassinated while reviewing a military parade on October 6, 1981?"
+
+        - answer: anwar sadat
+        - answer: sadat
+
+    - question:
+        - text: "Kendall County, Texas is named for the man who brought merinos to the area as which type of animal rancher?"
+
+        - answer: sheep rancher
+        - answer: sheep
+
+    - question:
+        - text: "Who is the French mathematician who devised the plotting system that uses coordinates, later named for him?"
+
+        - answer: rene descartes
+        - answer: descartes
+
+    - question:
+        - text: "In a novel by Diana Wynne Jones, Howl, the title wizard, has a \"moving\" what?"
+
+        - answer: castle
+
+    - question:
+        - text: "In 1983 Michael Jackson danced backwards into history using which signature move on Motown's 25th anniversary special?"
+
+        - answer: moonwalk
+        - answer: the moonwalk
+
+    - question:
+        - text: "In 2014 Satya Nadella became the third CEO of which tech company?"
+
+        - answer: microsoft
+
+    - question:
+        - text: "Who portrayed Bella Swan in the Twilight series of movies?"
+
+        - answer: kristen stewart
+
+    - question:
+        - text: "What's the name of Boston's international airport?"
+
+        - answer: logan
+        - answer: logan international airport
+
+    - question:
+        - text: "Which Hawaiian king, whose name means \"the very lonely one\", conquered Maui in 1790?"
+
+        - answer: kamehameha
+
+    - question:
+        - text: "Which word means \"to cover with thin layers\" and starts with \"la\"?"
+
+        - answer: laminate
+
+    - question:
+        - text: "What four-letter word can mean \"stop\", if someone's pouring you a drink and has asked you to \"say\" it?"
+
+        - answer: when
+
+    - question:
+        - text: "General Patton's toughness on his enemies (and his own men) earned him the nickname \"Old\" what?"
+
+        - answer: blood and guts

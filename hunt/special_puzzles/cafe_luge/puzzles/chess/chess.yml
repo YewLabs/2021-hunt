@@ -1,0 +1,93 @@
+name: chess
+difficulty: 3/10
+coolness: 6/10
+time: 4:00
+
+questions:
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle1.png
+
+        - answer: e5
+
+    - question:
+        - text: "What is the best move for Black? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle2.png
+
+        - answer: Qd3
+        - answer: Qxd3
+
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle3.png
+
+        - answer: Qe6
+        - answer: Qxe6
+
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle4.png
+
+        - answer: d6
+
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle5.png
+
+        - answer: Bd8
+
+    - question:
+        - text: "What is the best move for Black? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle6.png
+
+        - answer: Ne2
+
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle7.png
+
+        - answer: Qg5
+        - answer: Qxg5
+
+    - question:
+        - text: "What is the best move for Black? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle8.png
+
+        - answer: e4
+
+    - question:
+        - text: "What is the best move for Black? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle9.png
+
+        - answer: Qg2
+
+    - question:
+        - text: "What is the best move for Black? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle10.png
+
+        - answer: Qg3
+        - answer: Qxg3
+
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle11.png
+
+        - answer: Qf2
+
+    - question:
+        - text: "What is the best move for White? (Express your answer in standard algebraic chess notation, i.e. \"Ne1\" or \"d4\".)"
+
+        - image: chess/puzzle12.png
+
+        - answer: Ng5

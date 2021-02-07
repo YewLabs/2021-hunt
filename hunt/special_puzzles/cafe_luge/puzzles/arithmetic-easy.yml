@@ -1,0 +1,83 @@
+name: arithmetic-easy
+difficulty: 1/10
+coolness: 1/10
+time: 1:00
+
+questions:
+    - question:
+        - text: "What is 4 + 2?"
+
+        - answer: 6
+        - answer: six
+
+    - question:
+        - text: "What is 8 + 9?"
+
+        - answer: 17
+        - answer: seventeen
+
+    - question:
+        - text: "What is 3 + 4 + 1?"
+
+        - answer: 8
+        - answer: eight
+
+    - question:
+        - text: "What is 5 + 6 + 2?"
+
+        - answer: 13
+        - answer: thirteen
+
+    - question:
+        - text: "What is 7 - 5?"
+
+        - answer: 2
+        - answer: two
+
+    - question:
+        - text: "What is 18 - 11?"
+
+        - answer: 7
+        - answer: seven
+
+    - question:
+        - text: "What is 23 - 5?"
+
+        - answer: 18
+        - answer: eighteen
+
+    - question:
+        - text: "What is 5 * 7?"
+
+        - answer: 35
+        - answer: thirty-five
+
+    - question:
+        - text: "What is 3 * 8?"
+
+        - answer: 24
+        - answer: twenty-four
+
+    - question:
+        - text: "What is 18 / 3?"
+
+        - answer: 6
+        - answer: six
+
+    - question:
+        - text: "What is 66 / 6?"
+
+        - answer: 11
+        - answer: eleven
+
+    - question:
+        - text: "What is 1 + 2 + 3 + ... + 10?"
+
+        - answer: 55
+        - answer: fifty-five
+
+    - question:
+        - text: "What is the (positive) square root of 144?"
+
+        - answer: 12
+        - answer: twelve

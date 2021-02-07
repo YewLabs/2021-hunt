@@ -1,0 +1,91 @@
+<p>Visiting the Alchemist Sphinx in &perp;IW, it gives us a riddle. If we get the answer wrong, it will threaten to eat us, but rest assured that it hasn't eaten anyone in a very long time.</p>
+
+<p>The first thing we need to do is get the answers to all the riddles. The Sphinx will confirm our answers, so we'll know when we have the right answer to each one.</p>
+
+
+<table>
+<tr><th>Riddle</th><th>Answer</th></tr>
+<tr><td>For my job, I must be strong<br>You may find me within a song<br>They used to make me out of wood<br>But now concrete and steel is good<br>What am I?</td><td>BRIDGE</td></tr>
+<tr><td>I'm often used to keep some people out<br>That's not my only use without a doubt<br>In the theater I'm the first one on<br>But when you draw me it's just like I'm gone<br>What am I?</td><td>CURTAIN</td></tr>
+<tr><td>I live inside a bigger creature's heart<br>When I am thirsty, I refuse my part<br>But when I'm working hard you'll really know<br>I'll squeal and roar, and then I'll growl real low<br>What am I?</td><td>ENGINE</td></tr>
+<tr><td>Many want me blown away each year<br>And then when it gets warm I will appear<br>I want to eat up all the beams, it's true<br>Or flip me over when you start anew<br>What am I?</td><td>LEAF</td></tr>
+<tr><td>I'm soft at heart despite my harder hull,<br>And sometimes you may think that I am dull<br>I tell so many stories every day<br>But like my heart they do not always stay<br>What am I?</td><td>PENCIL</td></tr>
+<tr><td>Within the day I climb up high<br>At night, in glassy bed I lie<br>If you score highly on my test<br>I'll send you home—it's for the best<br>What am I?</td><td>THERMOMETER</td></tr>
+<tr><td>I taste great and I don't smell<br>I'll be right there whene'er you yell<br>I can be caught by a cat<br>Though I am not a mouse or rat<br>What am I?</td><td>TONGUE</td></tr>
+<tr><td>Don't eat off me! I'm used in rites,<br>I hold a soul or ash or lights<br>I also go across the sea<br>With sailors down inside of me<br>What am I?</td><td>VESSEL</td></tr>
+<tr><td>When the time has come to take a break,<br> audibly a warning I will make.<br>Sometimes you may not notice me at all<br>Unless you are four-leg'd and two feet tall<br>What am I?</td><td>WHISTLE</td></tr>
+</table>
+
+
+<p>Once we've solved all the riddles, the Alchemist Sphinx lets us into her inner chamber, where we can see a wall of symbols.</p>
+
+<div class="imgcontainer">
+<img src="{{sroot}}inside.png" alt="the wall of symbols shown when we enter the Alchemist Sphinx">
+</div>
+
+<p>At this point, we can examine the symbols and notice that, while most of them are fairly recognizable, some of the symbols are a little weird. Because this is the <i>Alchemist</i> Sphinx, we might think of <a href="https://en.wikipedia.org/wiki/Alchemical_symbol">alchemical symbols</a>. We can find nine alchemical symbols on the wall:</p>
+
+
+<div class="imgcontainer">
+<img src="{{sroot}}inside_annotated.png" alt="the wall of symbols shown when we enter the Alchemist Sphinx. Alchemical symbols are shown in red. Associated digits are shown in cyan.">
+</div>
+
+<p>Each symbol is associated with a different alchemical element or compound:</p>
+
+<table>
+<tr><th>Symbol</th><th>Meaning</th></tr>
+<tr><td><img src='{{sroot}}gold.png' width='40px'></td><td>Gold</td></tr>
+<tr><td><img src='{{sroot}}mercury.png' width='40px'></td><td>Mercury</td></tr>
+<tr><td><img src='{{sroot}}lead.png' width='40px'></td><td>Lead</td></tr>
+<tr><td><img src='{{sroot}}iron.png' width='40px'></td><td>Iron</td></tr>
+<tr><td><img src='{{sroot}}fire.png' width='40px'></td><td>Fire</td></tr>
+<tr><td><img src='{{sroot}}salt.png' width='40px'></td><td>Salt</td></tr>
+<tr><td><img src='{{sroot}}tin.png' width='40px'></td><td>Tin</td></tr>
+<tr><td><img src='{{sroot}}silver.png' width='40px'></td><td>Silver</td></tr>
+<tr><td><img src='{{sroot}}blood.png' width='40px'></td><td>Blood</td></tr>
+</table>
+
+<p>Now we have two sets of nine words. Thinking about how we might try to match them, we notice that they form phrases.</p>
+<table>
+<tr><th>Alchemy word</th><th>Riddle word</th></tr>
+<tr><td>GOLD</td><td>LEAF</td></tr>
+<tr><td>MERCURY</td><td>THERMOMETER</td></tr>
+<tr><td>LEAD</td><td>PENCIL</td></tr>
+<tr><td>IRON</td><td>CURTAIN</td></tr>
+<tr><td>FIRE</td><td>ENGINE</td></tr>
+<tr><td>SALT</td><td>BRIDGE</td></tr>
+<tr><td>TIN</td><td>WHISTLE</td></tr>
+<tr><td>SILVER</td><td>TONGUE</td></tr>
+<tr><td>BLOOD</td><td>VESSEL</td></tr>
+</table>
+
+<p>We're almost there, but so far we just have a bunch of words, maybe arranged on a statue. We need some way to get only one letter from each of them. Turning back to the inside of the Sphinx, we notice that each alchemical symbol touches exactly one number (shown in cyan in the image above).</p>
+
+
+<table>
+<tr><th>Symbol</th><th>Alchemy word</th><th>Riddle word</th><th>Number</th><th>Index</th></tr>
+<tr><td><img src='{{sroot}}lead.png' width='40px'></td><td>LEAD</td><td>PENCIL</td><td>4</td><td>C</td></tr>
+<tr><td><img src='{{sroot}}gold.png' width='40px'></td><td>GOLD</td><td>LEAF</td><td>3</td><td>A</td></tr>
+<tr><td><img src='{{sroot}}mercury.png' width='40px'></td><td>MERCURY</td><td>THERMOMETER</td><td>4</td><td>R</td></tr>
+<tr><td><img src='{{sroot}}iron.png' width='40px'></td><td>IRON</td><td>CURTAIN</td><td>7</td><td>N</td></tr>
+<tr><td><img src='{{sroot}}tin.png' width='40px'></td><td>TIN</td><td>WHISTLE</td><td>3</td><td>I</td></tr>
+<tr><td><img src='{{sroot}}blood.png' width='40px'></td><td>BLOOD</td><td>VESSEL</td><td>1</td><td>V</td></tr>
+<tr><td><img src='{{sroot}}silver.png' width='40px'></td><td>SILVER</td><td>TONGUE</td><td>2</td><td>O</td></tr>
+<tr><td><img src='{{sroot}}salt.png' width='40px'></td><td>SALT</td><td>BRIDGE</td><td>2</td><td>R</td></tr>
+<tr><td><img src='{{sroot}}fire.png' width='40px'></td><td>FIRE</td><td>ENGINE</td><td>1</td><td>E</td></tr>
+</table>
+
+<p>Indexing the number into the riddle answer and ordering (in row-major order) by the position of the alchemical symbol, we read out the answer, <span class="answer">CARNIVORE</span>.
+<style>
+.imgcontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.imgcontainer img {
+    align-self: center;
+    width: 60%;
+    min-width: 400px;
+}
+</style>

@@ -1,0 +1,60 @@
+<p>We are presented with a text box to wish for things. Wishing for anything returns an image of that wish, but often the image is not exactly what we expected. When wishing for "<i>money</i>", we see a picture of money in a mug or next to a trophy. When wishing for "<i>friends</i>", we get the response, "<i>FRIENDS not found!</i>"</p>
+
+<p>By trying many wishes, we can start to understand how the puzzle works. Wishes that are less than three characters long or contain nonsense words get no image. Most wishes will return an image of that wish, but with a secret word added to the query. In the "<i>money</i>" example, we actually get an image of "<i>cup money</i>". We can usually find the same image by searching for "<i>cup money</i>" on Google Images (results may vary by user). A small number of otherwise valid wishes (eg. "<i>friends</i>", "<i>success</i>") still return "<i>not found</i>", however.</p>
+
+<p>We find that there are eight secret words being added to our wish queries: <b>story</b>, <b>star</b>, <b>dash</b>, <b>cup</b>, <b>trick</b>, <b>shark</b>, <b>deck</b>, and <b>stock</b>. Wishing for any of these secret words on their own gives a picture of "<i>question</i>" instead, with one or more question marks, which helps confirm that these words are important. We might also notice that while most images are mirrored (to discourage reverse image search), the question images are not, further hinting they are special. But how are these secret words chosen? If we look back at the valid wishes that return "<i>not found</i>", we might notice that either:</p>
+
+<ol>
+    <li>The first and last letter are the same (as in "<i>success</i>"), or</li>
+    <li>The first and last letter are directly opposite on the letter wheel. That is, their mod(26) distance is 13. For example, the F and S in "<i>friends</i>" are 13 letters apart, regardless of whether you go clockwise or counter-clockwise on the letter wheel.</li>
+</ol>
+
+<img src="{{sroot}}letter-wheel.png" style="width:250px; margin:auto;">
+
+<p>This suggests that the first and last letters are key in determining the secret word. In fact, we can actually bisect the secret words in two groups. If the first letter comes "<b>before</b>" the last letter, <i>story</i>, <i>star</i>, <i>dash</i>, or <i>cup</i> is added <b>before</b> your wish. If the first letter comes "<b>after</b>" the last letter, <i>trick</i>, <i>shark</i>, <i>deck</i>, or <i>stock</i> is added <b>after</b> your wish. </p>
+
+<p>The first letter comes "<b>before</b>" the last letter when the clockwise distance from first to last letter is shorter than the clockwise distance from last to first letter. For example, in "<i>money</i>", M &#8594; Y is shorter than Y &#8594; M (distance = 12), so we get an image for "<i>cup money</i>".</p>
+
+<p>The first letter comes "<b>after</b>" the last letter when the clockwise distance from first to last letter is longer than the clockwise distance from last to first letter. For example, in "<i>fame</i>", F &#8594; E is longer than E &#8594; F (distance = 25), so we get an image for "<i>fame stock</i>".</p>
+
+<p>We may also find this bisection by carefully comparing the returned image with Google image search results, and determining whether the secret word is being prepended or postpended, although we often get similar results regardless of word order. Some examples: "<i>movies</i>" &#8594; "<i>star movies</i>" (mostly logos of the TV network Star Movies), not "<i>movies star</i>" (mostly movie celebrities); "<i>tie</i>" &#8594; "<i>cup tie</i>" (mostly devices to hold cups), not "<i>tie cup</i>" (mostly cups with pictures of neckties); "<i>ticks</i>" &#8594; "<i>ticks stock</i>" (mostly stock images of the parasite), not "<i>stock ticks</i>" (mostly stock ticker images). </p>
+
+<p>Now, we wished for so many things, but what did we really want all along? Consider the secret words in each group. The <b>before</b> words (story, star, dash, cup) can all come before "<b>board</b>": storyboard, starboard, dashboard, and cupboard. The <b>after</b> words (trick, shark, deck, stock) can all come after "<b>card</b>": card trick, card shark, card deck, and cardstock. Indeed, wishing for "<i>card</i>" and "<i>board</i>" alone give images of just that, with no secret word being added. </p>
+
+<p>Finally, <i>card</i> and <i>board</i> can combine to make what we wanted all along: <span class="answer">CARDBOARD</span>, the answer to this puzzle. Wishing for "<i>cardboard</i>" returns a green checkmark, confirming you have found the answer to this puzzle.</p>
+
+<h2>More details</h2>
+
+<p>The choice of secret word within the two groups is also determined by the first/last letter distance, but this is not important to solving the puzzle. Since there are 12 distances for both the "before" and the "after" group, this is split evenly into four categories of distance 3 to determine the secret word added. Based on letter frequencies, this makes some secret words slightly more likely than others:</p>
+
+<ul>
+    <li>0: not found (6%); e.g. <i>success</i></li>
+    <li>1&ndash;3: STORY (11%)</li>
+    <li>4&ndash;6: STAR (9%)</li>
+    <li>7&ndash;9: DASH (11%)</li>
+    <li>10&ndash;12: CUP (13%); e.g. <i>money</i> &#8594; <i>cup money</i></li>
+    <li>13: not found (4%); e.g. <i>friends</i></li>
+    <li>14&ndash;16: TRICK (14%)</li>
+    <li>17&ndash;19: SHARK (9%)</li>
+    <li>20&ndash;22: DECK (11%)</li>
+    <li>23&ndash;25: STOCK (12%); e.g. <i>fame</i> &#8594; <i>fame stock</i></li>
+</ul>
+
+<p>Full list of frequencies here (rows = first letter, columns = last letter) based on the word dictionary used:</p>
+
+<img src="{{sroot}}letter-frequencies.png" style="width:800px; margin:auto;">
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>I love interactive puzzles, and the idea of embedding a puzzle in a Scribblenauts-style text box with infinite image possibilities sounded interesting. In an earlier revision, there were more tricks like finding a 9-letter word with your search as a substring, or showing images of "card/carp/cart/carb" when the last letter ended in D/P/T/B, and more randomization based on hashing the input string. </p>
+
+<p>After test-solving, we moved to a more deterministic transformation. I cherry-picked harder words like "trick" to be slightly more prominent based on letter frequencies and easier words like "shark" to be less prominent.</p>
+
+<p>I hope solvers were wishing abundantly and working out the puzzle with enough examples for each case rather than carefully reverse image searching (RIS) every result. RIS is very powerful, and I tried to make it as annoying as possible by providing low-resolution, horizontally-flipped, slightly hue-shifted images. Nevertheless, RIS (particularly Yandex) can still identify many image results. This is often a cat-and-mouse consideration for image-based puzzles, with constructors hand-drawing images, using edge-detection filters, obscuring the image with masks, and puzzlers abusing tools like Huntress and RevEye.</p>
+
+<p>Many thanks to Jon for technical help setting up this puzzle. The original implementation used a very hacky web scraper that would have surely collapsed under real hunt load (not to mention Google sending captchas at the server). We upgraded to Google's Custom Search API, and cached 8k+ responses to wishes to minimize the Google API load. Originally, wishing for "cardboard" returned a collage of cardboard things for all previous wishes, along with confetti. This was removed to save Google API calls (and avoid considerations for team-specific session state) but you can enjoy one such collage below.</p>
+
+<img src="{{sroot}}answer-collage.jpg" style="margin:auto;">
+
+</div>

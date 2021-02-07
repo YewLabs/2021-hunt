@@ -1,0 +1,196 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+{% load static %}
+
+{% block stylesheets %}
+{{block.super}}
+  <link rel="stylesheet" href="{{ mmo_base|add:'TemplateData/style.css' }}"/>
+  <link rel="stylesheet" href="{% static 'character_customizer/character.css' %}"/>
+
+  <script src="{{ mmo_base|add:'TemplateData/UnityProgress.js' }}"></script>
+  <script src="{{ mmo_base|add:'Build/UnityLoader.js' }}"></script>
+  <script src="{% static 'character_customizer/characters.js' %}"></script>
+
+  <script>
+    var unityInstance = UnityLoader.instantiate("unityContainer", "{{ mmo_base|add:'Build/Build.json' }}", { onProgress: onProgress });
+    window.mmoVersion = "{{ mmo_version }}";
+    window.teamId = {{ team.y2021teamdata.tempest_id }};
+    window.teamAuth = "{{ team.y2021teamdata.auth }}";
+    window.characterUrlBase = "{% static 'character_customizer' %}";
+
+    const lowQualityLocalStorageKey = "mmo-client-low-quality";
+    window.setLowQualityEnabled = (lowQualityEnabled) => {
+      if (lowQualityEnabled) {
+        $('#unityContainer').addClass("unityContainer-low-quality");
+      } else {
+        $('#unityContainer').removeClass("unityContainer-low-quality");
+      }
+      window.localStorage.setItem(lowQualityLocalStorageKey, !!lowQualityEnabled ? "enabled" : "");
+    }
+
+    $(() => {
+      const lowQualityEnabledOnPageLoad = !!window.localStorage.getItem(lowQualityLocalStorageKey);
+      if (lowQualityEnabledOnPageLoad) {
+        $('#unityContainer').addClass("unityContainer-low-quality");
+      } else {
+        $('#unityContainer').removeClass("unityContainer-low-quality");
+      }
+    });
+  </script>
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-width: 1000px;
+    }
+
+    #container {
+      overflow: hidden;
+      flex-grow: 1;
+      min-height: 640px;
+      position: relative;
+      padding: 0;
+    }
+
+    #unityContainer, #loading-bar-svg, #logo, #character-popup {
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute !important;
+      margin: auto !important;
+    }
+
+    #loading {
+      left: 50%;
+      top: 50%;
+      width: 400px;
+      height: 400px;
+      margin: -200px;
+      position: absolute;
+      perspective: 500px;
+      overflow: hidden;
+    }
+
+    #unityContainer {
+      max-width: 140vh;
+      min-width: 1000px;
+      background: black !important;
+    }
+
+    .unityContainer-low-quality {
+      width: 840px !important;
+      max-width: 840px !important;
+      min-width: 840px !important;
+      height: 560px !important;
+    }
+
+    #unityContainer:after {
+      content: "";
+      position: absolute;
+      top: -5.5%;
+      left: -4%;
+      right: -4%;
+      bottom: -9%;
+      background-image: url({% static 'art/yewlabsmonitorframe.png' %});
+      background-size: 100% 100%;
+      pointer-events: none;
+      filter: brightness(0.8);
+    }
+
+    circle {
+      fill: none;
+      stroke: white;
+      stroke-width: 5;
+      stroke-dasharray: 0 314;
+      transition: stroke-dasharray 100ms;
+      transform: rotate(-90deg);
+      transform-origin: center;
+    }
+
+    #logo {
+      animation: rotate 5s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotateY(0deg); }
+      to { transform: rotateY(360deg); }
+    }
+  </style>
+{% endblock %}
+
+{% block title %}Projection Device &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block projection %}
+    <li class="navbar-list-item"><a href="#" onclick="showCharacterCustomizer()" style="color: #f0eca3">Customize your projection</a></li>
+    <li class="navbar-list-item"><a href="{% url "device_message" %}" style="color: #f0eca3">Help</a></li>
+{% endblock %}
+
+{% block content %}
+<div id="container" class="content">
+  <div id="unityContainer"></div>
+  <div id="loading">
+  <svg id="loading-bar-svg" viewBox="125 -125 150 150"><circle cx="200" cy="200" r="50"></circle></svg>
+  <img id="logo" src="{% static 'yew_logo.png' %}" width="250"></img>
+  </div>
+
+<div id="character-popup" onclick="closeOverlay()">
+  <div class="popup chosen" id="character-id" onclick="noclick()">
+    <div id="character-id-top">
+      2021
+      <span>&#57601; ID</span>
+    </div>
+    <div id="character-id-avatar" class="highlight">
+      <div id="accents" class="fakeimage"></div>
+      <div id="clothes" class="fakeimage"></div>
+      <div id="skin" class="fakeimage"></div>
+      <div id="body" class="fakeimage"></div>
+      <div id="face" class="fakeimage"></div>
+      <div id="hair" class="fakeimage"></div>
+      <div id="visor" class="fakeimage"></div>
+      <div id="visor2" class="fakeimage"></div>
+    </div>
+    <div id="character-id-main">
+      <div>
+        <div class="left noscroll">❰</div>
+        <div class="choices" id="face-choices"></div>
+        <div class="right">❱</div>
+      </div>
+      <div>
+        <div class="left noscroll">❰</div>
+        <div class="choices" id="hair-choices"></div>
+        <div class="right">❱</div>
+      </div>
+      <div>
+        <input type="color" id="haircolor">
+        <span>Hair</span>
+        <input type="color" id="visorcolor">
+        <span>Visor</span>
+      </div>
+      <div>
+        <div class="choices" id="skin-choices"></div>
+        <span>Skin</span>
+      </div>
+    </div>
+    <div id="character-id-bottom">
+      Perpendicular Institute of the World
+      <img src="{% static 'logo_alt.png' %}">
+    </div>
+  </div>
+
+  <div class="popup" id="character-name" onclick="noclick()">
+    <div id="character-name-top">
+      <b>HELLO</b>
+      my name is
+    </div>
+    <input id="name" name="name" maxlength="20" required pattern="([\x20-\x7e]|\p{Script=Latin})+" autocomplete="off" spellcheck="false">
+  </div>
+
+  <div id="character-save">Save</div>
+</div>
+</div>
+{% endblock %}

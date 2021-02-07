@@ -1,0 +1,129 @@
+<style>
+td:nth-child(2), td:nth-child(4) {
+  font-family: monospace;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+</style>
+
+<p>This puzzle consists of a Google Sheet with ten sheets which appear to correspond to hypothetical
+    &ldquo;puzzles&rdquo;, and finally a sheet at the end called &ldquo;Extract&rdquo;.
+
+<p>Each of the puzzle sheets has a crucial step remaining in order to extract the answer for that puzzle and includes
+    notes that suggest what specifically needs to be done. In each case, there is a shaded cell, as well as a solid
+    border around some cells in the sheet that need to be filled. By filling the highlighted cell with the appropriate
+    formula, the correct data can be placed in all of the color-boxed cells by simply copying that formula.
+
+<p>For the first few sheets, the required formulas are quite simple, but the later sheets require some lesser-known
+    formulas.
+
+<p>Possible solutions follow for the highlighted cell in each of the sheets:</p>
+
+<table>
+    <tr>
+        <th>Sheet name</th>
+        <th>Solution</th>
+        <th>Explanation</th>
+        <th>&ldquo;Answer&rdquo;</th>
+    </tr>
+    <tr>
+        <td>Crossword Chaos</td>
+        <td>=MID(B2,Q2,1)</td>
+        <td><tt>MID</tt> takes a chunk of a word, so it’s good for indexing.</td>
+        <td>CROSSWORDCHAOSCROSSWORDCHAOSCR</td>
+    </tr>
+    <tr>
+        <td>Mystery Hunt History</td>
+        <td>=CHAR(D6-1900)</td>
+        <td><tt>CHAR</tt> converts a numberical value to its <tt>ASCII</tt> character equivalent.</td>
+        <td>ANSWERTOTHEPUZZLE</td>
+    </tr>
+    <tr>
+        <td>Identity Crisis</td>
+        <td>=CHAR(D5+64)</td>
+        <td><tt>CHAR</tt> can also be used for "A1Z26" substitutions.</td>
+        <td>IGNORETHESEANSWERSPLEASE</td>
+    </tr>
+    <tr>
+        <td>Programming Problems</td>
+        <td>=UPPER(MID(REGEXREPLACE(A5,"[^A-Za-z]",""),P5,1))</td>
+        <td>This one is tricky. We use a <a href="https://www.regular-expressions.info/tutorial.html">regular
+                expression</a> to substitute out all the non-alphabetic characters before using the indexing trick from
+            above.</td>
+        <td>SUCCESSYOUSOLVEDITGREATGREAT</td>
+    </tr>
+    <tr>
+        <td>Countries</td>
+        <td>=INDEX($E:$E,MATCH(INDEX($B:$B,MATCH(H5,$A:$A,0)),$D:$D,0))</td>
+        <td><tt>INDEX</tt> and <tt>MATCH</tt> are crucial functions for solving puzzles in google sheets. They’re very versatile, and you
+            can use them to look up data in tables of any direction or shape. You can also see dollar signs used here to
+            lock in place some of the references.</td>
+        <td>CANONICALLISTICLE</td>
+    </tr>
+    <tr>
+        <td>Data Disentanglement</td>
+        <td>=INDIRECT(AF3&B3)</td>
+        <td><tt>INDIRECT</tt> is another fun function, that converts a cell title as a string to an actual reference. You can
+            also see &ldquo;&&rdquo; which is shorthand for concatenation here. <tt>INDIRECT</tt> sometimes works well with
+            <tt>ADDRESS</tt>, which
+            makes a cell name string.</td>
+        <td>MECHANICALSEAMONSTER</td>
+    </tr>
+    <tr>
+        <td>Vowels and Consonants</td>
+        <td>=CHAR(BIN2DEC(C7)+64)</td>
+        <td><tt>BIN2DEC</tt> is a little funny in that it only likes numbers smaller than 512.</td>
+        <td>GREATJOBYOUDIDIT</td>
+    </tr>
+    <tr>
+        <td>Frequency Analysis</td>
+        <td>=CHAR(LEN($A$3)-LEN(SUBSTITUTE($A$3,A11,""))+64)</td>
+        <td>There’s a bunch of ways to do this one. This is probably the simplest though. It’s a little clever - the
+            number of occurences of a letter in a string is the length of the string minus the length of the string with
+            that character removed.</td>
+        <td>CONGRATULATIONSYOUSOLVEDIT</td>
+    </tr>
+    <tr>
+        <td>Pokemon Sudoku</td>
+        <td>=ARRAYFORMULA(CONCATENATE(IF($EJ$12:$EL$14=A12,MID($EJ$12:$EL$14,$EG$8:$EI$10,1),"")))</td>
+        <td>This is the hardest subpuzzle. This solution abuses <tt>CONCATENATE</tt> and <tt>ARRAYFORMULA</tt> to try a bunch of things at
+            once and use only the one that worked. Generally <tt>ARRAYFORMULA</tt> is an extremely useful function but it can be
+            hard to think about at times. It makes any function that would operate on a single cell operate across an
+            array of cells instead, applying to each one.</td>
+        <td>BRILLIANT</td>
+    </tr>
+    <tr>
+        <td>Too many numbers!</td>
+        <td>=CHAR(COUNTIF($EE$276:$FR$529,A277)-936)</td>
+        <td><tt>COUNTIF</tt> is another standard useful function. It can also count things that are greater than a given number,
+            or a number of other ways of counting. Dollar signs are almost always necessary with <tt>COUNTIF</tt> if you’re using
+            it to count different things in the same range.</td>
+        <td>WOWNICEONE</td>
+    </tr>
+</table>
+
+<p>In some cases, there are some other reasonable formulas that would also work, such as using many instances of
+    <tt>SUBSTITUTE</tt> instead of one <tt>REGEXREPLACE</tt> for Programming Problems.
+
+<p>As emphasised by the first sheet, and the answer to Identity Crisis, the “answers” on each sheet are not relevant for
+    solving the puzzle; they are just placeholders so that solvers can verify that their solution for each sheet is
+    correct.
+
+<p>As hinted on the final &ldquo;Extract&rdquo; sheet, we proceed by copying the formulas from the previous sheets into
+    the corresponding colored boxes on the final sheet. Note that in Google Sheets this can be done by either directly
+    copying the formula text from the cell, or by copying the cell itself. The latter is correct here, as hinted by the
+    large number of hidden columns in the previous sheets, which would not be relevant in the former case, and by the
+    comment above the formula pasting area.
+
+<p>When all of the formulas are pasted into the extraction sheet, the conditional formatting produces the following
+    image:</p>
+
+<img src="{{sroot}}image1.png">
+
+<p>This depicts James Bond. The four blanks at the bottom clue our four-letter answer, <span class="answer">BOND</span>.
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+    <p>This puzzle was intentionally created for the intro round as a way to introduce newer solvers to useful spreadsheet
+    formulas.</p>
+</div>

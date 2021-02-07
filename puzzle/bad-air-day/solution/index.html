@@ -1,0 +1,363 @@
+<style>
+  .puzzle img {
+    max-width: 250px;
+  }
+</style>
+
+<p>
+  Each of the boarding passes represents a fashion show that was unusual or
+  notable, for a reason explained by the cancellation reason. The main clue
+  towards this is that the set of "From" cities is Paris, New York, London,
+  Milan, and Beijing, which includes the "Big Four" fashion capitals, and the
+  dates match with their corresponding fashion weeks (January-March for
+  autumn/winter shows and September-October for spring/summer shows). We also
+  might directly recognize a particularly notable show like Fendi's Great Wall
+  of China show or Alexander McQueen's hologram. The shows, in boarding pass
+  order, are:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Brand (and Youtube link)</th>
+      <th>Season</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Paris</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=ZD3b03CK9tU"
+          >Alexander McQueen</a
+        >
+      </td>
+      <td>Fall/Winter 2006</td>
+      <td>The show ended with a hologram of Kate Moss floating in a pyramid.</td>
+    </tr>
+    <tr>
+      <td>Paris</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=9QMugKSXFWQ">Balenciaga</a>
+      </td>
+      <td>Fall/Winter 2020</td>
+      <td>
+        This show had a flooded runway and a giant screen on the ceiling playing
+        apocalyptic imagery.
+      </td>
+    </tr>
+    <tr>
+      <td>New York</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=UuAdPiFROY4">Calvin Klein</a>
+      </td>
+      <td>Fall/Winter 2018</td>
+      <td>
+        The whole floor was covered with about
+        <a
+          href="https://nypost.com/2018/02/14/calvin-klein-guests-had-to-wade-through-50000-gallons-of-popcorn-to-get-to-their-seats/"
+          >50,000 gallons of popcorn</a
+        >.
+      </td>
+    </tr>
+    <tr>
+      <td>Paris</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=SJebP-toiUs">Chanel</a>
+      </td>
+      <td>Spring/Summer 2016</td>
+      <td>
+        This show was set in a fake airport terminal for "Chanel Airlines,"
+        hence the "just kidding, everything looks normal."
+      </td>
+    </tr>
+    <tr>
+      <td>Beijing</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=tDKh4C-DJNo">Fendi</a>
+      </td>
+      <td>Spring/Summer 2008</td>
+      <td>This show took place on the Great Wall of China.</td>
+    </tr>
+    <tr>
+      <td>Milan</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=rTiziX53Czc">Gucci</a>
+      </td>
+      <td>Fall/Winter 2018</td>
+      <td>
+        This show strangely featured models carrying replicas of their own heads
+        (among other weird things like a chameleon and a "baby dragon").
+      </td>
+    </tr>
+    <tr>
+      <td>Paris</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=VfUc3LWcUoA">Louis Vuitton</a>
+      </td>
+      <td>Spring/Summer 2012</td>
+      <td>
+        This show featured a large carousel that all the models were on at the
+        start.
+      </td>
+    </tr>
+    <tr>
+      <td>New York</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=hnZ7svSOlBI">Philipp Plein</a>
+      </td>
+      <td>Fall/Winter 2018</td>
+      <td>
+        In addition to a giant UFO and a robot, this show also had fake snow
+        falling throughout and a performance by Migos.
+      </td>
+    </tr>
+    <tr>
+      <td>New York</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=vndZ6pY5790">Pyer Moss</a>
+      </td>
+      <td>Spring/Summer 2020</td>
+      <td>
+        This show, inspired by Sister Rosetta Tharpe, featured a band and a
+        65-person choir covering a variety of songs.
+      </td>
+    </tr>
+    <tr>
+      <td>Paris</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=aWPsUICuen0">Rick Owens</a>
+      </td>
+      <td>Fall/Winter 2012</td>
+      <td>
+        This show had a backdrop consisting of two bars of fire, as well as all
+        models wearing mesh face masks.
+      </td>
+    </tr>
+    <tr>
+      <td>New York</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=wOFPx3DV1QA">Thom Browne</a>
+      </td>
+      <td>Fall/Winter 2012</td>
+      <td>
+        This show took place in front of 10 coffins, which people rose from at
+        the beginning.
+      </td>
+    </tr>
+    <tr>
+      <td>London</td>
+      <td>
+        <a href="https://www.youtube.com/watch?v=rJZDM6ISUj4">Topman</a>
+      </td>
+      <td>Fall/Winter 2014</td>
+      <td>The end of this show saw the catwalk drenched in water.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  The brands are in alphabetical order, which helps with identification and
+  suggests that they are the relevant names to index into with the numbers on
+  the planes.
+</p>
+
+<p>
+  Each of the planes represents the first look in one of the above shows (or one
+  of the first looks in cases where it's slightly ambiguous), where the wings
+  represent arms and the "tail" (technically, the
+  <a href="https://en.wikipedia.org/wiki/Stabilizer_(aeronautics)"
+    >horizontal stabilizers</a
+  >) represents legs. We use the number on the plane to index into the matching
+  brand name:
+</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Plane</th>
+      <th>Brand</th>
+      <th>First look</th>
+      <th>Index</th>
+      <th>Letter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <img src="{{sproot}}1.png" />
+      </td>
+      <td>Balenciaga</td>
+      <td>
+        <img src="{{sroot}}s1.jpg" />
+      </td>
+      <td>6</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}2.png" />
+      </td>
+      <td>Alexander McQueen</td>
+      <td>
+        <img src="{{sroot}}s2.jpg" />
+      </td>
+      <td>1</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}3.png" />
+      </td>
+      <td>Topman</td>
+      <td>
+        <img src="{{sroot}}s3.jpg" />
+      </td>
+      <td>1</td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}4.png" />
+      </td>
+      <td>Rick Owens</td>
+      <td>
+        <img src="{{sroot}}s4.jpg" />
+      </td>
+      <td>6</td>
+      <td>W</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}5.png" />
+      </td>
+      <td>Chanel</td>
+      <td>
+        <img src="{{sroot}}s5.jpg" />
+      </td>
+      <td>3</td>
+      <td>A</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}6.png" />
+      </td>
+      <td>Philipp Plein</td>
+      <td>
+        <img src="{{sroot}}s6.jpg" />
+      </td>
+      <td>4</td>
+      <td>L</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}7.png" />
+      </td>
+      <td>Calvin Klein</td>
+      <td>
+        <img src="{{sroot}}s7.jpg" />
+      </td>
+      <td>7</td>
+      <td>K</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}8.png" />
+      </td>
+      <td>Fendi</td>
+      <td>
+        <img src="{{sroot}}s8.jpg" />
+      </td>
+      <td>1</td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}9.png" />
+      </td>
+      <td>Thom Browne</td>
+      <td>
+        <img src="{{sroot}}s9.jpg" />
+      </td>
+      <td>3</td>
+      <td>O</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}10.png" />
+      </td>
+      <td>Pyer Moss</td>
+      <td>
+        <img src="{{sroot}}s10.jpg" />
+      </td>
+      <td>4</td>
+      <td>R</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}11.png" />
+      </td>
+      <td>Gucci</td>
+      <td>
+        <img src="{{sroot}}s11.jpg" />
+      </td>
+      <td>2</td>
+      <td>U</td>
+    </tr>
+    <tr>
+      <td>
+        <img src="{{sproot}}12.png" />
+      </td>
+      <td>Louis Vuitton</td>
+      <td>
+        <img src="{{sroot}}s12.jpg" />
+      </td>
+      <td>5</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  This spells out CATWALK FOR US. Submitting this phrase prompted teams to send
+  us some of their best looks for a hypothetical puzzle-themed show. Upon doing
+  this, teams received the answer <span class="answer">LIZ CLAIBORNE</span>.
+</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+  <p>
+    In case it wasn't clear, we used the airplane theming entirely for the
+    purpose of making the "runway" pun (which is why we coyly used many synonyms
+    of "runway" throughout the cancellation reasons). Though, I suppose "model"
+    airplanes are also a thing...
+  </p>
+
+  <p>
+    At some point during construction, we realized that out of the 19 potential
+    shows we considered using, all 19 of them were for collections in even
+    years! We wondered if there was some unspoken agreement in the fashion world
+    to only do weird/ambitious shows every other year, but as far as we know
+    this isn't actually a thing.
+  </p>
+
+  <p>
+    Some other shows we wanted to use but couldn't for various reasons include
+    <a href="https://www.youtube.com/watch?v=2ar6TJYV0QE"
+      >Rick Owens' spring/summer 2014 menswear</a
+    >
+    collection (featuring a metal band whose drummers constantly rotate upside
+    down throughout the performance),
+    <a href="https://www.youtube.com/watch?v=TirA415R7o4"
+      >Rick Owens' spring/summer 2014 ready-to-wear</a
+    >
+    (featuring collegiate stepping teams in lieu of models), and
+    <a href="https://www.youtube.com/watch?v=xLw-hozWzpc"
+      >Chanel's spring/summer 2012 ready-to-wear</a
+    >
+    (with Florence Welch emerging from a clamshell to perform "What the Water
+    Gave Me").
+  </p>
+</div>

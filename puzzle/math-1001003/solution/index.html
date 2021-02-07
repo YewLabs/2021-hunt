@@ -1,0 +1,60 @@
+<p>The main conceit in this puzzle is converting numbers into words. But how is this done? 
+    There are some hints in the flavortext, as well as the somewhat unusual structure of the numbers &mdash; very sparse digits and lots of zeroes.
+    If we consider the place values of the nonzero digits, we find that many of these correspond to powers of thousands, which suggests that
+    certain properties of these powers of thousands are required by the words. The flavortext does also suggest writing out the numbers in full.
+    Doing so with, say, MATH 1001003 gives ONE MILLION ONE THOUSAND THREE. MATH is a subsequence of this string, and moreover this is the smallest number
+    such that this property holds! Note that the M forces the MILLION, the A forces the THOUSAND, and TH can be satisfied by THREE.
+</p>
+
+<p>
+    Note that there are a few rules that should be followed in this puzzle, notably that the word "and" should be omitted from the spelling of all numbers (including the word "and" would allow us to represent MATH with ONE MILLION AND THREE), and that we are using short scale notation.
+</p>
+
+<p>
+    Armed with this knowledge, we can determine the clues. Of course, while each word has a unique number under this scheme, some numbers will have multiple words mapping to them.
+    We can use surrounding context to resolve these ambiguities, or at least enough to solve the clues. As an additional hint, the letter of each variable happens to be the starting letter of the answer.
+</p>
+
+<p>
+    We should then convert these words into numbers, as the mathematical operations should suggest. This step can be done with some intuition with which letters will likely require larger numbers in order to satisfy their requirements.
+</p>
+
+<table>
+    <tr><th>Letter</th><th>Clue</th><th>Answer</th><th>Number</th></tr>
+    <tr><td>A</td><td>Soothing plant often found in crosswords</td><td>ALOE</td><td>1000000000000001</td></tr>
+    <tr><td>B</td><td>Device used to shoot arrows</td><td>BOW</td><td>1000000002</td></tr>
+    <tr><td>C</td><td>Portable device that can call others relying on towers to relay signals</td><td>CELLPHONE</td><td>1000001001000000000000000000000031</td></tr>
+    <tr><td>F</td><td>Ford car model that also means to concentrate</td><td>FOCUS</td><td>4000000000000000000000000106</td></tr>
+    <tr><td>G</td><td>Birthstone of the first month</td><td>GARNET</td><td>8119</td></tr>
+    <tr><td>N</td><td>Team in United States capital playing World Series sport</td><td>NATIONALS</td><td>1000000000000000000000000000001000000000000006</td></tr>
+    <tr><td>S</td><td>Exhausted or consumed a resource, especially money</td><td>SPENT</td><td>1000000000000000000000017</td></tr>
+    <tr><td>T</td><td>Force when a rope or string is pulled</td><td>TENSION</td><td>361</td></tr>
+    <tr><td>W</td><td>Metal disc used to distribute the load of a threaded fastener</td><td>WASHER</td><td>2603</td></tr>
+</table>
+
+<p>
+    We can now compute the expressions:
+</p>
+
+A&centerdot;B+N = 1000000000000001&centerdot;1000000002+1000000000000000000000000000001000000000000006 = 1000000000000000000001000000003000001000000008</br>
+G+T+W = 8119+361+2603 = 11083</br>
+C+F&minus;S = 1000001001000000000000000000000031+4000000000000000000000000106&minus;1000000000000000000000017 = 1000005000000000000000000000000120</br>
+
+<p>
+    Finally, we can reconvert these back to words: the most compelling completion is ALPHABET LENGTH &rarr; CONFECTIONERY. The length of the alphabet is 26; a confectionery with value 26 is <span class="answer">TWIX</span>, the answer.
+</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>At first, there was a reference to Conway-Guy notation since it provides a framework to name numbers up to 10<sup>3000</sup> (even though practically this encoding scheme won't get anywhere near &mdash; the only two words in my dictionary that even use the hundreds place rules (for numbers over 10<sup>300</sup>) are METAMATHEMATICS and METAMATHEMATICAL). 
+        However, this system contradicts with the more common names for powers like QUINDECILLION and SEPTEMDECILLION. So none of the numbers in the puzzle rely on these spelling differences (and all of the second step numerical conversions result in numbers small enough that they are consistently named in all versions).
+    </p>
+    <p>
+        The constraint that every word in the clues had to be representable by a number is mostly a minor one: the only letters that don't ever appear in numbers are J and K (and Z only appears in zero), and avoiding J, K, and Z is fairly easy. B only appears in billion and never again, so in particular words with two B's can't be used.
+        So this did lead to one amusing consequence: BASEBALL was not representable, and therefore was substituted with the interesting phrasing of "WORLD SERIES SPORT".
+    </p>
+    <p>
+        For the mathematical expression step, I wanted a variety of basic operations, and indeed an earlier version did have division. I thought it was interesting that the shorter word was divisible by the longer word (UNTIDY / HEREDITY, if you're curious). But the two clues were deemed too imprecise by testsolvers and the resultant word was relatively inconsequential to the cluephrase.
+    </p>
+    <p>It's certainly not necessary to decode the title, but the very large number decodes to SMALLEST, using the Conway-Guy notation.</p>
+</div>

@@ -1,0 +1,129 @@
+<style>
+.grid {
+  text-align: center;
+  white-space: pre-wrap;
+  font-family: monospace, monospace;
+  line-height: 1;
+  font-size: 20px;
+}
+
+.grid td {
+  border: 1px solid black;
+  width: 1em;
+}
+
+.grid td:empty {
+  background-color: black;
+}
+</style>
+
+<p>We are presented with a very large dropquote. It is very hard to solve the dropquote directly. However, resizing the window changes the number of columns in the dropquote (this is loosely clued by the puzzle title). By performing this resizing, we can make the number of columns in the dropquote any number between 10 and 25 inclusive.</p>
+
+<p>This effectively gives us 16 distinct dropquotes which solve to the same “quote”, and we can use this redundancy to help us solve this quote. Some tips for doing this:</p>
+
+<ul>
+<li>It is possible to identify the locations of some rare letters (e.g. X, Q, Z) by looking at which columns their clues appear in at different widths. For example, the sole Q in the puzzle appears in the 9th column when the width is 10, the 2nd column when the width is 11, and the 1st column when the width is 13. From this information, we can deduce that it must be in the 79th square of the grid (79 is the unique number less than 1000 which leaves a remainder of 9 when divided by 10, 2 when divided by 11, and 1 when divided by 13).</li>
+<li>It is possible to get a small candidate set of letters for a specific square by highlighting that square, seeing what sets of letters are available at various widths, and taking their intersection. (As you fill in more and more of the puzzle, this becomes increasingly likely to identify the letter completely).</li>
+<li>If you have a guess for a word, one good way to check it is to enter it into the dropquote, and resize through all the widths, observing if any of them lead to an error.</li>
+</ul>
+
+<p>Solving the dropquote nets us a list of 57 words (PENNANT, SHADINESS, BACON, …). All these words have odd lengths. Reading the middle letters of these words reveals the message “NICE WORK SOLVING THIS NOW GO LOOK AT THE CENTERS OF ALL ODD SIZE GRIDS”.</p>
+
+<p>There are five choices of width which lead to the dropquote having an odd total number of cells (so in particular, an odd width and an odd height). These are width 11 (height 41), width 13 (height 35), width 15 (height 31), width 17 (height 27) and width 25 (height 19). The centers of these grids contain the letters R, A, Z, O, and R respectively, and thus the final answer is <span class="answer">RAZOR</span>.</p>
+
+<h2>Dropquote Solution (width 20)</h2>
+
+<table class="grid">
+<tr>
+<td>P</td><td>E</td><td>N</td><td>N</td><td>A</td><td>N</td><td>T</td><td></td><td>S</td><td>H</td>
+<td>A</td><td>D</td><td>I</td><td>N</td><td>E</td><td>S</td><td>S</td><td></td><td>B</td><td>A</td>
+</tr>
+<tr>
+<td>C</td><td>O</td><td>N</td><td></td><td>W</td><td>O</td><td>N</td><td>D</td><td>E</td><td>R</td>
+<td>I</td><td>N</td><td>G</td><td></td><td>S</td><td>E</td><td>W</td><td>E</td><td>D</td><td></td>
+</tr>
+<tr>
+<td>T</td><td>H</td><td>R</td><td>O</td><td>U</td><td>G</td><td>H</td><td></td><td>C</td><td>H</td>
+<td>A</td><td>R</td><td>G</td><td>E</td><td>R</td><td></td><td>J</td><td>O</td><td>K</td><td>E</td>
+</tr>
+<tr>
+<td>R</td><td></td><td>C</td><td>O</td><td>M</td><td>P</td><td>O</td><td>S</td><td>I</td><td>T</td>
+<td>I</td><td>O</td><td>N</td><td></td><td>B</td><td>A</td><td>R</td><td>O</td><td>Q</td><td>U</td>
+</tr>
+<tr>
+<td>E</td><td></td><td>A</td><td>I</td><td>R</td><td>L</td><td>I</td><td>F</td><td>T</td><td></td>
+<td>A</td><td>B</td><td>B</td><td>R</td><td>E</td><td>V</td><td>I</td><td>A</td><td>T</td><td>E</td>
+</tr>
+<tr>
+<td>S</td><td></td><td>P</td><td>R</td><td>I</td><td>S</td><td>M</td><td></td><td>D</td><td>I</td>
+<td>A</td><td>G</td><td>N</td><td>O</td><td>S</td><td>E</td><td>S</td><td></td><td>S</td><td>I</td>
+</tr>
+<tr>
+<td>G</td><td>M</td><td>A</td><td></td><td>V</td><td>E</td><td>G</td><td>E</td><td>T</td><td>A</td>
+<td>B</td><td>L</td><td>E</td><td></td><td>C</td><td>O</td><td>C</td><td>H</td><td>L</td><td>E</td>
+</tr>
+<tr>
+<td>A</td><td></td><td>M</td><td>A</td><td>T</td><td>R</td><td>I</td><td>A</td><td>R</td><td>C</td>
+<td>H</td><td></td><td>C</td><td>R</td><td>U</td><td>S</td><td>A</td><td>D</td><td>E</td><td></td>
+</tr>
+<tr>
+<td>S</td><td>C</td><td>A</td><td>N</td><td>N</td><td>E</td><td>R</td><td></td><td>S</td><td>Y</td>
+<td>N</td><td>O</td><td>N</td><td>Y</td><td>M</td><td></td><td>F</td><td>E</td><td>W</td><td>E</td>
+</tr>
+<tr>
+<td>R</td><td></td><td>S</td><td>I</td><td>G</td><td>H</td><td>T</td><td></td><td>S</td><td>T</td>
+<td>O</td><td>V</td><td>E</td><td></td><td>S</td><td>I</td><td>L</td><td>K</td><td>S</td><td></td>
+</tr>
+<tr>
+<td>A</td><td>V</td><td>O</td><td>I</td><td>D</td><td></td><td>D</td><td>E</td><td>M</td><td>O</td>
+<td>T</td><td>E</td><td>D</td><td></td><td>U</td><td>N</td><td>L</td><td>I</td><td>K</td><td>A</td>
+</tr>
+<tr>
+<td>B</td><td>L</td><td>E</td><td></td><td>T</td><td>R</td><td>E</td><td>A</td><td>S</td><td>O</td>
+<td>N</td><td></td><td>Z</td><td>E</td><td>S</td><td>T</td><td>E</td><td>R</td><td>S</td><td></td>
+</tr>
+<tr>
+<td>S</td><td>T</td><td>A</td><td>T</td><td>I</td><td>O</td><td>N</td><td></td><td>J</td><td>A</td>
+<td>I</td><td>L</td><td>H</td><td>O</td><td>U</td><td>S</td><td>E</td><td></td><td>T</td><td>A</td>
+</tr>
+<tr>
+<td>K</td><td>E</td><td>O</td><td>U</td><td>T</td><td></td><td>D</td><td>I</td><td>C</td><td>E</td>
+<td>D</td><td></td><td>A</td><td>L</td><td>C</td><td>H</td><td>E</td><td>M</td><td>I</td><td>S</td>
+</tr>
+<tr>
+<td>T</td><td></td><td>S</td><td>I</td><td>N</td><td>E</td><td>W</td><td></td><td>M</td><td>O</td>
+<td>T</td><td>T</td><td>O</td><td></td><td>E</td><td>G</td><td>G</td><td>B</td><td>E</td><td>A</td>
+</tr>
+<tr>
+<td>T</td><td>E</td><td>R</td><td></td><td>P</td><td>A</td><td>R</td><td>T</td><td>Y</td><td></td>
+<td>I</td><td>R</td><td>I</td><td>D</td><td>E</td><td>S</td><td>C</td><td>E</td><td>N</td><td>C</td>
+</tr>
+<tr>
+<td>E</td><td></td><td>V</td><td>I</td><td>S</td><td>I</td><td>O</td><td>N</td><td>A</td><td>R</td>
+<td>Y</td><td></td><td>T</td><td>E</td><td>N</td><td>F</td><td>O</td><td>L</td><td>D</td><td></td>
+</tr>
+<tr>
+<td>T</td><td>H</td><td>E</td><td>A</td><td>T</td><td>E</td><td>R</td><td></td><td>V</td><td>A</td>
+<td>L</td><td>E</td><td>T</td><td></td><td>A</td><td>X</td><td>O</td><td>L</td><td>O</td><td>T</td>
+</tr>
+<tr>
+<td>L</td><td></td><td>W</td><td>O</td><td>O</td><td>D</td><td>Y</td><td></td><td>S</td><td>U</td>
+<td>B</td><td>D</td><td>U</td><td>E</td><td>S</td><td></td><td>H</td><td>E</td><td>D</td><td>G</td>
+</tr>
+<tr>
+<td>E</td><td></td><td>U</td><td>P</td><td>H</td><td>O</td><td>L</td><td>S</td><td>T</td><td>E</td>
+<td>R</td><td>E</td><td>D</td><td></td><td>C</td><td>O</td><td>N</td><td>I</td><td>F</td><td>E</td>
+</tr>
+<tr>
+<td>R</td><td></td><td>K</td><td>A</td><td>Z</td><td>O</td><td>O</td><td></td><td>R</td><td>E</td>
+<td>V</td><td>E</td><td>R</td><td>I</td><td>E</td><td></td><td>W</td><td>A</td><td>G</td><td>E</td>
+</tr>
+<tr>
+<td>R</td><td></td><td>A</td><td>F</td><td>T</td><td>E</td><td>R</td><td>W</td><td>O</td><td>R</td>
+<td>D</td><td></td><td>A</td><td>S</td><td>P</td><td>I</td><td>R</td><td>I</td><td>N</td><td></td>
+</tr>
+<tr>
+<td>I</td><td>N</td><td>D</td><td>E</td><td>X</td><td></td><td>R</td><td>U</td><td>S</td><td>T</td>
+<td>Y</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+</table>

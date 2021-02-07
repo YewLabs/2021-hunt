@@ -1,0 +1,111 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% load hunt_state_tests %}
+{% load puzzle %}
+
+{% block title %}Post-Meta Interactions &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Post-Meta Interactions</h1>
+  <main>
+    <div class="info">
+<p>During the hunt, whenever a team solved a main-round metapuzzle, they were invited to a Zoom call for the purpose of using their new meta answer to fix that part of &perp;IW. These interactions are documented below.</p>
+<h2>Green Building</h2>
+<p>In this interaction, teams were asked to CLEAR ALL VINES by playing Tetris. The video interface &quot;required&quot; that enough participants form the shape of the desired piece with their bodies and shout out commands. One of the operators would share their screen, displaying the game state:</p>
+<iframe width="302" height="311" src="{{ green_sroot }}tetris/tetris.html" style="border: none"></iframe>
+<p>In the above widget, press a letter key to summon that piece, arrow keys to move it, backspace to cancel it, space to drop, and N to reset.<p>
+<p>The interaction would end when teams cleared all of the blocks. Upon returning to the Projection Device, they would find that the vines on the Green Building had disappeared.</p>
+<h4>Notes</h4>
+<ul>
+<li>The audio cues were important for the running team, since it is very easy to mix up left and right in camera view.</li>
+<li>A &quot;bomb&quot; key, B, and in-universe justification were available as an escape hatch for teams that screwed up their board state.</li>
+</ul>
+<h2>Infinite Corridor</h2>
+<p>After witnessing a hapless Yew Labs tech fail to convince a real-world construction contractor to help shorten the Infinite Corridor, teams needed to help us navigate a &perp;IW phone book to HIRE A CONTRACTOR within the perpendicular universe. The tech would generally accept simple instructions about flipping forward or backward a certain number of pages but reject (or misperform) even slightly complex actions that would have made the search easier. Teams had to determine the sort order of the <a target="_blank" href="/round/infinite/phonebook.txt">phone book</a>:</p>
+<ul>
+<li>Reverse alphabetical by last letter</li>
+<li>Alphabetical by first letter</li>
+<li>Reverse alphabetical by penultimate letter</li>
+<li>Alphabetical by second letter</li>
+<li>Reverse alphabetical by antepenultimate letter</li>
+<li>Alphabetical by third letter</li>
+<li>&hellip;</li>
+</ul>
+<p>The contractor, after being reached, would guide teams through a short incantation, in which they were asked to collectively push their hands together on both axes (as though playing an invisible accordion) while echoing a list of contractions, such as I&#39;ve, that&#39;s, weren&#39;t, shan&#39;t, mightn&#39;t&#39;ve, &#39;twouldn&#39;t, and y&#39;all&#39;d&#39;ve.</p>
+<p>After completing this interaction, the Infinite Corridor would become finite, making it possible to get to the other side within the Projection Device.</p>
+<h4>Notes</h4>
+<ul>
+<li>After the first few runs through we found that teams were more likely to indulge us in the puzzle-solving conceit if we proactively offered information about chunks of three&ndash;five &quot;pages&quot; instead of getting to a single page and requiring multiple instructions to flip one &quot;page&quot; at a time.</li>
+<li>The c*r section of the phone book is intentionally padded out with more entries to give the tech more room to &quot;miss&quot; if the solvers haven&#39;t at least tried to figure out the sorting method.</li>
+</ul>
+<h2>Clusters</h2>
+<p>In this interaction, teams meet with a METALINGUIST to resolve what the name of the clusters should be by suggesting a good compromise name between the two. To do this, the metalinguist starts a call with an Athena cluster computer and a Minerva cluster computer, and two &perp;IW students pick up to help relay what the computers are saying. The two students both use advanced technology that only allows them to speak/hear what the cluster is saying, and cannot type out responses to the team. To figure out a compromise name, teams need to figure out the clusters&#39; mangled-English syntax and why they object to taking the name of the other cluster. </p>
+<p>The Athena cluster speaks by adding &quot;ax&quot; before vowel sounds. For example, Athena becomes &quot;Ax-uh-thax-ee-nax-a&quot; and &quot;vowel&quot; becomes &quot;vax-o-wax-els.&quot; She objects to the name &quot;Minerva&quot; because it contains too many distinct vowels. </p>
+<p>The Minerva cluster speaks by adding &quot;ee&quot; to the beginning of the word, then moving the last sound in the word to the front (unless it is a one-sound word). For example, &quot;Minerva&quot; becomes &quot;Ah-ee-min-erv&quot; and &quot;what&quot; becomes &quot;tee-wha.&quot; She objects to the name &quot;Athena&quot; because it doesn&#39;t contain letters next to each other in the alphabet. </p>
+<h4>Notes</h4>
+<ul>
+<li>Some valid entries teams suggested include: clusters (&quot;Ah, yes, the Clusters Clusters&quot;), trendsetters, freyja (thematic!), kerberos (MIT-thematic!), and abracadabra (&quot;axabraxacaxadaxabraxa&quot;).</li>
+<li>There&#39;s debate as to how the Athena cluster would say &quot;fire,&quot; but &quot;syllables&quot; definitely has three &quot;ax&quot;es in it. </li>
+</ul>
+<h2>Students</h2>
+<p>In this interaction, teams had to SET UP AETHERNET by using the elemental affinities of the four dorms (well, three dorms and a dorm row) to signal another dorm on how to perform a required action. These were:</p>
+<ul>
+<li>EC needs to use FIRE to tell Dorm Row to PERFORM DRAGON CALL</li>
+<ul><li>Examples: Morse code with lighter/flashlight; drawing the letters in air with a lighter</li></ul>
+<li>Dorm Row needs to use AIR to tell Simmons to FORM FAN CLUB</li>
+<ul><li>Examples: Waving semaphore flags, yelling</li></ul>
+<li>Simmons needs to use WATER to tell Random to DANCE LIKE SPONGEBOB</li>
+<ul><li>Examples: Watercolors, charades with actual sponges and water</li></ul>
+<li>Random needs to use EARTH to tell EC to COUNT TO SEVENTEEN</li>
+<ul><li>Examples: Establishing an example pattern by smacking wooden things together, spelling something out with lincoln logs, writing with graphite</li></ul>
+</ul>
+<p>Once these instructions were successfully received, the dorms would then have to perform the actions &mdash; first serially as a &quot;first attempt&quot;, then all in unison. The resulting combination of the four elements would produce the aether for the aethernet.</p>
+<h4>Notes</h4>
+<ul>
+<li>Some teams may have received an adjusted or abbreviated version of this interaction, especially late in the hunt when time and energy ran short. </li>
+</ul>
+<h2>&perp;IW.nano</h2>
+<p>In this interaction, teams had to help members of the nested &perp;IW.{giga,kilo,milli} labs repair a hole in reality; even if THERE&#39;S PLENTY OF ROOM AT THE BOTTOM it&#39;s not really helpful for storage if things keep falling out. The labs are nested such that &perp;IW.milli is inside a box in &perp;IW.kilo, which is inside a box in &perp;IW.giga. Lab members could pass down items to shrink them and pass up items to make them larger, making use of the bounds of the camera frame to push and pull items.</p>
+<p>Repairing the hole required instructing a member of &perp;IW.giga to pass down some spider silk, which becomes thread in &perp;IW.kilo, and rope in &perp;IW.milli. Then a member of &perp;IW.kilo needed to pass down a cactus needle to become a bigger needle. This provided the &perp;IW.milli member the tools to sew up the tear.</p>
+<h4>Notes</h4>
+<ul>
+<li>The lab members each had their own names and occupations. &perp;IW.giga had Gilda, who studies spiders, &perp;IW.kilo had Kole, who studies cacti, and &perp;IW.milli had Mildred, who studies geology.</li>
+<li>A longer version of this interaction required teams to first get the &perp;IW.milli to pass a large boulder up to &perp;IW.giga, where it would become iron filings that would spell out the SEW instruction.</li>
+</ul>
+<h2>Stata</h2>
+<p>In this interaction, teams were asked to IRON OUT THE INKS in the runner&#39;s background. To do this, teams had to show various irons in somewhat of a scavenger hunt &mdash; clothing irons, soldering irons, waffle irons, tire irons, golf irons, iron supplements, cast-iron pans, and so on.</p>
+<h4>Notes</h4>
+<ul>
+<li>Some untraditional irons we encountered included nori (iron backwards), ironic statements, and pumping iron (as opposed to just showing the weights).</li>
+</ul>
+<h2>Tunnels</h2>
+<p>For this interaction, teams were split into two breakout rooms, given some fairly unclued &ldquo;codes&rdquo;, and needed to DECRYPT THEM.</p>
+<p>This was set up as a &ldquo;hinting challenge&rdquo;, in which one breakout room was given the puzzle, and the other was given the solution. A Yew Labs helper would relay hints from the side with the solution to the side with the puzzle, with a gradually increasing limit on the number of characters in the hint until the puzzles were solved.</p>
+<p>The first (<a target="_blank" href="/round/tunnels/interaction/0EhK_letters_code.html">puzzle</a>, <a target="_blank" href="/round/tunnels/interaction/3MjS_letters_instructions.html">solution</a>) of these puzzles featured a string of letters which needed to be arranged into a grid and then interpreted using semaphore to give the answer, MR BONES.</p>
+<p>The second (<a target="_blank" href="/round/tunnels/interaction/Xx35_numbers_code.html">puzzle</a>, <a target="_blank" href="/round/tunnels/interaction/NIYe_numbers_instructions.html">solution</a>) puzzle featured a string of numbers, which needed to be reprocessed according to a rule relating to the &ldquo;3n+1 problem&rdquo; or Collatz conjecture. After doing so, interpreting these numbers using A1Z26 would give the answer, COUNT VON COUNT.</p>
+<p>Between the two puzzles, the breakout rooms would be swapped or re-randomised so that people could generally try both sides of the challenge.</p>
+<h4>Notes</h4>
+<ul>
+<li>Later on in the hunt, some teams received an abridged version of this interaction only covering the first code.</li>
+<li>Teams came up with some ingenious ways to try to send more information &mdash; one team tried sending a URL shortener link to the solution as their hint, and another team came up with the idea of sending the start of the solution URL (ie. NIYe for the numbers problem). Since we didn&rsquo;t think of this before running the interaction with teams, there were some varied responses as to whether to accept these types of hints.</li>
+</ul>
+<h2>Athletics</h2>
+<p>In this interaction, teams were called to demonstrate their own teamwork to the &perp;IW athletes by playing a digital implementation of the board game <a href="https://just1.herokuapp.com/">Just One</a>, a cooperative word-guessing game where a team of people give clues to a guesser, but any duplicate clues are eliminated before the guesser gets to see them.</p>
+<p>For this event, every word that needed to be guessed could be used with the word &ldquo;ball&rdquo; to make a phrase, making it much easier for teams after they figured out this connection.</p>
+<h4>Notes</h4>
+<ul>
+<li>Some teams brought a very large number of people to this event, creating very chaotic collisions between clues.</li>
+<li>Most teams picked up on the &ldquo;ball&rdquo; connection after only two or three words</li>
+</ul>
+<h2>Charles River</h2>
+<p>There is no post-meta interaction in the traditional sense for the Charles River. Instead, after completing the event meta, teams received a transmission from Agent L directing them to <a target="_blank" href="/puzzle/charles-river-finale">Attack of the Lobsters</a>. To complete this, teams had to work together to quickly solve instances of the wordplay puzzles seen in the events meta in order to sail towards the source of the lobster problem while also defeating approaching lobsters along the way.</p>
+<p>The difficulty of this game scaled with team size, so smaller teams would be able to complete it, while larger teams would need to send more people to have a chance.</p>
+<h4>Notes</h4>
+<ul>
+<li>The Charles River was largely time-locked by when the last event happened, so we thought too many teams would solve the Lobster Network at the same time for it to be feasible for us to run an interaction for everyone.</li>
+</ul>
+    </div>
+  </main>
+</div>
+{% endblock %}

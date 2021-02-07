@@ -1,0 +1,109 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block stylesheets %}
+<style>
+  body {
+    background-color: #C47EA0;
+  }
+
+  .content {
+    background-image: url({% static 'art/infbg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    background: none;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+  }
+
+  .infinite-nav-form-container {
+    margin-top: 240px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-shadow:
+      0px 0px 5px black,
+      1px 1px 5px black,
+      -1px 1px 5px black,
+      1px -1px 5px black,
+      -1px -1px 5px black;
+  }
+</style>
+{% endblock %}
+
+{% block round_top %}
+{% if team.is_limited %}
+<div class="fourthwall">
+  During hunt, you were able to visit any puzzle between 1 and 100000.
+</div>
+{% else %}
+<center class="infinite-nav-form-container">
+  <form action="">
+    <label for="special">Start at Puzzle #:</label>
+    <input type="number" id="special" name="special" min="1" max="100000" value="{{ round.id_start }}">
+    <input type="submit" value="Display">
+  </form>
+</center>
+{% endif %}
+{% endblock %}
+
+{% block round_puzzles %}
+<br/>
+<div class="round-table-container">
+<table>
+  <tr><th>Puzzle</th><th>Answer</th></tr>
+  {% for index, puzzle, parent_found in all_puzzles %}
+  <tr>
+    <td>
+      {% if not puzzle %}
+      {% if index %}
+      Puzzle {{ index }}: ???
+      {% else %}
+      ???
+      {% endif %}
+      {% elif puzzle.found %}
+      <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+        {{puzzle.puzzle.name|safe}}
+      </a>
+      {% else %}
+      {% if parent_found %}
+      {% if request.team.is_admin %}
+      <div class="mhtooltip"><a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}">{{ puzzle.puzzle.name|safe }}</a>
+        <span class="mhtooltiptext">Find this puzzle in the &perp;IW Infinite Corridor!</span>
+      </div>
+      {% elif mmo_disabled %}
+      <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+        {{puzzle.puzzle.name|safe}}
+      </a>
+      {% else %}
+      <div class="mhtooltip">{{ puzzle.puzzle.name|safe }}
+        <span class="mhtooltiptext">Find this puzzle in the &perp;IW Infinite Corridor!</span>
+      </div>
+      {% endif %}
+      {% elif mmo_disabled %}
+      <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+        {{puzzle.puzzle.name|safe}}
+      </a>
+      {% else %}
+      <div class="mhtooltip">Puzzle {{ index }}: ???
+        <span class="mhtooltiptext">Find this puzzle in the &perp;IW Infinite Corridor!</span>
+      </div>
+      {% endif %}
+      {% endif %}
+    </td>
+    <td>
+      {% if puzzle.solved %}
+      <div>{{ puzzle.puzzle.answer|safe}}</div>
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+<p>
+  Your random numbers:<br>
+  <div id="random_numbers"></div>
+</p>
+<input type="button" onclick="getNumbers(100)" value="I want more random numbers!">
+<input type="button" onclick="getNumbers(9999)" value="I want EVEN MORE more random numbers!">
+
+<script src="probability-distributions.js"></script>
+<script>
+  function getNumbers(count) {
+    document.getElementById("random_numbers").innerHTML = getData(count).join("<br/>");
+  }
+
+  getNumbers(1);
+</script>

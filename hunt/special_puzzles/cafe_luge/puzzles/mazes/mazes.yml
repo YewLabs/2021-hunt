@@ -1,0 +1,94 @@
+name: mazes
+difficulty: 4/10
+coolness: 4/10
+time: 4:00
+
+questions:
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/unique/(1).png
+        - image: mazes/multiple/(1).png
+        - image: mazes/unique/(2).png
+        - image: mazes/unique/(3).png
+
+        - answer: 3
+        - answer: three
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/multiple/(2).png
+        - image: mazes/multiple/(3).png
+        - image: mazes/unique/(4).png
+        - image: mazes/multiple/(4).png
+
+        - answer: 1
+        - answer: one
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/multiple/(5).png
+        - image: mazes/multiple/(6).png
+        - image: mazes/multiple/(7).png
+        - image: mazes/multiple/(8).png
+
+        - answer: 0
+        - answer: zero
+        - answer: none
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/unique/(5).png
+        - image: mazes/unique/(6).png
+        - image: mazes/unique/(7).png
+        - image: mazes/unique/(8).png
+
+        - answer: 4
+        - answer: four
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/multiple/(9).png
+        - image: mazes/unique/(9).png
+        - image: mazes/unique/(10).png
+        - image: mazes/multiple/(10).png
+
+        - answer: 2
+        - answer: two
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/multiple/(11).png
+        - image: mazes/unique/(11).png
+        - image: mazes/unique/(12).png
+        - image: mazes/multiple/(12).png
+
+        - answer: 2
+        - answer: two
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/unique/(13).png
+        - image: mazes/unique/(14).png
+        - image: mazes/unique/(15).png
+        - image: mazes/multiple/(13).png
+
+        - answer: 3
+        - answer: three
+
+    - question:
+        - text: "How many of these mazes have exactly one solution which doesn't visit the same place twice?"
+
+        - image: mazes/unique/(16).png
+        - image: mazes/multiple/(14).png
+        - image: mazes/multiple/(15).png
+        - image: mazes/multiple/(16).png
+
+        - answer: 1
+        - answer: one

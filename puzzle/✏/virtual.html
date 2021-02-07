@@ -1,0 +1,147 @@
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=1200, user-scalable=yes"></meta>
+
+    <link rel="icon" href="/static/favicon.ico" type="image/vnd.microsoft.icon">
+
+    <title>✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣ &mdash; MIT Mystery Hunt 2021</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/metropolis-font.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+    <script src="/static/scripts/solve-sounds.js"></script>
+    <script src="/static/scripts/nav.js"></script>
+
+    <script src="/static/scripts/jquery.min.js"></script>
+
+    <style>
+      body {
+          background-color: #ffffff;
+      }
+
+      .content {
+          background-image: url(/static/art/yew-bg.png);
+          background-size: 100% auto;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <meta name="viewport" content="width=1200, user-scalable=yes"></meta>
+
+
+    <link rel="icon" href="/static/favicon.ico" type="image/vnd.microsoft.icon">
+
+
+    <title>✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣ &mdash; MIT Mystery Hunt 2021</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/metropolis-font.css">
+
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/nav.css">
+    <script src="/static/scripts/solve-sounds.js"></script>
+    <script src="/static/scripts/nav.js"></script>
+
+    <script src="/static/scripts/jquery.min.js"></script>
+
+    <style>
+      body {
+          background-color: #ffffff;
+      }
+    </style>
+
+    <style>
+      #chat-window .chat-send {
+          background: #39a1f9;
+          text-shadow: 1px 1px 0 #1b96fc;
+          margin-right: 24px;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          float: right;
+          color: #fff;
+          display: inline-block;
+          padding: 12px 18px;
+          max-width: 270px;
+          min-height: 26px;
+          min-width: 14px;
+          font-size: 24px;
+          line-height: 26px;
+          position: relative;
+          overflow-wrap: break-word;
+          border-radius: 20px 20px 20px 20px;
+          -moz-border-radius: 20px 20px 20px 20px;
+          -webkit-border-radius: 20px 20px 20px 20px;
+      }
+
+      #chat-window .chat-receive {
+          background: #e5e5ea;
+          text-shadow: 1px 1px 0 #f3f3f4;
+          margin-left: 24px;
+          margin-bottom: 10px;
+          margin-top: 10px;
+          color: #000;
+          display: inline-block;
+          padding: 12px 18px;
+          max-width: 270px;
+          min-height: 26px;
+          min-width: 14px;
+          font-size: 24px;
+          line-height: 26px;
+          position: relative;
+          overflow-wrap: break-word;
+          border-radius: 20px 20px 20px 20px;
+          -moz-border-radius: 20px 20px 20px 20px;
+          -webkit-border-radius: 20px 20px 20px 20px;
+      }
+
+      #chat-window .bubblewrap {
+          clear: both;
+          top: 0px;
+      }
+    </style>
+</head>
+<body>
+<br>
+<div id="chat-window" style="width: 500px; margin: auto; display: block; border: solid 1px black; height: 800px; overflow-y: auto;">
+</div>
+</br>
+<div class="input-fields" style="display: block; text-align: center;"><input maxlength="1000" type="text" id="msg"> <button onclick="sendMessage()">Send</button></div>
+
+<script>
+    var level = localStorage.level || "0";
+    var cwindow = document.getElementById("chat-window");
+
+    var msgbox = document.getElementById('msg');
+    msgbox.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            sendMessage();
+        }
+    })
+
+    function sendMessage() {
+        var message = document.getElementById('msg').value;
+        if (message != "") {
+            var m = document.createElement("div");
+            m.className = "bubblewrap";
+            m.innerHTML = "<div class=\"chat-send\">"+message.replaceAll('\n','</br>')+"</div>";
+            cwindow.appendChild(m);
+            cwindow.scrollTop = cwindow.scrollHeight;
+            message = encodeURIComponent(message);
+            document.getElementById('msg').value = "";
+
+            fetch("/puzzle/✏/dynamic?level="+level+"&message="+message).then(response => response.json()).then(data => {
+                localStorage.level = level = data.level;
+                var m = document.createElement("div");
+                m.className = "bubblewrap";
+                m.innerHTML = "<div class=\"chat-receive\">"+data.message.replaceAll('\n','</br>')+"</div>";
+                cwindow.scrollTop = cwindow.scrollHeight;
+                cwindow.appendChild(m);
+        });
+      }
+    }
+</script>
+</body>
+</html>

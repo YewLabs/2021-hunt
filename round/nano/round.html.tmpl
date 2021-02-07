@@ -1,0 +1,235 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+
+{% block round_top %}
+<style>
+  body {
+    {% if round.name == '⊥IW.giga' %}
+    background-color: #0F191F;
+    {% elif round.name == '⊥IW.kilo' %}
+    background-color: #1B2E42;
+    {% elif round.name == '⊥IW.milli' %}
+    background-color: #254160;
+    {% endif %}
+  }
+
+  .content {
+    {% if round.name == '⊥IW.giga' %}
+    background-image: url({% static 'art/gigabg.png' %});
+    {% elif round.name == '⊥IW.kilo' %}
+    background-image: url({% static 'art/kilobg.png' %});
+    {% elif round.name == '⊥IW.milli' %}
+    background-image: url({% static 'art/millibg.png' %});
+    {% endif %}
+    background-size: 100% auto;
+  }
+
+  .info {
+    background: none;
+  }
+
+  .round-table-container {
+    margin-top: 150px;
+    background-color: #ffffffe0;
+    word-break: break-word;
+  }
+
+.nano-button {
+  background: none;
+  cursor: pointer;
+  display: inline-block;
+  width: 60px;
+  padding: 2px;
+  height: 60px;
+  border-radius: 24px;
+  border: none;
+}
+
+.nano-button > svg {
+  width: 50px;
+  height: 50px;
+}
+
+.nano-button:hover {
+  background-color: #26426C;
+}
+
+.nano-button:focus {
+  background-color: #7A8392;
+  outline: none;
+}
+
+.nano-form {
+  display: inline-block;
+}
+
+.puzzle-illustrations {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 120%;
+  margin-left: -10%;
+}
+
+.puzzle-illustration-container {
+  color: white;
+  background: none;
+  width: 140px;
+  height: 140px;
+  padding: 0 20px;
+  margin: 6px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  word-break: break-word;
+}
+
+.puzzle-illustration-container a {
+  color: white;
+}
+
+.puzzle-illustration-container-large {
+  font-size: 1.5em;
+  width: 200px;
+  height: 50px;
+  text-shadow: 0px 0px 5px black, 0px 0px 5px black;
+}
+
+.puzzle-illustration-container-small {
+  {% if round.name == '⊥IW.giga' %}
+  background-image: url({% static 'art/gigapuzzle.png' %});
+  {% elif round.name == '⊥IW.kilo' %}
+  background-image: url({% static 'art/kilopuzzle.png' %});
+  width: 150px;
+  height: 150px;
+  text-shadow: 0px 0px 5px black;
+  {% elif round.name == '⊥IW.milli' %}
+  background-image: url({% static 'art/millipuzzle.png' %});
+  width: 165px;
+  height: 165px;
+  text-shadow: 0px 0px 5px black, 0px 0px 5px black;
+  {% endif %}
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+</style>
+
+<center>
+  {% if round.nano_minus %}
+  <form class="nano-form" action="">
+    <input type="hidden" id="special" name="special" value="{{ round.nano_minus }}">
+    <button class="nano-button" type="submit" value="+">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path fill="white" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14zM7 9h5v1H7z"/>
+      </svg>
+    </button>
+  </form>
+  {% endif %}
+  {% if round.nano_plus %}
+  <form class="nano-form" action="">
+    <input type="hidden" id="special" name="special" value="{{ round.nano_plus }}">
+    <button class="nano-button" type="submit" value="-">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path d="M0 0h24v24H0V0z" fill="none"/>
+        <path fill="white" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        <path fill="white" d="M12 10h-2v2H9v-2H7V9h2V7h1v2h2v1z"/>
+      </svg>
+    </button>
+  </form>
+  {% endif %}
+</center>
+{% endblock %}
+
+{% block round_puzzles %}
+<div class="puzzle-illustrations">
+  {% for puzzle, nanometa in round.nano_puzzles %}
+    {% if nanometa %}
+    <div class="puzzle-illustration-container puzzle-illustration-container-large">
+      {% if puzzle.found %}
+      {% if team.is_limited %}
+      <a href="{% url 'puzzle_view' puzzle.puzzle.url %}?solved=1">
+        {{puzzle.puzzle.name|safe}}
+      </a>
+      {% else %}
+      <a href="{% url 'puzzle_view' puzzle.puzzle.url %}">
+        {{puzzle.puzzle.name|safe}}
+      </a>
+      {% endif %}
+      {% else %}
+      <div class="mhtooltip">?????
+        <span class="mhtooltiptext">Find this puzzle in {{ round.name }}!</span>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<div class="puzzle-illustrations">
+  {% for puzzle, nanometa in round.nano_puzzles %}
+    {% if not nanometa %}
+    <div class="puzzle-illustration-container puzzle-illustration-container-small">
+      {% if puzzle.found %}
+      <a href="{% url 'puzzle_view' puzzle.puzzle.url %}">
+        {% if puzzle.puzzle.name|slice:":5" == "10000" %}
+        <div style="font-size: 0.5em; line-height: 1.4em">{{puzzle.puzzle.name|safe}}</div>
+        {% else %}
+        {{puzzle.puzzle.name|safe}}
+        {% endif %}
+      </a>
+      {% else %}
+      <div class="mhtooltip">?????
+        <span class="mhtooltiptext">Find this puzzle in {{ round.name }}!</span>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  {% endfor %}
+</div>
+<div class="round-table-container">
+  <table>
+    <tr><th>Puzzle</th><th>Answer</th></tr>
+    {% for puzzle, nanometa in round.nano_puzzles %}
+    {% if puzzle.puzzle.y2021puzzledata %}
+    <tr>
+      <td>
+        {% if puzzle.found %}
+        <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if nanometa %}class="meta"{% endif %}>
+          {% if puzzle.puzzle.name|slice:":5" == "10000" %}
+          <span style="font-size: 0.6em">{{puzzle.puzzle.name|safe}}</span>
+          {% else %}
+          {{puzzle.puzzle.name|safe}}
+          {% endif %}
+        </a>
+        {% elif mmo_disabled %}
+        <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+          {% if puzzle.puzzle.name|slice:":5" == "10000" %}
+          <span style="font-size: 0.6em">{{puzzle.puzzle.name|safe}}</span>
+          {% else %}
+          {{puzzle.puzzle.name|safe}}
+          {% endif %}
+        </a>
+        {% else %}
+        <div class="mhtooltip">?????
+          <span class="mhtooltiptext">Find this puzzle in {{ round.name }}!</span>
+        </div>
+        {% endif %}
+      </td>
+      <td>
+        {% if puzzle.solved %}
+        <div>{{ puzzle.puzzle.answer|safe}}</div>
+        {% endif %}
+      </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

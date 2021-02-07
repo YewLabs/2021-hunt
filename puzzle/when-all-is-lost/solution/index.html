@@ -1,0 +1,91 @@
+<style>
+.puzzle img {
+  max-width: 100%;
+  margin: auto;
+  display: block;
+  width: 800px;
+}
+
+th {
+  padding-left: 0;
+  padding-right: 0;
+  font-weight: normal;
+}
+
+td:nth-child(1) { padding-left: 0; padding-right: 3em; }
+td:nth-child(2) { text-align: right; padding-right: 0; }
+th:nth-child(1) { text-align: right; }
+th:nth-child(2) { text-align: left; padding-right: 1em; }
+td:nth-child(3) { text-align: right; }
+td:nth-child(5) { text-align: left; }
+td:nth-child(7) { text-align: left; }
+td:nth-child(8) { text-align: right; padding-left: 1em; padding-right: 0; }
+</style>
+
+<p>Trying to solve the clues directly won&rsquo;t work, and adding up all the enumerations produces a number well over twice the number of cells in the grid. However, some of the clues almost make sense, and they all work out if some letters are removed between the definition and the wordplay. Each clue removes one of six sets of letters, which are clued in cryptic fashion by the quotes from each character.</p>
+
+<table>
+<tr>
+<td>Elsa (from <i>Frozen</i>): <tt>-IT</tt></td>
+<td>Moana (from <i>Moana</i>): <tt>-HEART</tt></td>
+</tr>
+<tr>
+<td>Katara (from <i>Avatar</i>): <tt>-HE</tt></td>
+<td>Misty (from <i>Pokémon</i>): <tt>-ALL</tt></td>
+</tr>
+<tr>
+<td>Mei (from <i>Overwatch</i>): <tt>-MOVE</tt></td>
+<td>Jaina (from <i>Warcraft</i>): <tt>-PEACE</tt></td>
+</tr>
+</table>
+
+<p>For example, in the first clue, a 10-letter American capital is <tt>MONTEVIDEO</tt>, while an anagram of <tt>NOT DIE</tt> gives <tt>NTIDEO</tt>. The latter can be produced (in order) by removing the letters <tt>MOVE</tt> (not necessarily in order) from the former, so this is a Mei clue.</p>
+
+<p>The reduced answers can then be filled into the grid. For clues where the letters appear more than once in the original answer, the wordplay half usually disambiguates which ones to drop, but checking against letters from other clues is necessary in some cases.</p>
+
+<table>
+<tr><th>1</th><th>SE</th><td><tt>MONTEVIDEO</tt></td><td><tt>-</tt></td><td><tt>MOVE</tt></td><td><tt>=</tt></td><td><tt>NTIDEO</tt></td><td><tt>&lt;NOT DIE&gt;</tt></td></tr>
+<tr><th>2</th><th>E</th><td><tt>INSTALL</tt></td><td><tt>-</tt></td><td><tt>ALL</tt></td><td><tt>=</tt></td><td><tt>INST</tt></td><td><tt>INSTagram</tt></td></tr>
+<tr><th>3</th><th>SE</th><td><tt>TINFOIL</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>NFOIL</tt></td><td><tt>N&lt;OF&gt;IL</tt></td></tr>
+<tr><th>4</th><th>E</th><td><tt>FRANTIC</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>FRANC</tt></td><td><tt>ddef</tt></td></tr>
+<tr><th>5</th><th>NW</th><td><tt>ENCHANTER</tt></td><td><tt>-</tt></td><td><tt>HEART</tt></td><td><tt>=</tt></td><td><tt>ENCN</tt></td><td><tt>gottEN CNotes</tt></td></tr>
+<tr><th>6</th><th>NW</th><td><tt>EDITHS</tt></td><td><tt>-</tt></td><td><tt>HE</tt></td><td><tt>=</tt></td><td><tt>DITS</tt></td><td><tt>eDITS</tt></td></tr>
+<tr><th>7</th><th>W</th><td><tt>HORTENSIA</tt></td><td><tt>-</tt></td><td><tt>HEART</tt></td><td><tt>=</tt></td><td><tt>ONSI</tt></td><td><tt>fONSI</tt></td></tr>
+<tr><th>8</th><th>SW</th><td><tt>HAMSTER</tt></td><td><tt>-</tt></td><td><tt>HEART</tt></td><td><tt>=</tt></td><td><tt>MS</tt></td><td><tt>Many Schoolkids</tt></td></tr>
+<tr><th>9</th><th>E</th><td><tt>TIE-INS</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>IENS</tt></td><td><tt>h sapIENS</tt></td></tr>
+<tr><th>10</th><th>E</th><td><tt>MISGOVERNS</tt></td><td><tt>-</tt></td><td><tt>MOVE</tt></td><td><tt>=</tt></td><td><tt>ISGRNS</tt></td><td><tt>&lt;SIG[Rightwing]NS&gt;</tt></td></tr>
+<tr><th>11</th><th>SW</th><td><tt>SPIRIT</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>SPRI</tt></td><td><tt>SPRInted</tt></td></tr>
+<tr><th>12</th><th>E</th><td><tt>GRIT</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>GR</tt></td><td><tt>GeaR</tt></td></tr>
+<tr><th>13</th><th>NW</th><td><tt>HONEST</tt></td><td><tt>-</tt></td><td><tt>HE</tt></td><td><tt>=</tt></td><td><tt>ONST</tt></td><td><tt>ON + ST</tt></td></tr>
+<tr><th>14</th><th>NW</th><td><tt>TAILSPIN</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>ALSPIN</tt></td><td><tt>AL[SP]IEN - E</tt></td></tr>
+<tr><th>15</th><th>NW</th><td><tt>BAREILLES</tt></td><td><tt>-</tt></td><td><tt>ALL</tt></td><td><tt>=</tt></td><td><tt>BREIES</tt></td><td><tt>BaRdExIlEiS</tt></td></tr>
+<tr><th>16</th><th>E</th><td><tt>REPHRASE</tt></td><td><tt>-</tt></td><td><tt>HE</tt></td><td><tt>=</tt></td><td><tt>REPRAS</tt></td><td><tt>&lt;SHARPER - H</tt></td></tr>
+<tr><th>17</th><th>NE</th><td><tt>TABLOID</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>ABLOD</tt></td><td><tt>drAB LODgings</tt></td></tr>
+<tr><th>18</th><th>E</th><td><tt>PLACEMENT</tt></td><td><tt>-</tt></td><td><tt>PEACE</tt></td><td><tt>=</tt></td><td><tt>LMNT</tt></td><td><tt>eLeMeNT</tt></td></tr>
+<tr><th>19</th><th>NE</th><td><tt>MENTHOL</tt></td><td><tt>-</tt></td><td><tt>HE</tt></td><td><tt>=</tt></td><td><tt>MNTOL</tt></td><td><tt>MN + TO + LA - A</tt></td></tr>
+<tr><th>20</th><th>SW</th><td><tt>EVENTIDE</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>EVENDE</tt></td><td><tt>EV[END]E</tt></td></tr>
+<tr><th>21</th><th>NW</th><td><tt>INFINITE</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>NFINIE</tt></td><td><tt>N[Forty]IN[I]E</tt></td></tr>
+<tr><th>22</th><th>SW</th><td><tt>HEALTHCARE</tt></td><td><tt>-</tt></td><td><tt>HEART</tt></td><td><tt>=</tt></td><td><tt>HEALC</tt></td><td><tt>tHE ALChemists</tt></td></tr>
+<tr><th>23</th><th>W</th><td><tt>TAHANI</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>AHAN</tt></td><td><tt>AHA + N</tt></td></tr>
+<tr><th>24</th><th>W</th><td><tt>RAINFALL</tt></td><td><tt>-</tt></td><td><tt>ALL</tt></td><td><tt>=</tt></td><td><tt>RAINF</tt></td><td><tt>refRAIN From</tt></td></tr>
+<tr><th>25</th><th>E</th><td><tt>VALHALLA</tt></td><td><tt>-</tt></td><td><tt>ALL</tt></td><td><tt>=</tt></td><td><tt>VAHAL</tt></td><td><tt>&lt;LA[H]VA&gt;</tt></td></tr>
+<tr><th>26</th><th>E</th><td><tt>HERETICAL</tt></td><td><tt>-</tt></td><td><tt>HEART</tt></td><td><tt>=</tt></td><td><tt>EICL</tt></td><td><tt>Ecu&hellip; Inq&hellip; Cou&hellip; Lam&hellip;</tt></td></tr>
+<tr><th>27</th><th>E</th><td><tt>HEATHEN</tt></td><td><tt>-</tt></td><td><tt>HE</tt></td><td><tt>=</tt></td><td><tt>EATHN</tt></td><td><tt>EAT + HallucinogeN</tt></td></tr>
+<tr><th>28</th><th>W</th><td><tt>DIRTIES</tt></td><td><tt>-</tt></td><td><tt>IT</tt></td><td><tt>=</tt></td><td><tt>DRIES</tt></td><td><tt>ddef</tt></td></tr>
+<tr><th>29</th><th>NW</th><td><tt>TETRAHEDRA</tt></td><td><tt>-</tt></td><td><tt>HEART</tt></td><td><tt>=</tt></td><td><tt>TAEDR</tt></td><td><tt>TA + &lt;RED&gt;</tt></td></tr>
+<tr><th>30</th><th>NE</th><td><tt>CHEAPENED</tt></td><td><tt>-</tt></td><td><tt>PEACE</tt></td><td><tt>=</tt></td><td><tt>HNED</tt></td><td><tt>&lt;DENCH - C</tt></td></tr>
+</table>
+
+<p>When all the answers are entered, every cell is part of two answers except the ones highlighted below. Those spell out <tt>STARMIEDOESNOTEVENHAVEASPEAR</tt>, which is a final (standard) cryptic clue that solves to <tt>sTaRmIeDoEsNoT</tt> = <span class="answer">TRIDENT</span>.</p>
+
+<img src="{{sroot}}snowflake.svg">
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>This puzzle originated when I was walking back home from seeing <i>Frozen 2</i> and realized that the lines from &ldquo;All is Found&rdquo; quoted in the flavortext were a perfect description of a crossword extraction. The crossword answers would be modified using a number of characters&rsquo; water or ice powers. I added the hexagonal grid to fit the ice flavor, and made it a cryptic so that the two halves of each clue could confirm both the original and modified answers.</p>
+
+<p>I originally wanted each character to use a different mechanic &mdash; for example, Moana&rsquo;s &ldquo;heart&rdquo; could just as easily mean the middle letter of an answer &mdash; but I couldn&rsquo;t make it work out, so they ended up having the same mechanic, just with different letters. It might have been more elegant for the final cluephrase to drop the letters <tt>ALL</tt> as given in the title, as a do-it-again step, but at least the cluephrase referencing Starmie fits with <tt>ALL</tt> being Misty&rsquo;s letters.</p>
+
+<p>The final cluephrase has a hidden double meaning. As used for extraction, it ends with &ldquo;&hellip; have a spear&rdquo; and solves to TRIDENT. However, it could also be parsed as &ldquo;&hellip; have Aspear&rdquo;. The Aspear Berry is a held item in Pokémon that cures freezing, and indeed Misty&rsquo;s Starmie does not hold one in any of the games where she appears, even though it seems like it could be quite useful in the context of this puzzle. (In case you were wondering, Starmie doesn&rsquo;t learn the move Icicle Spear either.)</p>
+</div>

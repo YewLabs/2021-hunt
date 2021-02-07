@@ -1,0 +1,68 @@
+name: braille
+difficulty: 2/10
+coolness: 1/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/cowboy.png
+
+        - answer: cowboy
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/inferno.png
+
+        - answer: inferno
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/keyboard.png
+
+        - answer: keyboard
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/monkey.png
+
+        - answer: monkey
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/protect.png
+
+        - answer: protect
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/shrine.png
+
+        - answer: shrine
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/spiral.png
+
+        - answer: spiral
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/vinegar.png
+
+        - answer: vinegar
+
+    - question:
+        - text: "What is the word represented in Braille here?"
+
+        - image: simple-codes/braille/waterfall.png
+
+        - answer: waterfall

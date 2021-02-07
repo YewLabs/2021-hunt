@@ -1,0 +1,176 @@
+name: mystery-hunt
+difficulty: 3/10
+coolness: 10/10
+time: 5:00
+
+questions:
+    - question:
+        - text: "Which year's Mystery Hunt was the longest yet run, clocking in at over 75 hours?"
+
+        - answer: 2013
+
+    - question:
+        - text: "In the \"20,000 Puzzles Under the Sea\" Mystery Hunt, what was the four-letter name for the currency representing progression through the hunt?"
+
+        - answer: deep
+
+    - question:
+        - text: "In the \"Penny Park\" Mystery Hunt, what was the two-word phrase denoting a series of puzzles that had to be solved collaboratively with multiple members of your team?"
+
+        - answer: teamwork time
+
+    - question:
+        - text: "Which year's Mystery Hunt featured a puzzle contained in a first-aid kit?"
+
+        - answer: 2014
+
+    - question:
+        - text: "In the \"Head Hunters\" Mystery Hunt, what was the name of the round (not the name of the island) that was almost entirely comprised of physical puzzles?"
+
+        - answer: build
+
+    - question:
+        - text: "Whose mother was called the most often as a result of a particular 2000 MIT Mystery Hunt puzzle?"
+
+        - answer: kiran kedlaya
+        - answer: kiran
+        - credit: phenomist
+
+    - question:
+        - text: "The 2001 MIT Mystery Hunt had a puzzle that introduced the game of Six-Six-Six. Given an optimal base number, what is your expected score for a given round?"
+
+        - answer: 69
+        - answer: sixty nine
+        - credit: phenomist
+
+    - question:
+        - text: "Which puzzle involved a conlang that was subsequently revisited in 2008 and 2013?"
+
+        - answer: the realm of unspeakable chaos
+        - credit: phenomist
+
+    - question:
+        - text: "The 2009 MIT Mystery Hunt referenced a fictional board game which was first introduced in which older puzzle?"
+
+        - answer: "d2: the mighty duck konundrum"
+        - credit: phenomist
+
+    - question:
+        - text: "The Creative Pictures round in 2020 had a fun gimmick where all answers were emoji, although it was predated by two rounds in the 2000's whose answers were all pictorial representations or physical objects. Give the answer to either meta."
+
+        - answer: kresge
+        - answer: super tactile pinky
+        - credit: phenomist
+
+    - question:
+        - text: "Which puzzle in the 2004 MIT Mystery Hunt had you call in the title of the puzzle as the answer?"
+
+        - answer: quagmire
+        - credit: phenomist
+
+    - question:
+        - text: "According to the 2004 MIT Mystery Hunt, what is the key to solving most puzzles?"
+
+        - answer: knowing how to recognize the clues
+        - credit: phenomist
+
+    - question:
+        - text: "What town was the setting of the 2005 MIT Mystery Hunt?"
+
+        - answer: normalville
+        - credit: phenomist
+
+    - question:
+        - text: "What mechanism, unique to the 2006 MIT Mystery Hunt, made unlocking new rounds independent from regular puzzle solving (or metapuzzle solving)?"
+
+        - answer: antepuzzle
+        - answer: antepuzzles
+        - answer: ante
+        - answer: antes
+        - credit: phenomist
+
+    - question:
+        - text: "Since 2000, every Mystery Hunt has had at least one scavenger hunt except for one of them; which year?"
+
+        - answer: 2007
+        - credit: phenomist
+
+    - question:
+        - text: "The Mystery Hunt team Rage changes their name every year. Their inaugural name \"Metropolitan Rage Warehouse\" is what you need to complete which MIT Mystery Hunt event?"
+
+        - answer: wrath
+        - credit: phenomist
+
+    - question:
+        - text: "What is the answer to the following \"puzzle\"?"
+        - image: trivia/black.png
+
+        - answer: obfuscate
+        - credit: phenomist
+
+    - question:
+        - text: "What was the first and last name of the murder victim in the 2008 MIT Mystery Hunt?"
+
+        - answer: otto awkward
+        - credit: phenomist
+
+    - question:
+        - text: "Which round in the 2009 MIT Mystery Hunt requires teams to face off against other teams in a dice-rolling game?"
+
+        - answer: combat simulator
+        - credit: phenomist
+
+    - question:
+        - text: "In the 2010 MIT Mystery Hunt, how many fingers do the aliens that invaded Atari have?"
+
+        - answer: 27
+        - credit: phenomist
+
+    - question:
+        - text: "Which puzzle was solved by every team in the 2010 MIT Mystery Hunt?"
+
+        - answer: training exercise
+        - credit: phenomist
+
+    - question:
+        - text: "Which character is Mario dressed up as in the Civilization round of 2011?"
+
+        - answer: napoleon
+        - answer: napoleon bonaparte
+        - credit: phenomist
+
+    - question:
+        - text: "Which MIT Mystery Hunt puzzle was formatted like a Puzzletron page, with author, editor, and testsolving comments?"
+
+        - answer: piercing the veil
+        - credit: phenomist
+
+    - question:
+        - text: "Which round in the 2012 MIT Mystery Hunt requires teams to assemble an electronic device?"
+
+        - answer: ben bitdiddle
+        - credit: phenomist
+
+    - question:
+        - text: "In the White Queen round of the 2014 MIT Mystery Hunt, which \"answer\" appeared twice?"
+
+        - answer: sullivan
+        - credit: phenomist
+
+    - question:
+        - text: "In the \"20,000 Puzzles Under the Sea\" Mystery Hunt, what was the name of the round (not the name of the supermeta) that was almost entirely comprised of physical puzzles?"
+
+        - answer: treasure chest
+        - credit: phenomist
+
+    - question:
+        - text: "Which puzzle in the 2016 MIT Mystery Hunt requires one to have their popup blocker turned off?"
+
+        - answer: click to win
+        - credit: phenomist
+
+    - question:
+        - text: "What was the name of the main antagonist in the 2017 MIT Mystery Hunt?"
+
+        - answer: mystereo cantos
+        - credit: phenomist

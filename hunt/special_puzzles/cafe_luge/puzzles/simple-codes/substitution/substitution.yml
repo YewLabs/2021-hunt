@@ -1,0 +1,84 @@
+name: substitution
+difficulty: 3/10
+coolness: 3/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "wh smt immj ze vnze smt nzug wq iwhg, smt'ii zivzsa nzug bmyg. wh smt immj ze vnze smt fmq'e nzug wq iwhg, smt'ii qgugy nzug gqmtrn."
+
+        - answer: winfrey
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "akm omea ysw lgea omyiacpiv akcsre cs akm bgtvw qyssga om emms gt mxms agiqkmw - akmd liea om pmva bcak akm kmyta."
+
+        - answer: keller
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "kci osibkiwk ourse nj unfnjo uniw jrk nj jifis pbuunjo, lmk nj snwnjo ifise knyi gi pbuu."
+
+        - answer: mandela
+        - answer: confucius
+        - answer: goldsmith
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "vodom toj jwo hofm xh ajmpkpvb xsj kooy gxs hmxl ytfgpvb jwo bflo."
+
+        - answer: ruth
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "en vjhww schbk e tun kio ir wlwhyvjena e'lw mwuhnwb uzciv mepw: ev acwk cn."
+
+        - answer: frost
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "yql wlsd ylky jk xey rqlyqlw pet sceji yqjk asjdtwl, nlzstkl pet rex'y. jy'k rqlyqlw pet dly jy qswilx ew kqsol pet jxye jxszyjex, ew rqlyqlw pet dlswx aweo jy; rqlyqlw pet zqeekl ye ulwklclwl."
+
+        - answer: obama
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "ktggwkk kwwsk ac ew gcppwgawq mfah ogafcp. ktggwkkdty lwclyw iwwl scufpr. ahwv soiw sfkaoiwk eta ahwv qcp'a btfa."
+
+        - answer: hilton
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "t crqqfccorh dta gc kaf xek qta hti t ogsd okrajtvgka xgve vef ysgqbc kvefsc etnf veskxa tv egd."
+
+        - answer: brinkley
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "vs fcr oyxu uc ytmvwaw wztwiiwxtw, fcr tyx pwu umwkw ucnyf. yq cs umvq qwtcxn, grvu ncvxp iwqq-umyx-wztwiiwxu ocke."
+
+        - answer: watson
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "t ebjm vmbdfmr qjmd cem xmbdu cebc oemf qfm'u ktfr tu kbrm sy, cetu rtktftuemu lmbd."
+
+        - answer: parks
+
+    - question:
+        - text: "Below is a substitution cipher of a quote. What is the last name of the person who said the quote?"
+        
+        - text: "t nggztuwgl cf owpploo gx gato: t eljlz qnjl xz gxxm nef lbpwol."
+
+        - answer: nightingale

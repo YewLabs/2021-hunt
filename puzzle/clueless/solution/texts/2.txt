@@ -1,0 +1,87 @@
+Stacks: y1 b3 g5 w5
+Alice: r1 g1 b1 w1
+Bobby: y1 r5 y5 b5
+Carol: g2 y3 g3 g4
+David: g1 b1 w1 y3
+Wins: 6
+Deck: b4 kt y2 .. y4 kt r2 r3 r4 kt
+Line: r1 dc dc .. b4 b5 y2 y3 y4 y5 r2 r3 r4 r5
+Plan: A  B  I  G  F  U  E  L  V  E  S  S  E  L
+Display: A big fuel vessel
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[A] Turn  1 ..... Alice plays [A] red 1 and draws [S] blue 4
+[B] Turn  2 ..... Bobby discards a stale card and draws any card
+[I] Turn  3 ..... Carol discards a stale card and draws [G] yellow 2
+[G] Turn  4 ..... David stalls by spending a clue
+[F] Turn  5 ..... Alice plays [S] blue 4 and draws [Q] yellow 4
+[U] Turn  6 ..... Bobby plays [X] blue 5 and draws any card
+[E] Turn  7 ..... Carol plays [G] yellow 2 and draws [F] red 2
+[L] Turn  8 ..... David plays [L] yellow 3 and draws [K] red 3
+[V] Turn  9 ..... Alice plays [Q] yellow 4 and draws [P] red 4
+[E] Turn 10 ..... Bobby plays [V] yellow 5 and draws any card
+[S] Turn 11 ..... Carol plays [F] red 2 on their last turn
+[S] Turn 12 ..... David plays [K] red 3 on their last turn
+[E] Turn 13 ..... Alice plays [P] red 4 on their last turn
+[L] Turn 14 ..... Bobby plays [U] red 5 on their last turn
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+PROOF OF UNIQUENESS
+
+The starting pace is +2.
+However, there is another limiting factor.
+
+We claim that the number of turns that can occur is at most 17.
+There are four turns in the final round, and up to nine plays/discards.
+Also, one can get at most four clues before the final round:
+two from 5's and two from discards.
+Thus, the upper bound on the number of turns is 9+4+2+2 = 17.
+
+This means Bobby has at most four turns.
+As Bobby plainly cannot play on his first turn,
+he MUST play a 5 on every other turn to finish in time.
+
+We can then reason that the b5 must be played on turn 6,
+because at most one card not already visible can be played
+before the turn 6 (namely, the card Alice draws on turn 1),
+and the b5 is the only 5 which is one-away from playable.
+
+We claim that Alice cannot discard.
+If she does, then between turns 6 through 10 must
+involve the plays y2, y3, y4, y5
+in order to make the y5 playable
+(the r5 requires four cards, and so cannot be gotten).
+Now on turns 7 through 11,
+the team has four red cards needed but only three turns to play them.
+This gives a proof that Alice cannot discard.
+
+Thus, on her first turn, Alice plays r1.
+This means Bobby must discard as he has no other option.
+
+One of Carol and David must then discard and spend a clue respectively,
+since neither of them have currently playable cards.
+Looking ahead, this means the red 5 can't be played on turn 10
+because Carol and David cannot both draw,
+therefore the yellow 5 is played on turn 10,
+and as before it must involve plays y2, y3, y4, y5 in that order.
+So David must play y3 on turn 8,
+and thus Carol should discard and try to draw y2 to play on turn 7.
+For now, David spends a clue.
+
+Now Alice plays b4 on turn 5, and Bobby plays b5.
+
+The yellow cards promised now play: y2 from Carol, y3 from David,
+y4 from Alice (which must be her newly drawn card),
+and y5 from Bobby.
+This starts the final round.
+
+In order to finish, the team must now play all the red cards:
+r2 from Carol, r3 from David, r4 from Alice, r5 from Bobby.
+
+Examining the deck order, every card drawn was needed immediately
+except for whichever three cards Bobby draws,
+which are arbitrary trash cards and can come in any order.
+So 3! = 6 of the deck orderings lead to wins.

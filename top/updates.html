@@ -1,0 +1,30 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% block title %}Updates &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Updates from HQ</h1>
+  <main>
+    <div class="info">
+      <p style="font-style:italic">
+        Errata, major news, etc. will be posted here as well as delivered via email.
+      </p>
+
+      {% for update in updates %}
+      <p class="hqupdate">
+        <hr>
+        {% if update.hidden %}
+        <h3>Errata for Unknown Puzzle</h3>
+        <b>{{ update.timestamp }}</b>
+        {% else %}
+        <h3>{{ update.update.subject }}</h3>
+        <b>{{ update.timestamp }}</b>
+        {{ update.update.body|safe|linebreaks }}
+        {% endif %}
+      </p>
+      {% endfor %}
+    </div>
+  </main>
+</div>
+{% endblock %}

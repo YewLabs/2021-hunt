@@ -1,0 +1,191 @@
+<p>The title of the puzzle, <em>Le chiffre indéchiffrable</em>,
+is a French name for the
+<a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher">Vigenère cipher</a>.
+However, the ciphertexts here are in scripts which are clearly not English.
+But looking at the Unicode code points of the first ciphertext,
+one finds that there are dips corresponding to spaces in the given key,
+which suggests that Unicode numbers are being used to implement the cipher.
+For example, if the first letter of the plaintext was "A" (unicode code 65)
+and the first letter of the key was "$" (unicode code 36),
+then the encrypted character is "e" (unicode code 101).</p>
+<p>This is indeed the case, and implementing a subtraction-by-code points
+yields the <a href="{{sroot}}plain/1.txt">first plaintext</a>, in French.
+At this point we may already try to <a href="{{sroot}}trans/1.txt">translate the text</a>
+back into English, which we find are formatted as song lyrics.
+Searching these lyrics then
+<a href="https://www.youtube.com/watch?v=ur560pZKRfg&amp;ab_channel=TranslatorFails">rick-rolls us</a>
+and reveals the underlying theme of the puzzle --- the plaintexts
+are from <a href="https://www.youtube.com/playlist?list=PLGnYtw5ezZI-BnVCUhMOcBqi9KggS1fhD">Google Translate Sings</a>.</p>
+<p><center></p>
+<iframe width="280" height="156" src="https://www.youtube.com/embed/ur560pZKRfg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p></center></p>
+<p>So, the first step is to break the remaining ciphers.
+This turns out to be not as scary as it seems,
+and many approaches to the cryptanalysis are possible.
+Determining the key length can be done using the
+<a href="https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher#Friedman_test">Friedman test</a>;
+the correct key length causes a spike in the index of coincidence.
+Once the key length is guessed and one is looking at a particular point,
+one approach would be to simply look at the lowest Unicode point <em>m</em>,
+which is invariably either NEWLINE (10) or SPACE (32), leaving just two realistic options.
+And to check whether <em>m</em> is indeed NEWLINE, one can check whether <em>m</em>+22 is present.
+<a href="{{sroot}}sample-cryptanalysis.py">A Python script that works in all cases is linked here</a>.</p>
+<p>Once the cryptanalysis is complete, we now have a lot of data to work with!
+The completed table of initial data is shown below.</p>
+<table>
+<tr>
+    <th>#</th>
+    <th>Plaintext</th>
+    <th>GTS Song</th>
+    <th>Key language</th>
+    <th>Key</th>
+    <th>Key (translated)</th>
+</tr>
+
+<tr>
+    <td>#1</td>
+    <td><a href="{{sroot}}plain/1.txt">French</a> </td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Never_Gonna_Give_You_Up">Never Gonna Give You Up</a></td>
+    <td>Nepali</td>
+    <td>ताराको चिन्ह</td>
+    <td>Asterisk</td>
+</tr>
+
+<tr>
+    <td>#2</td>
+    <td><a href="{{sroot}}plain/2.txt">Albanian</a></td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Into_the_Unknown">Into the Unknown</a></td>
+    <td>Urdu</td>
+    <td>آلہ کنٹرول تین</td>
+    <td>Device control three</td>
+</tr>
+
+<tr>
+    <td>#3</td>
+    <td><a href="{{sroot}}plain/3.txt">Norwegian</a></td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_God_Help_the_Outcasts">God Help the Outcasts</a></td>
+    <td>Malayalam</td>
+    <td>ശൂന്യം</td>
+    <td>Null</td>
+</tr>
+
+<tr>
+    <td>#4</td>
+    <td><a href="{{sroot}}plain/4.txt">Dutch</a></td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_One_Day_I'll_Fly_Away">One Day I'll Fly Away</a></td>
+    <td>Bengali</td>
+    <td>আউট নামান</td>
+    <td>Shift out</td>
+</tr>
+
+<tr>
+    <td>#5</td>
+    <td><a href="{{sroot}}plain/5.txt">Odia</a></td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Hey_There_Delilah">Hey There Delilah</a></td>
+    <td>English</td>
+    <td>unit separator</td>
+    <td>Unit separator</td>
+</tr>
+
+<tr>
+    <td>#6</td>
+    <td><a href="{{sroot}}plain/6.txt">Maori</a></td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Twenty_One_Pilots">Twenty One Pilots</a></td>
+    <td>Russian</td>
+    <td>подставлять</td>
+    <td>Substitute</td>
+</tr>
+</table>
+
+<p>Both the plaintext and keys have a language and content.</p>
+<ul>
+<li>The <em>languages</em> for the plaintexts spell FANDOM by first letter.</li>
+<li>The <em>languages</em> for the keys spell NUMBER by first letter.</li>
+<li>The <em>content</em> of the plaintexts are the lyrics of a song from the Google Translate Sings series (translated yet again).
+    As clued by the phrase <code>FANDOM NUMBER</code>,
+    we should look up the episode number corresponding to each song,
+    as given by the <a href="https://malinda.fandom.com/wiki/Google_Translate_Sings">Malinda Fandom page</a>.
+    (At the time of writing, there was also a <a href="https://genius.com/albums/Malinda/Google-translate-sings">Genius listing</a>
+    with gaps and different numbers,
+    and care was taken to choose songs for this puzzle which were not listed on Genius.)</li>
+<li>The <em>content</em> of the key is a translation of the name of a Unicode/ASCII character, which has a code point.</li>
+</ul>
+<p>Thus there are two numbers associated to every file.
+Upon noticing that the episode numbers are actually quite large,
+we should <em>do it again</em> and subtract the ASCII character from the Fandom number
+(i.e. doing one last Vigenere cipher,
+using the number from the key as the new key,
+and the number from the texts as the new ciphertext).</p>
+<table>
+<tr>
+    <th>#</th>
+    <th>Plaintext song</th>
+    <th>Ep. no.</th>
+    <th>Key (translated)</th>
+    <th>Unicode</th>
+    <th>Difference</th>
+</tr>
+
+<tr>
+    <td>#1</td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Never_Gonna_Give_You_Up">Never Gonna Give You Up</a></td>
+    <td>108</td>
+    <td>Asterisk</td>
+    <td>42</td>
+    <td>66 → <b>B</b></td>
+</tr>
+
+<tr>
+    <td>#2</td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Into_the_Unknown">Into the Unknown</a></td>
+    <td>104</td>
+    <td>Device control three</td>
+    <td>19</td>
+    <td>85 → <b>U</b></td>
+</tr>
+
+<tr>
+    <td>#3</td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_God_Help_the_Outcasts">God Help the Outcasts</a></td>
+    <td>77</td>
+    <td>Null</td>
+    <td>0</td>
+    <td>77 → <b>M</b></td>
+</tr>
+
+<tr>
+    <td>#4</td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_One_Day_I'll_Fly_Away">One Day I'll Fly Away</a></td>
+    <td>80</td>
+    <td>Shift out</td>
+    <td>14</td>
+    <td>66 → <b>B</b></td>
+</tr>
+
+<tr>
+    <td>#5</td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Hey_There_Delilah">Hey There Delilah</a></td>
+    <td>107</td>
+    <td>Unit separator</td>
+    <td>31</td>
+    <td>76 → <b>L</b></td>
+</tr>
+
+<tr>
+    <td>#6</td>
+    <td><a href="https://malinda.fandom.com/wiki/Google_Translate_Sings:_Twenty_One_Pilots">Twenty One Pilots</a></td>
+    <td>95</td>
+    <td>Substitute</td>
+    <td>26</td>
+    <td>69 → <b>E</b></td>
+</tr>
+</table>
+
+<p>Reading the letters now gives the answer <span class="answer">BUMBLE</span>.</p>
+<div class="author-note">
+<h2>Author’s Notes</h2>
+The author would like to give a special shout-out to Brian Chen who suggested
+Google Translate Sings as possible source material after the Vigenere step.
+(Earlier versions of the puzzle had significantly more boring extractions
+after the ciphertexts were broken, and did not feel anywhere as thematic or cohesive.)
+</div>

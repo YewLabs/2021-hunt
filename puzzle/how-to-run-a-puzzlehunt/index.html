@@ -1,0 +1,124 @@
+<style type="text/css">
+.how pre { line-height: 125%; white-space: pre-wrap; }
+.how .hll { background-color: #ffffcc }
+.how .gd { color: #A00000 } /* Generic.Deleted */
+.how .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.how .gi { color: #00A000 } /* Generic.Inserted */
+.how .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+</style>
+
+<div class="how"><pre><span></span><span class="gh">diff --git a/README.md b/README.md</span>
+<span class="gh">index 63aac5c..21fffa2 100644</span>
+<span class="gd">--- a/README.md</span>
+<span class="gi">+++ b/README.md</span>
+<span class="gu">@@ -30,7 +30,7 @@ This is a Django app for running puzzlehunts, written by several members of ✈</span>
+ 
+   + The site is set up to use a `db.sqlite3` file in the root of this repository as its database. If this doesn&#39;t exist, Django will create a new empty database when you run `./manage.py migrate`. It&#39;s perfectly fine to start with this, but you won&#39;t have any puzzles populated and you almost certainly want to create a superuser.
+ 
+<span class="gd">-    If you just want to try out the website quickly with some sample data, you can run `./manage.py loaddata sample.yaml` (after `./manage.py migrate`) to load a sample hunt, an admin account (username and password `admin`), and a test account with a team (username and password `test`). You can view the templates used to render the puzzles in the [puzzles/templates/puzzle_bodies](puzzles/templates/puzzle_bodies) and [puzzles/templates/solution_bodies](puzzles/templates/solution_bodies) folders, which you can also base your puzzles/solutions off of.</span>
+<span class="gi">+    If you just want to try out the website quickly with some sample data, you can run `./manage.py loaddata sample.yaml` (after `./manage.py migrate`) to load a sample hunt, an admin account (username and password `admin`), a test account with a team (username and password `test`), and some sample hint requests. You can view the templates used to render the puzzles in the [puzzles/templates/puzzle_bodies](puzzles/templates/puzzle_bodies) and [puzzles/templates/solution_bodies](puzzles/templates/solution_bodies) folders, which you can also base your puzzles/solutions off of.</span>
+ 
+ - ...be a superuser?
+ 
+<span class="gh">diff --git a/puzzles/fixtures/sample.yaml b/puzzles/fixtures/sample.yaml</span>
+<span class="gh">index 556052e..b63ce79 100644</span>
+<span class="gd">--- a/puzzles/fixtures/sample.yaml</span>
+<span class="gi">+++ b/puzzles/fixtures/sample.yaml</span>
+<span class="gu">@@ -79,3 +79,96 @@</span>
+     user: 2
+     team_name: test
+     creation_time: &quot;9001-01-01T00:00:00+00:00&quot;
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 1</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 1</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: &gt;</span>
+<span class="gi">+      I have solutions for most of the subpuzzles from a friend, except for the two longest clues, which they weren&#39;t able to solve. I&#39;m hoping I can get by without them, because I don&#39;t know how they got their answers and they&#39;re busy right now, so I put in placeholders for the unsolved clues and hope they&#39;ll be resolved later.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      I didn&#39;t trust the ordering I got up to this point, so I decided to sort the things I had extracted, first by length and then lexicographically to break any ties. And there were quite a few ties, which were between things of even length.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      Finally, I guessed that the numbers in this puzzle might suggest that there were some kind of Caesar shifts involved. I don&#39;t know what the shift amount is, but I thought that might be okay because I could just try all of them. I&#39;m super demotivated and want something soft to cuddle now...</span>
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 2</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 2</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: &gt;</span>
+<span class="gi">+      I noticed that the last digit repeats a lot, so I tried concatenating the numbers into groups by that, and then of course discarding that last digit, since we used it. (So I got two groups of 17 and 8 digits respectively.)</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      Then, I noticed that we had a square grid (in this puzzle, just by putting the 25 digits in row-major order), and a square grid makes me want to play Boggle on it, so I tried tracing some paths in the grid. Some of the numbers I got by tracing: 14134, 14534, 26953, 31341, 31641, 43213, 43413, 72764, 87221. I was pretty sure that only one of the paths I found would be relevant (in this puzzle I thought 31641 was the most compelling), and that this wouldn&#39;t be the last step even if I got a word I might want.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      Finally, I discovered that I can just randomly anagram what I got into 31416, but PI isn&#39;t the answer. I would really like some help, in any form!</span>
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 3</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 3</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: &gt;</span>
+<span class="gi">+      So I think I figured out the first part, what the puzzle is cluing (STOP and TIME). That&#39;s cool because I can make a grid with the letters (it&#39;s just 2x4), but after I couldn&#39;t find anything in it I tried flipping the grid vertically, or equivalently, reversing the order of the rows.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      After that, I realized I haven&#39;t used the blanks at the bottom, so I decided to just keep only the first few of the letters, as many as needed to fill the blanks, and delete all the rest.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      Although I think the puzzle is definitely suggesting that I should submit the contents of the box as the answer, what I have there currently isn&#39;t a word. But I thought I could try guessing just the last ⅔ of the letters, since that&#39;s a plausible answer (kind of... sounds like something musical?), but it was incorrect. How could I have been prevented from solving this puzzle?</span>
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 4</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 4</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: &gt;</span>
+<span class="gi">+      I looked at the clues and thought that the first step would probably be to reorder them, so I did that and got an ordering that ends STRO?UHR, INC?SOR, ECZ?MA. It&#39;s kinda cute that the last letter of the alphabet is in the last clue in this ordering as confirmation, although I think that&#39;s too obvious and just having a lot of very late letters in the last clue would be fine.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      For each clue, I tried to solve it while ignoring the ? in the middle for now, which I thought might be used later. Then, I tried to find a word that fit in the bottom blanks that could be clued by &quot;eczma&quot; or any of the other words I got.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      When that didn&#39;t work, I remembered that numbers and letters are interchangeable in puzzlehunts, like A=1, B=2, and so on, so I decided to sum the things I had. I would have really liked it if the numbers were small enough to convert back to letters (but they weren&#39;t: the first few numbers I got were 161 and 175, so I&#39;m totally stuck). I think I need to find more structure in this puzzle to solve it.</span>
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 5</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 5</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: &gt;</span>
+<span class="gi">+      I heard your hunt had a lot of puzzles about video games, so I tried to see if there were any famous video games, probably one of those considered best of all time or something, that might be clued by the puzzle title because they start with the same, say, three or four letters. But those letters shouldn&#39;t be pronounced the same way in the title and the puzzle, since that would be too obvious. (I found Diablo and Diablo II, but was hoping for something much more recent...)</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      That didn&#39;t get me anywhere, so I looked at the rest of the puzzle and noticed that there were a lot of numbers, so I guessed they might be indexes and extracted some letters that way (I got D, R, A, M, D, I...) For the numbers that were too big, of course I just wrapped around (so 2016 became index 3, or A), and so on. I thought it seemed promising that the second to fourth letters form a word.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      When that didn&#39;t reveal anything, I looked at the puzzle again and realized I hadn&#39;t used the clues yet. I could use the numbers to index into those instead. But I tried that too, and didn&#39;t get anywhere. When will I be able to exclaim victory over this puzzle?</span>
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 6</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 6</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: &gt;</span>
+<span class="gi">+      I looked at all these numbers and couldn&#39;t see anything meaningful in them, so I decided to transform them, digit by digit, into new numbers (so like the first line became (7,7)—(15,15) and the last line became (19,31)—(31,27)). You get the idea.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      I didn&#39;t get anywhere after staring at these numbers some more, but I thought I could try a little harder, so I added 1 to all of them. I like the power of 2 I got at the start.</span>
+<span class="gi">+</span>
+<span class="gi">+</span>
+<span class="gi">+      Alas, my data overall still looked like garbage, but I concatenated it all together and tried to find an answer anyway. Maybe there was an ancient non-English name of something that matched what I had?</span>
+<span class="gi">+- model: puzzles.Hint</span>
+<span class="gi">+  pk: 7</span>
+<span class="gi">+  fields:</span>
+<span class="gi">+    team: 2</span>
+<span class="gi">+    puzzle: 7</span>
+<span class="gi">+    submitted_datetime: &quot;9001-01-01T00:00:00+00:00&quot;</span>
+<span class="gi">+    hint_question: I noticed what the answers have in common, but I can&#39;t figure out what order to put them in. I&#39;ll probably just keep them in the provided order right now, even though I know it&#39;s alphabetical by puzzle title, and hope that I can get an answer out of that. My teammates are also saying different things about what they think the answers should be. What&#39;s going on?</span>
+<span class="gi">+    status: ANS</span>
+<span class="gi">+    response: Based on all the hint requests you&#39;ve made, we think the most helpful thing to try would be to have your teammates all try working on different puzzles than the one they&#39;re working on right now.</span>
+</pre></div>

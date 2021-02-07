@@ -1,0 +1,392 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block round_styles %}
+<style>
+  body {
+    background-color: #584F78;
+  }
+
+  .content {
+    background-image: url({% static 'art/greenbg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    background: none;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+  }
+
+  {% comment %} .tree-before, .tree-after {
+    position: relative;
+  }
+  .tree-before::before, .tree-after::after {
+    content: "";
+    position: absolute;
+    background-size: contain;
+
+    background-image: url(data:image/png;base64,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);
+
+    height: 40px;
+    width: 40px;
+  }
+
+  .tree-before::before {
+    left: -50px;
+    top: 6px;
+  }
+
+  .tree-after::after {
+    left: 40px;
+    top: 6px;
+  } {% endcomment %}
+
+  .green-building {
+    position: relative;
+    border-spacing: 4px;
+    border-collapse: separate;
+    {% comment %} left: 90px; {% endcomment %}
+  }
+
+  .green-building::before {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: -4px;
+    height: 100%;
+    width: 190px;
+    content: "";
+    background-color: #6165491f;
+  }
+
+  .green-building .window {
+    width: 23px;
+    height: 28px;
+    background: #796972;
+    box-sizing: content-box;
+  }
+
+  .green-building tr:last-child .window {
+    height: 48px;
+  }
+
+  .green-building .lit {
+    background: #FFE1A0;
+  }
+
+  .switch {
+    width: 200px;
+    border: none;
+    position: absolute;
+  }
+
+  .switch button {
+    float: right;
+    width: 150px;
+  }
+
+  .selected button {
+    background: #FFE1A0;
+    outline: none;
+  }
+
+  .green-building-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    width: fit-content;
+    width: -moz-fit-content;
+    padding-bottom: 120px;
+    position: relative;
+  }
+
+  .green-building-overlay {
+    position: absolute;
+    top: -30px;
+    left: -45px;
+    width: 281px;
+  }
+</style>
+{% endblock %}
+
+{% block round_js %}
+<script src="script.js"></script>
+{% endblock %}
+
+
+{% block round_top %}
+<div class="green-building-container">
+<table class="green-building">
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 13 %}
+      <script>
+        floorLights[13] = [
+          '*...*',
+          '.....',
+          '.....',
+          '.*.**',
+        ];
+      </script>
+      <button onclick="pressSwitch(13)">Switch #13</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 12 %}
+      <script>
+        floorLights[12] = [
+          '..*..',
+          '*....',
+          '*.*..',
+          '.....',
+          '...**',
+        ];
+      </script>
+      <button onclick="pressSwitch(12)">Switch #12</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 11 %}
+      <script>
+        floorLights[11] = [
+          '..***',
+          '..***',
+          '.****',
+          '....*',
+        ];
+      </script>
+      <button onclick="pressSwitch(11)">Switch #11</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 10 %}
+      <script>
+        floorLights[10] = [
+          '....*',
+          '....*',
+          '..*.*',
+          '.*...',
+        ];
+      </script>
+      <button onclick="pressSwitch(10)">Switch #10</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 9 %}
+      <script>
+        floorLights[9] = [
+          '*.***',
+          '*.***',
+          '.....',
+          '.....',
+          '.*.*.',
+          '...**',
+          '*.*..',
+          '*.*..',
+        ];
+      </script>
+      <button onclick="pressSwitch(9)">Switch #9</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 8 %}
+      <script>
+        floorLights[8] = [
+          '***..',
+          '*.**.',
+          '*.**.',
+          '.*..*',
+        ];
+      </script>
+      <button onclick="pressSwitch(8)">Switch #8</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 7 %}
+      <script>
+        floorLights[7] = [
+          '.*...',
+          '.....',
+          '.**.*',
+        ];
+      </script>
+      <button onclick="pressSwitch(7)">Switch #7</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 6 %}
+      <script>
+        floorLights[6] = [
+          '*...*',
+          '*.***',
+          '*..**',
+        ];
+      </script>
+      <button onclick="pressSwitch(6)">Switch #6</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 5 %}
+      <script>
+        floorLights[5] = [
+          '*....',
+          '.**.*',
+          '***.*',
+          '*.*.*',
+        ];
+      </script>
+      <button onclick="pressSwitch(5)">Switch #5</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 4 %}
+      <script>
+        floorLights[4] = [
+          '*....',
+          '..*..',
+          '..***',
+          '.****',
+        ];
+      </script>
+      <button onclick="pressSwitch(4)">Switch #4</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 3 %}
+      <script>
+        floorLights[3] = [
+          '.**..',
+          '.****',
+          '.*...',
+          '.**.*',
+        ];
+      </script>
+      <button onclick="pressSwitch(3)">Switch #3</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 2 %}
+      <script>
+        floorLights[2] = [
+          '.**..',
+          '.***.',
+          '.***.',
+          '....*',
+        ];
+      </script>
+      <button onclick="pressSwitch(2)">Switch #2</button>
+      {% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="window tree-before"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window"></td>
+    <td class="window tree-after"></td>
+    <td class="switch">
+      {% if normal_round_solved >= 1 %}
+      <script>
+        floorLights[1] = [
+          '...**',
+          '*....',
+          '**...',
+          '..**.',
+          '..**.',
+        ];
+      </script>
+      <button onclick="pressSwitch(1)">Switch #1</button>
+      {% endif %}
+    </td>
+  </tr>
+</table>
+<img class="green-building-overlay" src="{% static 'art/greenbuildingoverlay.png' %}" />
+</div>
+{% endblock %}

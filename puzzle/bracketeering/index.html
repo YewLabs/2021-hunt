@@ -1,0 +1,680 @@
+<script>
+// hi! this puzzle is not intended to be reverse engineered. thanks
+
+function runBracket() {
+  let a_word = evaluate("winwon");
+  let b_word = evaluate("advance");
+
+  document.getElementById("loswon").textContent = b_word;
+
+  let { winner, a_score, b_score } = contest(a_word, b_word);
+  document.getElementById("score:winwon").textContent = a_score;
+  document.getElementById("score:loswon").textContent = b_score;
+  document.getElementById("final").textContent = winner;
+}
+
+function evaluate(field_name) {
+  var field = document.getElementById(field_name);
+  if (field.tagName == "INPUT") {
+    return field.value;
+  }
+  if (field.getAttribute("source") == null) {
+    return field.textContent;
+  }
+
+  var a = field.getAttribute("source").split(":")[1].split("-")[0];
+  var b = field.getAttribute("source").split(":")[1].split("-")[1];
+
+  var contest_type = field.getAttribute("source").split(":")[0];
+
+  if (contest_type == "w") {
+    var a_word = evaluate(a);
+    var b_word = evaluate(b);
+
+    let { winner, a_score, b_score } = contest(a_word, b_word);
+    field.textContent = winner;
+    document.getElementById("score:" + a).textContent = a_score;
+    document.getElementById("score:" + b).textContent = b_score;
+    return field.textContent;
+  } else {
+    // assume the winners have been fully calculated by the time the losers bracket is evaluated
+    var a_word = document.getElementById(a).textContent;
+    var b_word = document.getElementById(b).textContent;
+
+    let { winner, a_score, b_score } = contest(a_word, b_word);
+    if (winner == a_word) {
+      field.textContent = b_word;
+    } else {
+      field.textContent = a_word;
+    }
+
+    return field.textContent;
+  }
+}
+
+function statEval(input) {
+  //function to check D&D stat abbreviations
+  if (input.indexOf("STR") > -1) {
+    return 6;
+  } else if (input.indexOf("DEX") > -1) {
+    return 5;
+  } else if (input.indexOf("CON") > -1) {
+    return 4;
+  } else if (input.indexOf("INT") > -1) {
+    return 3;
+  } else if (input.indexOf("WIS") > -1) {
+    return 2;
+  } else if (input.indexOf("CHA") > -1) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+function zodEval(input) {
+  //function to check zodiac animals
+  if (input.indexOf("RAT") > -1) {
+    return 12;
+  } else if (input.indexOf("OX") > -1) {
+    return 11;
+  } else if (input.indexOf("TIGER") > -1) {
+    return 10;
+  } else if (input.indexOf("RABBIT") > -1) {
+    return 9;
+  } else if (input.indexOf("DRAGON") > -1) {
+    return 8;
+  } else if (input.indexOf("SNAKE") > -1) {
+    return 7;
+  } else if (input.indexOf("HORSE") > -1) {
+    return 6;
+  } else if (input.indexOf("GOAT") > -1) {
+    return 5;
+  } else if (input.indexOf("MONKEY") > -1) {
+    return 4;
+  } else if (input.indexOf("ROOSTER") > -1) {
+    return 3;
+  } else if (input.indexOf("DOG") > -1) {
+    return 2;
+  } else if (input.indexOf("PIG") > -1) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+function pairEval(input) {
+  function makeRegex(vowel) {
+    let regexString = "^[^aeiou]*" + vowel + "[^aeiou]*" + vowel + "[^aeiou]*$";
+    return RegExp(regexString, "i");
+  }
+
+  if (makeRegex("a").test(input)) {
+    return 5;
+  } else if (makeRegex("e").test(input)) {
+    return 4;
+  } else if (makeRegex("i").test(input)) {
+    return 3;
+  } else if (makeRegex("o").test(input)) {
+    return 2;
+  } else if (makeRegex("u").test(input)) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+function scrabEval(word) {
+  // shamelessly borrowed from StackExchange https://stackoverflow.com/a/58241361
+  let newAlphabet = {
+      a: 1, e: 1, i: 1, o: 1, u: 1, l: 1, n: 1, r: 1, s: 1, t: 1, d: 2, g: 2, b: 3, c: 3, m: 3, p: 3, f: 4, h: 4, v: 4, w: 4, y: 4, k: 5, j: 8, x: 8, q: 10, z: 10,
+    },
+    sum = 0,
+    i;
+
+  word = word.toLowerCase();
+  for (i = 0; i < word.length; i++) {
+    sum += newAlphabet[word[i]] || 0; // for unknown characters
+  }
+  return sum;
+}
+
+function contest(contestA, contestB) {
+  return {
+    winner: contest_winner(contestA, contestB),
+    a_score: score(contestA, contestB),
+    b_score: score(contestA, contestB),
+  };
+}
+
+function contest_winner(contestA, contestB) {
+  var inputA = contestA.toUpperCase();
+  var inputA = inputA.replace(/\s+/g, "");
+  var inputB = contestB.toUpperCase();
+  var inputB = inputB.replace(/\s+/g, ""); //reformat strings for evaluation while preserving original strings
+
+  if (inputA == "") {
+    return contestB;
+  }
+  if (inputB == "") {
+    return contestA;
+  }
+
+  if (statEval(inputA) > statEval(inputB)) {
+    return contestA;
+  } else if (statEval(inputB) > statEval(inputA)) {
+    return contestB;
+  }
+
+  if (zodEval(inputA) > zodEval(inputB)) {
+    return contestA;
+  } else if (zodEval(inputB) > zodEval(inputA)) {
+    return contestB;
+  }
+
+  if (pairEval(inputA) > pairEval(inputB)) {
+    //sorta janky but this returns the word with the fewest vowel pairs but at least one vowel pair
+    return contestA;
+  } else if (pairEval(inputB) > pairEval(inputA)) {
+    return contestB;
+  }
+
+  if (scrabEval(inputA) < scrabEval(inputB)) {
+    //note the reversed ordering here
+    return contestA;
+  } else if (scrabEval(inputB) < scrabEval(inputA)) {
+    return contestB;
+  }
+
+  return "";
+}
+
+function score(contestA, contestB) {
+  //copying the evaluation function to display the score for the top team
+
+  var inputA = contestA.toUpperCase();
+  var inputA = inputA.replace(/\s+/g, "");
+  var inputB = contestB.toUpperCase();
+  var inputB = inputB.replace(/\s+/g, ""); //reformat strings for evaluation while preserving original strings
+
+  if (inputA == "") {
+    return "N/A";
+  }
+
+  if (statEval(inputA) != statEval(inputB)) {
+    return statEval(inputA);
+  }
+
+  if (zodEval(inputA) != zodEval(inputB)) {
+    return zodEval(inputA);
+  }
+
+  if (pairEval(inputA) != pairEval(inputB)) {
+    return pairEval(inputA);
+  }
+
+  if (scrabEval(inputA) != scrabEval(inputB)) {
+    //note the reversed ordering here
+    return scrabEval(inputA) + "!";
+  }
+
+  return "N/A";
+}
+</script>
+
+<style>
+.puzzle input {
+  animation: 1s infinite alternate bgflash;
+  background: transparent;
+  border: none;
+  border-bottom: 2.5px solid #2c7399;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font: inherit;
+  height: 25px;
+  margin: 2.5px;
+  padding: 2.5px 0;
+  vertical-align: middle;
+  width: calc(100% - 30px);
+}
+@keyframes bgflash {
+  from {
+    border: 2.5px solid #2c7399;
+    border-bottom: 2.5px solid #2c7399;
+  }
+  66% {
+    border: 2.5px solid #fafafa;
+    border-bottom: 2.5px solid #2c7399;
+  }
+  to {
+    border: 2.5px solid #fafafa;
+    border-bottom: 2.5px solid #2c7399;
+  }
+}
+.wrapper {
+  font-size: 16px;
+}
+.bracket {
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+  position: relative;
+}
+.bracket > div {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  justify-content: space-around;
+  position: relative;
+  width: 160px;
+}
+.bracket > .winners-left-3 {
+  left: -75px;
+  top: 45px;
+  margin-bottom: 90px;
+}
+.bracket > .winners-right-3 {
+  height: calc(100% - 90px);
+  left: calc(50% + 50px);
+  top: 45px;
+  position: absolute;
+}
+.bracket > .winners-gap-vertical {
+  width: 100px;
+}
+.bracket > .losers-gap-vertical {
+  width: 100px;
+}
+.bracket > .winners-center {
+  height: 50%;
+  top: 22.5%;
+  left: calc(50% - 80px);
+  position: absolute;
+}
+.bracket.losers {
+  padding-top: 30px;
+}
+.bracket.losers > div {
+  position: relative;
+}
+.bracket.losers .losers-1 ul li,
+.bracket ul li.loser {
+  background-color: #f0f0f0;
+}
+.losers-2, .losers-3 {
+  top: -20px;
+}
+.losers-4, .losers-5 {
+  top: -40px;
+}
+.bracket.losers > .losers-6,
+.bracket.losers > .losers-7 {
+  top: 8%;
+  right: 20px;
+  position: absolute;
+}
+.bracket.losers > .losers-6 {
+  top: 27%;
+}
+.bracket.losers > .losers-5 {
+  left: -100px;
+}
+.bracket ul {
+  margin: 0;
+  width: 100%;
+  padding: 10px 0;
+  height: 80px;
+}
+.score {
+  font-size: 0.9rem;
+  float: right;
+  color: #2c7399;
+  font-weight: bold;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+}
+.bracket ul li {
+  align-items: center;
+  background-color: #fafafa;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.3);
+  display: flex;
+  padding: 0 5px;
+  margin: 3px 0;
+  height: 35px;
+  line-height: 35px;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+}
+.bracket ul li.label {
+  background: transparent;
+  box-shadow: none;
+  color: #5ca6c4;
+  font-size: 0.9rem;
+  font-weight: bold;
+  height: 20px;
+  justify-content: center;
+  letter-spacing: 0.05rem;
+  line-height: 20px;
+  overflow: visible;
+  text-align: center;
+  text-transform: uppercase;
+}
+</style>
+
+<div class="flavor">
+You find a colossal tournament bracket. Who wins?
+</div>
+
+<p style="text-align: center;"><button onclick="runBracket()">Compete!</button></p>
+
+<div class="wrapper">
+
+<div class="bracket grand-finals">
+<div>
+<ul>
+  <li class="label">Grand Finals</li>
+  <li><span class="team" id="winwon" source="w:aaaaa-aaaab">_</span><span class="score" id="score:winwon">0</span></li>
+  <li><span class="team" id="loswon" source="w:zzzzzza-zo">_</span><span class="score" id="score:loswon">0</span></li>
+</ul>
+</div>
+<div>
+<ul style="position: relative; top: 20px">
+  <li class="label">Champion:</li>
+  <li><span class="team" id="final" source="w:winwon-loswon">_</span></li>
+</ul>
+</div>
+</div>
+
+<div class="bracket winners">
+
+<div class="winners-left-1">
+<ul>
+  <li><span class="team">BabbleShip</span><span class="score">21!</span></li>
+  <li><span class="team">Stone Rage</span><span class="score">10!</span></li>
+</ul>
+<ul>
+  <li><span class="team">Camel Bowl</span><span class="score">18!</span></li>
+  <li><span class="team">Monopole</span><span class="score">12!</span></li>
+</ul>
+<ul>
+  <li><span class="team">Ogre Bottle</span><span class="score">13!</span></li>
+  <li><span class="team">Do</span><span class="score">3!</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="g">Codenim</span><span class="score" id="score:g">0</span></li>
+  <li><span class="team"><input maxlength="1000" type="text" id="h"></span><span class="score" id="score:h">0</span></li>
+</ul>
+<ul class="winners-gap-horizontal"></ul>
+<ul>
+  <li><span class="team">Horse Field</span><span class="score">6</span></li>
+  <li><span class="team">Jolly Green Ogre</span><span class="score">0</span></li>
+</ul>
+<ul>
+  <li><span class="team">Battlesnake</span><span class="score">7</span></li>
+  <li><span class="team">Feral Pig</span><span class="score">1</span></li>
+</ul>
+<ul>
+  <li><span class="team">Drama Llama</span><span class="score">0</span></li>
+  <li><span class="team">King Dragon</span><span class="score">8</span></li>
+</ul>
+<ul>
+  <li><span class="team">Lessest Dog</span><span class="score">2</span></li>
+  <li><span class="team">Horrible Goose</span><span class="score">0</span></li>
+</ul>
+</div>
+
+<div class="winners-left-2">
+<ul>
+  <li><span class="team" id="aa">Stone Rage</span><span class="score" id="score:aa">10!</span></li>
+  <li><span class="team" id="ab">Monopole</span><span class="score" id="score:ab">12!</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="ac">Do</span><span class="score" id="score:ac">0</span></li>
+  <li><span class="team" id="ad" source="w:g-h">_</span><span class="score" id="score:ad">0</span></li>
+</ul>
+<ul class="winners-gap-horizontal"></ul>
+<ul>
+  <li><span class="team" id="ae">Horse Field</span><span class="score" id="score:ae">6</span></li>
+  <li><span class="team" id="af">Battlesnake</span><span class="score" id="score:af">7</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="ag">King Dragon</span><span class="score" id="score:ag">8</span></li>
+  <li><span class="team" id="ah">Lessest Dog</span><span class="score" id="score:ah">2</span></li>
+</ul>
+<ul style="position: absolute; top: 320px; left: -30px;">
+  <li class="label" style="text-align: left;">Game Night<br/>Division</li>
+</ul>
+<ul style="position: absolute; bottom: 261px; left: -40px;">
+  <li class="label" style="text-align: left;">Jungle<br/>Division</li>
+</ul>
+</div>
+
+
+<div class="winners-left-3">
+<ul>
+  <li><span class="team" id="aaa">Stone Rage</span><span class="score" id="score:aaa">0</span></li>
+  <li><span class="team" id="aab" source="w:ac-ad">_</span><span class="score" id="score:aab">0</span></li>
+</ul>
+<ul class="winners-gap-horizontal"></ul>
+<ul>
+  <li><span class="team" id="aac">Battlesnake</span><span class="score" id="score:aac">7</span></li>
+  <li><span class="team" id="aad">King Dragon</span><span class="score" id="score:aad">8</span></li>
+</ul>
+</div>
+
+<div class="winners-gap-vertical"></div>
+
+<div class="winners-center">
+<ul>
+  <li class="label">Semifinals</li>
+  <li><span class="team" id="aaaa" source="w:aaa-aab">_</span><span class="score" id="score:aaaa">0</span></li>
+  <li><span class="team" id="AAAA">Thee &amp; Thy</span><span class="score" id="score:AAAA">3</span></li>
+</ul>
+<ul>
+  <li class="label">Finals</li>
+  <li><span class="team" id="aaaaa" source="w:aaaa-AAAA">_</span><span class="score" id="score:aaaaa">0</span></li>
+  <li><span class="team" id="aaaab">Windex Ooze</span><span class="score" id="score:aaaab">4</span></li>
+</ul>
+<ul>
+  <li class="label">Semifinals</li>
+  <li><span class="team" id="aaab">King Dragon</span><span class="score" id="score:aaab">0</span></li>
+  <li><span class="team" id="AAAB">Windex Ooze</span><span class="score" id="score:AAAB">5</span></li>
+</ul>
+</div>
+
+<div class="winners-right-3">
+<ul>
+  <li><span class="team" id="AAA">Twirl Twins</span><span class="score" id="score:AAA">3</span></li>
+  <li><span class="team" id="AAB">Thee &amp; Thy</span><span class="score" id="score:AAB">4</span></li>
+</ul>
+<ul class="winners-gap-horizontal"></ul>
+<ul>
+  <li><span class="team" id="AAC">Gelatinous Cone</span><span class="score" id="score:AAC">4</span></li>
+  <li><span class="team" id="AAD">Windex Ooze</span><span class="score" id="score:AAD">5</span></li>
+</ul>
+</div>
+
+
+<div class="winners-right-2">
+<ul>
+  <li><span class="team" id="AA">Bomb Bros</span><span class="score" id="score:AA">2</span></li>
+  <li><span class="team" id="AB">Twirl Twins</span><span class="score" id="score:AB">3</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="AC">Thee &amp; Thy</span><span class="score" id="score:AC">4</span></li>
+  <li><span class="team" id="AD">Rock &amp; Roll</span><span class="score" id="score:AD">2</span></li>
+</ul>
+<ul class="winners-gap-horizontal"></ul>
+<ul>
+  <li><span class="team" id="AE">Gelatinous Cone</span><span class="score" id="score:AE">4</span></li>
+  <li><span class="team" id="AF">Owlchair</span><span class="score" id="score:AF">1</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="AG">Windex Ooze</span><span class="score" id="score:AG">5</span></li>
+  <li><span class="team" id="AH">Willow Wisp</span><span class="score" id="score:AH">2</span></li>
+</ul>
+<ul style="position: absolute; top: 320px; right: -20px;">
+  <li class="label" style="text-align: right;">Double Time<br/>Division</li>
+</ul>
+<ul style="position: absolute; bottom: 261px; right: -33px;">
+  <li class="label" style="text-align: right;">Dungeon<br/>Division</li>
+</ul>
+</div>
+
+
+<div class="winners-right-1">
+<ul>
+  <li><span class="team">Amos &amp; Axel</span><span class="score">0</span></li>
+  <li><span class="team">Bomb Bros</span><span class="score">2</span></li>
+</ul>
+<ul>
+  <li><span class="team">Twirl Twins</span><span class="score">3</span></li>
+  <li><span class="team">Jun &amp; Just</span><span class="score">1</span></li>
+</ul>
+<ul>
+  <li><span class="team">Thee &amp; Thy</span><span class="score">4</span></li>
+  <li><span class="team">Ogre &amp; Achiever</span><span class="score">0</span></li>
+</ul>
+<ul>
+  <li><span class="team">Rock &amp; Roll</span><span class="score">2</span></li>
+  <li><span class="team">Infinity &amp; Beyond</span><span class="score">0</span></li>
+</ul>
+<ul class="winners-gap-horizontal"></ul>
+<ul>
+  <li><span class="team">Gelatinous Cone</span><span class="score">4</span></li>
+  <li><span class="team">Blank Dog</span><span class="score">0</span></li>
+</ul>
+<ul>
+  <li><span class="team">Owlchair</span><span class="score">1</span></li>
+  <li><span class="team">Demogargle</span><span class="score">0</span></li>
+</ul>
+<ul>
+  <li><span class="team">Windex Ooze</span><span class="score">5</span></li>
+  <li><span class="team">Mint Dragon</span><span class="score">3</span></li>
+</ul>
+<ul>
+  <li><span class="team">Bee Holder</span><span class="score">0</span></li>
+  <li><span class="team">Willow Wisp</span><span class="score">2</span></li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+<div class="bracket losers">
+
+
+
+<div class="losers-1">
+<ul style="position: absolute; top: -30px">
+  <li class="label" style="background: none">Loser's Bracket</li>
+</ul>
+<ul>
+  <li><span class="team" id="za">Monopole</span><span class="score" id="score:za">0</span></li>
+  <li><span class="team" id="zb">Bomb Bros</span><span class="score" id="score:zb">2</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="zc" source="l:ac-ad">_</span><span class="score" id="score:zc">0</span></li>
+  <li><span class="team" id="zd">Rock &amp; Roll</span><span class="score" id="score:zd">0</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="ze">Horse Field</span><span class="score" id="score:ze">0</span></li>
+  <li><span class="team" id="zf">Owlchair</span><span class="score" id="score:zf">1</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="zg">Lessest Dog</span><span class="score" id="score:zg">0</span></li>
+  <li><span class="team" id="zh">Willow Wisp</span><span class="score" id="score:zh">2</span></li>
+</ul>
+</div>
+
+
+
+<div class="losers-2">
+<ul>
+  <li class="loser"><span class="team" id="zi" source="l:aaa-aab">_</span><span class="score" id="score:zi">0</span></li>
+  <li><span class="team" id="zza">Bomb Bros</span><span class="score" id="score:zza">0</span></li>
+</ul>
+<ul>
+  <li class="loser"><span class="team" id="zj">Battlesnake</span><span class="score" id="score:zj">0</span></li>
+  <li><span class="team" id="zzb" source="w:zc-zd">_</span><span class="score" id="score:zzb">0</span></li>
+</ul>
+<ul>
+  <li class="loser"><span class="team" id="zk">Twirl Twins</span><span class="score" id="score:zk">0</span></li>
+  <li><span class="team" id="zzc">Owlchair</span><span class="score" id="score:zzc">1</span></li>
+</ul>
+<ul>
+  <li class="loser"><span class="team" id="zl">Gelatinous Cone</span><span class="score" id="score:zl">4</span></li>
+  <li><span class="team" id="zzd">Willow Wisp</span><span class="score" id="score:zzd">2</span></li>
+</ul>
+</div>
+
+
+
+<div class="losers-3">
+<ul>
+  <li><span class="team" id="zzza" source="w:zi-zza">_</span><span class="score" id="score:zzza">0</span></li>
+  <li><span class="team" id="zzzb" source="w:zj-zzb">_</span><span class="score" id="score:zzzb">0</span></li>
+</ul>
+<ul>
+  <li><span class="team" id="zzzc">Owlchair</span><span class="score" id="score:zzzc">1</span></li>
+  <li><span class="team" id="zzzd">Gelatinous Cone</span><span class="score" id="score:zzzd">4</span></li>
+</ul>
+</div>
+
+
+
+<div class="losers-4">
+<ul>
+  <li class="loser"><span class="team" id="zm" source="l:aaaa-AAAA">_</span><span class="score" id="score:zm">0</span></li>
+  <li><span class="team" id="zzzza" source="w:zzza-zzzb">_</span><span class="score" id="score:zzzza">0</span></li>
+</ul>
+<ul>
+  <li class="loser"><span class="team" id="zn">King Dragon</span><span class="score" id="score:zn">0</span></li>
+  <li><span class="team" id="zzzzb">Gelatinous Cone</span><span class="score" id="score:zzzzb">4</span></li>
+</ul>
+</div>
+
+
+
+<div class="losers-5">
+<ul>
+  <li><span class="team" id="zzzzza" source="w:zm-zzzza">_</span><span class="score" id="score:zzzzza">0</span></li>
+  <li><span class="team" id="zzzzzb">Gelatinous Cone</span><span class="score" id="score:zzzzzb">0</span></li>
+</ul>
+</div>
+
+<ul class="losers-gap-vertical"></ul>
+
+<div class="losers-6">
+<ul>
+  <li class="loser"><span class="team" id="zo" source="l:aaaaa-aaaab">_</span><span class="score" id="score:zo">0</span></li>
+  <li><span class="team" id="zzzzzza" source="w:zzzzza-zzzzzb">_</span><span class="score" id="score:zzzzzza">0</span></li>
+</ul>
+</div>
+
+<div class="losers-7">
+<ul>
+  <li class="label">Advances:</li>
+  <li><span class="team" id="advance" source="w:zzzzzza-zo">_</span></li>
+</ul>
+</div>
+
+</div>
+
+</div>
+<script>
+const teaminput = document.querySelector('#h');
+teaminput.addEventListener('click', () => {
+  teaminput.style.animation = 'none';
+});
+teaminput.addEventListener('keyup', (e) => {
+  if (e.keyCode === 13) {
+    e.preventDefault();
+    runBracket();
+  }
+});
+</script>

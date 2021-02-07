@@ -1,0 +1,20 @@
+<script>
+function resizeIframe(obj) {
+  obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
+}
+</script>
+
+<h2>&#x2694; Fencing Event &#x2694;</h2>
+
+<p class="flavor">This event takes (took) place on <b>Sat Jan 16, 4&ndash;6pm EST</b>.</p>
+
+<p>There will be a freeplay section (the main event) and a tournament (optional). Competitors in the tournament will also need to participate in the freeplay section, and we will be making important announcements in the Discord server for both freeplay and tournament.</p>
+
+<hr>
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<iframe src="register" height="360" style="border: none; width: 100%;" onload="resizeIframe(this)"></iframe>
+{% endif %}

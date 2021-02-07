@@ -1,0 +1,18 @@
+div.canvas {
+    position: relative;
+    left: -50px;
+    transform: scale(0.9);
+}
+div.canvas img {
+    position: absolute;
+    width: 180px;
+    margin-top: 70px; 
+    margin-left: 14px;
+}
+.warning {
+    display: none;
+    color: red;
+}
+.puzzle {
+    height: 1200px;
+}

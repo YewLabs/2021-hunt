@@ -1,0 +1,161 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% load hunt_state_tests %}
+{% load puzzle %}
+
+{% block title %}Story Log &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>The Story So Far...</h1>
+  <main>
+    <div class="info">
+      <h3>Kickoff</h3>
+      <p>
+        Yew Labs is an experimental cosmology research group headed by Dr. Barbara Yew. The lab&rsquo;s research has revealed the existence of an alternate universe, with the Perpendicular Institute of the World, or &perp;IW, in the same location as MIT. The presenters began to panic when Professor Yew didn't show up for her keynote speech, but they were interrupted by a recently-decoded transmission: a video not just from the other universe, but from Professor Yew herself.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/aZ2ihFvauSM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>
+        Professor Yew revealed that she entered the portal to travel to the other universe the previous night, and that strange anomalies have begun to emerge at &perp;IW. Although the lab failed to open a stable portal to bring her back, they have been working on a Projection Device to interact with the other universe. The lab asked for your help to decode Professor Yew&rsquo;s notes on her lab computer, get the Projection Device working, and save Professor Yew.
+      </p>
+
+      {% if posthunt or completed_interactions|interactionCheck:"mmo-unlock" %}
+      <h3>The Projection Device</h3>
+      <p>
+        {% if team|solvedpuzzle:"enter-the-perpendicular-universe" %}
+        By decrypting Professor Yew&rsquo;s notes and settling the
+        question of whether the projection should be
+        {{ team|safeAnswer:"enter-the-perpendicular-universe" }}, the
+        team got the Projection Device up and going. The Device allows
+        the user to project a human avatar to interact with the
+        alternate universe.
+        {% else %}
+        By decrypting Professor Yew&rsquo;s notes, the team got the
+        Projection Device up and going. The Device allows the user to
+        project a human avatar to interact with the alternate
+        universe.
+        {% endif %}
+      </p>
+      {% if team.is_limited %}
+      <p>
+        The projection device was a multiplayer experience that solvers
+        could use throughout Mystery Hunt weekend to find puzzles, solve
+        certain types of puzzles, and interact with other people.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/7tOR_vYyLJc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {% endif %}
+      <p>
+        To save Professor Yew, your team needs to gather JUICE: interdimensional energy gained from fixing problems in the other universe. More JUICE unlocks more puzzles, and with enough JUICE, the Projection Device will gain enough energy to project you to further areas of &perp;IW.
+      </p>
+      {% endif %}
+      {% if posthunt or completed_interactions|interactionCheck:"green-building-post" or completed_interactions|interactionCheck:"infinite-post" or completed_interactions|interactionCheck:"nano-post" or completed_interactions|interactionCheck:"student-center-post" or completed_interactions|interactionCheck:"stata-post" or completed_interactions|interactionCheck:"clusters-post" or completed_interactions|interactionCheck:"athletics-post" or completed_interactions|interactionCheck:"tunnels-post" %}
+      <h3>An Upgrade to the Device</h3>
+      <p>
+        The lab has put together an upgrade to the Projection Device that allows your team to interact with the other universe through video. After discovering the solution to the problem of one of &perp;IW&rsquo;s areas, your team can schedule an interaction to perform this action on video. This will project the action into the other universe to fix the problem.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/rx-8XYB1HIU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {% endif %}
+      {% if posthunt or completed_interactions|interactionCheck:"meet-yew" %}
+      <h3>Meeting Professor Yew</h3>
+      <p>
+        The lab used the upgraded Projection Device to meet with Professor Yew. In a meeting with J and your team, Professor Yew explained the cause of the other universe&rsquo;s problems: matter sent from our universe expands exponentially and causes anomalies.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/H_bE-AG5mvI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>
+        The team realized that this matter comes from the Golden Record, a collection of small objects that the lab sent through a very small portal several months ago. J was stunned by the revelation that Yew Labs was the cause of the other universe&rsquo;s problems, and asked for your team&rsquo;s continued help to clean up their mess.
+      </p>
+      {% endif %}
+      {% if posthunt or completed_interactions|interactionCheck:"mid-hunt" %}
+      <h3>Reopening the Portal</h3>
+      <p>
+        Your team generated enough JUICE to reopen the portal and save Professor Yew! But when the lab opened the portal, a different person walked through: Professor Nick Hemlock, a theoretical cosmologist at &perp;IW.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Xb-jWEpuWTw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <p>
+        Professor Hemlock revealed that the situation, left unchecked, will destroy both the other universe and our own. After he offered his help to fix this, the lab erupted in an argument over whether or not to trust him. The meeting ended with Skylar asking for your continued help, promising that the lab will be in touch soon.
+      </p>
+      {% endif %}
+      {% if posthunt or completed_interactions|interactionCheck:"things-in-motion" %}
+      <h3>The Plan to Save the Worlds</h3>
+      <p>
+        Skylar orchestrated two meetings: one with Robin, Cameron, and Professor Yew, and another with J and Professor Hemlock. Professor Yew discovered Hemlock&rsquo;s interception and grappled with her lab members&rsquo; guilt. Professor Hemlock explained just how he was able to get to our universe. Both Professors encouraged the team to continue collecting data, as Yew recovers more items from the Golden Record and Hemlock coordinates with his colleagues in &perp;IW on a contingency plan.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/AWhka32Je14" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {% endif %}
+      {% if posthunt or completed_interactions|interactionCheck:"endgame" %}
+      <h3>Working Together at the End of the Universe</h3>
+      <p>
+        After fixing all of the problems at &perp;IW, Skylar and Cameron finally convinced Professor Yew and Professor Hemlock to trust each other and return to their respective universes.
+      </p>
+      <p>
+        However, one problem remains: Professor Yew left something behind in &perp;IW, resulting in massive perturbations that threaten to collapse both worlds. Yew and Hemlock sent their colleagues to measure signals from the object from the ten areas of MIT and &perp;IW in order to find its location.
+      </p>
+      <p>
+        The measurements from the two campuses were wildly inconsistent, but your team realized that you need to take the HYPOTENUSE to combine the two perpendicular universes&rsquo; readings using the Pythagorean Theorem. As the team approached the item&rsquo;s location, Professor Yew finally remembered that she had left a quarter in a vending machine in building 16 of &perp;IW!
+      </p>
+      <p>
+        The lab brought a mini portal device to return the quarter directly to our universe, but it got stuck! With the help of the Projection Device, the team managed to dislodge the COIN and return it back to MIT, saving both universes.
+      </p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/lnTZckjA-w0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"green-building-post" or completed_interactions|interactionCheck:"infinite-post" or completed_interactions|interactionCheck:"nano-post" or completed_interactions|interactionCheck:"student-center-post" or completed_interactions|interactionCheck:"stata-post" or completed_interactions|interactionCheck:"clusters-post" or completed_interactions|interactionCheck:"athletics-post" or completed_interactions|interactionCheck:"tunnels-post" %}
+      <h2>Fixing Problems at &perp;IW</h2>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"green-building-post" %}
+      <h3>Green Building</h3>
+      <p>
+        By projecting your actions to the other universe, your team managed to {{ team|safeAnswer:"green-building" }} from the Green Building, restoring the building to its normal state.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"infinite-post" %}
+      <h3>Infinite Corridor</h3>
+      <p>
+        Your team managed to {{ team|safeAnswer:"infinite-corridor" }} in the perpendicular universe. The contractor advised you to do a series of actions that contracts the Infinite Corridor to its usual, finite length.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"nano-post" %}
+      <h3>&perp;IW.nano</h3>
+      <p>
+        With the assurance that {{ team|safeAnswer:"⊥IW.nano" }}, your team helped &perp;IW.nano researchers sew the hole at the bottom of &perp;IW.milli closed, so that it can be used as storage for grad students.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"student-center-post" %}
+      <h3>Student Center</h3>
+      <p>
+        Your team helped the students {{ team|safeAnswer:"student-center" }} by using the five classical elements to allow the students from different dorms to communicate with each other.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"stata-post" %}
+      <h3>Stata Center</h3>
+      <p>
+        Through your team&rsquo;s combined efforts to collect many different kinds of irons, you helped the Stata-sticians {{ team|safeAnswer:"stata" }} of the Stata Center.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"clusters-post" %}
+      <h3>Minerva Clusters</h3>
+      <p>
+        With the aid of a {{ team|safeAnswer:"clusters" }}, your team proposed a new name for the Clusters that satisfied both the Athena and the Minerva computers.
+      </p>
+      {% endif %}
+      {% if team|solvedpuzzle:"charles-river-finale" %}
+      <h3>Charles River</h3>
+      <p>
+        Your team acquired a pirate license at &perp;IW, and sailed the Charles River to {{ team|safeAnswer:"charles-river-finale" }} in order to calm down the lobsters that have been jamming to pirated music.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"athletics-post" %}
+      <h3>Athletics</h3>
+      <p>
+        After the discovery that &perp;IW&rsquo;s athletics teams {{ team|safeAnswer:"athletics" }}, your team projected a demonstration of teamwork to help them effectively throw balls to each other to win the game.
+      </p>
+      {% endif %}
+      {% if completed_interactions|interactionCheck:"tunnels-post" %}
+      <h3>Tunnels</h3>
+      <p>
+        You restored the functionality of the &perp;IW tunnels through examining some indecipherable text and helping to {{ team|safeAnswer:"tunnels" }}.
+      </p>
+      {% endif %}
+    </div>
+  </main>
+</div>
+{% endblock %}

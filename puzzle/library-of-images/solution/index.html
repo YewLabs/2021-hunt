@@ -1,0 +1,63 @@
+<style>
+    .center {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        display: block;
+    }
+</style>
+
+<p>This puzzle was part of the Infinite Corridor round, meaning that there are seemingly infinitely many instances of this puzzle with different answers. For this puzzle, having more instances of the puzzle available is particularly useful for figuring out what is going on.</p>
+
+<p>Each instance of the puzzle consists of a series of square images - a series of simple two-color patterns, followed by a series of more complicated patterns, separated by a line. Comparing different instances of the puzzle, the part above the line is always the same, and most of the images below the line are also the same. Furthermore, looking carefully at the images below the line, one can make out some of the same color patterns seen above the line within some of the images.</p>
+
+<p>The key "aha" in this puzzle is that the images above the line represent letters (in particular, A, B, and C), and the images below the line represent words, which are produced by a weighted average of the constitutent letters. The message given by the images below the line is always "THE ANSWER TO PUZZLE [number of the puzzle in words] IS [puzzle answer]".</p>
+
+<p>The images used to represent the alphabet are as follows:</p>
+
+<table>
+    <tr><th>Letter</th><th>Image</th></tr>
+    <tr><td>A</td><td><img class="center" style="height:6cm" src="{{sroot}}a.png"></td></tr>
+    <tr><td>B</td><td><img class="center" style="height:6cm" src="{{sroot}}b.png"></td></tr>
+    <tr><td>C</td><td><img class="center" style="height:6cm" src="{{sroot}}c.png"></td></tr>
+    <tr><td>D</td><td><img class="center" style="height:6cm" src="{{sroot}}d.png"></td></tr>
+    <tr><td>E</td><td><img class="center" style="height:6cm" src="{{sroot}}e.png"></td></tr>
+    <tr><td>F</td><td><img class="center" style="height:6cm" src="{{sroot}}f.png"></td></tr>
+    <tr><td>G</td><td><img class="center" style="height:6cm" src="{{sroot}}g.png"></td></tr>
+    <tr><td>H</td><td><img class="center" style="height:6cm" src="{{sroot}}h.png"></td></tr>
+    <tr><td>I</td><td><img class="center" style="height:6cm" src="{{sroot}}i.png"></td></tr>
+    <tr><td>J</td><td><img class="center" style="height:6cm" src="{{sroot}}j.png"></td></tr>
+    <tr><td>K</td><td><img class="center" style="height:6cm" src="{{sroot}}k.png"></td></tr>
+    <tr><td>L</td><td><img class="center" style="height:6cm" src="{{sroot}}l.png"></td></tr>
+    <tr><td>M</td><td><img class="center" style="height:6cm" src="{{sroot}}m.png"></td></tr>
+    <tr><td>N</td><td><img class="center" style="height:6cm" src="{{sroot}}n.png"></td></tr>
+    <tr><td>O</td><td><img class="center" style="height:6cm" src="{{sroot}}o.png"></td></tr>
+    <tr><td>P</td><td><img class="center" style="height:6cm" src="{{sroot}}p.png"></td></tr>
+    <tr><td>Q</td><td><img class="center" style="height:6cm" src="{{sroot}}q.png"></td></tr>
+    <tr><td>R</td><td><img class="center" style="height:6cm" src="{{sroot}}r.png"></td></tr>
+    <tr><td>S</td><td><img class="center" style="height:6cm" src="{{sroot}}s.png"></td></tr>
+    <tr><td>T</td><td><img class="center" style="height:6cm" src="{{sroot}}t.png"></td></tr>
+    <tr><td>U</td><td><img class="center" style="height:6cm" src="{{sroot}}u.png"></td></tr>
+    <tr><td>V</td><td><img class="center" style="height:6cm" src="{{sroot}}v.png"></td></tr>
+    <tr><td>W</td><td><img class="center" style="height:6cm" src="{{sroot}}w.png"></td></tr>
+    <tr><td>X</td><td><img class="center" style="height:6cm" src="{{sroot}}x.png"></td></tr>
+    <tr><td>Y</td><td><img class="center" style="height:6cm" src="{{sroot}}y.png"></td></tr>
+    <tr><td>Z</td><td><img class="center" style="height:6cm" src="{{sroot}}z.png"></td></tr>
+</table>
+
+<p>These can be deduced via a combination of techniques. After collecting enough examples of letters, one may notice that the letters are sorted by the pair of colors they use. The underlying "order" of colors is red, orange, yellow, green, blue, magenta, black, and white, where the "earlier" color in this order takes precedence. Following this order, all colors pairs including red occur at the start of the alphabet, starting with the pair red-orange for the letter A. Realizing that the first sequence of letters is A, B, and C, and guessing parts of the "answer sentence" can also help here.</p>
+
+<p>For each "word image", the first letter is given the greatest weight, and each subsequent letter has (1/2)^(1/3) of the weight of the previous letter. In general, the patterns are designed so that they should not obscure each other, so that the patterns for later letters in longer words are possible to discern.</p>
+
+<p>After determining how the process works, solvers can fairly quickly determine the answer to any given instance of the puzzle. Some answers can be obtained with a partial understanding of the process - for instance, just knowing enough of the letters and anagramming to get the word may work for some instances.</p>
+
+<p>As an example, puzzle 2 in this round shows the following image:</p>
+
+<img class="center" style="height:6cm" src="{{sroot}}eat.png">
+
+<p>This image is for the answer <span class="answer">EAT</span>. The component letters E, A, and T can be seen here (either based on the colors, the patterns, or both). The letters can be ordered by analyzing which colors seem to have larger weight, or in practice guessing a few anagrams of these letters would also work.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>I noticed that several of the other infinite corridor puzzles are based around ways to keep a puzzle concept interesting while solvers may already know the "aha" due to solving another instance of the same type of puzzle. For this one, I tried to use the round structure in a different way by writing a puzzle that is made much more approachable by the large amount of instances of the puzzle available.</p>
+</div>

@@ -1,0 +1,162 @@
+<style>
+ol.grandchild-alpha ol { list-style-type: lower-alpha; }
+</style>
+<p>Solvers are presented with a git .diff file, a file that represents a set of changes to be applied to a Git repository.</p>
+<p>There are a few ways to figure out what to do with this .diff. The most reliable is to use the very suspicious first line, featuring a conspicuous airplane emoji:</p>
+<blockquote>
+	<p>This is a Django app for running puzzlehunts, written by several members of ✈</p>
+</blockquote>
+<p>Using this to look into Galactic Trendsetters’ past hunts or simply Googling this line should lead solvers to the codebase ✈✈✈ Galactic Trendsetters ✈✈✈ used to run several puzzlehunts, <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a>. After it became clear that we wouldn’t be able to run Galactic Puzzle Hunt 2020, several groups asked us for advice about how to run a puzzlehunt and, in particular, host one on a website, so we open-sourced the website, and between then and Mystery Hunt at least three puzzlehunts used parts of this codebase (more on that later).</p>
+<p>In any case, for this puzzle, the most notable features of this codebase are its <a href="https://docs.djangoproject.com/en/dev/howto/initial-data/">Django fixtures</a> (a way to include sample data) and sample hunt, both of which are linked from the README.</p>
+<p>Solvers will need to reference the <a href="https://github.com/galacticpuzzlehunt/gph-site/tree/master/puzzles/templates/puzzle_bodies">sample puzzles</a>. Running gph-site on your local machine will make the puzzles more readable (and encouraging solvers to do so was a small indirect goal of this puzzle), but is not necessary. The sample solutions are occasionally helpful. In particular, the meta solution reveals that the answers in the meta all have unique double letters, which produce the answer.</p>
+<p>With those sample puzzles, it is possible to interpret and follow along our poor hint-requestors’ unsuccessful and evidently quite misguided attempts at solving these puzzles. Sometimes the requestors do not explicitly say what they tried, and solvers must cross-reference their provided work and the puzzle or solution body to infer what they did. Here, we must also notice that, ignoring the meta, every hint request has exactly three paragraphs. Here are descriptions of those paragraphs:</p>
+<ol class="grandchild-alpha">
+	<li>(On Ambiguity)
+		<ol>
+			<li>Solve and extract from all clues except for the two longest, which are replaced by placeholders.</li>
+			<li>Sort extracted things by length, and then alphabetically; many things tie at even lengths.</li>
+			<li>Randomly apply a Caesar shift. The solver wants something soft to cuddle.</li>
+		</ol>
+	</li>
+	<li>(On Bad Cryptogram Puzzle)
+		<ol>
+			<li>Concatenate groups of digits that have the same last digit, after discarding that last digit.</li>
+			<li>Play Boggle on a square grid. Here, you have to actually create the grid this solver produced from 2a, which should look as follows:
+				<pre>13413
+41341
+34134
+56278
+97224</pre>
+				For many of the digit sequences, there are multiple Boggle paths that could have produced them. However, there is a unique path shape such that the nine translations of it in the grid produce precisely the nine five-digit sequences reported by the requestor, namely a path that goes west, southwest, north, and north from its start square.</li>
+			<li>Randomly anagram the letters. The solver wants some form of help.</li>
+		</ol>
+	</li>
+	<li>(On Break It Down)
+		<ol>
+			<li>Figure out the first part of the puzzle, create a grid with the letters, and flip it vertically / reverse the rows.</li>
+			<li>Keep only the first few letters, exactly as many letters as needed to fill the blanks in the puzzle.</li>
+			<li>Submit the last ⅔ of the contents of the box as the answer. The solver wonders how they were prevented from solving this puzzle.</li>
+		</ol>
+	</li>
+	<li>(On Championship)
+		<ol>
+			<li>Sort the clues in some order. By looking at what the solver has done, you can infer they sorted the clue in reverse order of length.
+				<li>Solve the clue while ignoring the ? in the middle to try to find a word that fits in the bottom blanks.</li>
+				<li>Treating letters and numbers as interchangeable via A=1, B=2, and so on, sum numbers and attempt to convert them back to letters. The solver wants to find structure in this puzzle.</li>
+		</ol>
+			</li>
+			<li>(On Diagramless)
+				<ol>
+					<li>Find a famous, recent video game that is considered best of all time, which shares the first three or four letters with the puzzle title, but not the pronunciation of those letters.</li>
+					<li>Treat all numbers in the puzzle as indexes, wrapping around if necessary. Solvers must deduce from the example letters that the requestor is indexing into the puzzle title.</li>
+					<li>Treat all numbers in the puzzle as indexes into the clues. The solver wants to exclaim victory.</li>
+				</ol>
+			</li>
+			<li>(On Geometry)
+				<ol>
+					<li>Transform the puzzle’s numbers digit by digit. Solvers must deduce that this solver is transforming x → 4x+3.</li>
+					<li>Add 1 to all numbers again.</li>
+					<li>Concatenate everything and attempt to find an ancient non-English name as an answer.</li>
+				</ol>
+			</li>
+</ol>
+<p>The meta hint request is a bit different, but basically, the requestor noticed what the answers have in common, but not how to order them.</p>
+<p>It turns out that it is possible to reassign all 18 of these puzzle-solving steps to a different puzzle such that they still make sense. Although this is not explicit, the number and order of steps is always preserved, and all three steps originally applied to one puzzle are assigned to different puzzles: the first step a solver tried should be the first step on another puzzle, the second step should be the second step on a third puzzle, and the third step should be the third step on a fourth puzzle. When the assignment is complete, solvers should arrive at a plausible answer on every puzzle that matches the description of what the requestor wants at the end of the third step.</p>
+<p>The correct assignment is:</p>
+<ol class="grandchild-alpha">
+	<li>Ambiguity
+		<ol>
+			<li>4a: Sort by reverse length. The clues should have lengths that are distinct enough that most ways of measuring length — counting words, letters, or characters — should give the same result: 3: “In the International…”, 5: “The blood type…”, 1: “To write this…”, 6: “On a QWERTY…”, 4: “You can type…”, 2: “If you were…”.</li>
+			<li>6b. Add 1 to all numbers, resulting in 4, 6, 2, 7, 5, 3.</li>
+			<li>5c: Index numbers into the clues:
+<ul>
+<li>[4] in t[H]e international…</li>
+<li>[6] the bl[O]od type…</li>
+<li>[2] t[O] write this…</li>
+<li>[7] on a qwe[R]ty…</li>
+<li>[5] you c[A]n type…</li>
+<li>[3] if [Y]ou were…</li>
+</ul>
+This produces <strong>HOORAY</strong>, matching this solver’s desire of exclaiming victory.</li>
+		</ol>
+	</li>
+	<li>Bad Cryptogram Puzzle
+		<ol>
+			<li>6a: Transform all digits k → 4k + 3. This produces a sequence of 37 numbers, but the later steps imply that only the last six digits matter, so we will list only those for ease of exposition: 972240 become 39, 31, 11, 11, 19, 3.</li>
+			<li>5b: Index every number into the title, wrapping around if necessary. “BAD CRYPTOGRAM PUZZLE” has 19 letters; the aforementioned numbers wrap to indexes 1, 12, 11, 11, 19, 3 and produce the word BARRED.</li>
+			<li>3c: Take last ⅔, the last six letters of the box. In this description of the solution path, we’ve done this already. The word <strong>BARRED</strong> is a synonym of “prevented” in the requestor’s last question.</li>
+		</ol>
+	</li>
+	<li>Break It Down
+		<ol>
+			<li>5a: Find a famous, recent video game that is considered best of all time, which shares the first three or four letters with the puzzle title, but not the pronunciation of those letters. There’s one obvious candidate on <a href="https://en.wikipedia.org/wiki/List_of_video_games_considered_the_best">Wikipedia’s list</a>, the last one as of time of writing: Breath of the Wild (although it is technically the subtitle, it’s commonly referred to directly as such).</li>
+			<li>4b: Ignore the ? to solve the clue. Taking the ? out, the clue just says STOP TIME. In Breath of the Wild, you stop time specifically with the STASIS rune, which fits in the blank.</li>
+			<li>2c: Randomly anagram STASIS to get <strong>ASSIST</strong>, a form of help.</li>
+		</ol>
+		<li>
+			Championship
+			<ol>
+				<li>1a: Solve all clues except for the two longest, which are unambiguously CRUSTA?EOLOGY and INTERLOCU?ORY. With placeholders, you obtain the letters ?OMPE?ITIONNAME.</li>
+				<li>3b: Keep only the first few letters, exactly as many letters as needed to fill the blanks in the puzzle. There are seven blanks and the first seven letters, including placeholders, are ?OMPE?I.</li>
+				<li>6c: Concatenate everything and attempt to find an ancient non-English name as an answer. Indeed, there’s one compelling name that fits the pattern: <strong>POMPEII</strong>.</li>
+			</ol>
+			<li>
+				Diagramless
+				<ol>
+					<li>3a: After solving the first part of the puzzle, reverse the rows of the grid to get <pre>PARS
+ELSE
+EASY
+BLUE</pre></li>
+					<li>2b: Boggle a path that goes west, southwest, north, and north. Of the four places in this grid that that path can be traced, one produces a compelling word, SLEEP.</li>
+					<li>1c: Randomly Caesar shift the word. SLEEP has one Caesar shift that is a compelling word, <strong>BUNNY</strong>, something soft to cuddle.</li>
+				</ol>
+				<li>
+					Geometry
+					<ol>
+						<li>2a: Concatenate groups of digits that have the same last digit, after discarding that last digit. We get the digit sets 1347 (digits paired with 1), 3174 (digits paired with 3), 27 (digits paired with 5), 147 (digits paired with 6), and 34 (digits paired with 7).</li>
+						<li>1b: Sort by length and then lexicographically. The order is 27, 34, 147, 1347, 3147.</li>
+						<li>4c: Sum the digits in each group, and convert A=1. We get 2+7 = 9 = I, 3+4 = 7 = G, 1+4+7 = 12 = L, 1+3+4+7 = 15 = O, and 3+1+4+7 = 15 = O, producing the answer <strong>IGLOO</strong>, a structure.</li>
+					</ol>
+</ol>
+<p>A subjective solve path one might follow to arrive at this assignment:</p>
+<p>First, let’s attempt to reassign all first-step instructions.
+<ul>
+	<li>Break It Down’s 3a involves a grid and applies much better to the actual crossword, Diagramless, with a grid.</li>
+	<li>Ambiguity’s 1a refers to subpuzzles that have solutions. This applies the best to Championship; none of the other puzzles (excepting Diagramless, perhaps, but that’s a worse fit and has been assigned anyway) have independent subpuzzles with independent solutions.</li>
+	<li>It’s possible to “reverse-engineer” 5a’s clue to arrive at Break It Down by looking at the most recent best video games on Wikipedia’s list.  (The wording is to prevent solvers from choosing Breakout, which isn’t on the list and is very old, but is certainly a famously influential video game.) It’s also possible to observe that Break It Down lacks both numbers for 2a and 6a to work on and clues with meaningful lengths for 4a to sort, so 5a is the only remaining instruction remaining that could reasonably be applied to it.</li>
+	<li>Bad Cryptogram Puzzle’s 2a and Geometry’s 6a both work with numbers.</li>
+	<li>Although they might arguably apply to the clue numbers in Ambiguity, both steps are worded to suggest puzzles that are very number-heavy, so it makes sense to assign them to each other.</li>
+	<li>Having eliminated everything else, we finally assign Championship’s 4a to Ambiguity.</li>
+</ul>
+<p>Second-step instructions:
+<ul>
+<li>Championship’s 4b conspicuously references a “? in the middle”, and Break It Down is the only other puzzle with a question mark, so it makes sense to assign 4b to Break It Down. This is confirmed by STASIS being a compelling answer specific to Breath of the Wild that is also the right length.</li>
+<li>Bad Cryptogram Puzzle’s 2b specifically calls out a square grid, so again we assign it to the puzzle with an actually reasonable square grid, Diagramless. Break It Down’s 3b specifically references a discrete number of blanks, so should be assigned to the only other puzzle with such blanks, Championship.</li>
+<li>Now we have Ambiguity’s 1b (sort length then lex), Diagramless’s 5b (index into title mod length), and Geometry’s 6b (+1 to all) to assign to Ambiguity, Bad Cryptogram Puzzle, and Geometry. Here it might be useful to do some lookahead. Break It Down’s 3c conspicuously references a “box” with “contents”, the last ⅔ of which are the answer, which suggests assigning it to the only other puzzle with a box, Bad Cryptogram Puzzle. This means we want to convert Bad Cryptogram Puzzle’s numbers to letters, and the only second step that does this we have left is Diagramless’s 5b.</li>
+<li>Then, to avoid assigning puzzles’ steps to themselves, we assign Ambiguity’s 1b and Geometry’s 6b to each other.</li>
+</ul>
+<p>Final-step instructions:
+<ul>
+<li>As mentioned above, 3c matches to Bad Cryptogram Puzzle and successfully extracts BARRED, so we are done with it.</li>
+<li>The remaining puzzles at this point are at these states:
+	<ol>
+<li>Ambiguity is a list of numbers and clues;</li>
+<li>Break It Down has produced the word STASIS;</li>
+<li>Championship has produced the letters ?OMPE?I;</li>
+<li>Diagramless has produced the word SLEEP;</li>
+<li>and Geometry has produced the digit sequences 27, 34, 147, 1347, and 3147.</li>
+	</ol></li>
+	<li>We can finally assign Diagramless’s 5c to the only puzzle in the state where indexing makes sense, Ambiguity, and Championship’s 4c to the only puzzle with numbers to sum, Geometry. Wheel of fortuning ?OMPE?I produces a compelling word. STASIS has no good Caesar shifts, but does have one good anagram, and SLEEP successfully Caesar shifts to BUNNY, so the matchup is complete.</li>
+</ul>
+<p>Now, following the misguided meta solve attempt, you can extract the meta with the same mechanism of taking double letters without reordering to get the meta answer that this misguided team of requestors might arrive at, which is the true answer to this puzzle: <span class="answer">ORSINO</span>.</p>
+<div class="author-note">
+<h2>Author’s Notes</h2>
+	<p>The biggest reason for this puzzle’s is really just that I think that I was working on cleaning up the gph-site repo, hammered out a sample hunt in a few hours to show off how publishing puzzles worked in the framework, and thought, “This could be an opportunity to include Mystery Hunt puzzle content.” I don’t have any good connections, so this was my poor man’s version of slipping Mystery Hunt content into an external source.</p>
+	<p>Of course, to try to make this puzzle fair to people who hadn’t done Galactic Puzzle Hunt, I wanted to publicize the repo. That was maybe a third of the reason I decided to organize the writing of an entire <a href="https://dp.puzzlehunt.net/">DP Puzzle Hunt</a> in September (although I was the only person writing the hunt who was also writing Mystery Hunt).</p>
+	<img src="{{sroot}}dpph-screenshot.png" alt="Discord chat logs from DP Puzzle Hunt planning in which writers wonder whether solvers will think this is part of Mystery Hunt" style="max-width: 100%;">
+	<p>Now you know. Thanks to my DP co-writers for playing along. I was pleasantly surprised that between then and Mystery Hunt, <a href="https://teammatehunt.com/">Matt &amp; Emma's Birthday Bash</a> and <a href="https://www.umdpuzzle.club/">UMD Puzzlehunt</a> both occurred using modifications of gph-site. We also managed to convince both groups to link to the repository from their wrap-ups without, I hope, arousing any suspicion. I’m not sure how many people really did find this repository through these links ahead of Mystery Hunt, but at least even puzzlers who started doing puzzlehunts in 2020 have plausible paths to discovering this repository.</p>
+	<p>(Moderate spoilers for some Galactic Puzzle Hunt puzzles follow.)</p>
+	<p>Callback puzzles appear with some regularity in Mystery Hunt and other puzzlehunts, including, for example, GPH 2018’s <a href="https://2018.galacticpuzzlehunt.com/puzzle/overtime.html">Overtime</a>. Although I wasn’t directly involved in writing that puzzle, one disadvantage I learned about from reading feedback for that puzzle is that people may not want to spoil themselves on old puzzles for the sake of solving a callback puzzle, because they might want to go back and solve the old puzzles later. Also, I thought it wasn’t “fair” for MIT Mystery Hunt to reference other hunts, which might give teams who had done or were simply aware of the other hunt too much of an advantage over teams who hadn’t. So my takeaway was that if I wanted to write a puzzle referencing other puzzles, it would be ideal if the puzzles being referenced weren’t something that teams would want to legitimately solve later.</p>
+	<p>One strategy, demonstrated by GPH’s <a href="https://2019.galacticpuzzlehunt.com/puzzle/ten-years-later.html">Ten Years Later</a>, is to make the puzzles and intended solutions deliberately bad. This puzzle takes a complementary approach, of having puzzles that are not completely broken, but are hopefully sufficiently uninteresting that solvers will not feel bad about spoiling themselves on them. Instead, the puzzle consists of figuring out incorrect and deliberately bad attempts at solving the puzzle.</p>
+	<p>Puzzles about puzzles or that “break the fourth wall” to reference puzzle hunt mechanics (e.g. the 2012 Mystery Hunt puzzle <a href="https://web.mit.edu/puzzle/www/2012/puzzles/watson_2_0/piercing_the_veil/">Piercing the Veil</a>) are routinely one of my favorites anyway, so I think this puzzle was slated to happen.</p>
+</div>

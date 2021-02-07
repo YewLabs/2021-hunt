@@ -1,0 +1,302 @@
+<style>
+table, th, td {
+  border: 1px solid gray;
+}
+</style>
+
+<p>This event took place Saturday evening 8-9pm EST.
+Teams were told to send 2-3 members who enjoy social games.</p>
+
+<p>Event participants play a variant of a game called 
+<a href="https://en.wikipedia.org/wiki/Taboo_(game)#Rules">Taboo</a>.
+The basic gist of this game is two teams face off with each other
+to see which team can guess the most words. A clue-giver must communicate
+what their word is to the rest of their team without saying any of the
+"taboo" words. If they accidentally say a taboo word, someone on the
+opposite team can hit a "buzzer" to penalize the cluer and move on to
+the next word. The twist here is that the clue-giver, in addition to
+not being able to say any of the "taboo" words on the card, also cannot
+say words with more than one syllable.</p>
+
+<p>There is a total of fifty cards between both teams. After the event ends,
+participants are given the fifty clue words formatted into a table and are asked to
+deduce the answer to the event.</p>
+
+<table>
+  <tr>
+    <td>1</td>
+    <td>LIE</td>
+    <td>BRIE</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>CASINO</td>
+    <td>PLACID</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>SCRABBLE</td>
+    <td>BROWSER</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>FENDER</td>
+    <td>RAP</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>LEAST</td>
+    <td>VEND</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>LUNG</td>
+    <td>WIDE</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>DIVISIBLE</td>
+    <td>BLINK</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>PANS</td>
+    <td>TARIFF</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>SUE</td>
+    <td>FATE</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>FIN</td>
+    <td>SLANG</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>ROE</td>
+    <td>CONTENTS</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>LAUGHTER</td>
+    <td>BALL</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>BIRDER</td>
+    <td>HISTORY</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>THRILL</td>
+    <td>UNSPENT</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>PARROT</td>
+    <td>LAKE</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>BURR</td>
+    <td>MINE</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>SEAGULL</td>
+    <td>TIDE</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>HANDY</td>
+    <td>THORN</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>MORTAR</td>
+    <td>CLOUT</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>MURAL</td>
+    <td>BET</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>AIR</td>
+    <td>LEVEL</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>WANTED</td>
+    <td>MOUSE</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>SHANTY</td>
+    <td>MARE</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>STAND</td>
+    <td>MOCKED</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>BULL</td>
+    <td>HORSE</td>
+  </tr>
+</table>
+
+<p>The realization here is that each row corresponds to a two-word phrase
+where both words start with the same letter. So we can take the table
+above and generate a new table:</p>
+
+<table>
+  <tr>
+    <td>1</td>
+    <td>THAI</td>
+    <td>TEA</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>AMINO</td>
+    <td>ACID</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>RABBLE</td>
+    <td>ROUSER</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>GENDER</td>
+    <td>GAP</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>EAST</td>
+    <td>END</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>TONGUE</td>
+    <td>TIED</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>INVISIBLE</td>
+    <td>INK</td>
+  </tr>
+  <tr>
+    <td>8</td>
+    <td>SANS</td>
+    <td>SERIF</td>
+  </tr>
+  <tr>
+    <td>9</td>
+    <td>DUE</td>
+    <td>DATE</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>YIN</td>
+    <td>YANG</td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>NO</td>
+    <td>NONSENSE</td>
+  </tr>
+  <tr>
+    <td>12</td>
+    <td>AFTER</td>
+    <td>ALL</td>
+  </tr>
+  <tr>
+    <td>13</td>
+    <td>MURDER</td>
+    <td>MYSTERY</td>
+  </tr>
+  <tr>
+    <td>14</td>
+    <td>ILL</td>
+    <td>INTENT</td>
+  </tr>
+  <tr>
+    <td>15</td>
+    <td>CARROT</td>
+    <td>CAKE</td>
+  </tr>
+  <tr>
+    <td>16</td>
+    <td>SURE</td>
+    <td>SIGN</td>
+  </tr>
+  <tr>
+    <td>17</td>
+    <td>EAGLE</td>
+    <td>EYED</td>
+  </tr>
+  <tr>
+    <td>18</td>
+    <td>CANDY</td>
+    <td>CORN</td>
+  </tr>
+  <tr>
+    <td>19</td>
+    <td>ORDER</td>
+    <td>OUT</td>
+  </tr>
+  <tr>
+    <td>20</td>
+    <td>NEURAL</td>
+    <td>NET</td>
+  </tr>
+  <tr>
+    <td>21</td>
+    <td>DARE</td>
+    <td>DEVIL</td>
+  </tr>
+  <tr>
+    <td>22</td>
+    <td>HAUNTED</td>
+    <td>HOUSE</td>
+  </tr>
+  <tr>
+    <td>23</td>
+    <td>ANTI</td>
+    <td>AIR</td>
+  </tr>
+  <tr>
+    <td>24</td>
+    <td>LAND</td>
+    <td>LOCKED</td>
+  </tr>
+  <tr>
+    <td>25</td>
+    <td>FULL</td>
+    <td>FORCE</td>
+  </tr>
+</table>
+
+<p> When we take the common first letter of these
+two-word phrases in order, we get the phrase
+TARGET IS DYNAMIC SECOND HALF. We have to take the second
+half of a two-word phrase with DYNAMIC where both words
+start with D, which means the answer is
+<span class="answer">DUO</span>.
+</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+    This event heavily used an open-source Taboo repo
+    online made and maintained by Lisa Vinson. We are
+    extremely grateful for the well-written app and
+    even some of the real-time support Lisa gave us
+    when setting up this event. The
+    GitHub repo can be found
+    <a href="https://github.com/LiVinson/taboo-game">here</a>.
+</div>

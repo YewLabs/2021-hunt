@@ -1,0 +1,104 @@
+<style>
+    #grid td {
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .highlighted 
+    {
+        background-color: yellow;
+    }
+</style>
+
+<p>
+    Each of the 20 strings at the bottom was generated from an English clue through a series of transformations applied to individual words. There are 9 (as clued by the flavortext) total transformations:
+</p>
+<ol>
+    <li>Remove the 2nd letter, if it exists.</li>
+    <li>Swap the 2nd vowel with the immediately following letter (if the 2nd vowel is at the end of the word or the word only has one vowel, then do nothing).</li>
+    <li>Change all M’s to the previous letter shifted forward by 1 (if an M is at the beginning of a word, then it becomes the last letter shifted forward by 1). For example, “name” becomes “nabe” and “maybe” becomes “faybe”.</li>
+    <li>Over all possible ways to cycle a word, pick the earliest one alphabetically. For example, the cycles of “expert” are “expert”, “xperte”, “pertex”, “ertexp”, “rtexpe”, and “texper”, and the earliest one alphabetically is “ertexp”.</li>
+    <li>Divide the middle letter of the word (or the first of the two middle letters, for even-length words) by 2 alphanumerically, rounding down. For example, “organs” becomes “orcans”, since G=7, and 7/2=3.5 rounding down to 3=C. If the middle letter is A, then it remains an A.</li>
+    <li>(this is the only transformation that applies across word boundaries) Concatenate the 1st and 2nd words, the 3rd and 4th words, the 5th and 6th words, etc.</li>
+    <li>For every substring of length at least 3 where the first letter equals the last letter, and all middle letters are identical (e.g. a “sandwich”), replace that last letter with the middle letter. If there are overlapping sandwiches, then apply the transformation to all of them simultaneously. For example, “unfettered” has two sandwiches, “ette” and “ere”, so “ette” turns into “ettt” and “ere” turns into “err”, resulting in “unfetttrrd”.</li>
+    <li>Reverse all the vowels in the word. For example, “surname” becomes “sernamu”.</li>
+    <li>ROT13 the last letter.</li>
+</ol>
+<p>
+    Whenever multiple transformations are applied, they are always applied in the same relative order given above (e.g. removing the 2nd letter always happens before swapping the 2nd vowel). The intended solving path is to use the easier phrases to deduce what the transformations are and use those to figure out the harder phrases, and gradually piece together the ordering as more and more phrases are solved.
+</p>
+<p>
+    The solution to each clue is also the name of a Transformer, and each of their alternate (non-robot) forms is represented by one of the pictures in the 4&times;5 grid. Here is a list of the phrases and their corresponding transformations and solutions, ordered by position in grid.
+</p>
+<table>
+    <tr><th>Puzzle phrase</th><th>Original cluephrase</th><th>Transformations applied</th><th>Solution</th><th>Transformer alternate form</th><th>(Row, Column)</th></tr>
+    <tr><td>yjre d d cr tds wbn prsekering ujil je btjer bd</td><td>youre in it for this when persevering until the bitter end</td><td>15</td><td>Long Haul</td><td>Dump truck</td><td>(1, 1)</td></tr>
+    <tr><td>alegstc cejjdd a dnbtsu ariesrkoltuion d fs alesfferb</td><td>obstacle erected by student revolutionaries in les miserables</td><td>12457</td><td>Barricade</td><td>Police car</td><td>(1, 2)</td></tr>
+    <tr><td>ufetttrrd htteadee bhavior o mnster accde gme</td><td>unfettered hotheaded behavior or monster arcade game</td><td>17</td><td>Rampage</td><td>Bulldozer</td><td>(1, 3)</td></tr>
+    <tr><td>atco eltp or achedddt insk adem from ellmmnt entyyw ixs apsserh</td><td>coat pelt or detached skin made from element twenty six perhaps</td><td>47</td><td>Ironhide</td><td>Pickup truck</td><td>(1, 4)</td></tr>
+    <tr><td>n ainforeste ctionsr oe ancys dkia fb beq</td><td>a rainforest section or fancy kind of bed</td><td>49</td><td>Canopy</td><td>Rubble</td><td>(1, 5)</td></tr>
+    <tr><td>afea cb engsig chnqduetr atitu eju eophsoig cb cnicslv</td><td>name of tennis technique thats the opposite of slicing</td><td>2459</td><td>Topspin</td><td>Racecar</td><td>(2, 1)</td></tr>
+    <tr><td>estrjmint ubd cr dssoitaen oia clfed a lneat</td><td>instrument used for dissection also called a lancet</td><td>158</td><td>Scalpel</td><td>Lensmeter</td><td>(2, 2)</td></tr>
+    <tr><td>gadgte like a frewwhhel or diffreent nabe for the nosiefaker instrsuent</td><td>gadget like a freewheel or different name for the noisemaker instrument</td><td>237</td><td>Ratchet</td><td>Ambulance</td><td>(2, 3)</td></tr>
+    <tr><td>eaaa cb eju dtdie asdsg brejhorf illmegtansg agq nonlzsl cb eecey</td><td>name of the third smash brothers installment and synonym of melee</td><td>34589</td><td>Brawl</td><td>Tank</td><td>(2, 4)</td></tr>
+    <tr><td>orcans containing tde cerbbruv agd liebic syitef</td><td>organs containing the cerebrum and limbic system</td><td>35</td><td>Brains</td><td>Laptop</td><td>(2, 5)</td></tr>
+    <tr><td>ragr peroiq oe latr alfrdr hitchccox filz</td><td>rage period or late alfred hitchcock film</td><td>29</td><td>Frenzy</td><td>Boombox</td><td>(3, 1)</td></tr>
+    <tr><td>inete chwecitricetyi folsi itoenofrimossiansppr</td><td>event in which electricity fails or information suppression</td><td>12468</td><td>Blackout</td><td>Helicopter</td><td>(3, 2)</td></tr>
+    <tr><td>neicdoppsoto nevbru that acts as a watchina or lukkoot feyba</td><td>noncomposite number that acts as a watchman or lookout maybe</td><td>2378</td><td>Sentinel Prime</td><td>Fire truck</td><td>(3, 3)</td></tr>
+    <tr><td>iafilcnsjmang croeonikis ebfentampfesa cljdueisvfter</td><td>animal consuming carrion whose notable examples include vultures</td><td>14568</td><td>Scavenger</td><td>Excavator</td><td>(3, 4)</td></tr>
+    <tr><td>cleftorcl b bcyclr cktv atg ym o dpppr</td><td>motorcycle or bicycle trick that may be popped</td><td>1349</td><td>Wheelie</td><td>Monster truck</td><td>(3, 5)</td></tr>
+    <tr><td>etexprcdif ckyejooe alistturntbelix almicheartzschj</td><td>expert disc jockey or turntablist like michael schwartz</td><td>2469</td><td>Mixmaster</td><td>Concrete mixer</td><td>(4, 1)</td></tr>
+    <tr><td>sernamu of cheraogrephor chelsie in dincang with the stars</td><td>surname of choreographer chelsie in dancing with the stars</td><td>8</td><td>Hightower</td><td>Crane</td><td>(4, 2)</td></tr>
+    <tr><td>nabeof theuost esaterntribe ofthe irqouuisssx natoinsor acopnno punkcofiiure</td><td>name of the most eastern tribe of the iroquois six nations or a common punk coiffure</td><td>2367</td><td>Mohawk</td><td>Motorcycle</td><td>(4, 3)</td></tr>
+    <tr><td>or awayf chingv fe n fghg b eonesz cllictent orlftei almg</td><td>one always itching for a fight or someone collecting leftover metal</td><td>1489</td><td>Scrapper</td><td>Loader</td><td>(4, 4)</td></tr>
+    <tr><td>whoopor loudscreech fropbetelgeuse orproxija centaurifaybe</td><td>whoop or loud screech from betelgeuse or proxima centauri maybe</td><td>36</td><td>Starscream</td><td>Fighter plane</td><td>(4, 5)</td></tr>
+</table>
+<p>
+    The first letters of the restored cluephrases, when read in grid order, spell out YOU CAN IGNORE NAMES NOW, implying that the Transformer names are no longer used (though this is certainly not needed to solve the puzzle). A couple additional notes:
+</p>
+<ul>
+    <li>To avoid potential ambiguity, all punctuation was removed.</li>
+    <li>There are plenty of examples for disambiguating most of the transformation order, with a couple harder-to-construct exceptions: transformations 6 and 7 are only disambiguated because “iroquois” and “six” are concatenated to give the “issi” substring which turns into “isss”, and transformations 3 and 4 are only disambiguated by the word “synonym” in the Brawl clue and “may” in the Wheelie clue.</li>
+    <li>Transformers can have different forms in different incarnations, so for consistency all of the alternate forms were taken from the film series. Also, several of the characters only exist in the film series.</li>
+    <li>Yes, there is a Transformer that turns into rubble.</li>
+</ul>
+<p>
+    The final step of this puzzle is to look at the cells in the 4&times;5 grid that are affected by each of the 9 transformations. Highlighting them, we get the following in transformation order:
+</p>
+<table>
+    <tr><td>1</td><td><table id="grid"><tr><td class="highlighted"></td><td class="highlighted"></td><td class="highlighted"></td><td></td><td></td></tr><tr><td></td><td class="highlighted"></td><td></td><td></td><td></td></tr><tr><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td class="highlighted"></td></tr><tr><td></td><td></td><td></td><td class="highlighted"></td><td></td></tr></table></td></tr>
+    <tr><td>2</td><td><table id="grid"><tr><td></td><td class="highlighted"></td><td></td><td></td><td></td></tr><tr><td class="highlighted"></td><td></td><td class="highlighted"></td><td></td><td></td></tr><tr><td class="highlighted"></td><td class="highlighted"></td><td class="highlighted"></td><td></td><td></td></tr><tr><td class="highlighted"></td><td></td><td class="highlighted"></td><td></td><td></td></tr></table></td></tr>
+    <tr><td>3</td><td><table id="grid"><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td class="highlighted"></td><td class="highlighted"></td><td class="highlighted"></td></tr><tr><td></td><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td></tr><tr><td></td><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td></tr></table></td></tr>
+    <tr><td>4</td><td><table id="grid"><tr><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td class="highlighted"></td></tr><tr><td class="highlighted"></td><td></td><td></td><td class="highlighted"></td><td></td></tr><tr><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td class="highlighted"></td></tr><tr><td class="highlighted"></td><td></td><td></td><td class="highlighted"></td><td></td></tr></table></td></tr>
+    <tr><td>5</td><td><table id="grid"><tr><td class="highlighted"></td><td class="highlighted"></td><td></td><td></td><td></td></tr><tr><td class="highlighted"></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td class="highlighted"></td></tr><tr><td></td><td></td><td></td><td class="highlighted"></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></table></td></tr>
+    <tr><td>6</td><td><table id="grid"><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td></td></tr><tr><td class="highlighted"></td><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td></tr></table></td></tr>
+    <tr><td>7</td><td><table id="grid"><tr><td></td><td class="highlighted"></td><td class="highlighted"></td><td class="highlighted"></td><td></td></tr><tr><td></td><td></td><td class="highlighted"></td><td></td><td></td></tr><tr><td></td><td></td><td class="highlighted"></td><td></td><td></td></tr><tr><td></td><td></td><td class="highlighted"></td><td></td><td></td></tr></table></td></tr>
+    <tr><td>8</td><td><table id="grid"><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td></td></tr><tr><td></td><td class="highlighted"></td><td class="highlighted"></td><td class="highlighted"></td><td></td></tr><tr><td></td><td class="highlighted"></td><td></td><td class="highlighted"></td><td></td></tr></table></td></tr>
+    <tr><td>9</td><td><table id="grid"><tr><td></td><td></td><td></td><td></td><td class="highlighted"></td></tr><tr><td class="highlighted"></td><td></td><td></td><td class="highlighted"></td><td></td></tr><tr><td class="highlighted"></td><td></td><td></td><td></td><td class="highlighted"></td></tr><tr><td class="highlighted"></td><td></td><td></td><td class="highlighted"></td><td></td></tr></table></td></tr>
+</table>
+<p>
+    This spells out TRANSFORM THIS. We can apply all 9 transformations in order to this phrase:
+</p>
+<table>
+    <tr><td>1 - remove 2nd letter</td><td>TANSFORM TIS</td></tr>
+    <tr><td>2 - swap 2nd vowel with next letter</td><td>TANSFROM TIS</td></tr>
+    <tr><td>3 - change Ms to previous letter shifted by 1</td><td>TANSFROP TIS</td></tr>
+    <tr><td>4 - cycle to first alphabetical</td><td>ANSFROPT IST</td></tr>
+    <tr><td>5 - divide middle letter by 2 alphanumerically</td><td>ANSCROPT IIT</td></tr>
+    <tr><td>6 - concatenate pairs of words</td><td>ANSCROPTIIT</td></tr>
+    <tr><td>7 - change last letter of “sandwiches” to middle letter</td><td>ANSCROPTIII</td></tr>
+    <tr><td>8 - reverse vowels</td><td>INSCRIPTIOA</td></tr>
+    <tr><td>9 - rot13 last letter</td><td>INSCRIPTION</td></tr>
+</table>
+<p>
+    The answer is <span class="answer">INSCRIPTION</span>.
+</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>This puzzle was originally inspired by the general concept of language evolution (e.g. how Old English became Middle English) and wanting to make a puzzle where solvers had to deduce how a language changed using texts at different time periods. After a bunch of brainstorming it morphed into this and ended up similar to the fairly popular puzzlehunt genre of “transformed clues”, but I hope this was an interesting twist on it, not least because you don’t reapply the transformations to the clue answers. :p</p>
+
+    <p>The step of matching Transformers to their alternate forms was originally thought of as a joke when brainstorming ways to assign text snippets to grid squares, but became more appealing on further consideration. As a result, this is now the third hunt puzzle (after <a href="https://2018.galacticpuzzlehunt.com/puzzle/emotion-pictures.html">Emotion Pictures</a> and <a href="https://2019.galacticpuzzlehunt.com/puzzle/fifty-fifty.html">50/50</a>) I’ve written about movies I haven’t seen.</p>
+</div>

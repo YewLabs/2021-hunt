@@ -1,0 +1,117 @@
+<style>
+  .query {
+    font-family: monospace;
+    line-break: anywhere;
+  }
+  .grid {
+    margin-left: auto;
+    margin-right: auto;
+    border: thin solid black;
+    border-collapse: collapse;
+  }
+  .grid td {
+    border: thin solid black;
+    padding: 5px;
+  }
+</style>
+
+<p>
+In this puzzle, we are presented with an interface that looks a lot like <a href="https://nutrimatic.org" target="_blank">Nutrimatic</a> &ndash; a popular pattern-matching word-search tool used in constructing and solving puzzles. Over the course of this puzzle, we must identify how Nutraumatic interprets different characters and eventually determine what the last non-example, <code>IXPOWHXQELZTBUMXDS</code>, would output.
+</p>
+
+<p>
+Like Nutrimatic, lowercase letters are interpreted as literal matches while uppercase letters correspond to specific operators. A, C, and V are explicitly defined in the Syntax section and exactly match their behavior in regular Nutrimatic. However, as the “...” indicates, there are more uppercase operators whose rules must be determined. Unlike Nutrimatic, Nutraumatic does not accept any non-alphabetic operators like ., *, or +.</p>
+
+<p>The other major difference between the two tools is that all queries to Nutraumatic must be English words (specifically, when converted to lowercase, they must be words in the SOWPODS word list).</p>
+
+<p>By experimenting with carefully-crafted queries, we can determine that all of the uppercase letters are valid Nutraumatic operators, and we can determine their definitions as follows:</p>
+
+<table class="grid">
+  <tr><td>A</td><td>Matches any letter, like real Nutrimatic</td></tr>
+  <tr><td>B</td><td>See D</td></tr>
+  <tr><td>C</td><td>Matches any consonant, like real Nutrimatic</td></tr>
+  <tr><td>D</td><td>B[stuff]D matches a palindromized version of whatever [stuff] matches. For example, if [stuff] matches abc, B[stuff]D matches abcba.</td></tr>
+  <tr><td>E</td><td>Matches any single letter other than E</td></tr>
+  <tr><td>F</td><td>| (Logical OR). For example, <a href="https://nutraumatic.org/?q=AFrO&go=Go" target="_blank">AFrO</a> returns anything that matches either A or rO.</td></tr>
+  <tr><td>G</td><td>* (matches 0 or more of the previous token)</td></tr>
+  <tr><td>H</td><td>Matches any sequence of letters whose numeric values add to 42</td></tr>
+  <tr><td>I</td><td>Matches any state abbreviation</td></tr>
+  <tr><td>J</td><td>Redirects you to real Nutrimatic</td></tr>
+  <tr><td>K</td><td>Matches any letter with scrabble score > 4</td></tr>
+  <tr><td>L</td><td>Inverts the previous letter. AL → no results, EL → e, VL → C, etc. Matches only single letters, so OL matches nothing and IL matches all single letters.</td></tr>
+  <tr><td>M</td><td>Matches the letter corresponding to the length of the query as a lowercase letter. E.g. in a 3-letter query, it matches ‘c’.</td></tr>
+  <tr><td>N</td><td>Any double letter</td></tr>
+  <tr><td>O</td><td>Any increasing sequence of letters. (In other words, the letters in the sequence should be distinct and in alphabetical order.)</td></tr>
+  <tr><td>P</td><td>Open parenthesis (</td></tr>
+  <tr><td>Q</td><td>Close parenthesis )</td></tr>
+  <tr><td>R</td><td>& (Logical AND). For example, <a href="https://nutraumatic.org/?q=AfRO&go=Go" target="_blank">AfRO</a> returns anything that matches both Af and O.</td></tr>
+  <tr><td>S</td><td>Copies the first character in the query, preserving case.</td></tr>
+  <tr><td>T</td><td>+ (matches one or more of the previous token)</td></tr>
+  <tr><td>U</td><td>Matches any letter in [nutrimatic] (or [nutraumatic]!)</td></tr>
+  <tr><td>V</td><td>Matches any vowel, like real Nutrimatic</td></tr>
+  <tr><td>W</td><td>Matches the letter corresponding to the length of the query as an uppercase letter. E.g. in a three-letter query, it matches any consonant like C.</td></tr>
+  <tr><td>X</td><td>All instances of X must match the same, single letter E.g. XeroX matches xerox and merom but not merox.</td></tr>
+  <tr><td>Y</td><td>? (0 or 1 of the previous token)</td></tr>
+  <tr><td>Z</td><td>Converts to a lowercase version of the preceding letter, which must be uppercase. E.g. HAZE matches like HAaE.</td></tr>
+</table>
+
+
+<p>Once we have identified enough of the operators, we can turn to the query string <code>IXPOWHXQELZTBUMXDS</code>, which is listed as the final “non-example”. If we could search this query, we would find that it matches exactly 1 phrase (well, actually it times out, but close enough), but since <code>IXPOWHXQELZTBUMXDS</code> is not in SOWPODS, we need to find that phrase by other means.</p>
+
+<p>The first step is to correctly parse the query:</p>
+
+<table class="grid">
+  <tr><td>I</td><td>state abbreviation</td></tr>
+  <tr><td>X</td><td>X</td></tr>
+  <tr><td>P</td><td>open parenthesis</td></tr>
+  <tr><td>O</td><td>Increasing sequence</td></tr>
+  <tr><td>W</td><td>becomes R → & (length of query as uppercase letter)</td></tr>
+  <tr><td>H</td><td>Sums to 42</td></tr>
+  <tr><td>X</td><td>X</td></tr>
+  <tr><td>Q</td><td>close parenthesis</td></tr>
+  <tr><td>E</td><td rowspan="2">e</td></tr>
+  <tr><td>L</td></tr>
+  <tr><td>Z</td><td>l</td></tr>
+  <tr><td>T</td><td>+</td></tr>
+  <tr><td>B</td><td>palindrome open</td></tr>
+  <tr><td>U</td><td>nutrimatic letter</td></tr>
+  <tr><td>M</td><td>r (length of query as lowercase letter)</td></tr>
+  <tr><td>X</td><td>X</td></tr>
+  <tr><td>D</td><td>palindrome close</td></tr>
+  <tr><td>S</td><td>state abbreviation</td></tr>
+</table>
+
+<p>From here there are several possible approaches. One method is to build a Nutrimatic query that matches a superset of the results. This requires a little creativity for some of the operators, as well as a firm conviction in the power of Nutrimatic. Here’s one possible way of doing so:</p>
+
+<table class="grid">
+  <tr><td>I</td><td class="query">(al|ak|as|az|ar|ca|co|ct|de|dc|fm|fl|ga|gu|hi|id|il|in|ia|ks|ky|la|me|mh|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|mp|oh|ok|or|pw|pa|pr|ri|sc|sd|tn|tx|ut|vt|vi|va|wa|wv|wi|wy)</td></tr>
+  <tr><td>X</td><td class="query">A</td></tr>
+  <tr><td>P</td><td rowspan="6" class="query">(a?b?c?d?e?f?g?h?i?j?k?l?m?n?o?p?q?r?s?t?u?v?w?x?y?z?)</td></tr>
+  <tr><td>O</td></tr>
+  <tr><td>W</td></tr>
+  <tr><td>H</td></tr>
+  <tr><td>X</td></tr>
+  <tr><td>Q</td></tr>
+  <tr><td>E</td><td rowspan="2" class="query">e</td></tr>
+  <tr><td>L</td></tr>
+  <tr><td>Z</td><td class="query">l</td></tr>
+  <tr><td>T</td><td class="query">+</td></tr>
+  <tr><td>B</td><td rowspan="5" class="query">(nrArn|urAru|trArt|rrArr|irAri|mrArm|arAra|crArc)</td></tr>
+  <tr><td>U</td></tr>
+  <tr><td>M</td></tr>
+  <tr><td>X</td></tr>
+  <tr><td>D</td></tr>
+  <tr><td>S</td><td class="query">(al|ak|as|az|ar|ca|co|ct|de|dc|fm|fl|ga|gu|hi|id|il|in|ia|ks|ky|la|me|mh|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|mp|oh|ok|or|pw|pa|pr|ri|sc|sd|tn|tx|ut|vt|vi|va|wa|wv|wi|wy)</td></tr>
+</table>
+
+<p>When put together this yields the 463 character query:</p>
+
+<p class="query">(al|ak|as|az|ar|ca|co|ct|de|dc|fm|fl|ga|gu|hi|id|il|in|ia|ks|ky|la|me|mh|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|mp|oh|ok|or|pw|pa|pr|ri|sc|sd|tn|tx|ut|vt|vi|va|wa|wv|wi|wy)A(a?b?c?d?e?f?g?h?i?j?k?l?m?n?o?p?q?r?s?t?u?v?w?x?y?z?)el+(nrArn|urAru|trArt|rrArr|irAri|mrArm|arAra|crArc)(al|ak|as|az|ar|ca|co|ct|de|dc|fm|fl|ga|gu|hi|id|il|in|ia|ks|ky|la|me|mh|md|ma|mi|mn|ms|mo|mt|ne|nv|nh|nj|nm|ny|nc|nd|mp|oh|ok|or|pw|pa|pr|ri|sc|sd|tn|tx|ut|vt|vi|va|wa|wv|wi|wy)</p>
+
+<p>which <a href="https://nutrimatic.org/?q=%28al%7Cak%7Cas%7Caz%7Car%7Cca%7Cco%7Cct%7Cde%7Cdc%7Cfm%7Cfl%7Cga%7Cgu%7Chi%7Cid%7Cil%7Cin%7Cia%7Cks%7Cky%7Cla%7Cme%7Cmh%7Cmd%7Cma%7Cmi%7Cmn%7Cms%7Cmo%7Cmt%7Cne%7Cnv%7Cnh%7Cnj%7Cnm%7Cny%7Cnc%7Cnd%7Cmp%7Coh%7Cok%7Cor%7Cpw%7Cpa%7Cpr%7Cri%7Csc%7Csd%7Ctn%7Ctx%7Cut%7Cvt%7Cvi%7Cva%7Cwa%7Cwv%7Cwi%7Cwy%29A%28a%3Fb%3Fc%3Fd%3Fe%3Ff%3Fg%3Fh%3Fi%3Fj%3Fk%3Fl%3Fm%3Fn%3Fo%3Fp%3Fq%3Fr%3Fs%3Ft%3Fu%3Fv%3Fw%3Fx%3Fy%3Fz%3F%29el%2B%28nrArn%7CurAru%7CtrArt%7CrrArr%7CirAri%7CmrArm%7CarAra%7CcrArc%29%28al%7Cak%7Cas%7Caz%7Car%7Cca%7Cco%7Cct%7Cde%7Cdc%7Cfm%7Cfl%7Cga%7Cgu%7Chi%7Cid%7Cil%7Cin%7Cia%7Cks%7Cky%7Cla%7Cme%7Cmh%7Cmd%7Cma%7Cmi%7Cmn%7Cms%7Cmo%7Cmt%7Cne%7Cnv%7Cnh%7Cnj%7Cnm%7Cny%7Cnc%7Cnd%7Cmp%7Coh%7Cok%7Cor%7Cpw%7Cpa%7Cpr%7Cri%7Csc%7Csd%7Ctn%7Ctx%7Cut%7Cvt%7Cvi%7Cva%7Cwa%7Cwv%7Cwi%7Cwy%29&go=Go" target="_blank">astonishingly</a>, yields the answer. [Note that this query ignores two things, though they can be manually verified: the "sum to 42" constraint (E + R + S = 42), and the X constraint (all of them are "T").]</p>
+
+<p>A second approach is to reason out the phrase by trying to form valid word beginnings and endings. For example, a reasonable assumption is that the U in the query, which matches any letter in “nutrimatic,” is likely an a, which means that the phrase contains the substring “ellar”, (with possibly more l’s).</p>
+
+<p>There aren’t many words ending in “ellar” and one can quickly ascertain that “interstellar” matches the first half of the query. If interstellar is the start of the phrase, then the X and palindrome operators confirm that the end of the phrase is 5 letters, begins with “tra” and ends with a state abbreviation. There are a number of words that match, but only one word combines with the first to make a <a href="https://en.wikipedia.org/wiki/The_Theory_of_Interstellar_Trade" target="_blank">meaningful phrase</a>.</p>
+
+<p>Either way, the answer is <span class="answer">INTERSTELLAR TRADE</span>.</p>

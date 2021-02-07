@@ -1,0 +1,51 @@
+<p>We are presented with a pie chart with eight foods,
+together with a nutrition label, representing a
+2000 Calorie diet.</p>
+<p>The first step is to complete the nutrition label
+by filling in the needed <a href="https://www.fda.gov/media/99059/download">percent daily values as defined by the FDA</a>.
+For posterity, the recommended daily values used in this puzzle are:</p>
+<ul>
+<li>78 grams fat</li>
+<li>20 grams saturated fat</li>
+<li>300 mg cholesterol</li>
+<li>2300 mg sodium</li>
+<li>275 grams carbohydrates</li>
+<li>28 grams dietary fiber</li>
+<li>50 grams added sugars</li>
+</ul>
+<p>The percentage for protein is never used in the puzzle
+because, for whatever reason, the percentage for protein is often omitted.</p>
+<p>Computing the percentages gives the following label, which has values 8%, 5%, 18%, 18%, 9%, 14%, 7%. Converting to letters,
+with A=1, B=2, ..., we get <strong>HERRING</strong> which corresponds to the first of the foods.
+The label is given below (click to enlarge).</p>
+<p><center>
+<a href="{{sroot}}label-filled.pdf"><img width="300" src="{{sroot}}label-filled.png" /></a>
+</center></p>
+<p>What about the 213.88 number?
+It turns out this number is redundant,
+because, given the nutrition facts of a food,
+it is possible to compute the number of Calories using the
+<a href="https://nutribase.com/howto/i002.html">4-4-9 rule</a>:
+9 Calories per gram of fat, 4 Calories per carbohydrate and 4 Calories per protein.
+For example, for this label, we have 213.88 = 9(6.24) + 4(24.75) + 4(14.68).</p>
+<p>This gives us a path forwards.
+The remaining foods in the puzzle are all seven letters (and sorted alphabetically),
+and therefore for each food we can recover the entire label
+by plugging in the letters for the percentages &mdash; except for the amount of protein.
+But because the total Calorie counts are given, we can calculate the value (number of grams) for protein too.
+It turns out that the protein amounts are all integers, so we can extract letters from them.</p>
+<p>Working through this procedure gives the following table:</p>
+<table>
+<tr>
+<th>Food</th><th>From fat and carbs</th><th>Total Calories</th><th>From protein</th><th>Protein (g)</th>
+</tr>
+<tr><td>KETCHUP</td><td>165.22</td><td>193.22</td><td>28</td><td>7</td><td>G</td></tr>
+<tr><td>LASAGNA</td><td>161.24</td><td>221.24</td><td>60</td><td>15</td><td>O</td></tr>
+<tr><td>NOODLES</td><td>230.28</td><td>290.28</td><td>60</td><td>15</td><td>O</td></tr>
+<tr><td>PICKLES</td><td>224.32</td><td>260.32</td><td>16</td><td>4</td><td>D</td></tr>
+<tr><td>PUMPKIN</td><td>233.32</td><td>257.32</td><td>24</td><td>6</td><td>F</td></tr>
+<tr><td>RAVIOLI</td><td>291.36</td><td>295.36</td><td>4</td><td>1</td><td>A</td></tr>
+<tr><td>SEAWEED</td><td>188.38</td><td>268.38</td><td>80</td><td>20</td><td>T</td></tr>
+</table>
+
+<p>This gives us the final answer, <span class="answer">GOOD FAT</span>.</p>

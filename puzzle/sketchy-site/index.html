@@ -1,0 +1,47 @@
+<style>
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 400px;
+}
+
+.container img {
+  max-width: 600px;
+}
+</style>
+
+<p class="no-copy container">
+	<a href="#" onclick="changeImage(-1)"><img src="{{sroot}}older.png"></a>
+	<img class="img" src="{{sroot}}image1.png">
+	<img class="img" src="{{sroot}}image2.png" style="display: none">
+	<img class="img" src="{{sroot}}image3.png" style="display: none">
+	<img class="img" src="{{sroot}}image4.png" style="display: none">
+	<img class="img" src="{{sroot}}image5.png" style="display: none">
+	<img class="img" src="{{sroot}}image6.png" style="display: none">
+	<img class="img" src="{{sroot}}image7.png" style="display: none">
+	<img class="img" src="{{sroot}}image8.png" style="display: none">
+	<a href="#" onclick="changeImage(+1)"><img src="{{sroot}}newer.png"></a>
+</p>
+
+<script>
+var current = 0;
+function changeImage(delta) {
+  current = (current + delta + 8) % 8;
+  $('.img').hide().eq(current).show();
+  event.preventDefault();
+}
+</script>
+
+<p class="copy-only">[See original puzzle for images]</p>
+<p>
+🔍 what is the penalty for getting one of my dapper fellows exterminated oops</br>
+🔍 who vindicated herself by playing ten records please tell me (stage) last name</br>
+🔍 what is the prefix of the fish who chomps me in the abyss</br>
+🔍 what kind of animal can help me dance near bamboo thicket please dont say panda</br>
+🔍 what should cameras do to the flying dude after the harnesses are connected</br>
+🔍 where is the ridiculously buff scorpion from i need to know village name</br>
+🔍 what goes through a mechanical breakdown and a gradually narrowing tube in that order</br>
+🔍 what things get thrown at me if i go over the x</br>
+</p>
+<button id="clipboard-button"></button>

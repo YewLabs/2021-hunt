@@ -1,0 +1,71 @@
+name: wheel-of-fortune-quotation
+difficulty: 2/10
+coolness: 3/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?N? THE? L??E? H?PP?L? E?ER ??TER"
+
+        - text: "Category: Quotation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: and they lived happily ever after
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "GR?N??OTHER ?H?T ??G E?ES ?O? H??E!"
+
+        - text: "Category: Quotation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: grandmother what big eyes you have!
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?'? L??E TO TH?N? THE ????E??"
+
+        - text: "Category: Quotation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: i'd like to thank the academy
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "LOO? ?EEPL? ?NTO ?? E?ES"
+
+        - text: "Category: Quotation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: look deeply into my eyes
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "SO?E ??? ?? PR?N?E ??LL ?O?E"
+
+        - text: "Category: Quotation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: some day my prince will come
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "THE? ??LL ?E ??STER T???S!"
+
+        - text: "Category: Quotation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: they call me mister tibbs!

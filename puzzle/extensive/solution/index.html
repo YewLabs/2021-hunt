@@ -1,0 +1,295 @@
+<style>
+  .puzzle img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 70%;
+  }
+
+  .caption {
+    font-style: italic;
+    text-align: center;
+  }
+
+  .filled {
+    background-color: black;
+  }
+
+  #kakurasu td {
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    border: solid 1px black;
+  }
+
+  .strike {
+    text-decoration: line-through;
+  }
+
+</style>
+
+<p>Each line is a list of trigrams, which should be assembled in order to form a clue. They are as follows:</p>
+
+<table>
+  <tr>
+    <td>ISA ACW HOL IST EDT HRE ELA WSO FRO BOT ICS</td>
+    <td>Isaac who listed three laws of robotics</td>
+    <td>ASIMOV</td>
+  </tr>
+  <tr>
+    <td>PRE MEA LAL COH OLI CBE VER AGE</td>
+    <td>Pre-meal alcoholic beverage</td>
+    <td>APERITIF</td>
+  </tr>
+  <tr>
+    <td>BEF RUI TFU LAN DBL ANK</td>
+    <td>Be fruitful and blank</td>
+    <td>MULTIPLY</td>
+  </tr>
+  <tr>
+    <td>GOA LAF TER ATH ESI SDE FEN SEB RIE FLY</td>
+    <td>Goal after a thesis defense, briefly</td>
+    <td>POSTDOC</td>
+  </tr>
+  <tr>
+    <td>COF FEE FLA VOR EDL IQU EUR INA WHI TER USS IAN</td>
+    <td>Coffee-flavored liqueur in a White Russian</td>
+    <td>KAHLUA</td>
+  </tr>
+  <tr>
+    <td>COL LEG EOF FIC IAL REC ORD HOL DER</td>
+    <td>College official record holder</td>
+    <td>REGISTRAR</td>
+  </tr>
+  <tr>
+    <td>SHA PEO FLA STR EMA INI NGA NCI ENT WON DER</td>
+    <td>Shape of last remaining ancient wonder</td>
+    <td>PYRAMID</td>
+  </tr>
+</table>
+
+<p>The title, along with the trigrams, suggests what to do with these words. Namely, the last three letters in each of these words is also a file extension. This suggests that we should look at the files at these locations. Indeed, in the same directory as the puzzle.txt file containing the trigrams, asi.mov, aperi.tif, and so on can be found.</p>
+
+<p>However, if you try to open them in the file format that is displayed, you’ll find that these files are actually a different filetype. Specifically, these filetypes form a chain which lets us reorder the clues.</p>
+
+<p>Once we figure out how to open the files, we find that each is a minipuzzle whose answers are trigrams. The solutions to the minipuzzles are as follows:</p>
+
+<h3>aperi.tif (actually a .mov)</h3>
+
+<p>This is a 20-minute long video where a bunch of trigrams flash by in lexicographically increasing order. In fact, all trigrams from AAA to ZZZ appear in the video except for one that is missing, which is the answer. Each trigram appears for exactly one frame, and each frame lasts exactly the same amount of time (1/15th of a second).</p>
+
+<p>There are a few strategies that are possible here: we can split the movie into frames and then binary search on where the gap is. Depending on the video player, looking at the video at regular intervals can also help as well (for example a button that skips ahead exactly 10 seconds will always move forward 150 trigrams, except over the omitted trigram where it would skip 151).</p>
+
+<p>Regardless of the method used, we find that the missing trigram is <b>DAT</b>, which is our answer.</p>
+
+<h3>regist.rar (actually a .tif)</h3>
+
+<p>This is an image of a screenshot of Pokemon Red (or Blue). In fact, it’s an image of Pallet Town, which suggests looking at the palette of the image. This is doable in GIMP (where it is known as a color map) and some other image editing tools, or we can read the image directly via programming. Doing so gives us the message (when formatted in a 16&times;16 grid): ≡ 0 mod 7, where the ≡ sign represents modular congruence.</p>
+
+<img src="{{sroot}}registrar_1.png"/>
+<p class="caption">The palette of the image</p>
+
+<p>The colors on a palette can be identified from 0 through 255, so perhaps we should look at the location of the pixels where they use colors divisible by 7. A tool that lets us alter the palette (such as GIMP) should suffice for this task. Changing these colors to, say, red, allows us to read the answer: <b>APR</b>.</p>
+
+<img src="{{sroot}}registrar_2.png"/>
+<p class="caption">Note that we don’t need to color every 0 mod 7 value in the palette to read the image - probably coloring the first 10 indices or so should suffice. Also, the green colors demonstrate that the message can still be read if we instead 1-indexed the colors.</p>
+
+<p>As a side note, this step still works if we 1-index the colors. The message is just shifted downwards a bit.</p>
+
+<h3>kah.lua (actually a .rar)</h3>
+
+<p>This is a rar file containing three folders, and a comment “signed” by Fano, Shannon, and Huffman. Taking into account the context of a compressed archive format and these three names, we can reason that the puzzle is about codes used for data compression, particularly Huffman coding, Shannon coding, and Fano coding (sometimes called Shannon-Fano coding). </p>
+<p>The three subfolders each encode a graph. The postscript in the comment tells us that the labelings A and B should be ignored, so we should only care about the actual graph represented. In each case, one vertex is labeled with an X. </p>
+<p>To proceed, we take the string of letters given to us in the RAR comment, and construct their respective tree graphs in Huffman, Shannon, and Fano coding. The data is designed so that there are no ambiguities (which can arise in eg. Huffman coding when the weights of any two “symbols” are the same). The codes under each of the schemes are:</p>
+
+<table>
+  <tr>
+    <th>Letter</th>
+    <th>Shannon</th>
+    <th>Fano</th>
+    <th>Huffman</th>
+  </tr>
+  <tr>
+    <td>S</td>
+    <td>00</td>
+    <td>00</td>
+    <td>00</td>
+  </tr>
+  <tr>
+    <td>O</td>
+    <td><b>010</b></td>
+    <td>01</td>
+    <td>010</td>
+  </tr>
+  <tr>
+    <td>A</td>
+    <td>0110</td>
+    <td>100</td>
+    <td>100</td>
+  </tr>
+  <tr>
+    <td>L</td>
+    <td>0111</td>
+    <td>101</td>
+    <td>101</td>
+  </tr>
+  <tr>
+    <td>E</td>
+    <td>1000</td>
+    <td>1100</td>
+    <td><b>110</b></td>
+  </tr>
+  <tr>
+    <td>N</td>
+    <td>1001</td>
+    <td>1101</td>
+    <td>0110</td>
+  </tr>
+  <tr>
+    <td>T</td>
+    <td>10100</td>
+    <td>1110</td>
+    <td>0111</td>
+  </tr>
+  <tr>
+    <td>C</td>
+    <td>10101</td>
+    <td><b>11110</b></td>
+    <td>1111</td>
+  </tr>
+  <tr>
+    <td>D</td>
+    <td>101100</td>
+    <td>111110</td>
+    <td>11100</td>
+  </tr>
+  <tr>
+    <td>R</td>
+    <td>101101</td>
+    <td>111111</td>
+    <td>11101</td>
+  </tr>
+</table>
+
+<p>Doing so will create graphs in which each leaf node is labeled with one of the letters in the data.</p>
+
+<p>Note that there are some slightly different conventions on how to represent the graph for Shannon coding in particular, based on whether to assign the bit strings based on binary representations of the cumulative probabilities, or simply assigning the lexicographically earliest string with the required length. This puzzle uses the latter, which appears to be more common.</p>
+
+<p>Shannon:</p>
+<img src="{{sroot}}kahlua_shannon.png">
+<p>Fano:</p>
+<img src="{{sroot}}kahlua_fano.png">
+<p>Huffman:</p>
+<img src="{{sroot}}kahlua_huffman.png">
+
+<p>The graphs can be matched with the graphs given by the folders - in order, they correspond to Shannon, Fano, and Huffman coding respectively, and the vertex labeled X is always uniquely identifiable as a particular letter in the coding graph.</p>
+
+<p>Taking these letters in order of the folder names gives <b>OCE</b>.</p>
+
+<h3>post.doc (actually a .lua)</h3>
+
+<p>This is a Lua program that is running an exhaustive recursive search to solve a particular <a href="https://www.puzzle-kakurasu.com/" target="_blank">Kakurasu</a> logic puzzle. Because the grid is too large, the program will never terminate in a reasonable amount of time, but it’s quite straightforward to solve the Kakurasu by hand:</p>
+
+<table id="kakurasu">
+  <tr><td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td></td></tr>
+  <tr><td>1</td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td></td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td></td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td>54</td></tr>
+  <tr><td>2</td><td class="filled"></td><td></td><td></td><td></td><td class="filled"></td><td></td><td></td><td></td><td></td><td class="filled"></td><td></td><td>16</td></tr>
+  <tr><td>3</td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td></td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td></td><td></td><td class="filled"></td><td></td><td>34</td></tr>
+  <tr><td>4</td><td></td><td></td><td class="filled"></td><td></td><td></td><td></td><td class="filled"></td><td></td><td></td><td class="filled"></td><td></td><td>20</td></tr>
+  <tr><td>5</td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td></td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td></td><td class="filled"></td><td class="filled"></td><td class="filled"></td><td>54</td></tr>
+  <tr><td></td><td>11</td><td>9</td><td>13</td><td>0</td><td>11</td><td>9</td><td>13</td><td>0</td><td>6</td><td>15</td><td>6</td><td></td></tr>
+</table>
+
+<p>Doing so draws out the letters <b>SSI</b>.</p>
+
+<h3>pyra.mid (actually a .doc)</h3>
+
+<p>This is a 154-page long Microsoft Word document file (notably, a pre-Microsoft Word 2007 document file; this is when the file extension changed from .doc to .docx). On first glance, the file appears to consist of the following quote repeated multiple times:</p>
+
+<p>“The beauty of word processing, God bless my word processor, is that it keeps the plotting very fluid. The prose becomes like a liquid that you can manipulate at will. In the old days, when I typed, every piece of typing paper was like cast in concrete.”</p>
+
+<p>The three letters of the trigram are hidden throughout the file in separate ways:</p>
+
+<p><b>Letter 1:</b> At the bottom of the file is a line in very tiny print (size 2 font). Zooming in / enlarging it reveals the message “The first letter you seek is N”. </p>
+
+<p><b>Letter 2:</b> Twenty-five copies of the quote have been modified by inserting a letter (written in a white font) into the quote. These white letters in order spell “The second letter you seek is G”. One good way of finding these letters is to replace all instances of the original quote with the empty string; this will leave only the modified lines.</p>
+
+<p><b>Letter 3:</b> In one page of the document, there is a tiny, seemingly all-white image. One good way to find this image is to convert the document to a format which makes the contents more readily visible (e.g. HTML); alternatively, find-and-replacing all text out of the doc should leave you with just this image. Opening this image in an image editor reveals (e.g., by using the paint bucket tool with some other color) that there are some off-white pixels. These off-white pixels spell out the message “The third letter you seek is M”. </p>
+
+<p>These letters give us the answer <b>NGM</b>.</p>
+
+<h3>multi.ply (actually a .mid)</h3>
+
+<p>This is a MIDI file that <span class="strike">sounds terrible</span> plays beautiful music.</p>
+
+<p><b>Letter 1:</b> Opening up the file in a MIDI editor shows that the notes spell out the message “The first amazing letter is A” on the piano roll.</p>
+
+<img src="{{sroot}}multiply_1.png"/>
+
+<p><b>Letter 2:</b> The file contains lyric metaevents that spell out “The second amazing letter is C”. These can be found from opening it up in an editor or a player that supports lyrics.</p>
+
+<img src="{{sroot}}multiply_2.png"/>
+
+<p><b>Letter 3:</b> Note that the file contains 27 tracks (0&ndash;26), and each note is played on a track from 1&ndash;26 using the same numbered instrument from 1&ndash;26. (While the instruments are internally represented as 0&ndash;25, most midi devices and Wikipedia shows the instruments as being 1-indexed.) Taking either the instrument or the track used for each note and converting them to letters gives us the repeating message “THETHIRDAMAZINGLETTERISH”. (Each row of notes was shifted slightly to give a unique ordering to the notes.)</p>
+
+<img src="{{sroot}}multiply_3.png"/>
+
+<p>These letters give us the answer <b>ACH</b>.</p>
+
+<p>Images are of MidiEditor. You can read the script used to generate the file <a href="{{sroot}}create_midi.py" target="_blank">here</a>.</p>
+
+<h3>asi.mov (actually a .ply)</h3>
+
+<p>This is a <a href="https://en.wikipedia.org/wiki/PLY_(file_format)" target="_blank">“Polygon File Format”</a> file, a filetype used to store three-dimensional data. We can open this file with any program that can view 3D files, e.g. various CAD software, <a href="https://www.blender.org/" target="_blank">Blender</a>, or <a href="https://en.wikipedia.org/wiki/Microsoft_3D_Viewer" target="_blank">Microsoft 3D Viewer</a> (which is installed by default on Windows 10).</p>
+
+<p>Upon opening the file, we see a black box:</p>
+
+<img src="{{sroot}}asimov_1.png">
+
+<p>The answer to this puzzle lies inside this box. There are several ways to see what’s inside the box. One option is to use a suitable 3D editor which allows one to remove the outer box in a variety of ways: in the image below, we have used the “Split” tool in Microsoft 3D Builder to intersect the puzzle with a halfspace. Alternatively, you can work with the .ply file directly, deleting polygons belonging to the exterior box (these appear at a list at the end of the .ply file; some care is needed to make sure you end up with a valid .ply file). </p>
+
+<img src="{{sroot}}asimov_2.png">
+
+<p>Once we can see inside the box, we can see the letters <b>INE</b>.</p>
+
+<hr>
+
+<p>Taking the trigrams in order, we get DATA PROCESSING MACHINE, which is a <span class="answer">COMPUTER</span>, the answer.</p>
+
+<table>
+  <tr>
+  <td>DAT</td>
+  <td><a href="{{sroot}}aperi.tif" download>aperi.tif</a></td>
+  <td>.mov</td>
+  </tr>
+  <tr>
+  <td>APR</td>
+  <td><a href="{{sroot}}regist.rar" download>regist.rar</a></td>
+  <td>.tif</td>
+  </tr>
+  <tr>
+  <td>OCE</td>
+  <td><a href="{{sroot}}kah.lua" download>kah.lua</a></td>
+  <td>.rar</td>
+  </tr>
+  <tr>
+  <td>SSI</td>
+  <td><a href="{{sroot}}post.doc" download>post.doc</a></td>
+  <td>.lua</td>
+  </tr>
+  <tr>
+  <td>NGM</td>
+  <td><a href="{{sroot}}pyra.mid" download>pyra.mid</a></td>
+  <td>.doc</td>
+  </tr>
+  <tr>
+  <td>ACH</td>
+  <td><a href="{{sroot}}multi.ply" download>multi.ply</a></td>
+  <td>.mid</td>
+  </tr>
+  <tr>
+  <td>INE</td>
+  <td><a href="{{sroot}}asi.mov" download>asi.mov</a></td>
+  <td>.ply</td>
+  </tr>
+</table>

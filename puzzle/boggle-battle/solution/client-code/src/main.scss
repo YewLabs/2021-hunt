@@ -1,0 +1,213 @@
+@import "vars";
+
+.puzzle {
+  font-size: 20px;
+  margin-bottom: 10em;
+
+  button {
+    background-color: $theme-color;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4), 0px 2px 2px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: bold;
+    height: 2em;
+    margin: 0 0.25em;
+    padding: 0.25em 1em 0.25em;
+    text-align: center;
+    text-decoration: none;
+    transition: 0.3s background-color;
+    vertical-align: middle;
+
+    &:hover {
+      background-color: rgba($theme-color, 0.7);
+    }
+
+    &.gray {
+      background-color: $secondary-color;
+      &:hover {
+        background-color: rgba($secondary-color, 0.7);
+      }
+    }
+  }
+
+  input {
+    background: #fff;
+    border: none;
+    border-bottom: 3px solid #fff;
+    border-radius: 0;
+    box-sizing: border-box;
+    font: inherit;
+    height: 2em;
+    margin: 0 0.25em;
+    padding: 0.25em;
+    transition: 0.3s border-bottom;
+    vertical-align: middle;
+  }
+
+  input:focus {
+    border-bottom: 3px solid $theme-color;
+    outline: none;
+    transition: 0.3s border-bottom;
+  }
+
+  & > div,
+  & > div > div {
+    min-height: 650px;
+  }
+}
+
+.menu {
+  display: grid;
+  grid-template-areas:
+    "instructions instructions"
+    "play trophies"
+    "statistics description"
+    "leaderboard blanks";
+  grid-template-rows: 2.5em 4fr 2em 2em;
+  grid-template-columns: 1fr 4fr;
+  gap: 1rem;
+
+  .instructions {
+    grid-area: instructions;
+  }
+
+  .label-play,
+  .label-trophies {
+    font-weight: bold;
+    font-size: 1.25em;
+    text-align: center;
+  }
+
+  .play {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    button {
+      box-sizing: border-box;
+      font-size: 1.5em;
+      height: calc(25% - 0.75rem);
+      margin: 0;
+      width: 100%;
+
+      &:disabled {
+        background-color: $secondary-color;
+        box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+        cursor: default;
+      }
+    }
+  }
+
+  .description,
+  .blanks {
+    @include flex-ccc;
+    justify-content: flex-end;
+  }
+
+  .trophies {
+    display: grid;
+    grid: repeat(4, 1fr) / repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .statistics,
+  .leaderboard {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.end {
+  @include flex-ccc;
+
+  .points {
+    text-align: center;
+    width: 100%;
+  }
+
+  .trophies {
+    align-items: start;
+    height: 90%;
+
+    .entry {
+      align-items: center;
+      display: flex;
+      margin: 0.5em 0;
+
+      .description {
+        padding-left: 1em;
+      }
+    }
+  }
+}
+
+.trophies {
+  @include flex-ccc;
+
+  .trophy {
+    @include flex-ccc;
+    height: 100px;
+    perspective: 100px;
+    position: relative;
+
+    img {
+      height: 100px;
+      z-index: 1;
+    }
+
+    .stand {
+      position: absolute;
+      background: #795548;
+      bottom: -5px;
+      height: 20%;
+      transform: rotateX(40deg);
+      width: 70%;
+    }
+
+    .letter {
+      color: #726400;
+      font-size: 1.25em;
+      font-weight: bold;
+      position: absolute;
+      top: 20px;
+      z-index: 2;
+    }
+
+    &.highlighted {
+      img {
+        background-color: rgba($duplicate-color, 0.5);
+        box-shadow: 0px 0px 5px rgba($duplicate-color, 0.5);
+      }
+
+      .stand {
+        box-shadow: 0px 0px 5px $duplicate-color;
+      }
+
+      .letter {
+        text-shadow: 0px 0px 5px $duplicate-color;
+      }
+    }
+  }
+}
+
+.statistics,
+.leaderboard,
+.msg {
+  @include flex-ccc;
+}
+
+#mainContainer > .leaderboard {
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 2em 0;
+
+  table {
+    overflow-y: scroll;
+    max-height: calc(100% - 6em);
+    margin: 1em 0;
+  }
+}

@@ -1,0 +1,63 @@
+<style>
+.puzzle table {
+  width: 100%;
+}
+
+.puzzle img {
+  width: 60%;
+  margin: 0 20%;
+}
+
+.puzzle .narrow {
+  width: 30%;
+  margin: 0 35%;
+}
+</style>
+
+<h4>by Brian Chen, Ben Yang, Josh Alman, Lennart Jansson, DD Liu, Jon Schneider, Jakob Weisblat, and Kat Fang</h4>
+
+<p>As the &ldquo;Helpful Fellow&rdquo; in the lobby of the Green Building states, the elevator is a little weird. Instead of its buttons having numbers, they have colors (Red, Orange, Yellow, Green, Blue, Purple, Black, Gray, White, and Brown). There is also a button that takes us directly to the Ground floor. Each colored button also has an associated symbol which is used both for color-blind accessibility and for one of the navigation puzzles.</p>
+<p>This is the button layout:</p>
+<p><img class="narrow" src="{{sroot}}image7.png"></p>
+<p>On each floor, there is a small puzzle encoding the elevator code for the floor immediately above it. </p>
+
+<table>
+<tr><th>Floor</th><th>Code</th><th>Solution Summary</th></tr>
+<tr><td>G</td><td>Ground</td><td>N/A</td></tr>
+<tr><td>1</td><td>Red Blue Red Blue</td><td>Ground floor NPC tells you the code.</td></tr>
+<tr><td>2</td><td>Blue Orange Purple Red White</td><td>Colors of flowers on floor 1 from left to right.</td></tr>
+<tr><td>3</td><td>Yellow Blue Gray Green Purple Black</td><td>Colors of squares on floor 2 from back to front.</td></tr>
+<tr><td>4</td><td>Brown Green Orange Blue</td><td>Cubicles with flower pots, in order from 1 to 4</td></tr>
+<tr><td>5</td><td>White Orange Red Blue</td><td>Flower pots on floor 4 form the symbols on the elevator buttons.</td></tr>
+<tr><td>6</td><td>Purple Green Gray Orange</td><td>Path through the invisible maze on floor 5 passes through these colors in order.</td></tr>
+<tr><td>R</td><td>Yellow Blue Green Red</td><td>Invisible walls form the digits 1 through 4 on different colored squares.</td></tr>
+</table>
+
+<h3>Floor 1</h3>
+<p>The &ldquo;Helpful Fellow&rdquo; on the ground floor of the Green Building tells you this code when you speak to him. The code is <b>Red Blue Red Blue</b>.</p>
+
+<h3>Floor 2</h3>
+<p>The flowers on the back wall of Floor 1 are colored <b>Blue Orange Purple Red White</b>&nbsp;from left to right.</p>
+<p><img src="{{sroot}}image5.png"></p>
+
+<h3>Floor 3</h3>
+<p>The colors of the squares on Floor 2 from back to front are <b>Yellow Blue Gray Green Purple Black</b>.</p>
+<p><img src="{{sroot}}image4.png"></p>
+
+<h3>Floor 4</h3>
+<p>The walls on Floor 3 form a collection of square rooms in the same shape as the elevator keypad. Some of these rooms contain flower pots; one room contains one flower pot, one room contains two flower pots, one room contains three flower pots, and one room contains four flower pots. The corresponding buttons on the elevator keypad are colored <b>Brown Green Orange Blue</b>.</p>
+<p><img src="{{sroot}}image2.png"></p>
+
+<h3>Floor 5</h3>
+<p>There are four square rooms on Floor 4. In each room there are a collection of flower pots which form a symbol. Each symbol matches one of the symbols on the elevator keypad. The corresponding buttons are <b>White Orange Red Blue</b>.</p>
+<p><img src="{{sroot}}image6.png"></p>
+
+<h3>Floor 6</h3>
+<p>There is an invisible maze on Floor 5 which restricts our player&rsquo;s movement. The only path through the maze that gets you to the other side of the room passes through the <b>Purple Green Gray Orange</b>&nbsp;tiles in order.</p>
+<p>Screenshot with the maze turned visible:</p>
+<p><img src="{{sroot}}image1.png"></p>
+
+<h3>Roof</h3>
+<p>There are four large colored tiles on Floor 6 colored blue, yellow, green, and red. Each tile has invisible walls placed on top of it in the shape of a numeral from 1 to 4. Taken in the order of their numerals, the code for the roof is <b>Yellow Blue Green Red</b>.</p>
+<p>Screenshot showing the positions of the invisible walls:</p>
+<p><img src="{{sroot}}image3.png"></p>

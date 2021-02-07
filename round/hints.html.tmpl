@@ -1,0 +1,55 @@
+{% extends "hunt/layout.tmpl" %}
+
+{% load static %}
+
+{% block title %}Hints for {{ puzzle.puzzle.name|safe }} &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block stylesheets %}
+<style>
+html, body {
+  background: none;
+  min-width: 0;
+  height: auto;
+}
+.content {
+  text-align: center;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h2 class="puzzle-title-header">Hints for {{ puzzle.puzzle.name }}</h2>
+  <main>
+    <div class="puzzle">
+      {% if hints %}
+      <table>
+        <tr><th style="width:10%">Order</th><th style="width:20%">Keywords</th><th style="width:60%">Content</th><th style="width:10%">Copy</th></tr>
+        {% for h in hints %}
+        <tr>
+          <td>{{h.0}}</td>
+          <td>{% for tag in h.1 %}{{tag}} {% endfor %}</td>
+          <td id="hint{{forloop.counter}}">{{h.2|linebreaks}}</td>
+          <td><button onclick="copyHint({{forloop.counter}})">Copy</button></td>
+        </tr>
+      {% endfor %}
+      </table>
+      {% else %}
+      There are no hints available for this puzzle.
+      {% endif %}
+    </div>
+  </main>
+</div>
+
+<script>
+  function copyHint(num) {
+    var copyText = $("#hint" + num);
+    var range = document.createRange();
+    range.selectNode(document.getElementById("hint" + num));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+  }
+</script>
+{% endblock %}

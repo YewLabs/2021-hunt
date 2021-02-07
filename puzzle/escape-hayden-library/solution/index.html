@@ -1,0 +1,160 @@
+<style>
+.puzzle img {
+    max-width: 50%;
+}
+
+#show-hide-btn {
+    cursor: pointer;
+}
+
+#hayden-script {
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 80%;
+    border: 1px solid gray;
+    color: #222222;
+    padding: 20px;
+}
+</style>
+
+<p>This is a virtual escape room. Solvers are trapped in Hayden Library until they solve the puzzle. They must move around the play area and interact with objects in specific ways to progress and eventually escape.</p>
+
+<p>There are several objects on the first floor of Hayden: two lockboxes that require codes; a large, red button; pieces of paper and magazines that can be examined to reveal information. We can examine these in any order we like, but we'll start with the magazines in the right corner.</p>
+
+<div style="width: 100%;">
+    <div style="display: flex; width: 80%; margin: 0 auto;">
+        <div style="flex-grow: 1"><img src="{{sroot}}haydenhistory.png" style="max-width: 100%;"></img></div>
+        <div style="flex-grow: 1"><img src="{{sroot}}sgbasics.png" style="max-width: 100%;"></img></div>
+    </div>
+</div>
+
+<p>The piece of paper by the computer:</p>
+
+<td><img src="{{sroot}}shakepaper.png"></img></td>
+
+<p>Shaking this piece of paper reveals the message "Like this!" underneath the text. This suggests that there may be hidden information on pages, only made visible by shaking them.</p>
+
+<p>A blue piece of paper nearby shows some constellations:</p>
+
+<img src="{{sroot}}constellation1.png"></img>
+
+<p>A piece of paper near it contains a riddle:</p>
+
+<img src="{{sroot}}shakenote1.png"></img>
+
+<p>There are 14 chairs in the room, which makes a total of 28 keys. Entering "28" into the lockbox in the center of the room gives this message:</p>
+
+<img src="{{sroot}}nicetry.png"></img>
+
+<p>The remaining "keys" are the 88 keys of the piano in the corner. Thus the total number of keys in the room is actually 28 + 88, or 116. Entering "116" into the lockbox gives this image:</p>
+
+<img src="{{sroot}}spiral_clue.png"></img>
+
+<p>This suggests that the next item of interest is the button. After some experimentation, and noticing the Morse code sheet near the button, we may happen on the idea of inputting "stairs" in Morse code. When we do this, the room will shake, and stairs will appear up to the Hayden Library atrium.</p>
+
+<img src="{{sroot}}atriumshot.png"></img>
+
+<p>Up in the atrium, there are several more pieces of paper to examine. First up, a note with more constellations on it:</p>
+
+<img src="{{sroot}}constellation2.png"></img>
+
+<p>There is a star chart on the wall, which (together with the two pieces of blue paper) depicts twelve constellations that we can identify:</p>
+
+<img src="{{sroot}}starchart.png"></img>
+
+<p>
+    <div>Ai Ixa Crii Dama Didia Kata</div>
+    <div>Dama Ixa Mipha Snae Born Didia</div>
+</p>
+
+<p>There's a note with details on "ley lines":</p>
+
+<img src="{{sroot}}leyline.png"></img>
+
+<p>There's also an image of the lower floor of Hayden, with a red "X" marked on it. The image is made of shake paper &mdash; so shaking the image will also reveal a green "X" as well:</p>
+
+<img src="{{sroot}}leymap.png"></img>
+
+<p>Based on these two pieces of information, we can intuit that a player should go stand at those locations. When they stand at one of these locations, a piece of paper will materialize in the corresponding spot on the top floor.</p>
+
+<p>Here's the paper corresponding to the red "X":</p>
+
+<img src="{{sroot}}4dcode.png"></img>
+
+<p>And here's the piece of paper corresponding to the green "X":</p>
+
+<img src="{{sroot}}4dcode2.png"></img>
+
+<p>The first piece of paper suggests that we can now open the second lockbox on the lower floor with the code "1529". Doing so gives us this piece of paper:</p>
+
+<img src="{{sroot}}hhclue.png"></img>
+
+<p>We can overlay this piece of paper onto the magazine about Hayden's history:</p>
+
+<img src="{{sroot}}overlayed.png"></img>
+
+<p>This suggests that we're looking for a nine-digit code, and the first three digits are those circled in green, red, and blue, or "954".</p>
+
+<p>The second piece of paper (corresponding to the green "X") suggests that we can enter codes into the lockboxes backwards to access a secret compartment. Opening the first lockbox with the code "611" yields this slip:</p>
+
+<img src="{{sroot}}final2.png"></img>
+
+<p>This tells us the center three digits, which are "905".</p>
+
+<p>Finally, we haven't entered the lockbox in the corner's code backwards. Entering "9251" into that lockbox earns us this:</p>
+
+<img src="{{sroot}}starcodenote.png"></img>
+
+<p>This allows us to convert our constellations on the star chart above to letters:</p>
+
+<p><b>Z E R O T W O E I G H T</b></p>
+
+<p>Which, together with the note on the corner of the sheet, suggests the final three digits of the code are "028".</p>
+
+<p>Finally, entering "954905028" into the door will unlock it. We're out!</p>
+
+<p>Once outside, the Game Master will simply give us the answer, which is <span class="answer">ESCAPE VELOCITY</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>For the first 50 teams or so, I prepared a small Zoom interaction prior to opening the puzzle for them: we'd pose as an &perp;IW Puzzle Club member who was running the Hayden Escape Room as a "fundraiser" for their club. This was our team's first chance to directly interact with players throughout Hunt, and a lot of people chipped in to do these interactions with me, which I'm grateful for. The script we used is below.</p>
+
+    <script type="text/javascript">
+        function f() {
+            var shb = document.getElementById("show-hide-btn");
+            var hs = document.getElementById("hayden-script");
+            hs.style.display = (hs.style.display === 'none' ? 'block' : 'none');
+            shb.innerHTML = (hs.style.display === 'none' ? '<i>(show script)</i>' : '<i>(hide script)</i>');
+        }
+    </script>
+<span id="show-hide-btn" onclick="f()">
+    <i>(show script)</i>
+</span>
+
+<span id="hayden-script" style="display: none;">
+    <p>Hey everyone! Thanks for signing up for the Hayden Escape Room, as part of the &perp;IW Puzzle Club IAP fundraiser! I'm <i>[your own real name]</i>, from the &perp;IW Puzzle Club! Right&mdash; we got all your waivers from your team captain, so let's get started.</p>
+
+    <p>Yeah, so&mdash; we're a really new club, and this escape room is the first thing we've all written together. So don't expect TOO much...but! We're actually working on our first ever &perp;IW-wide puzzle hunt right now! We're starting kinda small, but we hope one day it'll grow into a huge campus-wide event that thousands of people look forward to! So all the proceeds from the Hayden Escape Room go towards feeding hungry puzzlers. Except admission is free, so I guess we'll go hungry...</p>
+
+    <p>Alright, I've unlocked the room. Let's step inside and I'll show you around...</p>
+
+    <p><i>[Go inside Hayden with the team.]</i></p>
+
+    <p>So your captain said you're projections from another universe? <i>[pause]</i> Right, right. How are you enjoying your time here at &perp;IW?</p>
+
+    <p><i>[Wait for them to respond. Ad-lib a short (1-3 minutes) conversation if the team seems interested, acting like a real &perp;IW student]</i></p>
+
+    <p>So let me tell you a little bit about Hayden Library! It was built in 1951 and has a strong focus on humanities and music. We even have instruments and CDs that students can check out! A lot of student bands reserve the Atrium to practice at night, and Hayden also hosts small up-and-coming jazz trios and stuff like that. People wanted to split the music stuff into its own separate library, and call it "Lewis Library", but we never ended up doing that. Anyway, I really LOVE this place. I've pulled more all-nighters here than I can count. Seeing the sun rise almost makes it worth it. You'll learn more about Hayden as you go through the escape room...</p>
+
+    <p>So I locked the door behind you. Your goal is to escape the room by unlocking it. We usually give teams an hour...but you're new here, so we'll give you as long as you want. Please don't take apart the furniture, okay? It's not ours. But...it looks like those projections of yours wouldn't be able to, anyway.</p>
+
+    <p>Before we start, I'm gonna explain the lockboxes. So this escape room uses lockboxes with a code. The code is between 3 and 9 digits. Here's how you interact with it. First, you go up to the lockbox. Press the buttons on&mdash; oh wait, you're projections, right? Maybe...you press some key? like SPACE? to interact with them? ...and then click the buttons with your mouse, or something? Anyway, when the code is right, the box will automatically open and reveal what's inside. If it's not right, then press the ESCAPE button or click somewhere outside of the lockbox, and it'll reset...</p>
+
+<p>One last thing&mdash; once you escape the room, talk to my club member by the exit to get your prize. If you want a bathroom break, you can tap on the door and&mdash; oh, right you're projections. You should be fine then! Okay, start...now! Good luck!</p>
+
+</span>
+
+<p>The "Hayden Library" of &perp;IW combines my favorite parts of MIT's Hayden and Lewis libraries. I imagined an open, spacious room with wall-to-wall windows and a beautiful daytime view; a spiral staircase; a cozy atrium full of pillows, where students would fall asleep studying at night; and plenty of musical instruments to jam with.</p>
+
+<p>This puzzle was written shortly after we made the decision to run this hunt purely online. I felt the world of &perp;IW offered a lot of potential to create dedicated puzzle spaces, and I wanted to capture as much of a "real escape room" feel as possible. I was originally hoping to write two escape rooms, and this would be the "easier" escape room to contrast with a harder and more intricate Student Center escape room later in the hunt, but this one took a huge amount of work (and the art team was really busy, so I did all the art) and I didn't get around to that. Still, I'm super happy with how this one came out, and I hope that it was a cozy and fun little solving experience!</p>
+</div>

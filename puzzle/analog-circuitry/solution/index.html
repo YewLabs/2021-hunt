@@ -1,0 +1,40 @@
+<p>We are presented with a large logic circuit with a bunch of gates, and words shown at various points along the circuit. We can click on a gate to change its color, and this changes the value of any words it feeds into.</p>
+
+<p>There are two ways to approach the puzzle at first &mdash; we can either try to understand the rules, or we can brute-force the gates to try to get the words to turn green. In order to solve the puzzle, we'll need to determine both the function of each kind of gate and the correct color for all the gates on the left side of the puzzle.</p>
+
+<p>Through trial and error, we can find that certain colors of the gates make their inputs easier to discover. The bowtie and pentagon gates reveal their inputs completely when red, the pawn gate reveals its input completely when blue, and the OR and XOR gates reveal their inputs when blue. The AND gate is the hardest to understand; using blue and green we can guess at the inputs somewhat.</p>
+
+<p>Another thing that we can use to help us understand what color different gates should be (and which will help us error correct when determining the right half of the puzzle) is that intermediate lines carrying words are colored black, and intermediate lines carrying nonwords are light red.</p>
+
+<p>We can determine how all the gates work:</p>
+
+<table>
+<tr><th>Gate</th><th>Name</th><th>Blue function</th><th>Green function</th><th>Red function</th></tr>
+<tr><td><img src='{{sroot}}bowtie.svg'></td><td>Bowtie</td><td>Move last letter to start</td><td>Remove every other letter</td><td>Reverse</td></tr>
+<tr><td><img src='{{sroot}}pentagon.svg'></td><td>Pentagon</td><td>Increase last letter by 4 (e.g., A becomes E)</td><td>Remove first and last letters</td><td>ROT13</td></tr>
+<tr><td><img src='{{sroot}}pawn.svg'></td><td>Pawn</td><td>&ldquo;Pig latin&rdquo; (move the first letter to the end of the word and add "AY")</td><td>Remove vowels</td><td>Sort letters</td></tr>
+<tr><td><img src='{{sroot}}or.svg'></td><td>OR</td><td>Concatenate inputs</td><td>Use the letters of the first word as indices into the second word (e.g. ABACADA and LOG make LOLGLDL)</td><td>Bitwise OR on letters</td></tr>
+<tr><td><img src='{{sroot}}and.svg'></td><td>AND</td><td>Find overlapping letters (e.g., ALONE and ANODE make AOE)</td><td>Caesar shift the second word by the first letter of the first word</td><td>Bitwise AND on letters</td></tr>
+<tr><td><img src='{{sroot}}xor.svg'></td><td>XOR</td><td>Interleave inputs</td><td>Sort the letters of the first word using the corresponding letters from the second word as keys (e.g. DOG and CAB make OGD)</td><td>Bitwise XOR on letters</td></tr>
+</table>
+
+<p>Next, we can use this knowledge to determine the correct intermediate outputs: CREATIONIST, WATERFALL, QUINCE, ANTENNA, PHASE, SEAWATER, NANA, POEM, ICE, THEOLOGIZE, RIA, STORAGE, LOVED, RIBOSOME, SUBPRIME, LOBE, BOLT.</p>
+
+<p>We can apply our knowledge of how the gates work to compute the intermediate outputs on the right side of the puzzle. The output of the circuit is <span class="answer">INTEL MOTHERBOARD</span>, which is the answer to the puzzle.</p>
+
+<p>For reference, the inputs, from top to bottom, are SWING, PELOSI, BOAST, HAM, PROMO, EAVES, HAJJ, ATLANTAFALCONS, HAPPEN, LOCCUM, IN, TRANSALPINE, SAFETY, NAMES, MAINTENANCE, HEN, FAD, WAXMUSEUM, POSSUM, RAVEN, AWED, EXERTION, ENSNARE, WHERE, ORNAMENTAL, REOPEN, REPAIR, SHAKESPEARE, ALICE, THE, LOGO, FARM, CITY, PARATRIATHLON, STOP, BEACH, GRENADES, OHIO, SPREAD, CLUNK, GECKO, SEROTONIN, IAMB, DROP, BUS, KVETCHY, SWAYS, DICE, MELBOURNE, MAUL, HOTFIXES, CLAY. Here is an image of a solved puzzle with all intermediate steps:</p>
+
+<style>
+    img.csolved {
+        display: block;
+        margin: auto;
+        width: 90%;
+    }
+</style>
+
+<img class='csolved' src='{{sroot}}circuit-solved.svg' alt="solved version of the puzzle">
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>This puzzle was conceived of during a teamwork time brainstorm. Initially, each user was going to only be allowed to interact with one or two types of gates, but that restriction proved not very fun during testsolving.</p>
+</div>

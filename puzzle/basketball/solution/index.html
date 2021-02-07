@@ -1,0 +1,58 @@
+<p>Answers in this round:</p>
+
+<pre>
+INTEL MOTHERBOARD
+LEWIS CARROLL
+SECOND GRAND ALLIANCE
+YOSHIMITSU
+PANASONIC Q
+</pre>
+
+<p>The name of a fictional character can be found as a substring of each of the answers (this is slightly hinted at by the word “characters” in the flavortext). Each of the characters is notably non-human and is a monster of some sort.</p>
+
+<table>
+<tr><th>Answer</th><th>Character</th><th>Source</th></tr>
+<tr><td class="monospace">INTEL MOTHERBOARD</td><td>ELMO</td><td><em>Sesame Street</em></td></tr>
+<tr><td class="monospace">LEWIS CARROLL</td><td>SCAR</td><td><em>The Lion King</em></td></tr>
+<tr><td class="monospace">SECOND GRAND ALLIANCE</td><td>RANDALL</td><td><em>Monster’s Inc.</em></td></tr>
+<tr><td class="monospace">YOSHIMITSU</td><td>YOSHI</td><td><em>Mario</em> video games</td></tr>
+<tr><td class="monospace">PANASONIC Q</td><td>SONIC</td><td><em>Sonic the Hedgehog</em> video games</td></tr>
+</table>
+
+<p>
+Each of these characters also has a distinctive color, and it turns out that these 5 colors exactly match those of the villainous Monstars in the classic basketball film Space Jam. The Space Jam aha is also mildly hinted at by the jersey designs, which are from the 90s (specifically the 1993&ndash;94 season). In the film, each of the Monstars steals the talent of a different NBA player, and those 5 players belong to the teams on the given jerseys.
+</p>
+
+<table>
+<tr><th>Character</th><th>Color</th><th>Monstar</th><th>NBA Player</th><th>Team</th><th>Jersey Number</th></tr>
+<tr><td>Elmo</td><td>Red</td><td>Nawt</td><td>Muggsy Bogues</td><td>Charlotte Hornets</td><td>1</td></tr>
+<tr><td>Scar</td><td>Orange</td><td>Pound</td><td>Charles Barkley</td><td>Phoenix Suns</td><td>34</td></tr>
+<tr><td>Randall</td><td>Purple</td><td>Bupkus</td><td>Larry Johnson</td><td>Charlotte Hornets</td><td>2</td></tr>
+<tr><td>Yoshi</td><td>Green</td><td>Bang</td><td>Patrick Ewing</td><td>New York Knicks</td><td>33</td></tr>
+<tr><td>Sonic</td><td>Blue</td><td>Blanko</td><td>Shawn Bradley</td><td>Philadelphia 76ers</td><td>76</td></tr>
+</table>
+
+<p>This lets us match up the jerseys in the puzzle to NBA players, with one caveat: there are two Hornets players, and two of the four Hornets jerseys in the puzzle are smaller, so those two should correspond to Muggsy Bogues, who is notably the shortest player to ever play in the NBA.</p>
+
+<p>For extraction, we find the value of X on each jersey so that the number matches the player’s actual jersey number. We use the jersey numbers seen in the film, or equivalently, in the 1993&ndash;94 season. Indexing these values of X into their corresponding answers gives the solution <span class="answer">SQUARE BALL</span> (not to be confused with air ball, a more normal reason for missed shots).</p>
+
+<table>
+<tr><th>Team on jersey</th><th>Expression on jersey</th><th>Actual jersey number</th><th>X</th><th>Corresponding answer</th><th>Indexed letter</th></tr>
+<tr><td>New York Knicks</td><td>X+30</td><td>33</td><td>3</td><td>YOSHIMITSU</td><td>S</td></tr>
+<tr><td>Philadelphia 76ers</td><td>X+66</td><td>76</td><td>10</td><td>PANASONIC Q</td><td>Q</td></tr>
+<tr><td>New York Knicks</td><td>X+23</td><td>33</td><td>10</td><td>YOSHIMITSU</td><td>U</td></tr>
+<tr><td>Charlotte Hornets</td><td>X-7</td><td>2</td><td>9</td><td>SECOND GRAND ALLIANCE</td><td>A</td></tr>
+<tr><td>Phoenix Suns</td><td>X+26</td><td>34</td><td>8</td><td>LEWIS CARROLL</td><td>R</td></tr>
+<tr><td>Charlotte Hornets (small)</td><td>X-3</td><td>1</td><td>4</td><td>INTEL MOTHERBOARD</td><td>E</td></tr>
+<tr><td>Charlotte Hornets (small)</td><td>X-11</td><td>1</td><td>12</td><td>INTEL MOTHERBOARD</td><td>B</td></tr>
+<tr><td>Philadelphia 76ers</td><td>X+74</td><td>76</td><td>2</td><td>PANASONIC Q</td><td>A</td></tr>
+<tr><td>Phoenix Suns</td><td>X+23</td><td>34</td><td>11</td><td>LEWIS CARROLL</td><td>L</td></tr>
+<tr><td>Charlotte Hornets</td><td>X-11</td><td>2</td><td>13</td><td>SECOND GRAND ALLIANCE</td><td>L</td></tr>
+</table>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>Anderson: Josh came up with the idea of basing the basketball meta on the aliens in <em>Space Jam</em>, and this was the final result after several iterations. We originally wanted to have the answers directly clue the characters, but found that incredibly difficult given constraints from the Athletics supermeta. We then moved on to the substrings idea, but it was still really hard to find a suitable set of answers that wasn’t egregiously bad and satisfied all the necessary constraints. I gave up after several fruitless sessions, but Josh persevered and finally came up with this version after we relaxed the original “monster” requirement to include other non-human characters like Yoshi.</p>
+
+<p>The answers are still not that great (especially SECOND GRAND ALLIANCE) and the extraction is not particularly groundbreaking, but I hope solvers still enjoyed the main <em>Space Jam</em> aha.</p>
+</div>

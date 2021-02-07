@@ -1,0 +1,118 @@
+<style>
+    .puzzle img {
+        width: 144px;
+        height: 144px;
+    }
+
+    .puzgrid td:nth-child(1){
+        width: 75px;
+        text-align: center;
+    }
+
+    .puzgrid td:nth-child(2){
+        width: 400px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .puzgrid td:nth-child(3){
+        width: 300px;
+        text-align: center;
+    }
+
+    .puzgrid td:nth-child(4){
+        width: 75px;
+        text-align: center;
+    }
+
+    .puzgrid td:nth-child(5){
+        width: 75px;
+        text-align: center;
+    }
+
+    .puzgrid tr:not(:first-child) td{
+        border-bottom: 1px solid black;
+        border-right: 1px solid lightgray;
+    }
+
+    .puzgrid tr:not(:first-child) td:first-child{
+        border-left: 1px solid black;
+        padding: 10px;
+    }
+
+    .puzgrid.puzgrid.puzgrid tr td:last-child{
+        border-right: 1px solid black;
+        padding: 10px;
+    }
+
+    .puzgrid tr:first-child td.label{
+        border-right: 1px solid lightgray;
+        border-top: 1px solid black;
+        border-bottom: 1px solid lightgray;
+        text-align: center;
+    }
+
+    .puzgrid tr:first-child td:not(.label){
+        border-bottom: 1px solid black;
+    }
+
+    .puzgrid tr:first-child td.leftlabel{
+        border-right: 1px solid black;
+    }
+
+    .red {
+        color: #CC0000;
+    }
+
+    .green {
+        color: #6AA84F;
+    }
+</style>
+
+<p>This puzzle is presented as the medal count table for some sporting event. From the title including the words “ball” and “rolling,” and from the sports teams being clued as circular images, we notice that the teams are all marbles &mdash; specifically, the sixteen teams that participated in the <a href="https://jellesmarbleruns.fandom.com/wiki/Marble_League_2020">Marble League 2020 competition</a>. The column labeled “Points” (PTS) serves as an enumeration to confirm the team identification.</p>
+
+<table class="puzgrid grid">
+    <tr><td></td><td class="leftlabel"></td><td class="label">Marble League Team</td><td class="label">TM</td><td class="label">PTS</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 6</td><td><a href="{{sproot}}img1.png"><img src="{{sproot}}img1.png"></a></td><td>Raspberry Racers</td><td>🏅&times;10</td><td>15</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 11</td><td><a href="{{sproot}}img2.png"><img src="{{sproot}}img2.png"></a></td><td>Savage Speeders</td><td>🏅&times;3</td><td>14</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 13</td><td><a href="{{sproot}}img3.png"><img src="{{sproot}}img3.png"></a></td><td>Crazy Cat's Eyes</td><td>🏅&times;8</td><td>13</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 5</td><td><a href="{{sproot}}img4.png"><img src="{{sproot}}img4.png"></a></td><td>Midnight Wisps</td><td>🏅&times;4</td><td>13</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 3</td><td><a href="{{sproot}}img5.png"><img src="{{sproot}}img5.png"></a></td><td>Balls of Chaos</td><td>🏅&times;3</td><td>12</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 3</td><td><a href="{{sproot}}img6.png"><img src="{{sproot}}img6.png"></a></td><td>Mellow Yellow</td><td>🏅&times;2</td><td>12</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 3</td><td><a href="{{sproot}}img7.png"><img src="{{sproot}}img7.png"></a></td><td>Minty Maniacs</td><td>🏅&times;8</td><td>12</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 2</td><td><a href="{{sproot}}img8.png"><img src="{{sproot}}img8.png"></a></td><td>Team Galactic</td><td>🏅&times;9</td><td>12</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 4</td><td><a href="{{sproot}}img9.png"><img src="{{sproot}}img9.png"></a></td><td>Thunderbolts</td><td>🏅&times;5</td><td>12</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 4</td><td><a href="{{sproot}}img10.png"><img src="{{sproot}}img10.png"></a></td><td>Bumblebees</td><td>🏅&times;9</td><td>10</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 5</td><td><a href="{{sproot}}img11.png"><img src="{{sproot}}img11.png"></a></td><td>Green Ducks</td><td>🏅&times;7</td><td>10</td></tr>
+    <tr><td> <span class="red"> <span class="red">▼</span></span> 3</td><td><a href="{{sproot}}img12.png"><img src="{{sproot}}img12.png"></a></td><td>Oceanics</td><td>🏅&times;5</td><td>8</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 2</td><td><a href="{{sproot}}img13.png"><img src="{{sproot}}img13.png"></a></td><td>O'rangers</td><td>🏅&times;6</td><td>8</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 13</td><td><a href="{{sproot}}img14.png"><img src="{{sproot}}img14.png"></a></td><td>Team Momo</td><td>🏅&times;7</td><td>8</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 3</td><td><a href="{{sproot}}img15.png"><img src="{{sproot}}img15.png"></a></td><td>Hornets</td><td>🏅&times;5</td><td>7</td></tr>
+    <tr><td> <span class="green"> <span class="green">▲</span></span> 8</td><td><a href="{{sproot}}img16.png"><img src="{{sproot}}img16.png"></a></td><td>Hazers</td><td>🏅&times;2</td><td>6</td></tr>
+</table>
+
+<p>We can reorder the teams by moving them according to the leftmost column, which shows the “change in rank” of each sports team. Teams with a red downwards arrow move down in ranking by the given number, and teams with a green upwards arrow move up in ranking by the given number. </p>
+
+<p>Finally, with the teams re-ordered, we can use the “total medals” count (TM) to index into the team names. This gives the clue phrase ML ENDURANCE EVENT. </p>
+
+<table>
+    <tr><th>Old Rank</th><th>Rank Change</th><th>New Rank</th><th>Team Name</th><th>TM</th><th>Indexed Letter</th></tr>
+    <tr><td>14</td><td> <span class="green">▲</span> 13</td><td>1</td><td>Team Momo</td><td>🏅&times;7</td><td>M</td></tr>
+    <tr><td>5</td><td> <span class="green">▲</span> 3</td><td>2</td><td>Balls of Chaos</td><td>🏅&times;3</td><td>L</td></tr>
+    <tr><td>6</td><td> <span class="green">▲</span> 3</td><td>3</td><td>Mellow Yellow</td><td>🏅&times;2</td><td>E</td></tr>
+    <tr><td>7</td><td> <span class="green">▲</span> 3</td><td>4</td><td>Minty Maniacs</td><td>🏅&times;8</td><td>N</td></tr>
+    <tr><td>9</td><td> <span class="green">▲</span> 4</td><td>5</td><td>Thunderbolts</td><td>🏅&times;5</td><td>D</td></tr>
+    <tr><td>11</td><td> <span class="green">▲</span> 5</td><td>6</td><td>Green Ducks</td><td>🏅&times;7</td><td>U</td></tr>
+    <tr><td>1</td><td> <span class="red">▼</span> 6</td><td>7</td><td>Raspberry Racers</td><td>🏅&times;10</td><td>R</td></tr>
+    <tr><td>16</td><td> <span class="green">▲</span> 8</td><td>8</td><td>Hazers</td><td>🏅&times;2</td><td>A</td></tr>
+    <tr><td>4</td><td> <span class="red">▼</span> 5</td><td>9</td><td>Midnight Wisps</td><td>🏅&times;4</td><td>N</td></tr>
+    <tr><td>8</td><td> <span class="red">▼</span> 2</td><td>10</td><td>Team Galactic</td><td>🏅&times;9</td><td>C</td></tr>
+    <tr><td>13</td><td> <span class="green">▲</span> 2</td><td>11</td><td>O’rangers</td><td>🏅&times;6</td><td>E</td></tr>
+    <tr><td>15</td><td> <span class="green">▲</span> 3</td><td>12</td><td>Hornets</td><td>🏅&times;5</td><td>E</td></tr>
+    <tr><td>2</td><td> <span class="red">▼</span> 11</td><td>13</td><td>Savage Speeders</td><td>🏅&times;3</td><td>V</td></tr>
+    <tr><td>10</td><td> <span class="red">▼</span> 4</td><td>14</td><td>Bumblebees</td><td>🏅&times;9</td><td>E</td></tr>
+    <tr><td>12</td><td> <span class="red">▼</span> 3</td><td>15</td><td>Oceanics</td><td>🏅&times;5</td><td>N</td></tr>
+    <tr><td>3</td><td> <span class="red">▼</span> 13</td><td>16</td><td>Crazy Cats Eyes</td><td>🏅&times;8</td><td>T</td></tr>
+</table>
+
+<p>The third event in the Marble League 2020 competition was titled “<a href="https://www.youtube.com/watch?v=6CFNNldyI-0&ab_channel=Jelle%27sMarbleRuns">Funnel Endurance</a>,” yielding the answer <span class="answer">FUNNEL</span>. </p>

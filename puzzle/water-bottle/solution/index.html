@@ -1,0 +1,84 @@
+<style>
+.bottle {
+    max-width: calc(100% - 60px);
+    margin: 30px 30px 0 30px;
+    background-color: black;
+    padding: 20px 0px;
+}
+blockquote {
+    border-left: 5px lightgray solid; padding-left: 20px; margin-left: 0px;
+}
+</style>
+
+<p>This puzzle is presented as a water bottle with "5 free refills". The first thing we must do is identify the flavor of the water in the refill bottles. The flavors are, from 1 to 5: Crisp Apple, Strawberry Kiwi, Cherry, Lemon, and Blackberry.</p>
+
+<p>Using the open eyes of the winking fruits as points, we draw lines along the water bottle from 1 to 2, 2 to 3, and so on:</p>
+
+<img src="{{sroot}}water-sol.png" class="bottle">
+
+<p>Reading out the intersected letters, we get USE BRAND. We can use the shape of the bottle, or the list of 15 flavors on the main water bottle, to determine that the brand is <a href="https://drinkhint.com">Hint Water</a>. Thus, we submit a hint request. The response we get is:</p>
+
+<blockquote>
+Hello, <br><br>
+
+Thank you for your hint request. From the information you've provided, we think the step you're missing is to remove the second, fifth and sixth letters, and to replace the last letter with T.<br><br>  Sincerely, <br>ArnoldTheRhino <br>&#x2708;&#x2708;&#x2708; Galactic Trendsetters &#x2708;&#x2708;&#x2708; Command
+</blockquote>
+
+<p>We can try to apply this transformation to USE BRAND or to one of the flavors of water, or to HINT, but none of these yields anything promising. However, if we apply it to the suspicious-looking name &ldquo;ArnoldTheRhino&rdquo;, we get ANOTHER HINT. When we request ANOTHER HINT, we get this response:</p>
+
+
+<blockquote>
+Hello, <br><br>
+
+Thank you for your hint request. From the information you've provided we think the step you're missing is to swap the second and third letters, then shift the final four letters to the front, then finally remove letters from or add a prefix of the word GROWING to the end so that you have exactly 8 letters. <br> <br> Sincerely, <br>GiantPanda <br>&#x2708;&#x2708;&#x2708; Galactic Trendsetters &#x2708;&#x2708;&#x2708; Command
+</blockquote>
+
+<p>Applying the given transformation to GIANTPANDA, we get AND AGAIN. Requesting another hint containing that string, we get this response:</p>
+
+<blockquote>
+Hello, <br><br>
+
+Thank you for your hint request. From the information you've provided we think the step you're missing is to first increment the third letter by 2 and move it to the beginning, then move another letter from what you have to the second position to make the first three letters form a word, then finally change the last letter to an E. <br> <br> Sincerely, <br>NtaiNuoy <br>&#x2708;&#x2708;&#x2708; Galactic Trendsetters &#x2708;&#x2708;&#x2708; Command
+</blockquote>
+
+<p>Requesting another hint containing CONTINUE, we get this response:</p>
+
+<blockquote>
+Hello, <br><br>
+
+Thank you for your hint request.  From the information you've provided we think the step you're missing is to add up the values of all the letters (A=1, B=2, ...), add 1 to that, then remove all the letters that divide the result. <br> <br> Sincerely, <br>KBEZEL PGMO CIFNDG <br>&#x2708;&#x2708;&#x2708; Galactic Trendsetters &#x2708;&#x2708;&#x2708; Command
+</blockquote>
+
+<p>We KEEP GOING to get:</p>
+
+<blockquote>
+Hello, <br><br>
+ Thank you for your hint request. From the information you've provided we think the step you're missing is to change all Ts into Os. <br> <br> Sincerely, <br>TneMtre <br>&#x2708;&#x2708;&#x2708; Galactic Trendsetters &#x2708;&#x2708;&#x2708; Command
+ </blockquote>
+
+<p>Requesting ONE MORE, we get:</p>
+
+<blockquote>
+Hello, <br><br>
+ Thank you for your hint request. From the information you've provided we think the step you're missing is to Caesar Shift by some amount. <br> <br> Sincerely, <br>Ocvondo <br>&#x2708;&#x2708;&#x2708; Galactic Trendsetters &#x2708;&#x2708;&#x2708; Command
+</blockquote>
+
+<p>Applying this transformation, we get THAT'S IT, but that's not the answer. As the &ldquo;or add a prefix of the word GROWING&rdquo; in one of the hints implied, we're going to need to apply these transformations again. This time, we apply them all to USE BRAND:</p>
+
+<table>
+<tr><td></td><td>USEBRAND</td></tr>
+<tr><td>Remove the second, fifth and sixth letters, and to replace the last letter with T</td><td>UEBNT</td></tr>
+<tr><td>Swap the second and third letters, then shift the final four letters to the front, then finally remove letters or add a prefix of the word GROWING to the end so that you have exactly 8 letters</td><td>BENTUGRO</td></tr>
+<tr><td>First increment the third letter by 2 and move it to the beginning, then move another letter from what you have to the second position to make the first three letters form a word, then finally change the last letter to an E</td><td>PUBETGRE</td></tr>
+<tr><td>Add up the values of all the letters (A=1, B=2, ...), add 1 to that, then remove all the letters that divide the result</td><td>PUBTGR</td></tr>
+<tr><td>Change all Ts into Os</td><td>PUBOGR</td></tr>
+<tr><td>Caesar Shift by some amount</td><td>JOVIAL</td></tr>
+</table>
+<p>
+This yields the answer, <span class="answer">JOVIAL</span>.</p>
+
+{# <p style="font-weight: bold; color: red">TODO: add pictures of bottles with and without wrapping here</p> #}
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+Thanks to <a href="//drinkhint.com">Hint</a> for sponsoring this year's Mystery Hunt by donating 1500 bottles of water for this puzzle! {# TODO: insert image of water delivery, water cluttering Jakob's room #}</div>

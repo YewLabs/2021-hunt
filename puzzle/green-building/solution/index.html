@@ -1,0 +1,784 @@
+<p>Answers:</p>
+
+<pre>
+LIZ CLAIBORNE
+VIEWTIFUL JOE
+ESCAPE VELOCITY
+CAPTAIN HOOK
+ELECTRIC LIGHT
+ALL-SEEING
+LUMINESCENT
+LJUBLJANA
+ROMEO AND JULIET
+INTELLIGENCE
+STATE LINE
+ARMIN ZOGGELER
+NONCONFORMIST
+</pre>
+
+<p>This is the metapuzzle for the Green Building. We’re presented with a 13&times;5 grid of windows, with trees on either side of the bottom row. Furthermore, solving a puzzle in the round unlocks a switch corresponding to the next highest floor.</p>
+
+<p>The switch can be toggled on and off, and turning it on lights up some windows on the building itself. If we decode the bottom row as five bit binary in order of the floors we spell FAMOUS MIT HACK.</p>
+
+<p>One of the most famous Green Building <a href="http://hacks.mit.edu/" target="_blank">hacks</a> involved turning the building into a <a href="http://hacks.mit.edu/Hacks/by_year/2012/tetris/" target="_blank">playable</a> tetris game by lighting up the windows on the building’s northern face. A natural thing to do then would be to interpret our lighted-up grid as a Tetris grid.</p>
+
+<p>Every meta answer contains some of the letters I, L, J, S, O, Z, T, corresponding to the <a href="https://tetris.fandom.com/wiki/Tetromino" target="_blank">seven possible Tetris pieces</a>. By removing all the other letters, we can turn each answer into a sequence of tetris pieces. For each lighted-up board, we can identify an answer whose sequence of Tetris pieces clears the board when the pieces are dropped at the appropriate positions.</p>
+
+<p>For example, the following board, corresponding to switch #1, is cleared with CAPTAIN HOOK. Removing all non-Tetris letters gives the sequence <b>TIOO</b>.</p>
+
+<div id="exsol1"></div>
+
+<p>Each board can be uniquely cleared with a sequence of Tetris pieces obtained from an answer. Matching the answers to the boards is a little tricky, but there are a few heuristics we can use to make things easier. For example, the board corresponding to switch #1 initially has 9 lit squares. Since each Tetris line clear unlights five squares, this board must be cleared by a number of squares congruent to 1 modulo 5, which can only be achieved by tetromino sequences of length 4 or 9.</p>
+<p>The full matchup is:</p>
+
+<table>
+<tr><th>Switch #</th><th>Answer</th><th>Piece Sequence</th></tr>
+<tr><td>Switch 1</td><td>CAPTAIN HOOK</td><td>TIOO</td></tr>
+<tr><td>Switch 2</td><td>LUMINESCENT</td><td>LIST</td></tr>
+<tr><td>Switch 3</td><td>ESCAPE VELOCITY</td><td>SLOIT</td></tr>
+<tr><td>Switch 4</td><td>ARMIN ZOGGELER</td><td>IZOL</td></tr>
+<tr><td>Switch 5</td><td>ROMEO AND JULIET</td><td>OOJLIT</td></tr>
+<tr><td>Switch 6</td><td>ALL-SEEING</td><td>LLSI</td></tr>
+<tr><td>Switch 7</td><td>LJUBLJANA</td><td>LJLJ</td></tr>
+<tr><td>Switch 8</td><td>LIZ CLAIBORNE</td><td>LIZLIO</td></tr>
+<tr><td>Switch 9</td><td>VIEWTIFUL JOE</td><td>ITILJO</td></tr>
+<tr><td>Switch 10</td><td>INTELLIGENCE</td><td>ITLLI</td></tr>
+<tr><td>Switch 11</td><td>NONCONFORMIST</td><td>OOOIST</td></tr>
+<tr><td>Switch 12</td><td>ELECTRICAL EQUIPMENT</td><td>LTILIT</td></tr>
+<tr><td>Switch 13</td><td>STATE LINE</td><td>STTLI</td></tr>
+</table>
+
+<p>To finish, we simply re-order the first letters of the answers by the order of the switches they match up to to extract the answer: <span class="answer">CLEAR ALL VINES</span>.</p>
+
+<style>
+table.sol-grid {
+	border-collapse: collapse;
+}
+table.sol-grid td {
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	border: 1px solid black;
+}
+table.sol-grid td.full {
+	background-color: #006;
+}
+table.sol-grid td.moving {
+	background-color: #c00;
+}
+</style>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+<p><b>Nathan:</b> When proposing themes for this year's hunt, teams were asked to write a metapuzzle for one of the rounds to go along with their theme. I wrote this puzzle to go along with the "MMO Hunt" proposal (so, in a sense, it was the first puzzle written for this hunt!). Having lived right next to the Green Building for 4 years, it was an easy jump from there to Tetris, and the puzzle fell out pretty cleanly. I don't think it pushes any boundaries, but I'm happy with how it turned out and I hope it was fun to solve.</p>
+
+<p>I remember the Green Building really fondly. If you haven't had the chance to visit yet, try to drop by next time you're on campus! My favorite events were the "Pumpkin Drop" every autumn, where the pumpkins are frozen in liquid nitrogen and spectacularly shatter when they hit the ground, and the "Green Building Challenge", where you repeatedly climb the 24 flights of stairs in the Green Building as many times as you can manage in 2 hours.</p>
+
+<p><b>Brian:</b> I hacked together a brute-force solver based off <a href="https://qntm.org/hatetris" target="_blank">hatetris</a>, which caught some boards which had multiple solutions and came up with some interesting instances to replace them.</p>
+
+<p>The solver managed to output several difficult grids, sometimes with absurd-seeming first moves, but we didn’t include them so that people would be able to more easily get confirmation when they tried Tetris. Try them if you want an extra challenge!</p>
+
+<p><em>Solve with <code>OOJLIT</code>:</em></p>
+<div id="chall0"></div>
+<p><em>Solve with <code>LIZLIO</code>:</em></p>
+<div id="chall1"></div>
+<p><em>Solve with <code>LISZTO</code>:</em></p>
+<div id="chall2"></div>
+</div>
+
+<h2>Appendix: Animated Solutions</h2>
+
+<h3>Floor 1 (CAPTAIN HOOK &rarr; TIOO)</h3>
+<div id="sol1"></div>
+<h3>Floor 2 (LUMINESCENT &rarr; LIST)</h3>
+<div id="sol2"></div>
+<h3>Floor 3 (ESCAPE VELOCITY &rarr; SLOIT)</h3>
+<div id="sol3"></div>
+<h3>Floor 4 (ARMIN ZOGGELER &rarr; IZOL)</h3>
+<div id="sol4"></div>
+<h3>Floor 5 (ROMEO AND JULIET &rarr; OOJLIT)</h3>
+<div id="sol5"></div>
+<h3>Floor 6 (ALL-SEEING &rarr; LLSI)</h3>
+<div id="sol6"></div>
+<h3>Floor 7 (LJUBLJANA &rarr; LJLJ)</h3>
+<div id="sol7"></div>
+<h3>Floor 8 (LIZ CLAIBORNE &rarr; LIZLIO)</h3>
+<div id="sol8"></div>
+<h3>Floor 9 (VIEWTIFUL JOE &rarr; ITILJO)</h3>
+<div id="sol9"></div>
+<h3>Floor 10 (INTELLIGENCE &rarr; ITLLI)</h3>
+<div id="sol10"></div>
+<h3>Floor 11 (NONCONFORMIST &rarr; OOOIST)</h3>
+<div id="sol11"></div>
+<h3>Floor 12 (ELECTRICAL EQUIPMENT &rarr; LTILIT)</h3>
+<div id="sol12"></div>
+<h3>Floor 13 (STATE LINE &rarr; STTLI)</h3>
+<div id="sol13"></div>
+
+<script type="text/javascript">
+const HEIGHT = 13;
+const WIDTH = 5;
+function undropOnce(frame) {
+	// start is a list of strings (rows) with 1s and *s and .s
+	// undrop the 1s once or null if fail
+	// basically drop the *s lol
+	let ret = [];
+	for (let i = 0; i < Math.min(frame.length + 1, HEIGHT); i++) {
+		let row = [];
+		for (let j = 0; j < WIDTH; j++) {
+			if (i === HEIGHT - 1 && i < frame.length && frame[i][j] === '*') {
+				return null;
+			}
+			let hasOne = i < frame.length && frame[i][j] === '1';
+			let hasFill = i > 0 && frame[i-1][j] === '*';
+			if (hasOne && hasFill) return null;
+			row.push(hasOne ? '1' : hasFill ? '*' : '.');
+		}
+
+		ret.push(row.join(''));
+	}
+	return ret;
+}
+function makeUndropFrames(end) {
+	// start is a list of strings (rows) with 1s and *s and .s
+	// animate the 1s dropping from all the way down
+	const frames = [end];
+	while (true) {
+		let nxt = undropOnce(frames[frames.length - 1]);
+		console.log(nxt);
+		if (!nxt) {
+			return frames.reverse();
+		}
+		frames.push(nxt);
+	}
+}
+function makeTable(id, preframes) {
+	let frames = [];
+	preframes.forEach(function (preframe) {
+		if (preframe.startsWith('U')) {
+			makeUndropFrames(preframe.slice(1).split('\n')).forEach(function (f) {
+				frames.push(f);
+			});
+		} else {
+			frames.push(preframe.split('\n'));
+		}
+	});
+	const button = document.createElement('button');
+	button.textContent = 'Play';
+	if (frames.length > 1) {
+		document.getElementById(id).appendChild(button);
+	}
+	const table = document.createElement('table');
+	table.className = 'grid sol-grid';
+	const rows = [];
+	for (let i = 0; i < 13; i++) {
+		const tr = document.createElement('tr');
+		const row = [];
+		for (let j = 0; j < 5; j++) {
+			const td = document.createElement('td');
+			tr.appendChild(td);
+			row.push(td);
+		}
+		table.appendChild(tr);
+		rows.push(row);
+	}
+	document.getElementById(id).appendChild(table);
+
+	function display(lines) {
+		console.log(lines);
+		rows.forEach(function(row, r)  {
+			row.forEach(function(td, c) {
+				// r = 13 - lines.length goes to 0
+				let diff = r - (13 - lines.length);
+				if (diff < 0) {
+					td.className = 'empty';
+				} else {
+					let ch = lines[diff][c];
+					if (ch === '*') {
+						td.className = 'full';
+					} else if (ch === '1') {
+						td.className = 'moving';
+					} else {
+						td.className = 'empty';
+					}
+				}
+			});
+		});
+	}
+	let curInterval = undefined;
+	let frameIndex = 0;
+	console.log(frames);
+	button.addEventListener('click', function () {
+		if (curInterval) {
+			window.clearInterval(curInterval);
+		}
+		frameIndex = 0;
+
+		curInterval = window.setInterval(function () {
+			if (frameIndex >= frames.length) {
+				window.clearInterval(curInterval);
+			} else {
+				display(frames[frameIndex]);
+				frameIndex++;
+			}
+		}, 125);
+	});
+	display(frames[0]);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+	makeTable('exsol1', [
+`...**
+*....
+**...
+..**.
+..**.`,
+`U111**
+*1...
+**...
+..**.
+..**.`,
+`**...
+**...
+..**.
+..**.`,
+`**...
+**...
+..**.
+..**.`,
+`U**..1
+**..1
+..**1
+..**1`,
+`**..*
+**..*
+..***
+..***`,
+`U**11*
+**11*
+..***
+..***`,
+`..***
+..***`,
+`U11***
+11***`,
+``
+	]);
+	makeTable('sol1', [
+`...**
+*....
+**...
+..**.
+..**.`,
+`U111**
+*1...
+**...
+..**.
+..**.`,
+`**...
+**...
+..**.
+..**.`,
+`**...
+**...
+..**.
+..**.`,
+`U**..1
+**..1
+..**1
+..**1`,
+`**..*
+**..*
+..***
+..***`,
+`U**11*
+**11*
+..***
+..***`,
+`..***
+..***`,
+`U11***
+11***`,
+``
+	]);
+	makeTable('sol2', [
+`.**..
+.***.
+.***.
+....*`,
+`U.**11
+.***1
+.***1
+....*`,
+`.****
+.****
+.****
+....*`,
+`U1****
+1****
+1****
+1...*`,
+`*...*`,
+`U...11
+*.11*`,
+`...**
+*.***`,
+`U111**
+*1***`,
+``,
+	]);
+	makeTable('sol3', [
+`.**..
+.****
+.*...
+.**.*`,
+`U..1..
+..11.
+.**1.
+.****
+.*...
+.**.*`,
+`..*..
+..**.
+.***.
+.****
+.*...
+.**.*`,
+`U..*11
+..**1
+.***1
+.****
+.*...
+.**.*`,
+`..***
+..***
+.****
+.****
+.*...
+.**.*`,
+`U11***
+11***
+.****
+.****
+.*...
+.**.*`,
+`.****
+.****
+.*...
+.**.*`,
+`U1****
+1****
+1*...
+1**.*`,
+`**...
+***.*`,
+`**...
+***.*`,
+`U**111
+***1*`,
+	``]);
+	makeTable('sol4', [
+`*....
+..*..
+..***
+.****`,
+`U*1111
+..*..
+..***
+.****`,
+`..*..
+..***
+.****`,
+`U.1*..
+11***
+1****`,
+`.**..`,
+`U...11
+.**11`,
+`...**
+.****`,
+`U111**
+1****`,
+	``]); // IZOL
+	makeTable('sol5', [
+`*....
+.**.*
+***.*
+*.*.*`,
+`U.11..
+*11..
+.**.*
+***.*
+*.*.*`,
+`.**..
+***..
+.**.*
+***.*
+*.*.*`,
+`U.**11
+***11
+.**.*
+***.*
+*.*.*`,
+`.****
+.**.*
+***.*
+*.*.*`,
+`U11...
+1****
+1**.*
+***.*
+*.*.*`,
+`**...
+***.*
+***.*
+*.*.*`,
+`U....1
+**111
+***.*
+***.*
+*.*.*`,
+`....*
+***.*
+***.*
+*.*.*`,
+`U...1*
+***1*
+***1*
+*.*1*`,
+`...**
+*.***`,
+`U111**
+*1***`,
+	``]); // OOJLIT
+	makeTable('sol6', [
+`*...*
+*.***
+*..**`,
+`U*111*
+*1***
+*..**`,
+`*..**`,
+`U..111
+*.1**`,
+`..***
+*.***`,
+`U1....
+11***
+*1***`,
+`*....`,
+`U*1111`,
+	``]); // LLSI
+	makeTable('sol7', [
+`.*...
+.....
+.**.*`,
+`U.*..1
+..111
+.**.*`,
+`.*.1.
+.111.
+.**.*`,
+`.*1..
+111..
+.**.*`,
+`.**..
+***..
+.**.*`,
+`U....1
+.**.1
+***11
+.**.*`,
+`....*
+.**.*
+.**.*`,
+`U..11*
+.**1*
+.**1*`,
+`..***
+.****
+.****`,
+`U11***
+1****
+1****`,
+	``]); // LJLJ
+	makeTable('sol8', [
+`***..
+*.**.
+*.**.
+.*..*`,
+`U***11
+*.**1
+*.**1
+.*..*`,
+`*.***
+*.***
+.*..*`,
+`U.1...
+.1...
+*1***
+*1***
+.*..*`,
+`.*...
+.*...
+.*..*`,
+`U.11..
+.*11.
+.*...
+.*..*`,
+`.**..
+.***.
+.*...
+.*..*`,
+`U.**11
+.***1
+.*..1
+.*..*`,
+`.****
+.****
+.*..*
+.*..*`,
+`U1****
+1****
+1*..*
+1*..*`,
+`**..*
+**..*`,
+`U**11*
+**11*`,
+	``]); // LIZLIO
+	makeTable('sol9', [
+`*.***
+*.***
+.....
+.....
+.*.*.
+...**
+*.*..
+*.*..`,
+`U*1***
+*1***
+.1...
+.1...
+.*.*.
+...**
+*.*..
+*.*..`,
+`.*...
+.*...
+.*.*.
+...**
+*.*..
+*.*..`,
+`U.*1..
+.*11.
+.*1*.
+...**
+*.*..
+*.*..`,
+`.**..
+.***.
+.***.
+...**
+*.*..
+*.*..`,
+`U1**..
+1***.
+1***.
+1..**
+*.*..
+*.*..`,
+`***..
+****.
+****.
+*..**
+*.*..
+*.*..`,
+`U***11
+****1
+****1
+*..**
+*.*..
+*.*..`,
+`*..**
+*.*..
+*.*..`,
+`U*11**
+*1*..
+*1*..`,
+`***..
+***..`,
+`U***11
+***11`,
+	``]); // ITILJO
+	makeTable('sol10', [
+`....*
+....*
+..*.*
+.*...`,
+`U1...*
+1...*
+1.*.*
+1*...`,
+`*...*
+*...*
+*.*.*
+**...`,
+`U*1..*
+*11.*
+*1*.*
+**...`,
+`**..*
+***.*
+***.*
+**...`,
+`U**11*
+***1*
+***1*
+**...`,
+`**...`,
+`U....1
+**111`,
+`....*`,
+`U1111*`,
+	``]); // ITLLI
+	makeTable('sol11', [
+`..***
+..***
+.****
+....*`,
+`U11***
+11***
+.****
+....*`,
+`.****
+....*`,
+`U.11..
+.11..
+.****
+....*`,
+`.**..
+.**..
+.****
+....*`,
+`U.**11
+.**11
+.****
+....*`,
+`.****
+.****
+.****
+....*`,
+`U1****
+1****
+1****
+1...*`,
+`*...*`,
+`U...11
+*.11*`,
+`...**
+*.***`,
+`U111**
+*1***`,
+	``]); // OOOIST
+	makeTable('sol12', [
+`..*..
+*....
+*.*..
+.....
+...**`,
+`U11*..
+*1...
+*1*..
+.....
+...**`,
+`***..
+**...
+***..
+.....
+...**`,
+`U***.1
+**.11
+***.1
+.....
+...**`,
+`***1.
+**11.
+***1.
+.....
+...**`,
+`****.
+****.
+****.
+.....
+...**`,
+`U****1
+****1
+****1
+....1
+...**`,
+`....*
+...**`,
+`U1....
+1...*
+11.**`,
+`*....
+*...*
+**.**`,
+`U*1111
+*...*
+**.**`,
+`*...*
+**.**`,
+`U*111*
+**1**`,
+	``]); // LTILIT
+	makeTable('sol13', [
+`*...*
+.....
+.....
+.*.**`,
+`U...11
+*.11*
+.....
+.....
+.*.**`,
+`...**
+*.***
+.....
+.....
+.*.**`,
+`U111**
+*1***
+.....
+.....
+.*.**`,
+`.*.**`,
+`U1....
+11...
+1*.**`,
+`*....
+**...
+**.**`,
+`U*....
+**111
+**1**`,
+`*....`,
+`U*1111`,
+	``]); // STTLI
+	makeTable('chall0', [
+`..*..
+*.*..
+*.*.*`]);
+	makeTable('chall1', [
+`**.*.
+.*...
+.*..*`]);
+	makeTable('chall2', [
+`.*...
+....*
+.*..*
+.*..*`]);
+});
+</script>

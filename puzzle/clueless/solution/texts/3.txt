@@ -1,0 +1,81 @@
+Stacks: r2 b3 g4 y5
+Alice: b1 b1 g5 b5
+Bobby: r1 r4 w4 w4
+Carol: y1 y1 w3 w3
+David: g1 g1 w2 w2
+Wins: 12
+Deck: r3 .. w1 .. r5 kt w5 b4 kt .. kt
+Line: g5 .. dc .. r3 r4 w1 w2 r5 .. w3 b4 b5 w4 w5
+Plan: F  I  R  E  E  P  I  C  B  L  O  S  S  O  M
+Display: Fire epic blossom
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[F] Turn  1 ..... Alice plays [W] green 5 and draws [K] red 3
+[I] Turn  2 ..... Bobby stalls by spending a clue
+[R] Turn  3 ..... Carol discards a stale card and draws [E] white 1
+[E] Turn  4 ..... David stalls by spending a clue
+[E] Turn  5 ..... Alice plays [K] red 3 and draws [U] red 5
+[P] Turn  6 ..... Bobby plays [P] red 4 and draws any card
+[I] Turn  7 ..... Carol plays [E] white 1 and draws [Y] white 5
+[C] Turn  8 ..... David plays [J] white 2 and draws [S] blue 4
+[B] Turn  9 ..... Alice plays [U] red 5 and draws any card
+[L] Turn 10 ..... Bobby stalls by spending a clue
+[O] Turn 11 ..... Carol plays [O] white 3 and draws any card
+[S] Turn 12 ..... David plays [S] blue 4 on their last turn
+[S] Turn 13 ..... Alice plays [X] blue 5 on their last turn
+[O] Turn 14 ..... Bobby plays [T] white 4 on their last turn
+[M] Turn 15 ..... Carol plays [Y] white 5 on their last turn
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+PROOF OF UNIQUENESS
+
+In this scenario, the w2, w3, w4 are all present,
+but unluckily they are in reverse order.
+Moreover, w1 is missing.
+
+The starting pace is +1.
+However, only Alice has a play on the first turn,
+so one of the other three players is going to have
+to discard on the first round.
+
+We claim that the number of turns that can occur is at most 16.
+There are four turns in the final round, and up to eight plays/discards.
+Also, one can get at most four clues before the final round:
+three from 5's and one from discarding.
+Thus, the upper bound on the number of turns is 8+4+3+1 = 16.
+This already implies that w2 must play on turn 8,
+w3 must play on turn 11, and w4 must play on turn 14,
+in order to finish in time.
+
+In order to not lose the first round,
+the team needs to orchestrate one discard and two clues.
+So Alice must play g5 to begin.
+
+We claim Bobby must clue on his first turn.
+If Bobby discards, pace drops to 0, and Carol and David must clue.
+However, this will leave Carol with no plays on turn 7, contradiction.
+
+This forces Carol to discard.
+At this point, Bobby needs a play on turn 6.
+The only way this can happen is if Alice draws r3.
+But we already knew that w2 plays on turn 8,
+therefore Carol must draw w1 right now.
+David then spends the last clue.
+
+The next four plays r3, r4, w1, w2 are forced
+as these are the only playable cards
+on each of these turns.
+At this point, Alice must play r5 on her turn (her drawn card),
+because otherwise Bobby triggers the last round
+and there is no way to have w5 played in time.
+So Alice should play r5 and let Bobby hint so that Carol
+can play w3 and begin the final round.
+
+With four turns left, the plays must be b4, b5, w4, w5,
+since Alice holds the only b5.
+
+Looking at the deck order, there are 3 unused cards
+which can be arranged in any of 3!=6 ways.

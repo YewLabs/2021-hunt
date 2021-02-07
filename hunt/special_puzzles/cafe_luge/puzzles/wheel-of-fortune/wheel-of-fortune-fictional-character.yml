@@ -1,0 +1,129 @@
+name: wheel-of-fortune-fictional-character
+difficulty: 2/10
+coolness: 3/10
+time: 1:30
+
+
+questions:
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "??O??N??LE SNO???N"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: abominable snowman
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?L????N"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: aladdin
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?L??S ????LE?ORE"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: albus dumbledore
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?N???N S????L?ER"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: anakin skywalker
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?R??N GR????N"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: brian griffin
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?O? ??L?ER & ??N? S??LL?"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: fox mulder & dana scully
+        - answer: fox mulder and dana scully
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "??? S??ENT?ST"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: mad scientist
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "S?O?E? THE ?E?R"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: smokey the bear
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "THE ??R?ER ?N? THE STOR?"
+
+        - text: "Category: Fictional Characters"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: the farmer and the stork
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "??T?HES & ????R?S"
+
+        - text: "Category: Fictional Beings"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: witches & wizards
+        - answer: witches and wizards
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?O???ES"
+
+        - text: "Category: Fictional Beings"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: zombies

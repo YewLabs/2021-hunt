@@ -1,0 +1,497 @@
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+	.problem {display: none;}
+.boxed {
+    padding: 4px;
+    border: 1px solid black;
+}
+button{
+display:inline-block;
+padding:0.5em 3em;
+border:0.16em solid #000000;
+margin:0 0.3em 0.3em 0;
+box-sizing: border-box;
+text-decoration:none;
+text-transform:uppercase;
+font-family:'Roboto',sans-serif;
+font-weight:400;
+color:#000000;
+text-align:center;
+transition: all 0.15s;
+}
+button:hover{
+color:#BBBBBB;
+border-color:#BBBBBB;
+}
+button:active{
+color:#DDDDDD;
+border-color:#DDDDDD;
+}
+@media all and (max-width:30em){
+button{
+display:block;
+margin:0.4em auto;
+}
+}
+}
+
+  </style>
+
+  <div class="erratum-notice">
+      <p><b>Erratum:</b></p>
+      <p>January 15th 7:30 PM: The example output for Problem 4 has been corrected.</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" type="text/javascript"></script>
+<ul>
+<li><p><span>AC</span><span class="math inline">\(^0\)</span></p></li>
+<li><p><span>NP-hard</span></p></li>
+<li><p><span>PSPACE</span></p></li>
+<li><p><span>P</span></p></li>
+<li><p><span>P/poly</span></p></li>
+</ul>
+<br>
+<br>
+<ul>
+<li><p><button onclick="myFunction()">Problem 1</button><br />
+<div id="myDIV" class="problem">
+<p>Two distinct nodes <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> in the same bipartition of a bipartite graph are called friends if there are exactly two nodes in the other bipartition which are not adjacent to either <span class="math inline">\(a\)</span> or <span class="math inline">\(b\)</span>. For a node <span class="math inline">\(v\)</span> in a bipartite graph, let <span class="math inline">\(f(v)\)</span> be <span class="math inline">\(1\)</span> if <span class="math inline">\(v\)</span> has no friends, and <span class="math inline">\(0\)</span> otherwise.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>, represented as an adjacency matrix, and</p></li>
+<li><p>A value <span class="math inline">\(k_v \in \{0,1\}\)</span> for each node <span class="math inline">\(v\)</span> in the top bipartition of <span class="math inline">\(G\)</span>.</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if every node <span class="math inline">\(v\)</span> in the top bipartition of <span class="math inline">\(G\)</span> satisfies <span class="math inline">\(k_v = f(v)\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 1</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = (1,1,1)\)</span></p></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 1</h4>
+<p>No pair of nodes in the top bipartition of <span class="math inline">\(G\)</span> is friends: nodes <span class="math inline">\(1\)</span> and <span class="math inline">\(3\)</span> have no nodes in the bottom bipartition which are not adjacent to either, and the other two pairs each have exactly one node in the bottom bipartition which is not adjacent to either. Hence, <span class="math inline">\(f(v)= 1\)</span> for all three nodes in the top bipartition, so we output True.</p>
+<hr>
+</div>
+</li>
+
+<li><p><button onclick="myFunction3()">Problem 2</button><br />
+<div id="myDIV3" class="problem">
+<p>In a bipartite graph <span class="math inline">\(G\)</span>, a subset <span class="math inline">\(S\)</span> of the nodes of the top bipartition of <span class="math inline">\(G\)</span> and a subset <span class="math inline">\(T\)</span> of the nodes of the bottom bipartition are called a biclique if every node in <span class="math inline">\(S\)</span> is adjacent to every node in <span class="math inline">\(T\)</span>. The size of the biclique is <span class="math inline">\(|S| \cdot |T|\)</span>.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>, represented as an adjacency matrix, and</p></li>
+<li><p>An integer <span class="math inline">\(k\)</span>, written in binary.</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if <span class="math inline">\(k = 20 - C\)</span>, where <span class="math inline">\(C\)</span> is the maximum size of a biclique in <span class="math inline">\(G\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 2</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = 17\)</span></p></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 2</h4>
+<p><span class="math inline">\(G\)</span> has a biclique of size <span class="math inline">\(3\)</span> consisting of the third node of the top bipartition and its three neighbors, and no bigger biclique. Hence, <span class="math inline">\(C=3\)</span> so we output True.</p>
+<hr>
+</div>
+</li>
+
+<li><p><button onclick="myFunction5()">Problem 3</button><br />
+<div id="myDIV5" class="problem">
+<p>For positive integers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span>, define the following quantities:</p>
+<ul>
+<li><p><span class="math inline">\(f(n)\)</span> is the second-smallest distinct prime factor of <span class="math inline">\(n\)</span> if <span class="math inline">\(n\)</span> has at least two distinct prime factors. If a unique prime <span class="math inline">\(p\)</span> divides <span class="math inline">\(n\)</span>, then <span class="math inline">\(f(n) = p\)</span>, and if no prime divides <span class="math inline">\(n\)</span> (because <span class="math inline">\(n=1\)</span> or <span class="math inline">\(n=0\)</span>) then <span class="math inline">\(f(n)=1\)</span>.</p></li>
+<li><p><span class="math inline">\(MOD(n,m)\)</span> is the integer <span class="math inline">\(q\)</span> with <span class="math inline">\(0 \leq q &lt; m\)</span> such that <span class="math inline">\(n-q\)</span> is divisible by <span class="math inline">\(m\)</span>.</p></li>
+</ul>
+<p>A bipartite graph <span class="math inline">\(G\)</span> with <span class="math inline">\(n\)</span> nodes in the top bipartition and <span class="math inline">\(m\)</span> nodes in the bottom bipartition corresponds to a nonnegative integer <span class="math inline">\(c\)</span> defined by <span class="math inline">\(c=\sum_{i=0}^{m-1} d_i \cdot (n+1)^{i}\)</span>, where <span class="math inline">\(d_i\)</span> is the degree of node <span class="math inline">\(i\)</span> in the bottom bipartition.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>, represented as an adjacency matrix,</p></li>
+<li><p>An integer <span class="math inline">\(k\)</span>, written in binary, and</p></li>
+<li><p>A positive integer <span class="math inline">\(u\)</span>, written in binary (with default value <span class="math inline">\(23\)</span> if none is provided).</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if <span class="math inline">\(k =  MOD(12 \cdot f(c) + 5,u)\)</span>, where <span class="math inline">\(c\)</span> is the integer corresponding to <span class="math inline">\(G\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 3</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = 18\)</span></p></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 3</h4>
+<p><span class="math inline">\(u=23\)</span> by default. We have <span class="math inline">\(n=3\)</span> and <span class="math inline">\(m=4\)</span>, and so <span class="math inline">\(c = 2 \cdot 4^0 + 1 \cdot 4^1 + 1 \cdot 4^2 + 2 \cdot 4^3 = 150\)</span>. Since <span class="math inline">\(150 = 2 \cdot 3 \cdot 5^2\)</span>, it follows that <span class="math inline">\(f(c) = 3\)</span>, so <span class="math inline">\(MOD(12 \cdot f(c) + 5,u) = MOD(41,23)=18\)</span>, so we output True.</p>
+<hr>
+</div>
+</li>
+
+<li><p><button onclick="myFunction7()">Problem 4</button><br />
+<div id="myDIV7" class="problem">
+<p>For a bipartite graph <span class="math inline">\(G\)</span> let <span class="math inline">\(e(G)\)</span> denote the number of edges in <span class="math inline">\(G\)</span>. For integers <span class="math inline">\(n,m\)</span> with <span class="math inline">\(m&gt;0\)</span> define <span class="math inline">\(MOD(n,m)\)</span> to be the integer <span class="math inline">\(q\)</span> with <span class="math inline">\(0 \leq q &lt; m\)</span> such that <span class="math inline">\(n-q\)</span> is divisible by <span class="math inline">\(m\)</span>.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>, represented as an adjacency matrix, and</p></li>
+<li><p>An integer <span class="math inline">\( 0\leq k < 341\)</span>, written in binary.</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if <span class="math inline">\(k = MOD(110 \cdot (e(G))^2 + 102 \cdot e(G),341)\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 4</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = 139\)</span></p></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 4</h4>
+<p><span class="math inline">\(G\)</span> has <span class="math inline">\(6\)</span> edges, so <span class="math inline">\(MOD(110 \cdot 6^2 + 102 \cdot 6,341) = MOD(4572,341)=139\)</span>, so we output True.</p>
+<hr>
+</div>
+</li>
+
+
+<li><p><button onclick="myFunction9()">Problem 5</button><br />
+<div id="myDIV9" class="problem">
+<p>A bipartite graph <span class="math inline">\(G\)</span> with <span class="math inline">\(n\)</span> nodes in the top bipartition and <span class="math inline">\(m\)</span> nodes in the bottom bipartition corresponds to a binary string <span class="math inline">\(s\)</span> of length <span class="math inline">\(m \cdot n\)</span> as follows: for any integers <span class="math inline">\(0 \leq i &lt; n\)</span> and <span class="math inline">\(0 \leq j &lt; m\)</span>, bit <span class="math inline">\((j + m\cdot i)\)</span> of <span class="math inline">\(s\)</span> is <span class="math inline">\(1\)</span> if there is an edge between node <span class="math inline">\(i\)</span> in the top bipartition and node <span class="math inline">\(j\)</span> in the bottom bipartition, and <span class="math inline">\(0\)</span> otherwise.</p>
+<p>For a Turing machine <span class="math inline">\(T\)</span> and binary string <span class="math inline">\(s\)</span>, we write <span class="math inline">\(t(T,s)\)</span> for the number of steps that <span class="math inline">\(T\)</span> takes before it halts when given <span class="math inline">\(s\)</span> as input, or <span class="math inline">\(-1\)</span> if <span class="math inline">\(T\)</span> never halts when given <span class="math inline">\(s\)</span> as input.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>, represented as an adjacency matrix,</p></li>
+<li><p>A positive integer <span class="math inline">\(k \geq 1\)</span>, written in binary, and</p></li>
+<li><p>A Turing machine <span class="math inline">\(T\)</span>, represented in binary (with default value the Turing machine from the example input if none is provided).</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if <span class="math inline">\(k=t(T,s)\)</span>, where <span class="math inline">\(s\)</span> is the binary string corresponding to <span class="math inline">\(G\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 5</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = 6\)</span></p></li>
+<li><p><span class="math inline">\(T\)</span> is the Turing Machine which starts at state <span class="math inline">\(0\)</span> and pointing at the left-most symbol on its tape, and has the following transition rules:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Current State</th>
+<th style="text-align: left;">Current Symbol</th>
+<th style="text-align: left;">New Symbol</th>
+<th style="text-align: left;">Direction</th>
+<th style="text-align: left;">New State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">halt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">1</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 5</h4>
+<p><span class="math inline">\(G\)</span> corresponds to the binary string <span class="math inline">\(s = 110000011011\)</span>. When the Turing Machine <span class="math inline">\(T\)</span> is run on <span class="math inline">\(s\)</span>, the sequence of states it goes to at each step is <span class="math inline">\(0,3,3,4,1,2\)</span>, and then <span class="math inline">\(T\)</span> halts. Hence, <span class="math inline">\(t(T,s) = 6\)</span>, and so we output True.</p>
+<hr>
+</div>
+</li>
+
+
+<li><p><button onclick="myFunction11()">Problem 6</button><br />
+<div id="myDIV11" class="problem">
+<p>A bipartite graph <span class="math inline">\(G\)</span> with <span class="math inline">\(n\)</span> nodes in the top bipartition and <span class="math inline">\(m\)</span> nodes in the bottom bipartition corresponds to a binary string <span class="math inline">\(s\)</span> of length <span class="math inline">\(m \cdot n\)</span> as follows: for any integers <span class="math inline">\(0 \leq i &lt; n\)</span> and <span class="math inline">\(0 \leq j &lt; m\)</span>, bit <span class="math inline">\((i + n\cdot j)\)</span> of <span class="math inline">\(s\)</span> is <span class="math inline">\(1\)</span> if there is an edge between node <span class="math inline">\(i\)</span> in the top bipartition and node <span class="math inline">\(j\)</span> in the bottom bipartition, and <span class="math inline">\(0\)</span> otherwise.</p>
+<p>For a Turing machine <span class="math inline">\(T\)</span> and binary string <span class="math inline">\(s\)</span>, we write <span class="math inline">\(t(T,s)\)</span> for the number of steps that <span class="math inline">\(T\)</span> takes before it halts when given <span class="math inline">\(s\)</span> as input, or <span class="math inline">\(-1\)</span> if <span class="math inline">\(T\)</span> never halts when given <span class="math inline">\(s\)</span> as input.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<p>A triple <span class="math inline">\((G,k,T)\)</span> represented in unary, consisting of</p>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>,</p></li>
+<li><p>A positive integer <span class="math inline">\(k \geq 1\)</span>, and</p></li>
+<li><p>A Turing machine <span class="math inline">\(T\)</span> (with default value the Turing machine from the example input if none is provided).</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if <span class="math inline">\(k=10+t(T,s)\)</span>, where <span class="math inline">\(s\)</span> is the binary string corresponding to <span class="math inline">\(G\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 6</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = 20\)</span></p></li>
+<li><p><span class="math inline">\(T\)</span> is the Turing Machine which starts at state <span class="math inline">\(0\)</span> and pointing at the left-most symbol on its tape, and has the following transition rules:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Current State</th>
+<th style="text-align: left;">Current Symbol</th>
+<th style="text-align: left;">New Symbol</th>
+<th style="text-align: left;">Direction</th>
+<th style="text-align: left;">New State</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">halt</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">halt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">right</td>
+<td style="text-align: left;">3</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 6</h4>
+<p><span class="math inline">\(G\)</span> corresponds to the binary string <span class="math inline">\(s=101100001011\)</span>. When the Turing Machine <span class="math inline">\(T\)</span> is run on <span class="math inline">\(s\)</span>, the sequence of states it goes to at each step is <span class="math inline">\(0,1,2,4,4,5,5,5,5,3\)</span>, and then <span class="math inline">\(T\)</span> halts. Hence, <span class="math inline">\(t(T,s) = 10\)</span>, and so we output True.</p>
+<hr>
+</div>
+</li>
+
+
+<li><p><button onclick="myFunction13()">Problem 7</button><br />
+<div id="myDIV13" class="problem">
+<p>A matching in a bipartite graph <span class="math inline">\(G\)</span> is a set <span class="math inline">\(M\)</span> of edges of <span class="math inline">\(G\)</span> such that no two edges in <span class="math inline">\(M\)</span> are incident to the same vertex. A matching <span class="math inline">\(M\)</span> is a maximum matching if there are no other matchings with more edges than <span class="math inline">\(M\)</span>.</p>
+<p>Define the polynomial <span class="math inline">\(p(x) = 8x^2 - 78x + 178\)</span>.</p>
+<h4 class="unnumbered" id="input">Input</h4>
+<ul>
+<li><p>An undirected bipartite graph <span class="math inline">\(G\)</span>, represented as an adjacency matrix, and</p></li>
+<li><p>An integer <span class="math inline">\(k\)</span>, written in binary.</p></li>
+</ul>
+<h4 class="unnumbered" id="output">Output</h4>
+<p>True if <span class="math inline">\(k = b + p(a)\)</span>, where <span class="math inline">\(a\)</span> is the number of edges in a maximum matching in <span class="math inline">\(G\)</span>, and <span class="math inline">\(b\)</span> is the number of maximum matchings in <span class="math inline">\(G\)</span>, False otherwise.</p>
+<hr>
+<h4 class="unnumbered" id="example-input">Example Input for Problem 7</h4>
+<ul>
+<li><p><span class="math inline">\(G\)</span> is the following graph:</p>
+<p><img src="{{sroot}}example.png" alt="image" /></p></li>
+<li><p><span class="math inline">\(k = 19\)</span></p></li>
+</ul>
+<h4 class="unnumbered" id="example-output">Example Output for Problem 7</h4>
+<p><span class="math inline">\(G\)</span> has three maximum matchings with <span class="math inline">\(3\)</span> edges in them. Hence, <span class="math inline">\(a=b=3\)</span>, and <span class="math inline">\(p(a) = 16\)</span>, so we output True.</p>
+<hr>
+</div>
+</li>
+
+
+</ul>
+<br>
+<hr>
+<br>
+<p>&nbsp;✓ _ _ _ _ _ _ _</p>
+<p>&nbsp;? _ _ _ _ _ _ _</p>
+<p>&nbsp;X _ _ _ _ _ _ _</p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function myFunction3() {
+  var x = document.getElementById("myDIV3");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function myFunction5() {
+  var x = document.getElementById("myDIV5");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function myFunction7() {
+  var x = document.getElementById("myDIV7");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function myFunction9() {
+  var x = document.getElementById("myDIV9");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function myFunction11() {
+  var x = document.getElementById("myDIV11");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+<script>
+function myFunction13() {
+  var x = document.getElementById("myDIV13");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>

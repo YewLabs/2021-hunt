@@ -1,0 +1,148 @@
+<style>
+.gallery img{
+	max-width: 100%;
+	max-height: 100%;
+	display: block;
+	padding-bottom: 10px;
+}
+.gallery table{
+	border: 1px solid black;
+	text-align: center;
+}
+
+.gallery td{
+	padding: 15px;
+}
+
+.gallery {
+	width: 50%;
+	padding-left: 25%;
+	padding-right: 25%;
+}
+
+#arcanaref table{
+	max-width: 30%;
+	margin-left: 35%;
+	margin-right: 35%;
+	max-height: 100%;
+}
+
+#arcanaref table td{
+	width: 50%;
+	text-align: center;
+}
+
+#arcanaref img{
+	max-width: 100%;
+	max-height: 100%;
+}
+
+span.indexing {
+	font-weight: bold;
+	color: #FF0300;
+}
+
+#extraction td{
+	padding:10px;
+}
+</style>
+
+<p>The first thing we notice when we open the puzzle is that it has two sections: "Photographers" and "Photos". Each of the photographers is named, but none of the photos are named or labeled. While the photographer art isn't very recognizable, it's in the photos that we might start to see something familiar. Let's say that we don't immediately recognize them; instead, we notice that some objects are repeated across the images: coins, cups, knives, and pencils, in different amounts. They're cards from the Tarot, <a href="https://en.wikipedia.org/wiki/Minor_Arcana">Minor Arcana</a> that evoke the four major suits: Coins/Pentacles, Cups, Swords, and Wands. (Specifically, these are the versions depicted in the Rider-Waite tarot deck.)</p>
+
+<p>Once we've identified that these images evoke different Minor Arcana, we can identify them.</p>
+
+<div id="arcanaref">
+<table>
+<tr>
+	<th>Puzzle Image</th>
+	<th>Arcana Referenced</th>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp1.jpg"><img src="{{sproot}}hp1.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Five_of_Coins">Five of Coins</a></td>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp2.jpg"><img src="{{sproot}}hp2.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Two_of_Cups">Two of Cups</a></td>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp3.jpg"><img src="{{sproot}}hp3.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Three_of_Swords">Three of Swords</a></td>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp4.jpg"><img src="{{sproot}}hp4.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Ace_of_Wands_(Tarot_card)">Ace of Wands</a></td>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp5.jpg"><img src="{{sproot}}hp5.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Eight_of_Cups">Eight of Cups</a></td>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp6.jpg"><img src="{{sproot}}hp6.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Eight_of_Wands">Eight of Wands</a></td>
+</tr>
+<tr>
+	<td><a href="{{sproot}}hp7.jpg"><img src="{{sproot}}hp7.jpg" /></a></td>
+	<td><a href="https://en.wikipedia.org/wiki/Nine_of_Wands">Nine of Wands</a></td>
+</tr>
+</table>
+</div>
+
+<p>In addition, looking back at the Photographers, we can now recognize them as the <a href="https://en.wikipedia.org/wiki/Page_of_Wands">Page of Wands</a> (Redoaks), the <a href="https://en.wikipedia.org/wiki/Page_of_Coins">Page of Coins</a> (Scroogent), the <a href="https://en.wikipedia.org/wiki/Page_of_Swords">Page of Swords</a> (Xanderbis), and the <a href="https://en.wikipedia.org/wiki/Page_of_Cups">Page of Cups</a> (Flourences).</p>
+
+<div class="gallery">
+<table>
+<tr>
+	<td><img src="{{sproot}}redoaks.png" /></td>
+	<td><img src="{{sproot}}scroogent.png" /></td>
+</tr>
+<tr>
+	<td><img src="{{sproot}}xanderbis.png" /></td>
+	<td><img src="{{sproot}}flourences.png" /></td>
+</tr>
+</table>
+</div>
+
+<p> In addition, each name is exactly 14 letters long, and there are 14 ranks in each suit in the Minor Arcana. We can use each photo to index into the appropriate name, giving one letter for each photo.</p>
+
+<table id="extraction">
+<tr>
+	<th>Minor Arcana</th>
+	<th>Index into Name</th>
+</tr>
+<tr>
+	<td>Five of Coins</td>
+	<td><span class="monospace">BLAK<span class="indexing">E</span>SCROOGENT</span></td>
+</tr>
+<tr>
+	<td>Two of Cups</td>
+	<td><span class="monospace">F<span class="indexing">R</span>ANFLOURENCES</span></td>
+</tr>
+<tr>
+	<td>Three of Swords</td>
+	<td><span class="monospace">CL<span class="indexing">A</span>SHXANDERBIS</span></td>
+</tr>
+<tr>
+	<td>Ace of Wands</td>
+	<td><span class="monospace"><span class="indexing">S</span>IRLARSREDOAKS</span></td>
+</tr>
+<tr>
+	<td>Eight of Cups</td>
+	<td><span class="monospace">FRANFLO<span class="indexing">U</span>RENCES</span></td>
+</tr>
+<tr>
+	<td>Eight of Wands</td>
+	<td><span class="monospace">SIRLARS<span class="indexing">R</span>EDOAKS</span></td>
+</tr>
+<tr>
+	<td>Nine of Wands</td>
+	<td><span class="monospace">SIRLARSR<span class="indexing">E</span>DOAKS</span></td>
+</tr>
+</table>
+<p>This spells out <span class="answer">ERASURE</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+	<p>I've felt for a while that the Minor Arcana don't get a lot of play or interest in the context of casual Tarot knowledge; in popular culture, focus always shifts to the big, flashy Major Arcana. So, I wanted to so something cool with the Minor Arcana, especially because each Minor Arcana is part of a sort of journey within that suit. The idea of using an arcana to signal one of fourteen letters in a phrase is one I've been holding onto for a while.</p>
+	<p>Staying at home during COVID-19 was the inspiration for the rest of the puzzle; I thought about the idea of taking random photos around the apartment, and connected it back with the idea of cluing different images from the Minor Arcana.</p>
+</div>

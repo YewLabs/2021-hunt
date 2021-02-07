@@ -1,0 +1,98 @@
+Slug	Name	Order	Team Visible	Puzzle Trigger	Trigger	Email Key	Email Template
+endgame	Endgame	0			ENDGAME
+team-chickens	Team Check Ins	1			TIME		"Hello [team name],
+
+We just chatted with your team captain about visiting for a check-in. Here's a Zoom link you can use to join us at [time EST]:
+
+[insert unique link]
+
+-Yew Labs"
+
+meet-yew	Meeting Professor Yew	11			TIME		"Hello [team name],
+
+Thanks for all your hard work! As we mentioned earlier, we developed the upgrade to the Projection Device in hopes of contacting Professor Yew more reliably. It worked, and we were able to get in touch with her! She’d like to meet you and tell you more about what she’s discovered with your help. Please join us on this video call at [time EST]: [insert unique link].
+
+-Yew Labs"
+mid-hunt	Mid Hunt	12			TIME		"Hello [team name],
+
+Thanks for all your hard work so far! We have some very exciting news: you’ve generated enough JUICE to reopen the portal! We’ve already gone ahead and coordinated with Professor Yew on the reopening, and we thought you might like to join us so she can thank you all! Please join us on this video call at [time EST]: [insert unique link].
+
+We’re hopeful that with Professor Yew back in the lab, we can restore ⟂IW to normal in no time!
+
+-Yew Labs"
+things-in-motion	Things are in Motion	13			TIME		"Hello [team name],
+
+Thanks for all your hard work so far! While things earlier didn't go quite as we planned, we are still on track to fix all of the anomalies because of your excellent work! We're going to be getting in contact with Professor Yew via the upgraded Projection Device soon, and we would like you to be there so she can give us updates on her discoveries in the other universe. Please join us on this video call at [time EST]: [insert unique link].
+
+-Yew Labs"
+
+mmo-unlock	Important Yew Labs Message	20		288	SOLVED
+
+student-center-post	Student Center	51	1	275	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the Student Center. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend at least 8, but the more the merrier.
+
+[insert unique link]
+
+-Yew Labs"
+green-building-post	Green Building	52	1	204	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the Green Building. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend at least 4, but the more the merrier.
+
+[insert unique link]
+
+-Yew Labs"
+infinite-post	Infinite Corridor	53	1	272	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the Infinite Corridor. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend at least 4, but the more the merrier.
+
+[insert unique link]
+
+-Yew Labs"
+athletics-post	Athletics	54	1	309	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the athletics fields. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend at least 5, but the more the merrier.
+
+[insert unique link]
+
+-Yew Labs"
+nano-post	⊥IW.nano	55	1	245	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix ⊥IW.nano. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend 3-8, but any group size will work.
+
+[insert unique link]
+
+-Yew Labs"
+stata-post	Stata Center	56	1	228	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the Stata Center. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend at least 5, but we’re flexible and can handle a wide range.
+
+[insert unique link]
+
+-Yew Labs"
+clusters-post	Clusters	57	1	241	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the Clusters. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend at least 2 people, but 3-7 may have the most fun.
+
+[insert unique link]
+
+-Yew Labs"
+tunnels-post	Tunnels	58	1	336	SOLVED		"Hello [team name],
+
+Thank you for figuring how how to fix the Tunnels. Please join us in the following Zoom link at [time EST] to put your plan into action. Any number of your teammates can join; we recommend 4-10, but we can handle larger groups too.
+
+[insert unique link]
+
+-Yew Labs"
+
+questionable-answers	Questionable Answers Puzzle	101		536	EMAIL	Trivia
+bake-off	Bake Off Submission	102		492	EMAIL	Bake Off
+experimental-evidence-submission	Experimental Evidence Submission	103		567	EMAIL	Experimental Evidence
+stay-hydrated	Stay Hydrated Submission	104		226	EMAIL	Self Care
+world-fisherman	World Fisherman Submission	105		583	EMAIL	Fish
+you-learn-something-new-every-day	You Learn Something New Every Day Submission	106		139	EMAIL	One-Day
+its-tricky	It's Tricky Submission	107		598	EMAIL	TikTok
+squee-squee	Squee Squee Submission	108		538	EMAIL	Photo Op
+game-ditty-quiz	Game Ditty Quiz Submission	109		36	EMAIL	Game Cover
+bad-air-day	Bad Air Day Submission	110		521	EMAIL	Fashion Show
+escape-hayden-library	Escape! Hayden Library pre-puzzle interaction	111		555	EMAIL	Escape Room Scheduling

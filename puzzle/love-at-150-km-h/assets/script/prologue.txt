@@ -1,0 +1,256 @@
+﻿> LABEL start
+
+PLAYER: I love luge.
+Ever since I was small, my dream has been to become a luge athlete.
+After four years of hard work, I finally made it onto the national team.
+And today...it's my first tournament.
+Time to show the world what I can do.
+
+> music cold_sunny.ogg
+> background locker_room.jpg
+
+NARRATOR: Heat 1 is starting soon!
+
+> hide dialog
+> music none
+> show snow_surprised.png
+> sound TEMP_realization.ogg
+> wait 2.0
+
+> show snow_neutral.png
+> show dialog
+> music resume
+SNOW [hidejustname]: What'cha up to?
+
+
+> show snow_happy.png
+That your sled? Pretty nifty...not bad, not bad!
+You may want to take some weight off the runners, though.
+This course has a bunch of sharp turns. Remember what happened last year?
+
+> show snow_neutral.png
+Oh! Forgot to introduce myself.
+SNOW: Name's Snow. Good to meet ya!
+I've been on the national team for 5 years running now.
+
+> show snow_surprised.png
+...Oh, that right? It's your first tournament?
+
+> show snow_happy.png
+Damn. Good for you! Great to see a new face!
+Me, I'm going for the win this year.
+I got second place last time. Ever since then I've been tinkering with my equipment.
+And finally, I got it *just right*.
+
+> show none
+PLAYER: Snow busied himself putting on his gear...
+
+> music stop
+> sound TEMP_realization.ogg
+> show jurgen_neutral.png
+
+> wait 2.0
+> show none
+
+PLAYER: (Who was that?)
+> music resume
+> show snow_neutral.png
+SNOW: Ah. Him.
+He's an incredible luger. Doesn't really talk to anyone though.
+Just shows up, does his thing, collects his medals, and leaves.
+Think his name's...
+...actually, I forgot.
+
+Oh — gotta go! Cheer for me, would ya?
+
+> BACKGROUND black
+
+PLAYER: I watched Snow's first run...
+PLAYER: It was flawless. He led the pack by a full quarter-second going into the afternoon...
+PLAYER: My race is coming up...
+
+> music none
+
+NARRATOR: Later that day:
+
+> BACKGROUND locker_room.jpg
+> hide dialog
+> wait 1.0
+
+> SHOW gina_surprised.png
+> sound TEMP_realization.ogg
+> wait 2.0
+
+> show dialog
+> music resume
+> show gina_happy.png
+GINA: Hey, a rookie!
+PLAYER: (How'd she know I'm a rookie?)
+
+> SHOW gina_surprised.png
+GINA: What? Don't give me that look.
+
+> SHOW gina_happy.png
+Well, it's nothing to be ashamed of!
+Don't you worry! We lugers are a small community.
+You'll be up to your neck in friends before you know it!
+Name's Gina. See you round!
+
+> background locker_room.jpg
+> music none
+
+NARRATOR: "The sliding facility is now closed."
+NARRATOR: "We hope you've enjoyed this Luge World Cup. Please finish packing up and exit shortly."
+
+> sound TEMP_realization.ogg
+> SHOW jurgen_neutral.png
+JURGEN [hidename]: ...
+
+PLAYER: (You're...)
+
+> music cold_sunny.ogg
+JURGEN: Yes?
+PLAYER: Snow mentioned you.
+He said you don't really talk to anyone.
+JURGEN: I'm not much for people.
+
+PLAYER: So you just fly all over the world, alone?
+Aren't you friends with your teammates?
+JURGEN: We are mutually courteous.
+PLAYER: But isn't it more fun to luge with others?
+> SHOW jurgen_angry.png
+JURGEN: I think that unlikely.
+Other people tend to hold me back.
+> SHOW jurgen_neutral.png
+I aim to be the best. Others don't take that goal as seriously.
+
+PLAYER: The best...
+But you got a silver today! Isn't that good enough?
+Don't you enjoy the sport itself at all?
+The turns, the wind, the speed! Doesn't it feel amazing?
+
+> SHOW jurgen_neutral.png
+JURGEN: Yes, and no.
+Certainly, the arena of the luge track exemplifies human athleticism.
+But the culture around the sport is quite muted.
+None of us is remotely famous. Most do not even know what luge is.
+The only time the public remembers we exist is during the Olympics.
+> SHOW jurgen_angry.png
+We cannot capture the public consciousness like so many others.
+No glory or creature comforts await any of us at the top.
+> SHOW jurgen_neutral.png
+And yet, there are still those who give up everything to be the best.
+Yes, you are a lamb among wolves...
+
+> SHOW jurgen_happy.png
+Truly, I admire your optimism. But you will see after a while.
+
+> SHOW jurgen_neutral.png
+There is little point in pursuing luge without becoming great.
+
+PLAYER: Yes, there is.
+I like it. And I met a lot of nice people already.
+You don't need to be the best at everything.
+
+> SHOW jurgen_angry.png
+JURGEN: Hmph.
+Then what is the point?
+
+> SHOW jurgen_neutral.png
+What use is there in this sport if you won't be remembered?
+
+PLAYER: (I've wanted to be a luger ever since I was little.)
+(After years of work, I'm finally getting what I wanted.)
+(But Jurgen is right. Now is when the real work begins.)
+(Will it be worth it?)
+(I've put so many hours into this sport...)
+(What else could I have become?)
+(What can I still become?)
+
+PLAYER: ...I don't think there always needs to be a use.
+Really, I don't focus on it.
+Things will work themselves out in the end.
+
+> SHOW jurgen_angry.png
+JURGEN: I see...
+You'll never be a champion. But that's acceptable to you.
+
+> SHOW jurgen_happy.png
+For your sake, I hope you can hold on to your beliefs.
+...Ah, I've talked too long. I have to go.
+I am glad we could meet, though.
+You have given me something to think about.
+Goodbye. I am certain our paths will cross again.
+
+> BACKGROUND prologuenight.jpg
+> MUSIC crickets.ogg
+
+PLAYER: It's late.
+Coach said I did alright for my first tournament.
+But I know she's just being nice.
+I can do better.
+I didn't move halfway across the world for nothing.
+> jump_if !gina_complete cont_night
+> jump_if !snow_complete cont_night
+> jump_if !jurgen_complete cont_night
+
+> show mystery.png
+M [hidename]: Hey.
+PLAYER: ...Who are you?
+
+M [hidename]: There's no need for names.
+You know who I am.
+
+PLAYER: ...
+
+M [hidename]: I can see it in your eyes.
+You're searching. Searching for something.
+An answer to a puzzle.
+Don't give up.
+You're close.
+Just a little bit further.
+
+> show none
+> wait 2
+
+PLAYER: ...
+Those lugers I met today were so cool.
+I wish I could get to know them better.
+One of them was kind of cute...
+
+> BACKGROUND black
+I fell asleep, thinking of...
+> choice date_path:
+| Snow start_snow_date
+| Gina start_gina_date
+| Jurgen start_jurgen_date
+| The mystery man finale
+
+> label cont_night
+...
+Those lugers I met today were so cool.
+I wish I could get to know them better.
+One of them was kind of cute...
+
+> FLAG prologue_complete
+> LABEL choose_date
+
+> BACKGROUND black
+I fell asleep, thinking of...
+> choice date_path:
+| Snow start_snow_date
+| Gina start_gina_date
+| Jurgen start_jurgen_date
+
+
+> LABEL start_snow_date
+> JUMP snow.txt
+
+> LABEL start_gina_date
+> JUMP gina.txt
+
+> LABEL start_jurgen_date
+> JUMP jurgen.txt
+
+> label finale
+> finale

@@ -1,0 +1,20 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% block title %}Full Log &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Full Log</h1>
+  <main>
+    <div class="info">
+      {% for entry in log_entries %}
+      {% if entry.entry.link %}
+      {{entry.entry.timestamp}}: <a href="{{entry.entry.link}}">{{entry.entry.message}}</a><br>
+      {% else %}
+      {{entry.entry.timestamp}}: {{entry.entry.message}}<br>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </main>
+</div>
+{% endblock %}

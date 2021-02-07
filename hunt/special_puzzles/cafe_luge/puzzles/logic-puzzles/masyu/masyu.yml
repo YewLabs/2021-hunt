@@ -1,0 +1,145 @@
+name: masyu
+difficulty: 6/10
+coolness: 5/10
+time: 5:00
+
+questions:
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/1.jpg
+
+        - answer: 16
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/2.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/3.jpg
+
+        - answer: 24
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/4.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/5.jpg
+
+        - answer: 26
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/6.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/7.jpg
+
+        - answer: 24
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/8.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/9.jpg
+
+        - answer: 18
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/10.jpg
+
+        - answer: 24
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/11.jpg
+
+        - answer: 32
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/12.jpg
+
+        - answer: 16
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/13.jpg
+
+        - answer: 16
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/14.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/15.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/16.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/17.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/18.jpg
+
+        - answer: 24
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/19.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "How many times does the path turn in the solution to this Masyu?"
+
+        - image: logic-puzzles/masyu/20.jpg
+
+        - answer: 20

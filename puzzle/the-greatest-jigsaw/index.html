@@ -1,0 +1,158 @@
+{% load hunt_state_tests %}
+{% if not puzzle|minutesAvailable:180 %}
+<div class="fourthwall">
+
+<p>This is a physical puzzle, consisting of a jigsaw puzzle with 121 pieces. If your team has access to the jigsaw swag, you should feel free to open and solve it now. If you believe any part of your physical puzzle is missing or damaged, or you have not received it even though you ordered it, please contact us immediately using the “Hints” link in the upper-right corner of the page.</p>
+
+<p>A virtual substitute for the physical portion of this puzzle will unlock in {{ puzzle|minutesRemaining:180 }} minutes.</p>
+
+</div>
+<br/>
+<div class="fourthwall" id="flavor">Psst... Hints are available for this puzzle.</div>
+<br/>
+{% else %}
+<link rel="stylesheet" href="{{sroot}}jquery-ui.css">
+<script src="{{sroot}}jquery-ui.js"></script>
+
+<style>
+#reset {
+  font-size: 20px;
+  padding: 10px;
+}
+
+#pieces {
+  height: 800px;
+  position: relative;
+  margin: 100px;
+  margin-bottom: 500px;
+}
+
+.piece {
+  position: absolute;
+  text-align: center;
+  width: 150px;
+  height: 125px;
+  margin-left: -75px;
+  margin-top: -62.5px;
+}
+
+.piece:hover {
+  z-index: 1;
+}
+
+.piece img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.1s;
+}
+
+.piece input {
+  position: absolute;
+  height: 75px;
+  top: 25px;
+}
+
+.piece:not(:hover) input {
+  display: none;
+}
+
+.piece .ccw {
+  left: 0;
+}
+
+.piece .cw {
+  right: 0;
+  transform: scaleX(-1);
+}
+</style>
+
+<div class="fourthwall">
+
+<p>This is a physical puzzle, consisting of a jigsaw puzzle with 121 pieces. If your team has access to the jigsaw swag, you should feel free to open and solve it now. If you believe any part of your physical puzzle is missing or damaged, please contact us immediately using the “Hints” link in the upper-right corner of the page.</p>
+
+<p>To work on a virtual version of the puzzle, click and drag the images below.</p>
+
+</div>
+<br/>
+<div class="fourthwall" id="flavor">Psst... Hints are available for this puzzle.</div>
+<br/>
+
+<p style="text-align: center">
+  <input type="button" id="reset" value="Shuffle">
+</p>
+
+<div id="pieces">
+{% for _ in ''|center:121 %}
+  <div class="piece" data-id="{{ forloop.counter0 }}">
+    <img src="{{sroot}}Jigsaw/img{{ forloop.counter|stringformat:'03d' }}.png">
+    <input class="ccw" type="image" src="{{sroot}}arrow.svg">
+    <input class="cw" type="image" src="{{sroot}}arrow.svg">
+  </div>
+{% endfor %}
+</div>
+
+<script>
+const transforms = (() => {
+  let ret = null;
+  try {
+    ret = JSON.parse(localStorage.jigsaw);
+  } catch {}
+  return Array.isArray(ret) ? ret : [];
+})();
+
+function applyTransforms() {
+  for (const piece of $('.piece')) {
+    const {left, top, rot} = transforms[piece.dataset.id];
+    $(piece).css({left, top}).find('img').css('transform',
+        `translate(-50%, -50%) scale(0.33) rotate(${rot}deg)`);
+  }
+}
+
+function randomize() {
+  const width = $('#pieces').width();
+  const height = $('#pieces').height();
+  for (let x = 0; x < 11; ++x)
+    for (let y = 0; y < 11; ++y)
+      transforms[x * 11 + y] = {
+        left: x * width / 10,
+        top: y * height / 10,
+        rot: Math.floor(Math.random() * 4) * 90,
+      };
+  transforms.sort(() => Math.random() - 0.5);
+  applyTransforms();
+  localStorage.jigsaw = JSON.stringify(transforms);
+}
+
+$('#reset').click(() => {
+  if (confirm('Are you sure?'))
+    randomize();
+});
+
+if (transforms.length != 121)
+  randomize();
+else
+  applyTransforms();
+
+for (const piece of $('.piece')) {
+  const i = piece.dataset.id;
+  $(piece).draggable({
+    stop: (_, ui) => {
+      Object.assign(transforms[i], ui.position);
+      $('#pieces').append(piece);
+      localStorage.jigsaw = JSON.stringify(transforms);
+    },
+  });
+  $(piece).find('.ccw').click(() => {
+    transforms[i].rot -= 90;
+    applyTransforms();
+    localStorage.jigsaw = JSON.stringify(transforms);
+  });
+  $(piece).find('.cw').click(() => {
+    transforms[i].rot += 90;
+    applyTransforms();
+    localStorage.jigsaw = JSON.stringify(transforms);
+  });
+}
+</script>
+{% endif %}

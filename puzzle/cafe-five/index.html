@@ -1,0 +1,878 @@
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <style>
+  #enter {
+      display: block;
+      margin: auto;
+      font-size: 24px;
+  }
+
+  #container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #fff5da;
+      overflow-y: scroll;
+  }
+
+  .body-container {
+    width: 800px;
+    max-width: 1200px;
+    margin: auto;
+    min-height: 100%;
+  }
+
+  .body, .puzzle {
+      background: inherit;
+
+      -webkit-transition: background 0.5s ease-out;
+      -moz-transition: background 0.5s ease-out;
+      -ms-transition: background 0.5s ease-out;
+      -o-transition: background 0.5s ease-out;
+  }
+
+  .body-danger {
+      background: #330000;
+  }
+
+  .help-toggle {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 36px;
+      border-radius: 999px;
+      color: #996f220;
+      background: #ffd26a;
+  }
+
+  .header {
+      position: fixed;
+      font-family: sans-serif;
+      background: #ffe099;
+      border-radius: 25px;
+      border: 1px solid #996f20;
+      padding: 15px;
+
+      top: 40px;
+      right: 58px;
+      z-index: 9998;
+  }
+
+  .header div {
+      line-height: 1.4rem;
+  }
+
+  .help {
+      z-index: 9996;
+      position: fixed;
+      width: 100%;
+      top: 100px;
+  }
+
+  .help-container {
+      width: 80%;
+      max-width: 700px;
+      margin: auto;
+      font-family: sans-serif;
+      background: #ffe099;
+      border-radius: 25px;
+      border: 3px dotted #996f20;
+      padding: 15px;
+  }
+
+  .help-header {
+      font-weight: bold;
+  }
+
+  .help-container div {
+      margin-bottom: 20px;
+  }
+
+  .all-questions {
+      font-family: sans-serif;
+  }
+
+  .turbo {
+      color: #E36206;
+      font-weight: bold;
+  }
+
+  .next-customer {
+      font-style: italic;
+      font-size: 0.75rem;
+  }
+
+  .toggle-open {
+      background: rgba(0, 0, 0, 0.2);
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+  }
+
+  .reset.toggle-open {
+      background: rgba(200, 0, 0, 0.8);
+      color: white;
+  }
+
+  .question {
+      background: #ffe099;
+      width: 75%;
+      border-radius: 15px;
+      padding: 25px 15px 15px 15px;
+      border: 1px solid #996f20;
+      margin: 35px auto;
+      line-height: 1.4rem;
+      position: relative;
+  }
+
+  .question img {
+      max-width: 100%;
+  }
+
+  .question div {
+      margin-bottom: 10px;
+  }
+
+  .question .timer-display {
+      position: absolute;
+      right: -10px;
+      top: -18px;
+      transform: rotate(8deg);
+      font-weight: bold;
+      font-size: 1.6rem;
+
+      border: 1px solid #664a14;
+      padding: 8px;
+      background: white;
+      border-radius: 5px;
+  }
+
+  .question .comp-display {
+      position: absolute;
+      left: -22px;
+      top: -22px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: rgb(167, 137, 7);
+
+      border: 1px solid #664a14;
+      padding: 9px 8px;
+      background: white;
+      border-radius: 999px;
+  }
+
+  .question .comp-display:hover {
+      background: rgb(167, 137, 7);
+      color: rgb(92, 54, 4);
+      cursor: pointer;
+  }
+
+  .question .comp-display-big {
+      position: absolute;
+      left: -22px;
+      top: -22px;
+      font-weight: bold;
+      font-size: 1.3rem;
+      color: white;
+
+      border: 1px solid #664a14;
+      padding: 9px 8px;
+      background: rgb(167, 137, 7);
+      border-radius: 999px;
+  }
+
+  .question .comp-display-big:hover {
+      background: #664a14;
+      color: #f2de8a;
+      cursor: pointer;
+  }
+
+  .question .comp-display-big.disabled {
+      border: 1px solid gray;
+      background: #e2e2e2;
+      cursor: default;
+      color: #bbbbbb;
+  }
+
+  .question .comp-display-big.disabled:hover {
+      background: #e2e2e2;
+      color: #bbbbbb;
+      cursor: default;
+  }
+
+  .answer-input input, .answer-input button {
+      font-size: 1.2rem;
+  }
+
+  .red {
+      color: red;
+  }
+
+  .white-text {
+      color: white;
+  }
+
+  .floater-container {
+      position: fixed;
+      top: 40px;
+      left: 0px;
+      width: 100%;
+      text-align: center;
+      pointer-events: none;
+
+      z-index: 9999;
+  }
+
+  .floater-modal {
+      display: inline-block;
+      min-width: 200px;
+      margin: auto;
+      font-size: 24px;
+
+      border-radius: 15px;
+      padding: 10px 70px;
+      border: 1px solid #664a14;
+
+      -webkit-transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -ms-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+  }
+
+  .turbo-message {
+      text-align: center;
+      margin-top: 50px;
+      font-family: sans-serif;
+      font-style: italic;
+      font-weight: bold;
+      color: #E36206;
+
+      -webkit-transition: opacity 0.5s ease-out;
+      -moz-transition: opacity 0.5s ease-out;
+      -ms-transition: opacity 0.5s ease-out;
+      -o-transition: opacity 0.5s ease-out;
+  }
+
+  .cafe-table {
+      display: table;
+      margin-top: 10px;
+  }
+
+  .cafe-title {
+      margin: auto;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 48px;
+      font-family: 'Metropolis';
+      font-weight: bold;
+      color: #efefff;
+      text-shadow: 0px 0px 10px black, 2px 2px 10px black, -2px 2px 10px black, 2px -2px 10px black, -2px -2px 10px black
+  }
+
+  .cafe-column {
+      display: table-cell;
+      padding: 10px;
+  }
+
+  @keyframes correctAnswer {
+      0% {
+          opacity: 1;
+          left: 0px;
+          max-height: 100%;
+          padding: 25px 15px 15px 15px;
+      }
+
+      10% {
+          background: rgba(63, 255, 63, 50%);
+      }
+
+      70% {
+          opacity: 0;
+          left: 100px;
+          max-height: 100%;
+          padding: 25px 15px 15px 15px;
+      }
+
+      100% {
+          opacity: 0;
+          left: 100px;
+          max-height: 0%;
+          padding: 0;
+      }
+  }
+
+  @keyframes incorrectAnswer {
+      0% {
+          left: 7px;
+      }
+
+      4% { left: -7px; }
+
+      8% { left: 7px; }
+
+      10% {
+          background: rgba(255, 63, 63, 50%);
+      }
+
+      12% { left: -7px; }
+
+      16% { left: 7px; }
+
+      20% { left: -7px; }
+
+      24% { left: 7px; }
+
+      28% { left: -7px; }
+
+      32% { left: 7px; }
+
+      36% { left: 0px; }
+
+      70% {
+          background: rgba(255, 63, 63, 50%);
+      }
+
+      100% {
+          background: #ffe099;
+      }
+  }
+
+  @keyframes timeOutFade {
+      0% {
+          opacity: 1;
+          left: 0;
+          max-height: 100%;
+          padding: 25px 15px 15px 15px;
+      }
+
+      70% {
+          opacity: 0;
+          left: 100;
+          max-height: 100%;
+          padding: 25px 15px 15px 15px;
+      }
+
+      100% {
+          opacity: 0;
+          left: 100;
+          max-height: 0%;
+          padding: 0;
+      }
+  }
+
+  </style>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+
+    <script type='text/babel'>
+        'use strict';
+
+        const e = React.createElement;
+
+        class Cafe extends React.Component {
+          constructor(props) {
+            super(props);
+            this.state = {
+              canTurbo: false,
+              questions: [],
+              correctQuestions: 0,
+              numDeleting: 0,
+              nextQuestionTime: 0,
+              tokens: 0,
+              comps: 1,
+              compProgress: 0,
+              penaltyRatio: 100,
+              dangerMode: false,
+              showingHelp: true,
+              resetting: false,
+              gotBoss: false,
+              _timeLeft: 60,
+              status: 'not_started',
+              time: new Date().getTime() / 1e3
+            };
+
+            this.handleMessage = this.handleMessage.bind(this)
+            this.submitAnswer = this.submitAnswer.bind(this)
+            this.tryConnect = this.tryConnect.bind(this)
+            this.openCafe = this.openCafe.bind(this)
+            this.nuclearSiren = this.nuclearSiren.bind(this)
+            this.spendToken = this.spendToken.bind(this)
+            this.sendCompRequest = this.sendCompRequest.bind(this)
+            this.renderBlock = this.renderBlock.bind(this)
+          }
+
+          componentDidMount() {
+              this.tryConnect()
+          }
+
+          tryConnect() {
+            setInterval(this.updateTimers.bind(this), 100)
+            setInterval(() => { this.sendMessage({'type': 'refresh'}) }, 3000)
+
+            this.sendMessage({'type': 'refresh'})
+          }
+
+          handleMessage(message) {
+              if (message.type === 'state') {
+                  if ((message.status === 'not_started') != (this.state.status === 'not_started')) {
+                      this.setState({ showingHelp: (message.status === 'not_started') })
+                      if (this.state.status !== 'not_started') {
+                          let time = new Date().getTime() / 1e3
+                          let timeLeft = this.state.cafeFinishTime - time
+                          this.setState({ gotBoss: (timeLeft <= 25 * 60 + 10) })
+                      }
+                  } else if (this.state.status === 'in_game' && message.status === 'in_game') {
+                      let time = new Date().getTime() / 1e3
+                      let timeLeft = message.cafeFinishTime - time
+                      if (timeLeft < 25 * 60 + 10 && !this.state.gotBoss) {
+                          // TODO: nuclearSiren() has some chance to trigger twice, this shouldn't happen
+                          this.setState({ gotBoss: true }, () => { this.nuclearSiren(); })
+                      }
+                  }
+
+                  let hasNewQuestion = false;
+                  let ids = this.state.questions.map(k => k.id);
+                  for (let i = 0; i < message.questions.length; ++i) {
+                      if (ids.indexOf(message.questions[i].id) == -1) {
+                          hasNewQuestion = true;
+                          break;
+                      }
+                  }
+
+                  if (hasNewQuestion) {
+                      try {
+                          (new Audio('{{sroot}}ding.mp3')).play()
+                      } catch (err) { }
+                  }
+
+                  this.setState({
+                      questions: message.questions.map(k => ({...k, deleting: false})),
+                      cafeFinishTime: message.cafeFinishTime,
+                      nextQuestionTime: message.nextQuestionTime,
+                      canTurbo: message.canTurbo,
+                      tokens: message.tokens,
+                      comps: message.comps,
+                      compProgress: message.compProgress,
+                      penaltyRatio: Math.round(message.penaltyRatio * 100),
+                      correctQuestions: message.answered,
+                      status: message.status,
+                  })
+              }
+
+              if (message.type === 'answer') {
+                  this.setState({status: 'finished'})
+              }
+
+              if (message.type === 'answerCheck') {
+                  let questions = this.state.questions
+
+                  if (message.correct) {
+                      for (let q of questions) {
+                          if (q.id === message.id) {
+                              q.deleting = true
+                              this.setState({ numDeleting: this.state.numDeleting + 1, modalText: 'Correct!', modalColor: '#66FF66' })
+                              q.deleteAnimation = 'correctAnswer 1s'
+                              setTimeout(this.deleteQuestion(q), 1000)
+                          }
+                      }
+                      this.setState({
+                        correctQuestions: this.state.correctQuestions + 1,
+                        questions,
+                      })
+                  } else {
+                      for (let q of questions) {
+                          if (q.id === message.id) {
+                              q.deleting = true
+                              let penaltyRatio = this.state.penaltyRatio / 100
+                              this.setState({ numDeleting: this.state.numDeleting + 1, modalText: 'Incorrect!', modalColor: '#FF9999' })
+                              this.setState({ cafeFinishTime: this.state.cafeFinishTime + 0.2 * penaltyRatio * q.time })
+                              q.deleteAnimation = 'incorrectAnswer 1s'
+                              setTimeout(() => { q.deleting = false; }, 1000)
+                              setTimeout(this.fakeDeleteQuestion(q), 1000)
+                          }
+                      }
+                  }
+              }
+
+              if (message.type === 'comp') {
+                  let questions = this.state.questions
+
+                  for (let q of questions) {
+                    if (q.id === message.id) {
+                        q.deleting = true
+                        this.setState({ numDeleting: this.state.numDeleting + 1, modalText: 'Comped!', modalColor: '#66FF66' })
+                        q.deleteAnimation = 'correctAnswer 1s'
+                        setTimeout(this.deleteQuestion(q), 1000)
+                    }
+                }
+                this.setState({ questions, 'comps': message.comps })
+              }
+          }
+
+          nuclearSiren() {
+              let siren = new Audio('{{sroot}}siren.mp3')
+              siren.currentTime = 15.0
+              siren.play()
+              console.log(this.state)
+
+              this.setState({
+                  numDeleting: this.state.numDeleting + 1,
+                  modalText: 'ALERT: L. Rafael Reif is approaching the cafe!',
+                  modalColor: '#FF9999',
+              })
+              document.body.classList.add('body-danger')
+              setTimeout((() => { document.body.classList.remove('body-danger'); }).bind(this), 700)
+              setTimeout((() => { document.body.classList.add('body-danger'); }).bind(this), 1400)
+              setTimeout((() => { document.body.classList.remove('body-danger'); }).bind(this), 2100)
+              setTimeout((() => { document.body.classList.add('body-danger'); }).bind(this), 2800)
+              setTimeout((() => { document.body.classList.remove('body-danger'); }).bind(this), 3500)
+              setTimeout((() => { document.body.classList.add('body-danger'); }).bind(this), 4200)
+              setTimeout((() => { document.body.classList.remove('body-danger'); }).bind(this), 4900)
+              setTimeout((() => { document.body.classList.add('body-danger'); }).bind(this), 5600)
+              setTimeout((() => { document.body.classList.remove('body-danger'); }).bind(this), 6300)
+              setTimeout((() => { this.setState({ numDeleting: this.state.numDeleting - 1 }); }).bind(this), 7000)
+          }
+
+          getCookie(name) {
+              var cookieValue = null;
+              if (document.cookie && document.cookie !== '') {
+                  var cookies = document.cookie.split(';');
+                  for (var i = 0; i < cookies.length; i++) {
+                      var cookie = cookies[i].trim();
+                      // Does this cookie string begin with the name we want?
+                      if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                          break;
+                      }
+                  }
+              }
+              return cookieValue;
+          }
+
+          sendMessage(message) {
+              let csrftoken = this.getCookie('csrftoken');
+
+              fetch('/puzzle/cafe-five/dynamicx', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json',
+                           'X-CSRFToken': csrftoken, },
+                body: JSON.stringify(message),
+                credentials: 'same-origin',
+              }).then(data => data.json())
+                .then(data => { this.handleMessage(data) })
+          }
+
+          openCafe() {
+              this.setState({ showingHelp: false })
+              this.sendMessage({ "type": "init" })
+          }
+
+          spendToken() {
+              this.sendMessage({ "type": "spendToken", "id": {{ puzzle.puzzle.y2021puzzledata.tempest_id }} })
+              $('#enter').show();
+              $('#container').hide();
+              setTimeout(function() { location.reload(); }, 5000);
+          }
+
+          deleteQuestion(question) {
+              return (() => {
+                  setTimeout((() => { this.setState({numDeleting: this.state.numDeleting - 1}) }).bind(this), 1000)
+                  this.setState({
+                      questions: this.state.questions.filter(q => (q.id !== question.id)),
+                  })
+              }).bind(this)
+          }
+
+          fakeDeleteQuestion(question) {
+              return (() => {
+                  setTimeout((() => { this.setState({numDeleting: this.state.numDeleting - 1}) }).bind(this), 1000)
+              }).bind(this)
+          }
+
+          updateTimers() {
+              let time = new Date().getTime() / 1e3
+              let questions = this.state.questions
+              let penaltyRatio = this.state.penaltyRatio / 100
+              for (let q of questions) {
+                  if (!q.deleting && q.finishTime < time - 1) {
+                      q.deleting = true
+                      this.setState({ numDeleting: this.state.numDeleting + 1, modalText: 'Out of time!', modalColor: '#FFBB33' })
+                      q.deleteAnimation = 'timeOutFade 1s'
+                      setTimeout(this.deleteQuestion(q), 1000)
+                      this.setState({ cafeFinishTime: this.state.cafeFinishTime + 0.8 * penaltyRatio * q.time })
+                  }
+              }
+              this.setState({ questions, time })
+
+              if (questions.length === 0 && this.state.canTurbo) {
+                this.setState({ cafeFinishTime: this.state.cafeFinishTime - 0.200 })
+              }
+          }
+
+          renderBlock(block) {
+              if (block.type === 'text') {
+                  // hack
+                  if ('italic' in block) {
+                      if ('bold' in block) {
+                          return <div><i><b>{block.value}</b></i></div>
+                      }
+                      return <div><i>{block.value}</i></div>
+                  }
+                  if ('bold' in block) {
+                      return <div><b>{block.value}</b></div>
+                  }
+                  return <div>{block.value}</div>
+              }
+              if (block.type === 'image') {
+                  return <img src={"data:image/jpeg;base64," + block.value} />
+              }
+              if (block.type === 'audio') {
+                  return <audio controls src={"data:audio/ogg;base64," + block.value} />
+              }
+              if (block.type === 'twocolumn') {
+                  return (
+                      <div className="cafe-table">
+                          <div className="cafe-column">
+                              {block.value[0].map(this.renderBlock)}
+                          </div>
+                          <div className="cafe-column">
+                              {block.value[1].map(this.renderBlock)}
+                          </div>
+                      </div>
+                  )
+              }
+
+              console.log('Unknown block type ' + block.type)
+              return null
+          }
+
+          submitAnswer(id) {
+              return (answer) => {
+                  this.sendMessage({'type': 'answer', 'id': id, 'value': answer})
+                  this.setState({ canTurbo: true })
+              }
+          }
+
+          sendCompRequest(_id) {
+              this.sendMessage({'type': 'compRequest', 'id': _id})
+          }
+
+          formatSeconds(number) {
+              number = parseInt(number);
+
+              if (number < 0) {
+                  return '0:00'
+              }
+              if (number >= 3600) {
+                  let rem1 = parseInt((number % 3600) / 60)
+                  let rem2 = number % 60
+                  return parseInt(number / 3600) + ':' +
+                         (rem1 < 10 ? '0' : '') + rem1 + ':' +
+                         (rem2 < 10 ? '0' : '') + rem2
+              }
+              if (number >= 60) {
+                  let rem1 = number % 60
+                  return parseInt(number / 60) + ':' + (rem1 < 10 ? '0' : '') + rem1
+              }
+              return '0:' + (number < 10 ? '0' : '') + (number % 60);
+          }
+
+          render() {
+              {% verbatim %}
+              let { questions, correctQuestions, cafeFinishTime, time,
+                    numDeleting, modalText, modalColor, canTurbo, dangerMode,
+                    showingHelp, nextQuestionTime, comps, compProgress, penaltyRatio } = this.state
+
+              let turbo = (questions.length === 0 && canTurbo)
+
+              let playing = (this.state.status === 'in_game')
+
+              return (
+                  <div class={"body" + (dangerMode ? ' body-danger' : '')}>
+                      {showingHelp &&
+                      <div className="help">
+                        <div className="help-container">
+                            <div class="help-header">Instructions</div>
+                            <div>Deep in the infinite hallways of the Infinite Corridor, you stumble into <i>Cafe Five</i>, a cozy nook where MIT students and dimensional travelers alike come to relax with a cup of tea and a good puzzle. You think that if you help enough people with their puzzles, they'll help you with yours, too.</div>
+                            <div>Every so often, a customer will arrive with a puzzle for you to solve. You'll have some amount of time to solve it before the customer will leave, unsatisfied. Man the cafe until your shift is over -- and when it does, you'll receive the answer to this puzzle!</div>
+                            <div>Customers will have all kinds of puzzles to be solved. More and more customers will arrive as time goes on. If you're overwhelmed or having trouble with a particular puzzle, try asking a friend for help -- puzzles are shared between all members of the team!</div>
+
+                            <div class="help-header">Time</div>
+                            <div>
+                                You must keep the restaurant open for <b>45 minutes</b>.
+                                Whenever the restaurant is empty, your shift timer will count down <b>three times as fast</b>.
+                            </div>
+                            <div>
+                                In certain situations, penalty minutes will be added to the amount of time you need to keep the restaurant open.
+                                You can guess answers as many times as you like, but for each wrong answer, you'll receive a penalty of 20% of the time you got to solve that puzzle.
+                                If you run out of time solving a puzzle, you'll receive a penalty of 80% of the time you got to solve it.
+                                Penalties will become less severe over time and will eventually disappear.
+                            </div>
+
+                            <div class="help-header">Comping</div>
+                            <div>
+                                You can <b>comp</b> a customer's puzzle to instantly solve it for them. You start with one comp.
+                                Every 30 puzzles solved will earn you another comp.
+                                If you help a customer really fast, your progress towards your next comp will be counted <b>three times</b> the normal amount.
+                            </div>
+
+                            {this.state.status === 'not_started' && <div>(Click "Open cafe" to begin!)</div>}
+                        </div>
+
+                      </div>}
+
+                      {(this.state.status === 'finished' && this.state.tokens > 0) &&
+                      <div className="help"><div className="help-container">
+                          <div style={{textAlign: 'center', fontSize: '1.6rem'}}>
+                              Congratulations!! You've earned a <b>token</b>!
+                          </div>
+                          <div style={{textAlign: 'center', fontSize: '1.2rem'}}>
+                              (Spend it to earn a puzzle answer!)
+                          </div>
+                      </div></div>}
+
+                      <div class="body-container">
+                          <div className="cafe-title">Cafe Five</div>
+                          <div className="floater-container">
+                              <div className={"floater-modal" + (dangerMode ? ' white-text' : '')}
+                                   style={{ background: (dangerMode ? '#660000' : modalColor), opacity: (numDeleting > 0 ? 1 : 0) }}>
+                                <i class="fa fa-exclamation-circle" aria-hidden="true" style={{ marginRight: '10px' }}></i>
+                                <span style={{ fontFamily: 'sans-serif' }}>
+                                    {modalText}
+                                </span>
+                              </div>
+                          </div>
+                          <div className="header">
+                              <div className="help-toggle">
+                                  <span onClick={() => { this.setState({ showingHelp: !this.state.showingHelp }) }}>
+                                      <i class="far fa-question-circle"></i>
+                                  </span>
+                              </div>
+                              {playing && <div><b>{correctQuestions}</b> happy customers</div>}
+                              {playing &&
+                               <div style={{marginBottom: '10px'}}>
+                                   <div className={turbo && 'turbo'}>
+                                       {turbo && <span style={{ marginRight: '5px' }}><i class="fas fa-bolt"></i></span>}
+                                       {this.formatSeconds(cafeFinishTime - time)} remaining
+                                   </div>
+                                   <div className="next-customer">
+                                       <span>({this.formatSeconds(nextQuestionTime - time)} until next customer)</span>
+                                   </div>
+                                </div>
+                              }
+                              {playing &&
+                              <div style={{marginBottom: '10px'}}>
+                                <div>
+                                    <i class="fas fa-hand-sparkles" style={{marginRight: '4px', color: 'rgb(167, 137, 7)'}}></i>
+                                    <span><b>{comps}</b> comp{comps != 1 ? 's' : ''}</span>
+                                </div>
+                                <progress value={compProgress} max="30"></progress>
+                                <div style={{marginTop: '10px'}}>
+                                    <span style={{color: '#660000'}}>
+                                        <b>{penaltyRatio}%</b>
+                                    </span>
+                                    <span style={{marginLeft: '4px'}}>
+                                        penalty strength
+                                    </span>
+                                </div>
+                              </div>}
+                              {!playing && <div className="start toggle-open" onClick={this.openCafe}>Open cafe</div>}
+                              {this.state.tokens > 0 &&
+                               <div>
+                                  <div><b>Tokens:</b> {this.state.tokens}</div>
+                                  <div className="spend toggle-open" onClick={this.spendToken}>Spend token on this Cafe Five puzzle</div>
+                               </div>
+                              }
+                          </div>
+                          {playing &&
+                          <div className="all-questions">
+                              {questions.map(q => (
+                                  <div style={{ position: 'relative' }}>
+                                      <div
+                                       className='question'
+                                       key={'q' + q['id']}
+                                       style={{ animation: q['deleting'] ? q['deleteAnimation'] : undefined }}
+                                      >
+                                          <div className={"timer-display" + (q['finishTime'] - time < 30 ? ' red' : '')}>
+                                              <i className="fas fa-stopwatch"
+                                                 style={{marginRight: '10px'}}></i>
+                                              <span>{this.formatSeconds(q['finishTime'] - time)}</span>
+                                          </div>
+                                          {comps > 0 &&
+                                            (q['time'] < 20*60 ?
+                                            <div className="comp-display" onClick={() => { this.sendCompRequest(q['id']); }}>
+                                                <i class="fas fa-hand-sparkles"></i>
+                                            </div> :
+                                             comps == 1 ?
+                                            <div className="comp-display-big disabled">
+                                                <i class="fas fa-hand-sparkles" style={{paddingRight: '3px'}}> x 2</i>
+                                            </div> :
+                                            <div className="comp-display-big"
+                                                 onClick={() => { this.sendCompRequest(q['id']); }}>
+                                                <i class="fas fa-hand-sparkles" style={{paddingRight: '3px'}}> x 2</i>
+                                            </div>)
+                                          }
+                                          <div className={"timer-display" + (q['finishTime'] - time < 30 ? ' red' : '')}>
+                                              <i className="fas fa-stopwatch"
+                                                 style={{marginRight: '10px'}}></i>
+                                              <span>{this.formatSeconds(q['finishTime'] - time)}</span>
+                                          </div>
+                                          <div>
+                                              {q.value.map(this.renderBlock)}
+                                          </div>
+                                          <CafeAnswer
+                                           id={q.id}
+                                           callback={this.submitAnswer(q.id)}
+                                           />
+                                      </div>
+                                  </div>
+                              ))}
+                              <div class="turbo-message" style={{ opacity: turbo ? 1 : 0 }}>
+                                (The cafe is empty! Time is slipping by...)
+                              </div>
+                          </div>}
+                      </div>
+                  </div>
+              )
+              {% endverbatim %}
+          }
+        }
+
+        function CafeAnswer(props) {
+            let [answer, setAnswer] = React.useState(null)
+            let { id, callback } = props
+
+            return (
+                <div className="answer-input">
+                    <input value={answer}
+                           key={'answer' + id}
+                           placeholder="Type in your answer"
+                           onKeyDown={e => {
+                              if (e.key === 'Enter') {
+                                  callback(answer);
+                              }
+                           }}
+                           onChange={e => setAnswer(e.currentTarget.value)}></input>
+                    <button onClick={e => { callback(answer); }}>Submit</button>
+                </div>
+            )
+        }
+
+        $('#enter').click(() => {
+          $('#enter').hide();
+          ReactDOM.render(e(Cafe), $('#container').show()[0]);
+        });
+    </script>
+
+    <button id="enter">Enter the Cafe</button>
+    <div id="container"></div>
+{% endif %}

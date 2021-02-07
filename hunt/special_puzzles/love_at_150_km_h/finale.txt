@@ -1,0 +1,41 @@
+> FLAG enable_finale
+> music none
+> background daystreets.jpg
+
+PLAYER: I've always wanted to visit this city.
+PLAYER: The museums, the palazzo, the cathedrals, the parks...
+PLAYER: There's just so much to do here in Turin.
+
+> show mystery.png
+> sound TEMP_realization.ogg
+M [hidename]: Hey.
+
+PLAYER: Hello.
+
+M [hidename]: It's time for our date.
+
+PLAYER: Are you...
+PLAYER: Wait! Did you just say date?
+
+M [hidename]: You've worked hard to get here.
+M [hidename]: We both know that there's only one thing that will satisfy our desires.
+M [hidename]: The Cesana Pariol is about 80 minutes west of here by car.
+M [hidename]: But it will take only 60 minutes on my sled.
+M [hidename]: Let's go.
+
+> background lugebg.jpg
+> show mystery.png
+
+PLAYER: Thank goodness, we're here.
+Most of my dates ask me skill testing questions before they'll luge with me...
+
+M [hidename]: There is only one important skill in this world.
+M [hidename]: And no question can test it.
+
+PLAYER: So, should I get on the bottom?
+
+M [hidename]: Nonsense.
+M [hidename]: This track is where I won my second Olympic gold medal.
+M [hidename]: I will steer us.
+
+> credits

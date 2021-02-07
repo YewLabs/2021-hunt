@@ -1,0 +1,68 @@
+<style>
+    .puzzle img {width: 70%; height: auto;}
+</style>
+<p>
+We are given several diagrams containing jigsaw pieces enclosed by circles (with some liberties taken with the definition of a circle).
+The jigsaw pieces represent individual puzzles and the circles groupings of puzzles, or in other words "rounds" (calling back to the title).
+In a puzzle hunt context, typically these rounds have a metapuzzle involving the answers to the puzzles, and indeed each diagram represents the meta structure to various MIT Mystery Hunt rounds.
+Each diagram has exactly one reddened circle, so we should note down that particular meta.
+</p>
+<p><b>NOTE: The rest of this solution contains spoilers to MIT Mystery Hunts prior to 2021, so please be aware!</b></p>
+<center><a href="{{sproot}}circles-1.svg"><img src="{{sproot}}circles-1.svg"/></a></center>
+<p>This diagram represents a meta with 56 feeders with no intermediate subrounds. This describes the <a href="http://www.mit.edu/~puzzle/2015/puzzle/school_of_fish_meta/">2015 School of Fish round</a>. Additionally, the solution involves bucketing the 56 answers into groups of 5, 6, 7, 8, 9, 10, and 11, which are enumerated by the rows of puzzles.</p>
+<center><a href="{{sproot}}circles-2.svg"><img src="{{sproot}}circles-2.svg"/></a></center>
+<p>This diagram represents a round with 24 feeders separated into six overlapping metas. This describes the <a href="http://www.mit.edu/~puzzle/2011/puzzles/civilization/">2011 Civilization world</a>. Note that interestingly, each wonder contains a single feeder puzzle that is exclusive to that meta (as a tech that directly leads to that wonder and no other). The reddened circle contains 7 puzzles, which uniquely identifies it as the <a href="http://www.mit.edu/~puzzle/2011/puzzles/civilization/da_vincis_workshop/">Da Vinci Workshop meta</a>.</p>
+<center><a href="{{sproot}}circles-3.svg"><img src="{{sproot}}circles-3.svg"/></a></center>
+<p>This diagram represents a round with 5 metas, each with 4 feeders. This is perhaps reminiscent of the Australian hunt style, which was referenced in the <a href="http://www.mit.edu/~puzzle/2016/round/dreamtime/">2016 Dreamtime round</a>.</p>
+<center><a href="{{sproot}}circles-4.svg"><img src="{{sproot}}circles-4.svg"/></a></center>
+<p>This diagram shows a group of 54 puzzles (minus one puzzle grayed out) where all of the other puzzles have been partitioned into 6 different metas. This is the the first half of the <a href="http://www.mit.edu/~puzzle/2008/">2008 hunt</a>, which had an interesting structure where you unlocked page after page, and had to sort out the metas independently.
+(The grayed out puzzle, <a href="http://www.mit.edu/~puzzle/2008/freebie/">Abigail Freebie</a>, is a free puzzle that contains no puzzle content and did not feed into any of the metas.)
+Taking the columns to represent pages 1 through 9 from left to right, we can determine that the reddened circle corresponds to the <a href="http://www.mit.edu/~puzzle/2008/lbb_metas/witness5.shtml">Witness 5 meta</a>.</p>
+<center><a href="{{sproot}}circles-5.svg"><img src="{{sproot}}circles-5.svg"/></a></center>
+<p>This diagram shows 25 puzzles, plus one grayed out puzzle, separated into quite a few overlapping metas. It turns out that this grayed out puzzle is included in every single meta.
+This describes the <a href="http://www.mit.edu/~puzzle/2020/land/safari/">2020 Safari Adventure round</a>, where each submeta included a tiger answer, but there was no tiger puzzle so you had to backsolve for these answers.
+The reddened circle contains 4 puzzles (including the tiger puzzle), but this by itself does not uniquely identify the round (there are 4 such rounds - incidentally, these are all represented by ellipses in this diagram). However, by considering its intersections with the other rounds, we can identify it.
+For example, if we consider Anne, which has 15 puzzles, the reddened circle intersects 3 puzzles with it, whereas the other 3 4-puzzle metas have an intersection of at most 2 puzzles.
+Whichever way we determine this, we can deduce that this is the <a href="http://www.mit.edu/~puzzle/2020/puzzle/astrologer/">Astrologer submeta</a>.</p>
+<center><a href="{{sproot}}circles-6.svg"><img src="{{sproot}}circles-6.svg"/></a></center>
+<p>This diagram shows 34 puzzles separated into 5 metas. Every pair of metas has a single overlap. This represents the <a href="http://www.mit.edu/~puzzle/2018/full/island/index.html">Emotions round in 2018</a>.
+The only meta with exactly 6 puzzles (and therefore 2 puzzles purely in that meta) is <a href="http://www.mit.edu/~puzzle/2018/full/puzzle/joy.html">Joy</a>.</p>
+<center><a href="{{sproot}}circles-7.svg"><img src="{{sproot}}circles-7.svg"/></a></center>
+<p>This diagram has six pairs of concentric circles (they're actually circles this time!), which was the main conceit of the <a href="http://www.mit.edu/~puzzle/2005/setec/">2005 Normalville hunt</a>.
+In this hunt, you had to solve a normal meta and then a super meta using the normal meta answers in addition to some more answers. By using the puzzle counts, we can determine that the reddened circle is therefore the <a href="http://www.mit.edu/~puzzle/2005/setec/metasolutions/neighborhood-2-solution.html">Yellow supermeta</a>.</p>
+<center><a href="{{sproot}}circles-8.svg"><img src="{{sproot}}circles-8.svg"/></a></center>
+<p>This diagram represents the whole hunt structure of the <a href="http://www.mit.edu/~puzzle/2012/puzzles/">2012 Producers hunt</a>.
+In this hunt, there were six show metas, whose answers were later reused including additional puzzles towards critic metas. This can be vaguely seen as the vertical circles representing show metas and horizontal circles representing critic metas.
+The reddened circle can therefore be determined to be the <a href="http://www.mit.edu/~puzzle/2012/puzzles/a_circus_line/">A Circus Line show meta</a>.</p>
+</br></br>
+Armed with these metas, we can then look at their answers.
+<table>
+    <tr><th>Meta</th><th>Answer</th></tr>
+    <tr><td>2015 School of Fish</td><td><pre><b>S</b>ARDINE CANNONS</pre></td></tr>
+    <tr><td>2011 Da Vinci's Workshop</td><td><pre><b>O</b>R GATE</pre></td></tr>
+    <tr><td>2016 Dreamtime supermeta</td><td><pre><b>L</b>AUGH LIKE A CRAZY KOOKABURRA</pre></td></tr>
+    <tr><td>2008 Witness 5 meta</td><td><pre><b>V</b>OTE FOR JR</pre></td></tr>
+    <tr><td>2020 The Astrologer</td><td><pre><b>A</b>NTIDISESTABLISHMENTARIANISM</pre></td></tr>
+    <tr><td>2018 Joy</td><td><pre><b>B</b>EAM UP</pre></td></tr>
+    <tr><td>2005 Yellow supermeta</td><td><pre><b>L</b>ACY BRA</pre></td></tr>
+    <tr><td>2012 A Circus Line</td><td><pre><b>E</b>LEPHANT IN A TUTU</pre></td></tr>
+</table>
+</br>
+Reading the first letters of the answers gives us the answer <span class="answer">SOLVABLE</span>.
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>
+    Round structures have always fascinated me, and there's certainly no shortage of them in past Mystery Hunts.
+    My general heuristic for picking structures was to pick more interesting structures and to try to spread out the writing teams, with some preference to more recent hunts that more hunters will likely to have seen and remembered.
+    V was a relatively tricky letter to look for and I had to go all the way back to 2008 to find a meta answer starting with V.
+    While it had a "Puzzle Boat" structure of meta matching, it took a bit of work to come up with this presentation that would disambiguate the 9-puzzle metas in that year.
+</p>
+<p>
+    By no means are these the only interesting hunt structures! I wasn't able to fit the 2013 metas due to extraction; the 2019 meta structure, while explicitly not overlapping, does have an interesting matching gimmick that would've been harder to depict.
+    Other years such as 2003 and 2009 had interesting rounds that wouldn't translate as well with just circles, and 2006, 2014, and 2017 had their own unique unlocking mechanisms that was ultimately out of scope of this puzzle (and less easily accessible from simply looking at the archives), as with 2010's central conceit of rewriting history.
+</p>
+<p>
+    Finally, thanks to Rahul for his <a href="https://fortenf.org/safari-venn-diagram/">Safari Venn Diagram</a>, which I used as a reference to make the Safari layout (and then flipped it 180 degrees at the end).
+</p>
+</div>

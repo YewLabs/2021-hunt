@@ -1,0 +1,78 @@
+$theme-color: #71a871;
+$secondary-color: #556;
+$wrong-color: #e53935;
+$duplicate-color: #fbc02d;
+$correct-color: #4caf50;
+$bonus2-color: #1976d2;
+$bonus3-color: #b71c1c;
+
+@mixin flex-ccc {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@keyframes fadein {
+  0% {
+    color: $correct-color;
+    text-shadow: 0 0 5px $correct-color;
+  }
+}
+
+@keyframes fadeduplicate {
+  0% {
+    color: $duplicate-color;
+    text-shadow: 0 0 5px $duplicate-color;
+  }
+}
+
+@keyframes inputcorrect {
+  0% {
+    color: $correct-color;
+    box-shadow: 0 0 5px $correct-color;
+  }
+}
+
+@keyframes inputduplicate {
+  0% {
+    color: $duplicate-color;
+    box-shadow: 0 0 5px $duplicate-color;
+  }
+}
+
+@keyframes wrong {
+  10% {
+    background-color: $wrong-color;
+  }
+  30% {
+    background-color: $wrong-color;
+  }
+}
+
+@keyframes duplicate {
+  10% {
+    background-color: $duplicate-color;
+  }
+  30% {
+    background-color: $duplicate-color;
+  }
+}
+
+@keyframes correct {
+  10% {
+    background-color: $correct-color;
+  }
+  30% {
+    background-color: $correct-color;
+  }
+}
+
+@keyframes shake {
+  25% {
+    transform: translate(-15px, 0);
+  }
+  75% {
+    transform: translate(15px, 0);
+  }
+}

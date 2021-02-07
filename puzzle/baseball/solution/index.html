@@ -1,0 +1,61 @@
+<p>Answers in this round:
+<pre>
+AUTUMN ORCHID
+CILANTRO
+ECTOPLASMIC
+FIRST VOLUMES
+KESHORN WALCOTT
+QUIZMASTER
+UGLY SIMPLE
+WATER IMPACT
+ZONE PLATE
+</pre>
+
+<p>We are presented with a video containing 18 clips from different baseball games. It is tempting to gather data about the teams; however, several of the clips are old, and one of them is an All-Star Game, so this route doesn't seem productive. Thus, we turn to the plays that are shown.</p>
+
+<p>In each clip, the ball is pitched and then hit (or, in the clips where the catcher is the relevant fielder, not hit) to a fielder. The fielder then fields the ball and throws it to a base, where an out happens. We note that each position fields the ball in exactly two clips, and that in scoring baseball games, each fielding position has a canonical number from 1 to 9.</p>
+
+<p>We can make a table of the above information, but we won’t make more progress until we figure out what to do with the answers.</p>
+
+<p>This round has some funky answers that have little semantically in common. Thus, we theorize that the letters contained in each answer are relevant. Noting the &ldquo;hard time on the diamond&rdquo; flavor, we might think about rocks on the Mohs hardness scale. And, in fact, each of these answers is an anagram of a rock on the Mohs scale (encompassing all the rocks on the scale except diamond) with 4 extra letters. Matching each rock’s hardness (which also runs from 1&ndash;9) with the corresponding baseball position, we get:</p>
+
+<table>
+<tr><th>#</th><th>Position</th><th>Rock</th><th>Answer</th><th>Leftovers</th></tr>
+<tr><td>1</td><td>Pitcher</td><td>Talc</td><td><tt>cIlaNtRO</tt></td><td><tt>INRO</tt></td></tr>
+<tr><td>2</td><td>Catcher</td><td>Gypsum</td><td><tt>ugLy sImpLE</tt></td><td><tt>LILE</tt></td></tr>
+<tr><td>3</td><td>First Base</td><td>Calcite</td><td><tt>ectOPlaSMic</tt></td><td><tt>OPSM</tt></td></tr>
+<tr><td>4</td><td>Second Base</td><td>Fluorite</td><td><tt>firSt VoluMeS</tt></td><td><tt>SVMS</tt></td></tr>
+<tr><td>5</td><td>Third Base</td><td>Apatite</td><td><tt>WateR iMpaCt</tt></td><td><tt>WRMC</tt></td></tr>
+<tr><td>6</td><td>Shortstop</td><td>Orthoclase (feldspar)</td><td><tt>KeshorN WalcotT</tt></td><td><tt>KNWT</tt></td></tr>
+<tr><td>7</td><td>Left Field</td><td>Quartz</td><td><tt>quIzMaStEr</tt></td><td><tt>IMSE</tt></td></tr>
+<tr><td>8</td><td>Center Field</td><td>Topaz</td><td><tt>zoNE pLatE</tt></td><td><tt>NELE</tt></td></tr>
+<tr><td>9</td><td>Right Field</td><td>Corundum</td><td><tt>AuTumn orcHId</tt></td><td><tt>ATHI</tt></td></tr>
+</table>
+
+<p>Each answer contains four extra letters, which begs the question: what’s so special about the number four? The answer, of course, is that there are 4 bases in baseball! Thus, we can correspond each extra letter to a base.</p>
+
+<p>Now we return to the video. For each clip, we take the letter corresponding to the base where the out occurs:</p>
+
+<table>
+<tr><th>Fielder</th><th>Fielder Number</th><th>Corresponding 4 Letters</th><th>Base</th><th>Extracted Letter</th></tr>
+<tr><td>1B</td><td>3</td><td>OPSM</td><td>2</td><td>P</td></tr>
+<tr><td>3B</td><td>5</td><td>WRMC</td><td>2</td><td>R</td></tr>
+<tr><td>LF</td><td>7</td><td>IMSE</td><td>1</td><td>I</td></tr>
+<tr><td>2B</td><td>4</td><td>SVMS</td><td>3</td><td>M</td></tr>
+<tr><td>CF</td><td>8</td><td>NELE</td><td>4</td><td>E</td></tr>
+<tr><td>SS</td><td>6</td><td>KNWT</td><td>4</td><td>T</td></tr>
+<tr><td>C</td><td>2</td><td>LILE</td><td>2</td><td>I</td></tr>
+<tr><td>1B</td><td>3</td><td>OPSM</td><td>4</td><td>M</td></tr>
+<tr><td>LF</td><td>7</td><td>IMSE</td><td>4</td><td>E</td></tr>
+<tr><td>P</td><td>1</td><td>INRO</td><td>1</td><td>I</td></tr>
+<tr><td>SS</td><td>6</td><td>KNWT</td><td>2</td><td>N</td></tr>
+<tr><td>RF</td><td>9</td><td>ATHI</td><td>2</td><td>T</td></tr>
+<tr><td>C</td><td>2</td><td>LILE</td><td>4</td><td>E</td></tr>
+<tr><td>P</td><td>1</td><td>INRO</td><td>3</td><td>R</td></tr>
+<tr><td>2B</td><td>4</td><td>SVMS</td><td>2</td><td>V</td></tr>
+<tr><td>RF</td><td>9</td><td>ATHI</td><td>4</td><td>I</td></tr>
+<tr><td>CF</td><td>8</td><td>NELE</td><td>2</td><td>E</td></tr>
+<tr><td>3B</td><td>5</td><td>WRMC</td><td>1</td><td>W</td></tr>
+</table>
+
+<p>Extracting one letter from each clip and reading in video order, we find what the baseball players need to help them end their losing streak: a <span class="answer">PRIME TIME INTERVIEW</span>.

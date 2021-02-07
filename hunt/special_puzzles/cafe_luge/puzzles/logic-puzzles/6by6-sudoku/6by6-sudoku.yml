@@ -1,0 +1,75 @@
+name: 6by6-sudoku
+difficulty: 3/10
+coolness: 4/10
+time: 4:00
+
+questions:
+    - question:
+        - text: "What is the sequence of digits in the left-most column of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-1.jpg
+
+        - answer: 123654
+
+    - question:
+        - text: "What is the sequence of digits in the bottom row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-2.jpg
+
+        - answer: 256413
+
+    - question:
+        - text: "What is the sequence of digits in the left-most column of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-3.jpg
+
+        - answer: 265134
+
+    - question:
+        - text: "What is the sequence of digits in the left-most column of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-4.jpg
+
+        - answer: 354126
+
+    - question:
+        - text: "What is the sequence of digits in the bottom row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-5.jpg
+
+        - answer: 145623
+
+    - question:
+        - text: "What is the sequence of digits in the top row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-6.jpg
+
+        - answer: 345621
+
+    - question:
+        - text: "What is the sequence of digits in the top row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-7.jpg
+
+        - answer: 534621
+
+    - question:
+        - text: "What is the sequence of digits in the top row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-8.jpg
+
+        - answer: 426153
+
+    - question:
+        - text: "What is the sequence of digits in the bottom row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-9.jpg
+
+        - answer: 356421
+
+    - question:
+        - text: "What is the sequence of digits in the bottom row of the solution to this Sudoku?"
+
+        - image: logic-puzzles/6by6-sudoku/Sudoku-10.jpg
+
+        - answer: 125346

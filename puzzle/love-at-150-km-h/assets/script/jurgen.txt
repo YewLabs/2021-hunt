@@ -1,0 +1,422 @@
+﻿> FLAG enable_jurgen_date
+> MUSIC none
+
+NARRATOR: A few months later...
+
+> MUSIC gymnopedie.ogg
+> background jurgensnowbg.png
+
+PLAYER: I've failed.
+I was too tense. I overthought it...
+Too much pressure to do well...
+I was on pace for a medal, too. For the first time.
+But I had to crash into the wall out of the first turn and screw it all up...
+I feel awful...
+Coach is trying to call me, but I'm not picking up.
+I don't want to hear her voice right now.
+
+So I took a taxi into the city...
+It's nice to be by myself.
+Wait...
+Is that...?
+
+> music none
+> sound TEMP_realization.ogg
+> show jurgen_neutral.png
+JURGEN [hidename]: Well met.
+PLAYER: (...Jurgen!)
+(I didn't expect to see you here...)
+
+> music resume
+> show jurgen_neutral.png
+JURGEN: Yes, well, I booked myself a hotel here.
+I enjoy larger cities.
+And...solitude often appeals to me more than the company of lugers.
+Would you like to walk together?
+
+> background none
+PLAYER: Jurgen and I walked for a while in silence.
+
+> background jurgensnowbg.png
+> show jurgen_neutral.png
+JURGEN: Thank you for today.
+I always convince myself that being alone is more relaxing than being with someone.
+
+> show jurgen_happy.png
+But then I remember...how pleasant it can be with the right person.
+It was nice to talk to you.
+
+...Ah. I scheduled my flight for a few days from now.
+If you'd be interested in meeting again...
+
+PLAYER: (Actually...)
+
+> show jurgen_neutral.png
+> choice
+| Ask him out jurgen_yes
+| Don't risk it jurgen_no
+
+> label jurgen_no
+
+JURGEN: I see...
+JURGEN: No matter. It was very nice to talk to you today.
+JURGEN: I'm sure we'll meet again soon. Best wishes.
+
+> background hotelroom.png
+> music crickets.ogg
+PLAYER: Jurgen was an interesting person.
+It was nice to run into him today.
+
+> background none
+PLAYER: But he still felt...so distant...
+I wish I could get to know him better...
+zzz...
+
+> bad_end
+
+> label jurgen_yes
+> sound TEMP_realization.ogg
+> show jurgen_surprised.png
+JURGEN: Oh! A date...
+I must confess, I'm unfamiliar with them.
+
+> show jurgen_happy.png
+But your company is...reassuring. So I would love to go. Thank you.
+
+> show jurgen_neutral.png
+Did you have an activity in mind?
+
+> choice
+| A restaurant restaurant
+| An amusement park park
+| Explore the town town
+
+> label restaurant
+
+Ah, a restaurant?
+That sounds lovely. I've wanted to sample the local cuisine.
+Until tomorrow, then.
+
+> background none
+> music none
+PLAYER: The next day...
+
+
+> background restaurant.png
+> music cold_sunny.ogg
+> show jurgen_happy.png
+JURGEN: This is a magnificent interior.
+
+> show none
+WAITER: Have you decided what you'll be having for dinner?
+
+> show jurgen_neutral.png
+JURGEN: I'll have the crispy herring with yellow peas.
+
+PLAYER: I'll have the...
+
+> choice
+| Pork stew jurgen_meal1
+| Beef stroganoff jurgen_meal2
+| Garlic bread jurgen_meal3
+
+> label jurgen_meal1
+JURGEN: *nods* A hearty choice, hard to go wrong with.
+> jump jurgen_cont
+
+> label jurgen_meal2
+JURGEN: *nods* A delicious choice, full of complex flavor.
+> jump jurgen_cont
+
+> label jurgen_meal3
+JURGEN: *nods* Perhaps a hedonistic choice, but I see the appeal.
+
+> label jurgen_cont
+WAITER: Very good. I'll be back with your meals shortly.
+
+
+PLAYER: So do you have any hobbies? Besides luge, I mean.
+> show jurgen_angry.png
+JURGEN: Hmph. Are you saying that someone so focused on winning must not have hobbies?
+PLAYER: (...)
+
+> show jurgen_neutral.png
+JURGEN: ...I apologize. That was crass.
+
+> show jurgen_happy.png
+Yes, I value having pursuits unrelated to one's main vocation. It makes one more well-rounded and interesting.
+I occasionally write short stories, inspired by and built off of works I've enjoyed.
+I try to post them on the internet in case others are interested.
+PLAYER: (...Sounds like fanfiction to me.)
+JURGEN: I do quite enjoy cooking as well. So it's delightful to travel so much and sample world cuisines.
+I'm pleased you chose this restaurant. It is said to be quite good.
+
+PLAYER: Glad you like it.
+
+> background restaurant.png
+
+WAITER: Can I get you two anything else tonight?
+> show jurgen_happy.png
+JURGEN: The food was excellent. Please give my compliments to the back of house.
+WAITER: Certainly, sir. Would you like to see the dessert menu?
+
+PLAYER: (What is this dish?)
+WAITER: That is rye bread with cream cheese and jam. It's very delicious.
+PLAYER: (Looks intriguing.)
+> show jurgen_neutral.png
+JURGEN: Very. Though I am quite full. Would you be willing to share?
+PLAYER: Let's do it!
+
+> FLAG jurgen1
+> jump jurgen_end
+
+> label park
+
+> show jurgen_happy.png
+JURGEN: Ah, an amusement park! I was unaware there was one nearby.
+I would love to spend the day there with you.
+Until tomorrow, then.
+
+> background none
+> music none
+The next day...
+
+> background park.jpg
+> music day.ogg
+
+PLAYER: It says here that this is a "catapult".
+It's an elastic slingshot that propels you into the air and lets you free-fall.
+
+> show jurgen_neutral.png
+JURGEN: I am not interested.
+
+PLAYER: But it looks so fun!
+And it's fast! How can you be a luger and not like speed?
+
+> show jurgen_angry.png
+JURGEN: That...that is completely different!
+
+> show jurgen_neutral.png
+Luge has uncontrollable speed, yes...
+But somehow, we mold it into something perfectly controllable.
+
+> show jurgen_angry.png
+But this! I have no desire to play-act a fall to my death.
+PLAYER: Fine...
+
+> background park.jpg
+PLAYER: (I wanna go play paintball...)
+
+> show jurgen_neutral.png
+JURGEN: I'm not much for shooting guns.
+PLAYER: Come on! You already skipped the catapult!
+JURGEN: I am content to watch you play.
+PLAYER: No. This time, you're coming with me.
+
+> show jurgen_angry.png
+JURGEN: Ugh...
+
+> background park.jpg
+
+> show jurgen_neutral.png
+PLAYER: Geez, haha!
+PLAYER: You might be the worst shot I've ever seen!
+
+> show jurgen_angry.png
+JURGEN: Hmph. That was the second time I've ever held a gun.
+
+> show jurgen_neutral.png
+Let us move on.
+
+PLAYER: I'll bet you an ice cream that I can beat you at the archery range!
+
+> show jurgen_happy.png
+JURGEN: Is that so? Deal.
+JURGEN: Ah, yes...I may have forgotten to mention that I was the under-12 archery champion in my region.
+JURGEN: Good luck.
+
+> background none
+
+PLAYER: (Jurgen trounced me. 280 to 72...)
+> background park.jpg
+> show jurgen_neutral.png
+JURGEN: Well...your form wasn't bad.
+> show jurgen_happy.png
+I must say, though, this is a delicious ice cream cone.
+PLAYER: (He's just patronizing me...)
+
+> background park.jpg
+
+> show jurgen_neutral.png
+JURGEN: It's been an eventful day.
+JURGEN: Was there anything else you wanted to do before we go?
+PLAYER: (No, I'm good.)
+JURGEN: Then let us return to the hotel.
+
+> show jurgen_happy.png
+I must say, this amusement park was quite nice.
+It's quaint. Nothing like the garish, corporate parks of America.
+I had a good time today. Thank you.
+
+> FLAG jurgen2
+> jump jurgen_end
+
+> label town
+
+> show jurgen_happy.png
+Ah, exploring the town? An excellent idea.
+The architecture here is beautiful. I would love to explore.
+Until tomorrow, then.
+
+> background none
+> music none
+PLAYER: The next day...
+
+> background j_town_day.jpg
+> music cold_sunny.ogg
+
+> show jurgen_neutral.png
+JURGEN: Nice to see you.
+JURGEN: I got us both walking sticks.
+PLAYER: (That's so thoughtful...)
+
+JURGEN: This town is supposed to be known for these walking sticks. Peculiar, no?
+JURGEN: I suppose people must hike frequently here.
+
+> background church.jpg
+> show jurgen_neutral.png
+JURGEN: Ah, a church.
+JURGEN: If you wouldn't mind, I'd like to go inside.
+
+> background inchurch.png
+> music hymn.ogg
+
+> show jurgen_neutral.png
+JURGEN: This brings back memories.
+All churches are the same in a way, I suppose...
+PLAYER: Are you religious?
+JURGEN: I am not.
+JURGEN: But I feel a certain kinship with religion.
+I sang in the church choir while in school.
+And it inspires me that religious faith can compel people to create such beautiful art.
+Many people in my town were religious. Church was a gathering point for them.
+I was not interested.
+But a part of me wanted to be interested. So I could be part of their community.
+Such is life, I suppose. One cannot control their beliefs.
+
+> background castle_outside.jpg
+> music cold_sunny.ogg
+> show jurgen_happy.png
+JURGEN: ...Ah, a castle!
+JURGEN: I've heard there are many in the area. It's impressively well maintained.
+
+> show jurgen_neutral.png
+JURGEN: Would you like to walk around the interior?
+PLAYER: That sounds lovely.
+
+> background castlegrounds.png
+
+> show jurgen_neutral.png
+JURGEN: Look, up on the parapet. It's an egret.
+PLAYER: I didn't know you were into birds.
+JURGEN: I used to birdwatch a lot as a child.
+It was a good way to pass the time...and I could do it wherever I wanted, by myself.
+I dived obsessively into a lot of things. Plants, astronomy, geography...
+When I found something interesting, I wanted to know all about it.
+And then one day I would suddenly lose all interest. And I would move on to something else.
+PLAYER: I can see where you get that competitive spirit.
+But then, when you're at the top...
+When you're a luge world champion...
+...will you just quit?
+JURGEN: I can't know for sure, but once that happens, there's little else to do.
+So I think I would.
+
+> FLAG jurgen3
+> label jurgen_end
+
+> background j_town_day.jpg
+> music crickets.ogg
+
+> show jurgen_neutral.png
+JURGEN: I must return to my hotel soon.
+JURGEN: Before I go, I have a small request of you.
+JURGEN: Forgive me for my own...insecurities.
+JURGEN: I like you quite a lot. But I want to know that you like me too.
+JURGEN: Please permit me to ask a question, just to reassure myself.
+PLAYER: Sure, go ahead.
+
+> jump_if jurgen1 test2
+
+JURGEN: Do you remember what one of my hobbies is?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+> choice
+| Knitting wrong
+| Gardening wrong
+| Video games wrong
+
+> label test2
+> jump_if jurgen2 test3
+
+JURGEN: Do you remember what sport I won a championship in?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+> choice
+| Swimming wrong
+| Track and field wrong
+| Soccer wrong
+
+> label test3
+> jump_if jurgen3 test_final
+
+JURGEN: Do you remember what group I was a member of in school?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+> choice
+| Puzzle club wrong
+| Student council wrong
+| Band wrong
+
+> label test_final
+JURGEN: Do you remember what one of my hobbies is?
+PLAYER: (...!)
+PLAYER: (I think I know this one!)
+> choice
+| Knitting wrong
+| Gardening wrong
+| Writing good_end
+
+> label wrong
+> show jurgen_neutral.png
+JURGEN: Hm. I don't believe I said that...
+JURGEN: I apologize...but I think I may not be ready to pursue anything right now.
+JURGEN: I need to focus on achieving my own goals first.
+JURGEN: The fault is mine, not yours. But I'm thankful for your faith in me.
+
+> show jurgen_happy.png
+JURGEN: Thank you for today.
+JURGEN: I hope to see you again soon.
+
+> label bad_end
+> music none
+> background hotelroom.png
+PLAYER: Today was so fun...
+PLAYER: Jurgen is an interesting person.
+PLAYER: I hope he achieves his dreams.
+PLAYER: I'm looking forward to seeing him again someday.
+
+PLAYER: But...I wish it had worked out between us.
+PLAYER: I wonder if things could have been different somehow...
+PLAYER: Maybe if I understood him a little better...
+PLAYER: zzz...
+
+> bad_end
+
+> label good_end
+
+> show jurgen_happy.png
+JURGEN: That's right.
+Thank you...for liking me.
+And now, like I said. I have a surprise for you.
+
+> jump jurgen_luge.txt

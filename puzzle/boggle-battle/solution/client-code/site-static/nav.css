@@ -1,0 +1,155 @@
+.navbar {
+  display: flex;
+  flex-flow: row wrap;
+  color: white;
+  background-color: #202018;
+  position: relative;
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 2;
+  margin: 14px 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.navbar-list a {
+  padding: 14px 20px;
+}
+
+.navbar-subtext {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.nav-links-dropdown-menu {
+  position: absolute;
+  background-color: #202018;
+  list-style-type: none;
+  padding: 12px;
+  margin: 0;
+  top: 100%;
+  z-index: 10;
+  display: none;
+}
+
+.navbar-list .nav-links-dropdown-toggle:hover {
+  text-decoration: none;
+}
+
+.navbar-list .nav-links-dropdown-menu {
+  padding-top: 0;
+}
+
+.nav-links-dropdown-menu a {
+  padding: 6px 2px;
+  width: 100%;
+  display: block;
+}
+
+.nav-links-dropdown-toggle:after {
+  border: solid white;
+  border-width: 0 0.2em 0.2em 0;
+  content: "";
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.2em;
+  transform: rotate(45deg);
+  position: relative;
+  top: -0.2em;
+}
+
+.upside-down {
+  display: inline-block;
+  fill: currentColor;
+  height: 0.7em;
+}
+
+.nav-account-panel {
+  flex-grow: 1;
+  text-align: right;
+  list-style-type: none;
+  margin: 5px 20px;
+  padding: 0;
+  font-size: 15px;
+}
+
+.nav-account-panel-team-actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.team-action-item {
+  padding: 0 0 0 12px;
+}
+
+.nav-links-dropdown-toggle img {
+  height: 2em;
+  vertical-align: middle;
+  margin: -0.5em;
+}
+
+#bookmarks .nav-links-dropdown-menu {
+  max-width: 300px;
+}
+
+#bookmarks .nav-links-dropdown-menu a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#bookmarks .nav-links-dropdown-menu span {
+  float: right;
+  margin-left: 0.5em;
+  color: #f0eca3;
+}
+
+#bookmark {
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  cursor: pointer;
+  background-image: url(/static/bookmark.png);
+  width: 60px;
+  height: 60px;
+  background-size: 120%;
+  background-position: center;
+}
+
+#bookmark, .nav-links-dropdown-toggle img {
+  transition: filter 0.1s;
+  filter: grayscale(0.5) drop-shadow(0 0 0 transparent);
+}
+
+#bookmark.bookmarked:not(:hover) {
+  filter: grayscale(0.0) drop-shadow(0 0 0 transparent);
+}
+
+#bookmark:not(.bookmarked):hover {
+  filter: grayscale(0.4) drop-shadow(0 2px 2px white);
+}
+
+#bookmark.bookmarked:hover {
+  filter: grayscale(0.1) drop-shadow(0 2px 2px white);
+}
+
+.nav-links-dropdown-toggle:hover img {
+  filter: grayscale(0.0) drop-shadow(0 0 2px white);
+}

@@ -1,0 +1,90 @@
+Puzzle requires cooking something to receive the final answer.	TRUE
+Puzzle references previous Mystery Hunts.	TRUE	code
+Puzzle uses an anime that started airing in the past 2 years.	TRUE
+Puzzle uses a TV show that stopped airing before 1980.	FALSE	code
+Puzzle involves playing a video game.	TRUE	code
+Puzzle uses a video game released in the past 2 years.	TRUE
+Puzzle involves matching puzzle content to a location on MIT campus.	TRUE
+Puzzle secretly references a board game.	TRUE
+Puzzle uses grad-level math or higher.	TRUE	code
+Puzzle where teams must create a video.	TRUE
+Puzzle about Magic: the Gathering.	TRUE
+Puzzle data is embedded in something produced months ago.	TRUE
+Puzzle uses blockchains in some way.	FALSE
+Puzzle uses ternary in extraction.	TRUE	code
+At least five puzzles involves rearranging trigrams.	TRUE
+At least three puzzles involve cryptic clues.	TRUE	code
+Puzzle's answer is contained in a QR code.	TRUE
+Puzzle must be backsolved.	TRUE
+Hunt contains at least 20,000 puzzles (base ten).	TRUE	code
+Puzzle involves translating puflantu.	FALSE	code
+Puzzle involves calling a phone number.	FALSE
+Puzzle content appears in The Tech.	TRUE
+Metapuzzle involving fewer than four answers.	TRUE
+Metapuzzle involving greater than sixty-five answers.	TRUE
+At least 1 puzzle that changes when you refresh the page.	TRUE
+Puzzle is self-referential.	TRUE	code
+Hunt takes at least ten minutes.	TRUE	code
+Puzzle requires setting a physical object on fire to solve.	FALSE	code
+Puzzle involves solving a slitherlink.	TRUE	code
+Puzzle containing no alphabetic characters.	TRUE	code
+Puzzle that only works in dark mode.	FALSE	code
+Puzzle references a local Cambridge restaurant.	TRUE
+Puzzle referencing Steamed Hams.	TRUE
+Jigsaw puzzle with no printing on pieces.	FALSE	code
+Fewer than 8 errata.	FALSE	code
+Puzzle whose answer is at least 40 characters long.	FALSE
+Puzzle whose title is at least 80 characters long.	TRUE	code
+Puzzle whose title is the same as its answer.	FALSE
+Puzzle involves a crossword with at least 600 squares.	FALSE
+Puzzle involves an esoteric programming language.	TRUE
+Puzzle is a diagramless crossword.	TRUE
+Puzzle involves solving a sudoku.	TRUE	code
+Puzzle requires building a Nintendo Labo.	FALSE
+Puzzle titled 50/50.	FALSE
+Page on the hunt website plays Rock Lobster.	TRUE	code
+Puzzle with a crossword that involves filling anything other than letters in its cells.	FALSE
+Erratum issued in the first ten minutes.	FALSE	code
+Puzzle involving state flags.	FALSE
+Event involving estimation.	FALSE
+Puzzle about Pokémon.	TRUE	code
+At least 5 events.	TRUE	code
+Puzzle that is secretly a physical runaround.	FALSE
+Puzzle that is secretly not a physical runaround.	TRUE
+Puzzle that is a text adventure.	TRUE	code
+Puzzle involving solving a crossword.	TRUE	code
+Puzzle involves texting a phone number.	TRUE	code
+Puzzle involving great circle mapping.	TRUE
+Puzzle about chess.	TRUE
+Puzzle about knitting.	FALSE
+Puzzle involving liquids distributed to teams.	TRUE
+Puzzle involving long division.	FALSE
+Puzzle involving Huffman coding.	TRUE
+Puzzle about combinatorial game theory.	FALSE
+Puzzle without any words other than the title.	TRUE
+Puzzle involves solfège.	TRUE
+Puzzle involves rearranging trigrams.	TRUE	code
+Puzzle page without any content other than the title.	TRUE	code
+Puzzle about sewing.	TRUE
+Puzzle involving more than five Taylor Swift songs.	FALSE
+Puzzle includes vowels but no consonants.	FALSE
+Puzzle about K-Pop.	FALSE
+Puzzle is a murder mystery.	FALSE
+Puzzle page includes at least 3 different IATA airport codes.	TRUE
+Puzzle printed on a face mask.	FALSE
+Puzzle involving gather.town.	FALSE
+Puzzle involving Among Us.	FALSE
+Puzzle involving resistor color codes.	TRUE
+Puzzle with multiple answers.	FALSE
+Puzzle about Mahjong.	FALSE
+Puzzle that is a duck konundrum.	FALSE
+Puzzle about bridge or poker.	FALSE
+Puzzle references the US 2020 election.	FALSE
+Puzzle using information embedded in an email sent before hunt.	FALSE
+Solved a puzzle in less than 5 minutes after unlocking it.	TRUE
+Puzzle involving tangrams.	FALSE
+Puzzle involving stock symbols.	FALSE
+Puzzle referencing the MBTA subway map.	TRUE
+Puzzle involving Bacon's cipher.	FALSE
+Puzzle involves the FAQ page.	TRUE
+Puzzle involves constructing an electronic circuit.	FALSE

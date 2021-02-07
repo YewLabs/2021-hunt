@@ -1,0 +1,59 @@
+<div><p>This puzzle is about experimenting with a tournament bracket to figure out how the bracket determines its winners. When we open the puzzle, we see that the bracket is almost entirely populated, that there's exactly one blank, and that each match-up has scores attached to it. While we could try to analyze the existing matchups to gain an understanding of the bracket, we can get more information by trying different options in the empty space.<p>
+
+<p>There's a lot of experimentation we could try at this point; here's some examples of what we might attempt, and the results of the examples:</p>
+<ul>
+	<li><strong>BARK</strong> beats "Codenim" with a score of "10!" versus a score of "12!", then loses to "Do" with a score of "10!" to a score of "3!".</li>
+	<li><strong>BABA</strong> beats "Codenim", "Do", and "Stone Rage" with a score of "5" versus a score of "0", beats "Thee & Thy" with a score of "5" versus a score of "4", and then loses to "Windex Ooze" with a score of "0" versus a score of "5".</li>
+	<li><strong>BOX</strong> beats every competitor with a score of "11" versus a score of "0", and then loses to Windex Ooze with a score of 0&ndash;5, again.</li>
+</ul>
+
+<p>As we experiment with different words and try other possibilities, we're able to work out that there's a collection of multiple rules that are being applied. Different rules have somewhat different scoring systems, and each "division" of the bracket illustrates a different rule.</p>
+
+<h3>Game Night Division</h3>
+<p>The names of the entries in this division parody famous boardgames, and all of their scores are double-digit numbers. In addition, we note that each score ends in an exclamation point, noting that there's something unusual about this category. The scores in this division are <strong>Scrabble scores</strong>, and unlike the other divisions, the <em>lower-scoring</em> competitor advances to the next round.</p>
+
+<h3>Double Time Division</h3>
+<p>The names of the entries in this division are pairs of some sort, make-believe or real. In this division, the successful words have <strong>a single vowel pair</strong> and no other vowels. Each word gets a <strong>score based on the vowel in the pair</strong>: A = 5, E = 4, I = 3, O = 2, U = 1. The higher-scoring competitor advances to the next round.</p>
+
+<h3>Jungle Division</h3>
+<p>The names of the entries in this division are different animals of varying degrees of realness (mostly not real). In this division, the successful words contain the name of <strong>an animal of the Chinese Zodiac</strong>, and score based on the canonical order of the Zodiac, starting with the Rat (the 2021 Mystery Hunt took place during the last portion of the Year of the Rat).</p>
+
+<ul>
+	<li>Rat: 12 points</li>
+	<li>Ox: 11 points</li>
+	<li>Tiger: 10 points</li>
+	<li>Rabbit: 9 points</li>
+	<li>Dragon: 8 points</li>
+	<li>Snake: 7 points</li>
+	<li>Horse: 6 points</li>
+	<li>Goat: 5 points</li>
+	<li>Monkey: 4 points</li>
+	<li>Rooster: 3 points</li>
+	<li>Dog: 2 points</li>
+	<li>Pig: 1 point</li>
+</ul>
+
+<h3>Dungeon Division</h3>
+<p>The names of the entries in this division parody popular <em>Dungeons & Dragons</em> monsters such as the Owlbear, the Green Dragon, and the Gelatinous Cube. In this division, the successful words contain the name of <strong>an abbreviation of one of the 6 core attributes in D&D</strong>, and score based on the canonical ordering from the most recent edition of D&D.</p>
+
+<ul>
+	<li>Strength (STR): 6 points</li>
+	<li>Dexterity (DEX): 5 points</li>
+	<li>Constitution (CON): 4 points</li>
+	<li>Intelligence (INT): 3 points</li>
+	<li>Wisdom (WIS): 2 points</li>
+	<li>Charisma (CHA): 1 point</li>
+</ul>
+
+<p>When we experiment, we discover that these four rules form a stack; when two words compete, start at the top of the stack until you find a rule where one word beats the other, and then use that rule (and the scores associated with it). Dungeon Division (D&D attributes) is the first rule considered, then Jungle Division (Zodiac animals), then Double Time Division (single pair of vowels), and finally Game Night Division (lowest Scrabble score). If both words go through all four rules with no clear winner, both are disqualified from the competition and receive a score of "N/A".</p>
+
+<p>This means that two words which are tied on the Dungeon rule need to move on to the Jungle rule, and if they're still tied, they need to move on to the Double Time rule, and if they're <em>still tied</em>, they need to move on to the Game Night rule. So what would happen if you tried to find words that had the highest possible score in all four rules (or, in the case of Scrabble, the lowest possible score)? As it turns out, there's exactly one word that fits that criteria, a word that will always win no matter the bracket. That word is <span class="answer">STRATA</span>.</p>
+</div>
+
+<p>Note that the Losers' Bracket is simply populated with the losers from the main bracket and is there to provide solvers with additional information on matchup outcomes. Unlike the other brackets, it has no theme and is not associated with any rule.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>I got the idea for this puzzle from a Tweet I saw (no longer available) where the author talked about making unusual brackets for fun, so that they could debate who would win in a mock tournament between the options, which sometimes included unusual subjects such as "best chairs". Once I received the answer, I needed to construct rules that would produce the outcome I wanted. Noticing the substrings "STR" and "RAT" narrowed things down significantly, and then with the help of the puzzle editors, we were able to work out two more rules that eliminated pesky optional answers such as STRATAGEM and STRATS.</p>
+	<p>You might have noticed the odd presence of answers referencing the word "ogre" across different divisions. This is a nod to the established fact that both onions and ogres have one thing in common: strata.</p>
+</div>

@@ -1,0 +1,25 @@
+name: garden-path
+difficulty: 2/10
+coolness: 5/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "In the sentence \"The child told the story cried\", what is the complete subject?"
+        - answer: the child told the story
+
+    - question:
+        - text: "In the sentence \"We painted the sidewalk with cracks\", what is the complete object?"
+        - answer: the sidewalk with cracks
+
+    - question:
+        - text: "In the sentence \"I convinced her children are noisy\", what is the direct object?"
+        - answer: her
+
+    - question:
+        - text: "In the sentence \"The man who whistles tunes pianos\", what is the complete subject?"
+        - answer: the man who whistles
+
+    - question:
+        - text: "In the sentence \"The prime number few\", what is the complete subject?"
+        - answer: the prime

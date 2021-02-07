@@ -1,0 +1,148 @@
+<style>.puzzle img { width: 50%; margin: 0 25%; }</style>
+
+<p>This puzzle consists of 9 rooms arranged around a central &ldquo;hub&rdquo;:</p>
+<p><img src="{{sroot}}image0.png"></p>
+<p>These rooms are totally black, and you can only see your own name (and those of your teammates) as you walk around them. To help with navigation, you can also hear footsteps as you move in each room and a &ldquo;bump&rdquo; sound effect if you walk into a wall.</p>
+<p>Each room turns out to be its own sound-based minipuzzle, extracting to a single letter.</p>
+
+<h3>Room 1</h3>
+<p>This room contains a point source of sound that moves around in a fixed path at a constant speed, and is louder the closer you are to it. Additionally, if you are using headphones, the sound is louder in the left ear if it&rsquo;s to the left of you, and vice versa, which helps pinpoint the location. We can determine that the path looks like the below image, where the sound starts at point 1 and then moves to points 2, 3, 4, 5, 4, 3, 2, and back to 1 and repeats.</p>
+<p><img src="{{sroot}}image7.png"></p>
+<p>This traces out a capital <b>A</b>.</p>
+
+<h3>Room 2</h3>
+<p>In this room, walking over different regions causes different sound clips to play.</p>
+<p><img src="{{sroot}}image6.png"></p>
+<p>In the reference screenshot above:</p>
+<ul>
+<li>Black regions represent walls that you bump into</li>
+<li>Standing in the left gray region plays a looped audio clip of some boat sounds along with a voice speaking &ldquo;Diver down&rdquo;</li>
+<li>Standing in the middle gray region plays a looped audio clip of some boat sounds along with a voice speaking &ldquo;Dangerous cargo&rdquo;</li>
+<li>Standing in the right gray region plays a looped audio clip of some boat sounds along with a voice speaking &ldquo;Affirmative&rdquo;</li>
+<li>Standing in any red, white, or blue region plays noise (the reason for these colors will be explained shortly). The red regions have the lowest frequencies, while the blue regions have the highest.</li>
+</ul>
+<p>The statements &ldquo;Diver down&rdquo;, &ldquo;Dangerous cargo&rdquo;, and &ldquo;Affirmative&rdquo; are represented by the <a href="https://omniglot.com/writing/imsf.htm">maritime signal flags</a> (hence the boat sounds) of A, B, and C. The positioning of the three square regions at the top suggest that they correspond to these flags. Indeed, we can assign red, white, or blue to the three frequencies of noise, so that these three regions make the flags for A, B, and C. We can then decode the region at the bottom as the flag representing the letter <b>F</b>.</p>
+
+<p>The noises that play are actually <a href="https://en.wikipedia.org/wiki/Colors_of_noise">red (brown) noise, white noise, and blue noise</a> &mdash; realizing this is helpful but certainly not needed to solve the puzzle.</p>
+
+<h3>Room 3</h3>
+<p>This room has 6 sound sources that get louder as you move closer to them, located at the squares in the below screenshot. Like room 1, if you are positioned to the left or the right of a sound, then it will appear louder in your right ear or left ear, respectively.</p>
+<p><img src="{{sroot}}image8.png"></p>
+<p>Each of the sounds uses a different instrument to help tell them apart, and plays a major scale (from <a href="https://en.wikipedia.org/wiki/Scientific_pitch_notation#Use">C4 to C5</a>) with some notes replaced with silence. We can make a table of which notes are played by each of the 6 sounds:</p>
+<table>
+<tr><th>Location</th><th>C4</th><th>D4</th><th>E4</th><th>F4</th><th>G4</th><th>A4</th><th>B4</th><th>C5</th></tr>
+<tr><th>Top-left</th><td>X</td><td>X</td><td>X</td><td></td><td>X</td><td>X</td><td></td><td>X</td></tr>
+<tr><th>Top-right</th><td>X</td><td>X</td><td></td><td>X</td><td></td><td></td><td>X</td><td>X</td></tr>
+<tr><th>Left</th><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td>X</td><td>X</td><td></td></tr>
+<tr><th>Right</th><td></td><td>X</td><td>X</td><td></td><td></td><td></td><td>X</td><td></td></tr>
+<tr><th>Bottom-left</th><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td>X</td></tr>
+<tr><th>Bottom-right</th><td></td><td></td><td></td><td></td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+</table>
+<p>The 2&times;3 grid of locations (and general theming of the puzzle) suggests using Braille. For each tone, if we take the subset of locations that play that tone and read that as a Braille letter, we get:</p>
+<table>
+<tr><td>C4</td><td>P</td></tr>
+<tr><td>D4</td><td>Q</td></tr>
+<tr><td>E4</td><td>R</td></tr>
+<tr><td>F4</td><td>S</td></tr>
+<tr><td>G4</td><td>U</td></tr>
+<tr><td>A4</td><td>V</td></tr>
+<tr><td>B4</td><td>W</td></tr>
+<tr><td>C5</td><td>X</td></tr>
+</table>
+<p>This is a consecutive sequence of the alphabet with <b>T</b> missing.</p>
+
+<h3>Room 4</h3>
+<p>Like in room 2, walking over different regions causes different sound clips to play.</p>
+<p><img src="{{sroot}}image1.png"></p>
+<p>In the screenshot above:</p>
+<ul>
+<li>Black regions are walls that you bump into</li>
+<li>Standing in a blue region plays the song &ldquo;Blue&rdquo; by Eiffel 65</li>
+<li>Standing in the red region plays the song &ldquo;Red&rdquo; by Taylor Swift</li>
+<li>Standing in the yellow regions plays the song &ldquo;Yellow&rdquo; by Coldplay</li>
+<li>Standing in the green region plays the song &ldquo;Bein&rsquo; Green&rdquo; by Kermit the Frog</li>
+<li>Standing in the grey region plays noise</li>
+<li>Standing in the left pink region plays the song &ldquo;Searchin&rsquo;&rdquo; by the Coasters</li>
+<li>Standing in the right pink region plays the song &ldquo;Get Lucky&rdquo; by Daft Punk</li>
+</ul>
+<p>The shapes and layout of the regions combined with the colors + &ldquo;searchin&rdquo; + &ldquo;lucky&rdquo; leads to the aha that this represents the Google homepage, where the letters in the logo are represented by their colors, with the exception of <b>E</b>, which has been replaced by noise.</p>
+
+<h3>Room 5</h3>
+<p>This room contains a bunch of sound sources that play constant square tones. Like rooms 1 and 3, the sounds become louder as you move closer, helping pinpoint where they are. However, unlike rooms 1 and 3, the sounds seem to disappear if you move too close to them.</p>
+<p>It turns out that each tone has two possible locations, and if you move too close to the current location of a tone, it will teleport to the other location and vice versa.</p>
+<p><img src="{{sroot}}image2.png"></p>
+<p>In the diagram above:</p>
+<ul>
+<li>A C4 tone starts at the bottom-left and teleports back and forth to the top-left</li>
+<li>An E4 tone starts at the top-left and teleports back and forth to the top-right</li>
+<li>A G4 tone starts at the top-right and teleports back and forth to the center-right</li>
+<li>An A4 tone starts at the center-right and teleports back and forth to the center-left</li>
+<li>A B4 tone starts at the bottom-right and teleports back and forth to the center</li>
+</ul>
+<p>Drawing lines between the two points corresponding to each tone, we make the shape of a capital <b>R</b>.</p>
+
+<h3>Room 6</h3>
+<p>In this room, each of 24 regions within a 5&times;5 square (the middle one is a wall) plays a clip of two simultaneous voices.</p>
+<p><img src="{{sroot}}image3.png"></p>
+<p>If you walk across each row and column, you can hear one of the voices reading out a crossword clue. The higher voice always reads across a row and the lower voice always reads down a column. With some difficulty, we can identify the clues:</p>
+<table>
+<tr><td>Row 1</td><td>Attended, as a party</td></tr>
+<tr><td>Row 2</td><td>Look before you leap, e.g.</td></tr>
+<tr><td>Row 3</td><td>Self driving[...]sensor</td></tr>
+<tr><td>Row 4</td><td>Soils good for planting</td></tr>
+<tr><td>Row 5</td><td>Lauder of cosmetics</td></tr>
+<tr><td>Column 1</td><td>Love of Eve in film</td></tr>
+<tr><td>Column 2</td><td>&ldquo;So long&rdquo; in Seville</td></tr>
+<tr><td>Column 3</td><td>Seventy-eight[...]elist</td></tr>
+<tr><td>Column 4</td><td>One&rsquo;s best self, perhaps</td></tr>
+<tr><td>Column 5</td><td>Not circumlocutory</td></tr>
+</table>
+<p>We can solve these clues and place the answers in a 5&times;5 grid given by the room layout:</p>
+<table>
+<tr><td>W</td><td>A</td><td>S</td><td>A</td><td>T</td></tr>
+<tr><td>A</td><td>D</td><td>A</td><td>G</td><td>E</td></tr>
+<tr><td>L</td><td>I</td><td></td><td>A</td><td>R</td></tr>
+<tr><td>L</td><td>O</td><td>A</td><td>M</td><td>S</td></tr>
+<tr><td>E</td><td>S</td><td>T</td><td>E</td><td>E</td></tr>
+</table>
+<p>Although parts of the clues for the 3rd row and column are cut off by the missing center square, we can use the known letters to deduce that the clues are &ldquo;Self driving car sensor&rdquo; and &ldquo;&lsquo;78 Nobelist&rdquo;, with answers LIDAR and SADAT intersecting at the <b>D</b> in the center.</p>
+
+<h3>Room 7</h3>
+<p>This room has several regions that play a square tone when you are standing in them. We can map them out:</p>
+<p><img src="{{sroot}}image4.png"></p>
+<p>We can see the letters P, I, N, O with an underscore or dash in the middle. This can only be filled in with the letter <b>A</b> to get the thematic word PIANO.</p>
+<p>The 5 regions play the tones C4, D4, E4, F4, and G4 respectively, which confirms the ordering.</p>
+
+<h3>Room 8</h3>
+<p>In this room, different snippets from the first ~5 seconds of &ldquo;Never Gonna Give You Up&rdquo; by Rick Astley play, but only when you move. The room is otherwise totally empty.</p>
+<p>With some experimentation, we find that the specific clip that plays depends on which direction you&rsquo;re moving in. We can smoothly play the beginning of &ldquo;Never Gonna Give You Up&rdquo; in the right order by moving NW for .75 seconds, S for .75 seconds, N for 1.5 seconds, E for .75 seconds, SE for .375 seconds, SW for .375 seconds, and finally W for .75 seconds (nothing plays if you move NE). This traces out the shape of a capital <b>R</b>.</p>
+<p>(The exact clip lengths are only provided for completeness &mdash; you certainly don&rsquo;t need to be so precise to solve it.)</p>
+
+<h3>Room 9</h3>
+<p>This room is similar to rooms 2 and 4 in that walking over certain regions plays certain sounds.</p>
+<p><img src="{{sroot}}image5.png"></p>
+<p>In the above screenshot:</p>
+<ul>
+<li>As always, the large black region in the center is an impassable wall</li>
+<li>Standing in the four red regions on the sides plays a train sound effect</li>
+<li>Standing in the top-left blue region plays parking lot sounds</li>
+<li>Standing in the top-right blue region plays a sound effect of a jail door slamming shut</li>
+<li>Standing in the bottom-left blue region plays background sounds of people talking and fighting</li>
+<li>Standing in the bottom-right blue region plays the <a href="https://www.youtube.com/watch?v=KOoCEIwswYg">race start sound</a> from the Mario Kart series</li>
+<li>Standing in any of the green regions, as well as the top-left blue region, plays a &ldquo;ding&rdquo; sound</li>
+</ul>
+<p>We can deduce that this represents a monopoly board, as the red regions are the railroads and the corners represent Free Parking, Go To Jail, Just Visiting, and Go. The squares corresponding to the &ldquo;ding&rdquo; sounds are New York Avenue, Free Parking, Kentucky Avenue, Water Works, Park Place, and Boardwalk. These are exactly the set of spaces on a Monopoly board whose names contain the letter <b>K</b>.</p>
+<p>(Note: this subpuzzle is much more difficult to solve without knowing that you&rsquo;re looking for a single letter.)</p>
+
+<h3>Final</h3>
+<p>We read the letters clockwise around the main room, picking an appropriate starting place, to get the answer <span class="answer">AFTER DARK</span>.</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+<p>This idea was originally inspired by a flash game I made for the Ludum Dare game jam called <a href="https://ldjam.com/events/ludum-dare/39/a-black-screen">A Black Screen</a>. The game focused more on navigating an area with audio cues only and you couldn&rsquo;t see your relative position in the room &mdash; we considered doing something similar in the puzzle, but quickly found that it was a lot more fun if you knew exactly where you were, so we kept the username that appears above your character.</p>
+
+<p>This puzzle was an absolute pain to make in Unity, and I encountered tons and tons of bugs and gotchas at every step along the way. In addition to the time spent brainstorming, audio editing, and implementing the individual room logic, it took an additional 20-30 hours to deal with all the various technical issues that popped up (including implementing custom logic to make sounds pan from side to side and get quieter with distance when Unity&rsquo;s built-in spatial sound failed to work on WebGL &mdash; if you dig around the Unity forums you can find a post I made asking for help when no one on the team knew how to deal with that issue). 0/10 would not recommend.</p>
+
+<p>Room 6 was actually an idea for an audio crossword puzzle I had for a while before it was somewhat scooped in 2013 by <a href="http://web.mit.edu/puzzle/www/2013/coinheist.com/rubik/dissonant_counterpoint/index.html">Diagramless Crossmusic</a>. I was happy to be able to use it here, in a context where you could walk through the rows and columns to hear the clues without needing to manually stitch together audio clips.</p>
+</div>

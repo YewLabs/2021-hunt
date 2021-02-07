@@ -1,0 +1,52 @@
+{% extends "hunt/layout.tmpl" %}
+{% load tz %}
+{% block content %}
+<style>
+    html, body {
+        background: none;
+        min-width: 0;
+        height: auto;
+    }
+    form {
+        text-align: center;
+    }
+    .form-field {
+        display: inline;
+        text-align: left;
+        margin: 1em .75em;
+    }
+    td.checkmark {
+        text-align: center;
+    }
+    .error {
+        font-weight: bold;
+        color: #ff0000;
+    }
+</style>
+
+<p>
+    <b>{{ data|length }}</b> registration{{ data|length|pluralize}} across
+    <b>{{ team_count }}</b> team{{ team_count|pluralize }}:
+    <table>
+        <th>
+            <td>Name</td>
+            <td>Email</td>
+            <td>{{ slots.1|date:"f A" }}</td>
+            <td>{{ slots.2|date:"f A" }}</td>
+            <td>{{ slots.3|date:"f A" }}</td>
+        </th>
+        {% for reg in data %}
+        <tr>
+            <td>{{ reg.team_username }}</td>
+            <td>{{ reg.name }}</td>
+            <td>{{ reg.email }}</td>
+            <td class="checkmark">{{ reg.slot_7|yesno:"X," }}</td>
+            <td class="checkmark">{{ reg.slot_8|yesno:"X," }}</td>
+            <td class="checkmark">{{ reg.slot_9|yesno:"X," }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% comment %}{{ data }}{% endcomment %}
+</p>
+
+{% endblock %}

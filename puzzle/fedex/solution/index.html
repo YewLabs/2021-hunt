@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="{{sroot}}style.css">
+
+<p> We start by finding the answers to the clues in the word search.</p>
+
+<table>
+    <tr style="text-align: left">
+        <th>Clue</th>
+        <th>Answer</th>
+    </tr>
+    <tr>
+        <td>Turn a square-rigged ship, in naval jargon</td>
+        <td><code>BOXHAUL</code></td>
+    </tr>
+    <tr>
+        <td>Where the last Enigma message was sent during WWII</td>
+        <td><code>CUXHAVEN</code></td>
+    </tr>
+    <tr>
+        <td>Disinter</td>
+        <td><code>EXHUME</code></td>
+    </tr>
+    <tr>
+        <td>Endless</td>
+        <td><code>INEXHAUSTIBLE</code></td>
+    </tr>
+    <tr>
+        <td>"Yourselves" case</td>
+        <td><code>REFLEXIVE</code></td>
+    </tr>
+    <tr>
+        <td>1729 is this kind of number</td>
+        <td><code>TAXICAB</code></td>
+    </tr>
+    <tr>
+        <td>Lord _____ (Twitch Plays Pokémon meme)</td>
+        <td><code>HELIX</code></td>
+    </tr>
+    <tr>
+        <td>Able, super, or uni, e.g.</td>
+        <td><code>AFFIX</code></td>
+    </tr>
+</table>
+
+<p> Each of these answers contains the letter X, which is always adjacent to either I or H. The word search is also in a square font that leaves no separation between neighboring letters. Upon examining the whitespace between X and I (when horizontal) and X and H (when vertical) in the answers, we notice that each whitespace is shaped like an arrow, similar to the whitespace arrow in the FedEx logo. The 8 arrows are identical except for orientation, and reading them in order gives the directions “up up down down left right left right”. </p>
+
+<p> These directions hint toward the Konami code, a cheat code found in many video games. Solvers must input the full Konami code on the puzzle page: “up up down down left right left right B A”. Once this is done, a doorbell rings, the arrows in the word search that were previously whitespace become colored, and a line of colored numbers appears.</p>
+
+<div id="first" style="display:block;"><img src="{{sroot}}FedEx C.png"></div>
+
+<p>
+The colors of the arrows correspond to the colors of the numbers: <span style="color: #df262d">3</span> <span style="color: #f48e48">2</span> <span style="color: #fff317">5</span> <span style="color: #49e415">5</span> <span style="color: #1ce7e0">4</span> <span style="color: #302eb8">5</span> <span style="color: #bc4ff7">6</span> <span style="color: #624c35">3</span>. For each color, we begin at the corresponding arrow and count letters in the indicated direction equal to the number (including X). This yields the letters <span class="answer"><span style="color: #df262d">B</span> <span style="color: #f48e48">U</span> <span style="color: #fff317">D</span> <span style="color: #49e415">A</span> <span style="color: #1ce7e0">P</span> <span style="color: #302eb8">E</span> <span style="color: #bc4ff7">S</span> <span style="color: #624c35">T</span></span>, which is the answer.</p>
+
+<p> Note: the whitespace between H and V (when vertical) is also shaped like an arrow, but it is not identical to the arrows in the clue answers and therefore not used.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>I have always been fond of video game secrets like the Konami Code. In fact, playing <i>Contra</i> with my dad is the earliest gaming experience I can remember, and <i>Contra</i> was a big reason behind the proliferation of the Konami Code. I knew I wanted to make a puzzle that subtly embeds the directional inputs of the Konami Code in a picture, and the arrow-hiding trick employed by the FedEx logo turned out to be very fitting for this purpose.</p>
+
+<p>Creating a custom font for this puzzle and making the arrows look uniform in all directions turned out to be more difficult than expected. As a result, I did not have time to remove the unintended red herring NEXTLAP, which can be found going up near the bottom of the word search. Hopefully it was clear that this had nothing to do with the clues given.</p>
+</div>

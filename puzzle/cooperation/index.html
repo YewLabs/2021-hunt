@@ -1,0 +1,49 @@
+<style>
+#coop-top {
+  text-align: center;
+}
+
+#coop-canvas {
+  background: white;
+}
+
+#coop-canvas, #coop-count {
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
+<div class="fourthwall">
+  While this puzzle is intended to be functional on most modern desktop and mobile browsers, it may be most reliable in Chrome. We also recommend having no more than about 10 people at a time.
+</div>
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<p id="coop-top">
+  <button id="coop-start">You may need to work together to see the whole picture.</button>
+</p>
+
+<div id="coop-container" style="display: none">
+  <canvas id="coop-canvas"></canvas>
+  <p id="coop-count">Collaborators: 0</p>
+  <script src="https://cooperation.perpendicular.institute/socket.io/socket.io.js"></script>
+  <script>
+var $jscomp=$jscomp||{};$jscomp.scope={};$jscomp.arrayIteratorImpl=function(g){var m=0;return function(){return m<g.length?{done:!1,value:g[m++]}:{done:!0}}};$jscomp.arrayIterator=function(g){return{next:$jscomp.arrayIteratorImpl(g)}};$jscomp.makeIterator=function(g){var m="undefined"!=typeof Symbol&&Symbol.iterator&&g[Symbol.iterator];return m?m.call(g):$jscomp.arrayIterator(g)};$jscomp.arrayFromIterator=function(g){for(var m,r=[];!(m=g.next()).done;)r.push(m.value);return r};
+$jscomp.arrayFromIterable=function(g){return g instanceof Array?g:$jscomp.arrayFromIterator($jscomp.makeIterator(g))};
+(function(){function g(){var b=[screen.width,screen.height];outerHeight==screen.width&&outerWidth==screen.height&&b.reverse();0==u&&innerHeight<screen.height&&(b=[innerWidth,innerHeight]);return b}function m(){var b=$jscomp.makeIterator(g()),d=b.next().value;b=b.next().value;d=(screenLeft+y+innerWidth*c.px)/d;b=(screenTop+u+innerHeight*c.py)/b;var a=Math.pow(d-A,2)+Math.pow(b-B,2)>Math.pow(.001,2);Date.now()>C+(a?1E3/60*Object.keys(n).length:1E3)&&(t.emit("updatePosition",{x:d,y:b,active:!document.hidden}),
+A=d,B=b,C=Date.now())}function r(){h.clearRect(0,0,p.width,p.height);p.width=p.offsetWidth;p.height=p.offsetHeight;h.save();h.translate(-screenLeft-y,-screenTop-u);var b=0,d=0;for(a in n)n[a].active?b++:d++,h.strokeStyle=n[a].active?"black":"gray",h.beginPath(),v(n[a],1),h.stroke();w.textContent="Collaborators: "+b;d&&(w.textContent+=" (+"+d+" inactive)");b=Object.entries(n);for(d=0;d<b.length;++d){var a=$jscomp.makeIterator(b[d]);a.next();a=a.next().value;if(a.active)for(var e=d+1;e<b.length;++e){var f=
+$jscomp.makeIterator(b[e]);f.next();f=f.next().value;if(f.active&&z(a,f)){h.save();h.beginPath();v(a,0);h.clip();h.beginPath();v(f,0);h.clip();h.beginPath();for(var k=e+1;k<b.length;++k){var l=$jscomp.makeIterator(b[k]);l.next();l=l.next().value;l.active&&z(a,l)&&z(f,l)&&v(l,0)}h.clip();h.drawImage.apply(h,[D,0,0].concat($jscomp.arrayFromIterable(g())));h.restore()}}}h.restore()}function z(b,d){var a=b.r,e=b.x,f=b.y,k=d.r,l=d.x,F=d.y,q=$jscomp.makeIterator(g()),x=q.next().value;q=q.next().value;a*=
+Math.sqrt(x*q);k*=Math.sqrt(x*q);a+=k;e=l*x-e*x;f=F*q-f*q;return e*e+f*f<a*a}function v(b,d){var a=b.r,e=b.x,f=b.y,k=$jscomp.makeIterator(g()),l=k.next().value;k=k.next().value;a=a*Math.sqrt(l*k)+d;e*=l;f*=k;h.moveTo(e+a,f);h.arc(e,f,a,0,10)}var y="leftChrome"in localStorage?+localStorage.leftChrome:outerWidth-innerWidth,u="topChrome"in localStorage?+localStorage.topChrome:outerHeight-innerHeight;document.body.addEventListener("mousemove",function(b){if(!localStorage.devicePixelRatio)localStorage.devicePixelRatio=
+devicePixelRatio;else if(localStorage.devicePixelRatio!=devicePixelRatio)return;localStorage.leftChrome=y=b.screenX-b.clientX-screenLeft-scrollX;localStorage.topChrome=u=b.screenY-b.clientY-screenTop-scrollY},{passive:!0});var w=document.getElementById("coop-count"),p=document.getElementById("coop-canvas"),h=p.getContext("2d"),A=0,B=0,C=Date.now(),G=document.getElementById("coop-container"),E=document.getElementById("coop-start"),D=new Image,n={},c={px:.5,py:.5,vx:0,vy:0},t=null;E.addEventListener("click",
+function(b){function d(){m();requestAnimationFrame(d)}G.style.display="";E.style.display="none";window.DeviceMotionEvent&&DeviceMotionEvent.requestPermission&&DeviceMotionEvent.requestPermission();window.addEventListener("devicemotion",function(a){var e=a.accelerationIncludingGravity;a=e.x;e=e.y;if(null!=a&&null!=e){var f=(window.orientation||0)*Math.PI/180;c.vx+=+a*Math.cos(f)-e*Math.sin(f);c.vy+=-a*Math.sin(f)-e*Math.cos(f);a=Math.sqrt(c.vx*c.vx+c.vy*c.vy);0!=a&&(e=Math.max(0,a-1),c.vx*=e/a,c.vy*=
+e/a);c.px+=c.vx/1E4;c.py+=c.vy/1E4;0>c.px&&(c.px=0,c.vx=0);1<c.px&&(c.px=1,c.vx=0);0>c.py&&(c.py=0,c.vy=0);1<c.py&&(c.py=1,c.vy=0)}});document.addEventListener("visibilitychange",m);window.addEventListener("resize",r);t=io("wss://cooperation.perpendicular.institute",{query:{auth:"{{ puzzle.auth }}"}});t.on("answerImage",function(a){D.src=a;d()});t.on("updatePositions",function(a){n=a;requestAnimationFrame(r)});t.on("disconnect",function(){w.textContent="Disconnected. Refresh to reconnect."});document.querySelector("meta[name=viewport]").content=
+"width=device-width,user-scalable=no"})})();
+  </script>
+</div>
+{% endif %}

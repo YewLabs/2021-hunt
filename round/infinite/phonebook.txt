@@ -1,0 +1,499 @@
+  1	actuary
+  2	apothecary
+  3	attorney
+  4	carry
+  5	deputy
+  6	decoy
+  7	drummer boy
+  8	defense attorney
+  9	disc jockey
+ 10	fall guy
+ 11	jockey
+ 12	notary
+ 13	nanny
+ 14	orderly
+ 15	paperboy
+ 16	spy <- start here**
+ 17	toady
+ 18	dominatrix
+ 19	guru
+ 20	astronaut
+ 21	acupuncturist
+ 22	analyst
+ 23	archivist
+ 24	archeologist
+ 25	artist
+ 26	astrologist
+ 27	accountant
+ 28	agent
+ 29	architect
+ 30	biologist
+ 31	cartoonist
+ 32	cardiologist
+ 33	cellist
+ 34	chemist
+ 35	cruciverbalist
+ 36	cartwright
+ 37	dentist
+ 38	dermatologist
+ 39	diplomat
+ 40	economist
+ 41	ecologist
+ 42	entomologist
+ 43	ergonomist
+ 44	exorcist
+ 45	escrow agent
+ 46	florist
+ 47	flutist
+ 48	foley artist
+ 49	game show host
+ 50	geneticist
+ 51	geologist
+ 52	grunt
+ 53	harpist
+ 54	hypnotist
+ 55	helicopter pilot
+ 56	illusionist
+ 57	internist
+ 58	journalist
+ 59	knight
+ 60	lookout
+ 61	librettist
+ 62	linguist
+ 63	lobbyist
+ 64	lyricist
+ 65	muralist
+ 66	novelist
+ 67	oboist
+ 68	oncologist
+ 69	ophthalmologist
+ 70	ornithologist
+ 71	paleontologist
+ 72	pathologist
+ 73	percussionist
+ 74	pharmacist
+ 75	philanthropist
+ 76	phlebotomist
+ 77	physical therapist
+ 78	physicist
+ 79	pianist
+ 80	provost
+ 81	projectionist
+ 82	priest
+ 83	psychiatrist
+ 84	psychologist
+ 85	pilot
+ 86	president
+ 87	playwright
+ 88	poet
+ 89	prophet
+ 90	radiologist
+ 91	receptionist
+ 92	real estate agent
+ 93	scout
+ 94	saxophonist
+ 95	scientist
+ 96	strategist
+ 97	student
+ 98	scapegoat
+ 99	taxidermist
+100	therapist
+101	typist
+102	tech support
+103	test pilot
+104	travel agent
+105	venture capitalist
+106	violinist
+107	viscount
+108	valet
+109	wainwright
+110	xylophonist
+111	zoologist
+112	actress
+113	empress
+114	laundress
+115	priestess
+116	princess
+117	seamstress
+118	stewardess
+119	waitress
+120	actor
+121	advisor
+122	ambassador
+123	animator
+124	arbitrator
+125	assessor
+126	author
+127	air traffic controller
+128	animal trainer
+129	animal tamer
+130	animal breeder
+131	appraiser
+132	armorer
+133	archer
+134	astronomer
+135	auctioneer
+136	baseball player
+137	basketball player
+138	backsolver
+139	babysitter
+140	baker
+141	banker
+142	backup singer
+143	bartender
+144	backup dancer
+145	barber
+146	beefeater
+147	beekeeper
+148	bookkeeper
+149	bookseller
+150	bowler
+151	butler
+152	butcher
+153	builder
+154	bursar
+155	burglar
+156	chasseur
+157	chauffeur
+158	claqueur
+159	connoisseur
+160	casting director
+161	castrator
+162	character actor
+163	chiropractor
+164	choir director
+165	collector
+166	commentator
+167	commiserator
+168	conductor
+169	contractor <- end here**
+170	conservator
+171	conspirator
+172	copy editor
+173	counterdemonstrator
+174	confessor
+175	conjuror
+176	countertenor
+177	councillor
+178	counselor
+179	conquistador
+180	creditor
+181	cremator
+182	curator
+183	cab driver
+184	caregiver
+185	carpenter
+186	caterer
+187	cashier
+188	cavalier
+189	calligrapher
+190	cartographer
+191	catcher
+192	choral singer
+193	contract lawyer
+194	composer
+195	cooper
+196	coroner
+197	cobbler
+198	construction worker
+199	courier
+200	cryptographer
+201	cursebreaker
+202	dictator
+203	director
+204	diving instructor
+205	doctor
+206	dancer
+207	designer
+208	diver
+209	driver
+210	dry cleaner
+211	drummer
+212	dungeon master
+213	entrepreneur
+214	editor
+215	educator
+216	emperor
+217	exterminator
+218	entertainer
+219	engineer
+220	exporter
+221	explorer
+222	executioner
+223	forum moderator
+224	falconer
+225	farmer
+226	fencer
+227	firefighter
+228	financier
+229	fletcher
+230	football player
+231	follower
+232	fortune teller
+233	governor
+234	game master
+235	gatherer
+236	game designer
+237	gardener
+238	getaway driver
+239	gemcutter
+240	geographer
+241	gold farmer
+242	golfer
+243	gravedigger
+244	greengrocer
+245	grocer
+246	grave robber
+247	hairdresser
+248	heckler
+249	hunter
+250	illustrator
+251	inspector
+252	instructor
+253	investor
+254	inventor
+255	investigator
+256	importer
+257	interpreter
+258	innkeeper
+259	information broker
+260	janitor
+261	juror
+262	jailer
+263	jester
+264	jeweler
+265	juggler
+266	karate teacher
+267	lawyer
+268	laborer
+269	landscaper
+270	lecturer
+271	mayor
+272	moderator
+273	marketer
+274	manufacturer
+275	mail carrier
+276	manager
+277	messenger
+278	miner
+279	miller
+280	navigator
+281	negotiator
+282	operator
+283	orator
+284	observer
+285	prosecutor
+286	professor
+287	painter
+288	pawnbroker
+289	park ranger
+290	performer
+291	peddler
+292	philosopher
+293	photographer
+294	pitcher
+295	plumber
+296	programmer
+297	producer
+298	publisher
+299	quartermaster
+300	quilter
+301	restaurateur
+302	rancher
+303	ranger
+304	reporter
+305	retailer
+306	researcher
+307	registrar
+308	sailor
+309	sculptor
+310	senator
+311	ski instructor
+312	surveyor
+313	scuba diver
+314	sign language interpreter
+315	singer
+316	soldier
+317	sommelier
+318	standard bearer
+319	street sweeper
+320	stationer
+321	streamer
+322	stockbroker
+323	stenographer
+324	stage manager
+325	stakeholder
+326	swimmer
+327	scholar
+328	star
+329	tax collector
+330	tailor
+331	trash collector
+332	translator
+333	tutor
+334	taxi driver
+335	taste tester
+336	tanner
+337	tennis player
+338	teacher
+339	tiler
+340	torturer
+341	toolmaker
+342	town crier
+343	truck driver
+344	treasurer
+345	trainer
+346	trader
+347	tracer
+348	undertaker
+349	usher
+350	voice actor
+351	vicar
+352	warrior
+353	waiter
+354	watchmaker
+355	weaver
+356	wedding photographer
+357	welder
+358	woodcarver
+359	writer
+360	wrangler
+361	yodeler
+362	zookeeper
+363	bellhop
+364	cop
+365	chimneysweep
+366	shopkeep
+367	assassin
+368	bosun
+369	clown
+370	champion
+371	captain
+372	chaplain
+373	clergyman
+374	comedian
+375	custodian
+376	doorman
+377	electrician
+378	fisherman
+379	foreman
+380	game warden
+381	garbage man
+382	handyman
+383	headsman
+384	henchman
+385	hitman
+386	intern
+387	librarian
+388	mason
+389	matron
+390	minion
+391	magician
+392	mathematician
+393	mortician
+394	musician
+395	nun
+396	obstetrician
+397	ombudsman
+398	optician
+399	pediatrician
+400	physician
+401	policewoman
+402	policeman
+403	politician
+404	salesperson
+405	spokesperson
+406	surgeon
+407	statistician
+408	tactician
+409	technician
+410	veteran
+411	veterinarian
+412	warden
+413	workman
+414	consul
+415	criminal
+416	general
+417	highway patrol
+418	model
+419	paralegal
+420	principal
+421	clerk
+422	cook
+423	duck
+424	monk
+425	quarterback
+426	samurai
+427	yogi
+428	blacksmith
+429	coach
+430	hedge witch
+431	locksmith
+432	life coach
+433	smith
+434	witch
+435	bailiff
+436	chef
+437	sheriff
+438	sous chef
+439	athlete
+440	attache
+441	aide
+442	apprentice
+443	body double
+444	claque
+445	concierge
+446	detective
+447	executive
+448	emcee
+449	goalie
+450	guide
+451	hostage
+452	inmate
+453	judge
+454	legal aide
+455	masseuse
+456	marine
+457	midwife
+458	nurse
+459	oracle
+460	private eye
+461	private detective
+462	pirate
+463	private
+464	page
+465	police
+466	prince
+467	representative
+468	referee
+469	retiree
+470	socialite
+471	squire
+472	teammate
+473	tour guide
+474	umpire
+475	bodyguard
+476	cowherd
+477	deckhand
+478	farmhand
+479	grognard
+480	landlord
+481	lifeguard
+482	maid
+483	prison guard
+484	security guard
+485	shepherd
+486	steward
+487	second
+488	cleric
+489	comic
+490	critic
+491	field medic
+492	food critic
+493	mechanic
+494	medic
+495	movie critic
+496	psychic
+497	barista
+498	ballerina
+499	extra

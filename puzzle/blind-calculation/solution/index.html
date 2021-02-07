@@ -1,0 +1,362 @@
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	border: 3px solid black;
+}
+th, td {
+	border: 1px solid black;
+	padding: 4px;
+	text-align: center;
+}
+</style>
+
+<p>As hinted by the title and the choice to have three beads per box,
+this is a puzzle about Braille.
+So, we need some way to convert the Japanese characters to Braille.</p>
+<p>
+The correct choice is <a href="https://en.wikipedia.org/wiki/Japanese_Braille">Japanese braille</a>.
+The corresponding Braille dots then correspond to which beads to move
+on the abacus, yielding a two-digit number for each Japanese character,
+as shown in the table below.
+</p>
+
+<p>Thus, for the left half of the abacus we get the following calculation.</p>
+<center>
+<table>
+<tr>
+	<th>Hiragana</th>
+	<td>そ</td><td>×</td>
+	<td>る</td><td>×</td>
+	<td>ち</td><td>+</td>
+	<td>お</td><td></td>
+</tr>
+<tr>
+	<th>Braille</th>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+</tr>
+<tr>
+	<th>Abacus</th>
+	<td>17</td><td>×</td>
+	<td>56</td><td>×</td>
+	<td>71</td><td>+</td>
+	<td>15</td><th>= 67607</th>
+</tr>
+</table>
+</center>
+
+<p>We also get the following analogous calculation on the right half.</p>
+<center>
+
+<table>
+<tr>
+	<th>Hiragana</th>
+	<td>お</td><td>×</td>
+	<td>あ</td><td>×</td>
+	<td>う</td><td>×</td>
+	<td>せ</td><td>+</td>
+	<td>と</td><td>×</td>
+	<td>て</td><td></td>
+</tr>
+<tr>
+	<th>Braille</th>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td><td></td>
+</tr>
+<tr>
+	<th>Abacus</th>
+	<td>15</td><td>×</td>
+	<td>50</td><td>×</td>
+	<td>55</td><td>×</td>
+	<td>67</td><td>+</td>
+	<td>26</td><td>×</td>
+	<td>76</td><th>= 2765726</th>
+</tr>
+</table>
+
+</center>
+
+<p>These numbers fit nicely in the red boxes provided,
+so we input those numbers into the abacus now.
+Taking the pink box into account (which clues to just mark the bottom dot
+in every row &mdash; something not possible using just the digits),
+and applying the process in reverse gives the following.
+</p>
+
+<center>
+<table>
+<tr>
+	<th>Abacus</th>
+	<td>67</td>
+	<td>60</td>
+	<td>7<b>.</b></td>
+	<td><b>.</b>2</td>
+	<td>76</td>
+	<td>57</td>
+	<td>26</td>
+</tr>
+<tr>
+	<th>Braille</th>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		</g>
+		</svg>
+	</td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		</svg>
+	</td>
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		</g>
+		</svg>
+	</td>
+
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td>
+
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		</g>
+		</svg>
+	</td>
+
+	<td>
+		<svg width="33" height="44" xmlns="http://www.w3.org/2000/svg">
+		<g fill="black">
+		  <circle cx="11" cy="22" r="4" id="c2" />
+		  <circle cx="11" cy="33" r="4" id="c3" />
+		  <circle cx="22" cy="9" r="4" id="c4" />
+		  <circle cx="22" cy="22" r="4" id="c5" />
+		</g>
+		<g fill="white" stroke="black">
+		  <circle cx="11" cy="9" r="4" id="c1" />
+		  <circle cx="22" cy="33" r="4" id="c6" />
+		</g>
+		</svg>
+	</td>
+</tr>
+
+<tr>
+	<th>Cluephrase</th>
+	<td>せ</td>
+	<td>い</td>
+	<td>ひ</td>
+	<td>ん</td>
+	<td>テ</td>
+	<td>ス</td>
+	<td>ト</td>
+</table>
+</center>
+
+<p>The answer <i>seihin tesuto</i> translates to the English phrase <span class="answer">PRODUCT TESTING</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+We were pedantic and used katakana テスト in the cluephrase above,
+since it is the transliteration of the English word "test",
+even though the puzzle uses hiragana everywhere else.
+(This was previously mangled &mdash; we thank a team for pointing this out to us.)
+The corresponding hiragana for <i>tesuto</i> would have been てすと.
+This has no actual effect on solving the puzzle since
+the clue phrase is extracted phonetically either way.
+</div>

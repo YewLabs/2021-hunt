@@ -1,0 +1,300 @@
+<style>
+
+    /* Copy-pasteable grid generation CSS start*/
+    .puzzgrid td
+    {
+        width: 30px;
+        height: 30px;
+        border-bottom: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+    }
+
+    .puzzgrid tr:nth-last-child(2) td{border-bottom: 3px solid black;}
+    .puzzgrid td:nth-last-child(2){border-right: 3px solid black;}
+
+    body .puzzgrid tr:first-child td {
+        border-right: 0;
+        border-bottom: 3px solid black;
+    }
+
+    body .puzzgrid tr:first-child td:first-child,
+    body .puzzgrid tr:first-child td:last-child {
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+    body .puzzgrid td:first-child {
+        border-right: 3px solid black;
+        border-bottom: 0;
+    }
+
+    body .puzzgrid td:last-child {
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+    body .puzzgrid tr:last-child td {
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+    body .puzzgrid tr:first-child td,
+    body .puzzgrid td:first-child,
+    body .puzzgrid tr:last-child td,
+    body .puzzgrid td:last-child
+    {
+        font-family: 'Consolas', Courier, monospace;
+        font-weight: bold;
+        text-align: center;
+    }
+    .puzzgrid td.s {border-bottom: 3px solid black;}
+    .puzzgrid td.e {border-right: 3px solid black;}
+    /* Copy-pasteable grid generation CSS end*/
+
+    .puzzgrid td
+    {
+        font-family: 'Consolas', Courier, monospace;
+        text-align: center;
+        background-size: contain;
+    }
+
+    .puzzgrid .mf
+    {
+        background-image: url("{{sroot}}mirror-forward.svg");
+    }
+
+    .puzzgrid .mb
+    {
+        background-image: url("{{sroot}}mirror-back.svg");
+    }
+
+    /* tripled tags to increase specificity*/
+    .v.v.v {
+        background-image: url("{{sroot}}laser-v.svg")
+    }
+
+    .h.h.h {
+        background-image: url("{{sroot}}laser-h.svg")
+    }
+
+    .nw.nw.nw {
+        background-image: url("{{sroot}}laser-nw.svg")
+    }
+
+    .ne.ne.ne {
+        background-image: url("{{sroot}}laser-ne.svg")
+    }
+
+    .sw.sw.sw {
+        background-image: url("{{sroot}}laser-sw.svg")
+    }
+
+    .se.se.se {
+        background-image: url("{{sroot}}laser-se.svg")
+    }
+
+    .y.y.y {
+        background-image: url("{{sroot}}laser-y.svg")
+    }
+
+    .z.z.z {
+        background-image: url("{{sroot}}laser-z.svg")
+    }
+</style>
+
+<p>At the start of the puzzle, we are given three grids, with no instructions of how to fill them, although we are given the results of extracting the first two grids.</p>
+
+<p>The title, as well as the fact that we can see pairs of reversible strings (such as PME/EMP, AM/MA, and LS/SL), suggests placing mirrors in the grid.</p>
+
+<p>For the first puzzle, there's only one way to put mirrors such that the E sees the other E, and likewise the X. (Note that if we assume that spaces with mirrors cannot have letters, then this example cannot be satisfied. The E on the E path will necessarily be on the X path.</p>
+
+<p>Thus, we can fill in the grid as follows:</p>
+
+<table class="puzzgrid">
+    <tr><td></td><td class="x2">X</td><td class="x1">E</td><td></td></tr>
+    <tr><td class="x1">E</td><td class="e h1 v2"></td><td class="mf nw1 se3">E</td><td class="x3"></td></tr>
+    <tr><td class="x4"></td><td class="e mb ne2 sw4">X</td><td class="h2 v3"></td><td class="x2">X</td></tr>
+    <tr><td></td><td class="x4"></td><td class="x3"></td><td></td></tr>
+</table>
+
+<p>This also suggests that extraction is done by looking at the letters on the mirrors, in row-major, standard reading order (i.e. reading left to right, top to bottom).</p>
+
+<p>The first puzzle didn't necessarily need mirrors; if we thought the letters just denoted the letters "seen" when viewing in a certain direction, it would also work as well.</p>
+
+<p>However, that interpretation doesn't work as well for the second grid, while the mirrors do. We can interpret the multiple-letter clues as the order of the mirror letters that we traverse along the path of the beam, explaining the string reversal, since going through the path from the other side will necessarily hit the same mirrors in reverse. (One additional observation that can be useful to note is that strings of even length are always on the same or opposite sides, while strings of odd length are on sides that are 90 degrees apart. This is because each mirror bounce converts the light beam from horizontal to vertical and vice versa, so parity dictates this.)</p>
+
+<p>One compelling way to put the mirrors in the second grid such that the extraction works (reading out SAMPLE in row-major order) is as follows:</p>
+
+<table class="puzzgrid">
+    <tr><td></td><td class="x5"></td><td class="x5"></td><td class="x6">MA</td><td class="x7">PME</td><td></td></tr>
+    <tr><td class="x8"></td><td class="h8 v5"></td><td class="s e h8 v5"></td><td class="e h8 v6"></td><td class="h8 v7"></td><td class="x8"></td></tr>
+    <tr><td class="x10">SL</td><td class="s e mb ne5 sw10">S</td><td class="e mf nw5 se6">A</td><td class="s e mf nw6 se7">M</td><td class="mf nw7 se9">P</td><td class="x9"></td></tr>
+    <tr><td class="x12"></td><td class="e mb ne10 sw12">L</td><td class="s h10 v6"></td><td class="s e h10 v7"></td><td class="s h10 v9"></td><td class="x10">LS</td></tr>
+    <tr><td class="x11"></td><td class="e v12 h11"></td><td class="v6 h11"></td><td class="mb ne7 sw11">E</td><td class="h7 v9"></td><td class="x7">EMP</td></tr>
+    <tr><td></td><td class="x12"></td><td class="x6">AM</td><td class="x11"></td><td class="x9"></td><td></td></tr>
+</table>
+
+<p>We might notice that there are six regions as well as six letters in SAMPLE. This suggests that we want to put one mirror in each region, no more and no less.</p>
+
+<p>(Without this constraint, there are multiple solutions for this puzzle. For example, the three AMP mirrors could be moved one cell higher.)</p>
+
+<p>In this example, the mirror labeled M is used twice (in both MA/AM and PME/EMP). This suggests that mirrors have the same letter on both sides.</p>
+
+<p>Now, it's time to solve the real puzzle! First, we'll need to solve the clues. Some of these clues are broken up into multiple parts; the answers to each part should be concatenated together. The use of the mirror constraint can also be helpful to answer the clues.</p>
+
+<table>
+    <tr><th>Clue</th><th>Answer</th></tr>
+    <tr><td>1. Fashionable</td><td>IN</td></tr>
+    <tr><td>2. Exclamation by a knight</td><td><a href="https://en.wikipedia.org/wiki/Knights_Who_Say_%22Ni!%22">NI</a></td></tr>
+    <tr><td>3. Saharan desert pavement</td><td>REG</td></tr>
+    <tr><td>4a. It's one hour ahead of UTC</td><td>CET (Central European time)</td></tr>
+    <tr><td>4b. Solid water</td><td>ICE</td></tr>
+    <tr><td>4c. Approx. a certain time</td><td>C (circa)</td></tr>
+    <tr><td>5. Kind of ID tag</td><td>RF (radio frequency, like an RFID tag)</td></tr>
+    <tr><td>6. Symbol for element 103</td><td>LR (lawrencium)</td></tr>
+    <tr><td>7a. ____ n'est pas une pipe</td><td><a href="https://en.wikipedia.org/wiki/The_Treachery_of_Images">CECI</a></td></tr>
+    <tr><td>7b. Toshiba subsidiary making retail products, among others</td><td>TEC</td></tr>
+    <tr><td>8a. Location of westernmost U.S. Mint</td><td>SF (San Francisco)</td></tr>
+    <tr><td>8b. <i>Death Note</i> detective</td><td>L</td></tr>
+    <tr><td>9a. Avg. dist. from the Earth to the Sun</td><td>AU (astronomical unit)</td></tr>
+    <tr><td>9b. Any one of three basic skills taught in schools?</td><td>R (as in <a href="https://en.wikipedia.org/wiki/The_three_Rs">the 3 R's</a>)</td></tr>
+    <tr><td>10. Language code of the first part of clue 7</td><td>FR (French)</td></tr>
+    <tr><td>11. Two in Maori</td><td>RUA</td></tr>
+    <tr><td>12a. ASCII 0x0A</td><td>LF (line feed)</td></tr>
+    <tr><td>12b. Letter used to denote entropy</td><td>S</td></tr>
+    <tr><td>13. Former "do" in music</td><td>UT</td></tr>
+    <tr><td>14. Mongolian yurt</td><td>GER</td></tr>
+    <tr><td>15. Et ____, brute?</td><td>TU</td></tr>
+    <tr><td>16. Area of ML involving maximizing a reward function</td><td>RL (reinforcement learning)</td></tr>
+</table>
+
+<p>Armed with the clue answers, we can solve the grid as follows. Note that one of the paths uses a mirror twice; indeed that letter counts twice. A full logical solution follows in the <a href="#appendix">appendix</a>.</p>
+
+<table class="puzzgrid">
+    <tr><td></td><td class="x13"></td><td class="x14"></td><td class="x15">1</td><td class="x16"></td><td class="x15">2</td><td class="x17">3</td><td class="x18">4</td><td class="x19">5</td><td class="x20"></td><td></td></tr>
+    <tr><td class="x21">16</td><td class="h21 v13"></td><td class="e h21 v14"></td><td class="h21 v15"></td><td class="h21 v16"></td><td class="e h21 v15"></td><td class="s mb ne17 sw21">R</td><td class="e h17 v18"></td><td class="h17 v19"></td><td class="mb ne20 sw17">E</td><td class="x20"></td></tr>
+    <tr><td class="x16"></td><td class="h16 v13"></td><td class="s e h16 v14"></td><td class="h16 v15"></td><td class="s mf nw16 se24">F</td><td class="e h24 v15"></td><td class="e mb ne21 sw24">L</td><td class="s e h21 v18"></td><td class="s h21 v19"></td><td class="s h21 v17"></td><td class="x21">6</td></tr>
+    <tr><td class="x13"></td><td class="s e mf nw13 se18">E</td><td class="e v14 h18"></td><td class="s e v15 h18"></td><td class="e h18 v24"></td><td class="s e v15 h18"></td><td class="e h18 v24"></td><td class="s mf z18">C</td><td class="h18 v19"></td><td class="s h18 v17"></td><td class="x18">7</td></tr>
+    <tr><td class="x30">15</td><td class="e mb ne18 sw30">T</td><td class="s v14 h18"></td><td class="mb sw18 ne15">I</td><td class="s e h15 v24"></td><td class="e mf nw15 se22">N</td><td class="s e h22 v24"></td><td class="e h22 v18"></td><td class="e h22 v19"></td><td class="h22 v17"></td><td class="x22"></td></tr>
+    <tr><td class="x17">14</td><td class="e v30 h17"></td><td class="e h17 v14"></td><td class="e h17 v18"></td><td class="s h17 v24"></td><td class="h17 v22"></td><td class="s e h17 v24"></td><td class="e h17 v18"></td><td class="s e h17 v19"></td><td class="mf nw17 se23">G</td><td class="x23"></td></tr>
+    <tr><td class="x27"></td><td class="s e v30 h27"></td><td class="e h27 v14"></td><td class="s e h27 v18"></td><td class="e mb sw27 ne24">S</td><td class="s e h24 v22"></td><td class="y24"></td><td class="s h24 v18"></td><td class="e h24 v19"></td><td class="s h24 v23"></td><td class="x24">8</td></tr>
+    <tr><td class="x30">13</td><td class="s mf nw30 se25">U</td><td class="s v14 h25"></td><td class="s e h25 v18"></td><td class="e h25 v27"></td><td class="e h25 v22"></td><td class="s e h25 v24"></td><td class="e h25 v18"></td><td class="s e mb sw25 ne19">R</td><td class="mb sw19 ne23">F</td><td class="x23"></td></tr>
+    <tr><td class="x29"></td><td class="mb sw29 ne25">A</td><td class="e v14 h25"></td><td class="e h25 v18"></td><td class="s e h25 v27"></td><td class="h25 v22"></td><td class="h25 v24"></td><td class="e h25 v18"></td><td class="y25"></td><td class="h25 v19"></td><td class="x25">9</td></tr>
+    <tr><td class="x28"></td><td class="v29 h28"></td><td class="e h28 v14"></td><td class="mb sw28 ne18">C</td><td class="e h18 v27"></td><td class="h18 v22"></td><td class="h18 v24"></td><td class="e mf nw18 se26">E</td><td class="v25 h26"></td><td class="h26 v19"></td><td class="x26"></td></tr>
+    <tr><td></td><td class="x29"></td><td class="x14"></td><td class="x28"></td><td class="x27"></td><td class="x22"></td><td class="x24">12</td><td class="x26"></td><td class="x25">11</td><td class="x19">10</td><td></td></tr>
+</table>
+
+<p>Reading the mirrors in row-major order gives the cluephrase REFLECTING SURFACE, which clues the answer <span class="answer">MIRROR</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+    <p>This genre is very closely related to the Nikoli logic puzzle genre Kin-Kon-Kan, which has the same one mirror per region constraint, but instead of having strings of letters on the outside, it just gives the pairings along with number of bounces.</p>
+
+    <p>This does mean that there is a bit more information given in these clues, as paths using both sides of the mirror share letters, so you can deduce a bit more. This wasn't strictly necessary to solve the puzzle logically, however.</p>
+
+    <p>The region layout of the final grid is point-symmetric, but it also is meant to evoke the MIT/&perp;IW duality of our hunt - see the top right corner for MIT and the bottom left corner for &perp;IW.</p>
+
+    <p>Finally, thanks to the <a href="https://puzz.link">puzz.link puzzle editor</a> for producing the solution images in the appendix as well being a useful tool to design the logic puzzle.</p>
+</div>
+
+<script>
+    function mouseover(i) {
+        return function() {
+            var labellist = ["h", "v", "ne", "nw", "se", "sw", "y", "z"];
+            for(label of labellist)
+            {
+                var elist = document.getElementsByClassName(label + i);
+                for (el of elist) {
+                    el.classList.add(label);
+                }
+            }
+        }
+    }
+
+    function mouseout(i) {
+        return function() {
+            var labellist = ["h", "v", "ne", "nw", "se", "sw", "y", "z"];
+            for(label of labellist)
+            {
+                var elist = document.getElementsByClassName(label + i);
+                for (el of elist) {
+                    el.classList.remove(label)
+                }
+            }
+        }
+    }
+
+
+    for(var i = 1; i <= 30; i++) {
+        elemlist = document.getElementsByClassName("x"+i);
+
+        for(elem of elemlist) {
+            elem.addEventListener("mouseover", mouseover(i));
+            elem.addEventListener("mouseout", mouseout(i));
+        }
+    }
+
+</script>
+
+<h2 id="appendix">Appendix: Solving the Logic Puzzle</h2>
+
+<p>First, we can pair up the clues as follows, noting down the lengths of the strings.</p>
+
+<img src="{{sroot}}bounce1.svg">
+
+<p>The B clue must have two mirrors in rows 1 and 2. The only place this can happen without violating one mirror per region is column 6. We can also mark the other squares on the path that don't have mirrors.</p>
+
+<img src="{{sroot}}bounce2.svg">
+
+<p>We can additionally mark a few spots in columns 3 and 5 where there can't be mirrors due to clue A, and mark the other spots in the regions of the two mirrors we placed earlier as empty.</p>
+
+<img src="{{sroot}}bounce3.svg">
+
+<p>We can do a similar argument for clue C. Rows 1&ndash;3 can't have the left mirror, and rows 8&ndash;9 can't have the right mirror.</p>
+
+<img src="{{sroot}}bounce4.svg">
+
+<p>Now, clue D must turn at R1C9, and thus the final mirror is at R5C9.</p>
+
+<img src="{{sroot}}bounce5.svg">
+
+<p>This lets us complete clue C as well.</p>
+
+<img src="{{sroot}}bounce6.svg">
+
+<p>Now, a slightly tricky step: clue A's right mirror must be on one of the two remaining spaces of the plus-shaped region in the middle. So the left mirror means that we can rule out four of the spaces in the Y-shaped region to the left of the plus-shaped region, as it must be on one of the other two spots.</p>
+
+<img src="{{sroot}}bounce7.svg">
+
+<p>We can place two mirrors in clue F now in the third row. The R3C1 mirror can't point upwards since there is no way to point the beam back right.</p>
+
+<img src="{{sroot}}bounce8.svg">
+
+<p>We can deal with clue G, partially, as well. The remaining two mirrors have to be in rows 7 and 8, ruling out the positions in columns 4&ndash;7.</p>
+
+<img src="{{sroot}}bounce9.svg">
+
+<p>This gives us another mirror for clue F.</p>
+
+<img src="{{sroot}}bounce10.svg">
+
+<p>Clue E is also fixed here.</p>
+
+<img src="{{sroot}}bounce11.svg">
+
+<p>This lets us set clue A's mirrors in place.</p>
+
+<img src="{{sroot}}bounce12.svg">
+
+<p>Here, we could use the letter constraint of the letters to deduce that clue H must be on column 1 and not column 3. Alternatively, we can rule out the other case with a small look-ahead. If clue H's mirrors were on column 3, clue F must hit a mirror at R6C1, going right to R6C4 and then going down to R9C4. However, clue G must have a mirror at R8C3, violating the one mirror per region constraint.</p>
+
+<img src="{{sroot}}bounce13.svg">
+
+<p>At this point we can satisfy clue G...</p>
+
+<img src="{{sroot}}bounce14.svg">
+
+<p>...and finally clue F as well, completing the puzzle!</p>
+
+<img src="{{sroot}}bounce15.svg">

@@ -1,0 +1,10 @@
+<h2>Sailing Event</h2>
+
+<p class="flavor">This training event takes(/took) place over a three hour long block: <b>Fri Jan 15, 7&ndash;10pm EST</b>. </p>
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<iframe src="register" height="500" style="border: none; width: 100%;"></iframe>
+{% endif %}

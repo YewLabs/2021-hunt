@@ -1,0 +1,205 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block round_styles %}
+<style>
+.clusters-maps {
+    flex: none;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.clusters-maps > img {
+    max-width: 100%;
+}
+.clusters-highlight-row {
+    background-color: rgba(245, 101, 70, 0.5);
+}
+.clusters-maps-container {
+    display: flex;
+}
+.clusters-legend {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+  .clusters-legend-row {
+    color: #633751;
+    flex: none;
+    background-color: rgba(152, 197, 214, 0.6);
+  }
+  .clusters-legend-row .not-found {
+    padding: 3px 5px;
+  }
+  .clusters-legend-row a {
+    display: block;
+    padding: 3px 5px;
+    color: #633751;
+    text-decoration: none;
+  }
+  .clusters-legend-row a:hover {
+    color: #402010;
+    text-decoration: none;
+    background-color: rgba(180, 238, 251, 0.8);
+}
+  body {
+    background-color: #98C5D6;
+  }
+
+  .content {
+    background-image: url({% static 'art/minervabg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    background: none;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+  }
+</style>
+{% endblock %}
+
+{% block round_js %}
+<script>
+var clusterBuildings = [
+  {% for puzzle in all_puzzles %}
+  {% if puzzle.puzzle.y2021puzzledata %}
+  {% comment %}Update down below{% endcomment %}
+  {% if puzzle.puzzle.answer == 'INSCRIPTION' %}4,
+  {% elif puzzle.puzzle.answer == 'PALINDROME' %}4,
+  {% elif puzzle.puzzle.answer == 'SUPPOSITORY' %}4,
+  {% elif puzzle.puzzle.answer == 'ORTHOGONAL' %}4,
+  {% elif puzzle.puzzle.answer == 'MULTIPART' %}3,
+  {% elif puzzle.puzzle.answer == 'MALFORMATION' %}3,
+  {% elif puzzle.puzzle.answer == 'CHIROPRACTOR' %}10,
+  {% elif puzzle.puzzle.answer == 'SYNCHRONOUS' %}10,
+  {% elif puzzle.puzzle.answer == 'PHOSPHORUS' %}1,
+  {% elif puzzle.puzzle.answer == 'CARNIVORE' %}1,
+  {% elif puzzle.puzzle.answer == 'AVERSION' %}1,
+  {% else %}
+  null,
+  {% endif%}
+  {% endif %}
+  {% endfor %}
+];
+
+$(() => {
+    var noBuildings = document.getElementById("nobuildings");
+    var building1 = document.getElementById("building1");
+    var building3 = document.getElementById("building3");
+    var building4 = document.getElementById("building4");
+    var building10 = document.getElementById("building10");
+
+    function hideAllBuildings() {
+        [building1, building3, building4, building10].forEach((e) => {
+            $(e).hide();
+        });
+        $(noBuildings).show();
+    }
+
+    function showBuilding(i) {
+        if (!i) {
+            return;
+        }
+        $(noBuildings).hide();
+        if (i === 1) {
+            $(building1).show();
+        } else if (i === 3) {
+            $(building3).show();
+        } else if (i === 4) {
+            $(building4).show();
+        } else if (i === 10) {
+            $(building10).show();
+        }
+    }
+
+    hideAllBuildings();
+    var puzzleRows = document.getElementsByClassName("clusters-legend-row");
+    Array.from(puzzleRows).forEach((row, i) => {
+        row.addEventListener("mouseover", () => {
+            showBuilding(clusterBuildings[i]);
+            if (clusterBuildings[i] != null) {
+                $(row).addClass("clusters-highlight-row");
+            }
+        });
+        row.addEventListener("mouseout", () => {
+            hideAllBuildings();
+            $(row).removeClass("clusters-highlight-row");
+        })
+    });
+});
+</script>
+{% endblock %}
+
+{% block puzzle_extra_header %}
+<th>Cluster Building</th>
+{% endblock %}
+
+{% block puzzle_row %}
+<tr class="round-puzzles-table-row">
+    <td>
+    {% if puzzle.found %}
+    <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+        {{puzzle.puzzle.name|safe}}
+    </a>
+    {% elif mmo_disabled %}
+    <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+      {{puzzle.puzzle.name|safe}}
+    </a>
+    {% else %}
+    <div class="mhtooltip">?????
+        <span class="mhtooltiptext">Find this puzzle in the &perp;IW Clusters!</span>
+    </div>
+    {% endif %}
+    </td>
+    <td>
+    {% if puzzle.solved %}
+    <div>{{ puzzle.puzzle.answer|safe}}</div>
+    {% endif %}
+    </td>
+    <td>
+      {% if puzzle.puzzle.answer == 'INSCRIPTION' %}4
+      {% elif puzzle.puzzle.answer == 'PALINDROME' %}4
+      {% elif puzzle.puzzle.answer == 'SUPPOSITORY' %}4
+      {% elif puzzle.puzzle.answer == 'ORTHOGONAL' %}4
+      {% elif puzzle.puzzle.answer == 'MULTIPART' %}3
+      {% elif puzzle.puzzle.answer == 'MALFORMATION' %}3
+      {% elif puzzle.puzzle.answer == 'CHIROPRACTOR' %}10
+      {% elif puzzle.puzzle.answer == 'SYNCHRONOUS' %}10
+      {% elif puzzle.puzzle.answer == 'PHOSPHORUS' %}1
+      {% elif puzzle.puzzle.answer == 'CARNIVORE' %}1
+      {% elif puzzle.puzzle.answer == 'AVERSION' %}1
+      {% endif %}
+    </td>
+</tr>
+{% endblock %}
+
+{% block round_top %}
+<div class="clusters-maps-container">
+<div class="clusters-maps">
+    <img id="nobuildings" src="{% static 'art/minervamap_none.png' %}">
+    <img style="display: none" id="building1" src="{% static 'art/minervamap_b1.png' %}">
+    <img style="display: none" id="building3" src="{% static 'art/minervamap_b3.png' %}">
+    <img style="display: none" id="building4" src="{% static 'art/minervamap_b4.png' %}">
+    <img style="display: none" id="building10" src="{% static 'art/minervamap_b10.png' %}">
+</div>
+<div class="clusters-legend">
+{% for puzzle in all_puzzles %}
+  {% if puzzle.puzzle.y2021puzzledata and not puzzle.puzzle.is_meta %}
+  <div class="clusters-legend-row">
+    {% if puzzle.found %}
+    <a href="{% url 'puzzle_view' puzzle.puzzle.url %}">{{puzzle.puzzle.name|safe}}</a>
+    {% else %}
+    <div class="not-found">?????</div>
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+</div>
+
+{% endblock %}

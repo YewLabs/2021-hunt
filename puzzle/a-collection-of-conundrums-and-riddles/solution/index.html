@@ -1,0 +1,150 @@
+
+
+<p>The headings of “Letters Round” and “Numbers Round” combined with the colors and formatting hint at the British game show <a href="https://en.wikipedia.org/wiki/Countdown_(game_show)">Countdown</a>, which contains a letters round where contestants try to make the longest word from a set of 9 letters, and a numbers round where contestants use 6 numbers (which are either 1&ndash;10 or 25, 50, 75, or 100) and the four basic arithmetic operations to get as close as possible to a target number.
+
+<h2>Letters Round</h2>
+
+<p>Each of these puzzles has a unique longest word, which is always either 8 or 9 letters long:
+
+<table>
+<tr><th>Puzzle</th><th>Answer</th><th>Unused letter (if 8 letters)</th></tr>
+<tr><td>EHMATNIBI</td><td>THIAMINE</td><td>B</td></tr>
+<tr><td>ECUHSNLIM</td><td>MUNCHIES</td><td>L</td></tr>
+<tr><td>REMOAUGMD</td><td>RUMMAGED</td><td>O</td></tr>
+<tr><td>SEICYCPTA</td><td>CITYSCAPE</td><td></td></tr>
+<tr><td>AOPMEANAD</td><td>EMPANADA</td><td>O</td></tr>
+<tr><td>MEIITYMSL</td><td>MYELITIS</td><td>M</td></tr>
+<tr><td>MTLLDAERI</td><td>TREADMILL</td><td></td></tr>
+<tr><td>VAEELITLA</td><td>ALLEVIATE</td><td></td></tr>
+<tr><td>PIIRSBECR</td><td>CRISPIER</td><td>B</td></tr>
+<tr><td>ATSRPOMKE</td><td>POSTMARK</td><td>E</td></tr>
+<tr><td>PIDEORRAD</td><td>PARODIED</td><td>R</td></tr>
+<tr><td>HPAGTECTI</td><td>PATHETIC</td><td>G</td></tr>
+</table>
+
+<p>The unused letters spell out BLOOMBERG.
+
+<h2>Numbers round</h2>
+
+<p>In each puzzle, the target number can be exactly achieved, and there is only one possible set of numbers that can be used to make the target number (in fact, in almost all cases there is only one sequence of operations that makes the target number—the lone exception is 641, where there are a few ways to use all 6 numbers). In each puzzle, either 5 or 6 numbers are used.
+
+<table>
+<tr><th>Puzzle</th><th>Answer (order is given by parentheses from inner to outer)</th><th>Unused number (if 5 numbers)</th></tr>
+<tr><td>758, 50 75 9 3 7 5</td><td>(((50/5) + 75)*9) - 7</td><td>3</td></tr>
+<tr><td>815, 100 25 2 3 6 4</td><td>(((100*4) + 6)*2) + 3</td><td>25</td></tr>
+<tr><td>989, 75 25 9 2 4 8</td><td>(75 - (8*4))*(25 - 2)</td><td>9</td></tr>
+<tr><td>971, 50 100 2 3 8 6</td><td>((((100*6) + 50)*3) - 8)/2</td><td></td></tr>
+<tr><td>937, 50 25 6 9 7 8</td><td>(((25*6) - 9)*7) - 50</td><td>8</td></tr>
+<tr><td>759, 25 50 8 6 5 4</td><td>((50 - 5)*(25 - 8)) - 6</td><td>4</td></tr>
+<tr><td>902, 50 75 9 6 4 5</td><td>((75 - 6)*(9 + 4)) + 5</td><td>50</td></tr>
+<tr><td>641, 25 75 4 3 7 6</td><td>((75 + 6 + 4 + 3)*7) + 25</td><td></td></tr>
+</table>
+
+<p>Plugging the six unused numbers into the blanks at the bottom gives ((3*25) + (9*8))*4 - 50, which evaluates to 538.
+
+<p>Note that there are many online solvers for the <i>Countdown</i> letters and numbers rounds that we can use (the numbers rounds in particular are very difficult to do by hand, given that they are in some sense the highest difficulty possible).
+
+<p>At this point, we’ve extracted BLOOMBERG and 538, which are both news websites/organizations. Perhaps with help from the title, we can realize that both of these websites have weekly puzzle columns, <a href="https://www.bloomberg.com/opinion/authors/ATAn3Yr737g/scott-duke-kominers">Kominer’s Conundrums</a> on Bloomberg Opinion and <a href="https://fivethirtyeight.com/tag/the-riddler/">The Riddler</a> on FiveThirtyEight. If we view these columns released the week of the hunt, we can quickly verify that they are both relevant to this puzzle: both the <a href="https://www.bloombergquint.com/gadfly/kominers-s-conundrums-the-great-tv-compromise-of-2021">Kominer’s Conundrums</a> and the <a href="https://fivethirtyeight.com/features/can-you-hunt-for-the-mysterious-numbers/">Riddler Classic</a> mention the name Barbara Yew, the keynote speaker for the <a href="http://yewlabs.mit.edu/">fictional Mystery Hunt conference</a>. The Riddler also coyly includes the words “mystery” and “hunt”, while the Conundrums column references the Mystery Hunt directly.
+
+<p>We can now solve these puzzles (if you’re doing them a week after the hunt the solutions will be available online, but we will also give solutions below).
+
+<h2><a href="https://www.bloombergquint.com/gadfly/kominers-s-conundrums-the-great-tv-compromise-of-2021">Kominer’s Conundrums</a></h2>
+
+<p>This puzzle consists of two lists of somewhat vague crossword clues. From solving some of the clearer ones, we can see that the answers to these clues are exactly one letter apart.
+
+<table>
+<tr><th>Clue 1</th><th>Answer 1</th><th>Clue 2</th><th>Answer 2</th><th>Changed letters</th></tr>
+<tr><td>Actress in "Breaking Bad"</td><td>BRANDT</td><td>Actor in "The Godfather"</td><td>BRANDO</td><td>T/O</td></tr>
+<tr><td>Greek underworld figure</td><td>CHARON</td><td>Multiple Oscar-winning director</td><td>CUARON</td><td>H/U</td></tr>
+<tr><td>Part of an opera</td><td>OVERTURE</td><td>What the Supreme Court might do to a case</td><td>OVERTURN</td><td>E/N</td></tr>
+<tr><td>Popular lemon variety</td><td>MEYER</td><td>Unit of length</td><td>METER</td><td>Y/T</td></tr>
+<tr><td>Popular board game</td><td>SCRABBLE</td><td>Write quickly</td><td>SCRIBBLE</td><td>A/I</td></tr>
+<tr><td>Cut short</td><td>CURTAIL</td><td>Part of a stage</td><td>CURTAIN</td><td>L/N</td></tr>
+<tr><td>Alternative form, in genetics</td><td>ALLELE</td><td>Claim or assert</td><td>ALLEGE</td><td>L/G</td></tr>
+<tr><td>Modesty</td><td>HUMILITY</td><td>Climate measure</td><td>HUMIDITY</td><td>L/D</td></tr>
+<tr><td>Choose</td><td>DECIDE</td><td>Solve, as in a cipher</td><td>DECODE</td><td>I/O</td></tr>
+<tr><td>Card game</td><td>POKER</td><td>TV series that featured Kendrick Lamar</td><td>POWER</td><td>K/W</td></tr>
+<tr><td>Narrow naval vessel</td><td>CANOE</td><td>Japanese corporation</td><td>CANON</td><td>E/N</td></tr>
+<tr><td>Upper body garment</td><td>TUNIC</td><td>North African capital</td><td>TUNIS</td><td>C/S</td></tr>
+</table>
+
+<p>Reading all the changed letters for the first clues, followed by the changed letters for the second clues, spells out THEY ALL LIKE COUNTING DOWNS, referencing the <i>Countdown</i> game show.
+
+<h2><a href="https://fivethirtyeight.com/features/can-you-hunt-for-the-mysterious-numbers/">The Riddler</a></h2>
+
+<p>The puzzle asks us to fill in a 3&times;8 grid with digits, where the product of each row and column is given. The unique solution is the following (a logical path is in the appendix):
+
+<table>
+<tr><th>First Digit</th><th>Second Digit</th><th>Third Digit</th><th>Target Number</th></tr>
+<tr><td>7</td><td>7</td><td>6</td><td>294</td></tr>
+<tr><td>9</td><td>8</td><td>3</td><td>216</td></tr>
+<tr><td>9</td><td>5</td><td>3</td><td>135</td></tr>
+<tr><td>7</td><td>2</td><td>7</td><td>98</td></tr>
+<tr><td>8</td><td>2</td><td>7</td><td>112</td></tr>
+<tr><td>7</td><td>4</td><td>3</td><td>84</td></tr>
+<tr><td>5</td><td>7</td><td>7</td><td>245</td></tr>
+<tr><td>8</td><td>5</td><td>1</td><td>40</td></tr>
+<tr><td>8,890,560</td><td>156,800</td><td>55,566</td></tr>
+</table>
+
+<p>The next step is to realize that both the Conundrums and Riddler puzzles can be applied to the original puzzle - in particular, the Conundrums has twelve pairs of clues and we have twelve letters rounds, and the Riddler gives us eight 3-digit numbers and we have eight numbers rounds, each with a 3-digit goal. Additionally, some of the original puzzles did not contribute to extracting BLOOMBERG or 538, strongly implying that we somehow want to use them now.
+
+<h2>Letters round (redux)</h2>
+
+<p>Since the Conundrums required us to change a letter in a word to get another word, we can apply the exact same letter change to the corresponding Countdown letters puzzle to get a new puzzle. This is confirmed by the letter T appearing in the first puzzle, the letter H appearing in the second puzzle, and so on down to the letter C appearing in the twelfth and final puzzle.
+
+<p>We can solve all the new puzzles, and find that they once again have a unique longest word, which is always 8 or 9 letters long.
+
+<table>
+<tr><th>Original Puzzle</th><th>Changed letters</th><th>Modified Puzzle</th><th>Answer</th><th>Unusued letter (if 8 letters)</th></tr>
+<tr><td>EHMATNIBI</td><td>T/O</td><td>EHMAONIBI</td><td>BOHEMIAN</td><td>I</td></tr>
+<tr><td>ECUHSNLIM</td><td>H/U</td><td>ECUUSNLIM</td><td>MINUSCULE</td><td></td></tr>
+<tr><td>REMOAUGMD</td><td>E/N</td><td>RNMOAUGMD</td><td>GOURMAND</td><td>M</td></tr>
+<tr><td>SEICYCPTA</td><td>Y/T</td><td>SEICTCPTA</td><td>ECSTATIC</td><td>P</td></tr>
+<tr><td>AOPMEANAD</td><td>A/I</td><td>AOPMEANID</td><td>DOPAMINE</td><td>A</td></tr>
+<tr><td>MEIITYMSL</td><td>L/N</td><td>MEIITYMSN</td><td>IMMENSITY</td><td></td></tr>
+<tr><td>MTLLDAERI</td><td>L/G</td><td>MTLGDAERI</td><td>MIGRATED</td><td>L</td></tr>
+<tr><td>VAEELITLA</td><td>L/D</td><td>VAEELITDA</td><td>VALIDATE</td><td>E</td></tr>
+<tr><td>PIIRSBECR</td><td>I/O</td><td>PIORSBECR</td><td>PROSCRIBE</td><td></td></tr>
+<tr><td>ATSRPOMKE</td><td>K/W</td><td>ATSRPOMWE</td><td>TAPEWORMS</td><td></td></tr>
+<tr><td>PIDEORRAD</td><td>E/N</td><td>PIDNORRAD</td><td>RAINDROP</td><td>D</td></tr>
+<tr><td>HPAGTECTI</td><td>C/S</td><td>HPAGTESTI</td><td>SPAGHETTI</td><td></td></tr>
+</table>
+
+<p>Performing the same extraction of taking the unused letter in the puzzles with 8-letter answers gives us IMPALED.
+
+<h2>Numbers round (redux)</h2>
+
+<p>Because The Riddler gives us eight 3-digit numbers, we can try to re-solve the Countdown numbers puzzles using these numbers as targets. Doing so, we once again find that each puzzle has a solution that uniquely uses either 5 or 6 of the numbers:
+
+<table>
+<colgroup><col width="20%"><col width="20%"><col width="40%"><col width="20%"></colgroup>
+<tr><th>Original Puzzle</th><th>Modified Puzzle</th><th>Answer (order is given by parentheses from inner to outer)</th><th>Unused number (if 5 numbers)</th></tr>
+<tr><td>758, 50 75 9 3 7 5</td><td>776, 50 75 9 3 7 5</td><td>(((50&times;3) + 7)&times;5) &minus; 9</td><td>75</td></tr>
+<tr><td>815, 100 25 2 3 6 4</td><td>983, 100 25 2 3 6 4</td><td>((6+4) &times; (100&minus;2)) + 3</td><td>25</td></tr>
+<tr><td>989, 75 25 9 2 4 8</td><td>953, 75 25 9 2 4 8</td><td>(((25+4) &times; (75&minus;9)) &minus; 8) / 2</td><td></td></tr>
+<tr><td>971, 50 100 2 3 8 6</td><td>727, 50 100 2 3 8 6</td><td>((100&minus;6) &times; 8) &minus; (50/2)</td><td>3</td></tr>
+<tr><td>937, 50 25 6 9 7 8</td><td>827, 50 25 6 9 7 8</td><td>((((25 &minus; 8) &times; 6) + 9) &times; 7) + 50</td><td></td></tr>
+<tr><td>759, 25 50 8 6 5 4</td><td>743, 25 50 8 6 5 4</td><td>((50&minus;6) &times; (25&minus;8)) &minus; 5</td><td>4</td></tr>
+<tr><td>902, 50 75 9 6 4 5</td><td>577, 50 75 9 6 4 5</td><td>((9+4) &times; (50&minus;6)) + 5</td><td>75</td></tr>
+<tr><td>641, 25 75 4 3 7 6</td><td>851, 25 75 4 3 7 6</td><td>(((75 &times; 3) &minus; 6) &times; 4) &minus; 25</td><td>7</td></tr>
+</table>
+
+<p>Once again, there are six unused numbers, so we can plug them into the blanks at the bottom to get ((75&times;25) + (3&times;4))&times;75 &minus; 7, which evaluates to 141518. This can be split into the small two-digit numbers 14, 15, 18, which we convert to letters alphanumerically to get NOR.
+
+<h2>Final answer</h2>
+
+<p>In Countdown, the final round is a “<a href="https://en.wikipedia.org/wiki/Countdown_(game_show)#Conundrum">Countdown Conundrum</a>”, which consists of a single 9-letter anagram of two words (e.g. CHINA, LUNG to LAUNCHING). In our case, we have 10 question marks, but we can do the same thing and anagram IMPALED and NOR together to get the final answer, <span class="answer">PALINDROME</span>.
+
+<h2>Appendix: Logic Puzzle Solution</h2>
+
+<p>(Erratum: at 1:00 in the video, the possibilities "851, 544" should instead be "851, 542". This does not affect the rest of the logic.)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QtAolnfliVc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>This puzzle began when Scott Kominers approached us with the idea to run some kind of tie-in puzzle with the Bloomberg Conundrums column. We then thought that it would be cool to involve multiple different sources, so we also reached out to the FiveThirtyEight Riddler (thanks to both Scott and Zach for being so accommodating!).</p>
+
+<p>During the brainstorming process for this puzzle, we thought about having a word puzzle in the Conundrums column, and a number based puzzle in the Riddler. As fans of the Countdown game show (which is literally called “Letters and Numbers” in Australia, where one of the authors grew up), we thought that the fact that “BLOOMBERG” is a 9-letter word, and 538 is a 3-digit number would work rather well with that theme.</p>
+</div>

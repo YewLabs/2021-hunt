@@ -1,0 +1,57 @@
+<style>
+.center {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: block;
+}
+</style>
+
+
+<p>This puzzle contains five altered <a href="https://en.wikipedia.org/wiki/Yu-Gi-Oh!_Trading_Card_Game">Yu-Gi-Oh!</a> cards. The card titles are all characters from the video game <a href="https://en.wikipedia.org/wiki/Persona_5">Persona 5</a>, while the images depict characters from the third arc of the anime and manga series <a href="https://en.wikipedia.org/wiki/JoJo%27s_Bizarre_Adventure">JoJo’s Bizarre Adventure</a>. The rest of the card, which include the attribute, types, level, ATK/DEF, card number, and passcode, correspond with Yu-Gi-Oh! cards from the "Arcana Force" archetype (the card effect box has been left blank because some of the cards explicitly mention the "Arcana Force" archetype in their effects). After extracting all the information from the altered cards, we get these three sets:</p>
+
+<table>
+<tr>
+<td><b>Card Title</b></td><td><b>Card Image</b></td><td><b>Card Base</b></td>
+</tr>
+<tr><td>Haru Okumura</td><td>Gray Fly</td><td>Arcana Force XVIII - The Moon</td></tr>
+<tr><td>Makoto Niijima</td><td>Jean Pierre Polnareff</td><td>Arcana Force VI - The Lovers</td></tr>
+<tr><td>Morgana</td><td>Jotaro Kujo</td><td>Arcana Force 0 - The Fool</td></tr>
+<tr><td>Sojiro Sakura</td><td>Joseph Joestar</td><td>Arcana Force IV - The Emperor</td></tr>
+<tr><td>Yusuke Kitagawa</td><td>Noriaki Kakyoin</td><td>Arcana Force I - The Magician</td></tr>
+</table>
+
+<p>These three sets all relate to the <a target="_blank" href="https://en.wikipedia.org/wiki/Major_Arcana">Major Arcana</a>. The Persona 5 characters are associated with the arcana through the Confidant system*, the characters from the third arc of JoJo’s Bizarre Adventure have Stands associated with the arcana, and the Yu-Gi-Oh! cards are named after the major arcana. After converting everything to arcana:</p>
+
+<table>
+<tr><td><b>Persona 5 Arcana</b></td><td><b>JoJo Stand Arcana</b></td><td><b>Yu-Gi-Oh! Arcana</b></td></tr>
+<tr><td>The Empress (III)</td><td>The Tower (XVI)</td><td>The Moon (XVIII)</td></tr>
+<tr><td>The High Priestess (II)</td><td>The Chariot (VII)</td><td>The Lovers (VI)</td></tr>
+<tr><td>The Magician (I)</td><td>The Star (XVII)</td><td>The Fool (0)</td></tr>
+<tr><td>The Hierophant (V)</td><td>The Hermit (IX)</td><td>The Emperor (IV)</td></tr>
+<tr><td>The Emperor (IV)</td><td>The Hierophant (V)</td><td>The Magician (I)</td></tr>
+</table>
+
+<p>We notice that the Persona 5 Arcana are the first five arcana, so we can use them to order the cards. However, the other two sets of arcana do not have an obvious use. We can now turn to the flavor text, which asks us to "<em>perform fusion</em>". Since we are told not to use <em>Polymerization</em>, Yu-Gi-Oh!’s card for performing fusion summons, we turn to the other two franchises referenced in this puzzle. Jojo’s Bizarre Adventure has no concept of combining Stands, while fusing Personas to create stronger ones is a core mechanic of the Persona series, so we look at Persona 5’s arcana fusion system.</p>
+
+<p>This chart** gives us the output for the fusion of any two input arcana:</p>
+
+<div><a href="{{sroot}}chart.png"><img src="{{sroot}}chart.png" class="center"></a></div>
+
+<p>We can use the chart along with the two sets of unused arcana to get a set of five fused arcana. We convert the canonical numbers of these arcana to letters through A=1, B=2, etc. These letters can be rearranged based on the ordering from the first set of Persona 5 arcana in the card titles:</p>
+
+<table>
+<tr><td><b>JoJo Stand Arcana</b></td><td><b>Yu-Gi-Oh! Arcana</b></td><td><b>Fused Arcana</b></td><td><b>Extract</b></td></tr>
+<tr><td>The Star (XVII)</td><td>The Fool (0)</td><td>The Magician (I)</td><td>A</td></tr>
+<tr><td>The Chariot (VII)</td><td>The Lovers (VI)</td><td>Temperance (XIV)</td><td>N</td></tr>
+<tr><td>The Tower (XVI)</td><td>The Moon (XVIII)</td><td>The Hermit (IX)</td><td>I</td></tr>
+<tr><td>The Hierophant (V)</td><td>The Magician (I)</td><td>Death (XIII)</td><td>M</td></tr>
+<tr><td>The Hermit (IX)</td><td>The Emperor (IV)</td><td>The Hierophant (V)</td><td>E</td></tr>
+</table>
+
+<p>The extracted letters spell out the answer, <span class="answer">ANIME</span>.</p>
+
+<p>* I’d prefer to say that the Persona characters have Personas that are associated with the major arcana, but Sojiro does not have a Persona. The original version of this puzzle used Persona 3 characters instead, where the characters associated with the Magician, High Priestess, Empress, Emperor, and Hierophant did have Personas, but this version was scrapped after testsolving because Persona 3 supported triple arcana fusion, which could be a red herring and made the game’s fusion chart harder to understand.</p>
+
+<p>** This is the chart for arcana fusion in Persona 5, but the <a href="https://cdnen.samurai-gamers.com/wp-content/uploads/2017/04/01073439/sg-p5r-fusion-chart-1024x576.jpg">chart for arcana fusion in Persona 5 Royal</a> (the expanded version) also works for the extraction, despite having slight differences. For example, Chariot + Emperor yields Strength in Persona 5, but Faith in Persona 5 Royal.</p>

@@ -1,0 +1,65 @@
+@import url("https://latex.js.org/fonts/cmu.css");
+
+.list {
+    --topsep: 0.8rem;
+    --parsep: 0.4rem;
+    --itemsep: 0.4rem;
+    --leftmargin: var(--leftmargini);
+}
+
+.raggedright, .list.flushleft {
+    text-indent: 0;
+    text-align: left;
+}
+
+.list.center, .list.flushleft, .list.flushright {
+    margin-left: 0 !important;
+}
+
+.it {
+    font-style: italic;
+    font-variant-caps: normal;
+}
+
+.bf {
+    font-weight: bold;
+}
+
+.latex {
+    font-family: "Computer Modern Serif", serif;
+    font-size: var(--size);
+
+    text-align: justify;
+    line-height: var(--line-height);
+    hyphens: manual;
+}
+
+.noindent,
+.continue {
+    text-indent: 0;
+}
+
+.katex {
+    font-size: 1em !important;
+}
+
+.katex,
+.katex .mainrm,
+.katex .mathit,
+.katex .mathbf {
+    font-family: "Computer Modern Serif" !important;  /* for KaTeX_Main */
+}
+
+.katex .mathdefault,
+.katex .boldsymbol {
+    font-family: "Computer Modern Serif" !important;  /* for KaTeX_Math */
+}
+
+.katex .mathsf,
+.katex .textsf,
+.katex .mathboldsf,
+.katex .textboldsf,
+.katex .mathitsf,
+.katex .textitsf {
+    font-family: "Computer Modern Sans" !important;  /* for KaTeX_SansSerif */
+}

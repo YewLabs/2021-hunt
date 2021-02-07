@@ -1,0 +1,29 @@
+{% if puzzle.solved %}
+<style>
+  #dates {
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<div id="dates" class="monospace">
+<div>1987-05-15T02:00 UTC</div>
+<div>1995-04-13T10:00 UTC</div>
+<div>1988-05-07T04:00 UTC</div>
+<div>2004-11-30T18:00 UTC</div>
+<div>2014-11-21T22:00 UTC</div>
+<div>1993-10-24T05:00 UTC</div>
+</div>
+
+<img src="{{sroot}}image.png" class="center"/>
+
+{% else %}
+If you're seeing this, please contact HQ.
+{% endif %}

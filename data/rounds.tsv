@@ -1,0 +1,15 @@
+Round Slug	Round Name	Tempest ID	Round Order	Round JUICE (JUICE granted within the round)	Outer JUICE (JUICE granted to other rounds)	JUICE Required
+yew-labs	Yew Labs	1	1	0	0	0
+students	Students	2	2	5	5	0
+green-building	Green Building	3	3	100	10	0
+infinite	Infinite Corridor	4	4	0	0	0
+athletics	Athletics	5	5	0	10	0
+nano	⊥IW.nano	6	6	100	10	100
+stata	Stata Center	7	7	100	10	300
+clusters	Clusters	8	8	100	10	600
+tunnels	Tunnels	9	9	100	10	800
+charles-river	Charles River	10	10	0	0	0
+
+infinite-template	Infinite Template	100	0	100	10	0
+backup	Backup	99	99	0	0	0
+infra	Infra	98	98	0	0	0

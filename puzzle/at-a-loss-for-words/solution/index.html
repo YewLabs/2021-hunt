@@ -1,0 +1,71 @@
+<style>
+    .puzzle img {
+        max-width: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .letter-sel {
+        display: inline-block;
+        position: relative;
+        color: red;
+        font-weight: bold;
+    }
+
+    .letter-sel::before {
+    display: inline-block;
+
+    position: absolute;
+    bottom: -0.5em;
+    left: 0;
+    font-size: 0.6em;
+    color: black;
+
+    text-align: center;
+    width: 100%;
+    }
+
+    .c1::before {content: "1"}
+    .c2::before {content: "2"}
+    .c3::before {content: "3"}
+    .c4::before {content: "4"}
+    .c5::before {content: "5"}
+    .c6::before {content: "6"}
+    .c7::before {content: "7"}
+    .c8::before {content: "8"}
+    .c9::before {content: "9"}
+    .c10::before {content: "10"}
+    .c11::before {content: "11"}
+    .c12::before {content: "12"}
+</style>
+
+<p>When we open the puzzle, we see seven images which depict different syllables, some of which are numbered. For example, this one is the fifth image:</p>
+
+<img src="{{sproot}}img5.png" alt="bum bum bum bum bum bum bum bum bum (1 under third bum, 5 under seventh bum)">
+
+<p>This image is one possible break-in point; the ascending and descending "bum bum bum" is the well-known introduction to the classic song <i>Mr. Sandman</i> by the Chordettes. In fact, each image clues a section of a famous song which has nonsense syllables instead of lyrics. The height of the syllables corresponds to their pitch in the song, and their spacing corresponds to the rhythm. The songs, which are given ordered by title, are:</p>
+
+<ol>
+    <li><a href="https://youtu.be/9Ht5RZpzPqw?t=49"><i>All the Small Things</i></a> (Blink-182)</li>
+    <li><a href="https://youtu.be/kyzIQKuSqBs?t=34"><i>Blue</i></a> (Eiffel 65)</li>
+    <li><a href="https://youtu.be/A_MjCqQoLLA?t=258"><i>Hey Jude</i></a> (The Beatles)</li>
+    <li><a href="https://youtu.be/oys5hqSO5qM?t=13"><i>Mahna Mahna</i></a> (Piero Umiliani, as popularized by <i>The Muppet Show</i>)</li>
+    <li><a href="https://youtu.be/PKnPrbPK5vA?t=2"><i>Mr. Sandman</i></a> (The Chordettes)</li>
+    <li><a href="https://youtu.be/beINamVRGy4?t=12"><i>Semi-Charmed Life</i></a> (Third Eye Blind)</li>
+    <li><a href="https://youtu.be/eKFN-aqPJH8?t=74"><i>You'll Be Back</i></a> (from the musical <i>Hamilton</i>, as performed by Jonathan Groff)</li>
+</ol>
+
+<p>In addition, the number of letters in each song title matches the number of syllables in the clue; if we take the letters that correspond to the numbered syllables, we get the following letters:</p>
+
+<p style="line-height: 1.8;">
+    ALLTH<span class="letter-sel c12">E</span>SMALLTH<span class="letter-sel c9">I</span>NGS</br>
+    B<span class="letter-sel c3">L</span>UE</br>
+    H<span class="letter-sel c10">E</span>YJ<span class="letter-sel c7">U</span>DE</br>
+    MAH<span class="letter-sel c8">N</span>AMAHNA</br>
+    MR<span class="letter-sel c1">S</span>AND<span class="letter-sel c5">M</span>AN</br>
+    S<span class="letter-sel c4">E</span>MICHA<span class="letter-sel c11">R</span>MEDLIFE</br>
+    Y<span class="letter-sel c2">O</span>ULLB<span class="letter-sel c6">E</span>BACK</br>
+</p>
+
+<p>Arranging the letters in the order of the numbers gives the answer, <span class="answer">SOLE MEUNIERE</span>.</p>

@@ -1,0 +1,66 @@
+<p>In this puzzle, we are told that a new species has been discovered, and that our goal is to interpret its genome. We are presented with an interface to obtain DNA sequencing data for this species. The interface has two parameters, number of reads, and read length.</p>
+
+<p>We may want to look up what read means, or figure this out from context by experimentation. A read is a piece of DNA that is read and output by a sequencing machine. This is a string over the four letter DNA alphabet (ACGT). The interface allows us to choose the length of reads to acquire from this new genome, and also the number of reads. The maximum amount of sequence allowed by the interface is 1,000,000 total characters (number of reads * read length) &mdash; sequencing is expensive!</p>
+
+<p>After we click submit, we are prompted to download data.fastq. This is a FASTQ file, that contains the requested number of reads, of the requested length. FASTQ is a common format for DNA sequencing data (you can read about it <a href="https://en.wikipedia.org/wiki/FASTQ_format">here</a>). In a FASTQ file, each read is represented by four lines:</p>
+
+<ul>
+    <li>The read ID. This line starts with @ followed by an ID. In this puzzle reads IDs are consecutive integers starting from 0.</li>
+    <li>The read sequence. This is a string over the DNA alphabet (ACGT)</li>
+    <li>A + sign. Nobody uses this line. Its existence is a mystery.</li>
+    <li>A quality score. This is an ASCII string with the same length as the read. Each character corresponds to one base (i.e. DNA letter) of the read, and indicates the confidence in the sequencing of this base.</li>
+</ul>
+
+<p>The next step is to explore the data! At this point we have two parameters that we can explore (read length and number of reads), and two sources of data (reads and quality scores). Let's explore each of them.</p>
+
+<p>Looking at the quality scores, there are a few things we could try. One common thought is to use the quality scores to assign certainty to the calls of DNA bases. If we explore this route, we'll find that the quality scores are somewhat random, and that the same stretch of DNA doesn't yield similar quality scores over different reads. If we sequence long enough reads, we will find that the DNA sequence in an individual read will repeat, and that the quality scores at repeated positions do not show much of a pattern.</p>
+
+<p>After a little examination of the quality scores, we will probably notice a visual trend. There are stretches of dense, darker characters, and stretches of sparse, lighter characters. In testing, solvers noticed this several ways &mdash; by visual inspection, in zoomed out view on their text editor, by cutting out the quality scores and pasting them consecutively, or by noticing periodic patterns in long reads. Stacking the quality scores, we will find that they make letters in ASCII art. Each letter is 100 x 100 characters (the default setting for the sequencing machine). Next we modify the sequencing parameters to find the whole message. Sequencing longer reads gives repeated letters, but sequencing a greater number of reads gives the full message &mdash; KARYOTYPE.</p>
+
+<p>A karyotype is a picture of the chromosomes in a cell, stained and arranged in order from longest to shortest (with the exception of sex chromosomes &mdash; which are placed at the end &mdash; but our puzzle doesn't have sex chromosomes). The next step is to consider how we might make a karyotype with the data that we're given.</p>
+
+<p>In a real karyotype, we view the chromosomes at a much lower resolution than the sequence. Chromosomes are intricate structures in which the DNA is coiled and looped many times, with patterns that are difficult to predict. In this puzzle, we neither have enough sequence nor any reasonable way to construct the 3D structure of a chromosome. Hopefully this is clear during solving.</p>
+
+<p>Instead, KARYOTYPE suggests two things: (1) that we should somehow get a picture of our chromosomes, and (2) that we should order them from longest to shortest.</p>
+
+<p>The next step is to explore the reads. If we sequence long enough reads, we will discover that reads eventually repeat their sequence. This gives us a few pieces of information. One is that these pieces of DNA are circular. The reads start at random positions in the circles, but with some investigation we can determine that there are only eleven unique circles in the sequencing data. We can also use long reads to determine the length (i.e. period) of the circles. We observe that the circle lengths are 180, 300, 420, 900, 1200, 1500, 1800, 2100, 2400, 2700, and 3000. This is suggestive that the sequences of lengths 180 and 420 go together in some way to make 600, although exactly how we do this is not clear yet.</p>
+
+<p>Next we can examine the DNA sequences. If we translate the sequences to the amino acid alphabet, we can observe several patterns. In ten out of eleven sequences (all but the sequence of length 60 amino acids/180 nucleotides), we can observe:</p>
+
+<ul>
+    <li>The sequences contain several proteins as substrings. Each protein begins with a start codon (M, for methionine), is immediately followed by the clue phrase ANGLEGENEENDS, and ends in a stop codon (- in the amino acid alphabet, or TAG/TGA/TAA as DNA)</li>
+    <li>Many of the proteins are consecutive, i.e. a stop codon is immediately followed by a start codon. </li>
+    <li>Every start codon is followed by a stop codon, with no intervening methionines. </li>
+    <li>Every stop codon is preceded by a start codon, with no intervening stop codons. </li>
+    <li>There is non-gene sequence. In nine of our sequences, the total length of non-gene sequence is equal to the total gene sequence. </li>
+    <li>The lengths of the gene sequences and non-gene sequences are nice round numbers.</li>
+    <li>The non-gene sequences can be divided or combined to pair up in length with the gene sequences. For example, in the shortest sequence we have one gene of length 60, followed by another of length 90, followed by a non-gene sequence of length 150. </li>
+    <li>The non-gene amino acid sequences all begin with LREV, SREV, or REV. </li>
+    <li>Most of the non-gene amino acid sequences end with H</li>
+</ul>
+<p>We can put these clues together to make several inferences. The non-gene segments correspond to the gene segments. They are reverse complements of the gene segments. Reverse complement DNA strands are strands that can pair together via DNA base pairing. A matches with T, and C matches with G. For example, GATTACA and TGTAATC are reverse complement sequences, and correspondingly they can pair with each other as follows (5' indicates the beginning of a sequence, 3' the end):</p>
+
+<p style="font-family:Courier New">
+5'-->3'<br>
+GATTACA<br>
+CTAATGT<br>
+3'&lt;--5'<br>
+</p>
+
+<p>We can make this observation in several ways. One clue is that the non gene amino acid sequences all begin with LREV, SREV, or REV. L and S appear because they are the amino acids yielded by the reverse complement of a stop codon (TAG and TAA &rarr; L, TGA &rarr; S). The beginning of a reverse complement sequence is the end of a forward sequence, and we have to allow a stop codon in the forward direction. REV appears when a non-gene amino acid sequence begins in the middle of a gene. We'll see why this occurs later.</p>
+
+<p>Another clue is that most of the non-gene amino acid sequences end in an H. This is the amino acid encoded by the reverse complement of a start codon.</p>
+
+<p>In testing, most solvers used <a href="https://web.expasy.org/translate/">this tool</a> to translate into amino acid sequences. This happens to be the first tool that comes up on Google. Conveniently, this tool translates DNA to amino acids in all three reading frames, and also translates their reverse complements. Testers noticed that non-gene segments in the forward direction were gene segments in the reverse direction, and vice versa. In addition, these segments corresponded with some rearrangement. This is another way that we can observe that reverse complements are important.</p>
+
+<p>There are several other ways to observe that reverse complements matter. We hope that there is sufficient cluing to make this inference.</p>
+
+<p>At this point, we have several observations. We have DNA circles which can be partitioned into genes and their reverse complements, we have the clue phrase ANGLEGENEENDS, and we know that we are supposed to make a KARYOTYPE.</p>
+
+
+<p>The next step is to start pairing the corresponding segments of the circles so that they fold into a shape. We can observe that hairpins (180 degree turns) are always found at the end of a gene. Several of the sequences are just one long double strand, with 2-5 consecutive genes on one strand. We should put ANGLES at the GENE ENDS to fold them into letters. Two segments fold into an L, five into an S, and three into an N. The lengths of the genes are proportional for the corresponding letters, which should help to disambiguate N from C or Z. Other sequences fold into a Y shape. If each arm is a single gene, this is a Y. If a gene stretches across the central vertex and two long arms each contain an additional short gene, insert ANGLES and the GENE ENDS to form an E. We will notice that each gene forms a straight line segment. Use this to bend the T and I (with serifs) appropriately. Finally, the segment of length 420 will not fully pair. This segment is an unambiguous A, but since A contains a hole it requires a second circle to form a double stranded chromosome. Place the segment of length 180 into the hole and observe that it is a reverse complement for the unpaired sequence.</p>
+
+
+
+
+<p>Arranging these chromosomes in order from longest to shortest, we obtain our karyotype that reads out LYSINE ET AL. This is a clue phrase for the answer <span class="answer">AMINO ACIDS</span>.</p>

@@ -1,0 +1,30 @@
+{% load hunt_state_tests %}
+<style>
+    .rightalign {
+        text-align: right;
+    }
+
+    .ctrimg {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+</style>
+
+<div class="flavor">It looks like these were executed perfectly, but something was added to the scores.</div>
+
+{% if puzzle|minutesAvailable:480 %}
+<br/>
+<div class="fourthwall" id="flavor">Psst... Hints are available for this puzzle.</div>
+<br/>
+{% endif %}
+
+<img src="{{sroot}}img0.png" class="ctrimg"/>
+<div class="rightalign">Total Score: 19.6 (III)</div></br>
+<img src="{{sroot}}img1.png" class="ctrimg"/>
+<div class="rightalign">Total Score: 93.2 (I)</div></br>
+<img src="{{sroot}}img2.png" class="ctrimg"/>
+<div class="rightalign">Total Score: 89.3 (II)</div></br>
+<img src="{{sroot}}img3.png" class="ctrimg"/>
+<div class="rightalign">Total Score: 27.1 (I)</div></br>

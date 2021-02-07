@@ -1,0 +1,68 @@
+{% if puzzle.solved %}
+<style>
+  #circle {
+    display: block;
+    margin: 15px auto;
+  }
+</style>
+
+<svg id="circle" width="600px" height="808px" version="1.1" viewBox="0 0 325.40003 438.01293" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title">
+ <title id="title" lang="en">A diagram of a circle with six arrows of varying lengths pointing from the circle's center.</title>
+ <defs>
+  <marker id="a" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="b" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="c" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="d" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="e" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+  <marker id="f" overflow="visible" orient="auto">
+   <path transform="matrix(-.8 0 0 -.8 -10 0)" d="m0 0 5-5-17.5 5 17.5 5z" fill-rule="evenodd" stroke="#000" stroke-width="1pt"/>
+  </marker>
+ </defs>
+ <g transform="translate(-23.723197 .92105514)">
+  <circle transform="matrix(.99999734 .00230837 -.00230471 .99999734 0 0)" cx="186.79556" cy="161.34819" r="156" fill="none" stroke="#de8f4a" stroke-linejoin="round" stroke-width="3.4"/>
+ </g>
+ <g transform="translate(-23.723197 .92105514)" fill="none" stroke="#000">
+  <g stroke-width=".4">
+   <path d="m186.4232 161.77896-119.144096-63.726878" marker-end="url(#a)"/>
+   <path d="m186.4232 161.77896 125.24557-30.21429" marker-end="url(#b)"/>
+   <path d="m186.4232 161.77896-134.669416 78.55439" marker-end="url(#c)"/>
+   <path d="m186.4232 161.77896 144.60575 80.11544" marker-end="url(#d)"/>
+   <path d="m186.4232 161.77896 40.50027 61.86534" marker-end="url(#e)"/>
+   <path d="m186.42321 161.77895 12.90533 269.53728" marker-end="url(#f)"/>
+  </g>
+ </g>
+</svg>
+
+<p class="copy-only">[See original puzzle for image]</p>
+<table>
+<tr><td>{% for p in round.all_puzzles %}{% if p.puzzle.answer == 'CLOVER FOOD LAB' %}{% if p.found %}{{ p.puzzle.name }}{% else %}???{% endif %}{% endif %}{% endfor %}</td><td>&#8203;(3)</td></tr>
+<tr><td>{% for p in round.all_puzzles %}{% if p.puzzle.answer == 'INTERSTELLAR TRADE' %}{% if p.found %}{{ p.puzzle.name }}{% else %}???{% endif %}{% endif %}{% endfor %}</td><td>&#8203;(2)</td></tr>
+<tr><td>{% for p in round.all_puzzles %}{% if p.puzzle.answer == 'BUZZFEED' %}{% if p.found %}{{ p.puzzle.name }}{% else %}???{% endif %}{% endif %}{% endfor %}</td><td>&#8203;(6)</td></tr>
+<tr><td></td><td>.</td></tr>
+<tr><td>{% for p in round.all_puzzles %}{% if p.puzzle.answer == 'THE SPICIEST MEMELORD' %}{% if p.found %}{{ p.puzzle.name }}{% else %}???{% endif %}{% endif %}{% endfor %}</td><td>&#8203;(12)</td></tr>
+<tr><td>{% for p in round.all_puzzles %}{% if p.puzzle.answer == 'SOUNDLINK' %}{% if p.found %}{{ p.puzzle.name }}{% else %}???{% endif %}{% endif %}{% endfor %}</td><td>&#8203;(7)</td></tr>
+<tr><td>{% for p in round.all_puzzles %}{% if p.puzzle.answer == "THERE'S PLENTY OF ROOM AT THE BOTTOM" %}{% if p.found %}{{ p.puzzle.name }}{% else %}???{% endif %}{% endif %}{% endfor %}</td><td>&#8203;(1)</td></tr>
+</table>
+<button id="clipboard-button"></button>
+{% else %}
+<style>
+  .puzzle img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25%;
+    display: block;
+    max-width: 100%;
+  }
+</style>
+<img src="{{sroot}}image.png" alt="A small image."/>
+{% endif %}

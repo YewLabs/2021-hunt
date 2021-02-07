@@ -1,0 +1,45 @@
+<style>
+    .puzzle img {
+        display: block;
+        margin: auto;
+    }
+</style>
+
+<p>This puzzle is essentially what it says on the tin &mdash; teams need to play Boggle on boards of various geometries. Progress is shared within a team, so finding words becomes easier with more people.</p>
+
+<p>In order, the level geometries are as follows:</p>
+
+<ul>
+    <li>Level 1: Standard Boggle geometry &mdash; 4 by 4 square grid, where adjacency includes diagonals.</li>
+    <li>Level 2: Triangular/hexagonal geometry.</li>
+    <li>Level 3: 3 by 3 by 3 cube &mdash; adjacency does not include diagonals in this one.</li>
+    <li>Level 4: Adjacency is based on the chess knight: squares are adjacent if they differ from 2 in one dimension and 1 in the other.</li>
+</ul>
+
+<p>Clearing certain thresholds results in gaining trophies. The requirements are found on the trophy page, and each level has two points and two word percentage thresholds &mdash; one lower, and one higher. A new level is unlocked by getting at least one trophy from the previous level.</p>
+
+<img src="{{sroot}}trophies.png" alt="Once obtained, the trophies display one letter each on them: for level 1, N, O, H, T; for level 2, D, O, R, U; for level 3, W, E, A, A; for level 4, R, L, D, N.">
+
+<p>Once we complete the last level, we are given an enumeration with 10 dashes and then 6 dashes. Given that we have 16 trophies arranged in a 4&times;4 grid, each containing a letter, this suggests finding a final message in this grid Boggle-style. One compelling path that uses all 16 letters is shown here:</p>
+
+<img src="{{sroot}}trophies-path.png" alt="Starting from the W from level 3, and moving to adjacent trophies in the grid until ending at the R from level 2, draws a path that spells a message using the trophy letters.">
+
+<p>This gives WONDERLAND AUTHOR, which clues the answer <span class="answer">LEWIS CARROLL</span>, the author of <i>Alice in Wonderland</i>.</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+    <p>Lewis: This idea actually originated from before the 2020 Mystery Hunt. As part of various social activities for our hunt team, we built a few Discord bots to host some games, such as a <i>Jeopardy!</i> trivia quiz, a SET bot, and this, which was a port of the defunct Yahoo! Games, Word Racer (itself a slightly more generalized version of Boggle). In that game, it was a free-for-all where every player was claiming words for themselves, but we thought that a cooperative version could be fun as well.</p>
+
+    <p>CJ: Did you know that CJ stands for CSS JS? It does now.</p>
+</div>
+
+<h3>Appendix: Additional details</h3>
+
+<p>Here are a few interesting tidbits of grid generation, which may be helpful (but are not necessary) in playing the game.</p>
+
+<ul>
+    <li>The wordlist used is <a href="http://wordlist.aspell.net/12dicts-readme/#3of6">3of6game</a>. We initially used enable2k, but after playtesting we felt that it contained too many obscurities, especially three and four letter words (which made some of the trophy thresholds difficult to attain).</li>
+    <li>The grid is guaranteed to contain one “seed” word that is at least 7 letters long. This word was placed by having a fixed cycle in the grid and then randomly placing the word along that cycle. As an additional subtle hint to the answer, this word is found in an answer to the 2014 MIT Mystery Hunt, which was Alice in Wonderland themed. (Originally this seed word was taken from neologisms in Jabberwocky, but testsolvers found these words too quickly, and they made generating grids with many words very difficult.)</li>
+    <li>The generator tries to generate grids with at least 100 words, though in order to not take too long this cutoff is relaxed over time (so some grids may end up in the 80&ndash;100 range). This was done because one previous testsolver strategy was to try to refresh the grid until the number of words was very low (one grid had 27 words).</li>
+</ul>

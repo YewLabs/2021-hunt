@@ -1,0 +1,41 @@
+name: image-id-people
+difficulty: 2/10
+coolness: 4/10
+time: 1:00
+
+questions:
+    - question:
+        - text: What is the name by which this person is most commonly known?
+        - image: image-identification/billie-eilish.jpg
+
+        - answer: billie eilish
+
+    - question:
+        - text: What is the name by which this person is most commonly known?
+        - image: image-identification/bruce-lee.jpg
+
+        - answer: bruce lee
+
+    - question:
+        - text: What is the name by which this person is most commonly known?
+        - image: image-identification/nelson-mandela.jpg
+
+        - answer: nelson mandela
+
+    - question:
+        - text: What is the name by which this person is most commonly known?
+        - image: image-identification/roger-federer.png
+
+        - answer: roger federer
+
+    - question:
+        - text: What is the name by which this person is most commonly known?
+        - image: image-identification/ryan-reynolds.jpg
+
+        - answer: ryan reynolds
+
+    - question:
+        - text: What is the name (not title!) by which this person is most commonly known?
+        - image: image-identification/tenzin-gyatso.jpg
+
+        - answer: tenzin gyatso

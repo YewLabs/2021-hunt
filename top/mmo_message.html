@@ -1,0 +1,74 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% load hunt_state_tests %}
+{% load puzzle %}
+
+{% block title %}Important Message from Yew Labs &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Important Message from Yew Labs</h1>
+  <main>
+    <center>
+      <div id="mmo-video">
+        <iframe width="1120" height="630" src="https://www.youtube.com/embed/7tOR_vYyLJc?&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <h1><p id="countdown"></p></h1>
+    </center>
+    <div class="info">
+      <h3>Using the Projection Device</h3>
+        <ul>
+        <li><b>Finding puzzles</b>: Most puzzles must first be &ldquo;found&rdquo; using the Projection Device before you can begin solving them. Generally, you can do this by talking to a person or entity who will give you the puzzle. An exclamation mark above someone&rsquo;s head means their puzzle has not been found yet; talking to them and pressing enter or clicking the "Open Puzzle" button will give you access to the puzzle.<br>
+        Once one person has found the puzzle, the rest of the team can view it on the website without needing to use the Projection Device. Puzzles that are available in the Projection Device but that have not been found yet will be indicated on the various round pages of the website, accessible through the Campus Map or the puzzle piece dropdown menu in the top bar.<br>
+
+        The round pages on the website may also provide additional information that helps find the puzzles. Most puzzles are localized to their corresponding round locations: for example, if you hover over a puzzle that needs to be found in the Green Building round, it will say "Find this puzzle in the &perp;IW Green Building!". This means that you will not need to go anywhere else in &perp;IW to find that particular puzzle!<br>
+
+        If puzzles do not appear after talking to the appropriate entity in the Projection Device, try checking to make sure that pop-ups are enabled, since puzzles will open in a new window. If that still doesn't work, <a href="{% url "submit_contact" %}">contact us</a>.
+        </li>
+        <li><b>Puzzles and the Projection Device:</b> Any puzzle that requires the Projection Device to solve will be clearly marked with a disclaimer like this:
+          <div class="projdev">Yew Labs anticipates that you will need to use the Projection Device for this puzzle.</div>
+          If a puzzle or metapuzzle does not contain this disclaimer, <u>it will not require you to use the Projection Device in any way.</u>
+        </li>
+        <li><b>JUICE</b>: To uncover more puzzles and areas of &perp;IW, you will need to gather JUICE. JUICE is primarily earned by solving puzzles, but you will also gain some JUICE passively over time and by participating in some events. <br>
+
+        Most areas of &perp;IW have their own localized JUICE measurement. Solving puzzles in a specific area contributes JUICE to that area, and a smaller amount of JUICE to all other areas. You can view the current amount of JUICE you have in any area, as well as how much JUICE you need to access more puzzles, in the top-right corner of the round page (accessible through the Campus Map or the puzzle piece dropdown menu in the top bar).
+        </li>
+        <li><b>Dialogue</b>: Most of the dialogue in the Projection Device is for flavor only. If a puzzle is not marked as requiring the Projection Device, then it will not use any dialogue from the characters in the Projection Device either.</li>
+        <li><b>Hints:</b> You may find that reaching certain areas of &perp;IW requires some creativity. Should you need navigation assistance, you may request hints in the upper-right corner of the Projection Device page, just as you would for ordinary puzzles.
+        </li>
+        <li><b>Browser:</b> We recommend using a modern desktop browser equipped with JavaScript, like Firefox or Google Chrome, for accessing the Projection Device. The Projection Device is unlikely to be usable on mobile devices due to its resource-intensive nature.<br>Additionally, the Projection Device needs to store data for you as you explore the universe. Thus, we recommend <u>not using &ldquo;incognito&rdquo; windows</u> since these interfere with the storage of data. Certain parts of the universe may behave in unintended ways if this happens.
+        </li>
+        <li><b>Low-Quality Mode:</b> Depending on your computer hardware, the Projection Device may not run optimally. If this is the case, expand the interface in the top right corner of the Device, click the gear icon, and enable Low-Quality Mode. If you find the Device still not usable, feel free to <a href="{% url "submit_contact" %}">contact us</a> for assistance. However, the hunt does not require all team members to use the Projection Device, and you can continue solving puzzles as normal on the hunt website.
+        </li>
+        <li><b style="color:red;">You must never reverse-engineer, hack, decompile, or otherwise interact with the Projection Device itself in any unintended way.</b> Advanced technology should not be messed with! <a href="{% url "submit_contact" %}">Contact us</a> if you&rsquo;re unsure of whether something crosses the line.
+        </li>
+        <li><b>Bug reports:</b> If you believe you have found a bug with the Projection Device,
+          or need technical assistance, <a href="{% url "submit_contact" %}">contact HQ</a>.
+        </li>
+        </ul>
+    </div>
+
+  </main>
+</div>
+<script>
+  function zeroPad(nr,base){
+    var len = (String(base).length - String(nr).length)+1;
+    return len > 0? new Array(len).join('0')+nr : nr;
+  }
+
+  var secondsLeft = {{ time_left.total_seconds }};
+  var start = new Date().getTime();
+
+  var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = (1000 * secondsLeft) - (now - start);
+    var minutes = Math.floor(distance / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    $("#countdown").html("Powering up: " + zeroPad(minutes, 10) + ":" + zeroPad(seconds, 10));
+    if (distance < 0) {
+      clearInterval(x);
+      $("#countdown").html("<a href=\"/projection_device\">Projection Device Active</a>");
+    }
+  }, 100);
+</script>
+{% endblock %}

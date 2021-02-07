@@ -1,0 +1,224 @@
+<style>
+.flag {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.grid {
+    display: inline-table;
+}
+
+table.grid td {
+    border: 1px solid black;
+    padding: 12px 15px;
+}
+
+.grid tr:nth-child(2) td:nth-child(2) {
+    background-color: lightgray;
+}
+</style>
+
+<p>The puzzle consists of three components: a list of 5 complexity classes, a list of 7 algorithmic decision problems, and three groups of 7 blanks next to a check, question mark, and X.</p>
+<p>Looking at the algorithmic problems, they all take in as input two components in common: a bipartite graph <span class="math inline"><em>G</em></span> (some even specifically refer to the ‘top’ and ‘bottom’ bipartitions of that graph) and a variable <span class="math inline"><em>k</em></span>. Some of the problems take in other inputs, but these always have default values so that they are not necessary to evaluate the problem. Moreover, for any graph <span class="math inline"><em>G</em></span>, there is always at most one <span class="math inline"><em>k</em></span> that should make the problem accept. This suggests that we will need to evaluate these problems on certain bipartite graphs, and figure out what values of <span class="math inline"><em>k</em></span> make them accept.</p>
+<p>What bipartite graphs should we evaluate them on? The bullet points next to the complexity classes and problems, and the three lines of blanks at the bottom which have seven blanks each (one for each problem) suggest that they should be defined in terms of which problems are in which complexity classes. More precisely, we will form three bipartite graphs, which each have five nodes in the top bipartition (corresponding to the five classes) and seven nodes in the bottom bipartition (corresponding to the problems). In the first graph, we will put an edge between complexity class <span class="math inline"><em>C</em></span> and problem <span>P</span> if <span>P</span> is known to be in <span class="math inline"><em>C</em></span>. In the third graph, we will put an edge if <span>P</span> is known to not be in <span class="math inline"><em>C</em></span>. In the second graph, we will put an edge if it is an <em>open problem</em> whether <span>P</span> is in <span class="math inline"><em>C</em></span>.</p>
+<p>Doing this (see below for all the details) produces the following three graphs:</p>
+<p><img src="{{sroot}}yes.png" alt="image" /></p>
+<p><img src="{{sroot}}question.png" alt="image" /></p>
+<p><img src="{{sroot}}no.png" alt="image" /></p>
+<p>We next evaluate the problems on these three graphs to find the value of <span class="math inline"><em>k</em></span> which makes the problem accept. Python code for doing so can be found <a href="{{sroot}}eval.py">here</a>. The results are as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Problem</th>
+<th style="text-align: center;"><span class="math inline"><em>k</em></span> (and any explanation)</th>
+<th style="text-align: center;">Corresponding Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">(0, 0, 0, 0, 1)</span></td>
+<td style="text-align: center;"><span class="math inline">1=</span>A</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">14</span></td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">19</span>, since <span class="math inline"><em>c</em> = 110860</span></td>
+<td style="text-align: center;">S</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">23</span></td>
+<td style="text-align: center;">W</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">5</span>, since <span class="math inline"><em>s</em> = 10000100100101111100110010001001010</span></td>
+<td style="text-align: center;">E</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">18</span>, since <span class="math inline"><em>s</em> = 10111011000010000111010001000101100</span></td>
+<td style="text-align: center;">R</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><span class="math inline">9</span></td>
+<td style="text-align: center;">I</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Problem</th>
+<th style="text-align: center;"><span class="math inline"><em>k</em></span> (and any explanation)</th>
+<th style="text-align: center;">Corresponding Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">(1, 0, 0, 1, 1)</span></td>
+<td style="text-align: center;"><span class="math inline">19=</span>S</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">14</span></td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">15</span>, since <span class="math inline"><em>c</em> = 104017</span></td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">14</span></td>
+<td style="text-align: center;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">3</span>, since <span class="math inline"><em>s</em> = 00000001011010000010001100010110101</span></td>
+<td style="text-align: center;">C</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">15</span>, since <span class="math inline"><em>s</em> = 01000000110101101000001010100000011</span></td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><span class="math inline">14</span></td>
+<td style="text-align: center;">N</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Problem</th>
+<th style="text-align: center;"><span class="math inline"><em>k</em></span> (and any explanation)</th>
+<th style="text-align: center;">Corresponding Letter</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"><span class="math inline">(0, 0, 1, 1, 0)</span></td>
+<td style="text-align: center;"><span class="math inline">6=</span>F</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"><span class="math inline">15</span></td>
+<td style="text-align: center;">O</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"><span class="math inline">18</span>, since <span class="math inline"><em>c</em> = 65058</span></td>
+<td style="text-align: center;">R</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"><span class="math inline">13</span></td>
+<td style="text-align: center;">M</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"><span class="math inline">9</span>, since <span class="math inline"><em>s</em> = 01111010000000000001000001100000000</span></td>
+<td style="text-align: center;">I</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"><span class="math inline">19</span>, since <span class="math inline"><em>s</em> = 00000100001000010000100100011010000</span></td>
+<td style="text-align: center;">S</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"><span class="math inline">20</span></td>
+<td style="text-align: center;">T</td>
+</tr>
+</tbody>
+</table>
+<p>The values of <span class="math inline"><em>k</em></span> each correspond to an integer between <span class="math inline">1</span> and <span class="math inline">26</span>; they spell out ANSWER IS <span class="answer">NONCONFORMIST</span>.</p>
+<h3 id="complexity-classification-details">Complexity Classification Details</h3>
+<p>We now give proofs of all of the classifications of problems into complexity classes. Before we begin, we note that:</p>
+<ol>
+<li><p>Solvers can likely guess or deduce many of these without needing to come up with complex proofs. For instance, below we give reductions to show that various problems are not in <span class="math inline">AC<sup>0</sup></span>, but one can often guess that they are not in <span class="math inline">AC<sup>0</sup></span> without a complete proof in mind.</p></li>
+<li><p>Some of the classifications are intentionally difficult to determine, and may be easier to figure out using <em>puzzle solving skills</em> rather than computer science skills. For two examples: (1) From looking at the possible outputs of problem 4, we can determine that the graphs must have 15, 12, and 8 edges (in some order). (2) Once we see that the first graph is spelling out ANSWER, but possibly with errors, we can figure out how the graph should be modified to cleanly output ANSWER.</p></li>
+</ol>
+<h4 id="complexity-class-overview">Complexity Class Overview</h4>
+<p>To begin, let’s recall the definitions of the classes and some of their useful properties. These all appear on the Wikipedia pages for the relevant classes.</p>
+<p><span class="math inline">AC<sup>0</sup></span> is the circuit class of problems which can be solved by constant-depth, polynomial-size circuits with AND, OR, and NOT gates. The size of a circuit is measured in terms of its number of wires. (Some definitions only allow NOT gates at the bottom layer of the circuit. Using De Morgan’s laws to ‘push’ NOT gates up and down the circuit, this can be assumed without loss of generality.) It is known that <span class="math inline">AC<sup>0</sup></span> cannot compute PARITY (the problem of determining whether the number of <span class="math inline">1</span>s in an input binary string is even), or more generally MOD<span class="math inline"><em>m</em></span> for any fixed integer <span class="math inline"><em>m</em> &gt; 1</span>. <span class="math inline">AC<sup>0</sup></span> can compute the addition and subtraction of two integers given in binary, but not their multiplication. As a circuit class (i.e. a nonuniform class), <span class="math inline">AC<sup>0</sup></span> can compute any unary language.</p>
+<p>A problem <span><em>A</em></span> is <span>NP-hard</span> if, for every problem <span class="math inline"><em>B</em></span> in <span class="math inline">NP</span>, there is a polynomial-time reduction from <span class="math inline"><em>B</em></span> to <span><em>A</em></span>. Recall in particular that a problem is <span>NP-complete</span> if it is <span>NP-hard</span> and in <span class="math inline">NP</span>. If <span class="math inline">P = NP</span>, then every problem <span>A</span> is <span>NP-hard</span>: we can simply solve <span class="math inline"><em>B</em></span> in polynomial time, without needing to use <span>A</span> at all. Since it is open whether <span class="math inline">P = NP</span>, we won’t have any edges to <span>NP-hard</span> in our third graph.</p>
+<p><span class="math inline">PSPACE</span> is the class of problems that can be solved using polynomial space (even if the algorithm takes exponential time). Brute force algorithms can often be used to show that a problem is in <span class="math inline">PSPACE</span>, as long as the number of possibilities to check is at most exponential in the input size (so we can keep track of which we’re dealing with in polynomial space), and each can be checked using polynomial space.</p>
+<p><span>P</span> is the class of problems that can be solved in polynomial time. A nice relationship to recall is that any problem in <span>P</span> is also in <span class="math inline">PSPACE</span>, since it takes one time step to write to a cell of memory, so in polynomial time, one can only write to a polynomial amount of space.</p>
+<p><span class="math inline">P/poly</span> can be thought of in two equivalent ways. First, it is the circuit class of problems which can be solved by polynomial-size circuits (of any depth) with AND, OR, and NOT gates. Second, it is the class of problems which can be solved in polynomial time when given a polynomial-size advice string which depends only on the input length. For our purposes, the most important things to note about the definition are that any problem in <span>P</span> is also in <span class="math inline">P/poly</span> (since one can just not use the advice), and any unary language is in <span class="math inline">P/poly</span> (since it is a non-uniform circuit class; alternatively one can think of the advice as telling you the answer for that input length). It is open whether each of <span class="math inline">NP</span>, <span class="math inline">PSPACE</span>, and <span class="math inline">EXPTIME</span> is contained in <span class="math inline">P/poly</span>.</p>
+<h4 id="problem-1">Problem 1</h4>
+<p>Let’s begin by showing this problem is in <span class="math inline">AC<sup>0</sup></span> by constructing an <span class="math inline">AC<sup>0</sup></span> circuit for it. Suppose the graph <span class="math inline"><em>G</em></span> has <span class="math inline"><em>n</em></span> nodes in the top bipartition, and <span class="math inline"><em>m</em></span> nodes in the bottom bipartition.</p>
+<p>First, for any fixed integer <span class="math inline"><em>d</em></span>, and any fixed nodes <span class="math inline"><em>a</em></span> and <span class="math inline"><em>b</em></span> in the top bipartition, we will construct a gadget to tell whether <span class="math inline"><em>a</em></span> and <span class="math inline"><em>b</em></span> have at least <span class="math inline"><em>d</em></span> nodes in the bottom bipartition which are not adjacent to either of them. To do this, we take the OR over all choices of <span class="math inline"><em>d</em></span> nodes in the bottom bipartition, and for each, we check whether <span class="math inline"><em>a</em></span> and <span class="math inline"><em>b</em></span> are both not adjacent to all <span class="math inline"><em>d</em></span> of those nodes (e.g. by taking an AND over the <span class="math inline"><em>d</em></span> nodes <span class="math inline"><em>x</em></span> of whether <span class="math inline"><em>a</em></span> is not adjacent to <span class="math inline"><em>x</em></span> AND <span class="math inline"><em>b</em></span> is not adjacent to <span class="math inline"><em>x</em></span>). This gadget has size <span class="math inline"><em>O</em>(<em>m</em><sup><em>d</em></sup>)</span>, which is polynomial-size for any fixed <span class="math inline"><em>d</em></span>. It has depth 3.</p>
+<p>Next, for any fixed nodes <span class="math inline"><em>a</em></span> and <span class="math inline"><em>b</em></span> in the top bipartition, we can compute whether they are friends. To do this, we take the above gadget for both <span class="math inline"><em>d</em> = 2</span> and <span class="math inline"><em>d</em> = 3</span>, and take the XOR of their results. Note that <span class="math inline"><em>X</em><em>O</em><em>R</em>(<em>a</em>, <em>b</em>) = <em>A</em><em>N</em><em>D</em>(<em>O</em><em>R</em>(<em>a</em>, <em>b</em>), <em>N</em><em>O</em><em>T</em>(<em>A</em><em>N</em><em>D</em>(<em>a</em>, <em>b</em>)))</span>. Thus, this gadget has size <span class="math inline"><em>O</em>(<em>m</em><sup>3</sup>)</span> and depth 6. We can make such a gadget for all pairs of nodes in the top bipartition, which will have total size <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup><em>m</em><sup>3</sup>)</span> and depth 6.</p>
+<p>Now, for each node <span class="math inline"><em>a</em></span> in the top bipartition, we can compute <span class="math inline"><em>f</em>(<em>a</em>)</span> by taking NOT of the OR over the above gadget for all nodes <span class="math inline"><em>b</em></span>. This adds <span class="math inline">1</span> depth, and a total additional size of <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span>, since we are using an <span class="math inline"><em>O</em>(<em>n</em>)</span>-fan-in OR gate for each of the <span class="math inline"><em>n</em></span> nodes in the top bipartition. (Although it doesn't matter for our purposes, this is an additive <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> size, rather than multiplicative, since we are adding <span class="math inline"><em>O</em>(<em>n</em><sup>2</sup>)</span> wires which just connect to the gadgets from the previous layer.) Then, again using an XOR, we can determine whether this equals <span class="math inline"><em>k</em><sub><em>a</em></sub></span>. This adds <span class="math inline">3</span> depth and <span class="math inline"><em>O</em>(<em>n</em>)</span> size. Finally, we take a NOT OR over all these comparisons to return our final answer. This adds <span class="math inline">1</span> depth and <span class="math inline"><em>O</em>(<em>n</em>)</span> size. In total, our circuit has size <span class="math inline"><em>O</em>(<em>m</em><sup>3</sup><em>n</em><sup>2</sup>)</span> and depth 11. With some optimization, it’s likely possible to reduce the depth.</p>
+<p>This circuit shows that the problem is in <span class="math inline">AC<sup>0</sup></span>. It is simple to convert the above procedure into a polynomial-time algorithm as well, showing that this problem is in <span>P</span>, and hence also <span class="math inline">PSPACE</span> and <span class="math inline">P/poly</span>. Finally, since the problem is in <span>P</span>, it must be open whether it’s <span>NP-hard</span>, since resolving this would resolve the <span>P</span> vs <span class="math inline">NP</span> problem.</p>
+<h4 id="problem-2">Problem 2</h4>
+<p>Computing <span class="math inline"><em>C</em></span> is known as the ‘maximum edge biclique problem’. It is <span>NP-complete</span>. One can find references online proving this, but it is also not hard to prove directly by reducing from the usual ‘maximum clique’ problem: given a (not necessarily bipartite) graph <span class="math inline"><em>H</em></span> on <span class="math inline"><em>n</em></span> nodes in which we want to compute the maximum size of a clique, we construct a bipartite graph <span class="math inline"><em>G</em></span> with <span class="math inline"><em>n</em></span> nodes in each bipartition, where there is an edge from node <span class="math inline"><em>i</em></span> on the top to node <span class="math inline"><em>j</em></span> on the bottom in <span class="math inline"><em>G</em></span> if and only if there is an edge between nodes <span class="math inline"><em>i</em></span> and <span class="math inline"><em>j</em></span> in <span class="math inline"><em>H</em></span>. One can verify that the size of a maximum edge biclique in <span class="math inline"><em>G</em></span> will be the square of the size of a maximum clique in <span class="math inline"><em>H</em></span>. Thus, problem 2, which is a minor modification of the maximum edge biclique problem, is also <span>NP-complete</span>.</p>
+<p>It immediately follows that problem 2 is <span>NP-hard</span>, and it is open whether it’s in <span>P</span>. We can see that it is in <span class="math inline">PSPACE</span> since an algorithm can brute-force over all subsets <span class="math inline"><em>S</em></span> and <span class="math inline"><em>T</em></span> of the bipartitions of <span class="math inline"><em>G</em></span> in polynomial space (we just have to remember which we are currently looking at). In fact it is known that <span class="math inline">NP</span> is contained in <span class="math inline">PSPACE</span>.</p>
+<p>If problem <span class="math inline">2</span> were not in <span class="math inline">P/poly</span>, then it would also not be in <span>P</span>, settling <span>P</span> vs <span class="math inline">NP</span>. If problem 2 were in <span class="math inline">P/poly</span>, then it would follow that all of <span class="math inline">NP</span> is in <span class="math inline">P/poly</span>. Indeed, if problem 2 were in <span class="math inline">P/poly</span>, then for any problem <span class="math inline"><em>L</em></span> in <span class="math inline">NP</span>, one could do the polynomial-time reduction to problem 2, and solve that using the <span class="math inline">P/poly</span> algorithm. Since it is open whether <span class="math inline">NP</span> is in <span class="math inline">P/poly</span>, it follows that it is open whether problem <span class="math inline">2</span> is in <span class="math inline">P/poly</span>.</p>
+<p>Finally, let’s prove that problem <span class="math inline">2</span> is not in <span class="math inline">AC<sup>0</sup></span>. (It is likely intuitive to solvers that this is the case, but we prove it here for completeness.) We will prove this by using an <span class="math inline">AC<sup>0</sup></span> circuit for problem <span class="math inline">2</span> to construct one for PARITY (which is known to not be in <span class="math inline">AC<sup>0</sup></span>). Recall that the goal in PARITY is to determine if the number of <span class="math inline">1</span>s in an input binary string <span class="math inline"><em>s</em></span> of length <span class="math inline"><em>n</em></span> is even. It is sufficient to test, for a given even integer <span class="math inline">0 ≤ ℓ ≤ <em>n</em></span>, whether the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span> is <span class="math inline">ℓ</span>, since we can then take the OR over the <span class="math inline"><em>O</em>(<em>n</em>)</span> different choices of even <span class="math inline">ℓ</span> to get our final result.</p>
+<p>To do this, we simply use the circuit for problem 2, picking <span class="math inline"><em>k</em> = 20 − ℓ</span> and setting <span class="math inline"><em>G</em></span> to be the graph whose adjacency matrix is the string <span class="math inline"><em>s</em></span>. This is a graph with <span class="math inline">1</span> node in one bipartition, and <span class="math inline"><em>n</em></span> nodes in the other, and its number of edges equals the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>. Hence, the maximum size of a biclique in <span class="math inline"><em>G</em></span> is the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>, as desired. (A note regarding picking <span class="math inline"><em>k</em> = 20 − ℓ</span>: we can compute this in an <span class="math inline">AC<sup>0</sup></span> circuit since subtraction is possible with such circuits, but in fact this is not even necessary, since we make a different circuit for each input size, so we can hard-code in all the relevant values of <span class="math inline">ℓ</span>.)</p>
+<h4 id="problem-3">Problem 3</h4>
+<p>First, let’s show that problem <span class="math inline">3</span> is not in <span class="math inline">AC<sup>0</sup></span>. We can show this by a reduction from MOD3, the problem of deciding whether the number of <span class="math inline">1</span>s in an input binary string is a multiple of <span class="math inline">3</span>. Given a binary string <span class="math inline"><em>s</em></span> of length <span class="math inline"><em>n</em></span>, we can interpret it as the adjacency matrix of a bipartite graph with <span class="math inline">1</span> node in the bottom bipartition and <span class="math inline"><em>n</em></span> nodes in the top bipartition. Hence, the integer <span class="math inline"><em>c</em></span> it corresponds to is the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>. Let’s instead concatenate <span class="math inline"><em>s</em></span> with itself, so that <span class="math inline"><em>c</em></span> corresponds to twice the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>. In particular, <span class="math inline"><em>c</em></span> is even, and it is a multiple of <span class="math inline">3</span> if and only if we should return true for the MOD3 problem. Our goal is hence to determine whether <span class="math inline">12 ⋅ <em>f</em>(<em>c</em>) + 5</span> is <span class="math inline">12 ⋅ 3 + 5 = 41</span>. We know that <span class="math inline"><em>f</em>(<em>c</em>)</span> is at most <span class="math inline"><em>n</em></span>. Let’s pick <span class="math inline"><em>u</em> = 12 ⋅ <em>n</em> + 6</span>, so that <span class="math inline"><em>M</em><em>O</em><em>D</em>(12 ⋅ <em>f</em>(<em>c</em>) + 5, <em>u</em>)</span> is just equal to <span class="math inline">12 ⋅ <em>f</em>(<em>c</em>) + 5</span>. Thus, <span class="math inline"><em>M</em><em>O</em><em>D</em>(12 ⋅ <em>f</em>(<em>c</em>) + 5, <em>u</em>)</span> will be <span class="math inline">41</span> if and only if <span class="math inline"><em>f</em>(<em>c</em>) = 3</span>. We can thus use an <span class="math inline">AC<sup>0</sup></span> circuit for problem 3, with <span class="math inline"><em>G</em></span> being the graph above, and <span class="math inline"><em>k</em> = 41</span>, to test for MOD3 in <span class="math inline">AC<sup>0</sup></span> as well.</p>
+<p>We now address the other complexity classes. Let’s begin by showing that problem 3 is polynomial-time equivalent (i.e. there are polynomial time reductions in both directions) to integer factorization. First, to solve problem 3, we compute <span class="math inline"><em>c</em></span> in polynomial time, then compute its factorization, take the second-smallest prime in that factorization to get <span class="math inline"><em>f</em>(<em>c</em>)</span>, then finally compute and output <span class="math inline"><em>M</em><em>O</em><em>D</em>(12 ⋅ <em>f</em>(<em>c</em>) + 5, <em>u</em>)</span> in polynomial time. Second, to factor a given integer <span class="math inline"><em>N</em></span>, we first construct a bipartite graph <span class="math inline"><em>G</em></span> which corresponds to <span class="math inline"><em>c</em> = <em>N</em></span> (e.g. if there is only one node in the top bipartition, then <span class="math inline"><em>G</em></span> corresponds to a binary representation of <span class="math inline"><em>c</em></span>), pick <span class="math inline"><em>u</em> = 12 ⋅ <em>N</em> + 6</span>, which is greater than <span class="math inline">12 ⋅ <em>f</em>(<em>c</em>) + 5</span>, so that <span class="math inline"><em>M</em><em>O</em><em>D</em>(12 ⋅ <em>f</em>(<em>c</em>) + 5, <em>u</em>) = 12 ⋅ <em>f</em>(<em>c</em>) + 5</span>, then using problem 3, we can compute <span class="math inline">12 ⋅ <em>f</em>(<em>c</em>) + 5</span> and hence <span class="math inline"><em>f</em>(<em>c</em>)</span>. We know that <span class="math inline"><em>f</em>(<em>c</em>)</span> is a prime factor of <span class="math inline"><em>N</em></span>, so we divide by that factor and recurse until <span class="math inline"><em>N</em> = 1</span>. (The number of times we need to recurse is the number of prime factors of <span class="math inline"><em>N</em></span>, which is at most <span class="math inline">log<sub>2</sub>(<em>N</em>)</span>, which is a polynomial in the input length.)</p>
+<p>From this, we can answer our remaining questions about problem 3 by finding the corresponding answers for integer factorization, e.g. from Wikipedia. Integer factorization is believed to be an NP-intermediate problem. It is hence open whether it is in <span>P</span> or <span>NP-hard</span> (but it is not believed to be in either). It is also open whether it is in <span class="math inline">P/poly</span> (for instance, a common assumption of the RSA cryptosystem is that it is not in <span class="math inline">P/poly</span>). It is in <span class="math inline">PSPACE</span>, again by a brute-force algorithm, where we iterate over all integers <span class="math inline">1 &lt; ℓ &lt; <em>N</em></span> and see if they divide <span class="math inline"><em>N</em></span>.</p>
+<h4 id="problem-4">Problem 4</h4>
+<p>Solving this problem simply requires counting the number of edges in the input graph <span class="math inline"><em>G</em></span> and doing some basic arithmetic. It follows quickly that it is in <span>P</span>, <span class="math inline">PSPACE</span>, and <span class="math inline">P/poly</span>, and it is open whether it is <span>NP-hard</span>.</p>
+<p>Finally, we show it is not in <span class="math inline">AC<sup>0</sup></span> using a reduction from MOD<span class="math inline">11</span>. As in the reductions in the previous two problems, given an input string <span class="math inline"><em>s</em></span> that we want to solve MOD<span class="math inline">11</span> for, we can construct a graph <span class="math inline"><em>G</em></span> such that <span class="math inline"><em>e</em>(<em>G</em>)</span> is the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>, then using an <span class="math inline">AC<sup>0</sup></span> circuit for problem 4 (<span class="math inline">341</span> copies, one for each possible value of <span class="math inline"><em>k</em></span>), we can get <span class="math inline"><em>M</em><em>O</em><em>D</em>(110 ⋅ <em>e</em>(<em>G</em>)<sup>2</sup> + 102 ⋅ <em>e</em>(<em>G</em>), 341)</span>. Since <span class="math inline">11</span> divides <span class="math inline">341</span>, and <span class="math inline">341</span> is a constant, we can use a constant-sized circuit to extract from this <span class="math inline">110  ⋅  e(G)<sup>2</sup> + 102  ⋅  e(G) (mod 11)</span>, which is <span class="math inline">3  ⋅  e(G) (mod 11)</span>, and hence we can extract <span class="math inline">e(G) (mod 11)</span> as desired.</p>
+<h4 id="problem-5">Problem 5</h4>
+<p>This problem looks like the famous Halting problem. In fact, testing whether <span class="math inline"><em>t</em>(<em>T</em>, <em>s</em>) =  − 1</span> is exactly the Halting problem. However, in problem 5, the integer <span class="math inline"><em>k</em></span> must be positive, so there is no way for us to use it to check whether <span class="math inline"><em>t</em>(<em>T</em>, <em>s</em>) =  − 1</span>. A succinct way to describe problem 5 is: given a positive integer <span class="math inline"><em>k</em></span>, Turing machine <span class="math inline"><em>T</em></span>, and input <span class="math inline"><em>s</em></span>, determine whether <span class="math inline"><em>T</em></span> halts on <span class="math inline"><em>s</em></span> in exactly <span class="math inline"><em>k</em></span> steps. This is perhaps the most classic example of a problem which is <span class="math inline">EXPTIME</span>-complete.</p>
+<p>Most of the answers to our questions for problem 5 can now be found on the Wikipedia page for <span class="math inline">EXPTIME</span>. It is known by the time hierarchy theorem that <span>P</span> is not equal to <span class="math inline">EXPTIME</span>, and so problem 5 is not in <span>P</span> (otherwise every problem in <span class="math inline">EXPTIME</span> would be in <span>P</span> by first reducing to problem 5). It is open whether <span class="math inline">EXPTIME</span> is contained in <span class="math inline">P/poly</span>, and so it is open whether problem 5 is in <span class="math inline">P/poly</span>. It is similarly open whether problem 5 is in <span class="math inline">PSPACE</span>. We know problem 5 is <span>NP-hard</span> since it is <span class="math inline">EXPTIME-hard</span> and EXPTIME contains NP.</p>
+<p>Finally, we can prove this problem is not in <span class="math inline">AC<sup>0</sup></span> in many ways. For one example, we can construct a Turing Machine <span class="math inline"><em>T</em></span> which, on an input of length <span class="math inline"><em>n</em></span>, halts in <span class="math inline">1000 ⋅ <em>n</em></span> steps if <span class="math inline">PARITY</span> should return true on its input, and never halts otherwise. Then, problem 5 solves PARITY by fixing <span class="math inline"><em>T</em></span> to be that Turing machine, and <span class="math inline"><em>k</em> = 1000 ⋅ <em>n</em></span>.</p>
+<h4 id="problem-6">Problem 6</h4>
+<p>This problem is very similar to problem 5, except for two key differences. First, we are now checking whether <span class="math inline"><em>k</em> = 10 + <em>t</em>(<em>T</em>, <em>s</em>)</span>, so in the case when <span class="math inline"><em>k</em> = 9</span>, this problem really is the Halting problem. Second, the input is given to us in <em>unary</em>! Thus, this is a unary, undecidable problem.</p>
+<p>As discussed earlier, since it is unary, we know it is in <span class="math inline">AC<sup>0</sup></span> and <span class="math inline">P/poly</span>. On the other hand, since it is undecidable, we know it is not in <span>P</span> or <span class="math inline">PSPACE</span>, as the problems in those classes are decidable.</p>
+<p>Interestingly, it is open whether this problem is <span>NP-hard</span>. This is intuitively surprising: it feels like an undecidable problem should be much ‘harder’ than <span class="math inline">NP</span>. However, we have to keep in mind the definition of <span>NP-hard</span>: for this problem to be <span>NP-hard</span>, any problem <span class="math inline"><em>L</em></span> in <span class="math inline">NP</span> would need to have a polynomial-time reduction to it. Most ideas for reductions one can come up with fail only because the input must be unary; there are plenty of polynomial-time reductions to the Halting problem when the input is in binary, but simply converting that input to unary can take exponential time!</p>
+<p>The fact that it is open whether this problem is <span>NP-hard</span> actually follows from a more general result: if <em>any</em> unary language is <span>NP-hard</span>, then <span class="math inline">P = NP</span>. See <a href="https://math.stackexchange.com/a/1416150/83330">https://math.stackexchange.com/a/1416150/83330</a> for a proof. (Meanwhile, if <span class="math inline">P = NP</span>, then every language is <span>NP-hard</span>.)</p>
+<h4 id="problem-7">Problem 7</h4>
+<p>The classic Ford-Fulkerson can compute the size of a maximum matching in a bipartite graph in polynomial time. We can thus compute <span class="math inline"><em>a</em></span>, and hence <span class="math inline">P(<em>a</em>)</span>, in polynomial time. Thus, this problem is polynomial-time equivalent to computing <span class="math inline"><em>b</em></span>, the number of maximum matchings in a bipartite graph.</p>
+<p>Counting the number of matchings in a bipartite graph is a classic example of a complete problem for the class <span class="math inline">#P</span>. <span class="math inline">#P</span> is the class of problems that can be defined as counting the number of accepting paths of a nondeterministic Turing machine (by comparison, <span class="math inline">NP</span> just asks whether the number of paths is greater than <span class="math inline">0</span>, so <span class="math inline">#P</span> is intuitively a harder version of <span class="math inline">NP</span>). In particular, <span class="math inline">#P</span>-complete problems like problem 7 are known to be <span>NP-hard</span> as well, and it is open whether they are in <span>P</span> (if so, it would show <span class="math inline">P = NP</span>). A brute force algorithm over all possible matchings (or the fact that it is in <span class="math inline">#P</span>) shows that it is in <span class="math inline">PSPACE</span>. Similar to the argument for problem 2, it is open whether problem 7 is in <span class="math inline">P/poly</span>.</p>
+<p>Finally, we will prove that problem 7 is not in <span class="math inline">AC<sup>0</sup></span>. The proof is very similar to the proof for problem 2, by showing that if problem 7 has an <span class="math inline">AC<sup>0</sup></span> circuit, then we can use it to design an <span class="math inline">AC<sup>0</sup></span> circuit for PARITY. Given a string <span class="math inline"><em>s</em></span> of length <span class="math inline"><em>n</em></span>, we can convert it into a bipartite graph <span class="math inline"><em>G</em></span> with <span class="math inline"><em>n</em></span> nodes in one bipartition and one node in the other, such that the number of edges in <span class="math inline"><em>G</em></span> is the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>. The size of a maximum matching in <span class="math inline"><em>G</em></span> is <span class="math inline">1</span> (assuming <span class="math inline"><em>G</em></span> has at least one edge; we can deal with the case where it is <span class="math inline">0</span> separately). The number of maximum matchings is equal to the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span>. Hence, for any integer <span class="math inline">0 ≤ ℓ ≤ <em>n</em></span>, we can check whether the number of <span class="math inline">1</span>s in <span class="math inline"><em>s</em></span> is <span class="math inline">ℓ</span> by evaluating problem 7 with <span class="math inline"><em>k</em> = ℓ + P(1) = ℓ + 108</span>. We can take the OR over all <span class="math inline"><em>O</em>(<em>n</em>)</span> even choices of <span class="math inline">ℓ</span> to compute PARITY as desired.</p>
+
+
+
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p> If you liked this puzzle, you should take all the excellent complexity classes taught at MIT! </p>
+</div>

@@ -1,0 +1,115 @@
+<style>
+  .maps {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .map {
+    width: 49%;
+  }
+  .maps div {
+    position: relative;
+    display: inline;
+  }
+  .maps span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: black;
+    opacity: 80%;
+  }
+  #map5 {
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .description {
+    font-style: italic;
+  }
+  .flags {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+</style>
+
+<p class="description fourthwall">
+  The &perp;IW.nano round had a peculiar unlocking structure. When solvers first opened the round, it was entitled &perp;IW.giga and the metapuzzle for that round—Rule of Three—was already solved. Solvers needed to determine that one of the puzzles in the round—Twins—was impossible to solve normally and must be backsolved from the meta. When this puzzle was backsolved, the website allowed solvers to “zoom in” to &perp;IW.kilo, a whole new round with Twins as the metapuzzle.
+
+  Solvers then needed to repeat this process and backsolve a particular puzzle in &perp;IW.kilo to enter &perp;IW.milli. Finally, in &perp;IW.milli, solvers found that one of the individual puzzles was titled &perp;IW.nano. Backsolving &perp;IW.nano completed the entire round and fixed the &perp;IW.nano building.
+</p>
+
+<p>
+  The answer to this puzzle is a feeder to Twins—the metapuzzle of &perp;IW.kilo. We know Twins has the answer <span class="answer">GLOBE</span>. As stated above, we must reverse-engineer how Twins worked and use that information to backsolve this puzzle.
+</p>
+
+<p>The other answers in this round are:</p>
+
+<pre>
+BUMBLE
+MANIAC
+OREO O'S
+ORSINO
+</pre>
+
+<img class="flags" src="{{sroot}}flags.png" alt="A series of directional signs with blanks on them and flags."/>
+
+<p>
+  The image on the Twins meta page has a series of directional signs with blanks on them attached to flagpoles. On each pair of signs on a flagpole, six of the blanks on the signs are labelled with the numbers 1 through 6. If we fill in these six blanks with the six letters of a particular answer in this round, we’ll find that we can fill in the rest of the blanks on each sign to yield a city name:
+</p>
+
+<table>
+<tr><th>Answer</th><th>Blanks</th><th>City 1</th><th>Distance</th><th>City 2</th><th>Distance</th></tr>
+<tr><td>BUMBLE</td><td class="monospace" role="math" aria-label="one blank blank blank five six blank blank blank / blank two three four blank blank">1???56??? / ?234??</td><td class="monospace">BETHLEHEM</td><td>3200 km</td><td class="monospace">MUMBAI</td><td>5700 km</td></tr>
+<tr><td>MANIAC</td><td class="monospace" role="math" aria-label="one blank three blank blank blank four blank blank blank / blank two blank five blank six blank blank">1?3???4??? / ?2?5?6??</td><td class="monospace">MONTEVIDEO</td><td>1600 km</td><td class="monospace">DAMASCUS</td><td>10800 km</td></tr>
+<tr><td>ORSINO</td><td class="monospace" role="math" aria-label="blank blank two blank four five / one three blank six">??2?45 / 13?6</td><td class="monospace">BERLIN</td><td>500 km</td><td class="monospace">OSLO</td><td>1100 km</td></tr>
+<tr><td>OREO O'S</td><td class="monospace" role="math" aria-label="blank one blank blank four blank six / blank two three blank five blank blank blank">?1??4?6? / ?23?5???</td><td class="monospace">TOULOUSE</td><td>2300 km</td><td class="monospace">PRETORIA</td><td>8500 km</td></tr>
+<tr><td>?????</td><td class="monospace" role="math" aria-label="one two blank space five blank blank blank blank / three four blank blank blank six">12? 5???? / 34???6</td><td class="monospace"></td><td>2700 km</td><td></td><td>4600 km</td></tr>
+</table>
+
+<p>The two flags on the poles don’t match either of the two cities filled in on the signs. The key at this point is to realize that these pairs of cities have one sister city/twin town in common, and that that city is the distance away given on the signs and is in the country given by the flags. For example, Saint Petersburg is in Russia and is approximately 3200 km away from its sister city Bethlehem and 5700 km away from its sister city Mumbai.</p>
+
+<table>
+<tr><th>Answer</th><th>Blanks</th><th>City 1</th><th>City 2</th><th>Sister City</th><th>Extract</th></tr>
+<tr><td>BUMBLE</td><td class="monospace" role="math" aria-label="one blank blank blank five six blank blank blank / blank two three four blank blank">1???56??? / ?234??</td><td class="monospace">BETHLEHEM</td><td class="monospace">MUMBAI</td><td>Saint Petersburg</td><td>G</td></tr>
+<tr><td>MANIAC</td><td class="monospace" role="math" aria-label="one blank three blank blank blank four blank blank blank / blank two blank five blank six blank blank">1?3???4??? / ?2?5?6??</td><td class="monospace">MONTEVIDEO</td><td class="monospace">DAMASCUS</td><td>São Paulo</td><td>L</td></tr>
+<tr><td>ORSINO</td><td class="monospace" role="math" aria-label="blank blank two blank four five / one three blank six">??2?45 / 13?6</td><td class="monospace">BERLIN</td><td class="monospace">OSLO</td><td>Warsaw</td><td>O</td></tr>
+<tr><td>OREO O'S</td><td class="monospace" role="math" aria-label="blank one blank blank four blank six / blank two three blank five blank blank blank">?1??4?6? / ?23?5???</td><td class="monospace">TOULOUSE</td><td class="monospace">PRETORIA</td><td>Kiev</td><td>B</td></tr>
+<tr><td>?????</td><td class="monospace" role="math" aria-label="one two blank space five blank blank blank blank / three four blank blank blank six">12? 5???? / 34???6</td><td class="monospace"></td><td></td><td></td><td>E</td></tr>
+</table>
+
+<p>
+  Now, in order to backsolve, we must determine how to get the letters <span class="answer">GLOBE</span> from these rows. The fact that there are <em>two</em> flags hanging from each pole give us a hint as to how to do that; we can plot the lines between each sister city pair on a map and read out the result as semaphore. For example, you head due south from Saint Petersburg to get to Bethlehem, and due southwest to get to Mumbai. This corresponds to the semaphore letter G.
+</p>
+
+<div class="maps">
+<div><a href="http://www.gcmap.com/mapui?P=LED-TLV;LED-BOM"><img class="map" alt="Map showing lines connecting Saint Petersburg to Bethlehem and Mumbai" src="{{sroot}}map1.gif"/></a><span>Bethlehem (TLV) - Saint Petersburg (LED) - Mumbai (BOM) = G</span></div>
+<div><a href="http://www.gcmap.com/mapui?P=MVD-SAO;SAO-DAM"><img class="map" alt="Map showing lines connecting São Paulo to Montevideo and Damascus" src="{{sroot}}map2.gif"/></a><span>Montevideo (MVD) - São Paulo (SAO) - Damascus (DAM) = L</span></div>
+<div><a href="http://www.gcmap.com/mapui?P=TXL-WAW;WAW-OSL"><img class="map" alt="Map showing lines connecting Warsaw to Berlin and Oslo" src="{{sroot}}map3.gif"/></a><span>Berlin (TXL) - Warsaw (WAW) - Oslo (OSL) = O</span></div>
+<div><a href="http://www.gcmap.com/mapui?P=TLS-KBP;KBP-PRY"><img class="map" alt="Map showing lines connecting Kiev to Toulouse and Pretoria" src="{{sroot}}map4.gif"/></a><span>Toulouse (TLS) - Kiev (KBP) - Pretoria (PRY) = B</span></div>
+</div>
+
+<p>The diagrams above were produced by a great circle mapping tool, and the cities are marked by the airport code of their closest airport.<p>
+
+<p>
+  Now we can begin backsolving the answer to Level One. Based on the last remaining flagpole, we know that it corresponds to a city in the United States with sister cities approximately 2700 km in one direction and 4600 km in another. Because we know this city must extract to the semaphore letter E in GLOBE, we know that one of the sister cities is to the south and the other is to the northeast.
+</p>
+
+<p>
+  The harder of these two criteria to meet is having a sister city several thousand kilometers to the northeast. Most of the U.S. has either largely unpopulated areas of Canada or the Atlantic Ocean in this direction and at this distance. However, there are a few options in the North Atlantic for 4600 km.
+</p>
+
+<img id="map5" src="{{sroot}}map5.png" alt="Map showing regions in the United States that are 4600 km from either Ireland or Iceland" />
+
+<p>In the above diagram, the area between the southern pair of lines corresponds to places that are the appropriate distance from Iceland, and the northern pair correspond to Ireland.</p>
+
+<p>Iceland has many sister cities but almost all of them are in Scandinavia. However, none of the <a href="https://en.wikipedia.org/wiki/List_of_twin_towns_and_sister_cities_in_Iceland" target="_blank">sister cities</a> in the U.S. fits the enumeration or is in the appropriate geographic band.</p>
+
+<p>So it must be a city in New England matching a city in Ireland.</p>
+
+<p>Further reasoning along these lines might lead us to look at well-known six-letter cities in Ireland and examine their sister cities, but clever solvers might skip this step. In the &perp;IW.giga round, we “zoomed in” from a puzzle about the solar system to an answer corresponding to the Earth. In this &perp;IW.kilo round, then, it makes sense to “zoom in” further to an answer corresponding to Cambridge, MA, where MIT is located.</p>
+
+<p>As it happens, Cambridge, MA has a six-letter sister city in Ireland, GALWAY, and a sister city in Haiti with the appropriate enumeration, LES CAYES. Taking the letters from the appropriate positions in these cities gives the answer <span class="answer">LEGACY</span>.</p>

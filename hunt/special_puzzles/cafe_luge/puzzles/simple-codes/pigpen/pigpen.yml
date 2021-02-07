@@ -1,0 +1,61 @@
+name: pigpen
+difficulty: 2/10
+coolness: 1/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/affairs.png
+
+        - answer: affairs
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/checkmate.png
+
+        - answer: checkmate
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/condition.png
+
+        - answer: condition
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/dragons.png
+
+        - answer: dragons
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/leather.png
+
+        - answer: leather
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/mountain.png
+
+        - answer: mountain
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/platinum.png
+
+        - answer: platinum
+
+    - question:
+        - text: "What is the word represented in the pigpen cipher here?"
+
+        - image: simple-codes/pigpen/speaker.png
+
+        - answer: speaker

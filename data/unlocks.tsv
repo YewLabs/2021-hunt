@@ -1,0 +1,271 @@
+Unlock ID	Description	Puzzle (Tempest ID)	Round (Tempest ID)	Juice	Interaction	Force
+yewlabs	Yewlabs Outdoor NPC	288
+green-elevator-1	Green Elevator Floor 1		3	0
+green-elevator-2	Green Elevator Floor 2		3	100
+green-elevator-3	Green Elevator Floor 3		3	220
+green-elevator-4	Green Elevator Floor 4		3	430
+green-elevator-5	Green Elevator Floor 5		3	660
+green-elevator-6	Green Elevator Floor 6		3	800
+green-elevator-roof	Green Elevator Floor Roof		3	1100
+
+green1-1	Green 1st Floor NPC 1	591
+green1-2	Green 1st Floor NPC 2	28
+green1-3	Green 1st Floor NPC 3	320
+green2-1	Green 2nd Floor NPC 1	555
+green2-2	Green 2nd Floor NPC 2	465
+green3-1	Green 3rd Floor NPC 1	128
+green3-2	Green 3rd Floor NPC 2	107
+green4-1	Green 4th Floor NPC 1	271
+green4-2	Green 4th Floor NPC 2	289
+green5-1	Green 5th Floor NPC 1	159
+green5-2	Green 5th Floor NPC 2	170
+green6-1	Green 6th Floor NPC 1	521
+green6-2	Green 6th Floor NPC 2	519
+green-roof	Green Roof Meta NPC	204
+infinitetarget1	Infinite Target NPC 1	91
+infinitetarget2	Infinite Target NPC 2	179
+infinitetarget3	Infinite Target NPC 3	496
+infinitetarget4	Infinite Target NPC 4	281
+infinitetarget5	Infinite Target NPC 5	566
+infinitemeta	Infinite Meta NPC	272
+cluster4	Cluster 4 Door		8	0
+cluster3	Cluster 3 Door		8	240
+cluster10	Cluster 10 Door		8	480
+cluster1	Cluster 1 Door		8	700
+cluster4-1	Cluster 4 NPC 1	541
+cluster4-2	Cluster 4 NPC 2	36
+cluster4-3	Cluster 4 NPC 3	358
+cluster4-4	Cluster 4 NPC 4	415
+cluster3-1	Cluster 3 NPC 1	323
+cluster3-2	Cluster 3 NPC 2	11
+cluster10-1	Cluster 10 NPC 1	609
+cluster10-2	Cluster 10 NPC 2	553
+cluster1-1	Cluster 1 NPC 1	545
+cluster1-2	Cluster 1 NPC 2	517
+cluster1-3	Cluster 1 NPC 3	472
+cluster-meta	Cluster 1 Meta NPC	241
+nano-rocket	Nano Rocket	459
+giga-door	Giga Mechanic NPC	459
+giga-bridge	Giga Bridge		6	110
+kilo-teleporter	Teleporter to Kilo	460
+milli-teleporter	Teleporter to Milli	461
+giga-basement-size-1	Giga Basement S to M (Set 3)		6	330
+giga-basement-size-2	Giga Basement  L to XL (Set 4)		6	450
+kilo-1-size-1	Kilo 1 L to XL (Set 3)		6	1050
+kilo-2-size-1	Kilo 2 M to S (Set 3)		6	1050
+kilo-2-size-2	Kilo 2 L to M (Set 2)		6	850
+milli-size-1	Milli to S (Set 1)		6	1300
+milli-size-2	Milli to XL (Set 2)		6	1550
+milli-size-3	Milli to L (Set 3)		6	1800
+giga1-1	Giga Set 1 NPC 1	468
+giga1-2	Giga Set 1 NPC 2	338
+giga1-3	Giga Set 1 NPC 3	533
+giga2-1	Giga Set 2 NPC 1	157
+giga2-2	Giga Set 2 NPC 2	577
+giga3-1	Giga Set 3 NPC 1	21
+giga4-1	Giga Set 4 NPC 1	460
+giga4-2	Giga Set 4 NPC 2	409
+kilo1-1	Kilo Set 1 NPC 1	286
+kilo2-1	Kilo Set 2 NPC 1	427
+kilo3-1	Kilo Set 3 NPC 1	374
+kilo3-2	Kilo Set 3 NPC 2	491
+kilo4-1	Kilo Set 4 NPC 1	461
+milli1-1	Milli Set 1 NPC 1	328
+milli2-1	Milli Set 2 NPC 1	314
+milli2-2	Milli Set 2 NPC 2	536
+milli3-1	Milli Set 3 NPC 1	408
+milli3-2	Milli Set 3 NPC 2	558
+milli3-meta	Milli Meta NPC	245
+stata-access	Stata External Access		7	0
+stata-nav-1	Stata Maze Door		7	0
+stata-nav-2	Stata Set Door		7	120
+stata-nav-3	Stata Compass Door		7	280
+stata-nav-4	Stata Morse Door		7	500
+stata-nav-5	Stata Binary Door		7	720
+stata-nav-6	Stata Semaphore Door		7	860
+stata-nav-7	Stata Fibonacci Door		7	1070
+stata-door-meta	Stata Meta Door	228
+stata1-1	Stata 1 NPC 1	20
+stata1-2	Stata 1 NPC 2	316
+stata2-1	Stata 2 NPC 1	44
+stata2-2	Stata 2 NPC 2	79
+stata3-1	Stata 3 NPC 1	403
+stata3-2	Stata 3 NPC 2	452
+stata4-1	Stata 4 NPC 1	151
+stata4-2	Stata 4 NPC 2	206
+stata5-1	Stata 5 NPC 1	573
+stata5-2	Stata 5 NPC 2	389
+stata6-1	Stata 6 NPC 1	163
+stata6-2	Stata 6 NPC 2	372
+stata7-1	Stata 7 NPC 1	417
+stata7-2	Stata 7 NPC 2	599
+stata-meta	Stata Meta NPC	228
+student-1	Green Building + EC; just under EC east parallel	467
+student-2	building14; right of the donuts	495
+student-3	Green Building + EC; next to the sail	345
+student-4	NanoLobby; top corner near rocket	366
+student-5	26b; left part of scene	412
+student-6	Green Building + EC; between green and 56	365
+student-7	building14; right of the hack room door	611
+student-8	Green Building + EC; left of EC east parallel	369
+student-9	NanoLobby; eastern part of 16-56 hallway	378
+student-10	Green Building + EC; above EC east parallel	368
+student-11	NanoLobby; right corner near rocket	614
+student-12	clams; in front of sailing pavilion	31
+student-13	Green Building + EC; left of EC west parallel	95
+student-14	Green Building + EC; on the dot	604
+student-15	NanoLobby; left corner near events room	413
+student-16	under_dock; next to ladder up	437
+student-17	Stata_Exterior; right side of scene	510
+student-18	building2; intersection of paths to 6 and 14	26
+student-19	4-149; next to piano	268
+student-20	2-132; playing chess	405
+student-21	2-132; watching chess played	398
+student-22	Stata_Exterior; in front of Stata	426
+student-23	Stata_Exterior; left of Stata rear	96
+student-24	building9; by stairs to 7	606
+student-25	building13; tour leader	361
+student-26	building13; tour watcher	367
+student-27	Stata_Exterior; left of stata front	17
+student-28	4-149; next to drums	445
+student-29	2-132; left ping-pong player	324
+student-30	2-132; right ping-pong player	137
+student-31	Kresge + Stud; in front of lobby 7	448
+student-32	Lobby 7; right of lobby 7	438
+student-33	Dorm Row; outside baker	432
+student-34	Dorm Row; outside next	104
+student-35	Killian; left front, on way to dorm row	112
+student-36	Random; outside random	582
+student-37	Simmons; outside simmons	359
+student-38	2-132; playing scrabble	92
+student-39	4-149; front of first row of desks	447
+student-40	4-149; back of classroom	446
+student-41	4-149; middle of classroom	344
+student-42	Kresge + Stud; left of chapel left	542
+student-43	Kresge + Stud; left of chapel top	248
+student-44	Kresge + Stud; left of chapel right	376
+student-45	Athletics Outside; bottom between foot and basket	411
+student-46	Dorm Row; river date right	439
+student-47	Dorm Row; river date left	395
+student-48	Random; scooter outside random	400
+student-49	building13; tourist 1	342
+student-50	building13; tourist 2	605
+student-51	building13; tourist 3	430
+student-52	Dorm Row; crosswalk on right	473
+student-53	under_ec; along the right wall middle	226
+student-54	Athletics Outside; watching baseball	150
+student-macgregor-meta	MacGregor Meta NPC	300
+student-maseeh-meta	Maseeh Meta NPC	298
+student-next-meta	Next Meta NPC	303
+student-mccormick-meta	McCormick Meta NPC	297
+student-burtonconner-meta	Burton Conner Meta NPC	302
+student-baker-meta	Baker Meta NPC	301
+student-new-meta	New Meta NPC	315
+student-dormrow-meta	Dorm Row Meta NPC	243
+student-simmons-meta	Simmons Meta NPC	305
+student-ec-meta	East Campus Meta NPC	267
+student-random-meta	Random Meta NPC	292
+student-center-meta	Student Center Meta NPC	275
+
+stata-inside-basketball	Stata in hallway near gym	277
+bldg2-basketball	Building 2 (tbd)	610
+lobby7-basketball	lobby 7, north corner	617
+athletics-basketball-1	Bball court i.e. Rockwell Cage	588
+athletics-basketball-2	Bball court i.e. Rockwell Cage	593
+athletics-football-egg	NW side of football field, around midfield	535
+minerva1-football	Inside Building 1 minerva cluster	527
+stata-outside-football	next to Stata on the southeast	531
+stata-interior-football	Stata tables near cafeteria	590
+bldg66-football	building 66	462
+giga-football	Nano entrance, next to rocket	522
+student-center-football	Right outside student center	595
+killian-football	Killian court, dead center	601
+macgregor-football	Macgregor, right side of entrance to courtyard	530
+athletics-football-1	SW end of football field, near pond	583
+athletics-football-2	SW end of football field, near pond	523
+green-baseball	SW side of Green building	569
+ec-baseball	EC courtyard, in dirt pit	576
+stata-baseball	Stata, near NE entrance	416
+docks-baseball	Outside sailing pavilion	492
+killian-baseball-2	Killian by end of building 2	567
+killian-baseball-1	Killian by end of building 1	575
+maseeh-baseball	Maseeh, in front	538
+athletics-baseball-1	Baseball field (catcher)	139
+athletics-baseball-2	Baseball field (pitcher)	580
+athletics-basketball-meta	basketball court	337
+athletics-football-meta	football field	341
+athletics-baseball-meta	baseball field	330
+athletics-meta	Athletics Meta	309
+
+
+tun-1	Tunnels Node #1	363
+tun-5	Tunnels Node #5	38
+tun-4	Tunnels Node #4	477
+tun-2	Tunnels Node #2	276
+tun-3	Tunnels Node #3	132
+tun-7	Tunnels Node #7	385
+tun-8	Tunnels Node #8	229
+tun-9	Tunnels Node #9	329
+tun-14	Tunnels Node #14	561
+tun-6	Tunnels Node #6	434
+tun-10	Tunnels Node #10	598
+tun-13	Tunnels Node #13	464
+tun-11	Tunnels Node #11	494
+tun-12	Tunnels Node #12	69
+tun-meta	Tunnels Node #meta	336
+
+tunnels-nav-1-4-5	Tunnels area with puzzles 1,4,5		9	0
+tunnels-nav-2-3	Tunnels area with puzzles 2,3		9	130
+tunnels-nav-7-8	Tunnels area with puzzles 7,8		9	350
+tunnels-nav-9-14	Tunnels area with puzzles 9,14		9	480
+tunnels-nav-6-10	Tunnels area with puzzles 6,10		9	700
+tunnels-nav-11-12-13	Tunnels area with puzzles 11,12,13		9	920
+
+hayden-escape-complete	Hayden Escape Room finished	555
+hayden-escape-open	Hayden Escape Room opened				escape-hayden-library
+telephone-npc	Telephone NPCs	558
+x-marks-the-spot	X Marks the Spot puzzle	580
+dont-get-eaten	Don't Get Eaten!	517
+
+infinite-fixed	Infinite Fixed				infinite-post
+green-fixed	Green Building Fixed				green-building-post
+nano-fixed	Nano Fixed				nano-post
+stata-fixed	Stata Fixed				stata-post
+clusters-fixed	Clusters Fixed				clusters-post
+tunnels-fixed	Tunnels Fixed				tunnels-post
+maseeh-fixed	Maseeh Fixed	243
+mccormick-fixed	McCormick Fixed	243
+baker-fixed	Baker Fixed	243
+burtonconner-fixed	Burton-Conner Fixed	243
+macgregor-fixed	MacGregor Fixed	243
+new-fixed	New House Fixed	243
+next-fixed	Next House Fixed	243
+dorm-fixed	Dorm Row Fixed	243
+simmons-fixed	Simmons Fixed	305
+ec-fixed	East Campus Fixed	267
+random-fixed	Random Fixed	292
+students-fixed	Student Center Fixed				student-center-post
+basketball-fixed	Basketball Fixed				athletics-post
+football-fixed	Football Fixed				athletics-post
+baseball-fixed	Baseball Fixed				athletics-post
+athletics-fixed	Athletics Fixed				athletics-post
+charles-fixed	Charles Fixed	147
+
+east-campus-access	Phase 1 of the MMO
+main-campus-access	Phase 2 of the MMO
+west-campus-access	Phase 3 of the MMO
+
+charles-sailing-license	Sailing event part 1 done	145
+pirate-license	Pirate License Acquired	147
+
+endgame-device-1	Infinite
+endgame-device-2	Tunnels
+endgame-device-3	Students
+endgame-device-4	Athletics
+endgame-device-5	Nano
+endgame-device-6	Stata
+endgame-device-7	Yew Labs
+endgame-device-8	Clusters
+endgame-device-9	Charles River
+endgame-device-10	Green Building
+endgame-coin	The Coin

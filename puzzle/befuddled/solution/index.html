@@ -1,0 +1,191 @@
+<style>
+.flag {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+.center {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+pre {
+	font-family: monospace;
+}
+
+pre.inline {
+	display: inline;
+}
+
+code {
+  overflow-wrap: anywhere;
+}
+
+</style>
+
+<p>
+	The body of this puzzle is a program written in <a href="https://esolangs.org/wiki/Befunge">Befunge</a>, an esoteric programming language developed in 1993. Befunge is a stack-based programming language, but it's different from most other languages in that its behavior is controlled by an instruction pointer on a 2D grid.
+</p>
+
+<h3>Finding/Identifying Outputs</h3>
+<p>
+	When we run the Befunge program without an input, it prints 'XXXXX' and terminates. We inspect the program and see that it expects five characters of input (the ~ instruction in Befunge takes a character of input, and there are five of them). The flavortext helpfully provides five five-letter words: USAGE, INPUT, FIELD, VALUE, and WATCH. Inputting each of these words (in all-caps) yields five different outputs (still preceded by XXXXX, which we can ignore):
+</p>
+<ol style="font-family: monospace;">
+	<li>USAGE: X=chobas;e${l:0:3} 8J+SrFjwn5Ks8J+Uo/CfkqziloHwn5Ks8J+Uo/CfjIrwn5KsMTHwn5Ks8J+UovCfkarwn5SN4p6hCg==|${l:3:3}e64 -d
+	</li>
+	<li>INPUT: {M[maA!sS!oO!f"ruhosup[pzp"=i<11>=/if*i*<1>as.?si.?s(sn).?<3>as.?s(ns).?Xo.?ii*<1>as.?=\]}
+	</li>
+	<li>FIELD: ;#35#49#48#53#4X!(((...#115#115..;#35#49#48#48#40!(((((.....#88.
+	</li>
+	<li>VALUE: Kj\w[k*3\W*4\Wr\x1k)J(2 3)=d15FNU6=+K&quot;WWwWWWwvw&quot;;=+K+*\W2*\w11FN[4 7 9 11dd)=+K+*N\W\w;X
+	</li>
+	<li>WATCH:&nbsp;
+<pre>&quot; _&quot;)&quot;&quot;&quot;;&quot;&quot;_&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;;&quot;_&quot;&quot;&quot;&quot;&quot;&quot;&quot;.
+&quot; (       (                 (        2
+1_&quot;;_94%X _                 _.23_.01 3
+       :  &quot;                        &quot; &quot;
+       _  .                        1 _
+       8  0                        _ .
+       4%&quot;1                        . 0
+        ;                          &quot; 1
+        _                          8 1
+        99._104._105._99._107.:_70%8 _
+                                  ;  .
+                                  _101</pre>
+	</li>
+</ol>
+
+<p>
+	We next notice that there are words hidden in the Befunge program which don't seem to be part of an execution path. Further inspection shows that these are all names of programming languages (albeit obscure ones). The languages are, in no particular order: Bash, Chicken, Pyth, Emmental, Emoji, Labyrinth, Wepmlrio, Deadfish, Glass, and Grass. We look up the languages and see that the USAGE, INPUT, FIELD, VALUE, and WATCH outputs look like they're written in Bash, Glass, Emmental, Pyth, and Labyrinth, respectively.
+</p>
+
+<h3>Filling in Letters</h3>
+
+<p>
+None of these programs run properly on their respective interpreters, and all of them have an X somewhere in the program. We must now find the missing character that will cause the program to print good output. The following section goes in to detail about what's going on; skip to the next header for a summary.
+</p>
+
+<h4>USAGE</h4>
+<code>X=chobas;e${l:0:3} 8J+SrFjwn5Ks8J+Uo/CfkqziloHwn5Ks8J+Uo/CfjIrwn5KsMTHwn5Ks8J+UovCfkarwn5SN4p6hCg==|${l:3:3}e64 -d</code>
+<p>
+	This program is a command in <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>, a common UNIX shell. The <code>${}</code> notation indexes into a variable, but the variable <code>l</code> isn't set to anything. Changing the X to <b style="font-family: monospace;">l</b> fixes this; <code>e${l:0:3}</code> and <code>${l:3:3}e64</code> resolve to the familiar commands <code>echo</code> and <code>base64</code>
+</p>
+<p>
+	The fixed program outputs:<br><code>&#128172;X&#128172;&#128291;&#128172;&#9601;&#128172;&#128291;&#127754;&#128172;11&#128172;&#128290;&#128106;&#128269;&#10145;</code>
+</p>
+
+<h4>INPUT</h4>
+<code>{M[maA!sS!oO!f&quot;ruhosup[pzp&quot;=i<11>=/if*i*<1>as.?si.?s(sn).?<3>as.?s(ns).?Xo.?ii*<1>as.?=\]}</code>
+<p>
+	This is a program written in <a href="https://esolangs.org/wiki/Glass">Glass</a>, an esoteric (and quite impractical) programming language. The program sets the variable <code>f</code> to the string <code>"ruhosup[pzp"</code> and indexes through it in reverse, shifting each character by 3 and then performing an unknown operation on it with <code>Xo.?</code>. No output has occured so far, so this unknown function must be output! The instruction <code>oO!</code> has set the name <code>o</code> to be an instance of the Output class, so we must change the X to <b style="font-family: monospace;">o</b>.
+</p>
+<p>
+	The fixed program outputs:<br><pre>mwmXmrplero</pre>
+</p>
+
+<h4>FIELD</h4>
+<code>;#35#49#48#53#4X!(((...#115#115..;#35#49#48#48#40!(((((.....#88.</code>
+<p>
+	This is a program written in <a href="https://esolangs.org/wiki/Emmental">Emmental</a>. In Emmental's syntax, the first section up to the <code>!</code> redefines the ASCII character identified by the decimal number<code>4X</code> to mean the Emmental sequence <code>#105</code>, which pushes the number 105 to the stack. The <code>(((</code> that immediately follows only makes sense if the character <code>(</code> (ASCII #40) was the one just redefined. We can make it so by changing the X to a <b style="font-family: monospace;">0</b>. This particular problem has a few solutions that look plausible, but only the stated solution outputs cleanly and explains the <code>(((</code>.
+</p>
+<p>
+	The fixed program outputs:<br><pre>iiissdddddX</pre>
+</p>
+
+<h4>VALUE</h4>
+<code>Kj\w[k*3\W*4\Wr\x1k)J(2 3)=d15FNU6=+K"WWwWWWwvw";=+K+*\W2*\w11FN[4 7 9 11dd)=+K+*N\W\w;X</code>
+<p>
+	This is a <a href="https://pyth.readthedocs.io/en/latest/">Pyth</a> program. Pyth is a golfing language that's essentially condensed Python. The program initializes the variable <code>K</code> with a character and then adds characters to it over the course of a few loops. At the end, the sequence <code>X</code> prints the contents of variable X. K, the variable that everything's been added to, hasn't been printed at all. Therefore the X should be a <b style="font-family: monospace;">K</b>
+</p>
+<p>
+	The fixed program outputs:<br><code>wWWWwWWWWwXwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwwwwwwwwwwwWWWWwWWWWWWWwWWWWWWWWWwWWWWWWWWWWWwWWWWWWWWWWWWWWWwWWWWWWWWWWWWWWWw</code>
+</p>
+
+<h4>WATCH</h4>
+<pre>&quot; _&quot;)&quot;&quot;&quot;;&quot;&quot;_&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;&quot;;&quot;_&quot;&quot;&quot;&quot;&quot;&quot;&quot;.
+&quot; (       (                 (        2
+1_&quot;;_94%X _                 _.23_.01 3
+       :  &quot;                        &quot; &quot;
+       _  .                        1 _
+       8  0                        _ .
+       4%&quot;1                        . 0
+        ;                          &quot; 1
+        _                          8 1
+        99._104._105._99._107.:_70%8 _
+                                  ;  .
+                                  _101</pre>
+<p>
+	This is a program written in <a href="https://esolangs.org/wiki/Labyrinth">Labyrinth</a>, another 2D esoteric programming language. Run as is, the program never terminates. This is because it does not contain <code>@</code>, the Labyrinth &apos;stop&apos; command. The X must be changed to <b style="font-family: monospace;">@</b>.
+</p>
+<p>
+	The fixed program outputs <a href="{{sroot}}chickens.txt">lots of chickens</a>.
+</p>
+
+<h3>Filling in Letters, Part 2</h3>
+
+<p>
+	We now recognise that these 5 new outputs are programs in the remaining 5 languages. Each has an X, and each also needs a replacement character to give good outputs. Incidentally, the first five characters we substituted in read <code>lo0K@</code>, which encouragingly looks like the first half of a cluephrase.
+</p>
+
+<h4>USAGE, Pt.2</h4>
+<code>&#128172;X&#128172;&#128291;&#128172;&#9601;&#128172;&#128291;&#127754;&#128172;11&#128172;&#128290;&#128106;&#128269;&#10145;</code>
+<p>
+	This is an <a href="https://esolangs.org/wiki/Emoji">Emoji</a> program. The program subtracts the numerical value of two unicode characters, multiplies it by 11, converts the number to a character, and prints it. There are a few possibilites that might make sense here; we&apos;ll come back to it later.
+</p>
+
+<h4>INPUT, Pt.2</h4>
+<code>mwmXmrplero</code>
+<p>
+	This is a program written in <a href="https://esolangs.org/wiki/Wepmlrio">Wepmlrio</a>, a (somewhat lazy) BrainFuck dialect. With the substitution of X with <code>m</code>, the program outputs the character <b>U</b>.
+</p>
+
+<h4>FIELD, Pt.2</h4>
+<code>iiissdddddX</code>
+<p>
+	This is a <a href="https://esolangs.org/wiki/Deadfish">Deadfish</a> program. It's missing the output instruction, which can be fixed by changing the X to <code>o</code> yields a program with output 76, the ASCII code for <b>L</b>.
+</p>
+
+<h4>VALUE, Pt.2</h4>
+<code style="width: 90%">wWWWwWWWWwXwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwWWWwvwWWwwwwwwwwwwwWWWWwWWWWWWWwWWWWWWWWWwWWWWWWWWWWWwWWWWWWWWWWWWWWWwWWWWWWWWWWWWWWWw</code>
+<p>
+	<a href="https://esolangs.org/wiki/Grass">Grass</a> is an esoteric programming language rooted in lambda calculus. Working through it is a significant headache, but luckily the missing character can only be one of three values, so we can try all three fairly easily. Replacing X with <code>v</code> yields the output <b>T</b>.
+</p>
+
+<h4>WATCH, Pt.2</h4>
+<p>
+	The program is written in <a href="https://esolangs.org/wiki/Chicken">Chicken</a>, a programming language in which each line is some number of repeats of the word <code>chicken</code>. Since the only allowed word is <code>chicken</code>, the X must be replaced with <code>e</code>. The resulting program outputs <b>I</b>.
+</p>
+
+<p>
+	At this point we notice that all of the final outputs are uppercase characters. Of the options for the Emoji program, the substitution of X with <code>&#9608;</code> outputs <b>M</b>, forming the word <b>MULTI</b>
+
+<h3>Extraction</h3>
+
+<p>
+	To recap, the initial five programs output by the Befunge code each had some missing character, marked with an X. When fixed, they each printed five new programs, each of which also needed a character substitution. These programs then each printed a single character.
+</p>
+<p>
+	The substituted characters spell <code>lo0K@&#9608;move</code>, and reading from the final outputs we obtain the word <b>MULTI</b> (using the other letters to resolve the Emoji ambiguity). MULTI is a five-letter word, so it can be plugged back in to the original Befunge program. When we do this, the instruction pointer (which looks like &#9608;) ends its motion by tracing out:
+</p>
+<pre>_ _ _ _ _ PART</pre>
+<p>
+	This is easier to see if we slow down the interpreter. The below image shows what we see if we highlight every character the instruction pointer passes through:
+</p>
+
+<img src="{{sroot}}trace.png" class="center">
+
+<p>
+	Filling in the blanks with the previously obtained MULTI yields the puzzle answer, <span class="answer">MULTIPART</span>.
+</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+    This puzzle was a ton of fun to write, and taught us a bunch of weird languages we'd never seen before. The Befunge program as you see it is right at the program size limit in the 1993 spec, so a lot of work went into getting the character counts of the subcomponents (and their encodings in the overall program) as low as possible. If you're interested in esoteric programming languages, check out Chris Pressey's site - there are a lot of cool ones there we couldn't quite fit in.
+</div>

@@ -1,0 +1,75 @@
+name: yin-yang
+difficulty: 5/10
+coolness: 6/10
+time: 5:30
+
+questions:
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/1.jpg
+
+        - answer: 33
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/2.jpg
+
+        - answer: 29
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/3.jpg
+
+        - answer: 36
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/4.jpg
+
+        - answer: 35
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/5.jpg
+
+        - answer: 30
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/6.jpg
+
+        - answer: 39
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/7.jpg
+
+        - answer: 32
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/8.jpg
+
+        - answer: 30
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/9.jpg
+
+        - answer: 39
+
+    - question:
+        - text: "How many black cells are there in the solution to this Yin-Yang?"
+
+        - image: logic-puzzles/yin-yang/10.jpg
+
+        - answer: 39

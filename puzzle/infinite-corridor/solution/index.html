@@ -1,0 +1,44 @@
+<p class="flavor">If you have not read the <a target="_blank" href="{% url 'puzzle_solution' 'infinite-corridor-simulator' %}">solution</a> to Infinite Corridor Simulator, read that first.</p>
+
+<p>The Infinite Corridor meta works identically to the Infinite Corridor Simulator puzzles, with one major caveat &mdash; we do not (unless we’ve worked <i>very</i> hard) have all the answers to all the puzzles.</p>
+
+<p>Nonetheless, it is of course possible to solve this meta without all the answers, especially after we understand how to solve Infinite Corridor Simulator. The main challenge of this meta is figuring out how to extract the final answer while doing the minimal amount of additional work (and in particular, solving as few additional puzzles as possible).</p>
+
+<p>Luckily, most of the subpuzzles can be uniquely solved with only ~2&ndash;3 well-chosen answers. We provide some guidance on how to do this below for each of the subpuzzle types:</p>
+
+<ul>
+<li><p><a target="_blank" href="{% url 'puzzle_solution' 'unchained' %}"><b>Unchained</b></a>: Depending on your luck, you might already have the answer to this subpuzzle from Unchained puzzles you have already solved. A key realization is that the first, third, fifth, … instances of Unchained give you bigrams from the first word in the subpuzzle answer, and the second, fourth, sixth, … instances give you bigrams from the second word in the subpuzzle answer, so if you are missing a specific half of the answer you can target it specifically.</p>
+
+<p>The answer to this subpuzzle in the meta is <b>FOURTH ONE</b>.</p>
+
+<li><p><a target="_blank" href="{% url 'puzzle_solution' 'cafe-five' %}"><b>Cafe Five</b></a>: With Cafe Five, it is possible to get any specific letter in the subpuzzle answer by solving three puzzles (to get the appropriate anagram and its two subparts). It is always possible to identify the ordinal uniquely from its third letter, and it is almost always possible to identify the digit from its third letter. Done naively this way, this requires 6&ndash;9 solves of Cafe Five.</p>
+
+<p>However, in practice it is possible to do much better than this. Given just a long answer, we know that the corresponding letter must be contained inside this answer, and moreover that if we remove this letter from the answer, we should be able to anagram the resulting letters into two words. This often lets us identify a letter <i>just</i> from the long answer (especially with additional constraints on this letter coming from the set of possible ordinals and digits). Done this way, it is possible to solve this subpuzzle with ~2&ndash;4 solves of Cafe Five.</p>
+
+<p>The answer to this subpuzzle in the meta is <b>FIRST SEVEN</b>.</p>
+
+<li><p><a target="_blank" href="{% url 'puzzle_solution' 'library-of-images' %}"><b>Library of Images</b></a>: By looking up the <a target="_blank" href="https://oeis.org/A037008">locations of zeros in the digits of pi</a>, we can get any specific letter of the subpuzzle answer by solving a single puzzle. By the same logic mentioned in the Cafe Five section, this lets us solve this subpuzzle with 2&ndash;3 solves of Library of Images.</p>
+
+<p>The answer to this subpuzzle in the meta is <b>FIFTH EIGHT</b>.</p>
+
+<li><p><a target="_blank" href="{% url 'puzzle_solution' 'make-your-own-wordsearch' %}"><b>Make Your Own Word Search</b></a>: Each letter in this subpuzzle is comprised of 2&ndash;8 instructions, so drawing out enough full letters to read the answer requires many puzzle solves.</p>
+
+<p>Of course, it is again possible to do much better than this. In particular, it is possible to mostly identify letters from looking at the instructions in a specific set of locations. One good method for doing this is to first figure out the sequence of instructions for each possible ordinal (FIRST, SECOND, …, FIFTH) and each possible digit (ONE, TWO, …, NINE, ZERO); this is possible by inspecting a couple different instances of Infinite Corridor Simulator puzzles. Once we have these sequences, we can look for a position where the instructions in this position are mostly distinct &mdash; for example, looking at the tenth instruction disambiguates between all of the ordinals except FIRST and FIFTH. It is possible to find pairs of positions which disambiguate between all the ordinals and all the digits (and in many cases, just one position is enough). This lets us solve this subpuzzle with 2&ndash;4 solves of Make Your Own Word Search.</p>
+
+<p>The answer to this subpuzzle in the meta is <b>THIRD SEVEN</b>.</p>
+
+<li><p><a target="_blank" href="{% url 'puzzle_solution' 'infinite-corridor-simulator' %}"><b>Infinite Corridor Simulator</b></a>: Again, solving this puzzle naively requires many solves in order to read enough starting letters to correctly deduce the deleted letters. Rather than doing this, it is usually better to ignore the starting letters and instead just search for “[ordinal] [digit]” strings appearing as subsequences of the concatenation of the first few answers. Doing this generally allows us to solve the subpuzzle with 5&ndash;8 solves of Infinite Corridor Simulator. It is possible to improve this a bit by skipping forward to (a guess of) where the [digit] string starts as soon as the ordinal is identified &mdash; this reduces the number of solves required down to 3&ndash;5, but has some chance of backfiring. This is perhaps the hardest puzzle to methodically solve with a small number of puzzle answers, but luckily Infinite Corridor Simulator puzzles are relatively straightforward to solve once the mechanics are understood.</p>
+
+<p>The answer to this subpuzzle in the meta is <b>SECOND THREE</b>.</p>
+</ul>
+
+<p>Some other useful tips for reducing the amount of work:</p>
+
+<ul>
+<li>Once you have four subpuzzle answers, you know what the ordinal is in the remaining subpuzzle answer (since all ordinals from FIRST through FIFTH must appear once).</li>
+<li>It is possible to use the fact that the final answer is always located at an Infinite Corridor Simulator in lieu of finding the last subpuzzle answer (this reduces 10 puzzles to check down to ~2). This is especially useful if you do not know how to solve one of the types of infinite puzzles. (With enough perseverance, this can also work if you are missing two subpuzzle answers, although it quickly becomes very tedious).</li>
+</ul>
+
+<p>The subpuzzle answers indicate that the meta answer is the answer to Puzzle 73718, which indeed is an Infinite Corridor Simulator puzzle.</p>
+
+<p>We can solve Puzzle 73718 as a typical Infinite Corridor Simulator puzzle &mdash; however, if we are astute, we might notice that the answers in Puzzle 73718 match up exactly with the answers we have solved in the Infinite Corridor Round. Indeed, Puzzle 73718 contains the answers to every puzzle in the Infinite Corridor, and skipping ahead to Puzzle 73718 (within Puzzle 73718) we can read off the final answer, <span class="answer">HIRE A CONTRACTOR</span>.</p>

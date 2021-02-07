@@ -1,0 +1,70 @@
+#halp {
+    padding-top: 1em;
+}
+#container {
+    display: block;
+    position: relative;
+    left: 10%;
+    background-color: #fdb;
+    width: 80%;
+    max-width: 800px;
+    padding: 5px;
+}
+#spacer {
+    height: 5px;
+}
+#chat-log {
+    display: block;
+    background-color: #dfe;
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+}
+#chat-status {
+    float: left;
+    /* background-color: #bdf; */
+    padding: 5px 0 5px 5px;
+    width: calc(75%-5px);
+}
+.chat-text {
+    padding-left: 5px;
+}
+#chat-status.leader {
+    /* background-color: #ff9; */
+}
+#chat-message-input {
+    width: calc(100% - 120px);
+}
+#chat-message-submit {
+    float: right;
+    width: 100px;
+}
+#chat-cooldown {
+    float: right;
+    padding: 5px;
+    width: 8%;
+}
+#chat-best {
+    float: right;
+    width: calc(15% - 10px);
+    padding: 5px;
+}
+.chat-name {
+    font-weight: bold;
+}
+.count-ok {
+    background-color: #8f9;
+}
+.count-bad {
+    background-color: #f98;
+}
+.count-meh {
+    background-color: #bbb;
+}
+.incomplete {
+    color: #f00;
+}
+.complete {
+    color: #0a0;
+    font-weight: bold;
+}

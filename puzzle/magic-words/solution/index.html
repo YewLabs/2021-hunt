@@ -1,0 +1,472 @@
+<style>
+  .pictures {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 650px;
+  }
+
+  .captioned {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+
+  .puzzle img {
+    border: 1px solid black;
+    margin-bottom: 10px;
+    max-height: 180px;
+    max-width: 180px;
+  }
+
+  .numbered-blanks u {
+    display: inline-block;
+    width: 20px;
+    text-decoration: none;
+    border-top: 1px solid black;
+    text-align: center;
+    height: 1em;
+    margin-top: 1em;
+    vertical-align: top;
+  }
+
+  tr:nth-child(odd) td:nth-child(3),
+  tr:nth-child(even) td:nth-child(4) {
+    background: lightgray;
+  }
+</style>
+
+<p>
+  This puzzle consists of 21 images, each with a hyphenated blank beneath them,
+  signifying that the images are an amalgamation of two things. By identifying
+  some of the images, such as this tea kettle spewing popcorn, we can start to
+  fill in the blanks.
+</p>
+
+<div class="captioned" style="margin: 0 auto">
+  <a href="{{sproot}}11.jpg"><img src="{{sproot}}11.jpg" /></a
+  ><span class="blanks">KETTLE-CORN</span>
+</div>
+
+<p>
+  After solving a few clues and realizing that the answers to the images are in
+  alphabetical order, we can determine that the portions of each clue correlate
+  to portions of a
+  <a href="https://en.wikipedia.org/wiki/List_of_Harry_Potter_characters"
+    >Harry Potter character’s</a
+  >
+  surname. This is further clued by the title (“Magic Words”).
+</p>
+
+<section class="pictures">
+  <div class="captioned">
+    <a href="{{sproot}}1.jpg"><img src="{{sproot}}1.jpg" /></a
+    ><span class="blanks">BAG-CLAW</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}2.jpg"><img src="{{sproot}}2.jpg" /></a
+    ><span class="blanks">CLEAR-HORN</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}3.jpg"><img src="{{sproot}}3.jpg" /></a
+    ><span class="blanks">CORN-PIKE</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}4.jpg"><img src="{{sproot}}4.jpg" /></a
+    ><span class="blanks">CRESS-WATER</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}5.jpg"><img src="{{sproot}}5.jpg" /></a
+    ><span class="blanks">DIG-WELL</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}6.jpg"><img src="{{sproot}}6.jpg" /></a
+    ><span class="blanks">EDGE-BURN</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}7.jpg"><img src="{{sproot}}7.jpg" /></a
+    ><span class="blanks">FORTES-SHOT</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}8.jpg"><img src="{{sproot}}8.jpg" /></a
+    ><span class="blanks">GRAY-COMBE</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}9.jpg"><img src="{{sproot}}9.jpg" /></a
+    ><span class="blanks">HAG-ER</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}10.jpg"><img src="{{sproot}}10.jpg" /></a
+    ><span class="blanks">HOP-MORE</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}11.jpg"><img src="{{sproot}}11.jpg" /></a
+    ><span class="blanks">KETTLE-CORN</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}12.jpg"><img src="{{sproot}}12.jpg" /></a
+    ><span class="blanks">LOCK-BOLT</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}13.jpg"><img src="{{sproot}}13.jpg" /></a
+    ><span class="blanks">LOVE-BACK</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}14.jpg"><img src="{{sproot}}14.jpg" /></a
+    ><span class="blanks">POD-WOOD</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}15.jpg"><img src="{{sproot}}15.jpg" /></a
+    ><span class="blanks">RAVEN-GORY</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}16.jpg"><img src="{{sproot}}16.jpg" /></a
+    ><span class="blanks">ROOK-GOOD</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}17.jpg"><img src="{{sproot}}17.jpg" /></a
+    ><span class="blanks">RUN-HART</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}18.jpg"><img src="{{sproot}}18.jpg" /></a
+    ><span class="blanks">SHACKLE-CUE</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}19.jpg"><img src="{{sproot}}19.jpg" /></a
+    ><span class="blanks">SHUN-BRIDGE</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}20.jpg"><img src="{{sproot}}20.jpg" /></a
+    ><span class="blanks">SLUG-RID</span>
+  </div>
+  <div class="captioned">
+    <a href="{{sproot}}21.jpg"><img src="{{sproot}}21.jpg" /></a
+    ><span class="blanks">UM-KIRK</span>
+  </div>
+</section>
+
+<p>
+  Once we’ve identified all the images, we can think about the correct
+  re-sorting. By lining up the two halves of the characters’ surnames the order
+  resolves itself into a cyclic list.
+</p>
+
+<p>
+  Now we can use the blanks with numbers beneath them; these can be filled in
+  cyclic order with the 21 character’s first names. Finally, we simply take the
+  indicated letters in numerical order to spell out the final answer:
+  <span class="answer">DEPARTMENT OF MAGICAL LAW ENFORCEMENT</span>.
+</p>
+
+<table class="numbered-blanks">
+  <thead>
+    <tr>
+      <th>Blanks</th>
+      <th>First name</th>
+      <th colspan="2">Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td></td>
+      <td style="background: none;"></td>
+      <td>WATER</td>
+    </tr>
+    <tr>
+      <td>
+        <u>1</u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>DIRK</td>
+      <td>CRESS</td>
+      <td>WELL</td>
+    </tr>
+    <tr>
+      <td>
+        <u>17</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>28</u>
+      </td>
+      <td>CEDRIC</td>
+      <td>DIG</td>
+      <td>GORY</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u>22</u>
+        <u></u>
+        <u></u>
+        <u>4</u>
+      </td>
+      <td>ROWENA</td>
+      <td>RAVEN</td>
+      <td>CLAW</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u>6</u>
+        <u></u>
+        <u></u>
+        <u>20</u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>BATHILDA</td>
+      <td>BAG</td>
+      <td>SHOT</td>
+    </tr>
+    <tr>
+      <td>
+        <u>12</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>21</u>
+        <u></u>
+      </td>
+      <td>FLOREAN</td>
+      <td>FORTES</td>
+      <td>CUE</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u>16</u>
+        <u></u>
+        <u>15</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>KINGSLEY</td>
+      <td>SHACKLE</td>
+      <td>BOLT</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>31</u>
+        <u></u>
+        <u>26</u>
+        <u></u>
+      </td>
+      <td>GILDEROY</td>
+      <td>LOCK</td>
+      <td>HART</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u>19</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>33</u>
+      </td>
+      <td>ALBERT</td>
+      <td>RUN</td>
+      <td>CORN</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>9</u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>SILVANUS</td>
+      <td>KETTLE</td>
+      <td>BURN</td>
+    </tr>
+    <tr>
+      <td>
+        <u>7</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>MARIETTA</td>
+      <td>EDGE</td>
+      <td>COMBE</td>
+    </tr>
+    <tr>
+      <td>
+        <u>25</u>
+        <u>23</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>FENRIR</td>
+      <td>GRAY</td>
+      <td>BACK</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u>24</u>
+        <u></u>
+      </td>
+      <td>LUNA</td>
+      <td>LOVE</td>
+      <td>GOOD</td>
+    </tr>
+    <tr>
+      <td>
+        <u>14</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>10</u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>AUGUSTUS</td>
+      <td>ROOK</td>
+      <td>WOOD</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>27</u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>STURGIS</td>
+      <td>POD</td>
+      <td>MORE</td>
+    </tr>
+    <tr>
+      <td>
+        <u>30</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>MAFALDA</td>
+      <td>HOP</td>
+      <td>KIRK</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>2</u>
+        <u></u>
+      </td>
+      <td>DOLORES</td>
+      <td>UM</td>
+      <td>BRIDGE</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u>18</u>
+        <u>32</u>
+      </td>
+      <td>STAN</td>
+      <td>SHUN</td>
+      <td>PIKE</td>
+    </tr>
+    <tr>
+      <td>
+        <u>13</u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>MICHAEL</td>
+      <td>CORN</td>
+      <td>ER</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>8</u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>RUBEUS</td>
+      <td>HAG</td>
+      <td>RID</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u>11</u>
+        <u>5</u>
+        <u></u>
+        <u></u>
+        <u></u>
+      </td>
+      <td>HORACE</td>
+      <td>SLUG</td>
+      <td>HORN</td>
+    </tr>
+    <tr>
+      <td>
+        <u></u>
+        <u></u>
+        <u></u>
+        <u>29</u>
+        <u></u>
+        <u></u>
+        <u>3</u>
+        <u></u>
+      </td>
+      <td>PENELOPE</td>
+      <td>CLEAR</td>
+      <td>WATER</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>CRESS</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

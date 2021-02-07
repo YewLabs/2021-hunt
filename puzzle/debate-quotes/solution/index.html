@@ -1,0 +1,110 @@
+<style>
+    table.sol tr th:first-child, table.sol tr td:first-child{
+        min-width: 660px;
+        max-width: 660px;
+    }
+
+    table.sol tr th:nth-child(2), table.sol tr td:nth-child(2){
+        min-width: 220px;
+        max-width: 220px;
+    }
+</style>
+
+<p>This puzzle consists of quotes from Even Stevphen, a recurring segment from The Daily Show from the early 2000s which featured Steve Carell and Stephen Colbert debating various topics. 
+    Each group of five quotes comes from the same Even Stevphen segment, presented in the same order they appear in that segment. 
+    Each quote mentions either &ldquo;Steve&rdquo; or &ldquo;Stephen&rdquo;, but in some quotes, the wrong name is given. 
+    We can read each group as a letter in five-bit binary by treating correct quotes as a 1 and incorrect quotes as a 0 to spell the final answer <span class="answer">TINFOIL</span>.
+</p>
+
+<table>
+    <tr><th>Debate Topic</th><th>Extracted Binary</th><th>Letter</th></tr>
+    <tr><td>Blast-Off Buddies</td><td>10100</td><td>T</td></tr>
+    <tr><td>Elian Gonzalez</td><td>01001</td><td>I</td></tr>
+    <tr><td>Negative Campaigning</td><td>01110</td><td>N</td></tr>
+    <tr><td>Reality TV</td><td>00110</td><td>F</td></tr>
+    <tr><td>Secrets</td><td>01111</td><td>O</td></tr>
+    <tr><td>Should Medical Marijuana Be Legalized?</td><td>01001</td><td>I</td></tr>
+    <tr><td>World’s Policeman or Fireman?</td><td>01100</td><td>L</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/rgeg1j/the-daily-show-with-jon-stewart-even-stevphen---blast-off-buddies">Blast-Off Buddies</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;Sorry Steve, you can't blame this one on America.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Communication is what I'm talking about, Stephen.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Stephen, you can't make tea in space.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;But we can't help ourselves, Stephen, because humans are naturally inquisitive.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Stephen, I think it's time you turned a telescope on your own home life.&rdquo;</td><td>0</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/vo6wqv/the-daily-show-with-jon-stewart-even-stevphen---elian-gonzalez">Elian Gonzalez</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;Stephen, Cuba's the last vestige of an evil empire.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Well isn't it obvious, Stephen?&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Suck it up, Stephen!&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;No, this is not about me, Steve, this is about a lonely little boy.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;I love you, Steve.&rdquo;</td><td>1</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/l7zg7u/the-daily-show-with-jon-stewart-even-stevphen---negative-campaigning">Negative Campaigning</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;Let's face it Steve, politics have become a bore.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Steve, stooping to the lowest common denominator isn't the answer.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;You're just proving my point, Steve.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Look, this is nothing new: Stephen Douglas once referred to Abraham Lincoln as a fussy scoundrel.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Just because it ended in 1898 is too easy an answer, Stephen.&rdquo;</td><td>0</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/sm6uo6/the-daily-show-with-jon-stewart-even-stevphen---reality-tv">Reality TV</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;That's as maybe some-evers, Stephen, but if freshness is your only requirement why not point the camera at a newly-minted turd?&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Call me old fashioned, Steve, but I am a people person.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;The point is, Steve, the point is, not everything is worth watching.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Steve! What are you doing?&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Stephen, I think we can both agree that what constitutes entertainment is in the eye of the beholder.&rdquo;</td><td>0</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/u2nnaa/the-daily-show-with-jon-stewart-even-stevphen---secrets">Secrets</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;Stephen, let's not have this disintegrate into yet another series of personal attacks, okay fatty?&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Steve, we've exhausted this topic.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Steve, all I can tell you is that it is terrible, it is horrible, it is imminent, and it only involves you.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Steve, the point is, in situations like this, the facts are just gonna terrify the public.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Steve, I was just giving an example.&rdquo;</td><td>1</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/dvjmpb/the-daily-show-with-jon-stewart-even-stevphen---should-medical-marijuana-be-legalized-">Should Medical Marijuana Be Legalized?</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;But I suppose there are a few sick individuals out there who get off on other people's suffering, Steve.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Far out, Steve, groovy point man.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Let me in on the dirty little secret, Stephen.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Stephen, you're not listening to my argument.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Clear as crystal, Steve, but let me see if I can just recap your really twisted argument.&rdquo;</td><td>1</td></tr>
+</table>
+
+<h3><a href="http://www.cc.com/video-clips/7iitot/the-daily-show-with-jon-stewart-even-stevphen---world-s-policeman-or-fireman-">World’s Policeman or Fireman?</a></h3>
+
+<table class="sol">
+    <tr><th>Quote</th><th>Correct (1) or Incorrect (0)</th></tr>
+    <tr><td>&ldquo;Steve, with great power comes great responsibility.&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Steve, that's a stupid thing to say and you're a stupid person for saying it.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Well I'm not surprised that you would want to entangle the US in that quagmire Mr. Steven Carellenbergowitzteinishskiberg.&rdquo;</td><td>1</td></tr>
+    <tr><td>&ldquo;Finally, Stephen, should we change the way we talk?&rdquo;</td><td>0</td></tr>
+    <tr><td>&ldquo;Granted, but I'm afraid we can't just do that Stephen.&rdquo;</td><td>0</td></tr>
+</table>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>I hope that watching Even Stevphen was a pleasant interlude between other more intense puzzles.</p>
+</div>

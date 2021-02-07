@@ -1,0 +1,89 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+{% load static %}
+
+{% block title %}Solution to Endgame &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>
+    Solution to Endgame
+    <a class="subtitle" href="{% url 'endgame_puzzle' %}">Back to Puzzle</a>
+  </h1>
+  <main>
+    <div class="info">
+    <h4>by Josh Alman, Yannick Yao, Anderson Wang, Rahul Sridhar, CJ Quines, and Jakob Weisblat</h4>
+
+<iframe width="800" height="450" src="https://www.youtube.com/embed/lnTZckjA-w0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>The endgame is both the final runaround and the capstone puzzle for the hunt, with the goal of locating an object that Professor Yew left behind in the perpendicular universe. Teams will need to gather measurement data from &perp;IW while Yew Labs researchers collect data from MIT. The measurement data from &perp;IW are minipuzzles related to the structure, navigational puzzles, or meta mechanics of each round:</p>
+
+<table>
+<tr><th>Round</th><th>Measurement</th><th>Answer</th><th>Explanation</th></tr>
+<tr><td>Athletics</td><td>The number of eggs to deliver times the number of goose tasks, plus the numbers of violet coins in space, legendary fish, and football routes.</td><td>393</td><td>There are 60 eggs, 6 goose tasks, 21 violet coins, 5 legendary fish, and 7 football routes, for 60*6+21+5+7=393.</td></tr>
+<tr><td>Students</td><td>The product of the atomic numbers of Joshua and Anderson.</td><td>272</td><td>In the Student Center meta, Joshua and Anderson correspond to Sulfur (16) and Chlorine (17) respectively, for 16*17=272.</td></tr>
+<tr><td>Tunnels</td><td>The number of ghost passages on the outside border times the number of skeletons (don&#39;t forget the meta!), plus the total number of ghost passages.</td><td>201</td><td>There are 11 ghosts passages on the outside and 36 passages in total (both can be counted on the map on the round page), and there are 15 skeletons (14 puzzles + 1 meta), for 11*15+36=201.</td></tr>
+<tr><td>Yew Labs</td><td>AUO SNTD UAALJIYL PUE PAJPUNY OML. Hmm, I think that may have gotten flipped...</td><td>214</td><td>Using the Yew Labs keyboard, we can rotate the message upside-down to get TWO HUNDRED AND THIRTEEN PLUS ONE, for 213+1=214.</td></tr>
+<tr><td>Infinite Corridor</td><td>The number of the first puzzle with answer FINELY.</td><td>160</td><td>All the answers to Infinite Corridor puzzles can be found in Puzzle 73718, which shows that the first FINELY answer appears at Puzzle 160.</td></tr>
+<tr><td>&perp;IW.nano</td><td>5 times the sum of the number of puzzle-giving kilotechnicians and the number of puzzle-giving milli bots.</td><td>55</td><td>There are 5 non-meta puzzles in &perp;IW.kilo and 6 non-meta puzzles in &perp;IW.milli, for 5*(5+6)=55.</td></tr>
+<tr><td>Stata Center</td><td>4 times the sum of the length of the paths in the room with a compass on the floor and the room mentioning &ldquo;what you need is a sail&quot;.</td><td>56</td><td>The compass room has length 6 (SENSES) and the room for SAIL has length 8 (two for each letter in semaphore), for 4*(6+8)=56.</td></tr>
+<tr><td>Clusters</td><td>The number you would get if the building 3 keypad said &quot;145&quot; and you then pressed &quot;7&quot;.</td><td>117</td><td>Pressing &ldquo;7&rdquo; on building 3 keypad will sum the number of lit segments in &ldquo;145&rdquo; (which is 2+4+5=11) and append a 7 to the sum, which gives 117.</td></tr>
+<tr><td>Green Building</td><td>The number you would get if you put &quot;red green white&quot; on a telephone.</td><td>149</td><td>The Green Building elevator buttons have red, green, white buttons on the 1, 4, 9 position of a telephone keypad, which gives 149.</td></tr>
+<tr><td>Charles River</td><td>The three-digit number that would take the string &quot;PLICAS&quot; to the word &quot;REPLICATE&quot; (using only common words along the way).</td><td>278</td><td>The path is PLICAS -(2)&gt; REPLICAS -(7)&gt; REPLICATORS -(8)&gt; REPLICATE, which gives 278.</td></tr>
+</table>
+
+<p>When teams are collecting data from each location, Yew Labs researchers are also collecting measurements from the corresponding location at MIT.</p>
+
+<table>
+<tr><th>Round</th><th>Location</th><th>Measurement (in meters)</th></tr>
+<tr><td>Athletics</td><td>Entrance to Z center (building W35)</td><td>223</td></tr>
+<tr><td>Students</td><td>East entrance to Student Center (building W20, right next to Anna&rsquo;s Taqueria)</td><td>222</td></tr>
+<tr><td>Tunnels</td><td>Accessible entrance to building 7 basement</td><td>151</td></tr>
+<tr><td>Yew Labs</td><td>Beneath the walkway between building 9 and 33</td><td>114</td></tr>
+<tr><td>Infinite Corridor</td><td>Entrance to the infinite corridor in Lobby 7 (right next to MIT seal)</td><td>150</td></tr>
+<tr><td>&perp;IW.nano</td><td>Northeast corner of the exterior of MIT.nano (building 12)</td><td>25</td></tr>
+<tr><td>Stata Center</td><td>The bottom of the ramp/stairs in front of Stata Center (building 32)</td><td>16</td></tr>
+<tr><td>Clusters</td><td>Northeast corner of the exterior of building 56</td><td>27</td></tr>
+<tr><td>Green Building</td><td>Center of the Dot (the circular grass patch in front of Green Building/building 54)</td><td>29</td></tr>
+<tr><td>Charles River</td><td>Northeast corner of Sailing Pavilion (building 51)</td><td>198</td></tr>
+</table>
+
+<p>These numbers are inconsistent with &perp;IW measurements, but they do match in the unit digit. Moreover, the 10 unit digits are exactly 0, 1, 2, &hellip;, 9, so we use that as an ordering, and use the difference (divided by 10) as an index into the corresponding round answers to get the cluephrase HYPOTENUSE.</p>
+
+<table>
+<tr><th>Round</th><th>Answer</th><th>&perp;IW</th><th>MIT</th><th>Difference</th><th>Indexed letter</th></tr>
+<tr><td>Infinite Corridor</td><td>HIRE A CONTRACTOR</td><td>160</td><td>150</td><td>10</td><td>H</td></tr>
+<tr><td>Tunnels</td><td>DECRYPT THEM</td><td>201</td><td>151</td><td>50</td><td>Y</td></tr>
+<tr><td>Students</td><td>SET UP AETHERNET</td><td>272</td><td>222</td><td>50</td><td>P</td></tr>
+<tr><td>Athletics</td><td>THREW THE GAME AND NOT THE BALL</td><td>393</td><td>223</td><td>170</td><td>O</td></tr>
+<tr><td>Yew Labs</td><td>TWO-D OR NOT TWO-D</td><td>214</td><td>114</td><td>100</td><td>T</td></tr>
+<tr><td>&perp;IW.nano</td><td>THERE&rsquo;S PLENTY OF ROOM AT THE BOTTOM</td><td>55</td><td>25</td><td>30</td><td>E</td></tr>
+<tr><td>Stata Center</td><td>IRON OUT THE INKS</td><td>56</td><td>16</td><td>40</td><td>N</td></tr>
+<tr><td>Clusters</td><td>METALINGUIST</td><td>117</td><td>27</td><td>90</td><td>U</td></tr>
+<tr><td>Charles River</td><td>LOB ROCK STAR</td><td>278</td><td>198</td><td>80</td><td>S</td></tr>
+<tr><td>Green Building</td><td>CLEAR ALL VINES</td><td>149</td><td>29</td><td>120</td><td>E</td></tr>
+</table>
+
+<p>Upon discovering the cluephrase, teams are prompted to combine the measurements from the two universes using HYPOTENUSE. Since the measurements are from perpendicular universes, we should treat each pair of measurements as the two legs of a right triangle and find the hypotenuse of that triangle. We should also use the MIT locations where the measurements are taken along with these combined measurements to locate the object.</p>
+
+<table>
+<tr><th>Round</th><th>Coordinates (approximate)</th><th>Combined measurement (meters)</th></tr>
+<tr><td>Athletics</td><td>42.3584519, -71.0956365</td><td>451.9</td></tr>
+<tr><td>Students</td><td>42.3589195, -71.0945403</td><td>351.1</td></tr>
+<tr><td>Tunnels</td><td>42.3592440, -71.0934114</td><td>251.4</td></tr>
+<tr><td>Yew Labs</td><td>42.3599143, -71.0936857</td><td>242.5</td></tr>
+<tr><td>Infinite Corridor</td><td>42.3592657, -71.0929798</td><td>219.3</td></tr>
+<tr><td>&perp;IW.nano</td><td>42.3605263, -71.0914983</td><td>60.4</td></tr>
+<tr><td>Stata Center</td><td>42.3609782, -71.0907902</td><td>58.2</td></tr>
+<tr><td>Clusters</td><td>42.3609011, -71.0895246</td><td>120.1</td></tr>
+<tr><td>Green Building</td><td>42.3599872, -71.0891299</td><td>151.8</td></tr>
+<tr><td>Charles River</td><td>42.3586653, -71.0874820</td><td>341.3</td></tr>
+</table>
+
+<p>With these measurements, teams will be able to use various resources (e.g. Google Maps) to determine that the coin should be around building 16. As researchers approach the location, Professor Yew reveals that she had left a coin in a vending machine in building 16!</p>
+
+<p><a target="_blank" href="https://www.mapdevelopers.com/draw-circle-tool.php?circles=%5B%5B451.9%2C42.3584519%2C-71.0956365%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B351.1%2C42.3589195%2C-71.0945403%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B251.4%2C42.3592440%2C-71.0934114%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B242.5%2C42.3599143%2C-71.0936857%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B219.3%2C42.3592657%2C-71.0929798%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B60.4%2C42.3605263%2C-71.0914983%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B58.2%2C42.3609782%2C-71.0907902%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B120.1%2C42.3609011%2C-71.0895246%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B151.8%2C42.3599872%2C-71.0891299%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%2C%5B341.3%2C42.3586653%2C-71.0874820%2C%22%23AAAAAA%22%2C%22%23000000%22%2C0.4%5D%5D"><img style="width: 80%; margin: 0 10%;" src="{% static 'runaround.png' %}"></a></p>
+
+    </div>
+  </main>
+</div>
+{% endblock %}

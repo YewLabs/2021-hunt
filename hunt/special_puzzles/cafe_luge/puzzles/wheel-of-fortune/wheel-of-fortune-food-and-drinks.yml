@@ -1,0 +1,83 @@
+name: wheel-of-fortune-food-and-drinks
+difficulty: 2/10
+coolness: 3/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "? ??G ?O? O? ?SSORTE? ?HO?OL?TES"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: a big box of assorted chocolates
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "? SL??E O? HE?RT? ??ENN? ?RE??"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: a slice of hearty vienna bread
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "? SL??E O? P????"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: a slice of pizza
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "L??E ????E"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: lime juice
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "POT?TO L?T?ES ??TH SO?R ?RE??"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: potato latkes with sour cream
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "S?EET ??NGO ?H?N?S"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: sweet mango chunks
+
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?EST? ????RON? ?N? ?HEESE"
+
+        - text: "Category: Food and Drinks"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: zesty macaroni and cheese

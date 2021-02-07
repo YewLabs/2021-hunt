@@ -1,0 +1,61 @@
+name: letter-sets
+difficulty: 7/10
+coolness: 7/10
+time: 5:00
+
+questions:
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "ERS LLI PAR DAY UMM COM EET SHA ETH OAS"
+
+        - answer: shall i compare thee to a summers day
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "ITH OOC ERN PPY NOT TOB WEM BET ERS ONC OTH UST EDW EHA"
+
+        - answer: to be happy we must not be too concerned with others
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "GIV OFL TIO THE UCA OVE ELF NIN ING ISA ITS NED"
+
+        - answer: the giving of love is an education in itself
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "WIN MTI DID TIO ATL TID CEP REA ISA EAS NOR"
+
+        - answer: i saw inception or at least i dreamt i did
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "GAB YIN TER ILK BEI THA OUT NGM TSL LKI SWA MMI SKI"
+
+        - answer: skim milk is water thats lying about being milk
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "RIL REN REA TAN EGO LES SED YRU WEU TOB LAS THE"
+
+        - answer: there arent any rules we used to be gorillas
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "LYN RUE COW EIN LOR NEV GIV ERC RGI EVE VER PNE ARD VEU"
+
+        - answer: never cruel or cowardly never give up never give in
+
+    - question:
+        - text: "Reorder these trigrams (and add spaces) to reveal a hidden message. What is it?"
+
+        - text: "ORY HRO YOU UPF UGH RET ESO ITU SOU ACK PNO OUN MOR EXT PNA ZIP"
+
+        - answer: youre through soup nazi pack it up no more soup for you next

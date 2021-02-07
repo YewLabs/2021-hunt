@@ -1,0 +1,11 @@
+id	username	name	password	Team Email	Captains	phone	size	special	spoiled
+0	dog	God Mode	???	redacted@perpendicular.institute			1	1	1
+1	admin	Admin	???	admin@perpendicular.institute			10	1	1
+4	racer0	Racer 0	???	IGNORE			10	2	1
+5	racer1	Racer 1	???	IGNORE			10	2	1
+6	factcheck	???	factcheck	factcheck@perpendicular.institute			10	1	1
+11	test1	Test Team 1	???	IGNORE			1	2	1
+12	test2	Test Team 2	???	IGNORE			3	2	1
+13	test3	Test Team 3	???	IGNORE			5	2	1
+14	test4	Test Team 4	???	IGNORE			10	2	1
+15	test5	Test Team 5	???	IGNORE			25	2	1

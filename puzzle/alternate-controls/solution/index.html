@@ -1,0 +1,50 @@
+<p>We are presented with a text box with the title “untitled” and some filler text. The first thing we should do is experiment with the text box. It appears to work as a basic word processor; entering, selecting, and deleting text works as you might expect.</p>
+
+<p>At some point, we may experiment with keyboard shortcuts in the text box as well. The title of the puzzle alludes to the ALT and CTRL keys. Here, we may notice some unusual behaviour. On a PC, the ALT key can be used to perform shortcut actions normally performed with the CTRL key. Similarly, on a Mac, the CTRL key can be used to perform shortcuts normally performed with the CMD key. Furthermore, not all of the shortcuts do what you might expect them to.</p>
+
+<p>In fact, most of the shortcuts correspond to Microsoft Word shortcuts. The ones that don’t match form a cycle, as shown by the table below:</p>
+
+<table>
+  <colgroup>
+    <col>
+    <col>
+    <col width="75%">
+  </colgroup>
+<tr><th>Letter</th><th>Function in MS Word</th><th>Puzzle Function</th></tr>
+<tr><td>A</td><td>Select all.</td><td>Select all.</td></tr>
+<tr><td>B</td><td>Apply bold formatting.</td><td>Apply bold formatting.</td></tr>
+<tr><td>C</td><td>Copy.</td><td><b>Increase hanging indent. (T)</b></td></tr>
+<tr><td>D</td><td>Edit font.</td><td>Edit font. Note that instead of the options provided in MS Word, the puzzle simply gives you the option to type in the name of a font. Fonts not installed or recognized by your system will not work.</td></tr>
+<tr><td>E</td><td>Center-align.</td><td>Center-align.</td></tr>
+<tr><td>F</td><td>Find.</td><td>Find.</td></tr>
+<tr><td>G</td><td>Go to.</td><td><b>Copy. (C)</b></td></tr>
+<tr><td>H</td><td>Replace.</td><td>Replace.</td></tr>
+<tr><td>I</td><td>Apply italics formatting.</td><td><b>Create a new file. (N)</b> In the puzzle, the new file’s name resets to “untitled” and the filler text reappears.</td></tr>
+<tr><td>J</td><td>Justify-align.</td><td>Justify-align.</td></tr>
+<tr><td>K</td><td>Insert hyperlink.</td><td>Insert hyperlink.</td></tr>
+<tr><td>L</td><td>Left-align.</td><td><b>Undo last action. (Z)</b></td></tr>
+<tr><td>M</td><td>Increase indent.</td><td>Increase indent.</td></tr>
+<tr><td>N</td><td>Create a new file.</td><td><b>Go to. (G)</b></td></tr>
+<tr><td>O</td><td>Open an existing file.</td><td>Open an existing file. In order to access this functionality in the puzzle, you must save a file first.</td></tr>
+<tr><td>P</td><td>Print.</td><td>Print.</td></tr>
+<tr><td>Q</td><td>Remove formatting.</td><td>Remove formatting. In MS Word, this function is used to remove “styles”; it will change the typeface and font, but will leave bold, italics, underlines, and links intact. In the puzzle, we have chosen to remove all of the formatting instead to make the function more clear.</td></tr>
+<tr><td>R</td><td>Right-align.</td><td><b>Left-align. (L)</b></td></tr>
+<tr><td>S</td><td>Save current file.</td><td>Save current file.</td></tr>
+<tr><td>T</td><td>Increase hanging indent.</td><td><b>Right-align. (R)</b></td></tr>
+<tr><td>U</td><td>Apply underline formatting.</td><td>Apply underline formatting.</td></tr>
+<tr><td>V</td><td>Paste.</td><td>Paste.</td></tr>
+<tr><td>W</td><td>Close current file.</td><td>Removes the text box. You can refresh to recover it.</td></tr>
+<tr><td>X</td><td>Cut.</td><td>Cut.</td></tr>
+<tr><td>Y</td><td>Redo last action.</td><td>Redo last action.</td></tr>
+<tr><td>Z</td><td>Undo last action.</td><td><b>Apply italics formatting. (I)</b></td></tr>
+</table>
+
+<p>The cycle formed spells out the cluephrase CTRL-Z-ING, which matches the blanks given at the bottom of the puzzle page. The final answer, then, is the correct function for CTRL+Z: <span class="answer">UNDOING</span>.</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>RS: In the original conception of this puzzle, all the commands would use the control key. During implementation, we discovered that modern browsers on PCs will <a href="https://stackoverflow.com/questions/38838302/any-way-to-override-ctrln-to-open-a-new-window-in-chrome" target="_blank">prevent</a> you from overriding Ctrl-N, T, and W, as these shortcuts are reserved by the browser itself. Similarly, it's impossible to override Command N, T, and W on a Mac. We then attempted to switch to using the Option / Alt key, but discovered that Option E, I, and U are reserved on Macs for the rendering of accents, circumflexes, and diaereses via <a href="https://en.wikipedia.org/wiki/Dead_key" target="_blank">dead keys</a>. We ended up with this hybrid approach, where we try to detect your operating system and use Alt for PCs and Control for Macs.</p>
+
+<p>I adapted the text editor from <a href="https://github.com/jaredreich/pell" target="_blank">pell</a>, an elegant and simple Javascript WYSIWYG text editor. It uses the very powerful <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand" class="monospace" target="_blank">execCommand</a> feature, which although obsolete, still works well with most modern browsers.</p>
+
+</div>

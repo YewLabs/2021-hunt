@@ -1,0 +1,87 @@
+<style>
+    .puzzle img {
+        width: 144px;
+        height: 144px;
+    }
+
+    .puzgrid td:nth-child(1){
+        width: 75px;
+        text-align: center;
+    }
+
+    .puzgrid td:nth-child(2){
+        width: 700px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .puzgrid td:nth-child(3){
+        width: 75px;
+        text-align: center;
+    }
+
+    .puzgrid td:nth-child(4){
+        width: 75px;
+        text-align: center;
+    }
+
+    .puzgrid tr:not(:first-child) td{
+        border-bottom: 1px solid black;
+        border-right: 1px solid lightgray;
+    }
+
+    .puzgrid tr:not(:first-child) td:first-child{
+        border-left: 1px solid black;
+        padding: 10px;
+    }
+
+    .puzgrid.puzgrid.puzgrid tr td:last-child{
+        border-right: 1px solid black;
+        padding: 10px;
+    }
+
+    .puzgrid tr:first-child td.label{
+        border-right: 1px solid lightgray;
+        border-top: 1px solid black;
+        border-bottom: 1px solid lightgray;
+        text-align: center;
+    }
+
+    .puzgrid tr:first-child td:not(.label){
+        border-bottom: 1px solid black;
+    }
+
+    .puzgrid tr:first-child td.leftlabel{
+        border-right: 1px solid black;
+    }
+
+    .red {
+        color: #CC0000;
+    }
+
+    .green {
+        color: #6AA84F;
+    }
+</style>
+
+
+<table class="puzgrid grid">
+    <tr><td></td><td class="leftlabel"></td><td class="label">TM</td><td class="label">PTS</td></tr>
+    <tr><td> <span class="red">▼</span> 6</td><td><a href="{{sroot}}img1.png"><img src="{{sroot}}img1.png"></a></td><td>🏅&times;10</td><td>15</td></tr>
+    <tr><td> <span class="red">▼</span> 11</td><td><a href="{{sroot}}img2.png"><img src="{{sroot}}img2.png"></a></td><td>🏅&times;3</td><td>14</td></tr>
+    <tr><td> <span class="red">▼</span> 13</td><td><a href="{{sroot}}img3.png"><img src="{{sroot}}img3.png"></a></td><td>🏅&times;8</td><td>13</td></tr>
+    <tr><td> <span class="red">▼</span> 5</td><td><a href="{{sroot}}img4.png"><img src="{{sroot}}img4.png"></a></td><td>🏅&times;4</td><td>13</td></tr>
+    <tr><td> <span class="green">▲</span> 3</td><td><a href="{{sroot}}img5.png"><img src="{{sroot}}img5.png"></a></td><td>🏅&times;3</td><td>12</td></tr>
+    <tr><td> <span class="green">▲</span> 3</td><td><a href="{{sroot}}img6.png"><img src="{{sroot}}img6.png"></a></td><td>🏅&times;2</td><td>12</td></tr>
+    <tr><td> <span class="green">▲</span> 3</td><td><a href="{{sroot}}img7.png"><img src="{{sroot}}img7.png"></a></td><td>🏅&times;8</td><td>12</td></tr>
+    <tr><td> <span class="red">▼</span> 2</td><td><a href="{{sroot}}img8.png"><img src="{{sroot}}img8.png"></a></td><td>🏅&times;9</td><td>12</td></tr>
+    <tr><td> <span class="green">▲</span> 4</td><td><a href="{{sroot}}img9.png"><img src="{{sroot}}img9.png"></a></td><td>🏅&times;5</td><td>12</td></tr>
+    <tr><td> <span class="red">▼</span> 4</td><td><a href="{{sroot}}img10.png"><img src="{{sroot}}img10.png"></a></td><td>🏅&times;9</td><td>10</td></tr>
+    <tr><td> <span class="green">▲</span> 5</td><td><a href="{{sroot}}img11.png"><img src="{{sroot}}img11.png"></a></td><td>🏅&times;7</td><td>10</td></tr>
+    <tr><td> <span class="red">▼</span> 3</td><td><a href="{{sroot}}img12.png"><img src="{{sroot}}img12.png"></a></td><td>🏅&times;5</td><td>8</td></tr>
+    <tr><td> <span class="green">▲</span> 2</td><td><a href="{{sroot}}img13.png"><img src="{{sroot}}img13.png"></a></td><td>🏅&times;6</td><td>8</td></tr>
+    <tr><td> <span class="green">▲</span> 13</td><td><a href="{{sroot}}img14.png"><img src="{{sroot}}img14.png"></a></td><td>🏅&times;7</td><td>8</td></tr>
+    <tr><td> <span class="green">▲</span> 3</td><td><a href="{{sroot}}img15.png"><img src="{{sroot}}img15.png"></a></td><td>🏅&times;5</td><td>7</td></tr>
+    <tr><td> <span class="green">▲</span> 8</td><td><a href="{{sroot}}img16.png"><img src="{{sroot}}img16.png"></a></td><td>🏅&times;2</td><td>6</td></tr>
+</table>
+<button id="clipboard-button"></button>

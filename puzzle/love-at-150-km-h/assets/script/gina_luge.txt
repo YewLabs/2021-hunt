@@ -1,0 +1,39 @@
+> FLAG enable_gina_luge
+> background lugebg.jpg
+> music none
+
+> show gina_happy.png
+GINA: Let's do this!
+PLAYER: I've never done doubles before.
+PLAYER: Where are we starting from?
+GINA: At the women's start, silly!
+You'll be on the bottom.
+So you gotta steer us!
+
+> background none
+
+PLAYER: (Here we go...)
+
+> do_run 2 perfect bad
+
+> label perfect
+
+GINA: I've got the last few turns!
+> background none 1.5
+GINA: (What...! No way!!)
+We went so fast! Look at our time!
+That's faster than any other partner I've luged with!
+I... I think you and I have something special...
+
+> FLAG gina_complete
+> good_end
+
+> label bad
+
+GINA: I've got the last few turns!
+> background none 1.5
+GINA: That was so much fun!
+But...I think you maybe missed a few of the turns? ...No biggie!
+We should try again sometime! Later!
+
+> bad_end

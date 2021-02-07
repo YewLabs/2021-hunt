@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Manual Find</title>
+  </head>
+  <body>
+    <center>
+      <h3>Find {{ puzzle.name }} for {{ team.name }}</h3>
+      <p>
+        {% if success %}
+        <h4>Found puzzle for team.</h4>
+        {% else %}
+        <h4>This team has not found this puzzle. Click the following button to find the puzzle for the team.</h4>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="submit" name="find" value="Find">
+        </form>
+        {% endif %}
+        <br/>
+        <a href="{% url 'one_team' team.url %}">Return to team overview</a>
+      </p>
+    </center>
+  </body>
+</html>

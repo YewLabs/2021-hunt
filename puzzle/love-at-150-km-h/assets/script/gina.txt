@@ -1,0 +1,442 @@
+﻿> FLAG enable_gina_date
+> MUSIC none
+
+NARRATOR: A few months later...
+
+> background stalls.jpg
+
+PLAYER: This looks delicious...
+But I can't put on weight.
+I'm cutting for the tournament tomorrow...
+
+> shake
+GINA [hidename]: HEYYYY!
+Oh, bingo! I knew it was you!!
+
+> show gina_happy.png
+> music day.ogg
+
+GINA: Fancy seeing you here, eh?
+
+PLAYER: Not really...
+We're both here for the tournament, right?
+
+> show gina_surprised.png
+
+GINA: Ah! Good point!
+
+> background none
+
+PLAYER: My runs were in the morning.
+I didn't place well. But I'm still improving, and this track was a really tough one.
+And I think my neck is starting to toughen up.
+My muscles feel way less sore than usual today.
+I watched Gina's runs too...
+She finished middle of the pack, but she was all smiles.
+After the race, she looked like she had had the time of her life.
+
+After the tournament...
+
+> background snowstreetside.jpg
+> show gina_happy.png
+
+GINA: You're really getting better! You looked so much more stable on the track!
+PLAYER: You watched me...!
+
+> show gina_neutral.png
+GINA: Uh, yeah? Why wouldn't I?
+Oh, that reminds me. I gotta run.
+It's my sister's birthday, so I should give her a call.
+Oh! Hey, when's your flight home?
+
+> show gina_happy.png
+...It's two days from now? Me too!
+Well, the competition's over now. I gotta find something to do...
+Ooh, I can go exploring!
+Yeah, maybe I will! I was hoping to see more of the country before I left...
+
+> show gina_neutral.png
+How about you? Got any plans...?
+
+> choice
+| Ask her out gina_yes
+| Don't risk it gina_no
+
+> LABEL gina_no
+PLAYER: Nothing much. I was gonna grab dinner with a teammate.
+GINA: Oh, neat! Have fun!
+GINA: Ooh, yeah...there are so many good places to eat here.
+PLAYER: You got any recommendations?
+GINA: I got recommendations for days! Lemme give you a list...
+
+> background none
+
+PLAYER: Gina and I talked for a bit...
+I went to dinner, and then back to my hotel room.
+
+> background hotelroom.png
+> music crickets.ogg
+PLAYER: Today was tiring...
+PLAYER: But I'm finally starting to feel like I belong.
+PLAYER: Like I'm finding my place.
+
+> background none
+PLAYER: Hope Gina and I run into each other again...
+PLAYER: She was fun to talk to...
+PLAYER: zzz...
+
+> bad_end
+
+> LABEL gina_yes
+PLAYER: Actually...
+
+> show gina_surprised.png
+> sound TEMP_realization.ogg
+GINA: ...!
+GINA: Oh! A date!
+
+> show gina_neutral.png
+I don't know if I can...
+PLAYER: It's alright. I'll see you around...
+
+> show gina_angry.png
+GINA: Wait, no, no!
+This is coming out all wrong...let me start over...
+
+> show gina_happy.png
+Yes. I'd love to go on a date.
+
+> show gina_neutral.png
+I literally...just don't know when.
+
+> show gina_happy.png
+You know what? Let's go tomorrow.
+Hmm...where should we go? ...Oh, I know!
+
+> show gina_neutral.png
+I'll plan everything, but you have to answer this question:
+What do you like best about luge?
+> choice
+| The wind in my hair onsen
+| The competition arcade
+| The extreme speed train
+
+> LABEL onsen
+
+> show gina_happy.png
+GINA: Ooh, really?
+GINA: I know just what to do!
+GINA: Meet me tomorrow at...
+
+> background none
+
+NARRATOR: The next day...
+
+> music cold_sunny.ogg
+> background mountainbase.png
+
+> show gina_happy.png
+GINA: Hey, you made it!
+GINA: You look really cute!
+GINA: Excited for our date today?
+
+GINA: See that mountain?
+GINA: We're gonna climb it.
+PLAYER: So it's a hiking date?
+GINA: Oh, come on. What do you take me for? I plan better dates than that...
+GINA: There's a hot spring at the top!
+GINA: I think it'll take all day to climb up there. We can take a nice, hot soak just as the sun sets...
+GINA: Then we can take the bus back down and ride the subway home!
+GINA: So let's get going! I got us water bottles from the vending machine!
+
+> background mountainhiking.jpg
+
+> show gina_angry.png
+GINA: *huff* *huff* This is steep...
+GINA: I think...we're...almost halfway... *huff*
+> show gina_surprised.png
+GINA: ...Oh! That's a lavender bush!
+GINA: These are my favorite flowers! I didn't know they grew so high...
+> show gina_happy.png
+GINA: *sniff*
+GINA: Ahhhh...
+> show gina_neutral.png
+GINA: So after a race, you have your own relaxation ritual, right?
+GINA: Well, mine is a steaming cup of honey lavender tea.
+> show gina_happy.png
+GINA: Nothing beats the feeling of kicking back with a hot cup of tea and a tough crossword.
+
+> background none
+
+PLAYER: We finally made it to the hot springs, panting and sweating.
+PLAYER: Nobody was using them, and Gina and I had them all to ourselves.
+PLAYER: We showered and lowered ourselves into the warm mineral water, as the sun was starting to set...
+
+> background bath.png
+GINA: Ahhhh...
+GINA: It's like my worries are melting away...
+GINA: The cold air and the hot water...
+GINA: This is the best feeling ever.
+GINA: Reminds me of being a kid.
+GINA: Curling up by the fireplace in the wintertime, trying to stay warm...
+GINA: It was rough. We didn't have much.
+GINA: But looking back, I enjoyed it.
+GINA: Makes me really appreciate what I have now.
+
+GINA: I want to settle down somewhere cold.
+GINA: There's nothing better than a hot bath on a cold winter night, you know?
+GINA: Geez, this is so nice...I'm falling asleep...
+GINA: zzz...
+> FLAG gina1
+
+> JUMP gina_end
+
+> LABEL arcade
+
+> show gina_happy.png
+GINA: Haha! Competitive, are we?
+GINA: I know just what to do!
+GINA: Meet me tomorrow at...
+
+> background none
+The next day...
+
+> background arcadeoutside.png
+> show gina_happy.png
+GINA: Hey, you made it!
+GINA: You look really cute!
+GINA: Excited for our date today?
+
+> background arcade.png
+> music arcade.ogg
+
+> show gina_happy.png
+GINA: Here we are!
+
+> show gina_neutral.png
+GINA: I went to arcades a lot growing up.
+GINA: Mom and Dad were always at work, so I'd go there after school.
+GINA: I was a mean air hockey player back in the day.
+
+> show gina_happy.png
+GINA: The Terror of Tampa Bay, my friends used to call me!
+GINA: Man, I miss being a kid...
+GINA: But hey, being an adult's alright too!
+GINA: Now I get to travel the world, doing what I love.
+GINA: But I wish I got to actually see it, y'know?
+GINA: Not just fly in, sleep, luge, fly out.
+
+GINA: Alright, let's do some air hockey!
+GINA: After hyping myself up like that, my ego definitely can't handle a loss!
+GINA: So you'll be a good date and let me win, right?
+GINA: Ahahaha, just kidding!
+
+> background airhockey.png
+
+> show gina_angry.png
+GINA: Gotcha now!
+PLAYER: (I'm down five to nothing...)
+PLAYER: (Should I change it up?)
+> choice
+| Go aggressive gina_date_cont
+| Keep playing defensive gina_date_cont
+
+> LABEL gina_date_cont
+> background arcade.png
+> show gina_happy.png
+GINA: Good game!
+GINA: I thought I told you not to let me win, heh!
+PLAYER: (She's a monster...)
+PLAYER: (I don't think I could have won, no matter what I did...)
+
+> FLAG gina2
+> JUMP gina_end
+
+> LABEL train
+
+> show gina_happy.png
+GINA: Oh, yeah. Going fast is the best!
+Hmm...oh, I got it!
+See you tomorrow!
+
+> background none
+The next day...
+
+> background trainstation.png
+> show gina_happy.png
+GINA: Hey, you made it!
+GINA: You look really cute!
+GINA: Excited for our date today?
+
+> choice
+| At a train station...? train_what
+| YEAHHH TRAINS!!!! train_yes
+
+> LABEL train_yes
+> show gina_surprised.png
+GINA: Oh my gosh...
+GINA: ...that's...more excitement than I expected!
+> show gina_happy.png
+GINA: But, hey, glad you're enjoying yourself!
+GINA: We're gonna go someplace really fun today!
+> JUMP applep2
+
+> LABEL train_what
+> show gina_neutral.png
+GINA: Yeah! I thought we could watch them come in and out of the station...
+> show gina_happy.png
+GINA: No, silly. We're going ON the train!
+GINA: It can go over 250 kilometers an hour! Isn't that rad?
+> show gina_surprised.png
+GINA: That's even faster than luging!
+PLAYER: But where are we going on the train?
+> show gina_happy.png
+GINA: That's a surprise, *obviously*!
+
+> LABEL applep2
+
+> show none
+PLAYER: (Gina went to buy us tickets...)
+PLAYER: (I tried to sneak a peek, but she didn't let me...)
+
+> show gina_happy.png
+GINA: I'm back!
+We're all ready to board! Let's go line up!
+> show gina_neutral.png
+You know, I used to be TERRIFIED of trains.
+Back home, I was taking a train to a friend's place.
+It was one of those older ones where you can go out onto the balcony.
+We were leaving the station. I was leaning out, waving bye to my parents...
+> show gina_happy.png
+...and then I actually FELL over the side!
+The train had to stop and everything! And I went to the hospital...
+But I actually wasn't scared at all!
+> show gina_neutral.png
+I think something about me has always been drawn to thrills.
+PLAYER: Glad everything was okay.
+I can see why you're a luger.
+> show gina_happy.png
+GINA: Yeah!
+Every single time I get on the track, I end up having an amazing day.
+Luging has been a dream come true for me. I'm so grateful.
+I get to travel the world. Have all sorts of adventures...
+> show gina_neutral.png
+And sometimes I get lucky enough to meet someone great...
+
+> background none
+> music none
+
+A few hours later...
+
+> music day.ogg
+> background applepicking.jpg
+> show gina_happy.png
+GINA: Here we are!
+GINA: Ready to do some apple picking? This is the best farm in the whole area for it!
+GINA: Ooh, that one looks so juicy...
+
+> background none
+PLAYER: (Gina and I picked apples for an hour. Our arms got tired...)
+
+> background stalls.jpg
+> show gina_neutral.png
+GINA: I have no clue what I'm gonna do with all these apples.
+GINA: But, hey, I guess that's a good problem to have.
+GINA: And man, are they delicious.
+GINA: Maybe I'll give 'em to my team.
+
+> sound TEMP_realization.ogg
+> show gina_surprised.png
+GINA: Oh wow! Is that what I think it is?
+GINA: A roasted chestnut stall! This whole area is famous for them!
+You gotta try one! I had one right when I got in, they're outta this world!
+
+> FLAG gina3
+> LABEL gina_end
+
+> background nightstreets.png 2
+> show gina_neutral.png
+> music love.ogg
+GINA: I've gone out with a few different guys. Usually lugers.
+GINA: They're nice and all, but kinda samey.
+GINA: I try to talk to them, but they never really listen to me.
+GINA: Everyone just thinks about luge for some reason!
+GINA: (to be fair it is really cool)
+GINA: But I want to have a life too, y'know?
+GINA: So I wanna do a little quiz to see if you've been listening.
+GINA: Don't worry, it's just one question!
+GINA: But if you get it right, I've got a really special surprise!
+
+> jump_if gina1 test2
+GINA: Do you remember what my favorite flower is?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+
+> choice
+| Sunflower wrong
+| Hydrangea wrong
+| Chrysanthemum wrong
+
+> label test2
+> jump_if gina2 test3
+GINA: Do you remember what state I grew up in?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+
+> choice
+| Massachusetts wrong
+| Ohio wrong
+| Washington wrong
+
+> label test3
+> jump_if gina3 test_final
+GINA: Do you remember why I went to the hospital as a kid?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+
+> choice
+| Kitchen accident wrong
+| Dehydrated wrong
+| Luge crash wrong
+
+> label test_final
+
+GINA: Do you remember what my favorite flower is?
+PLAYER: (...!)
+(I know this!)
+
+> choice
+| Sunflower wrong
+| Hydrangea wrong
+| Lavender good_end
+
+> LABEL wrong
+GINA: No, that's not it...
+GINA: Ah well. Maybe my expectations are too high, haha!
+GINA: Thanks for going out with me. I had a lot of fun seeing you!
+GINA: I should get back to my hotel and start packing...
+GINA: I'll see you at the next tournament!
+> JUMP bad_end
+
+> LABEL bad_end
+> background hotelroom.png
+> music crickets.ogg
+PLAYER: Today was so fun...
+PLAYER: I'm finally starting to feel like I belong.
+PLAYER: Like I'm finding my place.
+
+> background none
+PLAYER: Hope Gina and I can hang out again someday...
+PLAYER: But...can't help wondering what her "special surprise" was...
+PLAYER: zzz...
+
+> bad_end
+
+> label good_end
+
+GINA: Yeah! You got it!
+Thank you...
+I really appreciate it. I feel like you get me.
+Let's go get you that special surprise...
+
+> jump gina_luge.txt

@@ -1,0 +1,13 @@
+<div id="mainContainer">
+</div>
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+{% if not team.is_limited %}
+<script type="text/javascript">
+const urlParams = new URLSearchParams(window.location.search);
+if (!urlParams.has('token')) {
+	window.location.href = `${window.location.pathname}?token={{ team.name|urlencode }}`;
+}
+</script>
+{% endif %}
+<script type="text/javascript" src="dist/bundle.js"></script>

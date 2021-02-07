@@ -1,0 +1,7 @@
+<p>Thanks for your word search! Here's a puzzle:</p>
+
+<ul>
+    {% for pair in extraction %}
+    <li> {{pair[0]}} + {{pair[1]}}
+    {% endfor %}
+</ul>

@@ -1,0 +1,36 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% block title %}Events Schedule &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Events Schedule</h1>
+  <main>
+    <div class="info">
+      {% include 'top/events.html.tmpl' %}
+
+      <p class="fourthwall">
+        Due to the online nature of the conference, we will be holding
+        these sessions over <a href="https://discord.com/" target="_blank">Discord</a>.
+        If you&rsquo;re not familiar with Discord, we&rsquo;ve prepared a
+        <a href="https://docs.google.com/document/d/e/2PACX-1vSZUozBZb8jMnDeCg7aHDXCmOiP1CWO7XIqWNYNv6DmTZFZk0ml5bAhfaZM-3YTrXs7f80NOGz3kjVb/pub" target="_blank">guide to getting started</a>.
+        Don&rsquo;t hesitate to contact us if you have any trouble!
+      </p>
+      {% if request.is_it_hunt_yet and not team.is_limited %}
+      <p><b>You can register for the first two conference sessions here.
+      Registration for the other conference sessions will open by
+      early Saturday morning.</b></p>
+
+      <h2>Conference Session #1 Registration</h2>
+
+      <iframe src="../puzzle/sailing/register" height="400" style="border: none; width: 100%;"></iframe>
+
+      <h2>Conference Session #2 Registration</h2>
+
+      <iframe src="../puzzle/archery/register" height="400" overflow="auto" style="border: none; width: 100%;"></iframe>
+      {% endif %}
+    </div>
+
+  </main>
+</div>
+{% endblock %}

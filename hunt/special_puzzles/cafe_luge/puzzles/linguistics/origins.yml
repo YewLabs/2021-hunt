@@ -1,0 +1,82 @@
+name: origins
+difficulty: 2/10
+coolness: 6/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "What language does the word \"keelhauling\" originate from?"
+        - answer: dutch
+
+    - question:
+        - text: "What language does the word \"tattoo\" originate from?"
+        - answer: dutch
+        - answer: samoan
+        - answer: polynesian
+        - answer: tahitian
+        - answer: tongan
+
+    - question:
+        - text: "What language does the word \"bureau\" originate from?"
+        - answer: french
+
+    - question:
+        - text: "What language does the word \"dandelion\" originate from?"
+        - answer: french
+
+    - question:
+        - text: "What language does the word \"wiki\" originate from?"
+        - answer: hawaiian
+
+    - question:
+        - text: "What language does the word \"ketchup\" originate from?"
+        - answer: chinese
+        - answer: amoy
+        - answer: malay
+        - answer: cantonese
+        - answer: quanzhou
+        - answer: zhangzhou
+        - answer: french
+
+    - question:
+        - text: "What language does the slang word \"skosh\" originate from?"
+        - answer: japanese
+
+    - question:
+        - text: "What language does the word \"sudoku\" originate from?"
+        - answer: japanese
+
+    - question:
+        - text: "What language does the word \"avatar\" originate from?"
+        - answer: sanskrit
+
+    - question:
+        - text: "What language does the word \"piano\" originate from?"
+        - answer: italian
+
+    - question:
+        - text: "What language does the word \"cartoon\" originate from?"
+        - answer: italian
+        - answer: dutch
+
+    - question:
+        - text: "What language does the word \"banshee\" originate from?"
+        - answer: irish
+
+    - question:
+        - text: "What language does the word \"whiskey\" originate from?"
+        - answer: irish
+        - answer: gaelic
+        - answer: scots
+        - answer: scots gaelic
+        - answer: scottish gaelic
+
+    - question:
+        - text: "What language does the word \"berserk\" originate from?"
+        - answer: norse
+        - answer: old norse
+
+    - question:
+        - text: "What language does the word \"ugly\" originate from?"
+        - answer: norse
+        - answer: old norse

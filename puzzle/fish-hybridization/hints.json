@@ -1,0 +1,1 @@
+[[0.0, [""], "This is an Animal Crossing: New Horizons puzzle."], [50.0, [""], "Each clue clues the \"crossing\" of two fish by their \"capture quotes\"."], [100.0, [""], "Ignoring spaces, the names of the two fish in each \"crossing\" have the same length and exactly one letter at the same position, which you should extract."]]

@@ -1,0 +1,27 @@
+{% extends "round/generic-puzzle.html.tmpl" %}
+{% load static %}
+
+{% block stylesheets %}
+<style>
+  body {
+    {% if round.name == '⊥IW.giga' or round.name == '404' %}
+    background-color: #0F191F;
+    {% elif round.name == '⊥IW.kilo' %}
+    background-color: #1B2E42;
+    {% elif round.name == '⊥IW.milli' %}
+    background-color: #254160;
+    {% endif %}
+  }
+
+  .content {
+    {% if round.name == '⊥IW.giga' or round.name == '404' %}
+    background-image: url({% static 'art/gigabg.png' %});
+    {% elif round.name == '⊥IW.kilo' %}
+    background-image: url({% static 'art/kilobg.png' %});
+    {% elif round.name == '⊥IW.milli' %}
+    background-image: url({% static 'art/millibg.png' %});
+    {% endif %}
+    background-size: 100% auto;
+  }
+</style>
+{% endblock %}

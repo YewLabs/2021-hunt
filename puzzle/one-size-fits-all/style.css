@@ -1,0 +1,46 @@
+table {
+    margin: auto;
+}
+
+.dropquote {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  font-family: "Courier New", Courier, monospace;
+  padding: 5px;
+  min-height: 30px;
+  min-width: 30px;
+  vertical-align: bottom;
+}
+
+.dropquote-bucket {
+    max-width:10px;
+    word-wrap:break-word;
+    margin:auto;
+}
+
+.used{
+    text-decoration: line-through;
+}
+
+.bucket-bad {
+    background-color:red;
+}
+
+.dropquote-highlight {
+    background-color:yellow;
+}
+
+.dropquote-empty {
+    background-color:whitesmoke;
+}
+
+.dropquote-solid {
+    background-color:black;
+}
+
+.dropquote-filler {
+    min-height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}

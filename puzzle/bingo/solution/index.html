@@ -1,0 +1,139 @@
+<style>
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .notes {
+  }
+</style>
+
+<p>Upon opening the page we are provided with a bingo board with a table of statements, in the style of Alex Irpan’s <a href="https://www.alexirpan.com/mystery-hunt-bingo/" target="_blank">mystery-hunt-bingo</a> generator. Above the given board is a number in the range 1&ndash;25.</p>
+
+<p>Refreshing the page changes both the board and number, but as we refresh, we’ll notice that the statements for a board with a given number do not change (i.e., board #5 will always contain the same statements in the same order), and that some statements are repeated across multiple boards.</p>
+
+<p>Eventually we must realize that all of the statements can be answered as unambiguously true or false when applied to the current Mystery Hunt. Some of the statements reference our own team’s progress, but these can be answered definitively as well (we generated these statements dynamically when teams first loaded the puzzle based on their unique puzzle progress).</p>
+
+<table>
+  <col>
+  <col>
+  <col style="width:50%">
+<tr><th class="statement">Statement</th><th>Value</th><th class="notes">Notes (spoilers!)</th></tr>
+<tr><td>Puzzle requires cooking something to receive the final answer.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/bake-off">Bake Off</a> requires baking a cookie.</td></tr>
+<tr><td>Puzzle references previous Mystery Hunts.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/unraveling-the-mystery">Unraveling the Mystery</a>, <a target="_blank" href="/puzzle/circles">Circles</a>, and <a target="_blank" href="/puzzle/chromolume-drawing-305">Chromolume Drawing #305</a> all reference past Mystery Hunts.</td></tr>
+<tr><td>Puzzle uses an anime that started airing in the past 2 years.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/foundations-collection">Foundation’s Collection</a> references <em>Cells at Work!</em> and <em>JoJo's Bizarre Adventure: Golden Wind</em></td></tr>
+<tr><td>Puzzle uses a TV show that stopped airing before 1980.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involves playing a video game.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/divided-is-us">Divided is Us</a>, <a target="_blank" href="/puzzle/yweiyst">You Will Explode if You Stop Talking</a>, and <a target="_blank" href="/puzzle/super-mystery-world">Super Mystery World</a> all require playing video games</td></tr>
+<tr><td>Puzzle uses a video game released in the past 2 years.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/divided-is-us">Divided is Us</a> uses <em>Baba Is You</em>, which was released in 2019, and <a target="_blank" href="/puzzle/game-ditty-quiz">Game Ditty Quiz</a> uses <em>The Legend of Zelda: Link’s Awakening</em>, also released in 2019.</td></tr>
+<tr><td>Puzzle involves matching puzzle content to a location on MIT campus.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/hockfield-court">Hockfield Court</a> involves filling out a crossword on the paths of the real Hockfield Court</td></tr>
+<tr><td>Puzzle secretly references a board game.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/disorder">Disorder</a> is secretly about Diplomacy and <a target="_blank" href="/puzzle/clueless">Clueless</a> is semi-secretly about Hanabi</td></tr>
+<tr><td>Puzzle uses grad-level math or higher.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/complexity-evaluation">Complexity Evaluation</a> requires advanced complexity theory.</td></tr>
+<tr><td>Puzzle where teams must create a video for HQ.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/its-tricky">It’s Tricky</a> requires teams to send us a TikTok video.</td></tr>
+<tr><td>Puzzle about Magic: the Gathering.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/musical-theatre-guild">Musical Theatre Guild</a> is about <em>Magic: the Gathering</em></td></tr>
+<tr><td>Puzzle data is embedded in something produced months ago.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/how-to-run-a-puzzlehunt">How to Run a Puzzlehunt</a> embeds puzzle data in the <a href="https://github.com/galacticpuzzlehunt/gph-site">gph-site</a> repository, <a target="_blank" href="/puzzle/you-learn-something-new-every-day">You Learn Something New Every Day</a> embeds puzzle data in a <a href="https://www.learnedleague.com/oneday.php?paradoxes">LearnedLeague One-Day Special</a>, and <a href="/puzzle/mit-confessions" target="_blank">MIT Confessions</a> embeds puzzle data on the <a href="https://www.facebook.com/beaverconfessions/" target="_blank">MIT Confessions Facebook Page</a>.</td></tr>
+<tr><td>Puzzle uses blockchains in some way.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle uses ternary in extraction.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/slitheɹlᴉuʞs/">Slitheɹlᴉuʞs</a> uses ternary in extraction.</td></tr>
+<tr><td>At least five puzzles involve rearranging trigrams.</td><td>TRUE</td><td>A subpuzzle of <a target="_blank" href="/puzzle/infinite-17/">Cafe Five</a> involves rearranging trigrams, and there are 10,000 instances of Cafe Five, which is certainly more than five. Incidentally, <a target="_blank" href="/puzzle/disorder">Disorder</a>, <a target="_blank" href="/puzzle/extensive">Extensive</a>, and perhaps <a target="_blank" href="/puzzle/relitasti">Relitasti</a> also involve rearranging trigrams.</td></tr>
+<tr><td>At least three puzzles involve cryptic clues.</td><td>TRUE</td><td>Again, since <a target="_blank" href="/puzzle/infinite-17/">Cafe Five</a> involves cryptic clues, at least 10,000 puzzles have cryptic clues. (<a target="_blank" href="/puzzle/circular-reasoning">Circular Reasoning</a>, <a target="_blank" href="/puzzle/pcluers">PClueRS</a>, and <a target="_blank" href="/puzzle/tunnels">Tunnels</a> also do).</td></tr>
+<tr><td>Puzzle's answer is contained in a QR code.</td><td>TRUE</td><td>See below.</td></tr>
+<tr><td>Puzzle must be backsolved.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/twins">Twins</a>, <a target="_blank" href="/puzzle/level-one">Level One</a>, and <a target="_blank" href="/puzzle/⊥IW.nano">⊥IW.nano</a> must all be backsolved (indeed, this is the main conceit of the <a href="/round/nano">⊥IW.nano</a> round).</td></tr>
+<tr><td>Hunt contains at least 20,000 puzzles (base ten).</td><td>TRUE</td><td>The <a href="/round/infinite/">Infinite Corridor</a> round has at least 50,000 puzzles, making this true. This statement is a reference to the 2015 Mystery Hunt titled <em>20,000 Puzzles Under the Sea</em>, which claimed to have 20,000 puzzles in base 3.</td></tr>
+<tr><td>Puzzle involves translating puflantu.</td><td>FALSE</td><td>One of the gifs in <a target="_blank" href="/puzzle/🤔/">🤔</a> is from a <a href="https://www.youtube.com/watch?v=pnMrCESSqps">puflantu-version of a Steamed Hams video</a>, but solving that clue does not require translating puflantu.</td></tr>
+<tr><td>Puzzle involves calling a phone number.</td><td>FALSE</td><td><a target="_blank" href="/puzzle/✏">✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣</a> involves texting a phone number, but no puzzle requires calling a phone number.</td></tr>
+<tr><td>Puzzle content appears in The Tech.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/stata">Stata Center</a> uses a crossword in the latest edition of <em>The Tech</em>.</td></tr>
+<tr><td>Metapuzzle involving fewer than four answers.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/macgregor-house">MacGregor House</a> is a metapuzzle using only two answers.</td></tr>
+<tr><td>Metapuzzle involving greater than sixty-five answers.</td><td>TRUE</td><td>The <a target="_blank" href="/puzzle/infinite-corridor">Infinite Corridor</a> meta involves 50,000 answers.</td></tr>
+<tr><td>At least 1 puzzle that changes when you refresh the page.</td><td>TRUE</td><td>This puzzle (among many others) changes when you refresh the page.</td></tr>
+<tr><td>Puzzle is self-referential.</td><td>TRUE</td><td>See above.</td></tr>
+<tr><td>Hunt takes at least ten minutes.</td><td>TRUE</td><td></td></tr>
+<tr><td>Puzzle requires setting a physical object on fire to solve.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involves solving a slitherlink.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/slitheɹlᴉuʞs">Slitheɹlᴉuʞs</a> unsurprisingly involves solving a slitherlink.</td></tr>
+<tr><td>Puzzle containing no alphabetic characters.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/✏️">✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣</a> contains only emoji.</td></tr>
+<tr><td>Puzzle that only works in dark mode.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle references a local Cambridge restaurant.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/world-search">World Search</a> references <a href="https://www.cloverfoodlab.com/">Clover Food Lab</a></td></tr>
+<tr><td>Puzzle referencing Steamed Hams.</td><td>TRUE</td><td>One of the gifs in <a target="_blank" href="/puzzle/🤔/">🤔</a> is from a <a href="https://www.youtube.com/watch?v=pnMrCESSqps">puflantu-version of a Steamed Hams video</a>.</td></tr>
+<tr><td>Jigsaw puzzle with no printing on pieces.</td><td>FALSE</td><td></td></tr>
+<tr><td>Fewer than 8 errata.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle whose answer is at least 40 characters long.</td><td>FALSE</td><td>The longest, DEPARTMENT OF MAGICAL LAW ENFORCEMENT, has 37 characters including spaces.</td></tr>
+<tr><td>Puzzle whose title is at least 80 characters long.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/math-1001003" style="word-break: break-all">1000000000000000000000000000000000000000000000000000000000000000000001000000000000116</a> has 85 characters.</td></tr>
+<tr><td>Puzzle whose title is the same as its answer.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involves a crossword with at least 600 squares.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involves an esoteric programming language.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/befuddled">Befuddled</a> involves Befunge, among several other esolangs.</td></tr>
+<tr><td>Puzzle is a diagramless crossword.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/filler-puzzle">Filler Puzzle</a> is a diagramless crossword.</td></tr>
+<tr><td>Puzzle involves solving a sudoku.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/fun-with-sudoku">Fun With Sudoku</a> unsurprisingly involves solving several sudokus. <a target="_blank" href="/puzzle/for-your-eyes-only">For Your Eyes Only</a> also contains a sudoku.</td></tr>
+<tr><td>Puzzle requires building a Nintendo Labo.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle titled 50/50.</td><td>FALSE</td><td></td></tr>
+<tr><td>Page on the hunt website plays Rock Lobster.</td><td>TRUE</td><td><em>Rock Lobster</em> is played in the Projection Device as you approach the Rock Star in the Pirate Ship event. It's also part of the solve sound for the Charles River round.</td></tr>
+<tr><td>Puzzle with a crossword that involves filling anything other than letters in its cells.</td><td>FALSE</td><td><a href="/puzzle/🤔" target="_blank">🤔</a> has emoji in it, but does not involve actually writing any additional emojis in the cells of the crossword.</td></tr>
+<tr><td>Erratum issued in the first ten minutes.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involving state flags.</td><td>FALSE</td><td></td></tr>
+<tr><td>Event involving estimation.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle about Pokémon.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/whos-that-pokemon">Who's that Pokémon?</a> is (surprise, surprise) about Pokémon.</td></tr>
+<tr><td>At least 5 events.</td><td>TRUE</td><td></td></tr>
+<tr><td>Puzzle that is secretly a physical runaround.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle that is secretly not a physical runaround.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/runaround-training">Runaround Training</a> is secretly not a runaround.</td></tr>
+<tr><td>Puzzle that is a text adventure.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/oh-the-places-youll-go">Oh, the Places You'll Go!</a> and <a target="_blank" href="/puzzle/help-im-trapped-in-a-computer">Help I'm Trapped in a Computer</a> are both text adventures.</td></tr>
+<tr><td>Puzzle involving solving a crossword.</td><td>TRUE</td><td></td></tr>
+<tr><td>Puzzle involves texting a phone number.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/✏️">✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣</a> involves texting a phone number</td></tr>
+<tr><td>Puzzle involving great circle mapping.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/twins">Twins</a> involves great circle mapping.</td></tr>
+<tr><td>Puzzle about chess.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/maseeh-hall">Maseeh Hall</a> is about chess.</td></tr>
+<tr><td>Puzzle involving knitting.</td><td>FALSE</td><td><a target="_blank" href="/puzzle/cross-stitched-words">Cross-Stitched Words</a> is about cross-stitching, which is not knitting.</td></tr>
+<tr><td>Puzzle involving liquids distributed to teams.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/water-bottle">Water Bottle</a> involves this.</td></tr>
+<tr><td>Puzzle involving long division.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involving Huffman coding.</td><td>TRUE</td><td>A subpuzzle of <a target="_blank" href="/puzzle/extensive">Extensive</a> involves Huffman coding (specifically kah.lua).</td></tr>
+<tr><td>Puzzle about combinatorial game theory.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle without any words other than the title.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/✏️">✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣</a>, <a target="_blank" href="/puzzle/enclosures">Enclosures</a>, <a target="_blank" href="/puzzle/circles">Circles</a>, <a target="_blank" href="/puzzle/common-knowledge">Common Knowledge</a>, <a target="_blank" href="/puzzle/things">Things</a> and many other puzzles all have no words beyond their titles.</td></tr>
+<tr><td>Puzzle involves solfège.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/baker-house">Baker House</a> involves solfège.</td></tr>
+<tr><td>Puzzle involves rearranging trigrams.</td><td>TRUE</td><td>As discussed above, several puzzles involve trigram rearrangement.</td></tr>
+<tr><td>Puzzle page without any content other than the title.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/✏️">✏️✉️➡️3️⃣5️⃣1️⃣➖6️⃣6️⃣6️⃣➖6️⃣6️⃣5️⃣5️⃣</a> has no other content on the puzzle page itself.</td></tr>
+<tr><td>Puzzle about sewing.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/cross-stitched-words">Cross-Stitched Words</a> is about cross-stitching, a form of sewing.</td></tr>
+<tr><td>Puzzle involving more than five Taylor Swift songs.</td><td>FALSE</td><td><a target="_blank" href="/puzzle/recursion">Recursion</a>, several instances of <a target="_blank" href="/puzzle/infinite-3/">Unchained</a>, and <a target="_blank" href="/puzzle/dorm-row">Dorm Row</a> do involve Swift songs, but no puzzle involves more than five.</td></tr>
+<tr><td>Puzzle includes vowels but no consonants.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle about K-Pop.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle is a murder mystery.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle page includes at least 3 different IATA airport codes.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/bad-air-day">Bad Air Day</a> includes many IATA airport codes.</td></tr>
+<tr><td>Puzzle printed on a face mask.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involving gather.town.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involving Among Us.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involving resistor color codes.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/a-bit-of-light">A Bit of Light</a> involves resistor color codes in extraction.</td></tr>
+<tr><td>Puzzle with multiple answers.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle about Mahjong.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle is a Duck Konundrum.</td><td>FALSE</td><td><a target="_blank" href="/puzzle/everybody-dance-now">Everybody Dance Now</a> is a dance conundrum, but there are no Duck Konundra.</td></tr>
+<tr><td>Puzzle about bridge or poker.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle references the US 2020 election.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle using information embedded in an email sent before hunt.</td><td>FALSE</td><td></td></tr>
+<tr><td>Solved a puzzle in less than 5 minutes after unlocking it.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/rule-of-three">Rule of Three</a> is solved immediately upon unlocking the <a href="/round/nano">⊥IW.nano</a> round.</td></tr>
+<tr><td>Puzzle involving tangrams.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involving stock symbols.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle referencing the MBTA subway map.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/runaround-training">Runaround Training</a> references the MBTA subway (along with many other subway systems).</td></tr>
+<tr><td>Puzzle involving Bacon's cipher.</td><td>FALSE</td><td></td></tr>
+<tr><td>Puzzle involves the FAQ page.</td><td>TRUE</td><td><a target="_blank" href="/puzzle/over-9000">Over 9,000: an Abbreviated Yet Awesome Tour Of Your First Equally Excellent Puzzle Mechanic</a> involves indexing into an entry in the FAQ page.</td></tr>
+<tr><td>Puzzle involves constructing an electronic circuit.</td><td>FALSE</td><td></td></tr>
+</table>
+
+<p>Dynamic Statements:</p>
+<table>
+  <col>
+  <col>
+  <col style="width:50%">
+<tr><th class="statement">Statement</th><th>Value</th><th class="notes">Notes</th></tr>
+<tr><td>Made more than {} guesses on a single puzzle.</td><td>TRUE</td><td>We set this number to one less than the maximum number of guesses a team placed on any puzzle at the time they unlocked.</td></tr>
+<tr><td>Requested at least three hints on one puzzle.</td><td>TRUE</td><td>We included this statement if and only if it was true.</td></tr>
+<tr><td>This puzzle unlocked before 6pm EST Saturday.</td><td>?</td><td>We set the value of this statement dynamically based on when the team unlocked this puzzle.</td></tr>
+<tr><td>Solved our first puzzle within the first 10 minutes of hunt.</td><td>?</td><td>We set the value of this statement dynamically based on the time it took teams to solve their first puzzle.</td></tr>
+<tr><td>Solved our first meta within an hour of unlocking it.</td><td>?</td><td>We set the value of this statement dynamically based on the time it took teams to solve their first metapuzzle.</td></tr>
+</table>
+
+<p>As clued by one of the statements, if we fill in the true statements in the bingo boards and arrange the 25 grids in a 5 x 5 grid (thus making a 25 x 25 grid), we’ll produce a QR code which contains the answer to the puzzle: <span class="answer">IN PROGRESS</span>.</p>
+
+<img src="{{sroot}}qrcode.png" alt="QR code decoding to the answer IN PROGRESS" class="center">
+
+<p>We can use some of the standard features of QR codes (the finder patterns, timing patterns, and even the format info string) to confirm this theory and even disambiguate some statements. The code also has enough error correction built-in to withstand a handful of incorrectly answered statements.</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>JS: When participating in Mystery Hunt, Rahul and I always look forward to <strike>rigging</strike> generating our Bingo board each year, and we thought it would be neat to turn this tradition into a puzzle.</p>
+
+<p>RS: We intentionally set this puzzle as the last regular puzzle to unlock during hunt, hoping that teams would enjoy looking back on all the puzzles they had solved.</p>
+
+</div>

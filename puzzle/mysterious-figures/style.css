@@ -1,0 +1,38 @@
+.title {
+    color: white;
+    background: black;
+    font-size: 24pt;
+}
+table.pzl tr td {
+    width: 160px;
+    height: 130px;
+}
+
+@font-face {
+    font-family: 'puzzle';
+    src: url('{{sroot}}puzzle.woff2') format('woff2'),
+        url('{{sroot}}puzzle.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+table.pzl {
+    font-size: 9pt;
+}
+.small {
+    font-size: 5pt;
+}
+
+.smaller {
+    font-size: 5px;
+}
+
+table.soln tr td {
+    width: 100px;
+}
+table.grid {
+    border-collapse: collapse;
+}
+table.grid tr td {
+    border: 1px solid black;
+}

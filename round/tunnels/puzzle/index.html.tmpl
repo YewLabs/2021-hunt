@@ -1,0 +1,19 @@
+{% extends "round/generic-puzzle.html.tmpl" %}
+{% load static %}
+
+{% block stylesheets %}
+<style>
+  body {
+    background-color: #120300;
+  }
+
+  .content {
+    background-image: url({% static 'art/tunnelsbg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    background-color: #ffffffd0;
+  }
+</style>
+{% endblock %}

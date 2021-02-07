@@ -1,0 +1,392 @@
+<h2>Starting off</h2>
+<p>As hinted by the mention of "clues" and the fireworks-related words,
+as well as the choice of colors used,
+this is a puzzle about
+<a href="https://en.wikipedia.org/wiki/Hanabi_(card_game)">Hanabi</a>.
+The encoding of the cards by letters is sequential, as shown in the table below.
+(This can be confirmed by checking that, say, U = red 5 appears only once
+in any given scenario, whereas one scenario has A = red 1 three times.)</p>
+<table>
+<tr>
+    <th></th>
+    <th>Red</th>
+    <th>Yellow</th>
+    <th>Green</th>
+    <th>Blue</th>
+    <th>White</th>
+</tr>
+
+<tr>
+    <th>Rank 1</th>
+    <td style="color:#ff0000;">A</td>
+    <td style="color:#d6d600;">B</td>
+    <td style="color:#007700;">C</td>
+    <td style="color:#0000ff;">D</td>
+    <td style="color:#888888;">E</td>
+</tr>
+
+<tr>
+    <th>Rank 2</th>
+    <td style="color:#ff0000;">F</td>
+    <td style="color:#d6d600;">G</td>
+    <td style="color:#007700;">H</td>
+    <td style="color:#0000ff;">I</td>
+    <td style="color:#888888;">J</td>
+</tr>
+
+<tr>
+    <th>Rank 3</th>
+    <td style="color:#ff0000;">K</td>
+    <td style="color:#d6d600;">L</td>
+    <td style="color:#007700;">M</td>
+    <td style="color:#0000ff;">N</td>
+    <td style="color:#888888;">O</td>
+</tr>
+
+<tr>
+    <th>Rank 4</th>
+    <td style="color:#ff0000;">P</td>
+    <td style="color:#d6d600;">Q</td>
+    <td style="color:#007700;">R</td>
+    <td style="color:#0000ff;">S</td>
+    <td style="color:#888888;">T</td>
+</tr>
+
+<tr>
+    <th>Rank 5</th>
+    <td style="color:#ff0000;">U</td>
+    <td style="color:#d6d600;">V</td>
+    <td style="color:#007700;">W</td>
+    <td style="color:#0000ff;">X</td>
+    <td style="color:#888888;">Y</td>
+</tr>
+</table>
+
+<p>This leaves a set of logic puzzles to be solved
+(with the first scenario being an easy one
+for the solver to learn the ropes).</p>
+<h2>Endgame rules</h2>
+<p>Solvers will need to be familiar with
+<a href="https://gamerules.com/rules/hanabi/">the rules of Hanabi</a>,
+especially the conditions for the end of the game
+(each player once after the last card is drawn),
+and the fact that 5's restore a clue.</p>
+<p>This puzzle is specifically about Hanabi endgame situations in
+which the players have painted themselves into a bit of a corner.
+The rules for each of the given scenarios are:</p>
+<ul>
+<li>The players know what cards they are holding (hinted by the flavor text).</li>
+<li>The players start with 0 clues (hinted by the title and flavor text).</li>
+<li>The first player starts (written explicitly).</li>
+<li>The number of cards in the deck is n,
+    where the denominator of the "chances" number is n! (n factorial).</li>
+</ul>
+<p>These conditions are enough to give a unique path to a perfect score of 25.</p>
+<p>The numerator of the chances is <em>not needed</em> in order to solve the puzzle,
+but serves as a check-sum; it is the number of deck orderings for which the players do win
+(assuming that unneeded cards in the deck are trash).
+For example, in the first situation (where the deck has two cards),
+the players win only if red 4 is the first card in the deck,
+while the second card in the deck can be any trash card.</p>
+<h2>Solutions to the logic puzzles</h2>
+<p>For solving the puzzles, the following two heuristics are quite helpful.</p>
+<ul>
+<li>
+<p>The <a href="https://github.com/Zamiell/hanabi-live/blob/master/docs/FEATURES.md#pace--efficiency">pace</a>
+    of a game-state is defined by
+    <code>current score + cards in deck + number of plays - max score</code>.
+    It is independent of the number of clues,
+    and decreases by 1 for every discard before the last round.
+    It is impossible to win if the pace is negative.
+    Moreover, at pace 0, every player must play in the last round.</p>
+</li>
+<li>
+<p>Playing a 5 restores a clue,
+    and it is an important way to avoid discarding
+    (since players with no usable cards can spend clues to stall).</p>
+</li>
+<li>
+<p>We assume players never misplay
+    because it is strictly better to discard a card
+    than to misplay it.</p>
+</li>
+</ul>
+<p>Most of the scenarios start at a very low pace.
+For example, the scenario labeled <code>FIVES WIN THIS</code>
+starts at pace 0, meaning that no player may discard for the entire scenario.</p>
+<p>We now present solutions to the logic puzzles.
+They are shown in <a href="https://youtu.be/AK5wtom9CaQ">video format on YouTube</a>,
+also embedded here.
+To make the names easier to refer to,
+we call the first, second, third, fourth players
+as Alice, Bobby, Carol, David respectively,
+following a <a href="https://en.wikipedia.org/wiki/Alice_and_Bob">cryptography convention</a>.</p>
+<iframe width="840" height="472" src="https://www.youtube.com/embed/AK5wtom9CaQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p>We also provide the solutions in various text-based formats below:
+in the HTML itself,
+as a JSON file for use on <a href="https://www.hanab.live">hanab.live</a>,
+and as a plain text file with a complete proof
+that the solution path is actually unique.
+(In the text files below ".." means to spend a clue
+while "kt" is an abbreviation for "known trash".)</p><table>
+<tr><td colspan="3">
+<b>PUFF-UPS</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{sroot}}jsons/0.json">(json)</a>
+<a href="{{sroot}}texts/0.txt">(proof)</a>
+</td></tr>
+<tr><td width="15px"><tt>P</tt></td><th width="25px">1</th><td>Alice discards a stale card and draws <span style="color: #ff0000;">[P] red 4</span></td></tr>
+<tr><td width="15px"><tt>U</tt></td><th width="25px">2</th><td>Bobby stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>F</tt></td><th width="25px">3</th><td>Carol plays <span style="color: #ff0000;">[F] red 2</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>F</tt></td><th width="25px">4</th><td>David plays <span style="color: #ff0000;">[K] red 3</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>U</tt></td><th width="25px">5</th><td>Alice plays <span style="color: #ff0000;">[P] red 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>P</tt></td><th width="25px">6</th><td>Bobby plays <span style="color: #ff0000;">[U] red 5</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">7</th><td>Carol plays <span style="color: #888888;">[Y] white 5</span> on their last turn</td></tr>
+<tr><td colspan="3">
+<b>FIVES WIN THIS</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{sroot}}jsons/1.json">(json)</a>
+<a href="{{sroot}}texts/1.txt">(proof)</a>
+</td></tr>
+<tr><td width="15px"><tt>F</tt></td><th width="25px">1</th><td>Alice plays <span style="color: #007700;">[W] green 5</span> and draws <span style="color: #ff0000;">[U] red 5</span></td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">2</th><td>Bobby stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>V</tt></td><th width="25px">3</th><td>Carol plays <span style="color: #ff0000;">[P] red 4</span> and draws <span style="color: #888888;">[T] white 4</span></td></tr>
+<tr><td width="15px"><tt>E</tt></td><th width="25px">4</th><td>David plays <span style="color: #888888;">[O] white 3</span> and draws <span style="color: #0000ff;">[N] blue 3</span></td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">5</th><td>Alice plays <span style="color: #ff0000;">[U] red 5</span> and draws <span style="color: #0000ff;">[S] blue 4</span></td></tr>
+<tr><td width="15px"><tt>W</tt></td><th width="25px">6</th><td>Bobby stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">7</th><td>Carol plays <span style="color: #0000ff;">[I] blue 2</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>N</tt></td><th width="25px">8</th><td>David plays <span style="color: #0000ff;">[N] blue 3</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>T</tt></td><th width="25px">9</th><td>Alice plays <span style="color: #0000ff;">[S] blue 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>H</tt></td><th width="25px">10</th><td>Bobby plays <span style="color: #0000ff;">[X] blue 5</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">11</th><td>Carol plays <span style="color: #888888;">[T] white 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">12</th><td>David plays <span style="color: #888888;">[Y] white 5</span> on their last turn</td></tr>
+<tr><td colspan="3">
+<b>A BIG FUEL VESSEL</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{sroot}}jsons/2.json">(json)</a>
+<a href="{{sroot}}texts/2.txt">(proof)</a>
+</td></tr>
+<tr><td width="15px"><tt>A</tt></td><th width="25px">1</th><td>Alice plays <span style="color: #ff0000;">[A] red 1</span> and draws <span style="color: #0000ff;">[S] blue 4</span></td></tr>
+<tr><td width="15px"><tt>B</tt></td><th width="25px">2</th><td>Bobby discards a stale card and draws any card</td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">3</th><td>Carol discards a stale card and draws <span style="color: #d6d600;">[G] yellow 2</span></td></tr>
+<tr><td width="15px"><tt>G</tt></td><th width="25px">4</th><td>David stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>F</tt></td><th width="25px">5</th><td>Alice plays <span style="color: #0000ff;">[S] blue 4</span> and draws <span style="color: #d6d600;">[Q] yellow 4</span></td></tr>
+<tr><td width="15px"><tt>U</tt></td><th width="25px">6</th><td>Bobby plays <span style="color: #0000ff;">[X] blue 5</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>E</tt></td><th width="25px">7</th><td>Carol plays <span style="color: #d6d600;">[G] yellow 2</span> and draws <span style="color: #ff0000;">[F] red 2</span></td></tr>
+<tr><td width="15px"><tt>L</tt></td><th width="25px">8</th><td>David plays <span style="color: #d6d600;">[L] yellow 3</span> and draws <span style="color: #ff0000;">[K] red 3</span></td></tr>
+<tr><td width="15px"><tt>V</tt></td><th width="25px">9</th><td>Alice plays <span style="color: #d6d600;">[Q] yellow 4</span> and draws <span style="color: #ff0000;">[P] red 4</span></td></tr>
+<tr><td width="15px"><tt>E</tt></td><th width="25px">10</th><td>Bobby plays <span style="color: #d6d600;">[V] yellow 5</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">11</th><td>Carol plays <span style="color: #ff0000;">[F] red 2</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">12</th><td>David plays <span style="color: #ff0000;">[K] red 3</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>E</tt></td><th width="25px">13</th><td>Alice plays <span style="color: #ff0000;">[P] red 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>L</tt></td><th width="25px">14</th><td>Bobby plays <span style="color: #ff0000;">[U] red 5</span> on their last turn</td></tr>
+<tr><td colspan="3">
+<b>FIRE EPIC BLOSSOM</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{sroot}}jsons/3.json">(json)</a>
+<a href="{{sroot}}texts/3.txt">(proof)</a>
+</td></tr>
+<tr><td width="15px"><tt>F</tt></td><th width="25px">1</th><td>Alice plays <span style="color: #007700;">[W] green 5</span> and draws <span style="color: #ff0000;">[K] red 3</span></td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">2</th><td>Bobby stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>R</tt></td><th width="25px">3</th><td>Carol discards a stale card and draws <span style="color: #888888;">[E] white 1</span></td></tr>
+<tr><td width="15px"><tt>E</tt></td><th width="25px">4</th><td>David stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>E</tt></td><th width="25px">5</th><td>Alice plays <span style="color: #ff0000;">[K] red 3</span> and draws <span style="color: #ff0000;">[U] red 5</span></td></tr>
+<tr><td width="15px"><tt>P</tt></td><th width="25px">6</th><td>Bobby plays <span style="color: #ff0000;">[P] red 4</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">7</th><td>Carol plays <span style="color: #888888;">[E] white 1</span> and draws <span style="color: #888888;">[Y] white 5</span></td></tr>
+<tr><td width="15px"><tt>C</tt></td><th width="25px">8</th><td>David plays <span style="color: #888888;">[J] white 2</span> and draws <span style="color: #0000ff;">[S] blue 4</span></td></tr>
+<tr><td width="15px"><tt>B</tt></td><th width="25px">9</th><td>Alice plays <span style="color: #ff0000;">[U] red 5</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>L</tt></td><th width="25px">10</th><td>Bobby stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">11</th><td>Carol plays <span style="color: #888888;">[O] white 3</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">12</th><td>David plays <span style="color: #0000ff;">[S] blue 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">13</th><td>Alice plays <span style="color: #0000ff;">[X] blue 5</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">14</th><td>Bobby plays <span style="color: #888888;">[T] white 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>M</tt></td><th width="25px">15</th><td>Carol plays <span style="color: #888888;">[Y] white 5</span> on their last turn</td></tr>
+<tr><td colspan="3">
+<b>PYROPHORIC ROOFTOPS</b>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="{{sroot}}jsons/4.json">(json)</a>
+<a href="{{sroot}}texts/4.txt">(proof)</a>
+</td></tr>
+<tr><td width="15px"><tt>P</tt></td><th width="25px">1</th><td>Alice discards a stale card and draws <span style="color: #ff0000;">[P] red 4</span></td></tr>
+<tr><td width="15px"><tt>Y</tt></td><th width="25px">2</th><td>Bobby plays <span style="color: #ff0000;">[F] red 2</span> and draws <span style="color: #ff0000;">[U] red 5</span></td></tr>
+<tr><td width="15px"><tt>R</tt></td><th width="25px">3</th><td>Carol stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">4</th><td>David plays <span style="color: #ff0000;">[K] red 3</span> and draws <span style="color: #007700;">[C] green 1</span></td></tr>
+<tr><td width="15px"><tt>P</tt></td><th width="25px">5</th><td>Alice plays <span style="color: #ff0000;">[P] red 4</span> and draws <span style="color: #007700;">[H] green 2</span></td></tr>
+<tr><td width="15px"><tt>H</tt></td><th width="25px">6</th><td>Bobby plays <span style="color: #ff0000;">[U] red 5</span> and draws <span style="color: #007700;">[M] green 3</span></td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">7</th><td>Carol stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>R</tt></td><th width="25px">8</th><td>David plays <span style="color: #007700;">[C] green 1</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>I</tt></td><th width="25px">9</th><td>Alice plays <span style="color: #007700;">[H] green 2</span> and draws <span style="color: #888888;">[T] white 4</span></td></tr>
+<tr><td width="15px"><tt>C</tt></td><th width="25px">10</th><td>Bobby plays <span style="color: #007700;">[M] green 3</span> and draws <span style="color: #888888;">[E] white 1</span></td></tr>
+<tr><td width="15px"><tt>R</tt></td><th width="25px">11</th><td>Carol plays <span style="color: #007700;">[R] green 4</span> and draws <span style="color: #888888;">[J] white 2</span></td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">12</th><td>David plays <span style="color: #007700;">[W] green 5</span> and draws any card</td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">13</th><td>Alice stalls by spending a clue</td></tr>
+<tr><td width="15px"><tt>F</tt></td><th width="25px">14</th><td>Bobby plays <span style="color: #888888;">[E] white 1</span> and draws <span style="color: #888888;">[Y] white 5</span></td></tr>
+<tr><td width="15px"><tt>T</tt></td><th width="25px">15</th><td>Carol plays <span style="color: #888888;">[J] white 2</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>O</tt></td><th width="25px">16</th><td>David plays <span style="color: #888888;">[O] white 3</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>P</tt></td><th width="25px">17</th><td>Alice plays <span style="color: #888888;">[T] white 4</span> on their last turn</td></tr>
+<tr><td width="15px"><tt>S</tt></td><th width="25px">18</th><td>Bobby plays <span style="color: #888888;">[Y] white 5</span> on their last turn</td></tr>
+</table>
+<h2>Extraction</h2>
+<p>By now, the solvers have likely noticed that
+the number of turns exactly matches the number of letters in the "plan",
+which is the last unused piece of information.
+Solvers can take the cards played on each turn
+(treating clue and discard turns as empty slots)
+and overlap them with the plan for each scenario.
+This yields the following letters.</p><style type="text/css">
+div#main-container {
+	position: relative;
+	font-family: "Metropolis", sans-serif
+}
+div.block {
+	position: absolute;
+	display: inline-block;
+	border: 3px black solid;
+	padding: 0.25em;
+	width: 16em;
+	height: 12em;
+	vertical-align: middle;
+	margin: 0em;
+	box-sizing: border-box;
+}
+div.block0 {
+	top: 0.5em;
+	left: 0.5em;
+}
+div.block1 {
+	top: 0.5em;
+	left: 18.25em;
+}
+div.block2 {
+	top: 7.75em;
+	left: 36em;
+}
+div.block3 {
+	top: 15em;
+	left: 18.25em;
+}
+div.block4 {
+	top: 15em;
+	left: 0.5em;
+}
+div.block5 {
+	top: 22.5em;
+	left: 36em;
+	height: 2em;
+	text-align: center;
+}
+
+</style>
+
+<div id="main-container">
+<svg width="40em" height="32em">
+	<line x1="16.5em" y1="6.5em" x2="18.3em" y2="6.5em" stroke="black" stroke-width="0.1em"/>
+	<line x1="16.5em"  y1="21em" x2="18.3em" y2="21em" stroke="black" stroke-width="0.1em"/>
+	<line x1="34.2em" y1="6.5em" x2="36.05em" y2="11.5em" stroke="black" stroke-width="0.1em"/>
+	<line x1="34.2em"  y1="21em" x2="36.05em" y2="16em" stroke="black" stroke-width="0.1em"/>
+</svg>
+<div class="block block0">
+<h4>Puff-ups</h4>
+<p>
+<tt>PU<b><u>F</u></b>FUPS</tt>
+<br>
+<tt>..<b><u><span style="color:#ff0000">F</span></u></b><span style="color:#ff0000">K</span><span style="color:#ff0000">P</span><span style="color:#ff0000">U</span><span style="color:#888888">Y</span></tt>
+</p>
+<h3>Matching: F</h3>
+</div>
+<div class="block block1">
+<h4>Fives win this</h4>
+<p>
+<tt>FIVESW<b><u>I</u></b><b><u>N</u></b>THIS</tt>
+<br>
+<tt><span style="color:#007700">W</span>.<span style="color:#ff0000">P</span><span style="color:#888888">O</span><span style="color:#ff0000">U</span>.<b><u><span style="color:#0000ff">I</span></u></b><b><u><span style="color:#0000ff">N</span></u></b><span style="color:#0000ff">S</span><span style="color:#0000ff">X</span><span style="color:#888888">T</span><span style="color:#888888">Y</span></tt>
+</p>
+<h3>Matching: IN</h3>
+</div>
+<div class="block block2">
+<h4>A big fuel vessel</h4>
+<p>
+<tt><b><u>A</u></b>BIGFUE<b><u>L</u></b>VESSEL</tt>
+<br>
+<tt><b><u><span style="color:#ff0000">A</span></u></b>...<span style="color:#0000ff">S</span><span style="color:#0000ff">X</span><span style="color:#d6d600">G</span><b><u><span style="color:#d6d600">L</span></u></b><span style="color:#d6d600">Q</span><span style="color:#d6d600">V</span><span style="color:#ff0000">F</span><span style="color:#ff0000">K</span><span style="color:#ff0000">P</span><span style="color:#ff0000">U</span></tt>
+</p>
+<h3>Matching: AL</h3>
+</div>
+<div class="block block3">
+<h4>Fire epic blossom</h4>
+<p>
+<tt>FIREE<b><u>P</u></b>ICBL<b><u>O</u></b><b><u>S</u></b>SOM</tt>
+<br>
+<tt><span style="color:#007700">W</span>...<span style="color:#ff0000">K</span><b><u><span style="color:#ff0000">P</span></u></b><span style="color:#888888">E</span><span style="color:#888888">J</span><span style="color:#ff0000">U</span>.<b><u><span style="color:#888888">O</span></u></b><b><u><span style="color:#0000ff">S</span></u></b><span style="color:#0000ff">X</span><span style="color:#888888">T</span><span style="color:#888888">Y</span></tt>
+</p>
+<h3>Matching: POS</h3>
+</div>
+<div class="block block4">
+<h4>Pyrophoric rooftops</h4>
+<p>
+<tt>PYRO<b><u>P</u></b>HORIC<b><u>R</u></b>OOFT<b><u>O</u></b>PS</tt>
+<br>
+<tt>.<span style="color:#ff0000">F</span>.<span style="color:#ff0000">K</span><b><u><span style="color:#ff0000">P</span></u></b><span style="color:#ff0000">U</span>.<span style="color:#007700">C</span><span style="color:#007700">H</span><span style="color:#007700">M</span><b><u><span style="color:#007700">R</span></u></b><span style="color:#007700">W</span>.<span style="color:#888888">E</span><span style="color:#888888">J</span><b><u><span style="color:#888888">O</span></u></b><span style="color:#888888">T</span><span style="color:#888888">Y</span></tt>
+</p>
+<h3>Matching: PRO</h3>
+</div>
+<div class="block block5">
+_ _ _ _ _ _ _ _ _
+</div>
+
+</div>
+<p>This spells the message <code>FINAL PROPOSAL</code>.
+The answer is nine-letters, and the
+<a href="https://www.the-crossword-solver.com/word/final+proposal">usual nine-letter answer for this clue</a>
+is <span class="answer">ULTIMATUM</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>After <a href="https://hanab.live/scores/vEnhance">playing maybe too many hours of Hanabi during quarantine</a>,
+I knew I wanted to write a Hanabi puzzle for the Mystery Hunt as well,
+especially after seeing
+<a href="https://teammatehunt.com/puzzles/fire-quackers">a Hanabi duck konundrum</a>
+in the inaugural teammate hunt.</p>
+<p>When I played Hanabi at summer math camps as a teenager,
+the only conventions we would have were play left, discard right,
+(forward) finesses, and the "fake finesses" (a worse form of the bluff).
+Plays and saves weren't even clearly differentiated.
+Thus our win rate was very low,
+and it was not until I played with a more well-developed convention set
+that I started appreciating the complexity (and fun) of Hanabi.</p>
+<p>So, I wanted to develop a puzzle that would
+showcase at least some of that complexity.
+Since it's so difficult to use "conventions" as a puzzle mechanic,
+I settled on the idea of using the notion of <em>pace</em> for a logic-only puzzle
+(without regards for <em>efficiency</em>,
+a measure of how much information is communicated by clues).
+The idea that the number of discards is limited,
+and clues can be used not just to indicate cards but also to <em>stall for time</em>,
+gave me a mechanic that I thought would be new and interesting
+even to people who may have casually played Hanabi before.
+It was a lot of fun during test-solving
+to watch groups slowly realize (and then prove)
+that no cards could be discarded in the second scenario.</p>
+<p>For extraction, choosing the plans was a fun exercise in Nutrimatic,
+since if I used a "random" string,
+it would be too easy to figure out which letters overlap
+just by looking at which cards were still left to play.
+Various strings that appeared in one version or other,
+often that <em>barely</em> didn't work:</p>
+<ul>
+<li><code>TRUST MY LOGIC</code></li>
+<li><code>A GENIUS LEVEL IQ</code></li>
+<li><code>AN EXPLOSION FINESSE</code></li>
+<li><code>CRISIS SAVING SKILLS</code></li>
+</ul>
+<p>I also originally considered using
+<a href="https://en.wikipedia.org/wiki/Tap_code">tap code</a>
+for the encoding of the letters,
+but this seemed like an un-thematic complication that was quickly scrapped.</p>
+<p>I didn't really want to use the crossword cluephrase <code>FINAL PROPOSAL</code>,
+but the current answer has the unfortunate property that
+it is almost uniquely determined by the first two letters,
+so this was necessary to prevent solvers from short-circuiting the
+puzzle too prematurely.</p>
+<p>The title of the puzzle was suggested by Danny Bulmash.</p></div>

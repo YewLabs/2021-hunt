@@ -1,0 +1,140 @@
+name: go
+difficulty: 7/10
+coolness: 5/10
+time: 4:00
+
+questions:
+    - question:
+        - text: "On this Go board, what move should White play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/01_white_to_live.png
+
+        - answer: E2
+        - answer: 2E
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should White play to kill? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/02_white_to_kill.png
+
+        - answer: B2
+        - answer: 2B
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/03_black_to_live.png
+
+        - answer: D1
+        - answer: 1D
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/04_black_to_live.png
+
+        - answer: A2
+        - answer: 2A
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should White play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/05_white_to_live.png
+
+        - answer: B2
+        - answer: 2B
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to kill? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/06_black_to_kill.png
+
+        - answer: E4
+        - answer: 4E
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should White play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/07_white_to_live.png
+
+        - answer: B2
+        - answer: 2B
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should White play to kill? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/08_white_to_kill.png
+
+        - answer: H4
+        - answer: 4H
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to kill? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/09_black_to_kill.png
+
+        - answer: M2
+        - answer: 2M
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should White play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/10_white_to_live.png
+
+        - answer: E2
+        - answer: 2E
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/11_black_to_live.png
+
+        - answer: D13
+        - answer: 13D
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to kill? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/12_black_to_kill.png
+
+        - answer: F12
+        - answer: 12F
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/13_black_to_live.png
+
+        - answer: M12
+        - answer: 12M
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should Black play to live? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/14_black_to_live.png
+
+        - answer: C13
+        - answer: 13C
+        - credit: charles
+
+    - question:
+        - text: "On this Go board, what move should White play to kill? (Express your answer as a letter and a number, i.e. 'A1'.)"
+
+        - image: go/15_white_to_kill.png
+
+        - answer: C11
+        - answer: 11C
+        - credit: charles

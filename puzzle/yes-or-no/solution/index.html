@@ -1,0 +1,811 @@
+<style>
+    table.grid {
+        border-collapse: collapse;
+    }
+
+    .solTable td {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    table.grid td {
+        border: 1px solid black;
+        padding: 5px;
+        min-height: 20px;
+        min-width: 20px;
+    }
+
+    .ynTrue {
+        background-color: lightgreen;
+    }
+
+    .ynFalse {
+        background-color: salmon;
+    }
+</style>
+
+<div>
+    <p>Upon opening this puzzle, we are presented with a table containing a
+        number of phrases, placed seemingly at
+        random. Some of the clues are bolded, and the dashes on the right match
+        the number of bolded clues in each row.
+    </p>
+
+    <p>A little research allows us to determine the truth value of each
+        clue, or, in at least one case, resolve the clue to the word
+        TRUE. Treating the truth values of the bolded clues as binary, we can
+        read each row as a letter by indexing the
+        resulting binary number into the alphabet.</p>
+
+    <!--Clue table-->
+
+    <table class="grid">
+        <tbody>
+            <tr>
+                <td colspan="2" class="ynTrue"><img src="{{sproot}}logic.png"
+                        style="display: block; width: 100%;">This logic circuit
+                    outputs 1.</td>
+                <td colspan="3" class="ynFalse">Gigabytes and gibibytes are the
+                    same size according to the International
+                    Electrotechnical Commission.</td>
+                <td>10</td>
+                <td>B</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="ynTrue">Quick-break technology, which the
+                    modern light
+                    switch is based on, was patented in 1884.</td>
+                <td class="ynFalse">The Binary is an office building in Cairo,
+                    Egypt.</td>
+                <td class="ynFalse">Ammonium chloride is a binary compound.</td>
+                <td class="ynTrue">P ⊆ NP</td>
+                <td>1001</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td class="ynTrue">The first version of what would become
+                    JavaScript was written in ten days.</td>
+                <td class="ynTrue">Huffman coding is a method of creating an
+                    optimal prefix code.</td>
+                <td class="ynTrue">Charles Babbage never completed a working
+                    version of his Analytical Engine.</td>
+                <td colspan="2" class="ynFalse">It is possible to write both
+                    eight and negative eight in two's complement form using only
+                    four bits each.</td>
+                <td>1110</td>
+                <td>N</td>
+            </tr>
+            <tr>
+                <td colspan="5" class="ynTrue">Stuxnet was a cyberattack
+                    designed to damage equipment of the Iranian
+                    Nuclear Program.</td>
+                <td>1</td>
+                <td>A</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="ynTrue">ENIAC was decommissioned a little
+                    less than 10 years after its first
+                    practical use.</td>
+                <td class="ynFalse">The Python programming language is named
+                    after the snake.</td>
+                <td class="ynFalse">Binary fission is a form of sexual
+                    reproduction.</td>
+                <td class="ynTrue">Ada Lovelace published the first computer
+                    algorithm in <span style="font-style: italic;">Notes</span>.
+                </td>
+                <td>1001</td>
+                <td>I</td>
+            </tr>
+            <tr>
+                <td class="ynTrue">The Dog Star is actually a binary star
+                    system.</td>
+                <td class="ynFalse">Boolean algebra was first introduced in
+                    <span style="font-style: italic;">Gödel, Escher, Bach, an
+                        Eternal Golden Braid</span>.
+                </td>
+                <td class="ynFalse">The word 'byte' came about because of a
+                    misspelling in an internal missive.</td>
+                <td class="ynTrue">AVL trees and red-black trees are both types
+                    of binary trees.</td>
+                <td class="ynFalse">The binary search algorithm performs at
+                    least <span
+                        style="font-weight: bold; font-style: italic;">n<sup>2</sup></span>
+                    operations in the worst case, where <span
+                        style="font-weight: bold; font-style: italic;">n</span>
+                    is the number of elements in the array being searched.</td>
+                <td>10010</td>
+                <td>R</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="ynTrue">A false dichotomy is the
+                    reduction of a situation to two options, when other options
+                    exist.</td>
+                <td class="ynTrue">C# was called "Cool" (C-like Object Oriented
+                    Language) prior to being named C#.</td>
+                <td class="ynTrue">01010100 01010010 01010101 01000101</td>
+                <td class="ynTrue">A provably secure hash function is an example
+                    of a one-way function.</td>
+                <td>1111</td>
+                <td>O</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>BINAIRO is a type of logic puzzle using solely 0s and 1s. The rules can
+        be found <a
+            href="http://www.cross-plus-a.com/html/cros7bnp.htm">here</a>. Using
+        the truth values of the bolded clues as givens, we can treat the grid as
+        an 8&times;8 Binairo puzzle. The puzzle has a unique solution, given below.
+        Please see the appendix for a step-by-step solution to the puzzle.</p>
+
+    <!--Solved BINAIRO-->
+    <table class="solTable grid">
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <p>If we take 1 as true and 0 as false in the above solution, we can assign
+        a true or false value to each of the
+        non-bolded clues. This gives us the information below.</p>
+    <table>
+        <tr>
+            <th>Statement</th>
+            <th>Truth Value</th>
+        </tr>
+        <tr>
+            <td>The first letter of the answer is in the word PUZZLE.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The last letter of the answer appears in the title.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The third letter of the answer is a consonant.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The answer has fewer letters than the title.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The first letter of the answer has exactly one enclosed space
+                when written as a capital letter.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The first three letters of the answer form a valid English word.
+            </td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The penultimate letter of the answer is in the word BOXLIKE.
+            </td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The length of the answer is divisible by two.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The answer is playable in a game of English Scrabble.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The last letter of the answer is one of the 18 least frequent
+                letters in the English language.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The length of the answer is divisible by three.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The penultimate letter of the answer is a consonant.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The last letter of the answer is not in the word TRUE.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The second letter of the answer has an enclosed space when
+                written as a capital letter.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The third letter of the answer is in the first six letters of
+                the English alphabet.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The last letter of the answer has exactly one enclosed space
+                when written as a capital letter.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The number of vowels in the answer is even.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The last letter of the answer has exactly one enclosed space
+                when written as a capital letter.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The second letter of the answer has a curved stroke when written
+                as a capital letter.</td>
+            <td>T</td>
+        </tr>
+        <tr>
+            <td>The penultimate letter of the answer is usually written without
+                lifting the pencil in lower case.</td>
+            <td>F</td>
+        </tr>
+        <tr>
+            <td>The first letter of the answer is not adjacent to a vowel in the
+                alphabet.</td>
+            <td>F</td>
+        </tr>
+    </table>
+
+
+    <p>Using this information, we can deduce the answer to the puzzle as
+        follows.</p>
+    <ul>
+        <li>The answer is playable in a game of English Scrabble. This excludes
+            any proper nouns.</li>
+        <li>The length of the answer is not divisible by two or three, and the
+            answer has fewer letters than the title
+            does. The length must be five.</li>
+        <li>The first letter of the answer is adjacent to a vowel in the
+            alphabet, has exactly one enclosed space when
+            written as a capital letter, and is not in the word PUZZLE. The
+            first letter must be D.</li>
+        <li>The last letter of the answer is one of the eight most frequent
+            letters of the English alphabet, has no
+            enclosed spaces when written as a capital letter and is not in the
+            word TRUE. It, however, is in the title of the puzzle.
+            The last letter must be either N or S.</li>
+        <li>The fourth, or penultimate, letter of the answer is not normally
+            drawn with a single stroke in lowercase, is
+            a consonant, and is not in the word BOXLIKE. The fourth letter must
+            be one of D, F, P, or T.</li>
+        <li>The number of vowels in the answer is even. Because the length is
+            five, and three of the letters are
+            consonants, there must be two vowels. Specifically, the second and
+            third letters are vowels.</li>
+        <li>The second letter is a vowel, has no enclosed spaces,
+            and has a curved stroke when written as a
+            capital letter. The second letter must be U.</li>
+        <li>The third letter is a vowel and within the first six letters of the
+            English alphabet. The third letter must
+            be either A or E, but since the first three letters must form a
+            valid English word and DUA isn’t a word, the
+            third letter must be E.</li>
+    </ul>
+
+    <p>This gives us an answer of DUE[DFPT][NS], which must be <span
+            class="answer">DUETS</span>, an appropriate answer to
+        this puzzle of duality.</p>
+
+    <hr />
+
+    <p>The initial BINAIRO puzzle looks like this after resolving the clues.</p>
+    <table class="solTable grid">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td>0</td>
+            <td></td>
+            <td>0</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td></td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p>Applying the first two rules repeatedly allows us to reach the following
+        state:</p>
+
+    <table class="solTable grid">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+    </table>
+
+    <p>At this point, we can fill in the bottom row. We note that if the bottom
+        right corner were a 1, the rightmost column would have three 0s in a
+        row, which is not allowed. Therefore, the bottom right corner is a 0.
+    </p>
+
+    <p>Similarly, the last 0 in the bottom row must go in the third column. If
+        it were in any other column, there would be three 1s in a row in the
+        bottom row. </p>
+
+    <p>The grid now looks like this:</p>
+    <table class="solTable grid">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <p>Now we look at duplicate columns. The fourth column is identical to the
+        sixth column, except for its two blank cells. Therefore, we must fill
+        the cells in the fourth column with the opposite values of those in the
+        sixth column.</p>
+
+    <p>The same is true of the eighth and fifth columns. The grid now looks like
+        this:</p>
+
+    <table class="solTable grid">
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+
+    <p>Finally, we apply the first two rules a few more times to finish the
+        puzzle.</p>
+
+    <table class="solTable grid">
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+        </tr>
+        <tr>
+            <td>0</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>1</td>
+            <td>0</td>
+            <td>0</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+{% if mmo_disabled %}
+<div class="brokenprojdev">
+	<div>Due to technical difficulties, the projection device is not detecting your JUICE levels properly.</div>
+
+	<p>Any member of your team working on this puzzle will need to enter the following override code(s) in the debug menu before trying to solve the puzzle.
+	To access the debug menu, hold the left control and delete key.
+	Paste the code(s) you need, one at a time,
+	and then click "Unlock" after each one.</p>
+{# TODO: make this auto copyable #}
+	<center>
+	<code>
+	{{ code1 }}{% if code2 %}<br>{% endif %}
+	{{ code2 }}{% if code3 %}<br>{% endif %}
+	{{ code3 }}{% if code4 %}<br>{% endif %}
+	{{ code4 }}{% if code5 %}<br>{% endif %}
+	{{ code5 }}{% if code6 %}<br>{% endif %}
+	{{ code6 }}{% if code7 %}<br>{% endif %}
+	{{ code7 }}{% if code8 %}<br>{% endif %}
+	{{ code8 }}{% if code9 %}<br>{% endif %}
+	{{ code9 }}
+	</code>
+	</center>
+</div>
+{% endif %}

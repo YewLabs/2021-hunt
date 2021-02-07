@@ -1,0 +1,146 @@
+<style>
+.puzzle img { width: 40%; margin: 0 30%; }
+.puzzle_route img { width: 80%; margin: auto; }
+</style>
+
+<h4>by Herman Chau, Jakob Weisblat, and Kat Fang</h4>
+
+<p>In &perp;IW.nano, we are able to use size change devices to change sizes to access more of the round. The possible sizes are Small (S), Medium (M), Large (L), and Extra Large (XL).</p>
+
+<p>In general, the &perp;IW.nano individuals are different sizes, and we&#39;ll need to be the same size as them in order to talk to them. The Alien Overlord is exceptional in this regard and will talk to us no matter what size we are.</p>
+
+<h3>&perp;IW.giga</h3>
+
+<div><a href="{{sroot}}nano_giga_route.png"><img alt="&perp;IW.giga Annotated Map" class="puzzle_route" src="{{sroot}}nano_giga_route.png"/></a></div>
+
+<p>The first of alien we talk to is the Alien Overlord, who gives us the solved &quot;metapuzzle&quot; <a href="{% url 'puzzle_view' 'rule-of-three' %}">Rule of Three</a>. It seems as if we had already solved the Alien Overlord&#39;s problem.</p>
+
+<p>In &perp;IW.giga, there are <i>transits</i> that require us be certain sizes to cross them, and there&#39;s a bridge that requires that we are size &quot;S&quot; to cross it.</p>
+
+<p>There are 5 islands and two additional areas: the basement and the space station. The galactic basement is reachable by falling off the bridge and the space station is connected to two of the islands via transits.</p>
+
+<h4>(Phase 1)</h4>
+<p>The aliens that we can initially talk to:</p>
+
+<ul>
+<li><b>Size &quot;M&quot; Alien on Island A</b>: Starting Island (size &quot;M&quot;) &rarr; Island A.</li>
+<li><b>Size &quot;S&quot; Alien in Basement</b>: Starting Island (size &quot;M&quot;) &rarr; Island A &rarr; Island C and change to size &quot;S&quot; &rarr; Attempt to walk across the bridge but fall into the Basement.</li>
+<li><b>Size &quot;L&quot; Alien on Island B</b>: Starting Island (&quot;M&quot;) &rarr; Island A and change to size &quot;L&quot; &rarr; Island B.</li>
+</ul>
+
+<h4>(Phase 2)</h4>
+<p>Once we have enough JUICE, the bridge will be fixed and we&#39;ll be able to reach more aliens:</p>
+
+<ul>
+<li><b>Size &quot;S&quot; Alien on Island A</b>: Starting Island (size &quot;M&quot;) &rarr; Island A &rarr; Island C and change to size &quot;S&quot; &rarr; Walk across the bridge to Island A.</li>
+<li><b>Size &quot;S&quot; Alien in Space Station</b>: Starting Island (size &quot;M&quot;) &rarr; Island A &rarr; Island C and change to size &quot;S&quot; &rarr; Walk across the bridge to Island B &rarr; Space Station.</li>
+</ul>
+
+<h4>(Phase 3)</h4>
+<p>Once we have even more JUICE, the size &quot;S&quot; &rarr; size &quot;M&quot; size change device in the space station will become usable and we can talk to an additional alien:</p>
+
+<ul>
+<li><b>Size &quot;L&quot; Alien on Island C</b>: Starting Island (size &quot;M&quot;) &rarr; Island A &rarr; Island C and change to size &quot;S&quot; &rarr; Walk across the bridge to Island B &rarr; Spac Station and change to size &quot;M&quot; then change to size &quot;L&quot; &rarr; Island C.</li>
+</ul>
+
+<h4>(Phase 4)</h4>
+<p>Once we have even more JUICE, the size &quot;L&quot; &rarr; size &quot;XL&quot; size change device in the space station will become usable and we can talk to additional aliens:</p>
+
+<ul>
+<li><b>Size &quot;XL&quot; Alien in Space Station</b>: Starting Island (size &quot;M&quot;) &rarr; Island A &rarr; Island C and change to size &quot;S&quot; &rarr; Walk across the bridge to Island B &rarr; Space Station and change to size &quot;M&quot; then change to size &quot;L&quot; and then change to size &quot;XL&quot;.</li>
+<li><b>Size &quot;XL&quot; Alien on Final Island</b>: Starting Island (size &quot;M&quot;) &rarr; Island A &rarr; Island C and change to size &quot;S&quot; &rarr; Walk across the bridge to Island B &rarr; Space Station and change to size &quot;M&quot; then change to size &quot;L&quot; and then change to size &quot;XL&quot; &rarr; Island B &rarr; Final Island.</li>
+</ul>
+
+<h3>&perp;IW.kilo</h3>
+
+<div><a href="{{sroot}}nano_kilo_route.png"><img alt="&perp;IW.kilo Annotated Map" class="puzzle_route" src="{{sroot}}nano_kilo_route.png"/></a></div>
+
+<p>Once we solve the puzzle <a href="{% url 'puzzle_view' 'twins' %}">Twins</a>, we&#39;ll be able to access &perp;IW.kilo. This is located on the starting island in &perp;IW.giga.</p>
+
+<p>In &perp;IW.kilo, there are certain doors that require us to be a certain size to hold open. We are also able to hold these doors open for our teammates. The stairs between the two floors are pretty big, and we need to be size &quot;L&quot; or size &quot;XL&quot; to go up or down them.</p>
+
+<h4>(Phase 1)</h4>
+
+<ul>
+<li><b>Size &quot;L&quot; Kilotechnician on Floor 1</b>: Use the size &quot;M&quot; &rarr; &quot;L&quot; device on floor 1 and then go through the bottom-left size &quot;L&quot; door.</li>
+</ul>
+
+<h4>(Phase 2)</h4>
+
+<p>Once we gain enough JUICE, we&#39;ll be able to use the size &quot;L&quot; &rarr; size &quot;M&quot; size change device on floor 2.</p>
+
+<ul>
+<li><b>Size &quot;M&quot; Kilotechnician on Floor 2</b>: Two teammates need to change to size &quot;L&quot; on floor 1 and go up the stairs to floor 2.</li>
+<ul>
+<li>One teammate will need to stay size &quot;L&quot; while the other teammate needs to use the newly JUICEd device to shrink to size &quot;M&quot;. The size &quot;L&quot; teammate holds the door open for the size &quot;M&quot; teammate to go through.</li>
+</ul>
+</ul>
+
+<p><img alt="Holding down the size L door in &perp;IW.kilo" src="{{sroot}}image2.png"></p>
+
+<h4>(Phase 3)</h4>
+
+<p>Once we gain even more JUICE, we&#39;ll be able to use the size &quot;M&quot; &rarr; size &quot;S&quot; size change device on floor 2. </p>
+
+<ul>
+<li><b>Size &quot;S&quot; Kilotechnician on Floor 2</b>: Use the size &quot;M&quot; &rarr; size &quot;L&quot; size change device on floor 1. Go up the stairs to floor 2 and use the size &quot;L&quot; &rarr; &quot;M&quot; size change device and then the size &quot;M&quot; &rarr; size &quot;S&quot; size change device. A size &quot;M&quot; teammate must hold open the size &quot;M&quot; door and we go through it as we are unable to cross the grate while size &quot;S&quot;.</li>
+<li><b>Size &quot;S&quot; Kilotechnician on Floor 1</b>: Repeat the above steps but fall through the grate on floor 2 while size &quot;S&quot;.</li>
+</ul>
+
+<p><img alt="Holding down the size M door in &perp;IW.kilo" src="{{sroot}}image3.png"></p>
+
+<h4>(Phase 4)</h4>
+
+<p>Once we gain even more JUICE, we&#39;ll unlock a size &quot;L&quot; &rarr; size &quot;XL&quot; size change device in the interior section of floor 1. This allows you to talk to the final kilotechnician who is behind the size &quot;XL&quot;door.</p>
+
+<ul>
+<li><b>Size &quot;XL&quot; Kilotechnician on Floor 1</b>: </li>
+</ul>
+
+<p><img alt="Talking to the XL kilotechnician in &perp;IW.kilo" src="{{sroot}}image1.png"></p>
+
+<h3>&perp;IW.milli</h3>
+
+<div><a href="{{sroot}}nano_milli_route.png"><img alt="&perp;IW.milli Annotated Map" class="puzzle_route" src="{{sroot}}nano_milli_route.png"/></a></div>
+
+<p>Once we have solved the puzzle <a href="{% url 'puzzle_view' 'level-one' %}">Level One</a>, we&#39;ll unlock &perp;IW.milli. The access point for this is on floor 2 of &perp;IW.kilo.</p>
+
+<p>In &perp;IW.milli, we are able to use <i>all</i> size change devices no matter what size you are.</p>
+
+<p>There are also some buttons that we can step on when we are the appropriate size to make platforms appear for our teammates.</p>
+
+<h4>(Phase 1)</h4>
+
+<ul>
+<li><b>Size &quot;S&quot; Robot</b>: Use the &rarr; size &quot;S&quot; size change device next to the special size change device that will takes us back to &perp;IW.kilo.</li>
+</ul>
+
+<h4>(Phase 2)</h4>
+
+<p>Once we have enough JUICE, we&#39;ll be able to use the &rarr; size &quot;XL&quot; size change device.</p>
+
+<ul>
+<li><b>Size &quot;XL&quot; Robot</b>: Use the &rarr; size &quot;S&quot; size change device and cross over to the bottom left section. Use the &rarr; size &quot;XL&quot; size change device and walk across the grate to the top left section.</li>
+<li><b>Size &quot;M&quot; Robot</b>: Have a size &quot;XL&quot; teammate hold down the button in the top left section. Platforms will appear that allow us to walk to the top-left section while size &quot;M&quot;.</li>
+</ul>
+
+<h4>(Phase 3)</h4>
+
+<p>Once we gain even more JUICE, we&#39;ll be able to use the &rarr; size &quot;L&quot; size change device in the upper left section.</p>
+
+<ul>
+<li><b>Bottom-left Size &quot;L&quot; Robot</b>: Use the &rarr; size &quot;S&quot; size change device and cross over to the bottom left section. Use the &rarr; size &quot;XL&quot; size change device and walk across the grate to the top left section. Use the &rarr; size &quot;L&quot; size change device and take the purple teleport crystal back to the bottom-left section.</li>
+<li><b>Upper-center Size &quot;L&quot; Robot</b>: Use the &rarr; size &quot;S&quot; size change device and cross over to the bottom left section. Use the &rarr; size &quot;XL&quot; size change device and walk across the grate to the top left section. Use the &rarr; size &quot;L&quot; size change device.</li>
+<ul>
+<li>Have a teammate become size &quot;XL&quot; and hold down the button in the top-left section so we can walk across the platform to the upper-center section.</li>
+</ul>
+<li><b>Rightmost Size &quot;S&quot; Robot</b>: Use the &rarr; size &quot;S&quot; size change device.</li>
+<ul>
+<li>Have a size &quot;XL&quot; teammate hold down the top-left section's button.</li>
+<li>Have a size &quot;M&quot; teammate hold down the center section's button.</li>
+<li>Have a size &quot;L&quot; teammate use the teleport crystal to get to and hold down the bottom-left section's button.</li>
+<li>We are then able to walk across the platforms to reach the rightmost section.</li>
+</ul>
+</ul>
+
+<p>TADA! We've now talked to all the problems that the aliens, kilotechnicians, and robots have.</p>

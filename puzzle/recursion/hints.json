@@ -1,0 +1,1 @@
+[[0.0, [""], "Write down the singers of these songs. Then recurse."], [100.0, [""], "Each song's singer has another song named after them; take the latter song's singer, and fit it into the blanks."]]

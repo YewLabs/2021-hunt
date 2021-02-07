@@ -1,0 +1,118 @@
+<style>
+    .ctrtxt
+    {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    /* Copy-pasteable grid generation CSS start*/
+    .puzzgrid td
+    {
+        width: 30px;
+        height: 30px;
+        border-bottom: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+    }
+
+    .puzzgrid tr:nth-last-child(2) td{border-bottom: 3px solid black;}
+    .puzzgrid td:nth-last-child(2){border-right: 3px solid black;}
+
+    body .puzzgrid tr:first-child td {
+        border-right: 0;
+        border-bottom: 3px solid black;
+    }
+
+    body .puzzgrid tr:first-child td:first-child, 
+    body .puzzgrid tr:first-child td:last-child {
+        border-right: 0;
+        border-bottom: 0;
+    }
+
+    body .puzzgrid td:first-child {
+        border-right: 3px solid black;    
+        border-bottom: 0;        
+    }
+
+    body .puzzgrid td:last-child {
+        border-right: 0;
+        border-bottom: 0;        
+    }
+
+    body .puzzgrid tr:last-child td {
+        border-right: 0;
+        border-bottom: 0;        
+    }    
+
+    body .puzzgrid tr:first-child td, 
+    body .puzzgrid td:first-child, 
+    body .puzzgrid tr:last-child td, 
+    body .puzzgrid td:last-child
+    {
+        font-family: 'Consolas', Courier, monospace;
+        font-weight: bold;
+        text-align: center;
+    }
+    .puzzgrid td.s {border-bottom: 3px solid black;}
+    .puzzgrid td.e {border-right: 3px solid black;}
+    /* Copy-pasteable grid generation CSS end*/
+</style>
+
+
+<div class="ctrtxt">EX</div>
+
+<table class="puzzgrid">
+    <tr><td></td><td>X</td><td>E</td><td></td></tr>
+    <tr><td>E</td><td class="e"></td><td></td><td></td></tr>
+    <tr><td></td><td class="e"></td><td></td><td>X</td></tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
+<div class="ctrtxt">SAMPLE</div>
+
+<table class="puzzgrid">
+    <tr><td></td><td></td><td></td><td>MA</td><td>PME</td><td></td></tr>
+    <tr><td></td><td></td><td class="s e"></td><td class="e"></td><td></td><td></td></tr>
+    <tr><td>SL</td><td class="s e"></td><td class="e"></td><td class="s e"></td><td></td><td></td></tr>
+    <tr><td></td><td class="e"></td><td class="s"></td><td class="s e"></td><td class="s"></td><td>LS</td></tr>
+    <tr><td></td><td class="e"></td><td></td><td></td><td></td><td>EMP</td></tr>
+    <tr><td></td><td></td><td>AM</td><td></td><td></td><td></td></tr>
+</table>
+
+<hr>
+<br class="copy-only">
+
+<table class="puzzgrid">
+    <tr><td></td><td></td><td></td><td>1</td><td></td><td>2</td><td>3</td><td>4</td><td>5</td><td></td><td></td></tr>
+    <tr><td>16</td><td></td><td class="e"></td><td></td><td></td><td class="e"></td><td class="s"></td><td class="e"></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td class="s e"></td><td></td><td class="s"></td><td class="e"></td><td class="e"></td><td class="s e"></td><td class="s"></td><td class="s"></td><td>6</td></tr>
+    <tr><td></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td class="e"></td><td class="s"></td><td></td><td class="s"></td><td>7</td></tr>
+    <tr><td>15</td><td class="e"></td><td class="s"></td><td></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td class="e"></td><td class="e"></td><td></td><td></td></tr>
+    <tr><td>14</td><td class="e"></td><td class="e"></td><td class="e"></td><td class="s"></td><td></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td></td><td></td></tr>
+    <tr><td></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td></td><td class="s"></td><td class="e"></td><td class="s"></td><td>8</td></tr>
+    <tr><td>13</td><td class="s"></td><td class="s"></td><td class="s e"></td><td class="e"></td><td class="e"></td><td class="s e"></td><td class="e"></td><td class="s e"></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td class="e"></td><td class="e"></td><td class="s e"></td><td></td><td></td><td class="e"></td><td></td><td></td><td>9</td></tr>
+    <tr><td></td><td></td><td class="e"></td><td></td><td class="e"></td><td></td><td></td><td class="e"></td><td></td><td></td><td></td></tr>
+    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>12</td><td></td><td>11</td><td>10</td><td></td></tr>
+</table>
+
+<ol>
+    <li><span class="copy-only">1. </span>Fashionable</li>
+    <li><span class="copy-only">2. </span>Exclamation by a knight</li>
+    <li><span class="copy-only">3. </span>Saharan desert pavement</li>
+    <li><span class="copy-only">4. </span>It's one hour ahead of UTC / Solid water / Approx. a certain time</li>
+    <li><span class="copy-only">5. </span>Kind of ID tag</li>
+    <li><span class="copy-only">6. </span>Symbol for element 103</li>
+    <li><span class="copy-only">7. </span>____ n'est pas une pipe / Toshiba subsidiary making retail products, among others</li>
+    <li><span class="copy-only">8. </span>Location of westernmost U.S. Mint / <span class="no-copy"><i>Death Note</i></span><span class="copy-only">Death Note</span> detective</li>
+    <li><span class="copy-only">9. </span>Avg. dist. from the Earth to the Sun / Any one of three basic skills taught in schools?</li>
+    <li><span class="copy-only">10. </span>Language code of the first part of clue 7</li>
+    <li><span class="copy-only">11. </span>Two in Maori</li>
+    <li><span class="copy-only">12. </span>ASCII 0x0A / Letter used to denote entropy</li>
+    <li><span class="copy-only">13. </span>Former "do" in music</li>
+    <li><span class="copy-only">14. </span>Mongolian yurt</li>
+    <li><span class="copy-only">15. </span>Et ____, brute?</li>
+    <li><span class="copy-only">16. </span>Area of ML involving maximizing a reward function</li>
+</ol>
+
+<button id="clipboard-button"></button>

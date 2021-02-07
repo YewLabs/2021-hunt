@@ -1,0 +1,62 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% block title %}{{ round.name }} &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+{% block round_styles %}
+{% endblock %}
+{% block round_js %}
+{% endblock %}
+<div class="content">
+  <h1>
+    {{ round.name }}
+    {% if has_solution and show_solutions %}
+    <a class="subtitle" href="{% url 'round_solution' round.round.url %}">Solution to Navigation Puzzle</a>
+    {% endif %}
+  </h1>
+  <main>
+    <div class="info">
+      {% block round_content %}
+      {% block round_top %}
+      {% endblock %}
+      {% block round_puzzles %}
+      <div class="round-table-container">
+        <table>
+          <tr><th>Puzzle</th><th>Answer</th>{% block puzzle_extra_header %}{% endblock %}</tr>
+          {% for puzzle in all_puzzles %}
+          {% if puzzle.puzzle.y2021puzzledata %}
+          {% block puzzle_row %}
+          <tr>
+            <td>
+              {% if puzzle.found %}
+              <a href="{% url 'puzzle_view' puzzle.puzzle.url %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+                {{puzzle.puzzle.name|safe}}
+              </a>
+              {% elif mmo_disabled %}
+              <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+                {{puzzle.puzzle.name|safe}}
+              </a>
+              {% else %}
+              <div class="mhtooltip">?????
+                <span class="mhtooltiptext">Find this puzzle in the &perp;IW {{ round.name }}!</span>
+              </div>
+              {% endif %}
+            </td>
+            <td>
+              {% if puzzle.solved %}
+              <div>{{ puzzle.puzzle.answer|safe}}</div>
+              {% endif %}
+            </td>
+            {% block puzzle_extra %}{% endblock %}
+          </tr>
+          {% endblock %}
+          {% endif %}
+          {% endfor %}
+        </table>
+      </div>
+      {% endblock %}
+      {% endblock %}
+    </div>
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,553 @@
+name: bigger-crosswords
+difficulty: 8/10
+coolness: 6/10
+time: 9:00
+
+questions:
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Breaks down, in a way
+                5. ___-bodied
+                9. "Hold it!"
+                10. Lentil, e.g.
+                11. Endeavoured
+                13. "So ___!"
+                14. Blue hue
+                15. Apprehend
+                17. Absorbed, as a cost
+                20. "But of course!"
+                24. Orchard item
+                26. Affectation
+                27. Hollow stem of a cereal
+                28. Study, say
+                29. "S.O.S.!"
+
+            - text: |
+                *Down*
+                1. Belt
+                2. "@#$%!," e.g.
+                3. Angler's hope
+                4. Back
+                5. Death on the Nile cause, perhaps
+                6. "All ___ are off!"
+                7. Onion relative
+                8. Christian Science founder
+                12. Destined
+                16. Baker's dozen?
+                17. Way, way off
+                18. Beethoven's "Archduke ___"
+                19. 100 cents
+                21. "How ___!"
+                22. Kind of phone
+                23. Cord fiber
+                25. An end to sex?
+
+        - answer: SATRAARLPEETAUIR
+
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Song and dance, e.g.
+                5. A chip, maybe
+                9. Booty
+                10. Aforementioned
+                11. "No problem!"
+                13. Aquatic mammal
+                14. Alkaline liquid
+                15. Family dog, for short
+                17. "Come to think of it ..."
+                20. Secret store
+                24. Spinny thing
+                26. "God's Little ___"
+                27. 100 kurus
+                28. Accordingly
+                29. Fitness centers
+
+            - text: |
+                *Down*
+                1. "Not to mention ..."
+                2. Beat badly
+                3. Cause for a lawsuit
+                4. Brace
+                5. ___ Wednesday
+                6. Catch
+                7. Baby
+                8. Halftime lead, e.g.
+                12. Hint
+                16. Diamond stat
+                17. Clash
+                18. Bow
+                19. Auld lang syne
+                21. Cut short
+                22. Bickerer in the "Iliad"
+                23. "-zoic" things
+                25. Ballpoint, e.g.
+        - answer: AOREAALRSEIIAOCT
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Any thing
+                5. Beseech
+                9. Opera star
+                10. "Let's ___"
+                11. Reception, of sorts
+                13. Fast-talk
+                14. Actor Arnold
+                15. Cow, maybe
+                17. Amiss
+                20. Bob __, singer-songwriter
+                24. Track event
+                26. Strengthen, with "up"
+                27. Getaway spots
+                28. Bed board
+                29. Barely gets, with "out"
+
+            - text: |
+                *Down*
+                1. "American ___"
+                2. Traditional native abode
+                3. 20-20, e.g.
+                4. Japanese graphic novels
+                5. Ace
+                6. Beat badly
+                7. "Not to mention ..."
+                8. The original matter from which the basic elements are said to have been formed in the Big Bang theory
+                12. Informal greeting
+                16. High nest: Var.
+                17. Eyes, poetically
+                18. Experience
+                19. Dog biter
+                21. Like young Abe Lincoln
+                22. Bad marks
+                23. 1987 Costner role
+                25. Astern
+        - answer: IIEGWYANSYLUWLES
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Barber's job
+                5. Barber's motion
+                9. Abysmal test score
+                10. "___ on Down the Road"
+                11. Not fixed
+                13. ___ De La Fuente
+                14. Ottawa NHLer, for short
+                15. Crash site?
+                17. Babysitter's handful
+                20. Kind of rug
+                24. Olympic venue
+                26. "I had no ___!"
+                27. Capital of Rhône
+                28. Aug. follower
+                29. A-Rod, for one
+
+            - text: |
+                *Down*
+                1. Old Russian leader
+                2. Change
+                3. Mideast hot spot
+                4. Clean, as a spill
+                5. Caribbean, e.g.
+                6. Bags
+                7. "Cast Away" setting
+                8. Hammer part
+                12. Bait
+                16. ___-dally
+                17. Bird with a long beak
+                18. Earned
+                19. Get ready, for short
+                21. ___ bean
+                22. Soon, to a bard
+                23. Like young Abe Lincoln
+                25. Soft-furred animal
+        - answer: TEAUAIOOKPSBARDS
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Door fastener
+                5. "That's a ___!"
+                9. "... there is no ___ angel but Love": Shakespeare
+                10. Halo, e.g.
+                11. Something needed to make a difference
+                13. Swelling
+                14. "___ a chance"
+                15. "Ciao!"
+                17. Egg cells
+                20. Hot spot
+                24. Computer icon, e.g.
+                26. 20-20, e.g.
+                27. Like custard
+                28. Blowgun ammo
+                29. "Get ___!"
+
+            - text: |
+                *Down*
+                1. Blood pigment
+                2. All fired up
+                3. ___ function
+                4. Perpendicular
+                5. Functioned as
+                6. Archaeological site
+                7. Cornstarch brand
+                8. Breathe hard
+                12. Approval
+                16. Anxious to agree
+                17. Kind of column
+                18. Cheer starter
+                19. Maple genus
+                21. Advocate
+                22. Hindu snake deity
+                23. ___ nitrate
+                25. Atlanta-based station
+        - answer: HVNMYARGLPRIYCVD
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. ___ carotene
+                5. Junk E-mail
+                9. And others, for short
+                10. Narc's find, perhaps
+                11. Caught off guard
+                13. Church donation
+                14. Balaam's mount
+                15. "Don't ___!"
+                17. Clod chopper
+                20. Arm
+                24. Just plain wrong
+                26. Prefix with phone
+                27. City on the Yamuna River
+                28. "D"
+                29. It may get into a jamb
+
+            - text: |
+                *Down*
+                1. Numero uno
+                2. Decorative case
+                3. Bakery buy
+                4. Beginning
+                5. Schuss, e.g.
+                6. Galileo's birthplace
+                7. Brews
+                8. Reddit admins
+                12. Gum
+                16. Work, as dough
+                17. Cord fiber
+                18. Sundae topper, perhaps
+                19. "Cogito ___ sum"
+                21. Apple's apple, e.g.
+                22. 100 cents
+                23. Boris Godunov, for one
+                25. Propel, in a way
+        - answer: BTRHSNORRMLSSREP
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Bondman
+                5. Dalai ___
+                9. And others, for short
+                10. Black, in poetry
+                11. A plane may be put on it
+                13. Beauty pageant wear
+                14. Charlotte-to-Raleigh dir.
+                15. Software program, briefly
+                17. Astern
+                20. Cant
+                24. Street repairs
+                26. Checker, perhaps
+                27. Actress Sorvino
+                28. Smeltery refuse
+                29. Bandy words
+
+            - text: |
+                *Down*
+                1. Accommodate
+                2. Decorative case
+                3. Pro ___
+                4. "La Traviata" mezzo
+                5. "Fantasy Island" prop
+                6. ___-bodied
+                7. Phobos, to Mars
+                8. A chip, maybe
+                12. "Poor man's banana"
+                16. Activities for seniors
+                17. Song and dance, e.g.
+                18. Farm young
+                19. Biological classes
+                21. Film crew member
+                22. Creole vegetable
+                23. Boris Godunov, for one
+                25. Archaeological site
+        - answer: STTRPRRRRAOLPAAS
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Buona ___" (Italian greeting)
+                5. Greek cheese
+                9. "American ___"
+                10. Bleats
+                11. Desperate
+                13. 1935 Triple Crown winner
+                14. ___ sauce
+                15. Amiss
+                17. Arthur Godfrey played it
+                20. "Micro" add-on, in libraries
+                24. China server
+                26. 100 kurus
+                27. "Empedocles on ___" (Matthew Arnold poem)
+                28. "___ It Romantic?"
+                29. 1990 World Series champs
+
+            - text: |
+                *Down*
+                1. Fodder holder
+                2. ___ cheese
+                3. Santa ___, Calif.
+                4. Even if, briefly
+                5. J. Edgar Hoover's org.
+                6. Beanery sign
+                7. ___ Bell
+                8. Far from ruddy
+                12. Bats
+                16. "CSI" clue
+                17. ___ fruit
+                18. Barbra's "A Star Is Born" co-star
+                19. Make, as money
+                21. Pigeon's home
+                22. Full house, e.g.
+                23. Flight data, briefly
+                25. Big wine holder
+        - answer: SDSHFIONSAATFAII
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Angler's handled hook
+                5. Crime boss
+                9. Elliptical
+                10. All excited
+                11. Astronauts' realm
+                13. Sag
+                14. ___ v. Wade
+                15. ___-eyed
+                17. "Rocky ___"
+                20. Desert sight
+                24. Alert obstetrician helper
+                26. Be a snitch
+                27. "... or ___!"
+                28. Figure skater's jump
+                29. Badger's burrow
+
+            - text: |
+                *Down*
+                1. Egg on
+                2. Affirm
+                3. Betting game
+                4. Kind of insurance
+                5. Ceiling
+                6. Biology lab supply
+                7. Somewhat, in music
+                8. Arch type
+                12. Hound's trail
+                16. Overhangs
+                17. Bit
+                18. Surefooted goat
+                19. "Cast Away" setting
+                21. Ad headline
+                22. Acad.
+                23. "Let it stand"
+                25. Addition
+        - answer: GVROOAASTOOAOSEA
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Part of a nuclear arsenal, for short
+                5. Santa ___, Calif.
+                9. Bridges of Los Angeles County
+                10. "... there is no ___ angel but Love": Shakespeare
+                11. Self-centered one
+                13. Appropriate
+                14. "The Matrix" hero
+                15. Ceiling
+                17. Big galoot
+                20. Call on
+                24. Bodyguard
+                26. Cork's country
+                27. ___ bag
+                28. British title
+                29. "Shoo!"
+
+            - text: |
+                *Down*
+                1. A protected bird
+                2. Copper
+                3. Diminish
+                4. Big picture
+                5. Gun, as an engine
+                6. Beehive, e.g.
+                7. "Your majesty"
+                8. A chorus line
+                12. Antipasto morsel
+                16. Fiats
+                17. Kind of column
+                18. "Mi chiamano Mimi," e.g.
+                19. Last, e.g.
+                21. House
+                22. Bit
+                23. Deuce topper
+                25. Athletic supporter?
+
+        - answer: IETAIITTYAIEIOID
+
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Reduce, as expenses
+                5. Ballet move
+                9. ___-friendly
+                10. All ___
+                11. Beauty pageant elite
+                13. String bean's opposite
+                14. "C'___ la vie!"
+                15. "Concentration" pronoun
+                17. Egg cells
+                20. Caterpillar, for one
+                24. Bagel topper
+                26. "... or ___!"
+                27. Halftime lead, e.g.
+                28. At no time, poetically
+                29. Advance
+
+            - text: |
+                *Down*
+                1. "___, the Magic Dragon"
+                2. ___ Minor
+                3. Cost of living?
+                4. Clear, as a disk
+                5. "Fantasy Island" prop
+                6. "___ on Down the Road"
+                7. Song and dance, e.g.
+                8. "Check this out!"
+                12. Humble
+                16. Artist's stand
+                17. Airy
+                18. Mouselike animal
+                19. ___ line (major axis of an elliptical orbit)
+                21. Change
+                22. Lyra's brightest star
+                23. Gulf of ___, off the coast of Yemen
+                25. The "p" in m.p.g.
+
+        - answer: PSNSWAEGNPRSWPLN
+
+
+    - question:
+        - text: What are the nine letters on the main diagonal (from top-left to bottom-right), followed by the seven letters on the other diagonal (from top-right to bottom-left) in the solution to this crossword puzzle?
+
+        - image: bigger-crosswords/puzz.png
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Daily delivery
+                5. Dog-eared
+                9. "Cast Away" setting
+                10. Sundae topper, perhaps
+                11. Medical hardening
+                13. Kid's name
+                14. "___ moment"
+                15. Bounce
+                17. "To ___ is human ..."
+                20. Civilian clothes
+                24. Milk producer
+                26. Data
+                27. Dog biter
+                28. 20-20, e.g.
+                29. Matter in the Big Bang theory
+
+            - text: |
+                *Down*
+                1. Catchall abbr.
+                2. Fungal spore sacs
+                3. Misfortunes
+                4. Bloodsucker
+                5. Court
+                6. About
+                7. Curb, with "in"
+                8. Barely beat, with "out"
+                12. Spacious
+                16. Bloated
+                17. Cut, maybe
+                18. Doctor Who villainess, with "the"
+                19. Abounding
+                21. Genesis event, with "the"
+                22. Certain surgeon's "patient"
+                23. Mosque V.I.P.
+                25. Pistol, slangily
+
+        - answer: MSLCOUAEMNESOINT
+
+

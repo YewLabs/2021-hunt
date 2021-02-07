@@ -1,0 +1,15 @@
+<p class="flavor">Maseeh Hall residents enjoy moving around in their dorm, a building which has been often described
+    as &ldquo;MIT's Castle&rdquo;.</p>
+<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+<div id="myBoard" style="width: 400px; margin-left: auto; margin-right: auto" role="img"
+    aria-label="chessboard with white pawns on D8, F8, B6, C6, F6, B5, G5, E4, G4, C3, A2, E2, A1, C1, H1 and a black rook on E6">
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+    integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+  var puzzle = '3P1P2/8/1PP1rP2/1P4P1/4P1P1/2P5/P3P3/P1P4P';
+  var board = Chessboard('myBoard', { draggable: true, position: puzzle, pieceTheme: '{{sroot}}img/chesspieces/wikipedia/{piece}.png' });
+</script>

@@ -1,0 +1,79 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+{% load static %}
+
+{% block title %}MIT Mystery Hunt 2021{% endblock %}
+
+{% block stylesheets %}
+<style>
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  background-attachment: fixed;
+}
+
+h1 {
+  color: white;
+}
+
+main {
+  perspective: 500px;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+main > * {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  margin: auto;
+}
+
+main circle {
+  fill: none;
+  stroke: white;
+  stroke-width: 5;
+  transform-origin: center;
+  animation: cycle1 20s ease-out infinite, cycle2 20s ease-in infinite;
+}
+
+@keyframes cycle1 {
+  0% { stroke-dasharray: 0 314; }
+  25% { stroke-dasharray: 314 314; }
+  50% { stroke-dasharray: 0 314; }
+  75% { stroke-dasharray: 314 314; }
+  100% { stroke-dasharray: 0 314; }
+}
+
+@keyframes cycle2 {
+  0% { transform: rotate(-90deg); }
+  25% { transform: rotate(0deg); }
+  50% { transform: rotate(450deg); }
+  75% { transform: rotate(540deg); }
+  100% { transform: rotate(990deg); }
+}
+
+main img {
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<h1>The conference will begin soon.</h1>
+<main>
+  <svg viewBox="0 0 400 400"><circle cx="200" cy="200" r="50"></circle></svg>
+  <img src="{% static 'yew_logo.png' %}" width="250"></img>
+</main>
+{% endblock %}

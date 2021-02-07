@@ -1,0 +1,1472 @@
+<style type="text/css">
+  .purple {
+    background-color: #8270fe;
+  }
+  .green {
+    background-color: #00ff0b;
+  }
+  .pyramid td {
+    border: none;
+    height: 20px;
+    width: 18px;
+    text-align: center;
+  }
+  .pyramid td.border {
+    border: 1px solid black;
+    width: 36px;
+  }
+  .pyramid {
+    margin-bottom: 1em;
+  }
+</style>
+<p>This puzzle consists of a series of number pyramids with some squares being colored differently than the other squares. We begin by filling the white squares using standard number pyramid rules, where each square is the sum of the two squares below it.</p>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">61</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">33</td>
+    <td class="border" colspan="2">28</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">21</td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">16</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">11</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">213</td>
+    <td class="border purple" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">52</td>
+    <td class="border" colspan="2">161</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">146</td>
+    <td class="border" colspan="2">94</td>
+    <td class="border" colspan="2">67</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">84</td>
+    <td class="border" colspan="2">62</td>
+    <td class="border" colspan="2">32</td>
+    <td class="border" colspan="2">35</td>
+    <td class="border green" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">41</td>
+    <td class="border" colspan="2">43</td>
+    <td class="border" colspan="2">19</td>
+    <td class="border green" colspan="2">13</td>
+    <td class="border" colspan="2">22</td>
+    <td class="border purple" colspan="2">5</td>
+    <td style="border-bottom: 1px solid black"></td>
+  </tr>
+  <tr>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2">25</td>
+    <td class="border" colspan="2">18</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">4</td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">173</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">180</td>
+    <td class="border purple" colspan="2">-7</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">19</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">53</td>
+    <td class="border green" colspan="2"></td>
+    <td class="border" colspan="2">70</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border purple" colspan="2"></td>
+    <td class="border" colspan="2">34</td>
+    <td class="border" colspan="2">36</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">28</td>
+    <td class="border green" colspan="2"></td>
+    <td class="border" colspan="2">25</td>
+    <td class="border purple" colspan="2">9</td>
+    <td class="border" colspan="2">27</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="border" colspan="2">13</td>
+    <td class="border" colspan="2">15</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">15</td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td class="border green" colspan="2">477</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">432</td>
+    <td class="border purple" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">79</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">19</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">5</td>
+    <td class="border" colspan="2">14</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">25</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">14</td>
+    <td class="border" colspan="2">11</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td class="border purple" colspan="2">11</td>
+    <td class="border green" colspan="2">3</td>
+    <td class="border" colspan="2">8</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">3</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">60</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">24</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">2</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">19</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<p>After filling some of the white squares using the standard rules we notice that the purple squares have numbers that are smaller than the sum of the numbers below them. Using this we deduce that the purple squares represent subtracting the number below and to the right from the number below and to the left. (Note that one of the purple squares has a negative number, which invalidates the possibility that the purple squares are taking the absolute difference.)</p>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">61</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">33</td>
+    <td class="border" colspan="2">28</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">21</td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">16</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">11</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">213</td>
+    <td class="border purple" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">52</td>
+    <td class="border" colspan="2">161</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">146</td>
+    <td class="border" colspan="2">94</td>
+    <td class="border" colspan="2">67</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">84</td>
+    <td class="border" colspan="2">62</td>
+    <td class="border" colspan="2">32</td>
+    <td class="border" colspan="2">35</td>
+    <td class="border green" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">41</td>
+    <td class="border" colspan="2">43</td>
+    <td class="border" colspan="2">19</td>
+    <td class="border green" colspan="2">13</td>
+    <td class="border" colspan="2">22</td>
+    <td class="border purple" colspan="2">5</td>
+    <td style="border-bottom: 1px solid black"></td>
+  </tr>
+  <tr>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2">25</td>
+    <td class="border" colspan="2">18</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">13</td>
+    <td class="border" colspan="2">9</td>
+    <td class="border" colspan="2">4</td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">173</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">180</td>
+    <td class="border purple" colspan="2">-7</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">19</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">53</td>
+    <td class="border green" colspan="2"></td>
+    <td class="border" colspan="2">70</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border purple" colspan="2"></td>
+    <td class="border" colspan="2">34</td>
+    <td class="border" colspan="2">36</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">28</td>
+    <td class="border green" colspan="2"></td>
+    <td class="border" colspan="2">25</td>
+    <td class="border purple" colspan="2">9</td>
+    <td class="border" colspan="2">27</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="border" colspan="2">13</td>
+    <td class="border" colspan="2">15</td>
+    <td class="border" colspan="2">4</td>
+    <td class="border" colspan="2">21</td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">15</td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td class="border green" colspan="2">477</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">432</td>
+    <td class="border purple" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">79</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">19</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">5</td>
+    <td class="border" colspan="2">14</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">25</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">14</td>
+    <td class="border" colspan="2">11</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2"></td>
+    <td class="border purple" colspan="2">11</td>
+    <td class="border green" colspan="2">3</td>
+    <td class="border" colspan="2">8</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">3</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">60</td>
+    <td class="border" colspan="2"></td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">24</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">2</td>
+    <td class="border" colspan="2"></td>
+    <td class="border" colspan="2">19</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<p>Continuing to fill in the squares we notice that the numbers in the green squares are much bigger than the sum of the two numbers below them. Using this fact we deduce that the green squares represent multiplying the two numbers below. Assuming that the base must be filled with positive integers, we can now fill all of the squares.</p>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">61</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">33</td>
+    <td class="border" colspan="2">28</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">21</td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">16</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">11</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">162</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">213</td>
+    <td class="border purple" colspan="2">&minus;51</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">52</td>
+    <td class="border" colspan="2">161</td>
+    <td class="border" colspan="2">212</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">146</td>
+    <td class="border" colspan="2">94</td>
+    <td class="border" colspan="2">67</td>
+    <td class="border" colspan="2">145</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">84</td>
+    <td class="border" colspan="2">62</td>
+    <td class="border" colspan="2">32</td>
+    <td class="border" colspan="2">35</td>
+    <td class="border green" colspan="2">110</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">41</td>
+    <td class="border" colspan="2">43</td>
+    <td class="border" colspan="2">19</td>
+    <td class="border green" colspan="2">13</td>
+    <td class="border" colspan="2">22</td>
+    <td class="border purple" colspan="2">5</td>
+    <td style="border-bottom: 1px solid black"></td>
+  </tr>
+  <tr>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2">25</td>
+    <td class="border" colspan="2">18</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">13</td>
+    <td class="border" colspan="2">9</td>
+    <td class="border" colspan="2">4</td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">4844</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">173</td>
+    <td class="border" colspan="2">28</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">180</td>
+    <td class="border purple" colspan="2">&minus;7</td>
+    <td class="border" colspan="2">35</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">9</td>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2">19</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">2503</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">1243</td>
+    <td class="border" colspan="2">1260</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">53</td>
+    <td class="border green" colspan="2">1190</td>
+    <td class="border" colspan="2">70</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">88</td>
+    <td class="border purple" colspan="2">35</td>
+    <td class="border" colspan="2">34</td>
+    <td class="border" colspan="2">36</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">28</td>
+    <td class="border green" colspan="2">60</td>
+    <td class="border" colspan="2">25</td>
+    <td class="border purple" colspan="2">9</td>
+    <td class="border" colspan="2">27</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="border" colspan="2">13</td>
+    <td class="border" colspan="2">15</td>
+    <td class="border" colspan="2">4</td>
+    <td class="border" colspan="2">21</td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">15</td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">3756</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">4365</td>
+    <td class="border" colspan="2">609</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">3888</td>
+    <td class="border green" colspan="2">477</td>
+    <td class="border" colspan="2">132</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border purple" colspan="2">432</td>
+    <td class="border purple" colspan="2">9</td>
+    <td class="border" colspan="2">53</td>
+    <td class="border" colspan="2">79</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">460</td>
+    <td class="border" colspan="2">28</td>
+    <td class="border" colspan="2">19</td>
+    <td class="border" colspan="2">34</td>
+    <td class="border" colspan="2">45</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">23</td>
+    <td class="border" colspan="2">5</td>
+    <td class="border" colspan="2">14</td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">25</td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">5425</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">217</td>
+    <td class="border" colspan="2">25</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">203</td>
+    <td class="border" colspan="2">14</td>
+    <td class="border" colspan="2">11</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">192</td>
+    <td class="border purple" colspan="2">11</td>
+    <td class="border green" colspan="2">3</td>
+    <td class="border" colspan="2">8</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2">12</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">3</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<table class="grid pyramid">
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">104</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border green" colspan="2">60</td>
+    <td class="border" colspan="2">44</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2">3</td>
+    <td class="border" colspan="2">20</td>
+    <td class="border" colspan="2">24</td>
+    <td style="border-bottom: 1px solid black"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td class="border" colspan="2">2</td>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">19</td>
+    <td class="border" colspan="2">5</td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+<p>Having filled all the pyramids we now read the bases using A1Z26 and get the cluephrase TAKE PYRAMID TIPS MODULO TWENTY PLACE BASE. We now take the number in the top square of each pyramid modulo twenty, insert them into the base of the final image and reapply the previously used rules.</p>
+<table class="grid pyramid">
+  <tr>
+    <td style="border-right: 1px solid black; border-bottom: 1px solid black"></td>
+    <td class="border" colspan="2" style="width: 30px">3</td>
+    <td class="border green" colspan="2">8</td>
+    <td class="border purple" colspan="2">1</td>
+    <td class="border" colspan="2">19</td>
+    <td class="border purple" colspan="2">11</td>
+    <td class="border purple" colspan="2">1</td>
+    <td style="border-bottom: 1px solid black"></td>
+  </tr>
+  <tr>
+    <td class="border" colspan="2">1</td>
+    <td class="border" colspan="2">2</td>
+    <td class="border" colspan="2">4</td>
+    <td class="border" colspan="2">3</td>
+    <td class="border" colspan="2">16</td>
+    <td class="border" colspan="2">5</td>
+    <td class="border" colspan="2">4</td>
+  </tr>
+</table>
+<p>Reading the top row we get the answer <span class="answer">CHASKA</span>.</p>

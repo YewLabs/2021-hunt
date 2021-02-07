@@ -1,0 +1,20 @@
+{% extends "../solution/index.html.tmpl" %}
+{% load static %}
+
+{% block title %}Solution to {{ round.round.name }} &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1 class="puzzle-title-header">
+    Solution to {{ round.round.name }}
+    <a class="subtitle" href="{% url 'round_view' round.round.url %}">Back to Round</a>
+  </h1>
+  <main>
+    <div class="puzzle">
+      <!-- Puzzle content begins here -->
+      {{ index_html|safe }}
+      <!-- Puzzle content ends here -->
+    </div>
+  </main>
+</div>
+{% endblock %}

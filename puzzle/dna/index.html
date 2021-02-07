@@ -1,0 +1,43 @@
+<p> We found a curious new species, but we're having trouble understanding its genome. You can use our sequencing machines to investigate.</p>
+<p>Sequencing parameters: </p>
+<label for="numreads">Number of reads:</label><br>
+<input type="number" id="numreads" name="numreads" value="100"><br>
+<label for="readlen">Read length:</label><br>
+<input type="number" id="readlen" name="readlen" value="100">
+<input type="button" onclick="getData()" value="Submit">
+
+<div id="output"></div>
+<!-- <p text-align:"center">6 2 2</p> -->
+
+<script>
+  var data = "";
+  function getData() {
+	if (parseInt($("#numreads").val()) < 0) {
+		console.log(parseInt($("#numreads").val()))
+		$("#output").text("Input nonnegative number of reads")
+		return
+	}
+	if (parseInt($("#readlen").val()) < 0) {
+		console.log(parseInt($("#readlen").val()))
+		$("#output").text("Input nonnegative read length")
+		return
+	}
+	if (parseInt($("#numreads").val()) * parseInt($("#readlen").val()) > 1000000) {
+	  console.log("too many bases")
+	  $("#output").text("Sequencing max 1000000 bases")
+	  return
+	}
+    $("#output").text("Loading...");
+    var url = "dynamic?numreads=" + $("#numreads").val() + "&readlen=" + $("#readlen").val();
+    fetch(url)
+      .then(resp => resp.blob())
+      .then(blob => {
+        data = blob;
+        var link = $('<a id="downloadlink" download="data.fastq">Download data.fastq</a>');
+        link.attr("href", window.URL.createObjectURL(blob));
+        $("#output").html(link);
+      });
+  }
+
+  getData();
+</script>

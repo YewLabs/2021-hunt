@@ -1,0 +1,138 @@
+<p>The puzzle is a series of numbers written in different bases. We can convert them to base ten by hand, or using
+    Wolfram|Alpha, or with various other websites. </p>
+
+<table>
+    <tr>
+        <th>Original Number</th>
+        <th>Base</th>
+        <th>Converted to Base 10</th>
+    </tr>
+    <tr>
+        <td>2.02g8e20535b1a93fhcec6g78e20535b1a93fhcec6g78e20535b1a93fhd...</td>
+        <td>18</td>
+        <td>2.009</td>
+    </tr>
+    <tr>
+        <td>5.0415304153041530415304153041530415304153041530415304153042...</td>
+        <td>6</td>
+        <td>5.12</td>
+    </tr>
+    <tr>
+        <td>6.0020256154331304414600202561543313044146002025615433130442...</td>
+        <td>7</td>
+        <td>6.006</td>
+    </tr>
+    <tr>
+        <td>8.14j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4j4...</td>
+        <td>24</td>
+        <td>8.05</td>
+    </tr>
+    <tr>
+        <td>9.148036a259148036a259148036a259148036a259148036a259148036a3...</td>
+        <td>11</td>
+        <td>9.13</td>
+    </tr>
+    <tr>
+        <td>21.001141414141414141414141414141414141414141414141414141414...</td>
+        <td>5</td>
+        <td>11.011</td>
+    </tr>
+    <tr>
+        <td>22.012172702436560507534121727024365605075341217270243656051...</td>
+        <td>8</td>
+        <td>18.02</td>
+    </tr>
+    <tr>
+        <td>26.023774205602377420560237742056023774205602377420560237742...</td>
+        <td>9</td>
+        <td>24.03</td>
+    </tr>
+    <tr>
+        <td>111.00000011100101011000000100000110001001001101110100101111...</td>
+        <td>2</td>
+        <td>7.014</td>
+    </tr>
+</table>
+
+<p>First, we wonder why these numbers are chosen. If we don't recognize them right on sight as MIT course numbers, we
+    can google some of them together to get the same realization.</p>
+
+<p>Now we can note that the number before the decimal point is always used as a base for another number on the list, so
+    we can order the numbers to form a cycle.</p>
+
+<table>
+    <tr>
+        <th>Base</th>
+        <th>Course</th>
+        <th>After Decimal Point</th>
+        <th>Name of Course</th>
+        <th>Index</th>
+    </tr>
+    <tr>
+        <td>11</td>
+        <td>9.13</td>
+        <td>13</td>
+        <td>The Human Brain</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td>24.03</td>
+        <td>3</td>
+        <td>Good Food: The Ethics and Politics of Food</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>24</td>
+        <td>8.05</td>
+        <td>5</td>
+        <td>Quantum Physics II</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>18.02</td>
+        <td>2</td>
+        <td>Calculus</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>18</td>
+        <td>2.009</td>
+        <td>9</td>
+        <td>The Product Engineering Process</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>7.014</td>
+        <td>14</td>
+        <td>Introductory Biology</td>
+        <td>I</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>6.006</td>
+        <td>6</td>
+        <td>Introduction to Algorithms</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>5.12</td>
+        <td>12</td>
+        <td>Organic Chemistry I</td>
+        <td>I</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>11.011</td>
+        <td>11</td>
+        <td>The Art and Science of Negotiation</td>
+        <td>C</td>
+    </tr>
+</table>
+
+<p>Starting with the bolded course, <b>9.13</b>, we index the part after the decimal point into the course name to spell
+    a cluephrase, NOT ACIDIC. This clues our thematic answer, <span class="answer">BASIC</span>.
+</p>

@@ -1,0 +1,465 @@
+<style>
+.puzzle {
+  background-color: white;
+}
+
+.puzzle img {
+  margin: 0 20%;
+  width: 60%;
+}
+
+td {
+  border: 1px solid black;
+  min-width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+th {
+  border: none;
+}
+
+.empty {
+  background-color: #000000;
+}
+</style>
+<div>
+  <p>
+    Albert and Bernard have just become friends with Cheryl, and they want to
+    know when her birthday is. Cheryl gives them a list of 10 possible dates:
+  </p>
+  <table class="grid">
+    <tr>
+      <th>May</th>
+      <td class="empty"></td>
+      <td>9</td>
+      <td>10</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <th>June</th>
+      <td>8</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>11</td>
+      <td>12</td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <th>July</th>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>August</th>
+      <td>8</td>
+      <td class="empty"></td>
+      <td>10</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+  </table>
+  <p>
+    Cheryl then tells Albert and Bernard separately the month and the day of her
+    birthday respectively.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know when Cheryl&rsquo;s birthday is, but I know that
+    Bernard doesn&rsquo;t know too.<br>
+    Bernard: At first I didn&rsquo;t know when Cheryl&rsquo;s birthday is, but I
+    know now.<br>
+    Albert: Then I also know when Cheryl&rsquo;s birthday is.
+  </p>
+  <p>
+    Let <i>birth<sub>month</sub></i>
+    be the month of Cheryl&rsquo;s birthday (as a number from 1&ndash;12) and <i>birth<sub>day</sub></i>
+    be the day of Cheryl&rsquo;s birthday.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <table class="grid">
+    <tr>
+      <td>30</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>40</td>
+      <td>4</td>
+      <td class="empty"></td>
+      <td>33</td>
+      <td>22</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <td>35</td>
+      <td class="empty"></td>
+      <td>3</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>32</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>11</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>14</td>
+      <td class="empty"></td>
+      <td>31</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td>21</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>13</td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>15</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>12</td>
+      <td class="empty"></td>
+      <td>20</td>
+      <td>34</td>
+      <td class="empty"></td>
+    </tr>
+    <tr>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>26</td>
+      <td class="empty"></td>
+      <td>9</td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td class="empty"></td>
+      <td>23</td>
+    </tr>
+  </table>
+  <p>
+    Cheryl picks a cell of the above 10-by-10 table containing a number. Cheryl
+    tells which row the cell is in to Albert and which column the cell is in to
+    Bernard. The above table is known to both Albert and Bernard.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know the location of the cell.<br>
+    Bernard: I don&rsquo;t know the location of the cell.<br>
+    Albert: I don&rsquo;t know the location of the cell.<br>
+    Bernard: I don&rsquo;t know the location of the cell.<br>
+    Albert: We could continue this conversation indefinitely (by repeatedly
+    saying &ldquo;I don&rsquo;t know the location of the cell&rdquo;) without
+    either of us learning the location of the cell.<br>
+    Bernard: I know the location of the cell.
+  </p>
+  <p>
+    Let <i>cell</i> be the number written in
+    Cheryl&rsquo;s cell.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Denise is visiting town. She chooses 3 numbers between 1 and 6 inclusive and
+    calls them <i>d<sub>1</sub></i>,
+    <i>d<sub>2</sub></i>,
+    and <i>d<sub>3</sub></i>. She gives
+    <i>d<sub>2</sub></i> +
+    <i>d<sub>3</sub></i> to Albert,
+    <i>d<sub>1</sub></i> +
+    <i>d<sub>3</sub></i> to Bernard, and
+    <i>d<sub>1</sub></i> +
+    <i>d<sub>2</sub></i> to Cheryl.
+  </p>
+  <p>
+    Cheryl: I don&rsquo;t know if there are exactly two 1s among Denise&rsquo;s
+    three numbers.<br>
+    Bernard: I don&rsquo;t know if there are exactly zero 1s among
+    Denise&rsquo;s three numbers.<br>
+    Cheryl: I don&rsquo;t know if there are exactly two 6s among Denise&rsquo;s
+    three numbers.<br>
+    Albert: I don&rsquo;t know if there are exactly zero 6s among Denise&rsquo;s
+    three numbers.<br>
+    Bernard: I don&rsquo;t know if there is exactly one 1 among Denise&rsquo;s
+    three numbers.<br>
+    Albert: I don&rsquo;t know if there is exactly one 6 among Denise&rsquo;s
+    three numbers.<br>
+    Bernard: The number I was given is even.<br>
+    Albert: The number I was given is prime.<br>
+    Bernard: I now know Denise&rsquo;s three numbers.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Cheryl gives Bernard a number between 1 and 7, and then gives Albert a
+    <a href="https://mathworld.wolfram.com/ProperDivisor.html">proper divisor</a>
+    of Bernard&rsquo;s number.
+  </p>
+  <p>
+    Albert: Bernard doesn&rsquo;t know my number.<br>
+    Albert: Bernard still doesn&rsquo;t know my number.<br>
+    Bernard: I now know Albert&rsquo;s number.
+  </p>
+  <p>
+    Let <i>div<sub>1</sub></i> and
+    <i>div<sub>2</sub></i> be Albert&rsquo;s number and
+    Bernard&rsquo;s number respectively.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <img src="{{sroot}}graph.png">
+  <p>
+    Cheryl draws the above graph (unknown to Albert and Bernard) and picks an
+    edge from it. Cheryl gives this drawing and one of the endpoints of this
+    edge to Albert. Cheryl then arbitrarily rearranges the vertices of this
+    graph (producing an
+    <a href="https://en.wikipedia.org/wiki/Graph_isomorphism">isomorphic</a>
+    graph). Cheryl gives this new drawing to Bernard, along with the identity of
+    the other endpoint of her edge.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know if there&rsquo;s any conversation we can have
+    where I will learn which edge is Cheryl&rsquo;s edge.<br>
+    Bernard: I don&rsquo;t know if there&rsquo;s any conversation we can have
+    where I will learn which edge is Cheryl&rsquo;s edge.<br>
+    Albert: I know Cheryl&rsquo;s edge.<br>
+    Bernard: I know Cheryl&rsquo;s edge.
+  </p>
+  <p>
+    Let <i>edges</i> be the number of edges in the graph
+    that share exactly one endpoint with Cheryl&rsquo;s edge.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Albert and Bernard are solving a 5-by-5
+    <a href="https://en.wikipedia.org/wiki/Nonogram">nonogram</a>. Albert has
+    the clues for the 5 rows and Bernard has the clues for the 5 columns.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know whether the first two columns of the grid have any
+    filled-in squares.<br>
+    Bernard: I already knew you didn&rsquo;t know that. One of my clues is a 5. I
+    don&rsquo;t know if the filled-in squares form a single orthogonally-connected
+    region.<br>
+    Albert: I don&rsquo;t know if you know whether the center of the grid is filled
+    in, but I know whether the center of the grid is filled in.<br>
+    Bernard: I did not know whether the center of the grid was filled in, but I
+    do now. In addition, I now know that the filled-in squares form a single
+    orthogonally-connected region. I don&rsquo;t know if you know the shape formed
+    by this region (where two shapes are the same if they can be translated and
+    rotated to match).<br>
+    Albert: I do not. In particular, I do not know whether the cell in row 4
+    column 2 is filled in (although I do know that all four corners of the grid
+    are empty).<br>
+    Bernard: Until you said that, I did not know whether the cell in row 4
+    column 2 was filled in, but now I know the solution to the nonogram.<br>
+    Albert: I too now know the solution to this nonogram.
+  </p>
+  <p>
+    Let <i>nonogram</i> be the number depicted in the
+    solution to this nonogram.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Cheryl picks her favorite U.S. state. Cheryl gives the first letter of the state
+    abbrevation to Albert and the second letter of the state abbreviation to
+    Bernard.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know the state.<br>
+    Bernard: I don&rsquo;t know the state.<br>
+    Albert: I don&rsquo;t know the state.<br>
+    Bernard: I already knew that.<br>
+    Albert: Well I already knew that you already knew that.<br>
+    Bernard: I still don&rsquo;t know what the state is.<br>
+    Albert: I also don&rsquo;t know what the state is.<br>
+    Bernard: Again, I still don&rsquo;t know the state.<br>
+    Albert: Well, I don&rsquo;t even know how many states you still think are
+    possibly the correct state.<br>
+    Bernard: Well, I know how many possibilities you have narrowed down the
+    state to.<br>
+    Albert: I now know the state. By the way, the state does not border
+    Canada.<br>
+    Bernard: Thanks. I also now know the state.
+  </p>
+  <p>
+    Let <i>state</i> be the state abbreviation of
+    Cheryl&rsquo;s favorite state.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Cheryl picks a set of distinct positive integers with at least two elements,
+    tells Albert this set&rsquo;s sum, and tells Bernard this set&rsquo;s
+    product.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know whether you know my number.<br>
+    Bernard: I know your number, and now I know you know my number too.<br>
+    Albert: I do. Isn&rsquo;t it convenient that both of our numbers are less
+    than 4,000,000,000,000,000,000?
+  </p>
+  <p>
+    Let <i>sum</i> be Albert’s number and
+    <i>product</i> be Bernard’s number.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Cheryl gives Albert and Bernard numbers between 1 and 11 (inclusive) such
+    that Albert&rsquo;s number is either the same as Bernard&rsquo;s number or
+    one greater than Bernard&rsquo;s number.
+  </p>
+  <p>
+    Albert: I know whether you know my number.<br>
+    Bernard: I know whether you know my number.<br>
+    Albert: I know whether you know my number.<br>
+    Bernard: I know whether you know whether I know whether you know whether I
+    know whether you know whether I know whether you know whether I know whether
+    you know whether I know whether you know whether I know whether you know my
+    number.<br>
+    Albert: I don&rsquo;t know your number.
+  </p>
+  <p>Let <i>whether</i> be Albert’s number.</p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    Cheryl picks (<i>whisper<sub>1</sub></i>,
+    <i>whisper<sub>2</sub></i>) from the set
+    <span style="display: block; text-align: center;">{(1, 1), (1, 2), (1, 3), (2, 2), (2, 3), (2, 4), (3, 1), (3, 5)}</span>
+    (this set is known to both Albert and Bernard). Cheryl gives
+    <i>whisper<sub>1</sub></i> to Albert and
+    <i>whisper<sub>2</sub></i> to Bernard.
+  </p>
+  <p>
+    Cheryl then whispers something to Albert; Bernard observes this but does not
+    hear what Cheryl whispered.
+  </p>
+  <p>
+    Albert: I don&rsquo;t know your number.<br>
+    Bernard: Then you don&rsquo;t know whether my number is greater than your
+    number.<br>
+    Albert: I now know your number.
+  </p>
+  <hr>
+  <br class="copy-only">
+  <p>
+    The answer to this puzzle is six letters long. Cheryl gives Albert the first
+    3 letters of the answer and Bernard the last 3 letters of the answer. Albert
+    and Bernard are not aware they are in a puzzle hunt, so they believe the
+    answer can be any string of six letters (but as is customary, the answer is
+    indeed an English word or phrase).
+  </p>
+  <p>
+    Albert: I don&rsquo;t know if the answer contains exactly
+    <i>product</i> vowels.<br>
+    Bernard: I don&rsquo;t know if the answer contains exactly
+    <i>product</i> vowels.<br>
+    Albert: I don&rsquo;t know if the answer contains
+    <i>state</i> as a substring.<br>
+    Bernard: I don&rsquo;t know if the answer contains
+    <i>state</i> as a substring.<br>
+    Albert: I don&rsquo;t know if the sum of the
+    <i>whisper<sub>1</sub></i>th and
+    <i>sum</i>th letters (where A = 1, B = 2, &#8230;) is
+    at least <i>birth<sub>month</sub></i>.<br>
+    Bernard: I don&rsquo;t know if the sum of the
+    <i>whisper<sub>1</sub></i>th and
+    <i>sum</i>th letters (where A = 1, B = 2, &#8230;) is
+    at least <i>birth<sub>day</sub></i>.<br>
+    Albert: I don’t know if the scrabble score of the answer is equal to
+    <i>edges</i>.<br>
+    Bernard: I don’t know if the scrabble score of the answer is equal to
+    <i>whether</i>.<br>
+    Albert: I don&rsquo;t know if the set of letters in the answer contains
+    <i>nonogram</i> consecutive letters.<br>
+    Bernard: I don&rsquo;t know if the set of letters in the answer contains
+    <i>nonogram</i> consecutive letters.<br>
+    Albert: I don’t know if the <i>whisper<sub>2</sub></i>th letter, the
+    <i>div<sub>1</sub></i>th letter, and the
+    <i>div<sub>2</sub></i>th letter of the answer form a
+    common English word when concatenated.<br>
+    Bernard: I don’t know if the <i>d<sub>1</sub></i>th letter, the
+    <i>d<sub>2</sub></i>th letter, and the
+    <i>d<sub>3</sub></i>th letter of the answer form a
+    common English word when concatenated.<br>
+    Albert: I don’t know if the product of all the letters (where A = 1, B = 2,
+    &#8230;) in the answer is divisible by
+    <i>cell</i>.<br>
+    Cheryl: Oh, I forgot to tell you this earlier, but all the letters in the
+    answer are distinct.<br>
+    Bernard: I know the answer to this puzzle.<br>
+    Albert: I know the answer to this puzzle.
+  </p>
+</div>
+<button id="clipboard-button"></button>

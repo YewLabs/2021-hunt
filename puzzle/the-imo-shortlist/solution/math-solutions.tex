@@ -1,0 +1,1017 @@
+\documentclass[11pt]{scrartcl}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{asymptote}
+
+%%% Macros
+\providecommand{\ol}{\overline}
+\providecommand{\ul}{\underline}
+\providecommand{\wt}{\widetilde}
+\providecommand{\wh}{\widehat}
+\providecommand{\eps}{\varepsilon}
+\providecommand{\half}{\frac{1}{2}}
+\providecommand{\inv}{^{-1}}
+\newcommand{\dang}{\measuredangle} %% Directed angle
+\providecommand{\CC}{\mathbb C}
+\providecommand{\FF}{\mathbb F}
+\providecommand{\NN}{\mathbb N}
+\providecommand{\QQ}{\mathbb Q}
+\providecommand{\RR}{\mathbb R}
+\providecommand{\ZZ}{\mathbb Z}
+\providecommand{\ts}{\textsuperscript}
+\providecommand{\dg}{^\circ}
+\providecommand{\ii}{\item}
+\providecommand{\defeq}{\coloneqq}
+\DeclareMathOperator*{\lcm}{lcm}
+\DeclareMathOperator*{\argmin}{arg min}
+\DeclareMathOperator*{\argmax}{arg max}
+\providecommand{\hrulebar}{\par
+\hspace{\fill}\rule{0.95\linewidth}{.7pt}\hspace{\fill}
+\par\nointerlineskip \vspace{\baselineskip}}
+
+%%% Colored sections
+\renewcommand*{\sectionformat}%
+	{\color{purple}\S\thesection\enskip}
+	\renewcommand*{\subsectionformat}%
+	{\color{purple}\S\thesubsection\enskip}
+	\renewcommand*{\subsubsectionformat}%
+	{\color{purple}\S\thesubsubsection\enskip}
+	\KOMAoptions{numbers=noenddot}
+
+%%% Optional colored theorems
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+\mdfdefinestyle{mdbluebox}{%
+	roundcorner = 10pt,
+	linewidth=1pt,
+	skipabove=12pt,
+	innerbottommargin=9pt,
+	skipbelow=2pt,
+	linecolor=blue,
+	nobreak=true,
+	backgroundcolor=TealBlue!5,
+}
+\declaretheoremstyle[
+	headfont=\sffamily\bfseries\color{MidnightBlue},
+	mdframed={style=mdbluebox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt}
+]{thmbluebox}
+\mdfdefinestyle{mdredbox}{%
+	linewidth=0.5pt,
+	skipabove=12pt,
+	frametitleaboveskip=5pt,
+	frametitlebelowskip=0pt,
+	skipbelow=2pt,
+	frametitlefont=\bfseries,
+	innertopmargin=4pt,
+	innerbottommargin=8pt,
+	nobreak=true,
+	backgroundcolor=Salmon!5,
+	linecolor=RawSienna,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\color{RawSienna},
+	mdframed={style=mdredbox},
+	headpunct={\\[3pt]},
+	postheadspace={0pt},
+]{thmredbox}
+\mdfdefinestyle{mdgreenbox}{%
+	skipabove=8pt,
+	linewidth=2pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=ForestGreen,
+	backgroundcolor=ForestGreen!5,
+}
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+	bodyfont=\normalfont,
+	spaceabove=2pt,
+	spacebelow=1pt,
+	mdframed={style=mdgreenbox},
+	headpunct={ --- },
+]{thmgreenbox}
+\mdfdefinestyle{mdblackbox}{%
+	skipabove=8pt,
+	linewidth=3pt,
+	rightline=false,
+	leftline=true,
+	topline=false,
+	bottomline=false,
+	linecolor=black,
+	backgroundcolor=RedViolet!5!gray!5,
+}
+\declaretheoremstyle[
+	headfont=\bfseries,
+	bodyfont=\normalfont\small,
+	spaceabove=0pt,
+	spacebelow=0pt,
+	mdframed={style=mdblackbox}
+]{thmblackbox}
+
+\declaretheorem[style=thmbluebox,name=Theorem,numberwithin=section]{theorem}
+\declaretheorem[style=thmbluebox,name=Lemma,sibling=theorem]{lemma}
+\declaretheorem[style=thmbluebox,name=Proposition,sibling=theorem]{proposition}
+\declaretheorem[style=thmbluebox,name=Corollary,sibling=theorem]{corollary}
+\declaretheorem[style=thmbluebox,name=Theorem,numbered=no]{theorem*}
+\declaretheorem[style=thmbluebox,name=Lemma,numbered=no]{lemma*}
+\declaretheorem[style=thmbluebox,name=Proposition,numbered=no]{proposition*}
+\declaretheorem[style=thmbluebox,name=Corollary,numbered=no]{corollary*}
+\declaretheorem[style=thmgreenbox,name=Algorithm,sibling=theorem]{algorithm}
+\declaretheorem[style=thmgreenbox,name=Algorithm,numbered=no]{algorithm*}
+\declaretheorem[style=thmgreenbox,name=Claim,sibling=theorem]{claim}
+\declaretheorem[style=thmgreenbox,name=Claim,numbered=no]{claim*}
+\declaretheorem[style=thmredbox,name=Example,sibling=theorem]{example}
+\declaretheorem[style=thmredbox,name=Example,numbered=no]{example*}
+\declaretheorem[style=thmblackbox,name=Remark,sibling=theorem]{remark}
+\declaretheorem[style=thmblackbox,name=Remark,numbered=no]{remark*}
+
+\begin{asydef}
+	defaultpen(fontsize(10pt));
+	size(8cm); // set a reasonable default
+	usepackage("amsmath");
+	usepackage("amssymb");
+	settings.tex="pdflatex";
+	settings.outformat="pdf";
+	// Replacement for olympiad+cse5 which is not standard
+	import geometry;
+	// recalibrate fill and filldraw for conics
+	void filldraw(picture pic = currentpicture, conic g, pen fillpen=defaultpen, pen drawpen=defaultpen)
+		{ filldraw(pic, (path) g, fillpen, drawpen); }
+	void fill(picture pic = currentpicture, conic g, pen p=defaultpen)
+		{ filldraw(pic, (path) g, p); }
+	// some geometry
+	pair foot(pair P, pair A, pair B) { return foot(triangle(A,B,P).VC); }
+	pair orthocenter(pair A, pair B, pair C) { return orthocentercenter(A,B,C); }
+	pair centroid(pair A, pair B, pair C) { return (A+B+C)/3; }
+	// cse5 abbrevations
+	path CP(pair P, pair A) { return circle(P, abs(A-P)); }
+	path CR(pair P, real r) { return circle(P, r); }
+	pair IP(path p, path q) { return intersectionpoints(p,q)[0]; }
+	pair OP(path p, path q) { return intersectionpoints(p,q)[1]; }
+	path Line(pair A, pair B, real a=0.6, real b=a) { return (a*(A-B)+A)--(b*(B-A)+B); }
+	// cse5 more useful functions
+	picture CC() {
+		picture p=rotate(0)*currentpicture;
+		currentpicture.erase();
+		return p;
+	}
+	pair MP(Label s, pair A, pair B = plain.S, pen p = defaultpen) {
+		Label L = s;
+		L.s = "$"+s.s+"$";
+		label(L, A, B, p);
+		return A;
+	}
+	pair Drawing(Label s = "", pair A, pair B = plain.S, pen p = defaultpen) {
+		dot(MP(s, A, B, p), p);
+		return A;
+	}
+	path Drawing(path g, pen p = defaultpen, arrowbar ar = None) {
+		draw(g, p, ar);
+		return g;
+	}
+\end{asydef}
+
+
+\begin{document}
+\title{Complete solutions to the problems}
+\subtitle{Only for people who actually care about the proofs}
+\author{The IMO Shortlist}
+\date{41st Mystery Hunt 2021}
+\maketitle
+
+\section{Algebra}
+\subsection*{Solution A1}
+This is a quadratic equation in $y$, so we may simply expand to get
+\[ 9y^2 + (24x - 12(4x+1)) y + 16x^2+4(4x+1) = 0 \]
+which factors as
+\[ \left( 3y - (4x+2) \right)^2 = 0. \]
+Hence, the solution is $y = \frac{4x+2}{3}$.
+
+\subsection*{Solution A2}
+We let $A > 0$ denote the desired expression.
+Square both sides to obtain
+\begin{align*}
+	A^2 &= \left( 20x+3+4\sqrt{15x} \right)
+	+ \left( 20x+3-4\sqrt{15x} \right)
+	+ 2\sqrt{ (20x+3)^2-(4\sqrt{15}x)^2 } \\
+	&= 40x+6 + 2\sqrt{400x^2 - 120x + 9} \\
+	&= 40x+6 + 2(20x-3) = 80x.
+\end{align*}
+Therefore, $A = \sqrt{80x}$.
+
+\subsection*{Solution A3}
+Let $g(x) = \frac{f(x)+1}{3}$.
+Then the condition means we have the convolution
+\[ g \ast \mathbf 1 = \operatorname{id} \]
+where $\mathbf 1$ is the constant function $1$.
+This means that $g$ coincides with the Euler phi function $\varphi$.
+Hence, it follows that \[ f(x) = 3 \varphi(x) - 1. \]
+
+\subsection*{Solution A4}
+Start with the identity
+\[ \sum_{n \ge 0} T^n = \frac{1}{1-T} \]
+valid for $|T| < 1$.
+Differentiate both sides to obtain
+$\sum_{n \ge 0} n T^{n-1} = \frac{1}{(1-T)^2}$
+or equivalently
+\[ \sum_{n \ge 0} n T^{n} = \frac{T}{(1-T)^2}. \]
+Consequently, if we choose $T = \frac{1}{1+x^{-1/2}}$, we obtain
+\begin{align*}
+	\sum_{n \ge 0} n \left( 1 + \frac{1}{\sqrt x} \right)^{-n}
+	&= \frac{\frac{1}{1+\frac{1}{\sqrt x}}}
+	{\left( 1 - \frac{1}{1+\frac{1}{\sqrt x}} \right)^2} \\
+	&= \frac{1+\frac{1}{\sqrt x}}
+	{\left( \left( 1 + \frac{1}{\sqrt x} \right) - 1 \right)^2} \\
+	&= x + \sqrt x.
+\end{align*}
+
+\subsection*{Solution A5}
+This problem is taken from Putnam 2008 B3 which has the following form:
+\begin{claim*}
+	The largest possible radius of a circle inside
+	an $n$-dimensional hypercube of side length $s > 0$
+	is exactly $\frac s2 \sqrt{\frac n2}$.
+\end{claim*}
+\begin{proof}
+	By scaling, we assume without loss of generality that $s = 2$.
+	By symmetry, we may assume the center is zero.
+
+	Parametrize the circle as
+	\[ \mathbf x(t)
+		= \left( \mathbf a \cos t
+		+ \mathbf b \sin t \right) \]
+	where vectors 
+	\begin{align*}
+		\mathbf a &= (a_1, \dots, a_n) \\
+		\mathbf b &= (b_1, \dots, b_n)
+	\end{align*}
+	are orthogonal of the same length $r$.
+	We require that every component is contained inside $[-1,1]$
+	across all $t \in \RR$.
+
+	For the upper bound, note that we thus require
+	$\sqrt{a_i^2+b_i^2} \le 1$ for every $i$,
+	whence squaring and summing gives
+	$n \ge \sum_i(a_i^2+b_i^2) = 2r^2$.
+
+	For the lower bound, we need two constructions.
+	\begin{itemize}
+		\ii For $n \ge 2$ odd
+		$\mathbf a = (1,\dots,1,0,\dots,0)$
+		and $\mathbf b = (0,\dots,0,1,\dots,1)$.
+		\ii For $n \ge 3$ odd, we can set
+		\begin{align*}
+			\mathbf a &= \left( \frac{\sqrt3}{2}, \frac{-\sqrt3}{2}, 0 \right) \\
+			\mathbf b &= \left(\half, \half, -1\right)
+		\end{align*}
+		for $n=3$ and then inductively add two components. \qedhere
+	\end{itemize}
+\end{proof}
+Applying this to the given problem, we find the necessary
+and sufficient condition $d$ is that
+\[ \sqrt x \le \frac{\pi}{2} \sqrt{\frac{d}{2}}. \]
+
+Put another way, we have $d \ge \frac{8}{\pi^2} x$.
+Since $d$ must be an integer, we conclude
+\[ d \ge \left\lceil \frac{8}{\pi^2} x \right\rceil. \]
+
+\subsection*{Solution A6}
+We rewrite the given equation as
+\[ 2f(x+y) - 1 = 4f(x)f(y) - 2f(x) - 2f(y) + 1
+	= \left( 2f(x)-1 \right)\left( 2f(y)-1 \right). \]
+Letting $g(x) = 2f(x)-1$, we find $g(x+y) = g(x)g(y)$.
+
+Note that if any value of $g$ is equal to zero, then the function $g$ is identically zero,
+which is not a valid solution since we assumed the function $f$ was strictly increasing.
+So in what follows we assume $g$ is never zero.
+
+Since $g(x) = g(x/2)^2 > 0$ for any $x$,
+it follows that $\log g$ is a well-defined additive function
+(meaning $\log g(x+y) = \log g(x) + \log g(y)$)
+which is also strictly increasing.
+It is a property of Cauchy's equation that this implies $\log g$ is a linear function.
+Consequently, we conclude that $g$ is an exponential function.
+
+Putting this all together, we derive that
+\[ f(x) = \frac{c^x+1}{2} \]
+for some constant $c$.
+Since we need $f(24) = 5$, it follows that the correct constant is $c = 9^{1/24}$.
+In other  words,
+\[ f(x) = \frac{9^{x/24} + 1}{2} \]
+is the only solution to the functional equation.
+
+
+\section{Combinatorics}
+\subsection*{Solution C1}
+There are $\binom{2n}{n}$ ways to choose $A \cup B$
+after which there are $2^n$ ways to split $A \cup B$ into sets $A$ and $B$.
+In other words, we find
+\[ M = 2^n \binom{2n}{n}. \]
+By Legendre's formula, the exponent of $2$ in $n!$ is $n - s_2(n)$,
+while the exponent of $2$ in $(2n)!$ is $2n - s_2(2n) = 2n - s_2(n)$,
+where $s_2(n)$ is the number of $1$'s in the binary representation of $n$.
+So the exponent of $2$ in $\binom{2n}{n}$ is
+exactly $[2n-s_2(n)] - 2[n-s_2(n)] = s_2(n)$.
+
+From this we conclude that
+\[ e = n + s_2(n) \]
+is the final answer.
+
+\subsection*{Solution C2}
+This problem is adapted from USAMO 2009 problem 2
+and the answer is $2 \left\lceil n/2 \right\rceil$.
+
+By shifting, we will work on the analogous problem
+where we want a subset of $\{-n, -(n-1), \dots, 0, \dots, n \}$
+and we want no three elements to have sum equal to zero.
+
+To show $2 \left\lceil n/2 \right\rceil$ is achievable
+it now suffices to take all odd numbers.
+
+We now turn our attention to showing this is best possible.
+To prove this is maximal, it suffices to show it for $n$ even;
+we do so by induction on even $n \ge 2$ with the base case being trivial.
+Letting $A$ be the subset, we consider three cases:
+\begin{enumerate}
+	\item If $|A \cap \{-n,-n+1,n-1,n\}| \le 2$,
+	then by the hypothesis for $n-2$ we are done.
+	\item If both $n \in A$ and $-n \in A$,
+	then there can be at most $n-2$ elements in $A \setminus \{\pm n\}$,
+	one from each of the pairs $(1,n-1)$, $(2,n-2)$, $\dots$
+	and their negations.
+	\item If $n, n-1, -n+1 \in A$ and $-n \notin A$,
+	then at most $n-3$ more can be added,
+	one from each of $(1, n-2)$, $(2, n-3)$, $\dots$
+	and $(-2, -n+2)$, $(-3, -n+3)$, $\dots$.
+	(In particular $-1 \notin A$.
+	Analogous case for $-A$ if $n \notin A$.)
+\end{enumerate}
+Thus in all cases, $|A| \le n$ as needed.
+
+\subsection*{Solution C3}
+This problem is based on China TST 2018, test 2, problem 3.
+
+The answer to the given problem is $\frac{n+2014}{\gcd(n,2014)}$.
+In general, we replace $2014$ by $m$ and show the answer
+$\frac{n+m}{\gcd(m,n)}$.
+
+Note that if $d = \gcd(m,n) > 1$, we could focus only on
+the numbers which are $0 \pmod d$, which is the same process
+all numbers scaled by $d$ and the pair $(m,n)$ replaced by the pair $(m/d, n/d)$.
+The same logic applies to numbers which are $1 \pmod d$, etc.
+Thus we may scale down by a factor of $d$ without any loss of generality.
+So in what follows, we will always assume $\gcd(m,n) = 1$,
+and show the answer is $m+n$.
+
+To see that the operation could go on indefinitely,
+we notice that writing $\{1, \dots, m\}$ and $\{1, \dots, n\}$ is sufficient.
+
+Now we prove that fewer than $m+n$ numbers does not suffice.
+In fact it suffices to work modulo $m+n$.
+We consider the finite simple undirected graph $G$
+defined on the vertex set $V = \ZZ/(m+n)$ with edges
+$x \to x+m$ and $x \to x+n$ for each $x \in \ZZ/(m+n)$.
+(These are equivalent to $x \to x-n$
+and $x \to x-m$ modulo $m+n$, respectively.)
+Since $\gcd(m,n) = 1$, this graph is connected and has $m+n$ edges
+(actually, it is isomorphic to a cycle on $m+n$ vertices).
+
+For every number on the board, we place a chip at the corresponding residue in $V$
+and then observe the given operation corresponds to chip-firing.
+It is a standard lemma from chip-firing that the number of chips
+needed for chip-firing to continue indefinitely is at least the number of edges of $G$,
+which is exactly $m+n$.
+
+\subsection*{Solution C4}
+This problem is adapted from USA Team Selection Test for IMO 2015, problem 5.
+
+First, we eliminate the distractions of coloring the vertices from the problem:
+\begin{claim*}
+	The vertices are pairwise distinct colors.
+	Moreover, no color used on an edge can be used on a vertex.
+\end{claim*}
+\begin{proof}
+	It suffices to verify this condition
+	among any sub-tournament with only three vertices
+	(since given an edge $e$ and a vertex $v$ we can find three vertices
+	containing both endpoints of $e$ and the vertex $v$).
+
+	Now among any three vertices there is always a way to label them $a$, $b$, $c$
+	such that $a \to b$ and $b \to c$,
+	and so the conclusions of the claim follows.
+\end{proof}
+
+Now suppose there are $\chi$ colors represented among
+the edges.
+
+\begin{claim*}
+	The minimum possible value of $\chi$ is $\left\lceil \log_2 n \right\rceil$.
+\end{claim*}
+\begin{proof}
+	First, we prove by induction on $n$
+	that $\chi \ge \log_2 n$ for any coloring and any tournament.
+	The base case $n = 1$ is obvious.
+	Now given any tournament, consider any used color $c$.
+	Then it should be possible to divide the tournament
+	into two subsets $A$ and $B$ such that all $c$-colored edges
+	point from $A$ to $B$
+	(for example by letting $A$ be all vertices
+	which are the starting point of a $c$-edge).
+	\begin{center}
+	\begin{asy}
+		size(5cm);
+		filldraw(box( (-2,-2), (-0.6,2) ), opacity(0.1)+lightcyan, lightblue );
+		filldraw(box( (0.6,-2), (2,2) ), opacity(0.1)+lightcyan, lightblue );
+		label("$A$", (-2,0), dir(180), blue);
+		label("$B$", ( 2,0), dir(  0), blue);
+		label("all edges colored $c$", (0,2), dir(90), deepgreen);
+		draw( (-1.3,1.2)--(1.5,0.2), deepgreen, EndArrow);
+		draw( (-0.9,-0.2)--(1.1, -0.1), deepgreen, EndArrow);
+		draw( (-1.4, 0.4)--(0.9, 0.8), deepgreen, EndArrow);
+		draw( (-1.4, -0.8)--(1.3, -0.6), deepgreen, EndArrow);
+		draw( (-1.3, -0.5)--(1.2, -1.6), deepgreen, EndArrow);
+	\end{asy}
+	\end{center}
+	One of $A$ and $B$ has size at least $n/2$, say $A$.
+	Since $A$ has no $c$ edges,
+	and uses at least $\log_2 |A|$ colors other than $c$, we get
+	\[ \chi \ge 1 + \log_2 (n/2) = \log_2 n \]
+	completing the induction.
+
+	One can read the construction off from the argument above,
+	but here is a concrete description.
+	For each integer $n$,
+	consider the tournament whose vertices are
+	the binary representations of $S  =\{0, \dots, n-1\}$.
+	Instantiate colors $c_1$, $c_2$, \dots.
+	Then for $v, w \in S$,
+	we look at the smallest order bit for which they differ;
+	say the $k$th one.
+	If $v$ has a zero in the $k$th bit,
+	and $w$ has a one in the $k$th bit,
+	we draw $v \to w$.
+	Moreover we color the edge with color $c_k$.
+	This works and uses at most $\left\lceil \log_2 n \right\rceil$ colors.
+\end{proof}
+
+Hence, the final answer to the question
+is $n + \left\lceil \log_2 n \right\rceil$.
+
+
+
+\subsection*{Solution C5}
+For $n > 6$ we claim the answer is $n+6$.
+This is adapted from Tournament of Towns, Spring 2016, Problem J-A7.
+
+This is a consequence of Tur\'{a}n's theorem.
+View the cards as vertices of a graph $G$,
+and the pointed cards as edges of the graph $G$.
+Happiness is guaranteed if and only if it is impossible
+to find an \emph{independent set} with at least $n/2$ cards.
+
+Tur\'{a}n's theorem then implies that the graph $G$ consisting of
+$\frac{n-6}{2}$ copies of $K_2$ and $2$ copies of $K_3$,
+which obviously has independence number
+$\frac{n-6}{2} + 2 = \frac n2 - 1$, is best possible.
+
+\subsection*{Solution C6}
+Let $\ell = 2n$. We claim that $\ell \ge 2m-2$ for $m \ge 3$
+and that this is best possible.
+
+We will only deal with the case $m \ge 3$.
+For the construction, the case $m=3$ is a famous brainteaser (shown below),
+and then one can inductively add a vertical/horizontal
+line in order to to get $\ell = 2m-2$ for any $m \ge 4$.
+\begin{center}
+\begin{asy}
+	size(5cm);
+	dotfactor *= 2;
+	draw( (3,1.5)--(3,4)--(0,1)--(3,1)--(0.5,3.5), red );
+	for (int i=1; i<=3; ++i) {
+	for (int j=1; j<=3; ++j) {
+		dot( (i,j) );
+	}
+	}
+\end{asy}
+\end{center}
+
+Now, we show $\ell \ge 2m-2$.
+Assume there are $m-a$ horizontal lines
+and $m-b$ vertical lines.
+We first dispense of some edge cases:
+\begin{itemize}
+	\ii If $a \le 0$,
+	then there are at least $m$ horizontal lines,
+	which must be joined by at least
+	$m-1$ other lines, so $\ell \ge 2m-1$.
+	\ii If $a = 1$, then there is
+	some row of points is untouched by the horizontal lines,
+	and at least $m$ non-horizontal lines are needed to
+	pass through these.
+	So $\ell \ge (m-1) + m = 2m-1$.
+\end{itemize}
+The cases $b \le 0$ and $b = 1$ are handled analogously.
+Hence in what follows assume $\min(a,b) \ge 2$.
+
+Then we have an $a \times b$ sub-grid of points
+(perhaps not evenly spaced, but still rectangular)
+not touched by any horizontal or vertical lines.
+Consider the boundary of this grid, which has $2a+2b-4$ points.
+Each line passes through at most $2$ points on this boundary.
+So we need at least $a+b-2$ lines not horizontal or vertical.
+In conclusion,
+\[ \ell \ge (a+b-2) + (m-a) + (m-b) = 2m-2. \]
+Since $\ell = 2n$, we get $n \ge m-1$ as needed.
+
+Put another way, we have $m \le n+1$ as the answer.
+
+\section{Geometry}
+\subsection*{Solution G1}
+The hidden collinearity is that $U$, $N$, $K$ are collinear, which we prove now.
+
+It is a classical lemma that since $T$ is the arc midpoint of $\widehat{SN}$,
+the point $U$ is the incenter of $\triangle CSN$.
+Consequently, since $A$ is the arc midpoint of $\widehat{SK}$,
+it follows that ray $SA$ is the angle bisector of $\angle CS$,
+so it passes through the point $U$.
+\begin{center}
+\begin{asy}
+pair T = dir(270);
+pair S = dir(234);
+pair N = dir(306);
+pair A = dir(18);
+pair C = dir(90);
+pair K = dir(162);
+pair U = incenter(S, N, C);
+
+draw(CP(T, U), deepgreen);
+draw(unitcircle, grey);
+draw(S--N--A--C--K--cycle, grey);
+draw(S--T--N, deepgreen);
+draw(C--T, deepgreen);
+
+draw(S--A, blue+1);
+draw(N--K, red+1);
+
+dot("$T$", T, dir(T));
+dot("$S$", S, dir(190));
+dot("$N$", N, dir(350));
+dot("$A$", A, dir(A));
+dot("$C$", C, dir(C));
+dot("$K$", K, dir(K));
+dot("$U$", U, dir(300));
+
+/* TSQ Source:
+
+T = dir 270
+S = dir 234 R190
+N = dir 306 R350
+A = dir 18
+C = dir 90
+K = dir 162
+U = incenter S N C R300
+
+CP T U deepgreen
+unitcircle grey
+S--N--A--C--K--cycle grey
+S--T--N deepgreen
+C--T deepgreen
+
+S--A blue+1
+N--K red+1
+
+*/
+\end{asy}
+\end{center}
+
+(For a symmetric reason, the point $U$ also lies on line $SA$.)
+
+\subsection*{Solution G2}
+The hidden collinearity is that $G$, $E$, $R$ are collinear, which we prove now.
+
+Evidently, the point $R$ is the one such that $ABCR$ is an isosceles trapezoid.
+There is a negative homothety (with ratio $-2$) which sends
+the nine-point circle to the $ABCR$, which maps $D$ to $A$ and $E$ to $R$.
+
+\begin{center}
+\begin{asy}
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair D = midpoint(B--C);
+pair E = foot(A, B, C);
+pair O = origin;
+pair G = centroid(A, B, C);
+pair R = B*C/A;
+draw(E--R, deepgreen);
+pair U = -R;
+draw(A--D, grey);
+draw(R--U, red+1);
+draw(R--E, blue+1);
+draw(unitcircle, grey);
+draw(A--B--C--cycle, black);
+
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$D$", D, dir(D));
+dot("$E$", E, dir(E));
+dot("$O$", O, dir(315));
+dot("$G$", G, dir(G));
+dot("$R$", R, dir(R));
+dot("$U$", U, dir(U));
+
+/* TSQ Source:
+
+A = dir 110
+B = dir 210
+C = dir 330
+D = midpoint B--C
+E = foot A B C
+O = origin R315
+G = centroid A B C
+R = B*C/A
+E--R deepgreen
+U = -R
+A--D grey
+R--U red+1
+R--E blue+1
+unitcircle grey
+A--B--C--cycle black
+
+*/
+\end{asy}
+\end{center}
+
+(As for the originally posed problem,
+the point $U$ is the reflection of the orthocenter
+over line $BC$, which is known to be the antipode of $R$.)
+
+\subsection*{Solution G3}
+The hidden collinearity in the picture is that $H$, $E$, $L$ are collinear,
+which we prove now.
+
+\begin{center}
+\begin{asy}
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair V = foot(C, A, B);
+pair U = foot(B, C, A);
+pair G = centroid(A, B, C);
+pair H = orthocenter(A, B, C);
+pair K = origin;
+pair D = foot(A, B, C);
+pair E = midpoint(B--C);
+pair N = extension(U, V, B, C);
+pair L = -A;
+pair M = foot(A, L, N);
+draw(A--B--C--cycle, black);
+draw(H--K, blue+1);
+draw(H--L, red+1);
+draw(A--D, grey);
+draw(A--E, grey);
+draw(N--U--B, grey);
+draw(N--L, grey);
+draw(N--B, grey);
+draw(unitcircle, grey);
+draw(circumcircle(M, D, E), dashed+deepgreen);
+draw(circumcircle(U, V, D), deepgreen);
+
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(225));
+dot("$C$", C, dir(315));
+dot("$V$", V, dir(160));
+dot("$U$", U, dir(45));
+dot("$G$", G, dir(235));
+dot("$H$", H, dir(H));
+dot("$K$", K, dir(45));
+dot("$D$", D, dir(D));
+dot("$E$", E, dir(E));
+dot("$N$", N, dir(N));
+dot("$L$", L, dir(315));
+dot("$M$", M, dir(205));
+
+/* TSQ Source:
+
+A = dir 110
+B = dir 210 R225
+C = dir 330 R315
+V = foot C A B R160
+U = foot B C A R45
+G = centroid A B C R235
+H = orthocenter A B C
+K = origin R45
+D = foot A B C
+E = midpoint B--C
+N = extension U V B C
+L = -A R315
+M = foot A L N R205
+A--B--C--cycle black
+H--K blue+1
+H--L red+1
+A--D grey
+A--E grey
+N--U--B grey
+N--L grey
+N--B grey
+unitcircle grey
+circumcircle M D E dashed deepgreen
+circumcircle U V D deepgreen
+
+*/
+\end{asy}
+\end{center}
+
+Consider the circumcircles of $UVDE$ (nine-point circle),
+$ABC$, and the triangle $MDE$.
+The pairwise radical axii must be concurrent;
+note that line $DE$ is one radical axis.
+On the other hand, since $BVUC$ is a cyclic quadrilateral, we know
+\[ ND \cdot NE = NU \cdot NV = NB \cdot NC  \]
+so the point $N$ is the radical center, since it also lies on line $DE$.
+
+In other words, the line $MN$ must pass through the second intersection
+point of $(MDE)$ and $(ABC)$.
+Hence $MDEL$ is cyclic.
+But since $\angle AMN = 90\dg$, it follows $L$ must actually coincide
+with the antipode of the point $A$.
+It's well known the reflection of $H$ across $E$
+is the desired antipode, so we're done.
+
+(As for the originally proposed question,
+$K$ is now the circumcenter of $ABC$
+so the line $HKG$ is simply the Euler line.)
+
+\subsection*{Solution G4}
+The hidden collinearity in the picture is that $E$, $S$, $P$ are collinear.
+
+\begin{center}
+\begin{asy}
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair I = incenter(A, B, C);
+pair D = foot(I, B, C);
+pair E = foot(I, C, A);
+pair F = foot(I, A, B);
+pair L = midpoint(A--B);
+pair N = midpoint(A--C);
+pair M = midpoint(B--C);
+pair R = extension(L, N, E, F);
+pair S = extension(M, L, D, F);
+pair P = extension(E, S, D, R);
+pair U = extension(R, S, A, B);
+draw(A--B--C--cycle, grey);
+draw(circumcircle(D, E, F), grey);
+draw(L--N, grey);
+draw(D--S--M, deepgreen);
+draw(E--S, red+1);
+draw(R--S, blue+1);
+draw(D--E--F--cycle, grey);
+draw(E--F, grey);
+draw(D--P, grey);
+draw(U--P, grey);
+
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(B));
+dot("$C$", C, dir(C));
+dot("$D$", D, dir(D));
+dot("$E$", E, dir(E));
+dot("$F$", F, dir(200));
+dot("$L$", L, dir(100));
+dot("$N$", N, dir(N));
+dot("$M$", M, dir(M));
+dot("$R$", R, dir(315));
+dot("$S$", S, dir(S));
+dot("$P$", P, dir(60));
+dot("$U$", U, dir(205));
+
+/* TSQ Source:
+
+A = dir 110
+B = dir 210
+C = dir 330
+I := incenter A B C
+D = foot I B C
+E = foot I C A
+F = foot I A B R200
+L = midpoint A--B R100
+N = midpoint A--C
+M = midpoint B--C
+R = extension L N E F R315
+S = extension M L D F
+P = extension E S D R R60
+U = extension R S A B R205
+A--B--C--cycle grey
+circumcircle D E F grey
+L--N grey
+D--S--M deepgreen
+E--S red+1
+R--S blue+1
+D--E--F--cycle grey
+E--F grey
+D--P grey
+U--P grey
+
+*/
+\end{asy}
+\end{center}
+
+We will need that the Feurerbach hyperbola is the rectangular circumhyperbola
+of triangle $ABC$ which passes through the point $I$,
+and that the center of this hyperbola is the Feurerbach point $P$.
+Then the conclusion follows by the
+\href{https://mathworld.wolfram.com/FonteneTheorems.html}{First Fonten\'{e} Theorem}:
+the points $R = EF \cap NL$, $S = FD \cap LM$, $T = DE \cap MN$ (not shown)
+should have lines $DR$, $ES$, $FT$ meeting at the point $P$.
+
+(For the actually posed question,
+note first by Brokard's theorem on $PFDE$ that the points
+$U = PP \cap FF$, $R = PD \cap EF$, $S = PE \cap DF$ are collinear.
+Incidentally, the point $C = DD \cap EE$ lies on this line too.)
+
+
+\subsection*{Solution G5}
+The hidden collinearity in the picture is that $V$, $M$, $N$ are collinear,
+which we prove now.
+(Technically speaking, $OGH$ and $COX$ are also collinear,
+but there is no country with code using those triples of letters.)
+
+\begin{center}
+\begin{asy}
+pair A = dir(110);
+pair B = dir(210);
+pair C = dir(330);
+pair M = midpoint(A--B);
+pair N = midpoint(A--C);
+pair P = midpoint(B--C);
+pair H = orthocenter(A, B, C);
+pair O = circumcenter(A, B, C);
+pair G = centroid(A, B, C);
+pair E = C+2*foot(O,M,H);
+pair D = B+2*foot(O,N,H);
+pair V = extension(M, N, D, E);
+draw(V--N, red+1);
+draw(V--A, grey);
+draw(unitcircle, grey);
+draw(A--B--C--cycle, black);
+draw(circumcircle(M, N, D), deepgreen);
+draw(M--E, grey);
+draw(N--D, grey);
+draw(V--E, deepgrey);
+pair X = -C;
+pair W = -A+2*foot(A, O, V);
+pair L = B*C/A;
+draw(W--L, lightgrey);
+draw(X--E, blue+1);
+
+dot("$A$", A, dir(A));
+dot("$B$", B, dir(270));
+dot("$C$", C, dir(C));
+dot("$M$", M, dir(135));
+dot("$N$", N, dir(N));
+dot("$P$", P, dir(P));
+dot("$H$", H, dir(270));
+dot("$O$", O, dir(315));
+dot("$G$", G, dir(270));
+dot("$E$", E, dir(E));
+dot("$D$", D, dir(D));
+dot("$V$", V, dir(V));
+dot("$X$", X, dir(X));
+dot("$W$", W, dir(W));
+dot("$L$", L, dir(L));
+
+/* TSQ Source:
+
+A = dir 110
+B = dir 210 R270
+C = dir 330
+M = midpoint A--B R135
+N = midpoint A--C
+P = midpoint B--C
+H = orthocenter A B C R270
+O = circumcenter A B C R315
+G = centroid A B C R270
+E = C+2*foot(O,M,H)
+D = B+2*foot(O,N,H)
+V = extension M N D E
+V--N red+1
+V--A grey
+unitcircle grey
+A--B--C--cycle black
+circumcircle M N D deepgreen
+M--E grey
+N--D grey
+V--E deepgrey
+X = -C
+W = -A+2*foot A O V
+L = B*C/A
+W--L lightgrey
+X--E blue+1
+
+*/
+\end{asy}
+\end{center}
+
+To prove this, note that a negative inversion at $H$
+carrying the nine-point circle to the circumcircle
+will map $M$ to $E$ and $N$ to $D$,
+so that the points $M$, $N$, $E$, $D$ are cyclic.
+In addition, the circumcircle of $AMN$ is tangent to
+the circumcircle of $ABC$ at the point $A$.
+So considering the radical axis of the circles $AMN$, $ABC$, $MNDE$
+shows that the tangent at $A$, the line $DE$, and the line $MN$ concur --- at $V$.
+Hence $V$, $M$, $N$ are collinear.
+
+(For the originally suggested problem,
+one can note that $VW$ is tangent to the circumcircle of $ABC$
+and then, following the approach of IMO Shortlist 2011 G4,
+show that $L$ is the point for which $ABCL$ is an isosceles trapezoid.
+The contrived angle condition that $X$ is the $C$-antipode, as needed.)
+
+
+\section{Number Theory}
+\subsection*{Solution NT1}
+This is a classical variant of the Frobenius coin problem.
+We need $\gcd(m,n) = 1$ or else any integer
+relatively prime to $\gcd(m,n)$ is not expressible.
+
+It is known that in when $\gcd(m,n) = 1$
+then the number of integers which can't be formed is
+\[ \frac{mn-m-n}{2}. \]
+So we wish to solve
+\[ \frac{mn-m-n}{2} = 4161
+	\iff (m-1)(n-1) = mn - m - n + 1 = 8322. \]
+Since $8322 = 2 \cdot 3 \cdot 19 \cdot 73$,
+the requested pair is $(m-1, n-1) = (73, 114)$
+or \[ (m,n) = (74,115). \]
+
+\subsection*{Solution NT2}
+The condition rewrites as
+\[ (7m+2n)^2 + (3m+n)^2 = 193. \]
+The number $193$ is prime and can be expressed as the sum of two squares
+in exactly one way, $193 = 12^2+7^2$.
+So we want either $7m+2n = \pm 12$ and $3m+n = \pm 7$,
+or $7m+2n = \pm 7$ and $3m+n = \pm 12$.
+
+We exhaust all cases below:
+\begin{center}
+\begin{tabular}[h]{ccc}
+	\multicolumn{2}{c}{System of equations} & Solution \\ \hline
+	$7m+2n = \pm12$ & $3m+n = \pm7$ & $(m,n) = \left( \mp 2, \pm 13 \right)$ \\
+	$7m+2n = \pm12$ & $3m+n = \mp7$ & $(m,n) = \left( \pm 26, \mp 85 \right)$ \\
+	$7m+2n = \pm7$ & $3m+n = \pm12$ & $(m,n) = \left( \mp17, \pm63 \right)$ \\
+	$7m+2n = \pm7$ & $3m+n = \mp12$ & $(m,n) = \left( \pm31, \mp105 \right)$.
+\end{tabular}
+\end{center}
+For $n$ to be as large as possible, we want the pair $(-31, 105)$.
+
+\subsection*{Solution NT3}
+Obviously we need $m \ge 0$ or the LHS is not an integer.
+When $m = 0$ or $m = 1$ there is no solution so we assume $m \ge 2$.
+
+First, taking modulo $8$, we have $3^m \equiv (2n-3)^2 \equiv 1 \pmod 8$,
+integer $m$ must be even.
+When considering $8(m-1)^2 = 3^m - (2n-3)^2$,
+as both terms are positive
+we conclude that both factors are positive,
+i.e.\ that $3^{m/2} > |2n-3|$.
+Therefore, we obtain the crude estimate
+\[ 8(m-1)^2 \ge 3^m - (3^{m/2}-1)^2 = 2 \cdot 3^{m/2} - 1. \]
+which in fact can only hold for $m \le 10$.
+
+We now check all the cases:
+\begin{center}
+\begin{tabular}[h]{cccc}
+	$m$ & $3^m - 8(m-1)^2$ & $2n-3$ & $n$ \\ \hline
+	$m=2$ & $1$ & $1$ & $n=1$ or $n=2$ \\
+	$m=4$ & $9$ & $3$ & $n=0$ or $n=3$ \\
+	$m=6$ & $529$ & $23$ & $n=-10$ or $n=13$ \\
+	$m=8$ & $6169$ & n/a & n/a \\
+	$m=10$ & $58401$ & n/a & n/a. \\
+\end{tabular}
+\end{center}
+This gives $(6,-10)$ as the pair with $m-n$ as large as possible.
+
+\subsection*{Solution NT4}
+By AM-GM, we have
+\[ f(\pi) \ge \sqrt[3]{9!} \approx 213.98. \]
+So we have $n \ge 214$ and $9m \ge 216$.
+Both can be achieved:
+\begin{align*}
+	1 \cdot 8 \cdot 9 + 2 \cdot 5 \cdot 7 + 3 \cdot 4 \cdot 6 = 214 \\
+	1 \cdot 8 \cdot 9 + 2 \cdot 6 \cdot 7 + 3 \cdot 4 \cdot 5 = 216.
+\end{align*}
+Hence the answer $(24, 214)$.
+
+\end{document}

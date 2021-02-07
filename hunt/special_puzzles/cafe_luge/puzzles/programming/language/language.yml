@@ -1,0 +1,46 @@
+name: language
+difficulty: 5/10
+coolness: 3/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What programming language is this code snippet written in?"
+
+        - text: |
+            bfs g s = next g queue seen tree
+              where
+                tree = (mkGraph n [])
+                n = length $ vertices g
+                seen = [s]
+                queue = [s]
+
+            next :: Graph -> [Int] -> [Int] -> Graph -> Graph
+
+        - answer: haskell
+
+    - question:
+        - text: "What programming language is this code snippet written in?"
+
+        - text: |
+            func (da *MyArray) getData() []interface{} {
+                return da.data[:da.size]
+            }
+
+        - answer: go
+        - answer: golang
+
+    - question:
+        - text: "What programming language is this code snippet written in?"
+
+        - text: |
+            - (instancetype) initWithObject:(NSObject *)obj {
+                if (self = [super init]) {
+                    _root = [[Node alloc] init];
+                    self.root.obj = obj;
+                }
+                
+                return self;
+            }
+
+        - answer: objective-c

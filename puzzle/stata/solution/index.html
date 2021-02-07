@@ -1,0 +1,382 @@
+<style>
+.xgrid td {
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  padding: 0px;
+}
+
+.xgrid {
+  margin: 20px auto;
+}
+
+.ygrid {
+  border-collapse: collapse;
+  width: 616px;
+  background-color: white;
+}
+
+.ygrid td {
+  border: solid 1px black;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  padding: 0px;
+}
+
+.sliders {
+}
+
+.ba-slider {
+  width: 616px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.ba-resizable-inner {
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+
+.ba-resizable-inner-one {
+  position: absolute;
+  right: 0;
+  overflow: hidden;
+}
+
+.cb-slider {
+  width: 616px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+.cb-slider .resize {
+  border-right: dashed 2px black;
+}
+
+.ba-slider .resize {
+  border-left: dashed 2px black;
+}
+
+.cb-resizable-inner {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.cb-resizable-inner-one {
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.magenta {
+  background-color: magenta;
+}
+
+.cyan {
+  background-color: cyan;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.green {
+  background-color: green;
+  color: white;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.purple {
+  background-color: purple;
+  color: white;
+}
+
+.orange {
+  background-color: orange;
+  color: white;
+}
+
+.brown {
+  background-color: brown;
+  color: white;
+}
+
+.grey {
+  background-color: grey;
+  color: white;
+}
+
+.lime {
+  background-color: lime;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.tan {
+  background-color: tan;
+}
+
+.ecru {
+  background-color: olive;
+}
+
+</style>
+
+<link type="text/css" href="{{sroot}}before-after.min.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="{{sroot}}before-after.min.js"></script>
+
+The answers to the puzzles in the round are:
+
+<table>
+<tr><th></th><th>Puzzle</th><th>Answer</th></tr>
+<tr><td>A</td><td>DNA</td><td class="monospace">AMINO ACIDS</td></tr>
+<tr><td>B</td><td>Connections</td><td class="monospace">WIRE</td></tr>
+<tr><td>C</td><td>The Emperor's New Kitchen</td><td class="monospace">PIZZA</td></tr>
+<tr><td>D</td><td>PClueRS</td><td class="monospace">BLADE</td></tr>
+<tr><td>E</td><td>Bounce House</td><td class="monospace">MIRROR</td></tr>
+<tr><td>F</td><td>Escape From Life</td><td class="monospace">FLYER</td></tr>
+<tr><td>G</td><td>Not A Crossword</td><td class="monospace">BED</td></tr>
+<tr><td>H</td><td>Extensive</td><td class="monospace">COMPUTER</td></tr>
+<tr><td>I</td><td>Slitheɹlᴉuʞs</td><td class="monospace">NET</td></tr>
+<tr><td>J</td><td>Treasure Maps</td><td class="monospace">TEXTILE</td></tr>
+<tr><td>K</td><td>Bracketeering</td><td class="monospace">STRATA</td></tr>
+<tr><td>L</td><td>Radical Rebuses</td><td class="monospace">SKIN</td></tr>
+<tr><td>M</td><td>Careful What You Wish For</td><td class="monospace">CARDBOARD</td></tr>
+<tr><td>N</td><td>In C</td><td class="monospace">DOUGH</td></tr>
+</table>
+
+
+<p>First, we can fill in the letters in the grid from the labelled feeder answers. For example, the top-left cell (H6) is a T because the sixth letter of <span class="monospace">COMPUTER</span> is T.</p>
+
+<table class="grid xgrid">
+<tr><td>T</td><td>E</td><td>O</td><td>C</td><td>R</td><td>O</td><td>I</td><td>D</td><td>H</td><td>A</td><td>E</td><td>O</td><td>P</td><td>T</td><td>M</td></tr>
+<tr><td>D</td><td>E</td><td>O</td><td>N</td><td>E</td><td>T</td><td>R</td><td>D</td><td>I</td><td>G</td><td>T</td><td>D</td><td>C</td><td>E</td><td>A</td></tr>
+<tr><td>T</td><td>R</td><td>C</td><td>E</td><td>U</td><td>P</td><td>R</td><td>O</td><td>T</td><td>E</td><td>S</td><td>A</td><td>G</td><td>E</td><td>A</td></tr>
+<tr><td>W</td><td>R</td><td>I</td><td>H</td><td>T</td><td>F</td><td>C</td><td>L</td><td>I</td><td>N</td><td>E</td><td>I</td><td>D</td><td>E</td><td>I</td></tr>
+<tr><td>E</td><td>D</td><td>E</td><td>P</td><td>X</td><td>O</td><td>R</td><td>R</td><td>D</td><td>E</td><td>A</td><td>Y</td><td>S</td><td>E</td><td>S</td></tr>
+<tr><td>E</td><td>C</td><td>I</td><td>E</td><td>P</td><td>W</td><td>I</td><td>D</td><td>D</td><td>T</td><td>O</td><td>A</td><td>N</td><td>D</td><td>P</td></tr>
+<tr><td>P</td><td>A</td><td>P</td><td>E</td><td>A</td><td>U</td><td>O</td><td>O</td><td>P</td><td>E</td><td>R</td><td>I</td><td>W</td><td>I</td><td>O</td></tr>
+<tr><td>Z</td><td>T</td><td>E</td><td>D</td><td>B</td><td>P</td><td>B</td><td>R</td><td>O</td><td>C</td><td>H</td><td>B</td><td>E</td><td>R</td><td>A</td></tr>
+<tr><td>T</td><td>D</td><td>I</td><td>C</td><td>Y</td><td>A</td><td>L</td><td>R</td><td>D</td><td>E</td><td>I</td><td>I</td><td>O</td><td>N</td><td>R</td></tr>
+<tr><td>K</td><td>E</td><td>T</td><td>O</td><td>R</td><td>I</td><td>B</td><td>C</td><td>G</td><td>O</td><td>E</td><td>L</td><td>R</td><td>A</td><td>R</td></tr>
+<tr><td>G</td><td>O</td><td>R</td><td>S</td><td>E</td><td>G</td><td>A</td><td>Z</td><td>E</td><td>W</td><td>N</td><td>E</td><td>T</td><td>L</td><td>O</td></tr>
+<tr><td>P</td><td>E</td><td>N</td><td>K</td><td>S</td><td>M</td><td>P</td><td>A</td><td>C</td><td>T</td><td>D</td><td>B</td><td>N</td><td>D</td><td>I</td></tr>
+<tr><td>I</td><td>Z</td><td>T</td><td>R</td><td>C</td><td>A</td><td>L</td><td>Z</td><td>B</td><td>U</td><td>R</td><td>L</td><td>A</td><td>S</td><td>A</td></tr>
+<tr><td>E</td><td>D</td><td>K</td><td>I</td><td>R</td><td>E</td><td>I</td><td>M</td><td>S</td><td>G</td><td>E</td><td>T</td><td>M</td><td>C</td><td>E</td></tr>
+<tr><td>D</td><td>E</td><td>P</td><td>L</td><td>Y</td><td>T</td><td>E</td><td>A</td><td>I</td><td>E</td><td>D</td><td>R</td><td>O</td><td>N</td><td>K</td></tr>
+</table>
+
+<p>
+The main diagonal spells TECH X-WORD ON BACK, which suggests looking at <a href="https://thetech.com/issues/140/43/pdf">this week's</a> crossword in <em>The Tech</em>. We might notice that the theme of the crossword is the Stata Center, which is appropriate.
+</p>
+
+<p>
+If we read the first letters of each of the across clues, we produce the message THESE CLUES AND THE DOWN ONES DO NOT HELP YOU, so we can assume that the clues themselves are not relevant. The completed crossword grid is below:<p>
+
+<table class="grid xgrid">
+<tr><td>S</td><td>A</td><td>N</td><td>T</td><td>A</td><td class="black"></td><td class="black"></td><td>R</td><td>E</td><td>E</td><td>K</td><td class="black"></td><td>L</td><td>A</td><td>P</td></tr>
+<tr><td>A</td><td>S</td><td>B</td><td>A</td><td>D</td><td class="black"></td><td>M</td><td>E</td><td>L</td><td>E</td><td>E</td><td class="black"></td><td>U</td><td>M</td><td>A</td></tr>
+<tr><td>N</td><td>O</td><td>A</td><td>M</td><td>C</td><td>H</td><td>O</td><td>M</td><td>S</td><td>K</td><td>Y</td><td class="black"></td><td>P</td><td>A</td><td>C</td></tr>
+<tr><td>K</td><td>L</td><td>E</td><td>E</td><td class="black"></td><td>E</td><td>R</td><td>I</td><td>E</td><td class="black"></td><td>I</td><td>C</td><td>A</td><td>N</td><td>T</td></tr>
+<tr><td class="black"></td><td>O</td><td>R</td><td>D</td><td>E</td><td>R</td><td>I</td><td>N</td><td class="black"></td><td>O</td><td>N</td><td>E</td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+<tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>L</td><td>O</td><td>A</td><td>D</td><td>I</td><td>N</td><td>G</td><td>D</td><td>O</td><td>C</td><td>K</td></tr>
+<tr><td>C</td><td>L</td><td>I</td><td>P</td><td>S</td><td class="black"></td><td class="black"></td><td>S</td><td>K</td><td>Y</td><td class="black"></td><td>A</td><td>C</td><td>L</td><td>U</td></tr>
+<tr><td>R</td><td>E</td><td>L</td><td>E</td><td>A</td><td>S</td><td>E</td><td class="black"></td><td>E</td><td>X</td><td>E</td><td>R</td><td>T</td><td>E</td><td>D</td></tr>
+<tr><td>O</td><td>S</td><td>S</td><td>O</td><td class="black"></td><td>E</td><td>M</td><td>O</td><td class="black"></td><td class="black"></td><td>S</td><td>N</td><td>A</td><td>F</td><td>U</td></tr>
+<tr><td>C</td><td>H</td><td>A</td><td>R</td><td>L</td><td>E</td><td>S</td><td>V</td><td>E</td><td>S</td><td>T</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+<tr><td class="black"></td><td class="black"></td><td class="black"></td><td>I</td><td>A</td><td>N</td><td class="black"></td><td>E</td><td>N</td><td>T</td><td>E</td><td>R</td><td>A</td><td>L</td><td class="black"></td></tr>
+<tr><td>I</td><td>F</td><td>E</td><td>A</td><td>R</td><td class="black"></td><td>T</td><td>R</td><td>I</td><td>O</td><td class="black"></td><td>U</td><td>S</td><td>O</td><td>C</td></tr>
+<tr><td>N</td><td>E</td><td>G</td><td class="black"></td><td>S</td><td>T</td><td>A</td><td>T</td><td>A</td><td>C</td><td>E</td><td>N</td><td>T</td><td>E</td><td>R</td></tr>
+<tr><td>C</td><td>E</td><td>O</td><td class="black"></td><td>E</td><td>R</td><td>D</td><td>O</td><td>C</td><td class="black"></td><td>C</td><td>U</td><td>R</td><td>I</td><td>A</td></tr>
+<tr><td>A</td><td>T</td><td>S</td><td class="black"></td><td>N</td><td>A</td><td>A</td><td>N</td><td class="black"></td><td class="black"></td><td>O</td><td>P</td><td>O</td><td>L</td><td>Y</td></tr>
+</table>
+
+<p>
+Like our original grid, the crossword is 15 x 15, and the phrase on the diagonal suggests that we should tape it to the back of our grid. When we do that and read the letters that are opposite black cells on the crossword (the cyan cells in the grid below) we get the message CHANGE FEEDERS AND PAPER ALIKE TO GET LOST LETTER.
+</p>
+
+<table class="grid xgrid">
+<tr><td class="yellow">T</td><td>E</td><td>O</td><td class="cyan">C</td><td>R</td><td>O</td><td>I</td><td>D</td><td class="cyan">H</td><td class="cyan">A</td><td>E</td><td>O</td><td>P</td><td>T</td><td>M</td></tr>
+<tr><td>D</td><td class="yellow">E</td><td>O</td><td class="cyan">N</td><td>E</td><td>T</td><td>R</td><td>D</td><td>I</td><td class="cyan">G</td><td>T</td><td>D</td><td>C</td><td>E</td><td>A</td></tr>
+<tr><td>T</td><td>R</td><td class="yellow">C</td><td class="cyan">E</td><td>U</td><td>P</td><td>R</td><td>O</td><td>T</td><td>E</td><td>S</td><td>A</td><td>G</td><td>E</td><td>A</td></tr>
+<tr><td>W</td><td>R</td><td>I</td><td class="yellow">H</td><td>T</td><td class="cyan">F</td><td>C</td><td>L</td><td>I</td><td>N</td><td class="cyan">E</td><td>I</td><td>D</td><td>E</td><td>I</td></tr>
+<tr><td class="cyan">E</td><td class="cyan">D</td><td class="cyan">E</td><td>P</td><td class="yellow">X</td><td>O</td><td class="cyan">R</td><td>R</td><td>D</td><td>E</td><td>A</td><td>Y</td><td>S</td><td>E</td><td class="cyan">S</td></tr>
+<tr><td>E</td><td>C</td><td>I</td><td>E</td><td>P</td><td class="yellow">W</td><td>I</td><td>D</td><td>D</td><td>T</td><td>O</td><td class="cyan">A</td><td class="cyan">N</td><td class="cyan">D</td><td class="cyan">P</td></tr>
+<tr><td>P</td><td>A</td><td>P</td><td>E</td><td class="cyan">A</td><td>U</td><td class="yellow">O</td><td>O</td><td class="cyan">P</td><td class="cyan">E</td><td>R</td><td>I</td><td>W</td><td>I</td><td>O</td></tr>
+<tr><td>Z</td><td>T</td><td>E</td><td>D</td><td>B</td><td>P</td><td>B</td><td class="lime">R</td><td>O</td><td>C</td><td>H</td><td>B</td><td>E</td><td>R</td><td>A</td></tr>
+<tr><td>T</td><td>D</td><td>I</td><td>C</td><td>Y</td><td class="cyan">A</td><td class="cyan">L</td><td>R</td><td class="yellow">D</td><td>E</td><td class="cyan">I</td><td>I</td><td>O</td><td>N</td><td>R</td></tr>
+<tr><td class="cyan">K</td><td class="cyan">E</td><td class="cyan">T</td><td class="cyan">O</td><td>R</td><td>I</td><td>B</td><td>C</td><td>G</td><td class="yellow">O</td><td>E</td><td>L</td><td>R</td><td>A</td><td>R</td></tr>
+<tr><td class="cyan">G</td><td>O</td><td>R</td><td>S</td><td>E</td><td>G</td><td>A</td><td>Z</td><td class="cyan">E</td><td>W</td><td class="yellow">N</td><td>E</td><td class="cyan">T</td><td class="cyan">L</td><td class="cyan">O</td></tr>
+<tr><td>P</td><td>E</td><td>N</td><td>K</td><td class="cyan">S</td><td>M</td><td>P</td><td>A</td><td>C</td><td class="cyan">T</td><td>D</td><td class="yellow">B</td><td>N</td><td>D</td><td>I</td></tr>
+<tr><td>I</td><td>Z</td><td>T</td><td>R</td><td>C</td><td>A</td><td>L</td><td>Z</td><td>B</td><td>U</td><td>R</td><td class="cyan">L</td><td class="yellow">A</td><td>S</td><td>A</td></tr>
+<tr><td>E</td><td>D</td><td>K</td><td>I</td><td>R</td><td class="cyan">E</td><td>I</td><td>M</td><td>S</td><td>G</td><td>E</td><td class="cyan">T</td><td>M</td><td class="yellow">C</td><td>E</td></tr>
+<tr><td>D</td><td>E</td><td>P</td><td>L</td><td>Y</td><td class="cyan">T</td><td class="cyan">E</td><td>A</td><td>I</td><td>E</td><td>D</td><td class="cyan">R</td><td>O</td><td>N</td><td class="yellow">K</td></tr>
+</table>
+
+<p>
+When we solve a puzzle, some number of blanks appear on the meta page to the right of the answer. The above message suggests that we should change each feeder answer somehow to produce a new word that matches the enumeration given by the blanks.
+</p>
+
+<p>
+Eventually we realize that we can “fold” each answer to produce a new object. For example we can fold a COMPUTER to get a LAPTOP and fold a PIZZA to get a CALZONE.
+</p>
+
+<table>
+<tr><th></th><th>Answer</th><th>“Folded” Answer</th></tr>
+<tr><td>A</td><td class="monospace">AMINO ACIDS</td><td class="monospace">PROTEIN</td></tr>
+<tr><td>B</td><td class="monospace">WIRE</td><td class="monospace">PAPER CLIP</td></tr>
+<tr><td>C</td><td class="monospace">PIZZA</td><td class="monospace">CALZONE</td></tr>
+<tr><td>D</td><td class="monospace">BLADE</td><td class="monospace">PENKNIFE</td></tr>
+<tr><td>E</td><td class="monospace">MIRROR</td><td class="monospace">COMPACT</td></tr>
+<tr><td>F</td><td class="monospace">FLYER</td><td class="monospace">BROCHURE</td></tr>
+<tr><td>G</td><td class="monospace">BED</td><td class="monospace">FUTON</td></tr>
+<tr><td>H</td><td class="monospace">COMPUTER</td><td class="monospace">LAPTOP</td></tr>
+<tr><td>I</td><td class="monospace">NET</td><td class="monospace">POLYHEDRON</td></tr>
+<tr><td>J</td><td class="monospace">TEXTILE</td><td class="monospace">PLEATS</td></tr>
+<tr><td>K</td><td class="monospace">STRATA</td><td class="monospace">ANTICLINE</td></tr>
+<tr><td>L</td><td class="monospace">SKIN</td><td class="monospace">WRINKLE</td></tr>
+<tr><td>M</td><td class="monospace">CARDBOARD</td><td class="monospace">PACKAGE</td></tr>
+<tr><td>N</td><td class="monospace">DOUGH</td><td class="monospace">CROISSANT</td></tr>
+</table>
+
+<p>
+The message suggested that we should change the paper “alike.” By folding the paper along vertical lines, with the crossword pasted on the back, we can align the letters to produce the folded versions of our answers, missing a single letter. Each word requires a different fold offset and some are folded from the right and some from the left.
+</p>
+
+<div class="sliders">
+
+<div class="ba-slider">
+  <div class="ba-resizable-former">
+  <table class="grid ygrid ba-resizable-inner-one">
+  <tr><td>T</td><td>E</td><td>O</td><td>C</td><td>R</td><td>O</td><td>I</td><td>D</td><td>H</td><td>A</td><td>E</td><td class="green">O</td><td class="green">P</td><td>T</td><td>M</td></tr>
+  <tr><td>D</td><td>E</td><td>O</td><td>N</td><td>E</td><td>T</td><td>R</td><td>D</td><td>I</td><td>G</td><td>T</td><td>D</td><td>C</td><td>E</td><td>A</td></tr>
+  <tr><td>T</td><td>R</td><td>C</td><td>E</td><td>U</td><td>P</td><td>R</td><td>O</td><td>T</td><td>E</td><td>S</td><td class="cyan">A</td><td class="cyan">G</td><td class="cyan">E</td><td>A</td></tr>
+  <tr><td>W</td><td>R</td><td>I</td><td>H</td><td>T</td><td>F</td><td class="red">C</td><td class="red">L</td><td class="red">I</td><td class="red">N</td><td class="red">E</td><td>I</td><td>D</td><td>E</td><td>I</td></tr>
+  <tr><td>E</td><td>D</td><td>E</td><td>P</td><td>X</td><td>O</td><td>R</td><td>R</td><td>D</td><td>E</td><td>A</td><td>Y</td><td>S</td><td>E</td><td>S</td></tr>
+  <tr><td>E</td><td>C</td><td>I</td><td>E</td><td>P</td><td>W</td><td>I</td><td>D</td><td>D</td><td>T</td><td>O</td><td>A</td><td>N</td><td>D</td><td>P</td></tr>
+  <tr><td>P</td><td>A</td><td>P</td><td>E</td><td>A</td><td>U</td><td>O</td><td>O</td><td>P</td><td>E</td><td>R</td><td>I</td><td>W</td><td>I</td><td>O</td></tr>
+  <tr><td>Z</td><td>T</td><td>E</td><td>D</td><td>B</td><td>P</td><td>B</td><td>R</td><td>O</td><td>C</td><td>H</td><td>B</td><td>E</td><td>R</td><td>A</td></tr>
+  <tr><td>T</td><td>D</td><td>I</td><td>C</td><td>Y</td><td>A</td><td>L</td><td>R</td><td>D</td><td>E</td><td>I</td><td>I</td><td class="magenta">O</td><td class="magenta">N</td><td>R</td></tr>
+  <tr><td>K</td><td>E</td><td>T</td><td>O</td><td>R</td><td>I</td><td>B</td><td>C</td><td>G</td><td>O</td><td>E</td><td>L</td><td>R</td><td>A</td><td>R</td></tr>
+  <tr><td>G</td><td>O</td><td>R</td><td>S</td><td>E</td><td>G</td><td>A</td><td>Z</td><td>E</td><td>W</td><td>N</td><td>E</td><td>T</td><td>L</td><td>O</td></tr>
+  <tr><td>P</td><td>E</td><td>N</td><td>K</td><td>S</td><td class="blue">M</td><td class="blue">P</td><td class="blue">A</td><td class="blue">C</td><td class="blue">T</td><td>D</td><td>B</td><td>N</td><td>D</td><td>I</td></tr>
+  <tr><td>I</td><td>Z</td><td>T</td><td>R</td><td>C</td><td>A</td><td>L</td><td>Z</td><td>B</td><td>U</td><td>R</td><td>L</td><td>A</td><td>S</td><td>A</td></tr>
+  <tr><td>E</td><td>D</td><td>K</td><td>I</td><td>R</td><td>E</td><td>I</td><td>M</td><td>S</td><td>G</td><td>E</td><td>T</td><td>M</td><td>C</td><td>E</td></tr>
+  <tr><td>D</td><td>E</td><td>P</td><td>L</td><td>Y</td><td>T</td><td>E</td><td>A</td><td>I</td><td class="yellow">E</td><td class="yellow">D</td><td class="yellow">R</td><td class="yellow">O</td><td class="yellow">N</td><td>K</td></tr>
+  </table>
+  </div>
+   <div class="resize">
+     <table class="grid ygrid ba-resizable-inner">
+     <tr><td>S</td><td>A</td><td>N</td><td>T</td><td>A</td><td class="black"></td><td class="black"></td><td>R</td><td>E</td><td>E</td><td>K</td><td class="black"></td><td class="green">L</td><td class="green">A</td><td class="green">P</td></tr>
+     <tr><td>A</td><td>S</td><td>B</td><td>A</td><td>D</td><td class="black"></td><td>M</td><td>E</td><td>L</td><td>E</td><td>E</td><td class="black"></td><td>U</td><td>M</td><td>A</td></tr>
+     <tr><td>N</td><td>O</td><td>A</td><td>M</td><td>C</td><td>H</td><td>O</td><td>M</td><td>S</td><td>K</td><td>Y</td><td class="black"></td><td class="cyan">P</td><td class="cyan">A</td><td class="cyan">C</td></tr>
+     <tr><td>K</td><td>L</td><td>E</td><td>E</td><td class="black"></td><td>E</td><td>R</td><td>I</td><td>E</td><td class="black"></td><td>I</td><td>C</td><td class="red">A</td><td class="red">N</td><td class="red">T</td></tr>
+     <tr><td class="black"></td><td>O</td><td>R</td><td>D</td><td>E</td><td>R</td><td>I</td><td>N</td><td class="black"></td><td>O</td><td>N</td><td>E</td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+     <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>L</td><td>O</td><td>A</td><td>D</td><td>I</td><td>N</td><td>G</td><td>D</td><td>O</td><td>C</td><td>K</td></tr>
+     <tr><td>C</td><td>L</td><td>I</td><td>P</td><td>S</td><td class="black"></td><td class="black"></td><td>S</td><td>K</td><td>Y</td><td class="black"></td><td>A</td><td>C</td><td>L</td><td>U</td></tr>
+     <tr><td>R</td><td>E</td><td>L</td><td>E</td><td>A</td><td>S</td><td>E</td><td class="black"></td><td>E</td><td>X</td><td>E</td><td>R</td><td>T</td><td>E</td><td>D</td></tr>
+     <tr><td>O</td><td>S</td><td>S</td><td>O</td><td class="black"></td><td>E</td><td>M</td><td>O</td><td class="black"></td><td class="black"></td><td>S</td><td>N</td><td>A</td><td class="magenta">F</td><td class="magenta">U</td></tr>
+     <tr><td>C</td><td>H</td><td>A</td><td>R</td><td>L</td><td>E</td><td>S</td><td>V</td><td>E</td><td>S</td><td>T</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+     <tr><td class="black"></td><td class="black"></td><td class="black"></td><td>I</td><td>A</td><td>N</td><td class="black"></td><td>E</td><td>N</td><td>T</td><td>E</td><td>R</td><td>A</td><td>L</td><td class="black"></td></tr>
+     <tr><td>I</td><td>F</td><td>E</td><td>A</td><td>R</td><td class="black"></td><td>T</td><td>R</td><td>I</td><td>O</td><td class="black"></td><td>U</td><td>S</td><td>O</td><td class="blue">C</td></tr>
+     <tr><td>N</td><td>E</td><td>G</td><td class="black"></td><td>S</td><td>T</td><td>A</td><td>T</td><td>A</td><td>C</td><td>E</td><td>N</td><td>T</td><td>E</td><td>R</td></tr>
+     <tr><td>C</td><td>E</td><td>O</td><td class="black"></td><td>E</td><td>R</td><td>D</td><td>O</td><td>C</td><td class="black"></td><td>C</td><td>U</td><td>R</td><td>I</td><td>A</td></tr>
+     <tr><td>A</td><td>T</td><td>S</td><td class="black"></td><td>N</td><td>A</td><td>A</td><td>N</td><td class="black"></td><td class="black"></td><td>O</td><td class="yellow">P</td><td class="yellow">O</td><td class="yellow">L</td><td class="yellow">Y</td></tr>
+     </table>
+   </div>
+   <span class="handle"></span>
+</div>
+
+<div class="cb-slider">
+  <div class="cb-resizable-former">
+  <table class="grid ygrid cb-resizable-inner-one">
+  <tr><td>T</td><td>E</td><td>O</td><td class="orange">C</td><td class="orange">R</td><td class="orange">O</td><td class="orange">I</td><td>D</td><td>H</td><td>A</td><td>E</td><td>O</td><td>P</td><td>T</td><td>M</td></tr>
+  <tr><td>D</td><td>E</td><td>O</td><td>N</td><td>E</td><td>T</td><td>R</td><td>D</td><td>I</td><td>G</td><td>T</td><td>D</td><td>C</td><td>E</td><td>A</td></tr>
+  <tr><td>T</td><td>R</td><td>C</td><td>E</td><td>U</td><td class="purple">P</td><td class="purple">R</td><td class="purple">O</td><td class="purple">T</td><td class="purple">E</td><td>S</td><td>A</td><td>G</td><td>E</td><td>A</td></tr>
+  <tr><td class="brown">W</td><td class="brown">R</td><td class="brown">I</td><td>H</td><td>T</td><td>F</td><td>C</td><td>L</td><td>I</td><td>N</td><td>E</td><td>I</td><td>D</td><td>E</td><td>I</td></tr>
+  <tr><td>E</td><td>D</td><td>E</td><td>P</td><td>X</td><td>O</td><td>R</td><td>R</td><td>D</td><td>E</td><td>A</td><td>Y</td><td>S</td><td>E</td><td>S</td></tr>
+  <tr><td>E</td><td>C</td><td>I</td><td>E</td><td>P</td><td>W</td><td>I</td><td>D</td><td>D</td><td>T</td><td>O</td><td>A</td><td>N</td><td>D</td><td>P</td></tr>
+  <tr><td class="grey">P</td><td class="grey">A</td><td class="grey">P</td><td class="grey">E</td><td>A</td><td>U</td><td>O</td><td>O</td><td>P</td><td>E</td><td>R</td><td>I</td><td>W</td><td>I</td><td>O</td></tr>
+  <tr><td>Z</td><td>T</td><td>E</td><td>D</td><td>B</td><td>P</td><td class="lime">B</td><td class="lime">R</td><td class="lime">O</td><td class="lime">C</td><td class="lime">H</td><td>B</td><td>E</td><td>R</td><td>A</td></tr>
+  <tr><td>T</td><td>D</td><td>I</td><td>C</td><td>Y</td><td>A</td><td>L</td><td>R</td><td>D</td><td>E</td><td>I</td><td>I</td><td>O</td><td>N</td><td>R</td></tr>
+  <tr><td>K</td><td>E</td><td>T</td><td>O</td><td>R</td><td>I</td><td>B</td><td>C</td><td>G</td><td>O</td><td>E</td><td>L</td><td>R</td><td>A</td><td>R</td></tr>
+  <tr><td>G</td><td>O</td><td>R</td><td>S</td><td>E</td><td>G</td><td>A</td><td>Z</td><td>E</td><td>W</td><td>N</td><td>E</td><td>T</td><td>L</td><td>O</td></tr>
+  <tr><td class="violet">P</td><td class="violet">E</td><td class="violet">N</td><td class="violet">K</td><td>S</td><td>M</td><td>P</td><td>A</td><td>C</td><td>T</td><td>D</td><td>B</td><td>N</td><td>D</td><td>I</td></tr>
+  <tr><td>I</td><td>Z</td><td>T</td><td>R</td><td class="tan">C</td><td class="tan">A</td><td class="tan">L</td><td class="tan">Z</td><td>B</td><td>U</td><td>R</td><td>L</td><td>A</td><td>S</td><td>A</td></tr>
+  <tr><td>E</td><td>D</td><td>K</td><td>I</td><td>R</td><td>E</td><td>I</td><td>M</td><td>S</td><td>G</td><td>E</td><td>T</td><td>M</td><td>C</td><td>E</td></tr>
+  <tr><td>D</td><td>E</td><td class="ecru">P</td><td class="ecru">L</td><td>Y</td><td>T</td><td>E</td><td>A</td><td>I</td><td>E</td><td>D</td><td>R</td><td>O</td><td>N</td><td>K</td></tr>
+  </table>
+  </div>
+   <div class="resize">
+     <table class="grid ygrid cb-resizable-inner">
+     <tr><td class="orange">S</td><td class="orange">A</td><td class="orange">N</td><td class="orange">T</td><td>A</td><td class="black"></td><td class="black"></td><td>R</td><td>E</td><td>E</td><td>K</td><td class="black"></td><td>L</td><td>A</td><td>P</td></tr>
+     <tr><td>A</td><td>S</td><td>B</td><td>A</td><td>D</td><td class="black"></td><td>M</td><td>E</td><td>L</td><td>E</td><td>E</td><td class="black"></td><td>U</td><td>M</td><td>A</td></tr>
+     <tr><td class="purple">N</td><td>O</td><td>A</td><td>M</td><td>C</td><td>H</td><td>O</td><td>M</td><td>S</td><td>K</td><td>Y</td><td class="black"></td><td>P</td><td>A</td><td>C</td></tr>
+     <tr><td class="brown">K</td><td class="brown">L</td><td class="brown">E</td><td>E</td><td class="black"></td><td>E</td><td>R</td><td>I</td><td>E</td><td class="black"></td><td>I</td><td>C</td><td>A</td><td>N</td><td>T</td></tr>
+     <tr><td class="black"></td><td>O</td><td>R</td><td>D</td><td>E</td><td>R</td><td>I</td><td>N</td><td class="black"></td><td>O</td><td>N</td><td>E</td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+     <tr><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td><td>L</td><td>O</td><td>A</td><td>D</td><td>I</td><td>N</td><td>G</td><td>D</td><td>O</td><td>C</td><td>K</td></tr>
+     <tr><td class="grey">C</td><td class="grey">L</td><td class="grey">I</td><td class="grey">P</td><td>S</td><td class="black"></td><td class="black"></td><td>S</td><td>K</td><td>Y</td><td class="black"></td><td>A</td><td>C</td><td>L</td><td>U</td></tr>
+     <tr><td class="lime">R</td><td class="lime">E</td><td>L</td><td>E</td><td>A</td><td>S</td><td>E</td><td class="black"></td><td>E</td><td>X</td><td>E</td><td>R</td><td>T</td><td>E</td><td>D</td></tr>
+     <tr><td>O</td><td>S</td><td>S</td><td>O</td><td class="black"></td><td>E</td><td>M</td><td>O</td><td class="black"></td><td class="black"></td><td>S</td><td>N</td><td>A</td><td>F</td><td>U</td></tr>
+     <tr><td>C</td><td>H</td><td>A</td><td>R</td><td>L</td><td>E</td><td>S</td><td>V</td><td>E</td><td>S</td><td>T</td><td class="black"></td><td class="black"></td><td class="black"></td><td class="black"></td></tr>
+     <tr><td class="black"></td><td class="black"></td><td class="black"></td><td>I</td><td>A</td><td>N</td><td class="black"></td><td>E</td><td>N</td><td>T</td><td>E</td><td>R</td><td>A</td><td>L</td><td class="black"></td></tr>
+     <tr><td class="violet">I</td><td class="violet">F</td><td class="violet">E</td><td>A</td><td>R</td><td class="black"></td><td>T</td><td>R</td><td>I</td><td>O</td><td class="black"></td><td>U</td><td>S</td><td>O</td><td>C</td></tr>
+     <tr><td class="tan">N</td><td class="tan">E</td><td>G</td><td class="black"></td><td>S</td><td>T</td><td>A</td><td>T</td><td>A</td><td>C</td><td>E</td><td>N</td><td>T</td><td>E</td><td>R</td></tr>
+     <tr><td>C</td><td>E</td><td>O</td><td class="black"></td><td>E</td><td>R</td><td>D</td><td>O</td><td>C</td><td class="black"></td><td>C</td><td>U</td><td>R</td><td>I</td><td>A</td></tr>
+     <tr><td class="ecru">A</td><td class="ecru">T</td><td class="ecru">S</td><td class="black"></td><td>N</td><td>A</td><td>A</td><td>N</td><td class="black"></td><td class="black"></td><td>O</td><td>P</td><td>O</td><td>L</td><td class="yellow">Y</td></tr>
+     </table>
+   </div>
+   <span class="handle"></span>
+</div>
+</div>
+
+<script type="text/javascript">
+  $('.ba-slider').beforeAfter();
+  $('.cb-slider').ceforeBfter();
+</script>
+
+
+<table>
+<tr><th></th><th>Answer</th><th>“Folded” Answer</th><th>Letter</th></tr>
+<tr><td>A</td><td class="monospace">AMINO ACIDS</td><td class="monospace">PROTE[I]N</td><td>I</td></tr>
+<tr><td>B</td><td class="monospace">WIRE</td><td class="monospace">PAPE[R]CLIP</td><td>R</td></tr>
+<tr><td>C</td><td class="monospace">PIZZA</td><td class="monospace">CALZ[O]NE</td><td>O</td></tr>
+<tr><td>D</td><td class="monospace">BLADE</td><td class="monospace">PENK[N]IFE</td><td>N</td></tr>
+<tr><td>E</td><td class="monospace">MIRROR</td><td class="monospace">C[O]MPACT</td><td>O</td></tr>
+<tr><td>F</td><td class="monospace">FLYER</td><td class="monospace">BROCH[U]RE</td><td>U</td></tr>
+<tr><td>G</td><td class="monospace">BED</td><td class="monospace">FU[T]ON</td><td>T</td></tr>
+<tr><td>H</td><td class="monospace">COMPUTER</td><td class="monospace">LAP[T]OP</td><td>T</td></tr>
+<tr><td>I</td><td class="monospace">NET</td><td class="monospace">POLY[H]EDRON</td><td>H</td></tr>
+<tr><td>J</td><td class="monospace">TEXTILE</td><td class="monospace">PL[E]ATS</td><td>E</td></tr>
+<tr><td>K</td><td class="monospace">STRATA</td><td class="monospace">ANT[I]CLINE</td><td>I</td></tr>
+<tr><td>L</td><td class="monospace">SKIN</td><td class="monospace">WRI[N]KLE</td><td>N</td></tr>
+<tr><td>M</td><td class="monospace">CARDBOARD</td><td class="monospace">PAC[K]AGE</td><td>K</td></tr>
+<tr><td>N</td><td class="monospace">DOUGH</td><td class="monospace">CROI[S]SANT</td><td>S</td></tr>
+</table>
+
+<p>
+Reading the missing letters in the original order of the feeders spells the answer <span class="answer">IRON OUT THE INKS</span>. To fix Stata we have to use an iron to draw out the ink from the scribbles!
+</p>

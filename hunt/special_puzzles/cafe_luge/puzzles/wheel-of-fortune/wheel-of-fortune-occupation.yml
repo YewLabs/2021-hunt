@@ -1,0 +1,71 @@
+name: wheel-of-fortune-occupation
+difficulty: 2/10
+coolness: 3/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "PERSON?L ?ON??ERGE"
+
+        - text: "Category: Occupation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: personal concierge
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "R??T?NG G???E"
+
+        - text: "Category: Occupation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: rafting guide
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "R?N?H ?ORE??N"
+
+        - text: "Category: Occupation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: ranch foreman
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "ST?TE ??RE ??RSH?L"
+
+        - text: "Category: Occupation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: state fire marshal
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "TOOL ?N? ??E ???ER"
+
+        - text: "Category: Occupation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: tool and die maker
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?E???NG ??TERER"
+
+        - text: "Category: Occupation"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: wedding caterer

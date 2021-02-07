@@ -1,0 +1,35 @@
+{% load hunt_state_tests %}
+<style>
+h2 {
+    text-align:left;
+}
+</style>
+
+<div class="fourthwall">
+    <p>This is a physical puzzle involving the piggy bank. If your team has access to the piggy bank swag, you should feel free to open and solve it now. If you believe any part of your physical puzzle is missing or damaged, or you have not received it even though you ordered it, please contact us immediately using the “Hints” link in the upper-right corner of the page.</p>
+    <p id="fourthwall-message">{% if not puzzle|minutesAvailable:180 %}A virtual substitute for the physical portion of this puzzle will be available in {{ puzzle|minutesRemaining:180 }} minutes. {% endif %}<span id="fourthwall-followup"></span></p>
+</div>
+
+<h2>1. Unboxing</h2>
+
+<p>“Squeeeeeeeeeeeeeeeeeeee!”<br>
+<i>Waaaaaaaaahoooooooooo I’m finally outta that tiny box!</i></p>
+
+<p>A tiny pig hops from its US-mail-system wrappings out onto the surface of your desk. It begins to run small, tight circles, evidently quite happy to stretch its feet after a long journey. Congratulations! You are now a proud pig parent!</p>
+
+<p>“Squee squee”<br>
+<i>I may be a pig, but I like solving puzzles too, you know.</i></p>
+
+<p>The little pig is making itself at home among the puzzlehunt detritus strewn about your desk. What is your pig’s pronoun and name?</p>
+<p>Suggested names (these are not part of the puzzle. Feel free to pick whatever name you like):<br>
+Boaris, Hamanda, Hamlet, Hammy Swinehouse, Little Hoof, Pignacio, Sir Francis Bacon, The Baconator, Trufflesnuffler</p>
+
+<div id="puzzle-content"></div>
+
+{{ puzzle.auth|json_script:"auth-token" }}
+{% if puzzle|minutesAvailable:180 %}
+<script id="virtual-auth-token" type="application/json">"cfee9c9035e238198097d249895576b4b998c2e396c13f994a2532cf1651778e"</script>
+{% endif %}
+
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+<script src="pig.js"></script>

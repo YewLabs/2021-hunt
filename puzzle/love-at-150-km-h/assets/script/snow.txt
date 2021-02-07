@@ -1,0 +1,507 @@
+> FLAG enable_snow_date
+> MUSIC none
+
+NARRATOR: A few months later...
+
+> background hotelroom.png
+PLAYER: (Tomorrow is another competition.)
+(I got up early so I can do some practice runs.)
+(Thank goodness. The Denny's next door doesn't have a line yet!)
+(Time to head out.)
+
+> background snowhotel.jpg
+> music piano.ogg
+
+PLAYER: (That piano music is so soothing!)
+(I'd better go grab some breakfast before the line!)
+(But I'm really enjoying this music...)
+(I guess I'll...)
+
+> choice
+| Stay and listen snow1
+| Tip the pianist snow2
+| Go to breakfast snow3
+
+> label snow1
+
+PLAYER: (Yeah. I'll just listen for a few more minutes...)
+
+> background snowhotel.jpg 2
+
+PLAYER: (Okay, okay, okay, I should get moving...)
+
+> music none
+> show snow_neutral.png
+SNOW [hidename]: Hey.
+Have you been there for the past three hours?
+
+PLAYER: Huh? No, I've only been here a few minutes...
+
+> sound TEMP_realization.ogg
+Oh gosh, it HAS been three hours?!
+I've just been...you're such a passionate player and...
+PLAYER: Wait, Snow?!
+
+> music day.ogg
+> show snow_neutral.png
+Snow: Haha, I knew you looked familiar.
+You were at that luge competition a few months ago, right?
+Snow: Well anyway, I'm about to go get some breakfast. Bye!
+PLAYER: Wait...!
+Snow: What's up?
+
+> choice
+| Ask him out snow1_yes
+| Don't risk it snow1_no
+
+> label snow1_yes
+> show snow_surprised.png
+Snow: Wow, somebody's forward!
+> show snow_happy.png
+What the heck. Sure! Let's do it!
+I'll bring you to my favorite restaurant in town.
+
+> background restaurant_snow.jpg 1.0
+> music credits.ogg
+> show snow_happy.png
+Snow: Here we are!
+PLAYER: (I didn't expect your favorite restaurant to be only a couple blocks away from the hotel...)
+
+> show snow_neutral.png
+Snow: There aren't many luge tracks with upscale dining options.
+PLAYER: Are you a big foodie?
+Snow: Yeah, I love gourmet food.
+But between luge practice and piano practice, I usually don't have time for it.
+Opportunities like this where I happen to be near a good restaurant are a real treat.
+PLAYER: What's your favorite dish on the menu?
+
+> show snow_happy.png
+Snow: The steak sandwich, for sure. It's so juicy, and the toasted bun is perfect.
+
+> background restaurant_snow.jpg
+
+> show snow_surprised.png
+PLAYER: I can't believe I was listening to you play for so long!
+PLAYER: I wanted to get in some practice before the track got crowded...
+PLAYER: I guess that didn't really work out.
+Snow: I'm guessing you're a fan of classical music?
+PLAYER: Not exactly...you're just really good.
+
+> show snow_happy.png
+Snow: I actually started playing the piano on the same day I bought my first luge.
+PLAYER: Wow! So are you as much a pianist as a luger?
+
+> show snow_neutral.png
+SNOW: Don't be silly, luge is my life.
+I can see why you might think that. I've been practicing a lot recently.
+It's 'cause there's a big classical piano competition later this year. Happening right here.
+It has one of the biggest prizes in classical music.
+I'm really hoping to win it, to help pay for all the luge competitions.
+
+PLAYER: So, were you practicing in the lobby for the competition?
+Or was that just one of your favorites?
+
+SNOW: Yeah, I was practicing a competition piece.
+I actually don't listen to much classical in my free time.
+PLAYER: No kidding!
+> show snow_happy.png
+SNOW: Yeah. I actually like rock music a lot.
+My favorite song for 20 years has been YYZ.
+It always hypes me up before luge runs.
+Speaking of which, I should head over to the course!
+Maybe I'll see you there later?
+PLAYER: Yeah, looking forward to it!
+
+> FLAG snow1
+> jump snow_end
+
+> label snow2
+
+PLAYER: (I've been here for so long, I should at least give the pianist a tip...)
+
+> show snow_neutral.png
+> music none
+> sound TEMP_realization.ogg
+SNOW [hidename]: Thank you so much!
+PLAYER: Snow?? Is that you?
+
+> show snow_happy.png
+> music day.ogg
+SNOW: Oh hey! I was so focused that I didn't see you there.
+How are you settling in?
+PLAYER: I'm doing great! I'm here for the competition later today!
+Snow: Oh, me too! I can't wait.
+Luge always gets my blood pumping.
+Anyway, good to see you again! I'm from the area, so it's like being home.
+
+> show snow_neutral.png
+You have my number, right? Give me a call if you need anything.
+But if you don't mind, I should get back to practicing...
+PLAYER: Well...
+
+> choice
+| Ask him out snow2_yes
+| Just get breakfast snow2_no
+
+> label snow2_yes
+> show snow_happy.png
+Snow: Oh, a date...let's do it!
+I need to finish my practice, and grab my toque, but meet me here in an hour.
+I know somewhere we can go before the competition...
+
+> background cars_outside.jpg
+Snow: Right this way! Here's my car!	
+PLAYER: Where are we going?
+Snow: It's a surprise! You'll see soon!
+> sound carrev.ogg
+
+> background outside_museum.jpg 1.0
+> music day.ogg
+> show snow_happy.png
+Snow: We're here!
+
+> show snow_neutral.png
+PLAYER: Wow! A...
+...paleontology museum?
+> show snow_happy.png
+Snow: Yeah! I came here years ago and I really like it.
+
+> show snow_neutral.png
+I've always wanted to come back.
+PLAYER: I don't know that much about paleontology...
+
+> show snow_happy.png
+Snow: Don't worry! The whole point of a museum is to teach you cool things.
+Let's go check it out!
+
+> background museum_water.png
+> music recollection.ogg
+
+> show snow_neutral.png
+PLAYER: Wow. It's like we're under the sea, but with giant skeletons.
+
+> show snow_happy.png
+Snow: Yeah, I know!
+
+> show snow_neutral.png
+This would be a neat place to come on Halloween...
+PLAYER: Is this really how big they were?
+Snow: Actually, I think these models are blown up to be a lot bigger.
+So that you can see the creatures better.
+PLAYER: Thank goodness.
+If this were the real size of this guy's mouth, he'd swallow me whole...
+Snow: This plaque says everything displayed here was found in a single fossil bed, just 200 miles west!
+Can you believe so many creatures were so close by?
+PLAYER: Maybe they were here for the luge.
+
+> show snow_happy.png
+Snow: Ha! Yeah, I imagine so!
+Come on, let's go to the next room.
+
+> background museum_fossils.png
+
+> show snow_neutral.png
+Snow: In this room they show off their most prized fossils!
+PLAYER: Wow, look at this one! It's so big!
+Snow: Yeah! The museum researchers keep the fossils they're working on in here, so we're seeing real scientific specimens up close.
+PLAYER: Even that huge dinosaur there?
+
+> show snow_happy.png
+Snow: Actually, that one was 3D printed!
+> show snow_neutral.png
+Its bones were too fragile to be cast like most of the other bones in the museum, so they digitized and printed it instead.
+PLAYER: You know so much about paleontology!
+PLAYER: You must have loved science class in school.
+Snow: Yeah. I did like science...
+Snow: But geography class was always my favorite.
+Snow: I'm really lucky that, as a luge athlete, I get to travel all over the world!
+
+> background museum_dinos.png
+
+PLAYER: Finally! A room with nothing but dinosaurs!
+> show snow_happy.png
+Snow: Yeah, this is my favorite too.
+PLAYER: Look at this guy's teeth.
+> show snow_surprised.png
+Snow: But he has such small arms and hands!
+PLAYER: It'd be tough for him to push off at the start of a luge course.
+> show snow_happy.png
+Snow: I don't think he'd even fit on a sled!
+PLAYER: Maybe he can just run down the course faster than a luge.
+...Would that even count?
+> show snow_neutral.png
+Snow: Actually, a luge travels 5 times faster than a T-Rex.
+PLAYER: You can't beat a luger that easily, T-Rex!
+
+> background outside_museum.jpg
+
+> show snow_happy.png
+Snow: This has been great!
+I think we should head back to the course now, though.
+PLAYER: Yeah this was awesome! Not what I was expecting at all. But I liked it.
+> sound carrev.ogg
+
+> background snowhotel.jpg
+> music none
+
+> show snow_neutral.png
+SNOW: I'm going to go back to my room to grab my gear.
+> show snow_happy.png
+Catch you later!
+
+> FLAG snow2
+> jump snow_end
+
+> label snow3
+
+PLAYER: (Music is nice, but food is the most important!)
+
+> background dennys.png
+> music credits.ogg
+
+PLAYER: (Even though I got here early, the line is so long...)
+PLAYER: (Good thing they serve their customers so fast.)
+PLAYER: (I wish I could luge as fast as Denny's serves its customers.)
+PLAYER: (...I'm finally near the front.)
+PLAYER: I'll have the Moons Over My Hammy.
+
+> background snowhotel.jpg
+> music piano.ogg
+
+PLAYER: (Mmmm, this is delicious.)
+PLAYER: (Now to find somewhere to sit down...)
+PLAYER: Ahhh...!!
+
+> music none
+> shake
+
+> show snow_surprised.png
+SNOW [hidename]: Whoa! What happened?
+PLAYER: Oh my gosh, I wasn't paying attention, and I tripped on the piano!
+SNOW [hidename]: Thank goodness the food didn't get in the piano! That could have been a disaster.
+PLAYER: I got the cheese all over my luge uniform!
+
+> show snow_neutral.png
+SNOW [hidename]: Luge? Wait...
+SNOW: Hey, I've seen you before!
+PLAYER: Oh, Snow! It's you!
+
+> show snow_happy.png
+> music day.ogg
+Snow: Hey, you! How are you doing?
+PLAYER: Well...I would be doing better if I didn't have cheese all over my uniform.
+
+> show snow_neutral.png
+Snow: Sorry about that.
+Not exactly sure how you tripped over the piano while I was playing it...
+Was I playing too quietly for you to notice...?
+PLAYER: What? No! You were incredible!
+Really, I just wasn't watching my step.
+Snow: That sandwich looks amazing.
+PLAYER: Oh yeah, Denny's has the best stuff.
+Snow: Man, now I'm hungry...
+PLAYER: How about I get you one?
+Snow: Wow, that'd be great.
+
+> show snow_happy.png
+Snow: How about this: buy me a sandwich from Denny's, and I'll take you to a cleaner I know nearby.
+
+> choice
+| Like a breakfast date? snow3_yes
+| I couldn't impose snow3_no
+
+> label snow3_yes
+
+Snow: Haha, sure! Kinda weird to go to the cleaners, but let's call it a date!
+Let's meet over at Denny's.
+
+> background dennys.png
+> music jazzy.ogg
+
+> show snow_surprised.png
+Snow: Wow it sure is crowded in here!
+
+> show snow_neutral.png
+PLAYER: Yeah, Denny's has the best food.
+Even out here near the luge track, looks like it's really popular.
+Snow: What do you recommend?
+PLAYER: Well I had a Moons Over My Hammy before. If that looks good to you, that's what I'd go for.
+
+> show snow_happy.png
+Snow: Right, I'll try one!
+
+> background dennys.png
+> music resume
+
+> show snow_neutral.png
+Snow: So are you here for the tournament?
+PLAYER: Yeah. I came early to practice before it starts.
+Snow: That's a great idea! Practice makes perfect, you know.
+PLAYER: But I'm not even good yet. I'll never be perfect.
+I can't even eat a sandwich without getting it all over myself.
+
+> show snow_happy.png
+Snow: But that's the best part about luge!
+
+> show snow_neutral.png
+You can always go faster. You can always shave off another millisecond from your time.
+Everyone's trying to be perfect. But perfection isn't even possible!
+PLAYER: I never thought about it that way.
+Maybe that's why I like luge so much.
+Snow: Speaking of which, let's go get your uniform cleaned!
+
+> background cars_outside.jpg
+
+> show snow_neutral.png
+PLAYER: So how do we get to the cleaner?
+Snow: Actually, I thought we could go by bus.
+The 408 bus makes a short loop through the neighborhood, then stops right by the cleaners.
+PLAYER: Sounds like fun!
+
+> background bus.png
+> music day.ogg
+
+> show snow_neutral.png
+PLAYER: How long is this bus ride again?
+Snow: Only about 15 minutes. We should be there soon.
+PLAYER: Do you think they'll be able to clean my uniform today?
+I'd really like it tomorrow for the competition. 
+Snow: Oh yeah, they have really fast service.
+Since we're so early, they'll be finished by 5pm.
+PLAYER: How do you know so much about them?
+Snow: Let's just say...this isn't the first time I've been through this.
+One of my pals growing up was really into poutine...
+
+> sound carrev.ogg
+> background bus.png 1.0
+
+> show snow_neutral.png
+PLAYER: You were right, that was easy!
+Snow: Yeah, this place is great! Your uniform will be ready in just a few hours.
+Snow: The guy who runs it, Richard, and I, go way back. He was my next door neighbor growing up.
+Snow: And thanks for the breakfast! I'll have to go to Denny's more often.
+PLAYER: Maybe we can go again tomorrow!
+Snow: Well, I'm not sure that's the best pre-competition food...
+PLAYER: No, believe me, it is.
+Snow: ...I'll think about it.
+Well anyway, this is our stop!
+
+> background snowhotel.jpg
+
+> show snow_happy.png
+PLAYER: Thanks so much! This was really fun!
+Snow: I'm going to head over to the track now, but I'll see you later?
+> FLAG snow3
+
+> label snow_end
+> background none
+
+NARRATOR: A few hours later...
+
+> music love.ogg
+> background snowhotel.jpg
+> show snow_neutral.png
+Snow: Oh hey, you!
+Snow: I had a great time hanging out today.
+Snow: And I was thinking...I have a neat idea for something else we could do together.
+Snow: But I'm a busy guy.
+Snow: Between the luge and the piano, I don't have too much free time.
+Snow: So I was thinking, I want to ask you a question. To make sure you really get me.
+Snow: It's just one question, but it will really help me to decide.
+
+> jump_if snow1 test2
+
+Snow: Do you remember what my favorite song is?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+> choice
+| Despacito wrong
+| Snow (Hey Oh) wrong
+| Rock Lobster wrong
+
+> label test2
+> jump_if snow2 test3
+
+Snow: Do you remember what my favorite class in school was?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+> choice
+| Music wrong
+| Science wrong
+| Gym wrong
+
+> label test3
+> jump_if snow3 test_final
+
+Snow: Do you remember the name of my next-door neighbor growing up?
+PLAYER: (Damn. I don't remember. Guess I wasn't paying attention...)
+PLAYER: (Might as well guess...)
+> choice
+| Noah wrong
+| William wrong
+| Felix wrong
+
+> label test_final
+Snow: Do you remember what my favorite song is?
+PLAYER: (...!)
+PLAYER: (I think I know this one!)
+> choice
+| YYZ good_end
+| Snow (Hey Oh) wrong
+| Rock Lobster wrong
+
+> label wrong
+Snow: I'm sorry, that's not it...
+Snow: Oh well, it was really nice hanging out today!
+Snow: I'm gonna go practice on the course now.
+Snow: I hope to see you around soon!
+> jump bad_end
+
+
+> label bad_end
+> background hotelroom.png
+PLAYER: Today was so fun...
+PLAYER: Snow is so smart and talented.
+PLAYER: He's so dedicated to what he does.
+
+PLAYER: I hope I'll see Snow again soon...
+PLAYER: I wonder what... he wanted to do together...
+PLAYER: zzz...
+
+> bad_end
+
+> label good_end
+SNOW: Yeah, that's it!
+Come on, I wanna show you something!
+
+> jump snow_luge.txt
+
+> label snow1_no
+
+PLAYER: Uhhh... I was just wondering the names of the pieces you were playing.
+Snow: Oh no problem, here I'll write them down for you.
+
+> jump snow_final_no
+
+> label snow2_no
+
+PLAYER: Yeah, I should get to practice soon.
+Snow: See you around!
+
+> jump snow_final_no
+
+> label snow3_no
+
+Snow: Yeah I guess I should get to practice soon anyway.
+Snow: Here, let me give you the address of a good nearby cleaner.
+
+> jump snow_final_no
+
+> label snow_final_no
+
+> background hotelroom.png
+PLAYER: I managed to get in a few luge runs today, but I felt really distracted.
+PLAYER: I wonder if I made the right decision... with Snow...
+> background none
+PLAYER: zzz...
+> bad_end

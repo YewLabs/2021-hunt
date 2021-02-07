@@ -1,0 +1,110 @@
+name: tapas
+difficulty: 5/10
+coolness: 5/10
+time: 6:00
+
+questions:
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/1.jpg
+
+        - answer: 7
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/2.jpg
+
+        - answer: 6
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/3.jpg
+
+        - answer: 6
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/4.jpg
+
+        - answer: 6
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/5.jpg
+
+        - answer: 9
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/6.jpg
+
+        - answer: 8
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/7.jpg
+
+        - answer: 10
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/8.jpg
+
+        - answer: 5
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/9.jpg
+
+        - answer: 8
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/10.jpg
+
+        - answer: 6
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/11.jpg
+
+        - answer: 5
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/12.jpg
+
+        - answer: 8
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/13.jpg
+
+        - answer: 9
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/14.jpg
+
+        - answer: 7
+
+    - question:
+        - text: "How many black squares are on the diagonals in the solution to this Tapa?"
+
+        - image: tapas/15.jpg
+
+        - answer: 7

@@ -1,0 +1,46 @@
+name: image-identification
+difficulty: 10/10
+coolness: 10/10
+time: 21:00
+
+questions:
+    - question:
+        - text: "Below is a Spiral Galaxies puzzle followed by a Star Battle puzzle. When the two solutions are overlaid, how many of the stars are in the two largest galaxies?"
+
+        - image: logic-puzzles/star-battle-galaxies/A.jpg
+
+        - image: logic-puzzles/star-battle-galaxies/B.jpg
+
+        - answer: 11
+    - question:
+        - text: "Below is a Spiral Galaxies puzzle followed by a Star Battle puzzle. When the two solutions are overlaid, how many of the stars are in the two largest galaxies?"
+
+        - image: logic-puzzles/star-battle-galaxies/A2.jpg
+
+        - image: logic-puzzles/star-battle-galaxies/B2.jpg
+
+        - answer: 6
+    - question:
+        - text: "Below is a Spiral Galaxies puzzle followed by a Star Battle puzzle. When the two solutions are overlaid, how many of the stars are in the two largest galaxies?"
+
+        - image: logic-puzzles/star-battle-galaxies/A3.jpg
+
+        - image: logic-puzzles/star-battle-galaxies/B3.jpg
+
+        - answer: 4
+    - question:
+        - text: "Below is a Spiral Galaxies puzzle followed by a Star Battle puzzle. When the two solutions are overlaid, how many of the stars are in the two largest galaxies?"
+
+        - image: logic-puzzles/star-battle-galaxies/A4.jpg
+
+        - image: logic-puzzles/star-battle-galaxies/B4.jpg
+
+        - answer: 11
+    - question:
+        - text: "Below is a Spiral Galaxies puzzle followed by a Star Battle puzzle. When the two solutions are overlaid, how many of the stars are in the two largest galaxies?"
+
+        - image: logic-puzzles/star-battle-galaxies/A5.jpg
+
+        - image: logic-puzzles/star-battle-galaxies/B5.jpg
+
+        - answer: 7

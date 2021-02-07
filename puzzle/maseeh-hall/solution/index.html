@@ -1,0 +1,67 @@
+<p>The feeder answers for this meta are those from the student puzzles with two pairs of eight-letter words as their
+    answer:</p>
+
+<pre>
+ARCHIVED EDITIONS
+HOSPITAL BENEFITS
+GATHERER CHILDREN
+DISTINCT FEATURES
+</pre>
+<p>The first thing we notice - and likely the reason we figured out those are the answers for this metapuzzle - is that
+    we can lay out these answers onto the chessboard so that ARCHIVED is in the A file, EDITIONS is in the E file, and
+    so on. The answers are laid out bottom-to-top, consistent with the numbering of a standard chess board.</p>
+
+<pre>
+DSNTSSRL
+ETECNEEA
+VIRNORRT
+IFDIIUEI
+HELTTTHP
+CNISIATS
+REHIDEAO
+ABCDEFGH
+</pre>
+
+<p>Now we return to the chess diagram in the puzzle. If we try to use the rook to capture the pawns, we notice there is
+    only one valid path by which we can capture all the pawns, capturing exactly one per move:</p>
+
+<link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+    integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU" crossorigin="anonymous">
+<div style="margin-left: auto; margin-right: auto; width: fit-content">
+    <div id="myBoard" style="width: 400px" role="img"
+        aria-label="chessboard with white pawns on D8, F8, B6, C6, F6, B5, G5, E4, G4, C3, A2, E2, A1, C1, H1 and a black rook on E6 and an animiation of the rook taking the pawns one-by-one at, in order, C6, C3, C1, H1, A1, A1, E2, E4, G4, G5, B5, B6, F6, F8, D8.">
+    </div>
+    <button id="play">Show solution</button>
+    <button id="reset">Reset</button>
+</div>
+
+<p>Reading the letters on the squares of the captures, in the order of the captures, we get <span class="answer">RICHARD
+        THE FIRST</span>.</p>
+
+<div style="font-family: 'Source Code Pro';">
+    DSN<b>T</b>S<b>S</b>RL<br>
+    ETECNEEA<br>
+    V<b>I</b><b>R</b>NO<b>R</b>RT<br>
+    I<b>F</b>DIIU<b>E</b>I<br>
+    HELT<b>T</b>T<b>H</b>P<br>
+    CN<b>I</b>SIATS<br>
+    <b>R</b>EHI<b>D</b>EAO<br>
+    <b>A</b>B<b>C</b>DEFG<b>H</b><br>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+    integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var puzzle = '3P1P2/8/1PP1rP2/1P4P1/4P1P1/2P5/P3P3/P1P4P';
+    var board = Chessboard('myBoard', { draggable: true, moveSpeed: 500, position: puzzle, pieceTheme: '{{sroot}}img/chesspieces/wikipedia/{piece}.png' });
+    $("#play").click(() => {
+        var moves = ['e6-c6', 'c6-c3', 'c3-c1', 'c1-h1', 'h1-a1', 'a1-a2', 'a2-e2', 'e2-e4', 'e4-g4', 'g4-g5', 'g5-b5', 'b5-b6', 'b6-f6', 'f6-f8', 'f8-d8'];
+        board.position(puzzle, false);
+        moves.forEach((move, idx) => setTimeout(() => board.move(move), idx * 800));
+    })
+    $("#reset").click(() => {
+        board.position(puzzle, false);
+    })
+</script>

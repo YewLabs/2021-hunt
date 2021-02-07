@@ -1,0 +1,570 @@
+<style>
+.submission-box {
+    text-align: center;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.solved {
+    border: 3px solid black;
+}
+
+.blankrow {
+    height: 24px;
+}
+
+</style>
+
+<form>
+	<label for="pronoun">Choose a pronoun for your pig:</label><br>
+	<select name="pronoun" id="pronoun" onchange="updatePronoun()">
+        <option value="he" {% if he_pronoun %}selected{% endif %}>he</option>
+		<option value="she" {% if she_pronoun %}selected{% endif %}>she</option>
+		<option value="they" {% if they_pronoun %}selected{% endif %}>they</option>
+		<option value="it" {% if it_pronoun %}selected{% endif %}>it</option>
+	</select>
+</form>
+
+<div class="submission-box {% if name is not None %}solved{% endif %}">
+{% if name is None %}
+<form autocomplete="off" onsubmit="event.preventDefault(); makeGuess()">
+	<input type="text" id="guess" name="guess" maxlength="50"><br>
+	<input type="submit" value="Submit">
+</form>
+<div id="response" style="color:red"></div>
+{% else %}
+<p><b>{{ name|upper }}</b> is your pig’s name.</p>
+{% if False %}<button type="button" onclick="rename()">Rename</button>{% endif %}
+{% endif %}
+</div>
+
+{% if name is not None and not pigsaw_unlocked %}
+<p>“Squee squee!”<br>
+<i>The virtual version of this puzzle isn't unlocked yet! You should solve something else!</i></p>
+{% endif %}
+
+
+{% if pigsaw_unlocked %}
+<h2>2. Pigsaw</h2>
+<p>“Oink oink!”<br>
+<i>Let’s solve a puzzle, oink!</i></p>
+
+<p>{{ name }} seems quite excited to be participating in the MIT Mystery Hunt. Maybe you should introduce <span class="object-pronoun">{{ object_pronoun }}</span> on your team’s primary communication channel. After all, <span class="contracted-subject">{{ contracted_subject }}</span> one of the gang now. That reminds you, since <span class="contracted-subject">{{ contracted_subject }}</span> a valued team member, you should ensure {{ name }} stays healthy and out of physical danger. Team members that are incapacitated can’t solve puzzles.</p>
+
+{% if virtual %}
+<p>You look around, and you find a piece of paper with strange shapes drawn on it. There are several letters and numbers written on it.</p>
+{% else %}
+<p>You look around, and you find <a href="puzzle.pdf">this puzzle</a>.</p>
+{% endif %}
+
+<p>“Squee squee!”<br>
+<i>Wow, a pigsaw puzzle! I really like pigsaw puzzles.</i></p>
+
+<p>“Squee squee?”<br>
+<i>[thoughtful squeeing] Could this be the solution to the pigsaw?</i></p>
+
+<div style="margin:auto; max-width:30%">
+    <img style="max-width:100%" src="{% if virtual %}pigsaw-puzzle-solution.png{% else %}pigsaw-solution.png{% endif %}">
+</div>
+
+{% if virtual %}
+<p>You gasp. This <i>does</i> look like the pigsaw solution to you. But does {{ name }} have any idea what this diagram means? For the sake of your pig child’s youthful innocence, you hope not.</p>
+{% else %}
+<p>You gasp. Does {{ name }} have any idea what this diagram means? For the sake of your pig child’s youthful innocence, you hope not. In any case, this doesn’t look like the pigsaw solution to you.</p>
+{% endif %}
+
+<div class="submission-box {% if dinner_unlocked %}solved{% endif %}">
+{% if not dinner_unlocked %}
+<form autocomplete="off" onsubmit="event.preventDefault(); makeGuess()">
+	<input type="text" id="guess" name="guess" maxlength="50"><br>
+	<input type="submit" value="Submit">
+</form>
+<div id="response" style="color:red"></div>
+{% else %}
+<p><b>EAT DINNER</b> is correct!</p>
+{% endif %}
+</div>
+{% endif %}
+
+{% if dinner_unlocked %}
+<p>“Squee squee”<br>
+<i>That was fun. It looks like we made a pigñata.</i></p>
+
+<p>Pigñata? You would never smash a face that cute. </p>
+
+<p>“Squeeeeeeeeeeeeeeeee”<br>
+<i>[tired squeeing] Also, I’m exhausted and hungry. Can we eat some dinner?</i></p>
+
+<p>Right, one of your duties as a pig parent is to feed your pig. You feed {{ name }} three quarters. Big dinner!</p>
+
+<form onsubmit="event.preventDefault(); doIt()">
+	<input type="submit" value="I did it">
+</form>
+</div>
+{% endif %}
+
+{% if sleeping_unlocked %}
+<p>{{ name }} chews for a bit, and then with a soft oink, <span class="subject-pronoun">{{ subject_pronoun }}</span> curl<span class="conjugate">{% if not they_pronoun %}s{% endif %}</span> up next to your computer in the warm spot where the fan blows. <span class="contracted-subject capital">{{ contracted_subject|capfirst }}</span> quickly asleep. Looks like you have a minute to grab a bite to eat or have some water. (Removing the pigsaw is optional).</p>
+
+<p>[{% if health_unlocked %}Timer expired{% else %}<span class="timer">{{ m_remaining }}:{{ s_remaining|stringformat:"02d" }}</span>{% endif %}] {{ name }} is sleeping peacefully.</p>
+{% endif %}
+
+{% if health_unlocked %}
+<h2>3. Health Check</h2>
+<p>{{ name }} yawns <span class="object-pronoun">{{ object_pronoun }}</span>self awake. Rise and shine, {{ name }}, it’s a big day!</p>
+
+<p>It’s time to do a health check for {{ name }}! You can’t just be all higgledy-piggledy when it comes to personal health. If it weren’t for healthy pigs, where would bacon come from?</p>
+
+<p>{{ name }}’s heart girth should be measured across the holes, and the height should include the ears. Rounding to the nearest whole number, what is the ratio of…</p>
+
+<table>
+<tr><td>… {{ name }}’s weight to the weight of a one-ounce lug of pig iron?</td></tr>
+<tr><td>… the length of the long edge of a 16oz pack of Oscar Mayer bacon to {{ name }}’s heart girth?</td></tr>
+<tr><td>… the circumference of a Trans-Alaska pipeline cleaning pig to {{ name }}’s heart girth?</td></tr>
+<tr class="blankrow"><td></td></tr>
+<tr><td>… {{ name }}’s height to the circumference of a quarter?</td></tr>
+<tr><td>… the weight of $100 in quarters to {{ name }}’s weight?</td></tr>
+<tr><td>… the weight of a mint-condition copy of Chickapig to {{ name }}’s weight?</td></tr>
+<tr class="blankrow"><td></td></tr>
+<tr><td>… the (short) circumference of an inflated pigskin to {{ name }}’s height?</td></tr>
+<tr><td>… the heart girth of a Pass the Pigs: Big Pigs pig to {{ name }}’s heart girth?</td></tr>
+<tr><td>… the height of a 0.65-ton feed capacity Osborne outdoor bulk feeder to {{ name }}’s height?</td></tr>
+<tr><td>… the weight of 2/3 gallon of whole-fat milk (without carton) to {{ name }}’s weight?</td></tr>
+<tr><td>… the height of Kevin Bacon to {{ name }}’s height?</td></tr>
+</table>
+
+<p>What is the outcome of {{ name }}’s health check?</p>
+<div class="submission-box {% if feeding1_unlocked %}solved{% endif %}">
+{% if not feeding1_unlocked %}
+<form autocomplete="off" onsubmit="event.preventDefault(); makeGuess()">
+	<input type="text" id="guess" name="guess" maxlength="50"><br>
+	<input type="submit" value="Submit">
+</form>
+<div id="response" style="color:red"></div>
+{% else %}
+<p><b>FAT AND HAPPY</b> is correct!</p>
+{% endif %}
+</div>
+{% endif %}
+
+{% if feeding1_unlocked %}
+<p>{{ name }} really is a fat and happy pig.</p>
+
+<p>“Squee squee!”<br>
+<i>All this puzzle solving is making me hungry!</i></p>
+
+<p>Feed {{ name }} four pennies.</p>
+
+<form onsubmit="event.preventDefault(); doIt()">
+	<input type="submit" value="I did it">
+</form>
+{% endif %}
+
+{% if chewing1_unlocked %}
+<p>[{% if feeding2_unlocked %}Timer expired{% else %}<span class="timer">{{ m_remaining }}:{{ s_remaining|stringformat:"02d" }}</span>{% endif %}] {{ name }} is chewing.</p>
+{% endif %}
+
+{% if feeding2_unlocked %}
+<p>{{ name }}’s tummy makes a gurgle. Guess <span class="contracted-subject">{{ contracted_subject }}</span> still hungry. Pennies don’t seem to fill {{ name }} up, they’re really more of a snack food. You feed <span class="object-pronoun">{{ object_pronoun }}</span> two more quarters.</p>
+
+<form onsubmit="event.preventDefault(); doIt()">
+	<input type="submit" value="I did it">
+</form>
+{% endif %}
+
+{% if chewing2_unlocked %}
+<p>[{% if coins_unlocked %}Timer expired{% else %}<span class="timer">{{ m_remaining }}:{{ s_remaining|stringformat:"02d" }}</span>{% endif %}] {{ name }} is chewing.</p>
+{% endif %}
+
+{% if coins_unlocked %}
+<h2>4. Coins</h2>
+<p>“Squee squee!”<br>
+<i>Yum! That was delicious!</i></p>
+
+<p>Job well done.</p>
+
+<p>“Squee squee”<br>
+<i>Actually, now that I think about it, I don’t feel so good.</i></p>
+
+<p>Of course. What were you thinking, feeding your pig child metal coins?! Are those even digestible? As a pig parent, maybe you should sample your child’s food—make sure it’s edible? No, that doesn't sound like a good idea either.</p>
+
+<p>You decide the best course of action is to promptly remove all the coins from {{ name }}’s stomach. It’s time to make a cash withdrawal, total value $1.72.</p>
+
+<p>“Squeeee squee”<br>
+<i>Please be careful not to hurt me when you remove the coins.</i></p>
+
+<p>In the meantime, your teammates have started on a <a href="new-puzzle.pdf">new puzzle</a>. Never one to miss out, {{ name }} is giving off swine-y sounds of excitement.</p>
+
+<p>“Squee squee squee squee squee!!”<br>
+<i>I know the rules for this type of logic puzzle! We need to put all the coins in the squares. Each square holds at most one coin, and you can’t put a coin in a box if it’s too big to fit. The numbers give the total value of the coins in the squares that intersect the arrow when you extend it. Also, because the puzzle writers aren’t mean, in any square where a dime fits, a penny fits too. Oh, here’s an idea for extracting an answer: first read the quarters, then the dimes, etc. </i></p>
+
+<div class="submission-box {% if photo_unlocked %}solved{% endif %}">
+{% if not photo_unlocked %}
+<form autocomplete="off" onsubmit="event.preventDefault(); makeGuess()">
+	<input type="text" id="guess" name="guess" maxlength="50"><br>
+	<input type="submit" value="Submit">
+</form>
+<div id="response" style="color:red"></div>
+{% else %}
+<p><b>I GOT MY QUARTERS BACK</b> is correct!</p>
+{% endif %}
+</div>
+
+{% endif %}
+
+{% if photo_unlocked %}
+<h2>5. Photo</h2>
+<p>“Squee squee?”<br>
+<i>You have quarterbacks? I have a pigskin, do you want to play a quick game?</i></p>
+
+<p>It’s probably not the time for that right now.</p>
+
+<p>“Squee squee. Squee squee squee”<br>
+<i>[reflective squeeing] This is my first Mystery Hunt, I’ve really had a good time. But I really want to meet other Hunters like me. Is there anyone who’s really like me?</i></p>
+
+<p>{{ name }}’s hogitation is giving you big “have I socialized my precious pig child enough” anxiety. You would love for this Mystery Hunt to be a smashing success for {{ name }}. Pigs like <span class="object-pronoun">{{ object_pronoun }}</span> aren’t all that common at Mystery Hunt, but surely you can “oink-quaint” <span class="object-pronoun">{{ object_pronoun }}</span> with at least one other?</p>
+
+{% if virtual %}
+<p>Take a picture of another pig who can be {{ name }}’s friend alongside a piece of paper with “MYST 2021” written on it. The other pig should be three-dimensional, but it doesn’t have to be alive. {{ submission_instructions|safe }}</p>
+{% else %}
+<p>Take a picture of {{ name }} with another pig. The other pig should be three-dimensional, but it doesn’t have to be alive. {{ submission_instructions|safe }}</p>
+{% endif %}
+
+<div class="submission-box {% if finish_unlocked %}solved{% endif %}">
+{% if not finish_unlocked %}
+<form autocomplete="off" onsubmit="event.preventDefault(); makeGuess()">
+	<input type="text" id="guess" name="guess" maxlength="50"><br>
+	<input type="submit" value="Submit">
+</form>
+<div id="response" style="color:red"></div>
+{% else %}
+<p><b>PIGPEN PALS</b> is correct!</p>
+{% endif %}
+</div>
+{% endif %}
+
+{% if finish_unlocked %}
+<p>You’ve been hammering away for quite some time now; hopefully a little more hammering can finish the puzzle?</p>
+
+<p>“Squee squee!”<br>
+<i>A metapuzzle! This is so exciting! We’re so close!</i></p>
+
+<p>This is it. You have a look back at the submissions you’ve made so far. You wish you could reflect {{ name }}’s optimism, but your eyes are worn from misplaced sleep; you’re pretty tired. You have an urge to hit something.</p>
+
+<p>“Squee squee”<br>
+<i>I have an idea. Why don’t we use the numbers {% if fav_num >= 0 %}+{% endif %}{{ fav_num }}, -4, +14, -4, +2? Those are my favorite numbers.</i></p>
+
+<p>What a dumb idea. {{ name }} must be really losing it. Your harried staring at the answers convinces you that you don’t have the entire answer. You get the sense there is a second half lurking somewhere dark. Where could the other half be?</p>
+
+<p>Suddenly an idea hits you. An idea hits you really hard. You look at {{ name }}.</p>
+
+<p>“Squee squee”</p>
+
+<p>Do you really have it in you?</p>
+{% endif %}
+
+{% if virtual %}
+<style>
+#virtual-pig-wrapper {
+  margin-top: 30px;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.pig {
+  perspective: 100px;
+  position: relative;
+  margin-bottom: 60px;
+}
+{% if dinner_unlocked %}
+.coins {
+  display: flex;
+  flex-direction: column;
+}
+.coins p {
+  text-align: center;
+  width: 100%;
+}
+.coin {
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+.coin img {
+  border-radius: 50%;
+  position: absolute;
+  touch-action: none;
+  transform: scale(0.5);
+  z-index: 2;
+}
+img.highlight {
+  filter: contrast(140%);
+}
+.pig-hole {
+  position: absolute;
+  width: 27%;
+  height: 15%;
+  top: 3%;
+  left: 33%;
+  box-sizing: border-box;
+}
+.pig-hole.dashed {
+  border: 5px dashed black;
+}
+#coindrop {
+  left: 35%;
+  position: absolute;
+  top: -15%;
+  transition: opacity 0.2s;
+}
+{% endif %}
+{% if health_unlocked %}
+#buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.pig .scale {
+  background: #c1c2bf;
+  bottom: 0;
+  height: 20%;
+  transform: rotateX(40deg);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.measurements {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+}
+.measurements p {
+  margin: 1em;
+}
+{% endif %}
+</style>
+
+<hr>
+<div id="virtual-pig-wrapper">
+  {% if dinner_unlocked %}
+  <div class="coins">
+    <div class="coin"><img id="quarter" src="virtual-pig/25.png" alt="A quarter." /></div>
+    <div class="coin"><img id="dime" src="virtual-pig/10.png" alt="A dime." /></div>
+    <div class="coin"><img id="nickel" src="virtual-pig/5.png" alt="A nickel." /></div>
+    <div class="coin"><img id="penny" src="virtual-pig/1.png" alt="A penny." /></div>
+  </div>
+  {% endif %}
+  <div class="pig" style="height:376px; width: 376px">
+      {% if finish_unlocked and not trueend_unlocked %}
+      <img id="pig-image0" src="virtual-pig/pig.png" alt="A piggy bank." draggable="false" style="position:absolute"/>
+      <img id="pig-image1" src="virtual-pig/pig1.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image2" src="virtual-pig/pig2.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image3" src="virtual-pig/pig3.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image4" src="virtual-pig/pig4.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image5" src="virtual-pig/pig5.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      <img id="pig-image6" src="virtual-pig/pig6.png" alt="A piggy bank." draggable="false" style="visibility: hidden; position: absolute"/>
+      {% else %}
+      <img id="pig-image" src="virtual-pig/pig{% if trueend_unlocked %}6{% endif %}.png" alt="A piggy bank." draggable="false" />
+      {% endif %}
+    {% if dinner_unlocked %}
+    <img id="coindrop" src="virtual-pig/coindrop.png" style="opacity: 0" />
+    <div class="pig-hole"></div>
+    {% endif %}
+    {% if health_unlocked %}
+    <div class="scale" style="display: none">
+    </div>
+    {% endif %}
+  </div>
+  {% if dinner_unlocked %}
+  <div class="counter">
+    <table>
+      <tr><th>Contents</th><th></th></tr>
+      <tr><td>Quarters</td><td id="quarter-count">{{ quarter }}</td></tr>
+      <tr><td>Dimes</td><td id="dime-count">{{ dime }}</td></tr>
+      <tr><td>Nickels</td><td id="nickel-count">{{ nickel }}</td></tr>
+      <tr><td>Pennies</td><td id="penny-count">{{ penny }}</td></tr>
+    </table>
+  </div>
+  {% endif %}
+</div>
+{% if health_unlocked %}
+<div id="buttons">
+  <button id="scale-button" onclick="toggleScale()">Show scale</button>
+  {% if finish_unlocked %}
+  <button id="hammer-button" onclick="toggleHammer()">Activate hammer</button>
+  {% endif %}
+</div>
+{% endif %}
+{% if health_unlocked %}
+<div class="measurements" style="display: none">
+  <p>Height: 7.0 cm</p>
+  <p>Girth: 19.5 cm</p>
+  <p>Weight: <span id="weight">0</span> g</p>
+</div>
+{% endif %}
+
+{% if health_unlocked %}
+<script>
+function toggleScale() {
+  let scale = gcnz("scale");
+  let measurements = gcnz("measurements");
+  if (scale.style.display === "none") {
+    scale.style.display = "block";
+    measurements.style.display = "flex";
+    computeWeight();
+    gid("scale-button").innerHTML = "Hide scale";
+  } else {
+    scale.style.display = "none";
+    measurements.style.display = "none";
+    gid("scale-button").innerHTML = "Show scale";
+  }
+}
+</script>
+{% endif %}
+
+{% if finish_unlocked %}
+<script>
+if (!declare_vars) {
+  var hammer = false;
+  var cracks = 0;
+  declare_vars = true;
+}
+gid('hammer-button').innerHTML = hammer ? "Deactivate hammer" : "Activate hammer";
+
+function toggleHammer() {
+  if (gcnz("scale").style.display !== "none")
+    toggleScale();
+  if (!hammer) {
+    for (let i = 0; i < 6; i++) {
+      const elt = gid('pig-image'+i);
+      if (elt) {
+        elt.style.cursor = "pointer";
+        elt.addEventListener("click", smash);
+      }
+    }
+    gid("hammer-button").innerHTML = "Deactivate hammer";
+  } else {
+    for (let i = 0; i < 6; i++) {
+      const elt = gid('pig-image'+i);
+      if (elt) {
+        elt.style.cursor = "default";
+        elt.removeEventListener("click", smash);
+      }
+    }
+    gid("hammer-button").innerHTML = "Activate hammer";
+  }
+  hammer = !hammer;
+}
+
+function smash(e) {
+  if (cracks < 6) {
+    const elt = document.getElementById("pig-image" + String(cracks));
+    const newElt = document.getElementById("pig-image" + String(cracks+1));
+    newElt.style.visibility = "visible";
+    elt.style.visibility = "hidden";
+    cracks++;
+    if (cracks === 6) {
+      doIt();
+    }
+  }
+}
+</script>
+{% endif %}
+
+{% if dinner_unlocked %}
+<script>
+if (!interacted) {
+  interact(".coin img").draggable({
+    inertia: true,
+    listeners: {
+      move: dragMoveListener,
+    },
+  });
+
+  interact(".pig-hole").dropzone({
+    overlap: 0.1,
+    ondropactivate: function (e) {
+      e.target.classList.add("dashed");
+    },
+    ondragenter: function (e) {
+      e.relatedTarget.classList.add("highlight");
+    },
+    ondragleave: function (e) {
+      e.relatedTarget.classList.remove("highlight");
+    },
+    ondrop: function (e) {
+      const t = e.relatedTarget;
+      incrementCoin(t.id);
+      t.style.transform = "translate(0, 0) scale(0.5)";
+      t.setAttribute("data-x", 0);
+      t.setAttribute("data-y", 0);
+      t.classList.remove("highlight");
+      const cd = document.getElementById("coindrop");
+      cd.style.opacity = "1";
+      setTimeout(() => {
+        cd.style.opacity = "0";
+      }, 500);
+      {% if health_unlocked %}
+      computeWeight();
+      {% endif %}
+    },
+    ondropdeactivate: function (e) {
+      e.target.classList.remove("dashed");
+    },
+  });
+
+  interacted = true;
+}
+
+function dragMoveListener(e) {
+  const t = e.target;
+  const x = (parseFloat(t.getAttribute("data-x")) || 0) + e.dx;
+  const y = (parseFloat(t.getAttribute("data-y")) || 0) + e.dy;
+  t.style.transform = "translate(" + x + "px, " + y + "px) scale(0.5)";
+  t.setAttribute("data-x", x);
+  t.setAttribute("data-y", y);
+}
+
+function setCoin(coin, count) {
+  document.getElementById(`${coin}-count`).textContent = Number(count);
+}
+
+function incrementCoin(coin) {
+  const elt = document.getElementById(`${coin}-count`);
+  elt.textContent = Number(elt.textContent) + 1;
+  coins(coin, elt.textContent);
+}
+
+{% if health_unlocked %}
+function computeWeight() {
+  let total = 116;
+  [
+    ["quarter", 5.67],
+    ["dime", 2.268],
+    ["nickel", 5],
+    ["penny", 2.5],
+  ].forEach(([coin, weight]) => {
+    const elt = document.getElementById(`${coin}-count`);
+    total += Number(elt.textContent) * weight;
+  });
+  document.getElementById("weight").textContent = Math.round(total);
+}
+{% endif %}
+
+{% if trueend_unlocked %}
+  interact(".pig-hole").unset();
+{% endif %}
+
+</script>
+{% endif %}
+
+{% endif %}
+{% if trueend_unlocked %}
+<p>Inside {{ name }} you find a crumpled <a href="paper.pdf">piece of paper</a>.</p>
+{% endif %}

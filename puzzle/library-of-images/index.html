@@ -1,0 +1,9 @@
+<div align="center"><img src="{{sroot}}library1.png"></div>
+<div align="center"><img src="{{sroot}}library2.png" /></div>
+<div align="center"><img src="{{sroot}}library3.png" /></div>
+<h2>...</h2>
+<hr>
+
+{% for url in extra.image_urls %}
+<div align="center"><img src="{{url}}"></div>
+{% endfor %}

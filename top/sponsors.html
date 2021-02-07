@@ -1,0 +1,57 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+{% load static %}
+
+{% block title %}Sponsors &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block stylesheets %}
+<style>
+.info {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.info a {
+  display: block;
+  text-align: center;
+}
+
+.info div {
+  width: 160px;
+  height: 160px;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size: 80px;
+  line-height: 160px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>Our Generous Sponsors</h1>
+  <main>
+    <div class="info">
+      <a href="https://www.cluekeeper.com/">
+        <div style="background-image: url({% static 'sponsors/cluekeeper.png' %})"></div>
+        ClueKeeper
+      </a>
+      <a href="https://www.drinkhint.com/">
+        <div style="background-image: url({% static 'sponsors/mystery_hint-water.png' %})"></div>
+        Hint
+      </a>
+      <a href="https://www.janestreet.com/">
+        <div style="background-image: url({% static 'sponsors/jane-street.png' %})"></div>
+        Jane Street
+      </a>
+      <a href="https://asa.mit.edu/group-resources/funding-large-events">
+        <div style="background-image: url({% static 'sponsors/lef.png' %})"></div>
+        MIT Large Events Fund
+      </a>
+      <a href="https://mitmuseum.mit.edu/">
+        <div style="background-image: url({% static 'sponsors/mit-museum.png' %})"></div>
+        MIT Museum
+      </a>
+    </div>
+  </main>
+</div>
+{% endblock %}

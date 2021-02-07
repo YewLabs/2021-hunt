@@ -1,0 +1,182 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block juice %}
+{% endblock %}
+
+{% block round_styles %}
+<style>
+  .center {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .link-text {
+    position: absolute;
+    width: 12%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: -1%;
+  }
+  .link-text, .monitor-container a, .monitor-container a:hover {
+    color: rgb(245, 255, 245);
+  }
+  .monitor-container a:not(:hover) {
+    opacity: 0.8;
+  }
+  .help-link {
+    padding: 4px 6px;
+    border: 2px solid currentColor;
+    background-color: rgba(245, 255, 245, 0.1);
+  }
+
+  body {
+    background-color: #ffffff;
+  }
+
+  .content {
+    background-image: url({% static 'art/yew-bg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    background: none;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+    margin-top: 30px;
+  }
+
+  .monitor-container {
+    position: relative;
+    top: -45px;
+    left: 46px;
+  }
+</style>
+{% endblock %}
+
+{% block round_top %}
+{% if available_interactions|interactionCheck:"mmo-unlock" %}
+<center>
+  <h1><a href="/device_message/">Important Message from Yew Labs</a></h1>
+</center>
+{% endif %}
+<div style="position:relative" class="monitor-container">
+  <img class="center" src="{% static 'art/yew-bg_0001_Layer-21.png' %}"/>
+  {% comment %} <a href="/"><h2 class="link-text help-link" style="left:9%;top:10%">Yew Labs</h2></a> {% endcomment %}
+  {% if 'loopy' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.loopy.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.loopy.puzzle.url %}" style="left:23%;top:29%"><b>{{puzzle_answer_lookup.loopy.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.loopy.puzzle.url %}" style="left:23%;top:29%">{{puzzle_answer_lookup.loopy.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'bond' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.bond.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.bond.puzzle.url %}" style="left:38%;top:29%"><b>{{puzzle_answer_lookup.bond.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.bond.puzzle.url %}" style="left:38%;top:29%">{{puzzle_answer_lookup.bond.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'merino' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.merino.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.merino.puzzle.url %}" style="left:53%;top:29%"><b>{{puzzle_answer_lookup.merino.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.merino.puzzle.url %}" style="left:53%;top:29%">{{puzzle_answer_lookup.merino.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'sassily' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.sassily.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.sassily.puzzle.url %}" style="left:68%;top:29%"><b>{{puzzle_answer_lookup.sassily.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.sassily.puzzle.url %}" style="left:68%;top:29%">{{puzzle_answer_lookup.sassily.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'salted' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.salted.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.salted.puzzle.url %}" style="left:8%;top:40%"><b>{{puzzle_answer_lookup.salted.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.salted.puzzle.url %}" style="left:8%;top:40%">{{puzzle_answer_lookup.salted.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'boots' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.boots.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.boots.puzzle.url %}" style="left:23%;top:40%"><b>{{puzzle_answer_lookup.boots.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.boots.puzzle.url %}" style="left:23%;top:40%">{{puzzle_answer_lookup.boots.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'duets' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.duets.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.duets.puzzle.url %}" style="left:38%;top:40%"><b>{{puzzle_answer_lookup.duets.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.duets.puzzle.url %}" style="left:38%;top:40%">{{puzzle_answer_lookup.duets.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'emoji' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.emoji.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.emoji.puzzle.url %}" style="left:53%;top:40%"><b>{{puzzle_answer_lookup.emoji.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.emoji.puzzle.url %}" style="left:53%;top:40%;word-break:break-word">{{puzzle_answer_lookup.emoji.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'eidolon' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.eidolon.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.eidolon.puzzle.url %}" style="left:68%;top:40%"><b>{{puzzle_answer_lookup.eidolon.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.eidolon.puzzle.url %}" style="left:68%;top:40%">{{puzzle_answer_lookup.eidolon.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'spoiled' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.spoiled.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.spoiled.puzzle.url %}" style="left:8%;top:51%"><b>{{puzzle_answer_lookup.spoiled.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.spoiled.puzzle.url %}" style="left:8%;top:51%">{{puzzle_answer_lookup.spoiled.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'hound' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.hound.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.hound.puzzle.url %}" style="left:23%;top:51%"><b>{{puzzle_answer_lookup.hound.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.hound.puzzle.url %}" style="left:23%;top:51%">{{puzzle_answer_lookup.hound.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'timer' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.timer.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.timer.puzzle.url %}" style="left:38%;top:51%"><b>{{puzzle_answer_lookup.timer.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.timer.puzzle.url %}" style="left:38%;top:51%">{{puzzle_answer_lookup.timer.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  {% if 'playsets' in puzzle_answer_lookup %}
+  {% if puzzle_answer_lookup.playsets.solved %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.playsets.puzzle.url %}" style="left:53%;top:51%"><b>{{puzzle_answer_lookup.playsets.puzzle.answer|safe}}</b></a>
+  {% else %}
+  <a class="link-text" href="{% url 'puzzle_view' puzzle_answer_lookup.playsets.puzzle.url %}" style="left:53%;top:51%">{{puzzle_answer_lookup.playsets.puzzle.name|safe}}</a>
+  {% endif %}
+  {% endif %}
+  <a class="link-text help-link" href="https://www.mit.edu/~puzzle/" style="left:68%;top:51%">Help</a>
+</div>
+
+{% if 'twodornottwod' in puzzle_answer_lookup %}
+<style>
+.keyboard-link {
+  position: relative;
+  left: -2px;
+  z-index: 1;
+}
+.keyboard-img {
+  margin-top: -265px;
+  width: 700px;
+}
+</style>
+<a class="keyboard-link" href="{% url 'puzzle_view' puzzle_answer_lookup.twodornottwod.puzzle.url %}">
+  <img class="center keyboard-img" src="{% static 'art/yew-bg_0001_Layer-20.png'%}"/>
+</a>
+{% endif %}
+{% endblock %}

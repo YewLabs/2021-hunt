@@ -1,0 +1,89 @@
+name: star-battles
+difficulty: 6/10
+coolness: 5/10
+time: 5:30
+
+questions:
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle1.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle2.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle3.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle4.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle5.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle6.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle7.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle8.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle9.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle10.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle11.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "In the solution of this Star Battle puzzle, how many squares are to the left of both stars in their row?"
+
+        - image: logic-puzzles/star-battles/StarBattle12.jpg
+
+        - answer: 20

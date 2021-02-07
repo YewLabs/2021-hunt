@@ -1,0 +1,352 @@
+<p>
+    The puzzle contains 11 screenshots of software modular synthesizer
+    patches, a number of &ldquo;snippets&rdquo; of letters and numbers in
+    sorted order, and a few blanks at the bottom.
+</p>
+<p>
+    We can determine the screenshots are all of <a href="https://vcvrack.com/">VCV
+    Rack</a>, a free and open source Eurorack
+    modular synthesizer simulator, by googling the names of a few of the modules.
+</p>
+<p>
+    The first step is to reproduce all of the synth patches by downloading
+    VCV Rack ourselves, finding the same modules, connecting them with patch
+    cables, and setting the knobs in the same way as seen in the images. Some
+    modules used in the patches were created by third-party developers, so we
+    must find those in the <a href="https://library.vcvrack.com/">VCV Rack
+    Library</a> and add them to our account. All of the patches use the
+    MIDI-CV module set to &ldquo;QWERTY keyboard&rdquo;, which lets us play
+    the synthesizer by tapping keys on a computer QWERTY keyboard.
+</p>
+<p>
+    The mapping of QWERTY keyboard key to musical pitch can be seen in the following image, found in the <a href=https://vcvrack.com/manual/Core#midi-interfaces">VCV Rack manual</a>:
+</p>
+<img src="{{sroot}}qwerty.png" style="max-width: 500px"/>
+<p>
+    We infer that the letters, numbers, and punctuation (square brackets)
+    that appear on the snippets at the bottom of the puzzle are notes meant
+    to be played as keyboard input through one of the synth patches. The
+    ripped edges on the snippets suggest we should first piece them together
+    like a jigsaw to produce recognizable musical melodies. Eleven of the
+    snippets have beveled, rather than ripped, left edges (which matches the
+    number of Rack patch screenshots), so we can guess that these are the
+    &ldquo;starting points&rdquo;. Eleven other snippets have red outlines,
+    so we might also guess at this point that one of these will appear in
+    each line and be used somehow for extraction.
+</p>
+<p>
+    The snippets are short enough that piecing together the melodies from the
+    given letters/musical notes alone is quite difficult. Fortunately, we can
+    use the VCV Rack patches to help, since each one of them reproduces an
+    iconic synthesizer sound from a well-known song &mdash; if we can
+    recognize the timbre, or use it as a clue to jog our memory, it&rsquo;s
+    easier to piece together that tune out of the snippets.
+</p>
+<p>
+    After reassembling all the melodies, matching them with the
+    corresponding synth patches, then playing the notes on our computer, we
+    can identify the following 11 songs:
+</p>
+<style>
+    .answer-red-outline {
+        color: #c44a4a;
+        font-weight: bold;
+    }
+</style>
+<table>
+    <tr>
+        <th>Song</th>
+        <th>Artist</th>
+        <th>Snippets</th>
+        <th>VCV patch audio</th>
+        <th>Original audio (for comparison)</th>
+    </tr>
+    <tr>
+        <td>Just Dance</td>
+        <td>Lady Gaga</td>
+        <td>E63  <span class="answer-red-outline">Y6E</span>  63  Y6</td>
+        <td><audio src="{{sroot}}justdance_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}justdance_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Scary Monsters and Nice Sprites</td>
+        <td>Skrillex</td>
+        <td>BTRT  7TO  I7VJ  NR3W  QJR  JBJW  ]O7  T[7  <span class="answer-red-outline">TRBT</span>  RT7  TOI7  VJN  R3W</td>
+        <td><audio src="{{sroot}}scarymonsters_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}scarymonsters_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Axel F</td>
+        <td>Harold Faltermeyer</td>
+        <td>R6RR  7R3  <span class="answer-red-outline">RIR</span>  R9I  6RI  [R3  3QTR</td>
+        <td><audio src="{{sroot}}axelf_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}axelf_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Take On Me</td>
+        <td>a-ha</td>
+        <td>55W  MME  EE6  6YU  YYY  EW55  <span class="answer-red-outline">5E</span>  E5E</td>
+        <td><audio src="{{sroot}}takeonme_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}takeonme_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>The Final Countdown</td>
+        <td>Europe</td>
+        <td>2M2   <span class="answer-red-outline">GW2</span>   W2M   W2W   GMNM   NHMN</td>
+        <td><audio src="{{sroot}}europe_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}europe_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Popcorn</td>
+        <td>Hot Butter</td>
+        <td>UYU5   W5MU   <span class="answer-red-outline">YU5W</span>   5MU   9O9O   U9U9  YUY  UTU</td>
+        <td><audio src="{{sroot}}popcorn_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}popcorn_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Megalovania</td>
+        <td>Toby Fox</td>
+        <td>WWOY   6TR   WRT   QQO   <span class="answer-red-outline">Y6T</span>   RWRT</td>
+        <td><audio src="{{sroot}}megalovania_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}megalovania_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Nuthin&rsquo; But a &ldquo;G&rdquo; Thang</td>
+        <td>Dr. Dre</td>
+        <td>UYU9   <span class="answer-red-outline">UYT5</span>   E5UY   U9UY   T5E5</td>
+        <td><audio src="{{sroot}}nuthinbutagthang_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}nuthinbutagthang_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Bad Guy</td>
+        <td>Billie Eilish</td>
+        <td>BWB   2W2   JBW  <span class="answer-red-outline">B2W</span>   2JB</td>
+        <td><audio src="{{sroot}}badguy_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}badguy_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Kids</td>
+        <td>MGMT</td>
+        <td>NM2E   <span class="answer-red-outline">565</span>   E2MN   M2E5   65E2</td>
+        <td><audio src="{{sroot}}kids_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}kids_original.mp3" controls></audio></td>
+    </tr>
+    <tr>
+        <td>Sandstorm</td>
+        <td>Darude</td>
+        <td>UPO   YUP   <span class="answer-red-outline">UPU</span>   POYU   PUPU</td>
+        <td><audio src="{{sroot}}sandstorm_vcv.mp3" controls></audio></td>
+        <td><audio src="{{sroot}}sandstorm_original.mp3" controls></audio></td>
+    </tr>
+</table>
+
+<p>
+    Indeed, exactly one of the snippets in each melody has a red outline, so
+    we can use the position of that snippet to index into the song name:
+</p>
+<table>
+    <tr>
+        <th>Song name</th>
+        <th>Snippets</th>
+        <th>Position of red outline</th>
+        <th>Indexed letter</th>
+    </tr>
+    <tr>
+        <td>Just Dance</td>
+        <td>E63  <span class="answer-red-outline">Y6E</span>  63  Y6</td>
+        <td>2</td>
+        <td>U</td>
+    </tr>
+    <tr>
+        <td>Scary Monsters and Nice Sprites</td>
+        <td>BTRT  7TO  I7VJ  NR3W  QJR  JBJW  ]O7  T[7  <span class="answer-red-outline">TRBT</span>  RT7  TOI7  VJN  R3W</td>
+        <td>9</td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>Axel F</td>
+        <td>R6RR  7R3  <span class="answer-red-outline">RIR</span>  R9I  6RI  [R3  3QTR</td>
+        <td>3</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>Take On Me</td>
+        <td>55W  MME  EE6  6YU  YYY  EW55  <span class="answer-red-outline">5E</span>  E5E</td>
+        <td>7</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td>The Final Countdown</td>
+        <td>2M2   <span class="answer-red-outline">GW2</span>   W2M   W2W   GMNM   NHMN</td>
+        <td>2</td>
+        <td>H</td>
+    </tr>
+    <tr>
+        <td>Popcorn</td>
+        <td>UYU5   W5MU   <span class="answer-red-outline">YU5W</span>   5MU   9O9O   U9U9  YUY  UTU</td>
+        <td>3</td>
+        <td>P</td>
+    </tr>
+    <tr>
+        <td>Megalovania</td>
+        <td>WWOY   6TR   WRT   QQO   <span class="answer-red-outline">Y6T</span>   RWRT</td>
+        <td>5</td>
+        <td>L</td>
+    </tr>
+    <tr>
+        <td>Nuthin&rsquo; But a &ldquo;G&rdquo; Thang</td>
+        <td>UYU9   <span class="answer-red-outline">UYT5</span>   E5UY   U9UY   T5E5</td>
+        <td>2</td>
+        <td>U</td>
+    </tr>
+    <tr>
+        <td>Bad Guy</td>
+        <td>BWB   2W2   JBW  <span class="answer-red-outline">B2W</span>   2JB</td>
+        <td>4</td>
+        <td>G</td>
+    </tr>
+    <tr>
+        <td>Kids</td>
+        <td>NM2E   <span class="answer-red-outline">565</span>   E2MN   M2E5   65E2</td>
+        <td>2</td>
+        <td>I</td>
+    </tr>
+    <tr>
+        <td>Sandstorm</td>
+        <td>UPO   YUP   <span class="answer-red-outline">UPU</span>   POYU   PUPU</td>
+        <td>3</td>
+        <td>N</td>
+    </tr>
+</table>
+<p>
+    The blanks at the bottom have enumeration 3 2 6. The indexed letters,
+    when filled into those blanks, spell out <strong>USE MH PLUGIN</strong>.
+    If we return to the VCV Rack Library and search for &ldquo;MH&rdquo;, we
+    can find <a href="https://library.vcvrack.com/MH">a plugin by a suspicious
+    author</a> containing <a href="https://library.vcvrack.com/MH/Spiro">a
+    single module</a>, with a panel design that looks similar to the snippets
+    in this puzzle. We can download this plugin and add the Spiro module to
+    our existing patches.
+</p>
+<p>
+    The V/OCT and GATE inputs on the Spiro module suggest we should connect
+    them to the control voltage outputs (containing the keyboard note pitch,
+    and whether a key is being held or not, respectively) of the same names
+    on the MIDI-CV module. The Spiro module has two outputs, X and Y, which
+    suggest that we should plot the signals being emitted from the module as
+    a 2D path in the XY plane. Rack has a built-in oscilloscope module (VCV
+    Scope) that has a XY display mode feature if we hit the button labeled
+    X&times;Y, so we can add a Scope to the patch also and connect it up.
+</p>
+<p>
+    At first, playing notes to Spiro just seems to result in spirograph
+    patterns that don&rsquo;t seem to convey any information.
+</p>
+<img src="{{sroot}}spiro.jpg" style="max-width: 500px">
+<p>
+    But if we play a sequence of notes that matches the snippets for one of
+    the songs we identified earlier, Spiro will instead draw out a letter or
+    two letters on the oscilloscope. For example, playing the sequence
+    E63Y6E63Y6 (for Just Dance) results in:
+</p>
+<img src="{{sroot}}spiroE.jpg" style="max-width: 500px">
+<p>
+    We can do this for each sequence of snippets to get new letters for each song:
+</p>
+<table>
+    <tr>
+        <th>Song name</th>
+        <th>Snippets</th>
+        <th>Spiro letters</th>
+    </tr>
+    <tr>
+        <td>Just Dance</td>
+        <td>E63  <span class="answer-red-outline">Y6E</span>  63  Y6</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>Scary Monsters and Nice Sprites</td>
+        <td>BTRT  7TO  I7VJ  NR3W  QJR  JBJW  ]O7  T[7  <span class="answer-red-outline">TRBT</span>  RT7  TOI7  VJN  R3W</td>
+        <td>LE</td>
+    </tr>
+    <tr>
+        <td>Axel F</td>
+        <td>R6RR  7R3  <span class="answer-red-outline">RIR</span>  R9I  6RI  [R3  3QTR</td>
+        <td>CT</td>
+    </tr>
+    <tr>
+        <td>Take On Me</td>
+        <td>55W  MME  EE6  6YU  YYY  EW55  <span class="answer-red-outline">5E</span>  E5E</td>
+        <td>RI</td>
+    </tr>
+    <tr>
+        <td>The Final Countdown</td>
+        <td>2M2   <span class="answer-red-outline">GW2</span>   W2M   W2W   GMNM   NHMN</td>
+        <td>C</td>
+    </tr>
+    <tr>
+        <td>Popcorn</td>
+        <td>UYU5   W5MU   <span class="answer-red-outline">YU5W</span>   5MU   9O9O   U9U9  YUY  UTU</td>
+        <td>AL</td>
+    </tr>
+    <tr>
+        <td>Megalovania</td>
+        <td>WWOY   6TR   WRT   QQO   <span class="answer-red-outline">Y6T</span>   RWRT</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>Nuthin&rsquo; But a &ldquo;G&rdquo; Thang</td>
+        <td>UYU9   <span class="answer-red-outline">UYT5</span>   E5UY   U9UY   T5E5</td>
+        <td>QU</td>
+    </tr>
+    <tr>
+        <td>Bad Guy</td>
+        <td>BWB   2W2   JBW  <span class="answer-red-outline">B2W</span>   2JB</td>
+        <td>IP</td>
+    </tr>
+    <tr>
+        <td>Kids</td>
+        <td>NM2E   <span class="answer-red-outline">565</span>   E2MN   M2E5   65E2</td>
+        <td>ME</td>
+    </tr>
+    <tr>
+        <td>Sandstorm</td>
+        <td>UPO   YUP   <span class="answer-red-outline">UPU</span>   POYU   PUPU</td>
+        <td>NT</td>
+    </tr>
+</table>
+<p>
+    This spells out the final answer, <span class="answer">ELECTRICAL EQUIPMENT</span>.
+</p>
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>
+This puzzle was inspired by how synthesizers often come with presets that
+reproduce sounds from well-known songs. One of my first experiences with this
+was playing with a preset for the VST wavetable synth <a
+href="https://xferrecords.com/products/serum">Xfer Serum</a> that emulated
+the oscillator hard sync lead from <a
+href="https://www.youtube.com/watch?v=HdeYwObD-j4">Daft Punk&rsquo;s Robot
+Rock</a>, and I remember being amazed at how close it sounded to the original
+patch even though the synth itself was different.
+</p>
+<p>
+Some synth sounds are iconic and recognizable no matter what context
+they&rsquo;re used in. You might not know it by name but I guarantee
+you&rsquo;ve heard the sound of the E.PIANO 1 preset on the Yamaha DX7 in
+dozens of songs.
+So the idea here with this puzzle was, instead of a typical music
+identification puzzle in which you are given a bunch of audio clips, what if
+we just give you a bunch of synth patches that produce iconic sounds and you
+supply your own notes to make the audio clips yourself? My hope was that
+it&rsquo;d introduce some interesting new puzzly ambiguities (&ldquo;which
+notes belong with which synth sound?&rdquo;), make the music ID less
+shortcuttable (you probably wouldn&rsquo;t be able to Shazam your own synth
+performance), and along the way hopefully give you some joy plunking out your
+own funny beep boop noises (the real reason any of us care about synthesizers
+in the first place).
+</p>
+<p>
+The final step of this puzzle was inspired by <a href="http://web.mit.edu/puzzle/www/2011/puzzles/katamari_damacy/electronic_love/">Electronic Love</a> from the 2011 Mystery Hunt.
+</p>
+</div>

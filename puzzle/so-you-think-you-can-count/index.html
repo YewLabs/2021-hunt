@@ -1,0 +1,36 @@
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<link rel="stylesheet" type="text/css" href="style.css"/>
+
+<div id="container">
+    <div id="chat-log">
+        <div id="spacer"></div>
+    </div>
+    <div id="chat-status"></div>
+    <div id="chat-best">
+        {% if puzzle.solved %}<a href="leaderboard">{% endif %}
+        <b>Best:</b>
+        <span id="best-score" class="incomplete">0</span>
+        <b> / <span id="best-goal">100</span></b>
+        {% if puzzle.solved %}</a>{% endif %}
+    </div>
+    <div id="chat-cooldown"></div>
+    <div>
+        <input id="chat-message-input" type="text" size="100">
+        <input id="chat-message-submit" type="button" value="Send">
+    </div>
+</div>
+
+<div id="halp">
+    If you feel your session has become unresponsive,
+    enter <tt>!refresh</tt>. If that still doesn't work, enter <tt>!end</tt>
+    and all players should reload their pages.
+</div>
+
+{{ puzzle.auth|json_script:"auth-token" }}
+
+<script src="counting.js"></script>
+{% endif %}

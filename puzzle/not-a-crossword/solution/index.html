@@ -1,0 +1,161 @@
+<style>
+.cross {
+  text-align: center;
+  table-layout: fixed;
+  margin-bottom: 2em;
+}
+
+.cross th {
+  border: none;
+}
+
+.cross td {
+  border: 1px solid black;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+}
+
+.cross td:last-child,
+.cross th:first-child {
+  border-right: 2px solid black;
+}
+
+.cross tr:last-child td,
+.cross tr:first-child th {
+  border-bottom: 2px solid black;
+}
+
+.cross td:empty {
+  background-color: black;
+}
+
+.normal {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  counter-reset: clues;
+}
+
+.normal th {
+  text-align: left;
+}
+
+.normal td:first-child {
+  padding-right: 2em;
+}
+
+.normal td:first-child:before {
+  content: counter(clues) ". ";
+  counter-increment: clues;
+}
+
+.flag {
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+</style>
+
+<p>As the title says, this isn&rsquo;t a crossword. Or at least, it&rsquo;s only half crossword. All the across clues are straight crossword entries, but they don&rsquo;t fill each line of the grid. All the down clues solve to numbers, and indicate the runs of black cells in that column, nonogram/paint-by-numbers style (this is also indicated by the three &ldquo;This puzzle&rdquo; clues). The remaining cells in each column form valid crossword entries (okay, some of them are one letter, but sshhh) that are not clued.</p>
+
+<table class="normal">
+<tr><th colspan="2">Rows</th></tr>
+<tr><td>Prioritize, in an ER · FedEx competitor · Pa&rsquo;s wife</td><td class="monospace">TRIAGE · UPS · MA</td></tr>
+<tr><td>&ldquo;___ Misbehavin&rsquo;&rdquo; · Region below the Sahara · Morning</td><td class="monospace">AINT · SAHEL · AM</td></tr>
+<tr><td>This puzzle (pt. 1) · ___ be it · Profess · This puzzle (pt. 2)</td><td class="monospace">NO · SO · AVER · NO</td></tr>
+<tr><td>Hand tool or horror movie · Twinkle · Second element</td><td class="monospace">SAW · GLEAM · HE</td></tr>
+<tr><td>Word after bible or corn · It&rsquo;s divided into eras · Prefix for late</td><td class="monospace">BELT · EON · OB</td></tr>
+<tr><td>Timid · Common ice cream flavor</td><td class="monospace">SHY · VANILLA</td></tr>
+<tr><td>Alternative to... · ...an analog stick  · The ___ is cast</td><td class="monospace">D · PAD · DIE</td></tr>
+<tr><td>Prestigious sci-fi award</td><td class="monospace">HUGO</td></tr>
+<tr><td>Consumed</td><td class="monospace">ATE</td></tr>
+<tr><td>Main character in Death Note</td><td class="monospace">L</td></tr>
+<tr><td>Tied, perhaps</td><td class="monospace">ALL</td></tr>
+<tr><td>Regretted · &ldquo;___ are Number One&rdquo;</td><td class="monospace">RUED · WE</td></tr>
+<tr><td>Perturb or provoke · This puzzle (pt. 3)</td><td class="monospace">AGITATE · GRAM</td></tr>
+<tr><td>FDA, FCC, or FAA, for instance · Camels&rsquo; watering hole</td><td class="monospace">REGULATOR · OASIS</td></tr>
+<tr><td>Three-part Buddhist scripture · Third dimension</td><td class="monospace">TRIPITAKA · DEPTH</td></tr>
+</table>
+
+<table class="normal">
+<tr><th colspan="2">Columns</th></tr>
+<tr><td>Nazgûl, for instance <i>(The Nine)</i></td><td class="monospace">9</td></tr>
+<tr><td>Occupants of 13-Down <i>(Earth, Atmospheric and Planetary Sciences)</i></td><td class="monospace">12</td></tr>
+<tr><td>Sutherland series <i>(Kiefer, specifically)</i></td><td class="monospace">24</td></tr>
+<tr><td>Nelson, in sports <i>(cricket, specifically)</i></td><td class="monospace">111</td></tr>
+<tr><td>Who to call in an emergency, in much of the world</td><td class="monospace">112</td></tr>
+<tr><td>Erstwhile Lotus software</td><td class="monospace">123</td></tr>
+<tr><td>Erstwhile Nintendo hardware</td><td class="monospace">64</td></tr>
+<tr><td>←</td><td class="monospace">8</td></tr>
+<tr><td>___ up</td><td class="monospace">7</td></tr>
+<tr><td>Theme of an early meta in Mystery Hunt 2015 <i>(Machine Room)</i></td><td class="monospace">9</td></tr>
+<tr><td>This Saturday <i>(January 16, US style)</i></td><td class="monospace">116</td></tr>
+<tr><td>2009 stimulus act, officially <i>(Public Law 111-5)</i></td><td class="monospace">1115</td></tr>
+<tr><td>Longtime tallest building in Cambridge <i>(Green Building)</i></td><td class="monospace">54</td></tr>
+<tr><td>___ square</td><td class="monospace">4</td></tr>
+<tr><td>Fincher film <i>(Se7en)</i></td><td class="monospace">7</td></tr>
+</table>
+
+<p>Filled in, the grid depicts a bed and the numeral 3, indicating that the puzzle&rsquo;s answer is the three-letter word <span class="answer">BED</span>.</p>
+
+<table class="grid cross monospace">
+<tr><th style="border: none"></th><th scope="col">1</th><th scope="col">2</th><th scope="col">3</th><th scope="col">4</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th><th scope="col">10</th><th scope="col">11</th><th scope="col">12</th><th scope="col">13</th><th scope="col">14</th><th scope="col">15</th></tr>
+<tr><th scope="row">1</th>
+<td>T</td><td>R</td><td>I</td><td>A</td><td>G</td><td>E</td><td></td><td>U</td><td>P</td><td>S</td><td></td><td></td><td></td><td>M</td><td>A</td>
+</tr>
+<tr><th scope="row">2</th>
+<td>A</td><td>I</td><td>N</td><td>T</td><td></td><td></td><td></td><td>S</td><td>A</td><td>H</td><td>E</td><td>L</td><td></td><td>A</td><td>M</td>
+</tr>
+<tr><th scope="row">3</th>
+<td>N</td><td>O</td><td></td><td></td><td>S</td><td>O</td><td></td><td>A</td><td>V</td><td>E</td><td>R</td><td></td><td></td><td>N</td><td>O</td>
+</tr>
+<tr><th scope="row">4</th>
+<td></td><td></td><td></td><td>S</td><td>A</td><td>W</td><td></td><td>G</td><td>L</td><td>E</td><td>A</td><td>M</td><td></td><td>H</td><td>E</td>
+</tr>
+<tr><th scope="row">5</th>
+<td></td><td>B</td><td>E</td><td>L</td><td>T</td><td></td><td></td><td>E</td><td>O</td><td>N</td><td></td><td></td><td></td><td>O</td><td>B</td>
+</tr>
+<tr><th scope="row">6</th>
+<td></td><td>S</td><td>H</td><td>Y</td><td></td><td></td><td></td><td></td><td>V</td><td>A</td><td>N</td><td>I</td><td>L</td><td>L</td><td>A</td>
+</tr>
+<tr><th scope="row">7</th>
+<td></td><td>D</td><td></td><td></td><td>P</td><td>A</td><td>D</td><td></td><td></td><td></td><td></td><td>D</td><td>I</td><td>E</td><td></td>
+</tr>
+<tr><th scope="row">8</th>
+<td></td><td></td><td></td><td>H</td><td>U</td><td>G</td><td>O</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr><th scope="row">9</th>
+<td></td><td></td><td></td><td>A</td><td>T</td><td>E</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr><th scope="row">10</th>
+<td></td><td>L</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr><th scope="row">11</th>
+<td></td><td>A</td><td>L</td><td>L</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+</tr>
+<tr><th scope="row">12</th>
+<td></td><td>R</td><td>U</td><td>E</td><td>D</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>W</td><td>E</td><td></td>
+</tr>
+<tr><th scope="row">13</th>
+<td>A</td><td>G</td><td>I</td><td>T</td><td>A</td><td>T</td><td>E</td><td></td><td></td><td></td><td>G</td><td>R</td><td>A</td><td>M</td><td></td>
+</tr>
+<tr><th scope="row">14</th>
+<td>R</td><td>E</td><td>G</td><td>U</td><td>L</td><td>A</td><td>T</td><td>O</td><td>R</td><td></td><td>O</td><td>A</td><td>S</td><td>I</td><td>S</td>
+</tr>
+<tr><th scope="row">15</th>
+<td>T</td><td>R</td><td>I</td><td>P</td><td>I</td><td>T</td><td>A</td><td>K</td><td>A</td><td></td><td>D</td><td>E</td><td>P</td><td>T</td><td>H</td>
+</tr>
+</table>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>It turns out that it&rsquo;s hard but feasible to draw a pixel art bed that also makes a reasonable nonogram and a reasonable crossword. I briefly tried having the letters form the bed and the black squares form the background, but avoiding too many 1-letter or 15-letter across entries meant the bed came out rather blobby and hard to identify. Testsolvers suggested it would be more like a nonogram if the across and down clues referenced the same squares, which may also have worked. My original idea was vague about extraction &mdash; it could have been the standard mechanism of an unclued across entry &mdash; but the editors came back with an answer that could be drawn out on a grid.</p>
+
+<p>The NO/NO/GRAM clues were included to perhaps help break into those corners of the grid rather than to give away the mechanic, as I figured it would be hard to get that far in the puzzle without realizing what the down entries are. There are a few clues I cut, including &ldquo;You might make croissants with it&rdquo; for 14-Down: the French word for oven is four, a fact which was used in a previous Mystery Hunt metameta.</p>
+
+<p>Combining a crossword and a nonogram has been done before, although I hadn&rsquo;t personally seen it in any hunt I&rsquo;d been in. In fact, though, while I had the idea for this puzzle months earlier, shortly after it was written and testsolved the April 2020 CMU hunt featured a puzzle called <a href="https://puzzlehunt.club.cc.cmu.edu/puzzle/11005/">Nonogram Crossword</a>.</p>
+</div>

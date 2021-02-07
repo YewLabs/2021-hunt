@@ -1,0 +1,103 @@
+<h4>by Josh Alman and Jon Schneider</h4>
+
+<p>The Infinite Corridor consists of an infinite chain of rooms numbered 1, 2, and so on. An NPC placed at the start of the corridor will tell you which room to visit in order to unlock the subsequent puzzle in the Infinite Corridor (there are five such puzzles total). Unfortunately, the room numbers are greater than 10000, making it infeasible to travel there on foot.</p>
+<p>However, each classroom has two portals in it that allow warping. The left portal is always grey and warps the solver back to room 1. The right portal has various functions, which differs for each of the five target rooms. The color of the portal changes accordingly to reflect which sub-puzzle is active:</p>
+<ul>
+	<li>For the first function, the portals are red.</li>
+	<li>For the second function, the portals are yellow.</li>
+	<li>For the third function, the portals are green.</li>
+	<li>For the fourth function, the portals are cyan.</li>
+	<li>For the fifth function, the portals are dark blue.</li>
+</ul>
+<p>For each sub-puzzle, solvers need to first figure out how the function behaves, and then find a path to the target room that will not take too many steps. Moreover, none of the portals can take us to a room greater than one million, and the projection quality degrades with very high room numbers so that it is very difficult to move in the corridor past room 100000, so our path needs to avoid using numbers greater than 100000.</p>
+<p>Once all five navigation puzzles are completed (i.e. when all five types of Infinite Corridor puzzle are revealed), a final white portal appears which unlocks the meta-puzzle. When talking to the original NPC at the start of the hallway, the portals will revert back to the simplest red portals. (The portals are also red to begin with, before the first sub-puzzle.)</p>
+<h3>Navigation sub-puzzle 1 (red portals)</h3>
+<p>The red portals are simple: they double the room number. For example, the red portal in room 37 will lead to room 74.</p>
+<p>One strategy for efficiently navigating to the target room is to convert the number to its binary representation. This binary representation can then be read as a list of instructions: a &lsquo;0&rsquo; corresponds to going from room x to 2x (via the portal), and a &lsquo;1&rsquo; corresponds to going from x to 2x+1 (first via the portal, then by walking one room forward). For example, if we want to navigate to room 74, we can write 74 in binary as 1001010, which can then be parsed into a list of instructions as follows:</p>
+<ul>
+	<li>1: Start at room 1.</li>
+	<li>0: Take the portal, going to room 2.</li>
+	<li>0: Take the portal, going to room 4.</li>
+	<li>1: Take the portal, going to room 8. Then go one room further, to room 9.</li>
+	<li>0: Take the portal, going to room 18.</li>
+	<li>1: Take the portal, going to room 36. Then go one room further, to room 37.</li>
+	<li>0: Take the portal, going to room 74.</li>
+</ul>
+<p>The target number for this room is 13536. The strategy above leads to the following path to the target room (here, taking portals is indicated by &lsquo;&gt;&rsquo;, and walking is indicated by &lsquo;-&rsquo;):</p>
+<div class="monospace">1 &gt; 2 - 3 &gt; 6 &gt; 12 - 13 &gt; 26 &gt; 52 &gt; 104 - 105 &gt; 210 - 211 &gt; 422 - 423 &gt; 846 &gt; 1692 &gt; 3384 &gt; 6768 &gt; 13536</div>
+
+<h3>Navigation sub-puzzle 2 (yellow portals)</h3>
+<p>The yellow portals are similar to the red portals, except they only work if the number of ones in the binary representation of the current room number is odd. (Otherwise, the portal sends us back to room 1.)</p>
+<p>As with the previous sub-puzzle, we can still read off a path from the binary representation, but this requires fudging the addition a little bit in order to ensure the portal continues to work. Instead, it is a little easier to work in reverse -- walk from the target number until we find a room which we can get to via a portal (this is any even number with an odd number of ones in its binary representation), and then go back through the portal to half of that number. For example, if we want to get to room 74, running this procedure backwards we do the following:</p>
+<ul>
+	<li>74 is 1001010 in binary. This has an odd number of 1s, so we can get to it by taking a portal from 37.</li>
+	<li>37 is 100101 in binary. Walking backwards 1 gets us to 100100, which has an even number of ones (so we can&rsquo;t get there directly from a portal). But walking forwards 1 gets us to 38 = 100110 in binary, which has an odd number of 1s, so we can get to it by taking a portal from 19.</li>
+	<li>19 is 10011 in binary. Going backwards 3 we reach 16, which has an odd number of 1s, so we can get to it by taking a portal from 8.</li>
+	<li>From 8, we can repeatedly take a portal until we start at 1.</span></li>
+</ul>
+<p>The target number for this room is 68091. The strategy above leads to the following path:</p>
+<div class="monospace">1 &gt; 2 &gt; 4 &gt; 8 &gt; 16 &gt; 32 - 35 &gt; 70 - 67 &gt; 134 - 133 &gt; 266 &gt; 532 &gt; 1064 &gt; 2128 &gt; 4256 &gt; 8512 &gt; 17024 - 17023 &gt; 34046 - 34045 &gt; 68090 - 68091</div>
+
+<h3>Navigation sub-puzzle 3 (green portals)</h3>
+<p>The green portals cycle the digits so that the unit digit is moved to the front; for example, the green portal in room 1234 leads to room 4123.</p>
+<p>The first difficulty is getting the room number to grow quickly: for example, a two-digit room will never lead to a room exceeding 100. The idea is to make the units digit equal to 9 to progress. For example, an opening route might look like:</p>
+<ul class="c9 lst-kix_ttqutcjlu4r2-0 start">
+	<li class="c2 li-bullet-0"><span class="c4">Walk from 1 to 12, warp to room 21.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk backwards to room 19, then warp to room 91.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk backwards to room 89, warp to room 98.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk forwards to room 109, warp to room 910.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk backwards to room 909, warp to room 990.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk forwards to room 1009, warp to room 9100.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk backwards to room 9099, warp to room 9909 then 9990.</span></li>
+	<li class="c2 li-bullet-0"><span class="c4">Walk forwards to rooms 10000+.</span></li>
+</ul>
+<p>Once in this area, one takes the target room number reads the digits from right to left. Setting these as the units digit and repeatedly warping will lead to the desired room. We should also take care not to enter the portal when the room number ends in a zero, since leading zeros are removed after cycling.</p>
+<p>The target number for this room is 33136. The strategy above leads to the following path:</p>
+<div class="monospace">1 - 12 &gt; 21 - 19 &gt; 91 - 89 &gt; 98 - 109 &gt; 910 - 909 &gt; 990 - 1009 &gt; 9100 - 9099 &gt; 9909 &gt; 9990 - 10003 &gt; 31000 - 31003 &gt; 33100 - 33106 &gt; 63310 - 63313 &gt; 36331 &gt; 13633 &gt; 31363 &gt; 33136</div>
+
+<h3>Navigation sub-puzzle 4 (cyan portals)</h3>
+<p>The cyan portal adds the <i>square of the product of the digits</i> of the current room number.
+For example, the portal in room 1234 leads to room 1234 + (1 * 2 * 3 * 4)<sup>2</sup> = 1810.</p>
+<p>As with several other of the sub-puzzles, one good way to solve this by hand is to try working from the target room backwards. In particular, it is useful to try to find a nearby square number less than the target with small factors (that can appear as digits). For example, the target for this puzzle is 85567. The square root of 85567 is approximately 293; the first number smaller than this with a lot of small factors is 288 = 2<sup>5</sup> * 3<sup>2</sup>, so we&rsquo;ll try to find a number whose digits have product 288 which is close to 85567 - 288</span><span class="c0">2</span><span class="c4">&nbsp;= 2623. One such number is 2638. We can now repeat this process and try to find a good path to reach 2638.</p>
+<p>Alternatively, it is also possible to find an efficient solution via computer search (in fact, this is true for all of the sub-puzzles -- see the note at the end). </p>
+<p>The target number for this room is 85567. One possible path to get to this room is:</p>
+<div class="monospace">1 - 4 &gt; 20 - 25 &gt; 125 - 127 &gt; 323 - 328 &gt; 2632 - 2638 &gt; 85582 - 85567</div>
+
+<h3>Navigation sub-puzzle 5 (blue portals)</h3>
+<p>The blue portal adds <i>2 to the power of the number of ones in the binary representation</i> to the current room number.
+For example, the portal in room 21 leads to 21 + 2<sup>3</sup> = 29.</p>
+<p>One useful observation is that by repeatedly using the portal, we go from 1 to 3, to 7, to 15, to 31, and so on. In particular, we can get to numbers which are one less than a power of 2 (and thus powers of 2) fairly quickly. This allows us to reach the highest-order bit of the target room number. </p>
+<p>Once we&rsquo;ve reached this power of 2, we can repeat this process with slight modifications. For example, since we have one bit set already, we now can easily reach 2, 6, 14, 30, 62, etc., more than the current room number. This allows us to set one additional bit. In general, we can iterate this process to set a prefix of the bits correctly, and then walk to deal with the remainder of the bits (once 2<sup>number of set bits</sup> gets too large).</span></p>
+
+<p>The target number for this room is 57138. One path to reach this room is:</p>
+<div class="monospace">1 &gt; 3 &gt; 7 &gt; 15 &gt; 31 &gt; 63 &gt; 127 &gt; 255 &gt; 511 &gt; 1023 &gt; 2047 &gt; 4095 - 4094 &gt; 6142 - 6143 &gt; 10239 &gt; 14335 &gt; 22527 &gt; 30719 &gt; 47103 - 47102 &gt; 55294 - 55296 &gt; 55312 &gt; 55344 - 55343 &gt; 55855 &gt; 56879 - 56880 &gt; 57136 - 57138</div>
+
+<h3>Computer search</h3>
+
+<p>It is also possible to find near-optimal paths for all of these puzzles via computer search. The Python snippet below runs a <a href="https://en.wikipedia.org/wiki/Breadth-first_search">breadth-first search</a>
+to find the shortest path from room 1 to a target room <i>n</i> (under the assumption that taking a portal and going forward/backward one room take the same time) for any portal function <i>f</i>.</p>
+
+<pre>MAX_ROOM = 10**5
+
+from collections import deque
+def solve_infinite_nav_puzzle(target, portal_function):
+  bfs = deque([1])
+  seen = set([1])
+  parent = dict()
+
+  while bfs:
+    cur = bfs.popleft()
+
+    nbrs = [cur - 1, cur + 1, portal_function(cur)]
+
+    for nbr in nbrs:
+      if nbr not in seen and nbr &gt; 0 and nbr &lt; MAX_ROOM:
+        bfs.append(nbr)
+        seen.add(nbr)
+        parent[nbr] = cur
+
+  path = [target]
+  while path[-1] != 1:
+    path.append(parent[path[-1]])
+  return list(reversed(path))
+</pre>

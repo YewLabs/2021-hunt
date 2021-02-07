@@ -1,0 +1,82 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% block title %}FAQ &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>FAQ</h1>
+  <main>
+    <div class="info">
+      <h4>Scheduling</h4>
+      <p>
+        <b>Q</b>: How long will HQ be open?<br>
+        <b>A</b>: Until 10am ET on Monday, or until the coin is found, whichever is later. However, we will start to wind down some interactions after 8pm ET on Sunday.
+      </p>
+      <p>
+        <b>Q</b>: When will events happen?<br>
+        <b>A</b>: See the <a href="{% url 'events' %}">events page</a>.
+      </p>
+      <h4>Solving puzzles</h4>
+      <p>
+        <b>Q</b>: Can we use Google/Bing/Yahoo/DuckDuckGo...?<br>
+        <b>A</b>: Definitely. You can use any resources you want except for people who are on other Mystery Hunt teams. However, do not post puzzles or ask for help in any public spaces that may spoil other teams (Stack Exchange, Reddit, public Discord servers, etc.).
+      </p>
+      <p>
+        <b>Q</b>: How do we call in an answer?<br>
+        <b>A</b>: You will be able to call in answers on the corresponding puzzle page on the hunt website. All answer submissions will be converted to uppercase and stripped of non-alphanumeric characters before being checked, and the website will automatically mark answers as correct or incorrect.<br>If a puzzle instructs you to carry out an action, you might be able to submit the exact instruction as an answer to receive more information. In general, other intermediate cluephrases will not receive any confirmation from the answer checker.
+      </p>
+      <p>
+        <b>Q</b>: How often can we guess answers?<br>
+        <b>A</b>: If you guess too many answers in quick succession, you may encounter a timeout before you can make additional guesses. Specifically, if you&rsquo;ve made three incorrect guesses in a <u>round</u> within the last five minutes, you cannot make additional guesses in that round (until five minutes after the third-to-last incorrect guess). However, each puzzle starts with two “free” guesses that don&rsquo;t count towards this limit.
+      </p>
+      <h4>Getting help</h4>
+      <p>
+        <b>Q</b>: Can we ask other teams for help on a puzzle?<br>
+        <b>A</b>: No. If you&rsquo;re not having fun, please let us know by using the <a href="{% url 'submit_contact' %}">Contact HQ</a> form on the website and we will help!
+      </p>
+      <p>
+        <b>Q</b>: Can we have a hint?<br>
+        <b>A</b>: After you&rsquo;ve had a puzzle unlocked for some amount of time, hints will become available. Click “Hints” in the top right of the puzzle page to ask a question about the puzzle you are stuck on. Please tell us about your progress on the puzzle so that we can be as helpful as possible. <u>Your team may only have one unanswered hint request across all puzzles at a time.</u> (We answer hints manually, but we will have people on hand at all times of day until HQ closes.) There is otherwise no limit to how many times you can ask for a hint on puzzles that hints are available for.<br>You may also want to check out the helpful resources on <a href="https://www.mit.edu/~puzzle/resources.html">this page</a> for general puzzle-solving advice.
+      </p>
+      <p>
+        <b>Q</b>: How do we contact HQ?<br>
+        <b>A</b>: Please use the <a href="{% url 'submit_contact' %}">Contact HQ</a> form on the website. It&rsquo;s accessible from any page by clicking on your team name in the top right. If the form is not working, email us at <a href="mailto:hq@perpendicular.institute">hq@perpendicular.institute</a> or call us at <a href="tel:{{ '1833YEWLABS'|phone2numeric }}">1-833-YEW-LABS</a> if your issue is urgent.
+      </p>
+      <h4>Miscellaneous</h4>
+      <p>
+        <b>Q</b>: Is this FAQ a puzzle?<br>
+        <b>A</b>: It's not an Icelandic crossword about Bjork. It's not a teacup pomeranian owned by the Duchess of York. You could consecrate it on a Friday as a ritual offering to the stork. Quantum physicists have postulated that it can manifest a new flavor of quark. As many times as you try to solve it, you'll probably still look like a dork. But don't come chasing us with a pitchfork. We promise you don't need code of Morse or pens of pork. The Swedish Chef sends Scandinavian salutations... bork bork bork!
+      </p>
+      <p>
+        <b>Q</b>: What browsers are supported?<br>
+        <b>A</b>: Chrome and Firefox are recommended when using the website. (Additionally, some functionality and puzzles may not work as intended if you are embedding the site in your own web app.)
+      </p>
+      <p>
+        <b>Q</b>: Can we try to use metadata in the puzzle files or the source code of the puzzle to get extra information?<br>
+        <b>A</b>: Sure, although we generally expect that you&rsquo;ll have more fun solving puzzles the intended way.
+      </p>
+      <p>
+        <b>Q</b>: Can we try to hack the hunt site to get extra info?<br>
+        <b>A</b>: Please don&rsquo;t. You are allowed to programmatically interact with our hunt server, but please send no more than 1 request per second or you may be rate-limited. <a href="{% url 'submit_contact' %}">Contact us</a> if you are unsure if what you are doing is permitted.
+      </p>
+      <p>
+        <b>Q</b>: I think there&rsquo;s a mistake in this puzzle!<br>
+        <b>A</b>: <a href="{% url 'submit_contact' %}">Contact us</a> and we will try to correct it.
+      </p>
+      <h4>Physical puzzles</h4>
+      <p>
+        <b>Q</b>: Can we break the physical puzzles?<br>
+        <b>A</b>: Generally, yes. Please don&rsquo;t do anything unsafe — for instance, if you see something papery, you may not want to heat it. <a href="{% url 'submit_contact' %}">Contact us</a> if you think you&rsquo;re being instructed to do anything unsafe.
+      </p>
+      <p>
+        <b>Q</b>: My physical puzzle arrived damaged or incomplete. What should I do?<br>
+        <b>A</b>: <a href="{% url 'submit_contact' %}">Contact us</a> and we will help you out on a case-by-case basis. If the puzzle is no longer solvable with your copy, we may direct you to use the virtual version of the puzzle. (See below.)
+      </p>
+      <p>
+        <b>Q</b>: We never ordered a physical puzzle. Can we still solve the puzzles?<br>
+        <b>A</b>: All physical puzzles also have virtual versions which will show up on the puzzle page after some time delay that is noted on the puzzle. The virtual versions will allow you to solve the puzzle, but may be less fun than the physical versions. Teams that received a physical puzzle are also allowed to access and view the virtual versions after the same time delay.
+      </p>
+    </div>
+  </main>
+</div>
+{% endblock %}

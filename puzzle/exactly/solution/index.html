@@ -1,0 +1,147 @@
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+<p>This is a puzzle about suspiciously exact numbers in fiction.</p>
+
+<p>First, we start filling in the blanks. One good place to start is with some of the more distinct "words" like
+    WHATSIT, BUMI, ELOI, etc. We notice that each of these is a number from a fictional universe.</p>
+
+<table>
+    <tr>
+        <td>A</td>
+        <td><a href='https://starwars.fandom.com/wiki/Hoth_asteroid_field'>CHANCE OF SUCCESSFULLY NAVIGATING AN ASTEROID
+                FIELD</a></td>
+        <td>\(A = \frac{1}{3721}\)</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td><a href='https://hitchhikers.fandom.com/wiki/Ultimate_Question'>THE ANSWER TO THE ULTIMATE QUESTION</a></td>
+        <td>\(B = 42\)</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td><a href='https://youtu.be/3mI1dvXtae0?t=36'>YEARS SINCE THE BOAT SANK ACCORDING TO ROSE</a></td>
+        <td>\(C = 84\)</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td><a href='https://avatar.fandom.com/wiki/Jing'>TYPES OF JING ACCORDING TO BUMI</a></td>
+        <td>\(D = 85\)</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td><a href='https://en.wikipedia.org/wiki/DeLorean_time_machine'>CAR SPEED NEEDED TO TIME TRAVEL</a></td>
+        <td>\(E = 88\)</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td><a href='https://knowyourmeme.com/memes/turn-to-page-394'>PAGE TURNED TO AT THE REQUEST OF SNAPE</a></td>
+        <td>\(F = 394\)</td>
+    </tr>
+    <tr>
+        <td>G</td>
+        <td><a href='https://en.wikipedia.org/wiki/Fahrenheit_451#Title'>TEMPERATURE AT WHICH PAPER BURNS</a></td>
+        <td>\(G = 451\)</td>
+    </tr>
+    <tr>
+        <td>H</td>
+        <td><a href='https://lesmiserables.fandom.com/wiki/Prologue:_Work_Song'>PRISONER WHO STOLE A LOAF OF BREAD</a>
+        </td>
+        <td>\(H = 24601\)</td>
+    </tr>
+    <tr>
+        <td>I</td>
+        <td><a href='https://en.wikipedia.org/wiki/69,105#Zork_I'>LEAVES IN A PILE IN ZORK</a></td>
+        <td>\(I = 69105\)</td>
+    </tr>
+    <tr>
+        <td>J</td>
+        <td><a href='https://rentmusical.fandom.com/wiki/Seasons_of_Love'>MOMENTS SO DEAR</a></td>
+        <td>\(J = 525000\)</td>
+    </tr>
+    <tr>
+        <td>K</td>
+        <td><a href='https://inception.fandom.com/wiki/528491_(number)'>CODE FOR THE SAFE IN THE DREAM WITHIN A
+                DREAM</a></td>
+        <td>\(K = 528491\)</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td><a href='https://timemachine.fandom.com/wiki/802,701'>YEAR THE TIME TRAVELER MET THE ELOI</a></td>
+        <td>\(L = 802701\)</td>
+    </tr>
+    <tr>
+        <td>M</td>
+        <td><a href='https://en.wikipedia.org/wiki/867-5309/Jenny'>YOUR NUMBER THAT I GOT OFF THE WALL</a></td>
+        <td>\(M = 8675309\)</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td><a href='https://indianajones.fandom.com/wiki/9906753'>CRATE HOLDING THE LOST ARK</a></td>
+        <td>\(N = 9906753\)</td>
+    </tr>
+    <tr>
+        <td>O</td>
+        <td><a href='https://en.wikipedia.org/wiki/A_Wrinkle_in_Time#Mrs._Whatsit'>AGE OF MRS. WHATSIT IN YEARS</a></td>
+        <td>\(O = 2379152497\)</td>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td><a href='https://theitcrowd.fandom.com/wiki/New_Emergency_Services'>NEW NUMBER FOR EMERGENCY SERVICES</a>
+        </td>
+        <td>\(P = 01189998819991197253\)</td>
+    </tr>
+</table>
+
+<p>Once we've solved most of the clues, we might notice that the numbers are in increasing numerical order, helping us
+    place the rest of them.</p>
+
+<p>When we've solved all the clues, we can fill the numbers into the equation at the bottom:</p>
+$$N+\frac{B(M+H)}{C}+E*\left\lfloor F-\gcd(G,P)*\log_{AJ}
+O\right\rfloor-\frac{I}{D}+K-L$$
+$$=9906753+\frac{42(8675309+24601)}{84}+88*\left\lfloor 394-\gcd(451,01189998819991197253)*\log_{\frac{525000}{3721}}
+2379152497\right\rfloor$$
+$$-\frac{69105}{85}+528491-802701$$
+$$=9906753+\frac{8699910}{2}+88*\left\lfloor 394-41*4.36214\ldots\right\rfloor-813-274210$$
+$$=9906753+4349955+88*215-275023$$
+$$=9906753+4349955+18920-275023$$
+$$=14000605$$
+<p>So we can conclude that <span class="equation">14000605 = __ __
+        BY <span class="box">___ ___</span></span>. <br> <br>Googling the number if we don't recognize it, we can find that it is
+    the number of <a href="https://knowyourmeme.com/memes/i-saw-14000605-futures">FUTURES SEEN BY DOCTOR STRANGE</a> in
+    <i>Avengers: Infinity War</i>. Thus, the answer is <span class="answer">DOCTOR
+        STRANGE</span>.</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+    <p>
+        Two of these numbers are easy to get wrong. The CHANCE OF SUCCESSFULLY NAVIGATING AN ASTEROID FIELD is,
+        according to C-3PO, approximately 3,720 to 1. This corresponds to a \(\frac{1}{3721}\) chance, but it can easily
+        be misparsed to mean \(\frac{1}{3720}\). The number of MOMENTS SO DEAR is, according to <i>Rent</i>, 525,000.
+        This is 600 short of the number of minutes in a year, the more famous number in the song. However, either of
+        these numbers can be set to either the correct value or the incorrect one and the equation still resolves to the
+        same number.</p>
+    <p>Both when constructing this puzzle and testsolving it, we came across the limitation of Google Sheets that it
+        cannot deal with integers as large as 01189998819991197253, so it ends up interpreted as either a string or a
+        float, both of which yield incorrect GCD values.</p>
+    <p>Some numbers we didn't get to include but considered include ORCS ON A MUNCHKIN CARD, POWER LEVEL LOWER BOUND,
+        MILES
+        I WOULD WALK and CHANCE OF SURVIVAL FOR LEEROY JENKINS.</p>
+</div>
+
+<style>
+    div.equation {
+        word-spacing: 5px;
+    }
+
+    .box {
+        border: 1px solid black;
+        margin: 2px;
+        padding: 5px;
+    }
+
+    .bank {
+        max-width: 800px;
+    }
+</style>

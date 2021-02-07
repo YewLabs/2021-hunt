@@ -1,0 +1,62 @@
+{% extends "hunt/layout.tmpl" %}
+{% block content %}
+<style>
+    html, body {
+        background: none;
+        min-width: 0;
+        height: auto;
+    }
+    form {
+        text-align: center;
+    }
+    .form-field {
+        display: inline;
+        text-align: left;
+        margin: 1em .75em;
+    }
+    td.checkmark {
+        text-align: center;
+    }
+    .error {
+        font-weight: bold;
+        color: #ff0000;
+    }
+
+    textarea {
+        width: 80%;
+        height: 80%;
+    }
+</style>
+<center>
+  <h2>Fencing Admin</h2>
+</center>
+<p>
+  <center>
+    <h4>Upload Data:</h4>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="file" id="data" name="data">
+      <input type="submit" name="Upload">
+    </form>
+  </center>
+</p>
+<p>
+  <center>
+    <h4>Current Data:</h4>
+    <textarea id="currentData">{{ data }}</textarea><br/>
+    <button onclick="copyData()">Copy</button>
+  </center>
+</p>
+
+<script>
+  function copyData() {
+    var range = document.createRange();
+    range.selectNode(document.getElementById("currentData"));
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+  }
+</script>
+
+{% endblock %}

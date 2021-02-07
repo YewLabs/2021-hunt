@@ -1,0 +1,41 @@
+> FLAG enable_jurgen_luge
+> background lugebg.jpg
+
+> show jurgen_happy.png
+> music none
+JURGEN: Let's go.
+
+JURGEN: You'll be on the bottom.
+So you'll need to take care of steering.
+I hope you know the course.
+
+> background none
+
+PLAYER: (Here we go...)
+
+> do_run 0 perfect bad
+
+
+> label perfect
+
+JURGEN: I'll handle the rest of the turns.
+> background none 1.5
+JURGEN: (I must be misreading...!)
+I knew that was a good run, but...we clocked an incredible time.
+We're just two seconds off the course record.
+I think you and I must be meant for each other.
+
+> FLAG jurgen_complete
+> good_end
+
+> label bad
+
+JURGEN: I'll handle the rest of the turns.
+> background none 1.5
+JURGEN: Hm. A decent time.
+You performed well, but your inexperience shows.
+You can do better. You didn't get all the turns.
+In any case, this was fun. Thank you for obliging me.
+I will see you soon.
+
+> bad_end

@@ -1,0 +1,1070 @@
+<style>
+  center: {
+    margin: auto;
+  }
+  table.grid {
+    border-collapse: collapse;
+    border: 2px solid black;
+  }
+  table.grid td {
+    padding: 0;
+    margin: 0;
+    width: 25px;
+    height: 25px;
+    border: 1px solid gray;
+    text-align: center;
+  }
+  .shaded1 {
+    background-color: #cc6666;
+  }
+  .shaded2 {
+    background-color: #d9a0a0;
+  }
+</style>
+
+<p>The first step is to solve the crossword clues. While doing so, we might notice that the answers are in alphabetical order and are all six letters long.
+This helps us confirm most of our answers and once we have enough clues solved, we may notice that in fact the second and fifth letters of each answer are the same.
+Below are the answers to the crossword clues.</p>
+
+<div class="center">
+<table>
+<tr>
+  <th>Clue</th>
+  <th>Answer</th>
+</tr>
+
+<tr>
+  <td>Witty remark</td>
+  <td><span class="monospace">BONMOT</span></td>
+</tr>
+<tr>
+  <td>Alternative to Greek salad</td>
+  <td><span class="monospace">CAESAR</span></td>
+</tr>
+<tr>
+  <td>French pianist Alfred</td>
+  <td><span class="monospace">CORTOT</span></td>
+</tr>
+<tr>
+  <td>Tyson show</td>
+  <td><span class="monospace">COSMOS</span></td>
+</tr>
+<tr>
+  <td>Double dagger</td>
+  <td><span class="monospace">DIESIS</span></td>
+</tr>
+<tr>
+  <td>____ bubble</td>
+  <td><span class="monospace">DOTCOM</span></td>
+</tr>
+<tr>
+  <td>Non-competitive race</td>
+  <td><span class="monospace">FUNRUN</span></td>
+</tr>
+<tr>
+  <td>They're often all scratched up?</td>
+  <td><span class="monospace">LOTTOS</span></td>
+</tr>
+<tr>
+  <td>Title character of an Ozzy Osbourne album</td>
+  <td><span class="monospace">MADMAN</span></td>
+</tr>
+<tr>
+  <td>Units of length in the UK</td>
+  <td><span class="monospace">METRES</span></td>
+</tr>
+<tr>
+  <td>Performed wrongly</td>
+  <td><span class="monospace">MISDID</span></td>
+</tr>
+<tr>
+  <td>Maxims</td>
+  <td><span class="monospace">MOTTOS</span></td>
+</tr>
+<tr>
+  <td>Star jelly genus</td>
+  <td><span class="monospace">NOSTOC</span></td>
+</tr>
+<tr>
+  <td>Competitor to OneNote</td>
+  <td><span class="monospace">NOTION</span></td>
+</tr>
+<tr>
+  <td>Nag</td>
+  <td><span class="monospace">PESTER</span></td>
+</tr>
+<tr>
+  <td>Wicker material</td>
+  <td><span class="monospace">RATTAN</span></td>
+</tr>
+<tr>
+  <td>Parting place?</td>
+  <td><span class="monospace">REDSEA</span></td>
+</tr>
+<tr>
+  <td>Rue</td>
+  <td><span class="monospace">REGRET</span></td>
+</tr>
+<tr>
+  <td>Reposed</td>
+  <td><span class="monospace">RESTED</span></td>
+</tr>
+<tr>
+  <td>Sports with a lot of horseplay?</td>
+  <td><span class="monospace">RODEOS</span></td>
+</tr>
+<tr>
+  <td>In short supply</td>
+  <td><span class="monospace">SCARCE</span></td>
+</tr>
+<tr>
+  <td>Kurdistan Province's capital</td>
+  <td><span class="monospace">SENNEH</span></td>
+</tr>
+<tr>
+  <td>Snow White's dwarves e.g.</td>
+  <td><span class="monospace">SEPTET</span></td>
+</tr>
+<tr>
+  <td>Member of the 2021 writing team, perhaps</td>
+  <td><span class="monospace">SETTER</span></td>
+</tr>
+<tr>
+  <td>In a way</td>
+  <td><span class="monospace">SORTOF</span></td>
+</tr>
+<tr>
+  <td>Japanese poems</td>
+  <td><span class="monospace">TANKAS</span></td>
+</tr>
+<tr>
+  <td>Haiku e.g.</td>
+  <td><span class="monospace">TERCET</span></td>
+</tr>
+<tr>
+  <td>Ring on a saddle</td>
+  <td><span class="monospace">TERRET</span></td>
+</tr>
+<tr>
+  <td>Like the next clue, compared with this one</td>
+  <td><span class="monospace">TERSER</span></td>
+</tr>
+<tr>
+  <td>Sluggish inactivity</td>
+  <td><span class="monospace">TORPOR</span></td>
+</tr>
+<tr>
+  <td>Midsections</td>
+  <td><span class="monospace">TORSOS</span></td>
+</tr>
+<tr>
+  <td>Command to delete files</td>
+  <td><span class="monospace">UNLINK</span></td>
+</tr>
+</table>
+</div>
+
+<p>The heading for the crossword clues is "Individual Cross-stitches" and at the bottom of the page is a diagram that seems to indicate a cross-stitch. 
+Although cross-stitches are often done in rows, it is possible to make an individual cross-stitch. When an individual cross-stitch is made, it follows
+a cross shape as in the diagram with the thread crossing in the middle. Since the second and fifth letters are the same in each crossword answer,
+this suggests that we can "cross-stitch" each word such that the second and fifth letters are the crossing in the middle. For example, the crossword answer
+<span class="monospace">BONMOT</span> can be cross-stitched as follows.</p>
+
+<pre>
+N T
+ O
+M B
+</pre>
+
+<p>We can then attempt to fill in these cross-stitched words into the grid given. Some uncommon letters are given to us to start with. We can fill in a few
+words using the given letters. Note that we make an assumption in the case of the F and K that both occurrences in our crossword answers use the given letter.
+This is in order to try filling in the grid as compactly and efficiently as possible.</p>
+
+<div class="center">
+  <table class="grid">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>M</td>
+      <td></td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>U</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td></td>
+      <td>K</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td></td>
+      <td>U</td>
+      <td></td>
+      <td>G</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<p>There are no further strong constraints on how to fill the remaining crossword answers into the grid, but playing around with some possible fills we find that the words
+intersect well, suggesting that we are doing the right thing. Some experimentation also reveals that the words must be quite tightly packed into the grid and that
+a greedy fill should get close to a complete solution. Indeed, just filling in the grid greedily by placing words wherever it can intersect two letters from another word gets
+us to a filled grid with only a couple possible ambiguities that are quick to eliminate via trial and error. The final filled grid is shown below.</p>
+
+<div class="center">
+  <table class="grid">
+    <tr>
+      <td>D</td>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>D</td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>T</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>C</td>
+      <td></td>
+      <td>I</td>
+      <td></td>
+      <td>I</td>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>D</td>
+      <td></td>
+      <td>M</td>
+      <td></td>
+      <td>M</td>
+      <td></td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>D</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>E</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td>U</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td></td>
+      <td>C</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>L</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>H</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>M</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>L</td>
+      <td></td>
+      <td>K</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>P</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>C</td>
+      <td></td>
+      <td>D</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>I</td>
+      <td></td>
+      <td>U</td>
+      <td></td>
+      <td>G</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>E</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>M</td>
+      <td></td>
+      <td>C</td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>
+
+<p>Now that we've filled in all the cross-stitched words, we might notice that we haven't used the shaded red squares in the diagram at the bottom of the puzzle page.
+The diagram suggests that there is a recursive step where we wish to cross-stitch the filled grid somehow to extract the answer. If we look at the cross stitches present
+in the shaded red squares, it turns out that each of the shaded red regions corresponds to a 3&times;2 rectangle with some cells filled in by cross-stitches. This and the tactile
+nature of cross-stitching suggest that we should extract letters from the shaded red regions via Braille and cross-stitch one more time to get the final answer. Below is
+the filled in grid with appropriate shading to help determine the Braille letters.</p>
+
+<div class="center">
+  <table class="grid">
+    <tr>
+      <td class="shaded1">D</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">A</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">E</td>
+      <td></td>
+      <td>S</td>
+      <td></td>
+      <td class="shaded1">D</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">N</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded2">E</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">C</td>
+      <td class="shaded1"></td>
+      <td>I</td>
+      <td></td>
+      <td>I</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">A</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1">S</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">R</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">S</td>
+      <td></td>
+      <td>D</td>
+      <td></td>
+      <td class="shaded1">M</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">M</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">B</td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+      <td>E</td>
+      <td></td>
+      <td></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1">D</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">S</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td class="shaded1">R</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td>E</td>
+      <td></td>
+      <td>E</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1">E</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">R</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">S</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">N</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">N</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>A</td>
+      <td></td>
+      <td>E</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td>A</td>
+      <td></td>
+      <td>U</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>S</td>
+      <td></td>
+      <td>C</td>
+      <td></td>
+      <td class="shaded1">T</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">L</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td>F</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td></td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>T</td>
+      <td></td>
+      <td>N</td>
+      <td></td>
+      <td class="shaded1">H</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1">R</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>O</td>
+      <td></td>
+      <td>E</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td>E</td>
+      <td></td>
+      <td>O</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td class="shaded1">I</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">N</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">S</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">R</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">R</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">M</td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded2">A</td>
+      <td class="shaded1"></td>
+      <td>E</td>
+      <td></td>
+      <td>O</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1">L</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">K</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">T</td>
+      <td></td>
+      <td>P</td>
+      <td></td>
+      <td class="shaded1">T</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">C</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">D</td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded2">N</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td></td>
+      <td></td>
+      <td>E</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1">I</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">U</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">G</td>
+      <td></td>
+      <td>T</td>
+      <td></td>
+      <td class="shaded1">S</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">S</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td>E</td>
+      <td></td>
+      <td>E</td>
+      <td class="shaded1"></td>
+      <td class="shaded2">O</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+    <tr>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+      <td class="shaded1">R</td>
+      <td></td>
+      <td>R</td>
+      <td></td>
+      <td class="shaded1">M</td>
+      <td class="shaded1"></td>
+      <td class="shaded1">C</td>
+      <td class="shaded1"></td>
+      <td class="shaded1"></td>
+    </tr>
+  </table>
+</div>
+
+<p>Converting the Braille to letters and reading in the cross-stitch order gives the answer <span class="answer">MANIAC</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+  <p>The solution path to filling the grid ends up being more a like a Numberlink logic puzzle than a traditional logic puzzle. Rather than local reasoning about where words must go, following our noses and trying to pack the words efficiently ends up being the best strategy. Uniqueness was a concern and an earlier version of the fill had a small uniqueness issue that required changing some words around. Yannick Yao helped write a uniqueness verifier and the final version of the grid is unique up to UNLINK and COSMOS being able to fit in the bottom left and bottom right corners in either order. However, those extraneous solutions don't have a single connected component, unlike the solution presented above.</p>
+  <p>At first glance, uniqueness of the fill seems quite surprising since only 4 letters are given and the shape of the grid is entirely unconstrained. When constructing the puzzle, however, I noticed that it was actually very difficult to get a dense fill. We're restricted to 6 letter words that need to cross themselves and furthermore many of our letters are crossed 3 or 4 times, compared to traditional crosswords in which each letter is crossed exactly twice. As a result, the crossings are actually fairly constrained and it's perhaps not so surprising that the fill ends up being unique.</p>
+</div>

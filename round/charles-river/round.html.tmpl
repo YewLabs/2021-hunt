@@ -1,0 +1,33 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block stylesheets %}
+<style>
+  body {
+    background-color: #A73E5A;
+  }
+
+  .content {
+    background-image: url({% static 'art/eventsbg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    margin-top: 300px;
+    background: none;
+  }
+
+  .round-table-container, .puzzle {
+    background-color: #ffffffe0;
+    width: auto;
+  }
+</style>
+{% endblock %}
+
+{% block round_top %}
+<div class="puzzle">
+  {% include 'top/events.html.tmpl' %}
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+<style>
+  #dates {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    width: -moz-fit-content;
+  }
+  .border-left {
+    border-left: 1px solid #80808080;
+  }
+  .description {
+    font-style: italic;
+  }
+</style>
+
+<p class="description fourthwall">
+  The &perp;IW.nano round had a peculiar unlocking structure. When solvers first opened the round, it was entitled &perp;IW.giga and the metapuzzle for that round—Rule of Three—was already solved. Solvers needed to determine that one of the puzzles in the round—Twins—was impossible to solve normally and must be backsolved from the meta. When this puzzle was backsolved, the website allowed solvers to “zoom in” to &perp;IW.kilo, a whole new round with Twins as the metapuzzle.
+
+  Solvers then needed to repeat this process and backsolve a particular puzzle in &perp;IW.kilo to enter &perp;IW.milli. Finally, in &perp;IW.milli, solvers found that one of the individual puzzles was titled &perp;IW.nano. Backsolving &perp;IW.nano completed the entire round and fixed the &perp;IW.nano building.
+</p>
+
+<p>
+  The answer to this puzzle is a feeder to Rule of Three—the metapuzzle of &perp;IW.giga. We know Rule of Three has the answer <span class="answer">GALAXY</span>. As stated above, we must reverse-engineer how Rule of Three worked and use that information to backsolve this puzzle.
+</p>
+
+<p>The other answers in this round are:</p>
+
+<pre>
+FORD
+JOVIAL
+RAZOR
+OLD AGE
+TOPSY-TURVY
+TRIDENT
+TWIX
+</pre>
+
+<p>
+  The first step is to notice that each of these answers is associated with a planet.
+  This is also hinted at by the large scale of the round (&perp;IW.giga) and the corresponding answer.
+</p>
+
+<table>
+<tr><th>Planet</th><th>Answer</th><th>Explanation</th></tr>
+<tr><td>Mercury</td><td>FORD</td><td>Ford Mercury is a car</td></tr>
+<tr><td>Venus</td><td>RAZOR</td><td>Venus is a brand of razor</td></tr>
+<tr><td>Earth</td><td>?????</td><td></td></tr>
+<tr><td>Mars</td><td>TWIX</td><td>Twix is a candy bar made by Mars</td></tr>
+<tr><td>Jupiter</td><td>JOVIAL</td><td>JOVIAL comes from a latin root meaning Jupiter</td></tr>
+<tr><td>Saturn</td><td>OLD AGE</td><td>Saturn, the Bringer of Old Age from Holst’s The Planets</td></tr>
+<tr><td>Uranus</td><td>TOPSY-TURVY</td><td>Uranus spins sideways</td></tr>
+<tr><td>Neptune</td><td>TRIDENT</td><td>The roman god Neptune wields a trident</td></tr>
+</table>
+
+<p>Now that we know that the answers relate to planets, we look at the times presented in the puzzle:</p>
+
+<pre id="dates">
+  1987-05-15T02:00 UTC
+  1995-04-13T10:00 UTC
+  1988-05-07T04:00 UTC
+  2004-11-30T18:00 UTC
+  2014-11-21T22:00 UTC
+  1993-10-24T05:00 UTC
+</pre>
+
+<p>
+  One natural thing to do here is to look at the solar system at each of those times.
+  A website we like for this is <a href="https://mgvez.github.io/jsorrery/" target="_blank">JS Orrery</a>, but there are a <a href="https://in-the-sky.org/solarsystem.php" target="_blank">variety</a> of sites out there.
+  Fair warning though: some of them are less accurate than others.
+</p>
+
+<p>It turns out that at each of these times there is a planetary <a href="https://en.wikipedia.org/wiki/Syzygy_(astronomy)" target="_blank">syzygy</a>, or an alignment of 3 planets.</p>
+
+<table>
+<tr><th>Time</th><th colspan="3" class="border-left">Planets in syzygy order</th><th colspan="3" class="border-left">Corresponding answers</th><th class="border-left">Letter</th></tr>
+<tr><td><a href="https://mgvez.github.io/jsorrery/?scenario=SolarSystem&planetScale=1&lookFrom=orbital&lookAt=universe&deltaT=36000&date=1987-05-15T02:00:00.000Z&cx=-0.0011728626523790024&cy=0.00004982259258667909&cz=1170.8824259142443&fov=45" target="_blank">1987-05-15T02:00</a></td><td class="border-left">Mars</td><td>Earth</td><td>Uranus</td><td class="border-left">TWIX</td><td>?????</td><td>TOPSY-TURVY</td><td class="border-left">G</td></tr>
+<tr><td><a href="https://mgvez.github.io/jsorrery/?scenario=SolarSystem&date=1995-04-13T10:00:00.000Z&planetScale=1&lookFrom=orbital&lookAt=universe&deltaT=36000&cx=-0.0011728626523790024&cy=0.00004982259258667909&cz=1170.8824259142443&fov=45" target="_blank">1995-04-13T10:00</a></td><td class="border-left">Earth</td><td>Venus</td><td>Saturn</td><td class="border-left">?????</td><td>RAZOR</td><td>OLD AGE</td><td class="border-left">A</td></tr>
+<tr><td><a href="https://mgvez.github.io/jsorrery/?scenario=SolarSystem&date=1988-05-07T04:00:00.000Z&planetScale=1&lookFrom=orbital&lookAt=universe&deltaT=36000&cx=-0.0011728626523790024&cy=0.00004982259258667909&cz=1170.8824259142443&fov=45" target="_blank">1988-05-07T04:00</a></td><td class="border-left">Uranus</td><td>Saturn</td><td>Mercury</td><td class="border-left">TOPSY-TURVY</td><td>OLD AGE</td><td>FORD</td><td class="border-left">L</td></tr>
+<tr><td><a href="https://mgvez.github.io/jsorrery/?scenario=SolarSystem&date=2004-11-30T18:00:00.000Z&planetScale=1&lookFrom=orbital&lookAt=universe&deltaT=36000&cx=-0.0011728626523790024&cy=0.00004982259258667909&cz=1170.8824259142443&fov=45" target="_blank">2004-11-30T18:00</a></td><td class="border-left">Mercury</td><td>Venus</td><td>Jupiter</td><td class="border-left">FORD</td><td>RAZOR</td><td>JOVIAL</td><td class="border-left">A</td></tr>
+<tr><td><a href="https://mgvez.github.io/jsorrery/?scenario=SolarSystem&date=2014-11-21T22:00:00.000Z&planetScale=1&lookFrom=orbital&lookAt=universe&deltaT=36000&cx=-0.0011728626523790024&cy=0.00004982259258667909&cz=1170.8824259142443&fov=45" target="_blank">2014-11-21T22:00</a></td><td class="border-left">Mercury</td><td>Mars</td><td>Neptune</td><td class="border-left">FORD</td><td>TWIX</td><td>TRIDENT</td><td class="border-left">X</td></tr>
+<tr><td><a href="https://mgvez.github.io/jsorrery/?scenario=SolarSystem&date=1993-10-24T05:00:00.000Z&planetScale=1&lookFrom=orbital&lookAt=universe&deltaT=36000&cx=-0.0011728626523790024&cy=0.00004982259258667909&cz=1170.8824259142443&fov=45" target="_blank">1993-10-24T05:00</a></td><td class="border-left">Earth</td><td>Uranus</td><td>Neptune</td><td class="border-left">?????</td><td>TOPSY-TURVY</td><td>TRIDENT</td><td class="border-left">Y</td></tr>
+</table>
+
+<p>
+  We know the answer is <span class="answer">GALAXY</span>, and we need to figure out how to extract that answer in order to backsolve the answer to this puzzle. We might note that the first and last planet in each syzygy can be freely swapped, but the center planet is uniquely determined.
+</p>
+
+<p>
+  The next realization we must make is that the letter extracted is always a letter of the middle answer (e.g. X is in TWIX).
+  Looking at the outer two answers, we can see that they always overlap in the position of extraction.
+  For example, J<b>O</b>VIAL and F<b>O</b>RD overlap in the second position, so we extract the second letter of R<b>A</b>ZOR.
+  Thus, the first row tells us that the Earth answer starts with G, the second row tells us that the second letter is L, and the sixth row tells us that the fifth letter is E. So the answer starts with GL??E.
+  One such word is <span class="answer">GLOBE</span>, which is very thematic with Earth.
+</p>

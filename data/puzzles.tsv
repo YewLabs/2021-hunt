@@ -1,0 +1,221 @@
+Round Slug	Puzzle ID	Puzzle Round Order	JUICE Required	Meta	Feeder Tag (Name of associated meta group)	Feeder Unlock (Number of puzzles needed to unlock)	Level	Required Puzzle	Unlock Time (Unix Timestamp)	Autosolve	Autohints
+yew-labs	442	20	X		intro-meta	0					2
+yew-labs	351	70	X		intro-meta	0					2
+yew-labs	50	60	X		intro-meta	0					2
+yew-labs	441	50	X		intro-meta	0					2
+yew-labs	407	10	X		intro-meta	1			T+2		2
+yew-labs	111	110	X		intro-meta	2			T+2.5		2
+yew-labs	476	100	X		intro-meta	3			T+3		2
+yew-labs	489	40	X		intro-meta	3			T+3.5		2
+yew-labs	463	90	X		intro-meta	4			T+4		2
+yew-labs	71	130	X		intro-meta	4			T+4.5		2
+yew-labs	622	30	X		intro-meta	5			T+5		2
+yew-labs	444	120	X		intro-meta	6			T+5.5		2
+yew-labs	594	80	X		intro-meta	7			T+6		2
+yew-labs	288	1000	X	1	intro-meta	10			T+7		2
+
+green-building	591	70	0		green-meta	X					0
+green-building	28	130	0		green-meta	X
+green-building	320	20	0		green-meta	X
+green-building	555	60	100		green-meta	X
+green-building	465	110	100		green-meta	X
+green-building	128	120	220		green-meta	X					0
+green-building	107	100	220		green-meta	X
+green-building	271	90	430		green-meta	X
+green-building	289	10	430		green-meta	X
+green-building	159	40	660		green-meta	X
+green-building	170	80	660		green-meta	X
+green-building	521	30	800		green-meta	X
+green-building	519	50	800		green-meta	X
+green-building	204	1000	1100	1	green-meta	X
+
+infinite-template	91	10	0		infinite-meta	X
+infinite-template	179	20	0		infinite-meta	X
+infinite-template	496	30	100		infinite-meta	X
+infinite-template	281	40	210		infinite-meta	X
+infinite-template	566	50	330		infinite-meta	X
+infinite	272	0	450	1	infinite-meta	X
+
+nano	459	1	0	1	nano-meta	X	0
+
+nano	468	120	0		nano-meta	X	1
+nano	338	130	0		nano-meta	X	1
+nano	533	150	0		nano-meta	X	1
+nano	157	110	110		nano-meta	X	1
+nano	577	170	110		nano-meta	X	1				0
+nano	21	180	330		nano-meta	X	1
+nano	460	160	450		nano-meta	X	1
+nano	409	140	450		nano-meta	X	1
+
+nano	286	220	550		nano-meta	X	2
+nano	427	230	850		nano-meta	X	2
+nano	374	240	1050		nano-meta	X	2
+nano	491	210	1050		nano-meta	X	2
+nano	461	250	1200		nano-meta	X	2
+
+nano	328	320	1300		nano-meta	X	3
+nano	314	340	1550		nano-meta	X	3
+nano	536	330	1550		nano-meta	X	3
+nano	408	360	1800		nano-meta	X	3
+nano	558	350	1800		nano-meta	X	3
+nano	245	310	1800	1	nano-meta	X	3
+
+stata	20	90	0		stata-meta	X
+stata	316	130	0		stata-meta	X
+stata	44	100	120		stata-meta	X
+stata	79	70	120		stata-meta	X
+stata	403	40	280		stata-meta	X
+stata	452	120	280		stata-meta	X
+stata	151	80	500		stata-meta	X
+stata	206	20	500		stata-meta	X
+stata	573	50	720		stata-meta	X
+stata	389	110	720		stata-meta	X
+stata	163	30	860		stata-meta	X
+stata	372	60	860		stata-meta	X
+stata	417	140	1070		stata-meta	X
+stata	599	10	1070		stata-meta	X
+stata	228	1000	1200	1	stata-meta	X
+
+clusters	541	310	0		clusters	X
+clusters	36	340	0		clusters	X
+clusters	358	320	0		clusters	X
+clusters	415	330	0		clusters	X
+
+clusters	323	210	240		clusters	X
+clusters	11	220	240		clusters	X
+
+clusters	609	410	480		clusters	X
+clusters	553	420	480		clusters	X
+
+clusters	545	110	700		clusters	X
+clusters	517	120	700		clusters	X
+clusters	472	130	700		clusters	X
+
+clusters	241	1000	900	1	clusters	X
+
+tunnels	363	50	0		tunnels-meta
+tunnels	477	30	0		tunnels-meta
+tunnels	38	10	0		tunnels-meta
+tunnels	276	40	130		tunnels-meta
+tunnels	132	80	130		tunnels-meta
+tunnels	385	70	350		tunnels-meta
+tunnels	229	120	350		tunnels-meta
+tunnels	329	130	480		tunnels-meta
+tunnels	561	110	480		tunnels-meta
+tunnels	434	100	700		tunnels-meta
+tunnels	598	90	700		tunnels-meta
+tunnels	69	20	920		tunnels-meta
+tunnels	494	140	920		tunnels-meta
+tunnels	464	60	920		tunnels-meta
+tunnels	336	1000	1100	1	tunnels-meta
+
+students	467	270	0		dorm-row	X
+students	495	470	0		simmons	X
+students	345	290	0		east-campus	X
+students	366	120	0		random	X
+students	412	170	15		dorm-row	X
+students	365	450	30		east-campus	X
+students	611	280	45		dorm-row	X
+students	369	400	60		dorm-row	X
+students	378	150	75		dorm-row	X
+students	368	300	90		dorm-row	X
+students	614	40	105		random	X
+students	31	520	120		simmons	X
+students	95	320	135		dorm-row	X
+students	604	350	150		dorm-row	X
+students	413	200	165		east-campus	X
+students	437	460	180		east-campus	X
+students	510	370	195		random	X
+students	26	100	210		dorm-row	X
+students	268	310	225		random	X
+students	405	390	240		dorm-row	X
+students	398	530	255		dorm-row	X
+students	426	160	270		dorm-row	X
+students	96	20	285		east-campus	X
+students	606	355	300		dorm-row	X
+students	361	220	315		simmons	X
+students	367	50	330		dorm-row	X
+students	17	240	345		dorm-row	X
+students	445	250	360		dorm-row	X
+students	324	80	375		dorm-row	X
+students	137	90	390		dorm-row	X
+students	448	510	405		dorm-row	X
+students	438	490	420		dorm-row	X
+students	432	110	435		random	X
+students	104	130	450		dorm-row	X
+students	112	330	465		dorm-row	X
+students	582	420	480		simmons	X
+students	359	480	495		dorm-row	X
+students	92	260	510		dorm-row	X
+students	447	140	525		dorm-row	X
+students	446	210	540		east-campus	X
+students	344	190	555		dorm-row	X
+students	542	360	570		dorm-row	X
+students	248	30	585		dorm-row	X
+students	376	410	600		simmons	X
+students	411	540	615		dorm-row	X
+students	439	500	630		dorm-row	X
+students	395	10	645		simmons	X
+students	400	430	660		dorm-row	X
+students	342	180	675		dorm-row	X
+students	605	340	690		dorm-row	X
+students	430	70	705		simmons	X
+students	473	60	720		random	X
+students	226	440	X		simmons	X			T+31
+students	150	380	750		east-campus	X
+students	298	1000	X	1	dorm-row	24
+students	297	1100	X	1	dorm-row	24
+students	301	1200	X	1	dorm-row	24
+students	302	1300	X	1	dorm-row	24
+students	300	1400	X	1	dorm-row	24
+students	315	1500	X	1	dorm-row	24
+students	303	1600	X	1	dorm-row	24
+students	243	2000	X	1	special-meta	X
+students	305	3000	X	1	simmons	5
+students	267	4000	X	1	east-campus	5
+students	292	5000	X	1	random	4
+students	275	10000	X	1	special-meta	X
+
+athletics	277	140	X		basketball-meta				T+25
+athletics	610	150	X		basketball-meta				T+27
+athletics	617	130	X		basketball-meta				T+29
+athletics	588	120	X		basketball-meta				T+32
+athletics	593	110	X		basketball-meta				T+33
+
+athletics	535	210	X		football-meta							west-campus-access
+athletics	527	220	X		football-meta							cluster1
+athletics	531	230	X		football-meta							stata-access
+athletics	590	240	X		football-meta							kilo-teleporter
+athletics	601	250	X		football-meta							main-campus-access
+athletics	522	260	X		football-meta							giga-bridge
+athletics	530	270	X		football-meta							west-campus-access
+athletics	595	280	X		football-meta							west-campus-access,green-roof,giga-bridge
+athletics	462	290	X		football-meta							east-campus-access
+athletics	583	300	X		football-meta							west-campus-access
+athletics	523	310	X		football-meta							west-campus-access
+
+athletics	569	430	X		baseball-meta				T+21		0
+athletics	576	480	X		baseball-meta				T+22
+athletics	416	450	X		baseball-meta				T+23
+athletics	492	410	X		baseball-meta				T+24
+athletics	567	440	X		baseball-meta				T+26
+athletics	575	420	X		baseball-meta				T+28
+athletics	538	460	X		baseball-meta				T+30		0
+athletics	139	490	X		baseball-meta				T+31
+athletics	580	470	X		baseball-meta				T+31
+
+athletics	337	1010	X	1	basketball-meta	4
+athletics	341	1020	X	1	football-meta	8
+athletics	330	1030	X	1	baseball-meta	6
+athletics	309	2000	X	1	special-meta	X
+
+charles-river	623	10	X		events-other				T+0
+charles-river	145	20	X		events-meta				T+10
+charles-river	587	30	X		events-meta				T+0
+charles-river	24	40	X		events-meta				T+0
+charles-river	586	50	X		events-meta				T+0
+charles-river	585	60	X		events-other				T+0
+charles-river	396	100	X	1	events-meta	5
+charles-river	147	110	X	1	special-meta
+
+infra	4242	1	0								0

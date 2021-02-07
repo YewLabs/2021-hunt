@@ -1,0 +1,110 @@
+name: skyscrapers
+difficulty: 5/10
+coolness: 5/10
+time: 7:30
+
+questions:
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/1.jpg
+
+        - answer: 13243
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/2.jpg
+
+        - answer: 44221
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/3.jpg
+
+        - answer: 45313
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/4.jpg
+
+        - answer: 15335
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/5.jpg
+
+        - answer: 14552
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/6.jpg
+
+        - answer: 11111
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/7.jpg
+
+        - answer: 31532
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/8.jpg
+
+        - answer: 51455
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/9.jpg
+
+        - answer: 55142
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/10.jpg
+
+        - answer: 21115
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/11.jpg
+
+        - answer: 44113
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/12.jpg
+
+        - answer: 34434
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/13.jpg
+
+        - answer: 43311
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/14.jpg
+
+        - answer: 31213
+
+    - question:
+        - text: "What is the sequence of digits on the main diagonal (from top left to bottom right) of the solution to this Skyscrapers puzzle?"
+
+        - image: logic-puzzles/skyscrapers/15.jpg
+
+        - answer: 45215

@@ -1,0 +1,100 @@
+<p>We’re presented with a series of satellite photos at very different scales. There are 5 images that are so large we can identify them just by browsing around Google Maps in satellite mode. It helps to <a href="https://webapps.stackexchange.com/questions/67433/remove-labels-overlay-on-new-google-maps">turn off labels</a> while doing this.
+
+<p>It turns out all of these images are within the United States. By looking at the map, and using geographic features like the Appalachian Mountains, Lake Erie, Great Salt Lake, the Rocky Mountains and the Chesapeake Bay to help orient our search, we can find the 5 outermost photos:
+
+<div class="table1">
+    <div><a href="{{sroot}}img5.png"><img src="{{sroot}}img5.png"></a><span class="light">Nevada, Utah, Idaho, Wyoming, Colorado, Montana</span></div>
+    <div><a href="{{sroot}}img10.png"><img src="{{sroot}}img10.png"></a><span class="light">Missouri, Kentucky, Tennessee, Illinois, Indiana, Ohio</span></div>
+    <div><a href="{{sroot}}img16.png"><img src="{{sroot}}img16.png"></a><span class="light">Lake Erie, Northeast Ohio, Southern Ontario, a bit of Pennsylvania</span></div>
+    <div><a href="{{sroot}}img22.png"><img src="{{sroot}}img22.png"></a><span class="light">Virginia, West Virginia, Maryland, North Carolina, Kentucky</span></div>
+    <div><a href="{{sroot}}img24.png"><img src="{{sroot}}img24.png"></a><span class="light">Pennsylvania, Maryland, some Western New York</span></div>
+</div>
+
+<p>In the process of getting here, we may notice some of the smaller images are cities inside the bounds of these largest images. Other routes to noticing this include reverse image searching the city-sized images (e.g. <a href="https://tineye.com/search/3730e09681d57840aeaa127a597b7945e9541cf5?page=1">Boise, ID</a>) or noticing the different color palettes of the images from different parts of the country.
+
+<p>Seeing that some of these images are essentially “zoomed-in” versions of each other, we might look at the medium-scale images, trying to find them inside the large-scale ones. Repeating this process as we zoom further in, we can eventually locate the precise locations of the 5 stars.
+
+<div class="table1">
+    <div><a href="{{sroot}}idaho.m4v.gif"><img src="{{sroot}}idaho.m4v.gif"></a><span class="light">Garden City, ID (yellow below)</span></div>
+    <div><a href="{{sroot}}dayton.m4v.gif"><img src="{{sroot}}dayton.m4v.gif"></a><span class="light">Dayton, OH (orange below)</span></div>
+    <div><a href="{{sroot}}akron.m4v.gif"><img src="{{sroot}}akron.m4v.gif"></a><span class="light">Akron, OH (blue below)</span></div>
+    <div><a href="{{sroot}}richmond.m4v.gif"><img src="{{sroot}}richmond.m4v.gif"></a><span class="light">Richmond, VA (green below)</span></div>
+    <div><a href="{{sroot}}baltimore.m4v.gif"><img src="{{sroot}}baltimore.m4v.gif"></a><span class="light">Baltimore, MD (red below)</span></div>
+</div>
+
+<p>Download a google-earth file with all the locations in this puzzle marked <a href="{{sroot}}World Search.kmz">here</a>.
+
+<p>Now that we have identified the images, we need to figure out what to do next. Since the images are placed so precisely on the page and intermingled among one another, we might try drawing lines from each step to the next most zoomed-in one.
+
+<div class="ctrimg"><a href="{{sroot}}what3.png"><img src="{{sroot}}what3.png"></a></div>
+
+<p>Reading in stars-from-left-to-right order (rainbow order in the above image), we read out WHAT 3, which tells us to look at the <a href="https://what3words.com">What 3 Words</a> address of each starred place. Note that these addresses are very precise so we must be very careful locating the exact position of the stars.
+
+<table>
+<tr><th>Place</th><th>What 3 Words?</th>
+<tr><td>Garden City, ID</td><td><a href='https://what3words.com/vague.dots.exile'>///vague.dots.exile</a></td></tr>
+<tr><td>Dayton, OH</td><td><a href='https://what3words.com/vest.dots.wings'>///vest.dots.wings</a></td></tr>
+<tr><td>Akron, OH</td><td><a href='https://what3words.com/vest.rips.vague'>///vest.rips.vague</a></td></tr>
+<tr><td>Richmond, VA</td><td><a href='https://what3words.com/stuff.dots.quit'>///stuff.dots.quit</a></td></tr>
+<tr><td>Baltimore, MD</td><td><a href='https://what3words.com/exile.tube.wings'>///exile.tube.wings</a></td></tr>
+</table>
+
+<p>Looking at these addresses, we notice that they have a lot of words in common. To be precise, <code>dots</code> appears 3 times, and each of <code>vest</code>, <code>vague</code>, <code>wings</code> and <code>exile</code> appear twice each. This fact, combined with the grid at the bottom of the page, suggests that we try to fill the words into a 3&times;3 grid. There’s only one way to do this (modulo reflection across the main diagonal):
+
+<table class="grid">
+<tr><td>vest</td><td>stuff</td><td>exile</td></tr>
+<tr><td>rips</td><td>dots</td><td>tube</td></tr>
+<tr><td>vague</td><td>quit</td><td>wings</td></tr>
+</table>
+
+<p>We are given the locations for the diagonals and the verticals, which suggests reading the acrosses. In fact, we find that all three of them are what3words locations in Cambridge, MA:
+<a href='https://what3words.com/vest.stuff.exile'>///vest.stuff.exile</a>,
+<a href='https://what3words.com/rips.dots.tube'>///rips.dots.tube</a>, and
+<a href='https://what3words.com/vague.quit.wings'>///vague.quit.wings</a>.
+
+<p>All of these are locations of Clover Food Lab, a vegetarian fast-food restaurant. The box with three blanks at the bottom of the puzzle suggests the answer is three words, so the answer is <span class="answer">CLOVER FOOD LAB</span>.
+
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>We noticed upon rechecking this puzzle the day before hunt that Google Maps had replaced their imagery for Dayton since the puzzle had been written, which was an exciting time.</p>
+
+</div>
+
+<style>
+.table1 {
+    display: flex;
+    flex-direction: row;
+}
+.table1 div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 180px;
+}
+.table1 div img {
+    width: 180px
+}
+.table1 div span {
+    text-align: center;
+    margin-top: 5px;
+}
+.light {
+    opacity: .8;
+    font-size: 10px;
+}
+.ctrimg {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+.ctrimg img{
+    width: 100%;
+}
+.grid td{
+    border: 1px solid black;
+}
+</style>
+

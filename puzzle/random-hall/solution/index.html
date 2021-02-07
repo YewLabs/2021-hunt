@@ -1,0 +1,267 @@
+Answers in this round:
+<pre>HABITUAL
+SOLE MEUNIERE
+DRESS CODE
+GIANT GROWTH
+THE XX
+PRODUCT TESTING</pre>
+
+<p>In this puzzle, we are presented with a random number generator that generates sets of 17 numbers at a time. These
+    numbers are, in fact, random. However, the key lies in determining what distributions they are generated from.</p>
+
+<p>Here are a sample few rows of output from the generator:</p>
+
+<pre style="font-size: 9px;">
+0.546  2.321  6.623  7.086  3.273  1.040  2.321  7.086  2.366  3.000  3.273  0.546  6.623  5.000  0.019  1.927  1.000
+0.822  5.496  4.624  2.835  2.498  0.181  5.496  2.835  1.496  3.000  2.498  0.822  4.624  9.000  0.127  0.162  2.000
+0.841  3.730  4.511  4.444  3.944  2.573  3.730  4.444  0.011  1.000  3.944  0.841  4.511  6.000  0.472  1.607  0.000
+0.771  6.556  6.940  4.298  3.369  0.233  6.556  4.298  1.351  2.000  3.369  0.771  6.940  4.000  0.190  2.676  0.000
+0.917  3.812  4.178  6.118  3.085  0.245  3.812  6.118  0.302  2.000  3.085  0.917  4.178  11.00  0.210  1.512  0.000
+0.433  2.322  6.219  8.600  3.220  1.059  2.322  8.600  0.047  4.000  3.220  0.433  6.219  5.000  0.011  2.367  1.000
+0.958  1.967  4.542  4.763  2.090  0.876  1.967  4.763  1.122  4.000  2.090  0.958  4.542  7.000  0.057  0.533  0.000
+0.640  1.489  4.437  2.429  2.389  1.520  1.489  2.429  1.387  8.000  2.389  0.640  4.437  7.000  0.179  2.052  0.000
+0.946  4.705  6.910  6.649  3.889  0.217  4.705  6.649  0.845  2.000  3.889  0.946  6.910  10.00  0.658  2.176  1.000
+0.701  5.379  4.014  2.373  2.541  0.318  5.379  2.373  0.455  4.000  2.541  0.701  4.014  11.00  0.056  6.387  1.000
+ (A)    (B)    (C)    (D)    (E)    (F)    (G)    (H)    (I)    (J)    (K)    (L)    (M)    (N)    (O)    (P)    (Q)
+</pre>
+
+<p>
+    For clarity, let's denote these columns A through Q. First, we note that there are several columns that are
+    duplicates of each other: A and L, B and G, C and M, D and H, E and K.</p>
+
+<p>Now we analyze these distributions. Some techniques we could use include making histograms, examining their
+    mean/variance/median/excess kurtosis/skew, and noting properties like whether all outputs are integers or whether
+    any are negative. Eventually we can determine that they each come from one of the following types of distributions:
+</p>
+
+<ul>
+    <li>Normal</li>
+    <li>Uniform</li>
+    <li>Beta</li>
+    <li>Exponential</li>
+    <li>Chi Squared</li>
+    <li>Poisson</li>
+</ul>
+
+<p>At this point, we must return to the answers. Looking at them, we note that the answers correspond to the distributions.
+Normal is a synonym of <code>HABITUAL</code>; Poisson is French for fish, and <code>SOLE MEUNIERE</code> is a French
+fish dish. Chi looks like X, so chi squared corresponds to two Xes next to each other or <code>THE XX</code>. A
+<code>DRESS CODE</code> is like a uniform. <code>GIANT GROWTH</code> sounds like exponential growth. And
+<code>PRODUCT TESTING</code> is also known as beta testing. </p>
+
+<p>Each distribution is defined by one or two parameters. For example, a normal distribution is defined by it's mean and variance. If we compute the parameters for each of our distributions we'll find that they are all positive integer values. Furthermore, the distributions with two parameters are also the distributions that are duplicated.</p>
+
+<table>
+  <tr>
+    <th>Distribution</th>
+    <th>Answer</th>
+    <th>Parameter 1</th>
+    <th>Parameter 2</th>
+  </tr>
+  <tr>
+    <td>Normal</td>
+    <td>HABITUAL</td>
+    <td>Mean (μ)</td>
+    <td>Variance (σ<sup>2</sup>)</td>
+  </tr>
+  <tr>
+    <td>Uniform</td>
+    <td>DRESS CODE</td>
+    <td>Minimum (a)</td>
+    <td>Maximum (b)</td>
+  </tr>
+  <tr>
+    <td>Beta</td>
+    <td>PRODUCT TESTING</td>
+    <td>α</td>
+    <td>β</td>
+  </tr>
+  <tr>
+    <td>Exponential</td>
+    <td>GIANT GROWTH</td>
+    <td>Rate (λ)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Chi Squared</td>
+    <td>THE XX</td>
+    <td>Degrees of freedom (k)</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Poisson</td>
+    <td>SOLE MEUNIERE</td>
+    <td>Rate (λ)</td>
+    <td></td>
+  </tr>
+</table>
+
+<p>We can use the parameters as indexes into each distribution's corresponding answer. The first time we see a duplicated distribution, we should use the first parameter, and the second time we see it we should use the second parameter:</p>
+
+<table>
+    <tr>
+        <th></th>
+        <th>Distribution</th>
+        <th>Param 1</th>
+        <th>Param 2</th>
+        <th>Answer</th>
+        <th>Index 1</th>
+        <th>Index 2</th>
+    </tr>
+    <tr>
+        <td>(A)</td>
+        <td>Beta</td>
+        <td>4</td>
+        <td>1</td>
+        <td><code>PRODUCT TESTING</code></td>
+        <td><b>D</b></td>
+        <td>P</td>
+    </tr>
+    <tr>
+        <td>(B)</td>
+        <td>Normal</td>
+        <td>4</td>
+        <td>3</td>
+        <td><code>HABITUAL</code></td>
+        <td><b>I</b></td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>(C)</td>
+        <td>Uniform</td>
+        <td>4</td>
+        <td>7</td>
+        <td><code>DRESS CODE</code></td>
+        <td><b>S</b></td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>(D)</td>
+        <td>Normal</td>
+        <td>5</td>
+        <td>6</td>
+        <td><code>HABITUAL</code></td>
+        <td><b>T</b></td>
+        <td>U</td>
+    </tr>
+    <tr>
+        <td>(E)</td>
+        <td>Uniform</td>
+        <td>2</td>
+        <td>4</td>
+        <td><code>DRESS CODE</code></td>
+        <td><b>R</b></td>
+        <td>S</td>
+    </tr>
+    <tr>
+        <td>(F)</td>
+        <td>Exponential</td>
+        <td>2</td>
+        <td></td>
+        <td><code>GIANT GROWTH</code></td>
+        <td><b>I</b></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>(G)</td>
+        <td>Normal</td>
+        <td>4</td>
+        <td>3</td>
+        <td><code>HABITUAL</code></td>
+        <td>I</td>
+        <td><b>B</b></td>
+    </tr>
+    <tr>
+        <td>(H)</td>
+        <td>Normal</td>
+        <td>5</td>
+        <td>6</td>
+        <td><code>HABITUAL</code></td>
+        <td>T</td>
+        <td><b>U</b></td>
+    </tr>
+    <tr>
+        <td>(I)</td>
+        <td>Chi squared</td>
+        <td>1</td>
+        <td></td>
+        <td><code>THE XX</code></td>
+        <td><b>T</b></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>(J)</td>
+        <td>Poisson</td>
+        <td>4</td>
+        <td></td>
+        <td><code>SOLE MEUNIERE</code></td>
+        <td><b>E</b></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>(K)</td>
+        <td>Uniform</td>
+        <td>2</td>
+        <td>4</td>
+        <td><code>DRESS CODE</code></td>
+        <td>R</td>
+        <td><b>S</b></td>
+    </tr>
+    <tr>
+        <td>(L)</td>
+        <td>Beta</td>
+        <td>4</td>
+        <td>1</td>
+        <td><code>PRODUCT TESTING</code></td>
+        <td>D</td>
+        <td><b>P</b></td>
+    </tr>
+    <tr>
+        <td>(M)</td>
+        <td>Uniform</td>
+        <td>4</td>
+        <td>7</td>
+        <td><code>DRESS CODE</code></td>
+        <td>S</td>
+        <td><b>O</b></td>
+    </tr>
+    <tr>
+        <td>(N)</td>
+        <td>Poisson</td>
+        <td>8</td>
+        <td></td>
+        <td><code>SOLE MEUNIERE</code></td>
+        <td><b>N</b></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>(O)</td>
+        <td>Exponential</td>
+        <td>6</td>
+        <td></td>
+        <td><code>GIANT GROWTH</code></td>
+        <td><b>G</b></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>(P)</td>
+        <td>Chi squared</td>
+        <td>3</td>
+        <td></td>
+        <td><code>THE XX</code></td>
+        <td><b>E</b></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>(Q)</td>
+        <td>Poisson</td>
+        <td>1</td>
+        <td></td>
+        <td><code>SOLE MEUNIERE</code></td>
+        <td><b>S</b></td>
+        <td></td>
+    </tr>
+</table>
+
+
+<p>If we take the indexed letters in the order of the columns (A through Q), we'll arrive at the answer, <span class="answer">DISTRIBUTE SPONGES</span>.</p>

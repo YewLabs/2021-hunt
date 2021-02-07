@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=1200, user-scalable=yes">
+  
+  
+  <link rel="icon" href="https://perpendicular.institute/static/favicon_alt.ico" type="image/vnd.microsoft.icon">
+  
+
+  <title>Boggle Battle — MIT Mystery Hunt 2021</title>
+
+  <link rel="stylesheet" type="text/css" href="https://perpendicular.institute/static/stylesheets/main.css">
+  <link rel="stylesheet" type="text/css" href="./site-static/metropolis-font.css">
+  <link rel="stylesheet" type="text/css" href="https://perpendicular.institute/static/stylesheets/nav.css">
+
+  <script src="./site-static/jquery.min.js"></script>
+  
+<style>
+  body {
+    background-color: #71A871;
+  }
+
+  .content {
+    background-image: url(https://perpendicular.institute/static/art/athleticsbg.png);
+    background-size: 100% auto;
+  }
+</style>
+
+</head>
+
+<body class="vsc-initialized">
+  
+
+<nav class="navbar">
+  <ul class="navbar-list">
+    
+    
+    
+    <li class="navbar-list-item">
+      
+      <a href="https://perpendicular.institute/round/athletics/">Athletics</a>
+      
+    </li>
+    
+    
+    <li class="navbar-list-item"><a href="https://perpendicular.institute/">Campus Map</a></li>
+    
+    <li class="navbar-list-item"><a href="https://perpendicular.institute/projection_device">Projection Device</a></li>
+    
+    <li class="navbar-list-item">
+      <a class="nav-links-dropdown-toggle" href="https://perpendicular.institute/puzzle/boggle-battle/#">
+        <img src="./site-static/round.png" alt="rounds">
+      </a>
+      <ul class="nav-links-dropdown-menu">
+        
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/yew-labs/">Yew Labs</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/student-center/">Students</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/green-building/">Green Building</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/stata/">Stata Center</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/infinite/">Infinite Corridor</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/nano/">⊥IW.nano</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/clusters/">Minerva Clusters</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/athletics/">Athletics</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/tunnels/">Tunnels</a></li>
+          
+        
+          
+            <li><a href="https://perpendicular.institute/round/charles-river/">Charles River</a></li>
+          
+        
+          
+        
+      </ul>
+    </li>
+    
+    <li class="navbar-list-item">
+      <a class="nav-links-dropdown-toggle" href="https://perpendicular.institute/puzzle/boggle-battle/#">
+        <img src="./site-static/link.png" alt="links">
+      </a>
+      <ul class="nav-links-dropdown-menu">
+        <li><a href="https://perpendicular.institute/story">The Story So Far...</a></li>
+        <li><a href="https://perpendicular.institute/puzzles">List of Puzzles</a></li>
+        <li><a href="https://perpendicular.institute/events">Events Schedule</a></li>
+        <li><a href="https://perpendicular.institute/submit/contact/">Contact HQ</a></li>
+        <li><a href="https://perpendicular.institute/updates">Updates from HQ</a></li>
+        <li><a href="https://perpendicular.institute/log">Full Team Log</a></li>
+        <li><a href="https://perpendicular.institute/faq">FAQ</a></li>
+        <li><a href="https://perpendicular.institute/sponsors">Sponsors</a></li>
+        <li><a href="https://perpendicular.institute/update_team">Update Team Info</a></li>
+      </ul>
+    </li>
+    <li class="navbar-list-item" id="bookmarks">
+      <a class="nav-links-dropdown-toggle" href="https://perpendicular.institute/puzzle/boggle-battle/#">
+        <img src="./site-static/bookmark.png" alt="bookmarks">
+      </a>
+      <ul class="nav-links-dropdown-menu">You have no bookmarks. To add a bookmark, click the bookmark icon at the upper-right corner of any puzzle page.</ul>
+    </li>
+    
+  </ul>
+  <div class="nav-account-panel">
+    <div>Factchecker</div>
+    <div class="nav-account-panel-team-actions">
+    
+      
+    
+    
+      
+      
+      <div class="team-action-item"><a href="https://perpendicular.institute/submit/survey/boggle-battle/">Feedback</a></div>
+      <div class="team-action-item"><a href="https://perpendicular.institute/submit/hint/boggle-battle/">Hints</a></div>
+      
+    
+      <div class="team-action-item"><a href="https://perpendicular.institute/logout">Logout</a></div>
+    </div>
+  </div>
+  <a href="https://perpendicular.institute/puzzle/boggle-battle/#" id="bookmark" style="" aria-label="bookmark this puzzle"></a>
+  <script>
+  $('.nav-links-dropdown-toggle').each(function(i, elt) {
+    $(elt).click(function(evt) {
+      $('.nav-links-dropdown-toggle').each((j, e) => {
+        // hide others
+        if (e != elt) {
+          $(e).next().hide();
+        }
+      });
+      $(elt).next().toggle();
+      evt.preventDefault();
+    });
+    $(elt).parent().click(function(evt) {
+      evt.stopPropagation();
+    });
+    $(window).click(function(evt) {
+      $(elt).next().hide();
+    });
+  });
+  (function(puzzles, current, data) {
+    var bookmarks = {};
+    try {
+      bookmarks = JSON.parse(localStorage.bookmarks);
+    } catch {}
+    function update() {
+      const menu = $('#bookmarks ul').empty();
+      var found = false;
+      for (var url in bookmarks) {
+        var a = $('<a>').attr('href', bookmarks[url].link).text(bookmarks[url].name);
+        if (puzzles[url]) a.prepend($('<span>').text('(solved!)'));
+        $('<li>').append(a).prependTo(menu);
+        found = true;
+      }
+      if (!found) {
+        menu.append('You have no bookmarks. To add a bookmark, click the bookmark icon at the upper-right corner of any puzzle page.');
+      }
+    }
+    update();
+    if (current) {
+      $('#bookmark').show().click(function(evt) {
+        evt.preventDefault();
+        if (current in bookmarks) {
+          delete bookmarks[current];
+        } else {
+          bookmarks[current] = data;
+        }
+        $(this).toggleClass('bookmarked', current in bookmarks);
+        update();
+        localStorage.bookmarks = JSON.stringify(bookmarks);
+      }).toggleClass('bookmarked', current in bookmarks);
+    }
+  })({
+    'cafe\u002Dfive': true,
+    'enter\u002Dthe\u002Dperpendicular\u002Duniverse': true,
+    'lets\u002Dget\u002Dthe\u002Dball\u002Drolling': true,
+    'look\u002Dat\u002Dwhat\u002Dwe\u002Ddrew': true,
+    'stay\u002Dhydrated': true,
+    'extensive': true,
+    'infinite\u002D17': true,
+    'infinite\u002D115': true,
+    'rule\u002Dof\u002Dthree': true,
+    'twins': true,
+    'level\u002Done': true,
+    'bingo': true,
+  }, 'boggle\u002Dbattle', {
+    link: '/puzzle/boggle\u002Dbattle/',
+    name: 'Boggle Battle',
+  });
+  </script>
+</nav>
+
+
+
+  
+<div class="content">
+  <h1 class="puzzle-title-header">Boggle Battle</h1>
+  <main>
+    <div class="puzzle-header">
+      <div style="width: 100%">
+        
+        <h4 style="float: right">
+          <a href="https://perpendicular.institute/puzzle/boggle-battle/solution/">View Solution</a>
+        </h4>
+        
+        
+        <h4><a href="https://perpendicular.institute/submit/puzzle/boggle-battle/">Submit Answer</a></h4>
+        
+      </div>
+    </div>
+    <div class="puzzle">
+      <!-- Puzzle content begins here -->
+    <div id="mainContainer">
+    </div>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script type="text/javascript" src="dist/bundle.js"></script>
+      <!-- Puzzle content ends here -->
+    </div>
+  </main>
+</div>
+
+  
+<script src="./site-static/grid_copy.js"></script>
+<script src="./site-static/copyjack.js"></script>
+<script>
+window.onload=function() {
+  if (typeof puzzleOnLoad !== 'undefined') {
+    puzzleOnLoad();
+  }
+}
+</script>
+
+
+
+</body></html>

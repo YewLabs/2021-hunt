@@ -1,0 +1,82 @@
+name: wheel-of-fortune-show-titles
+difficulty: 2/10
+coolness: 3/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "??ER???N ??OL"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: american idol
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?E??O?S ????S"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: devious maids
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?R???? N?GHT L?GHTS"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: friday night lights
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "L?ST ?O??? ST?N??NG"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: last comic standing
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "N?? S?N??? N?GHT ?OOT??LL"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: nbc sunday night football
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "SO ?O? TH?N? ?O? ??N ??N?E"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: so you think you can dance
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "THE ???P?RE ???R?ES"
+
+        - text: "Category: Show Title"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: the vampire diaries

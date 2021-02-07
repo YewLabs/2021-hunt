@@ -1,0 +1,70 @@
+div.viewport, span.viewport {
+    background-color: #000a32;
+    border: 4px gray solid;
+}
+
+#baba {
+    position: relative;
+    padding: 10px;
+}
+#minis {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+span.viewport {
+    margin: 1px;
+    display: inline-block;
+    position: relative;
+    padding: 1px;
+}
+
+#babaouter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.selector {
+    display: flex;
+    flex-direction: row; 
+    margin: 10px;
+    color: white;
+    font-family: monospace;
+    font-size: 17px;
+    font-weight: bold;
+}
+.selector div {
+    padding: 10px;
+    background-color: #222;
+}
+.selector div:first-child {
+    border-radius: 10px 0 0 10px;
+}
+.selector div.last {
+    border-radius: 0 10px 10px 0;
+}
+.selector div.last:first-child {
+    border-radius: 10px;
+}
+.selector div.active, .selector div:not(.unclickable):hover {
+  background-color: #666;
+  color: white;
+}
+.selector div:not(.unclickable) {
+    cursor: pointer;
+}
+
+div.hidden {
+    display: none;
+}
+.outers {
+    display: flex;
+    flex-direction: row;
+}
+
+h4#turn-counter {
+    width: 12em;
+    text-align: center;
+}

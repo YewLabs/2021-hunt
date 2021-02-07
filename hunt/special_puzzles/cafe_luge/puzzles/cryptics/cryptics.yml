@@ -1,0 +1,55 @@
+name: cryptics
+difficulty: 3/10
+coolness: 3/10
+time: 4:00
+
+questions:
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Turned eastern prince, old poem (4)"
+        - answer: rime
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Large booster's light (4)"
+        - answer: lamp
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Metal press (4)"
+        - answer: iron
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Cut a piece of meat (4)"
+        - answer: chop
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Small top, say (5)"
+        - answer: speak
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Bump; hit back (4)"
+        - answer: knob
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Hundred bar, it keeps time (5)"
+        - answer: clock
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Devil in fifties shuffles (5)"
+        - answer: limps
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Large squid production: video game hero (4)"
+        - answer: link
+
+    - question:
+        - text: "What's the answer to this cryptic clue?"
+        - text: "Weight among the best ones (5)"
+        - answer: stone

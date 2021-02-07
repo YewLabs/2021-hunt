@@ -1,0 +1,13 @@
+{% if team.is_limited %}
+{% include "puzzle/analog-circuitry/circuit.svg" %}
+<script src="circuit_serverless.js"></script>
+{% else %}
+{% include "puzzle/analog-circuitry/circuit.svg" %}
+<style>
+text { cursor: text; }
+</style>
+<script>
+auth_token = "{{ puzzle.auth }}";
+</script>
+<script src="circuit.js"></script>
+{% endif %}

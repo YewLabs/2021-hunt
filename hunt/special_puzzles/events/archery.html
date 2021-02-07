@@ -1,0 +1,86 @@
+{% extends "hunt/layout.tmpl" %}
+
+{% block content %}
+
+<style>
+    html, body {
+        background: none;
+        min-width: 0;
+        height: auto;
+    }
+    form {
+        text-align: center;
+    }
+    .form-field {
+        display: inline;
+        text-align: left;
+        margin: 1em .75em;
+    }
+    td.checkmark {
+        text-align: center;
+    }
+    .error {
+        font-weight: bold;
+        color: #ff0000;
+    }
+</style>
+
+<p>
+    Register any number of members of your team here.
+    You can un-register by re-submitting the same
+    name and email combination.
+
+    We will be using Discord so if you are new to using Discord, check out <a href="https://docs.google.com/document/d/e/2PACX-1vSZUozBZb8jMnDeCg7aHDXCmOiP1CWO7XIqWNYNv6DmTZFZk0ml5bAhfaZM-3YTrXs7f80NOGz3kjVb/pub">our guide</a>!
+</p>
+
+{% if data %}
+<p>
+    Your team has <b>{{ data|length }}</b> registration{{ data|length|pluralize}}:
+    <table>
+        {% for reg in data %}
+        <tr><td><b>{{ reg.name }}</b></td></tr>
+        {% endfor %}
+    </table>
+    {% comment %}{{ data }}{% endcomment %}
+</p>
+{% else %}
+<p>
+    <b>No one from your team has registered for this event yet.</b>
+</p>
+{% endif %}
+
+{% if new_registration %}
+<p>
+    Thanks for registering! This is a one-time message
+    that only shows up when you register, so make sure
+    to write it down.
+</p>
+<p>
+    This is the invite link to this event's Discord server: <a href="https://discord.gg/2EUch2wCSe" target="top">https://discord.gg/2EUch2wCSe</a>
+</p>
+{% endif %}
+
+{% if error %}
+<p class="error">
+    {{ error }}
+</p>
+{% endif %}
+
+<form id="reg-form" method="POST">
+    {% csrf_token %}
+    <div class="form-field">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" value="" size="20"/>
+    </div>
+    <div class="form-field">
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" value="" size="30"/>
+    </div>
+    <div class="form-field">
+        <input type="submit" value="Register/Unregister"/>
+    </div>
+</form>
+
+<script src="registration.js"></script>
+
+{% endblock %}

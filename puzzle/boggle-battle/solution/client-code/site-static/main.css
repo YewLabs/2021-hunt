@@ -1,0 +1,233 @@
+html {
+  height: 90%;
+}
+
+body {
+  background-color: white;
+  font-family: "Metropolis", sans-serif;
+  margin: 0;
+  min-width: 1200px;
+  padding: 0;
+  height: 100%;
+}
+
+button, input[type="submit"] {
+  font-family: "Metropolis", sans-serif;
+  padding: 4px 12px;
+}
+
+h1, h2 {
+  color: black;
+  text-align: center;
+}
+
+h4 {
+  font-size: 16.5px;
+}
+
+a {
+  color: #034682;
+}
+a:hover {
+  color: #3282C8;
+}
+
+.info, .puzzle, .puzzle-header, .solution-header {
+  background-color: #fffffff0;
+  padding: 20px 30px;
+  width: 1000px;
+  margin: 10px auto;
+}
+
+.puzzle {
+  min-height: 250px;
+}
+
+.puzzle-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 5px;
+  border-bottom: 1px solid #80808080;
+}
+
+table:not(.grid) tr:last-child td {
+  border-bottom: 0;
+}
+table:not(.grid) tr:last-child th {
+  border-bottom: 0;
+}
+
+.author-note {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 20px 0px;
+  background-color: #f5f5dcf0;
+}
+
+.answer {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.answer.spoiler {
+  display: inline-block;
+  min-width: 200px;
+}
+
+.spoiler:not(:hover) {
+  background-color: currentColor;
+}
+
+.flavor {
+  font-style: italic;
+}
+
+pre, code, tt, .monospace {
+  font-family: 'Source Code Pro', monospace;
+}
+
+.fourthwall {
+  width: 80%;
+  border: dashed 2px blue;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: white;
+}
+
+.projdev {
+  width: 80%;
+  border: dashed 2px purple;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: white;
+}
+
+.grid-copy-icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("https://www.gstatic.com/images/icons/material/system/1x/content_copy_black_18dp.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 30%;
+  position: absolute;
+  padding: 5px;
+  border: solid 1px grey;
+  display: inline;
+}
+
+.grid-copy-icon:hover, .grid-copy-icon:focus {
+  opacity: 80%;
+}
+
+.blanks {
+  white-space: pre;
+  font-size: 150%;
+}
+.blanks .boxed {
+  display: inline-block;
+  padding: 2px;
+  border: 1px solid black;
+}
+
+iframe, audio {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+/* Tooltip container */
+.mhtooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.mhtooltip .mhtooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+  font-size: 20px;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.mhtooltip:hover .mhtooltiptext {
+  visibility: visible;
+}
+
+.meta {
+  font-weight: bold;
+}
+
+.content {
+  margin: 0;
+  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  min-height: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.round-name-header, .puzzle-title-header {
+  font-size: 40px;
+  color: white;
+  text-shadow:
+    0px 0px 10px black,
+    2px 2px 10px black,
+    -2px 2px 10px black,
+    2px -2px 10px black,
+    -2px -2px 10px black;
+}
+
+.round-table-container {
+  padding: 30px;
+  font-size: 1.2rem;
+}
+
+.round-table-container td {
+  padding: 8px 24px;
+}
+
+.submit-form input, .submit-form select {
+  height: 30px;
+  box-sizing: border-box;
+}
+
+.submit-response {
+  font-weight: bold;
+  color: red;
+  padding: 1em;
+}
+
+.copy-only {
+  display: none;
+}
+
+#clipboard-button {
+  border-radius: 1em;
+  bottom: 1.5em;
+  cursor: pointer;
+  font-size: 1em;
+  height: 2em;
+  padding: 0 0.8em;
+  position: fixed;
+  right: 1.5em;
+}

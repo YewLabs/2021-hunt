@@ -1,0 +1,146 @@
+.ba-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.ba-slider img {
+    width: 100%;
+    display:block;
+    max-width:none;
+}
+
+.ba-slider .resize {
+    position: absolute;
+    float: right;
+    top:0;
+    left:25%;
+    width:25%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.ba-resizable-former {
+  float: right;
+  height: 616px;
+  width: 50%;
+  overflow: hidden;
+  position: inherit;
+  top: 0;
+}
+
+.ba-slider .handle { /* Thin line seperator */
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  margin-left:-2px;
+
+  background: rgba(0,0,0,.5);
+  cursor: ew-resize;
+}
+
+.ba-slider .handle:after {  /* Big orange knob  */
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+
+    content:'\21d4';
+    color:white;
+    font-weight:bold;
+    font-size:36px;
+    text-align:center;
+    line-height:64px;
+
+    background: #ffb800; /* @orange */
+    border:1px solid #e6a600; /* darken(@orange, 5%) */
+    border-radius: 50%;
+    transition:all 0.3s ease;
+    box-shadow:
+      0 2px 6px rgba(0,0,0,.3),
+      inset 0 2px 0 rgba(255,255,255,.5),
+      inset 0 60px 50px -30px #ffd466; /* lighten(@orange, 20%)*/
+}
+
+.ba-slider .handle.ba-draggable:after {
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  line-height:34px;
+  font-size:20px;
+}
+
+
+.cb-slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.cb-slider img {
+    width: 100%;
+    display:block;
+    max-width:none;
+}
+
+.cb-slider .resize {
+    position: absolute;
+    float: left;
+    top:0;
+    left:50%;
+    width:25%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.cb-resizable-former {
+  float: left;
+  height: 616px;
+  width: 50%;
+  overflow: hidden;
+  position: inherit;
+  top: 0;
+}
+
+.cb-slider .handle { /* Thin line seperator */
+  position:absolute;
+  left:50%;
+  top:0;
+  bottom:0;
+  margin-left:-2px;
+
+  background: rgba(0,0,0,.5);
+  cursor: ew-resize;
+}
+
+.cb-slider .handle:after {  /* Big orange knob  */
+    position: absolute;
+    top: 50%;
+    width: 64px;
+    height: 64px;
+    margin: -32px 0 0 -32px;
+
+    content:'\21d4';
+    color:white;
+    font-weight:bold;
+    font-size:36px;
+    text-align:center;
+    line-height:64px;
+
+    background: #ffb800; /* @orange */
+    border:1px solid #e6a600; /* darken(@orange, 5%) */
+    border-radius: 50%;
+    transition:all 0.3s ease;
+    box-shadow:
+      0 2px 6px rgba(0,0,0,.3),
+      inset 0 2px 0 rgba(255,255,255,.5),
+      inset 0 60px 50px -30px #ffd466; /* lighten(@orange, 20%)*/
+}
+
+.cb-slider .handle.cb-draggable:after {
+    width: 32px;
+    height: 32px;
+    margin: -16px 0 0 -16px;
+    line-height:34px;
+    font-size:20px;
+}

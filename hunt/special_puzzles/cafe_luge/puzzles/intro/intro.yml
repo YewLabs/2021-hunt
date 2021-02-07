@@ -1,0 +1,89 @@
+name: intro
+difficulty: 5/10
+coolness: 6/10
+time: 4:00
+
+
+questions:
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "I just left something out!!!!"
+
+        - answer: omit
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "I just sent something out!!!!!!!!"
+
+        - answer: transmit
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "I just allowed something!!!!!!"
+
+        - answer: permit
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "I just saw a Muppet frog!!!!!!"
+
+        - answer: kermit
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "What a conspiracy theorist might do to a bad guy's plans? (4)"
+
+        - answer: lily
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "Bird of prey that's probably too heavy to fly? (5)"
+
+        - answer: brent
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "Essential resource for Hunt construction? (4)"
+
+        - answer: neil
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "Idiot (6)"
+
+        - answer: wesley
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "Fake digit picture"
+
+        - image: intro/lennart1.png
+
+        - answer: footpath
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "Biting insect or chimera-themed superhero"
+
+        - image: intro/lennart2.png
+
+        - answer: aromatic
+
+    - question:
+        - text: "What is the solution to this clue? (You may find a puzzle in the Yew Labs round helpful!)"
+
+        - text: "Have feelings for chocolate substitute? Leave!"
+
+        - image: intro/lennart3.png
+
+        - answer: october

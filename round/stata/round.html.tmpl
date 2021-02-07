@@ -1,0 +1,31 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block puzzle_extra_header %}
+<th></th><th></th>
+{% endblock %}
+
+{% block stylesheets %}
+<style>
+  body {
+    background-color: #DCBC8A;
+  }
+
+  .content {
+    background-image: url({% static 'art/statabg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    margin-top: 300px;
+    background: none;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+  }
+</style>
+{% endblock %}
+

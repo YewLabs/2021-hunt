@@ -1,0 +1,921 @@
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	border: 3px solid black;
+}
+th, td {
+	border: 1px solid black;
+	padding: 4px;
+	text-align: center;
+}
+</style>
+
+<p>We start by identifying all the images and filling in the blanks.
+        As hinted by the title, these are all various patterns in Conway's Game of Life.
+        Most of them are considered common patterns and listed on, e.g.
+        <a href="https://catagolue.hatsya.com/statistics">bottom of the Catagolue</a>.
+        (The one exception is the rare
+        <a href="https://conwaylife.com/wiki/Snake_with_feather">snake with feather</a>.)
+        </p>
+<center><table>
+<tr>
+<th>Image</th>
+<th>Word</th>
+<th>Index</th>
+<th>Letter</th>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/pond.png"><img src="{{sroot}}word-images-shrunk/pond.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Pond">Pond</a>
+</td>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/mango.png"><img src="{{sroot}}word-images-shrunk/mango.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Mango">Mango</a>
+</td>
+<td>5</td>
+<td>O</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/loaf.png"><img src="{{sroot}}word-images-shrunk/loaf.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Loaf">Loaf</a>
+</td>
+<td>4</td>
+<td>F</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/scorpion.png"><img src="{{sroot}}word-images-shrunk/scorpion.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Scorpion">Scorpion</a>
+</td>
+<td>3</td>
+<td>O</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/tub.png"><img src="{{sroot}}word-images-shrunk/tub.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Tub">Tub</a>
+</td>
+<td>2</td>
+<td>U</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/eater1.png"><img src="{{sroot}}word-images-shrunk/eater1.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Eater_1">Eater 1</a>
+</td>
+<td>5</td>
+<td>R</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/longboat.png"><img src="{{sroot}}word-images-shrunk/longboat.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Long_boat">Long boat</a>
+</td>
+<td>4</td>
+<td>G</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/block.png"><img src="{{sroot}}word-images-shrunk/block.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Block">Block</a>
+</td>
+<td>2</td>
+<td>L</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/snakewithfeather.png"><img src="{{sroot}}word-images-shrunk/snakewithfeather.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Snake_with_feather">Snake with feather</a>
+</td>
+<td>7</td>
+<td>I</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/toad.png"><img src="{{sroot}}word-images-shrunk/toad.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Toad">Toad</a>
+</td>
+<td>4</td>
+<td>D</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/beehive.png"><img src="{{sroot}}word-images-shrunk/beehive.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Beehive">Beehive</a>
+</td>
+<td>2</td>
+<td>E</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/pulsar.png"><img src="{{sroot}}word-images-shrunk/pulsar.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Pulsar">Pulsar</a>
+</td>
+<td>6</td>
+<td>R</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/shillelagh.png"><img src="{{sroot}}word-images-shrunk/shillelagh.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Shillelagh">Shillelagh</a>
+</td>
+<td>1</td>
+<td>S</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/halfbakery.png"><img src="{{sroot}}word-images-shrunk/halfbakery.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Half-bakery">Half-bakery</a>
+</td>
+<td>10</td>
+<td>Y</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/blinker.png"><img src="{{sroot}}word-images-shrunk/blinker.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Blinker">Blinker</a>
+</td>
+<td>4</td>
+<td>N</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/boat.png"><img src="{{sroot}}word-images-shrunk/boat.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Boat">Boat</a>
+</td>
+<td>4</td>
+<td>T</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/ship.png"><img src="{{sroot}}word-images-shrunk/ship.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Ship">Ship</a>
+</td>
+<td>2</td>
+<td>H</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/shiptie.png"><img src="{{sroot}}word-images-shrunk/shiptie.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Ship-tie">Ship-tie</a>
+</td>
+<td>7</td>
+<td>E</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/mooseantlers.png"><img src="{{sroot}}word-images-shrunk/mooseantlers.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Moose_antlers">Moose antlers</a>
+</td>
+<td>4</td>
+<td>S</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/paperclip.png"><img src="{{sroot}}word-images-shrunk/paperclip.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Paperclip">Paperclip</a>
+</td>
+<td>8</td>
+<td>I</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}word-images-shrunk/integralsign.png"><img src="{{sroot}}word-images-shrunk/integralsign.png" height="40" /></a></td>
+<td>
+<a href="https://conwaylife.com/wiki/Integral_sign">Integral sign</a>
+</td>
+<td>9</td>
+<td>S</td>
+</tr>
+</table></center>
+<p>This gives us the cluephrase <b>DO FOUR GLIDER SYNTHESIS</b>.
+        This means we should fill in the red squares in the images at the bottom to get gliders
+        and see what hapens when they collide.
+        The two corner cells of the glider are filled in, and as it turns out,
+        there is exactly one way to orient the glider so that those corner squares
+        match up and the glider flies towards the center of the pattern.</p>
+<p>Upon running the simulator one finds that each collision
+        generates an ash pattern, and (as hinted again by the title),
+        two outgoing gliders or spaceships escaping from the debris.
+        The directions in which they escape give semaphore letters.
+        The images at the bottom are sorted in alphabetical order.</p>
+<center><table>
+<tr>
+<th>Starting picture</th>
+<th>Resulting ash</th>
+<th>Escaping gliders</th>
+<th>Semaphore letter</th>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed01.png"><img src="{{sroot}}seed-images/seed01.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash01.png"><img src="{{sroot}}ash-images/ash01.png" height="40" /></a></td>
+<td>NE and S</td>
+<td>E</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed02.png"><img src="{{sroot}}seed-images/seed02.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash02.png"><img src="{{sroot}}ash-images/ash02.png" height="40" /></a></td>
+<td>NE and S</td>
+<td>E</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed03.png"><img src="{{sroot}}seed-images/seed03.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash03.png"><img src="{{sroot}}ash-images/ash03.png" height="40" /></a></td>
+<td>NE and S</td>
+<td>E</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed04.png"><img src="{{sroot}}seed-images/seed04.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash04.png"><img src="{{sroot}}ash-images/ash04.png" height="40" /></a></td>
+<td>NW and SW</td>
+<td>I</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed05.png"><img src="{{sroot}}seed-images/seed05.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash05.png"><img src="{{sroot}}ash-images/ash05.png" height="40" /></a></td>
+<td>NW and SW</td>
+<td>I</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed06.png"><img src="{{sroot}}seed-images/seed06.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash06.png"><img src="{{sroot}}ash-images/ash06.png" height="40" /></a></td>
+<td>NW and SW</td>
+<td>I</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed07.png"><img src="{{sroot}}seed-images/seed07.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash07.png"><img src="{{sroot}}ash-images/ash07.png" height="40" /></a></td>
+<td>NE and SW</td>
+<td>L</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed08.png"><img src="{{sroot}}seed-images/seed08.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash08.png"><img src="{{sroot}}ash-images/ash08.png" height="40" /></a></td>
+<td>NE and SW</td>
+<td>L</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed09.png"><img src="{{sroot}}seed-images/seed09.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash09.png"><img src="{{sroot}}ash-images/ash09.png" height="40" /></a></td>
+<td>NE and SW</td>
+<td>L</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed10.png"><img src="{{sroot}}seed-images/seed10.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash10.png"><img src="{{sroot}}ash-images/ash10.png" height="40" /></a></td>
+<td>SE and SW</td>
+<td>N</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed11.png"><img src="{{sroot}}seed-images/seed11.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash11.png"><img src="{{sroot}}ash-images/ash11.png" height="40" /></a></td>
+<td>SE and W</td>
+<td>S</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed12.png"><img src="{{sroot}}seed-images/seed12.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash12.png"><img src="{{sroot}}ash-images/ash12.png" height="40" /></a></td>
+<td>SE and W</td>
+<td>S</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed13.png"><img src="{{sroot}}seed-images/seed13.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash13.png"><img src="{{sroot}}ash-images/ash13.png" height="40" /></a></td>
+<td>N and NW</td>
+<td>T</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed14.png"><img src="{{sroot}}seed-images/seed14.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash14.png"><img src="{{sroot}}ash-images/ash14.png" height="40" /></a></td>
+<td>E and NE</td>
+<td>W</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed15.png"><img src="{{sroot}}seed-images/seed15.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash15.png"><img src="{{sroot}}ash-images/ash15.png" height="40" /></a></td>
+<td>NE and SE</td>
+<td>X</td>
+</tr>
+<tr>
+<td><a href="{{sroot}}seed-images/seed16.png"><img src="{{sroot}}seed-images/seed16.png" height="40" /></a></td>
+<td><a href="{{sroot}}ash-images/ash16.png"><img src="{{sroot}}ash-images/ash16.png" height="40" /></a></td>
+<td>E and NW</td>
+<td>Y</td>
+</tr>
+</table></center>
+<p>The images in the final six-by-six grid are representations of the ashes
+    using the cartoons we identified previously.
+    Pairing the ashes with the corresponding cartoon images yields the following grid:</p>
+<center>
+<table style="display:inline; vertical-align:top; border:none;" class="grid">
+<tr>
+<td style=" height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb3.png"><img width="40" height="40" src="{{sroot}}border-images/imageb3.png" /></a>
+</td>
+<td style="border-bottom: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb4.png"><img width="40" height="40" src="{{sroot}}border-images/imageb4.png" /></a>
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>W</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb1.png"><img width="40" height="40" src="{{sroot}}border-images/imageb1.png" /></a>
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb2.png"><img width="40" height="40" src="{{sroot}}border-images/imageb2.png" /></a>
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>X</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb3.png"><img width="40" height="40" src="{{sroot}}border-images/imageb3.png" /></a>
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>Y</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>N</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb5.png"><img width="40" height="40" src="{{sroot}}border-images/imageb5.png" /></a>
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>Y</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb6.png"><img width="40" height="40" src="{{sroot}}border-images/imageb6.png" /></a>
+</td>
+</tr>
+<tr>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb0.png"><img width="40" height="40" src="{{sroot}}border-images/imageb0.png" /></a>
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb4.png"><img width="40" height="40" src="{{sroot}}border-images/imageb4.png" /></a>
+</td>
+<td style="border-top: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb5.png"><img width="40" height="40" src="{{sroot}}border-images/imageb5.png" /></a>
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+</tr>
+</table>
+</center>
+<p>Using the small images as additional clues for the words,
+    the grid can then be filled as a symmetric word square:</p>
+<center>
+<table style="display:inline; vertical-align:top; border:none;" class="grid">
+<tr>
+<td style=" color: blue; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb3.png"><img width="40" height="40" src="{{sroot}}border-images/imageb3.png" /></a>
+</td>
+<td style="border-bottom: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb4.png"><img width="40" height="40" src="{{sroot}}border-images/imageb4.png" /></a>
+</td>
+<td style="border-bottom: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>F</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>W</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb1.png"><img width="40" height="40" src="{{sroot}}border-images/imageb1.png" /></a>
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb2.png"><img width="40" height="40" src="{{sroot}}border-images/imageb2.png" /></a>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>X</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>R</b>
+</td>
+<td style="border-left: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb3.png"><img width="40" height="40" src="{{sroot}}border-images/imageb3.png" /></a>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>W</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>Y</b>
+</td>
+<td style="border-left: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>X</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style="border-left: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>N</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb5.png"><img width="40" height="40" src="{{sroot}}border-images/imageb5.png" /></a>
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+<b>R</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>Y</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb6.png"><img width="40" height="40" src="{{sroot}}border-images/imageb6.png" /></a>
+</td>
+</tr>
+<tr>
+<td style=" background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb0.png"><img width="40" height="40" src="{{sroot}}border-images/imageb0.png" /></a>
+</td>
+<td style="border-top: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb4.png"><img width="40" height="40" src="{{sroot}}border-images/imageb4.png" /></a>
+</td>
+<td style="border-top: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb5.png"><img width="40" height="40" src="{{sroot}}border-images/imageb5.png" /></a>
+</td>
+<td style="border-top: 3px solid black; color: blue; height:50px; width:40px;">
+</td>
+<td style=" color: blue; height:50px; width:40px;">
+</td>
+</tr>
+</table>
+</center>
+<p>The final step is to run the grid one more step,
+    as indicated by the only piece of unused information, the t+1 in the lower-left corner.
+    So running the grey cells one more generation gives the following grid:</p>
+<center>
+<table style="display:inline; vertical-align:top; border:none;" class="grid">
+<tr>
+<td style=" height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; background-color: #eee; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb3.png"><img width="40" height="40" src="{{sroot}}border-images/imageb3.png" /></a>
+</td>
+<td style="border-bottom: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb4.png"><img width="40" height="40" src="{{sroot}}border-images/imageb4.png" /></a>
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-bottom: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" background-color: yellow; height:50px; width:40px;">
+<b>F</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>W</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb1.png"><img width="40" height="40" src="{{sroot}}border-images/imageb1.png" /></a>
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb2.png"><img width="40" height="40" src="{{sroot}}border-images/imageb2.png" /></a>
+</td>
+<td style=" height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" background-color: yellow; height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>X</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>R</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb3.png"><img width="40" height="40" src="{{sroot}}border-images/imageb3.png" /></a>
+</td>
+<td style=" height:50px; width:40px;">
+<b>W</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" background-color: yellow; height:50px; width:40px;">
+<b>Y</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" background-color: yellow; height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>X</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>I</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>L</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>E</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>N</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style="border-left: 3px solid black; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb5.png"><img width="40" height="40" src="{{sroot}}border-images/imageb5.png" /></a>
+</td>
+</tr>
+<tr>
+<td style="border-right: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style=" background-color: yellow; height:50px; width:40px;">
+<b>R</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>Y</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>T</b>
+</td>
+<td style=" height:50px; width:40px;">
+<b>S</b>
+</td>
+<td style="border-left: 3px solid black; background-color: #eee; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb6.png"><img width="40" height="40" src="{{sroot}}border-images/imageb6.png" /></a>
+</td>
+</tr>
+<tr>
+<td style=" height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb0.png"><img width="40" height="40" src="{{sroot}}border-images/imageb0.png" /></a>
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; background-color: #eee; height:50px; width:40px;">
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb4.png"><img width="40" height="40" src="{{sroot}}border-images/imageb4.png" /></a>
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+<a href="{{sroot}}border-images/imageb5.png"><img width="40" height="40" src="{{sroot}}border-images/imageb5.png" /></a>
+</td>
+<td style="border-top: 3px solid black; height:50px; width:40px;">
+</td>
+<td style=" height:50px; width:40px;">
+</td>
+</tr>
+</table>
+</center>
+<p>The letters in the living cells inside the grid now spell <span class="answer">FLYER</span>,
+    the final answer.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p><a href="http://devjoe.appspot.com/huntindex/keyword/lifecellularautomaton">Conway's Game of Life</a>
+occurs reasonably often on Mystery Hunt puzzles,
+so when I set out to write a puzzle using it,
+I was insistent on using a puzzle that would
+take advantage of the <a href="https://catagolue.appspot.com/census/b3s23">Catogolue</a>.
+As far as I was concerned,
+a mapping of various still lifes to canonical names
+(which could then be represented by images) was a puzzle gold mine.</p>
+<p>The idea I liked the most was having escaping ships
+signal semaphore letters, and that was the only part of the puzzle
+that was more or less unchanged through the many different versions of the puzzle.</p>
+<p>It was a challenge to find syntheses that
+would produce some of the rarer shapes.
+I left my gaming PC running for a few days
+running Life simulations with various inputs
+to try and see which ones would yield exactly two spaceships.
+It turns out that it's reasonable to get two diagonal gliders,
+it's harder but doable to get one orthogonal and one diagonal glider,
+but obtaining two orthogonal gliders was nigh impossible.
+This led to a lot of various awkward extraction mechanisms
+which were scrapped one after another until
+we settled on the word square.</p>
+<p>Still-lifes that I managed to synthesize but couldn't squeeze into
+the puzzle included <code>cis-shillelagh</code>, <code>trans-boat with tail</code>,
+<code>boat tie ship</code>, <code>hat</code>, <code>tub with tail</code>, <code>big S</code>,
+<code>bi-pond</code>, <code>very long ship</code>.</p>
+<p>The suggestion for the title "Escape from Life" is due to Patrick Yang
+and Jon Schneider (the original title for the proposal was "Synthesis").</p>
+</div>

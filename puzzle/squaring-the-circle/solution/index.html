@@ -1,0 +1,87 @@
+<style>
+    .clue-table tr td:nth-child(2)
+    {
+        font-family:'Courier New', Courier, monospace
+    }
+
+    .ctrimg {
+        width: 90%;
+        height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+</style>
+
+<p>Solvers are presented with a diagram containing circles and straight lines, as well as two lists of clues. As one might expect, the clues in the \ list correspond to the short diagonal lines, and the clues in the o list correspond to the circles. </p>
+
+<p>The \ clues are relatively straightforward, and are sorted in alphabetical order by clued word to aid in finding them, especially since some of the words are unusual or uncommon.</p>
+
+<table class="clue-table">
+    <tr><th>\ Clue</th><th>Answer</th></tr>
+    <tr><td>"c ya" in Chartres</td><td>ADIEU</td></tr>
+    <tr><td>Unfair treatment of someone for how old they are (alt. spelling)</td><td>AGISM</td></tr>
+    <tr><td>These ___ the droids you're looking for</td><td>ARENT</td></tr>
+    <tr><td>Lets a fishing line fly</td><td>CASTS</td></tr>
+    <tr><td>Old English peasant or low-ranking freeman (alt. spelling)</td><td>CEORL</td></tr>
+    <tr><td>Number 20 rolls in D&D, briefly</td><td>CRITS</td></tr>
+    <tr><td>Got rid of moisture</td><td>DRIED</td></tr>
+    <tr><td>A variety of duck with a colorful head</td><td>EIDER</td></tr>
+    <tr><td>X-CO-O-X' compound</td><td>ESTER</td></tr>
+    <tr><td>Indispensable parts of a golfer's set</td><td>IRONS</td></tr>
+    <tr><td>Scout's badge type</td><td>MERIT</td></tr>
+    <tr><td>Tailed amphibians</td><td>NEWTS</td></tr>
+    <tr><td>On the leaves of this shrub native to New Zealand, there are often small translucent dots</td><td>NGAIO</td></tr>
+    <tr><td>Simple dish containing mostly raw vegetables</td><td>SALAD</td></tr>
+    <tr><td>Theatrical moment, to an Italian</td><td>SCENA</td></tr>
+    <tr><td>A noise made when eating ramen</td><td>SLURP</td></tr>
+    <tr><td>Ribbon or flap used to hold something together</td><td>STRAP</td></tr>
+    <tr><td>Type of steak</td><td>TBONE</td></tr>
+</table>
+
+<p>The o clues are presented differently; every clue contains 12 words, which aligns with the 12 spaces on each of the large circles in the provided diagram. Answers start in any of the 12 spaces and are written clockwise or counterclockwise, and the clue word ordering reflects this: the first word in the clues as written corresponds to the letter that belongs at the top of the circle. If the word is to be entered clockwise, then the clue reads forwards; in contrast, if the word is to be entered counter-clockwise, then the clue reads backwards. This is to help with assembling the grid.</p>
+
+<p>Again, the clues are sorted in alphabetical order by clued word. </p>
+
+<table class="clue-table">
+    <tr><th>o Clue</th><th>Answer</th></tr>
+    <tr><td>Title and name of officer who led the Antarctic expedition "Terra Nova"</td><td>CAPTAINSCOTT</td></tr>
+    <tr><td>Like citron on one hand or like Spanish cedar on the other</td><td>CEDRELACEOUS</td></tr>
+    <tr><td>Providing some form of spoken accompaniment during a sporting event or spectacle</td><td>COMMENTATING</td></tr>
+    <tr><td>Not sufficiently restrained, or archaically, not in a state of good health</td><td>DISTEMPERATE</td></tr>
+    <tr><td>Delegations of responsibility, or more generally, commitments to another person in confidence</td><td>ENTRUSTMENTS</td></tr>
+    <tr><td>Term describing someone who is locked in a prison or detention facility</td><td>INCARCERATED</td></tr>
+    <tr><td>In uncooperative fashion or with disdain for instructions from authority (archaic term)</td><td>INOBEDIENTLY</td></tr>
+    <tr><td>Violent rebellions from unlawful combatants, often against an existing government or power</td><td>INSURGENCIES</td></tr>
+    <tr><td>Receptacles that fly fishermen might use to keep or breed fly larvae</td><td>MAGGOTORIUMS</td></tr>
+    <tr><td>Went through the process of enrolling in or entering college or university</td><td>MATRICULATED</td></tr>
+    <tr><td>Describing a marketing strategy that makes use of different streams or pathways</td><td>MULTICHANNEL</td></tr>
+    <tr><td>Makes something a little bit stranger than what was expected (British spelling)</td><td>PECULIARISES</td></tr>
+    <tr><td>A member of the seventh most high order in Christian angelic hierarchy</td><td>PRINCIPALITY</td></tr>
+    <tr><td>Those who perform various acts to appease or avoid angering the gods</td><td>PROPITIATORS</td></tr>
+    <tr><td>Of countries or governments, having a tendency to return territory to another</td><td>RETROCESSIVE</td></tr>
+    <tr><td>They're used in coastal areas as parts of an early warning system</td><td>STORMSIGNALS</td></tr>
+    <tr><td>Iris Murdoch novel in which the protagonist wants to elope with Mary</td><td>THESEATHESEA</td></tr>
+    <tr><td>Contested term for members of small cultural groups, often from developing nations</td><td>TRIBESPEOPLE</td></tr>
+    </table>
+
+<p>Here is an image of the completed grid. Notice that it forms a complete loop, as implied by the tab provided in the full-size version of the grid. At this point, solvers may also notice that some of the words in the o clues are coloured red or green. Since they match up to specific letters in the grid, we may choose to mark these or colour them in, as they will become important later on. There are three such letters of each colour.</p>
+
+<img src="{{sroot}}squaringthecircle-solution-p1.png" class="ctrimg" alt="Filled out grid of circles and slanted lines, stretching horizontally"></img>
+
+<p>Now that the grid is filled, we can make use of another observation: there are instructions in the first letters of the clues. The first letters of the \ clues read, “CUT LONG AXIS TO START”. This first cut, straight down the center of the ring formed by our grid, leaves us with two loops. The first letters of the o clues also contain a message, which reads, “THEN GLUE RED TO GREEN”. Assuming you have not filled out your grid on a translucent surface, the only way to do this while aligning the coloured letters is to glue the two rings at right angles to each other.</p>
+
+<p>What should we do with the resulting shape? After considering the title and flavortext, and perhaps searching for things one can do with two paper rings, solvers may come across a mathematical curiosity: two rings attached at right angles, if cut again down the central axis of each ring, form a square! There are many places this topological trick can be found online; here is one video that shows the result: <a href="https://www.youtube.com/watch?v=-u-O_2Hz82I">https://www.youtube.com/watch?v=-u-O_2Hz82I</a> (approx. 2:13 - 3:11). Using “straightedge and compass” (the \ and o clues, respectively), and “cutting corners” (as alluded to in the flavourtext), we were able to square the circle!</p>
+
+<p>The original problem of <a href="https://en.wikipedia.org/wiki/Squaring_the_circle">squaring the circle</a>, of course, was not about cutting shapes out of paper, but about constructing a square with area equal to that of a given circle. The extraction method alludes to this part of the problem: to finish the puzzle, we should take the letters on the inside edge of the square which correspond to the intersections of the square with a circle of equal area. The final answer, <span class="answer">STUDENTS</span>, can be read clockwise around the loop.</p>
+
+<img src="{{sroot}}squaringthecircle-solution-p2.png" class="ctrimg" alt="A large square grid produced after cutting the two perpendicular paper rings, with a circle superimposed on it. The circle has the same area as the square and intersects at the letters spelling out STUDENTS, going clockwise."></img>
+
+<p>Solvers who prefer not to make a physical copy of this puzzle may make use of the fact that the intersections ought to occur almost exactly ¼ of the way along the edges of the square from each vertex. With this knowledge, it may in fact be easier to perform this extraction in a spreadsheet, so as long as you keep careful track of which pieces end up where, especially since you won’t have to do with remembering which letters you cut in half along the way!</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>I’m a big fan of puzzles that make use of fun geometry or topology. Early on, I originally wanted to make a puzzle inspired by a Mobius strip, but after some brainstorming, ended up with essentially the same idea as <a href="http://web.mit.edu/puzzle/www/2012/puzzles/into_the_woodstock/strip_mind/">this 2012 Mystery Hunt puzzle</a>. Thankfully, the universe is full of mathematical curiosities; this idea emerged some time later, and I think it’s also a pretty amusing topological treat!</p>
+
+    <p>Creating the grid involved a lot of faffing with custom lights in <a href="https://www.quinapalus.com/qxw.html">Qxw</a>, and for a while, the construction was looking a little hopeless. I was relieved when this finally came together; if you can believe it, these were some of the least dubious words I could assemble this with...</p>
+</div>

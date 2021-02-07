@@ -1,0 +1,33 @@
+name: math-easy
+difficulty: 3/10
+coolness: 2/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "What is the area (in square inches) of a triangle with sides of length 13, 5, and 12 inches?"
+
+        - answer: 30
+        - answer: thirty
+
+    - question:
+        - text: "How many different ways can you choose 3 (identical) representatives from a set of 7 people?"
+
+        - answer: 35
+        - answer: thirty-five
+
+    - question:
+        - text: "If 7 people are running a race, and (non-identical) medals are awarded to the top three finishers, how many possible ways to award the medals are there?"
+
+        - answer: 210
+
+    - question:
+        - text: "How many Platonic solids are there?"
+
+        - answer: 5
+        - answer: five
+
+    - question:
+        - text: "What is the name of the Platonic solid with twelve pentagonal faces?"
+
+        - answer: dodecahedron

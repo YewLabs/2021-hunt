@@ -1,0 +1,329 @@
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	border: 3px solid black;
+}
+th, td {
+	border: 1px solid black;
+	padding: 4px;
+	text-align: center;
+}
+</style>
+
+
+<p>The first step is to solve the math problems in each of the four sections
+(except for the geometry section, see below).
+This is easier to do than it might seem,
+because we fully expect solvers to abuse computer algebra systems,
+brute-force programming, Internet searching,
+<a href="https://cjquines.com/files/engineering.pdf">engineer's induction</a>,
+geometry-plotting software, and so on,
+to figure out the correct answers without necessarily having a complete proof.
+Nonetheless, for entertainment value,
+you can check <a href="{{sroot}}math-solutions.pdf">this PDF file</a>
+(or its <a href="{{sroot}}math-solutions.tex">TeX source</a>)
+for complete, mathematically rigorous solutions to the posed problems.</p>
+
+<p>Each of the &ldquo;proposing&rdquo; countries for the fake math problems
+is one of the hosts of a recent International Math Olympiad
+between the years 2000 and 2020, each exactly once.
+These countries are listed on the first page of the puzzle
+in chronological order, as an additional hint.
+The main gimmick for the problem is that each of the four categories
+gives a way to transform the IMO corresponding to that host
+to one of the other hosts:
+</p>
+<ul>
+	<li>For the algebra section,
+		inputting the number of the IMO (e.g. 43rd IMO)
+		into the answer to the problem (which is a function in x)
+		yields a different number which also the number of an IMO.</li>
+	<li>For the combinatorics section,
+		inputting the year of the IMO (e.g. 2003)
+		into the answer to the problem (which is a function in n)
+		yields a different number which also the year of an IMO.</li>
+	<li>For the geometry section,
+		the problem statement asks to prove three points are collinear,
+		and the names of those points correspond to the given host country.
+		However, each problem has another hidden triple of collinear points
+		which correspond to the names of a different host country.</li>
+	<li>For the number theory section,
+		taking the city corresponding to that IMO as a latitude-longitude pair
+		and adding it to the answer to the problem (which is an ordered pair)
+		gives the latitude-longitude pair which corresponds to the
+		city of a different host country.</li>
+</ul>
+<p>These are in fact the first four columns of the
+<a href="https://www.imo-official.org/organizers.aspx">IMO timeline</a>.
+This is subtly hinted both by &ldquo;timeline ... official IMO&rdquo; in the flavor text
+as well as the first page (in which the bold portions are these four parameters in order).
+</p>
+
+<center>
+
+<table>
+<tr>
+	<th>Problem</th>
+	<th>Proposer</th>
+	<th>Host Year (Input)</th>
+	<th>Input Data</th>
+	<th>Answer to Problem</th>
+	<th>Output Data</th>
+	<th>Host Year (Output)</th>
+</tr>
+<tr><td>A1</td>
+	<td>UNK</td>
+	<td>2002</td>
+	<td>43</td>
+	<td>(4<i>x</i>+2)/3</td>
+	<td>58</td>
+	<td>2017</td></tr>
+<tr><td>A2</td>
+	<td>HEL</td>
+	<td>2004</td>
+	<td>45</td>
+	<td>&radic;(80<i>x</i>)</td>
+	<td>60</td>
+	<td>2019</td>
+	</tr>
+<tr><td>A3</td>
+	<td>UNK</td>
+	<td>2019</td>
+	<td>60</td>
+	<td>3&phi;(<i>x</i>)&minus;1</td>
+	<td>47</td>
+	<td>2006</td>
+	</tr>
+<tr><td>A4</td>
+	<td>ESP</td>
+	<td>2008</td>
+	<td>49</td>
+	<td><i>x</i> + &radic;<i>x</i></td>
+	<td>56</td>
+	<td>2015</td>
+	</tr>
+<tr><td>A5</td>
+	<td>THA</td>
+	<td>2015</td>
+	<td>56</td>
+	<td>&lceil;8<i>x</i>/&pi;<sup>2</sup>&rceil;</td>
+	<td>46</td>
+	<td>2005</td>
+	</tr>
+<tr><td>A6</td>
+	<td>VNM</td>
+	<td>2007</td>
+	<td>48</td>
+	<td>(9<sup><i>x</i>/24</sup>+1)/2</td>
+	<td>41</td>
+	<td>2000</td>
+	</tr>
+<tr><td>C1</td>
+	<td>KAZ</td>
+	<td>2010</td>
+	<td>2010</td>
+	<td><i>n</i> + s<sub>2</sub>(<i>n</i>)</td>
+	<td>2018</td>
+	<td>2018</td>
+	</tr>
+<tr><td>C2</td>
+	<td>NLD</td>
+	<td>2011</td>
+	<td>2011</td>
+	<td>2&lceil;<i>n</i>/2&rceil;</td>
+	<td>2012</td>
+	<td>2012</td>
+	</tr>
+<tr><td>C3</td>
+	<td>ARG</td>
+	<td>2012</td>
+	<td>2012</td>
+	<td>(<i>n</i>+2014) / gcd(<i>n</i>,2014)</td>
+	<td>2013</td>
+	<td>2013</td>
+	</tr>
+<tr><td>C4</td>
+	<td>JPN</td>
+	<td>2003</td>
+	<td>2003</td>
+	<td><i>n</i>+&lceil;log<sub>2</sub>(<i>n</i>)&rceil;</td>
+	<td>2014</td>
+	<td>2014</td>
+	</tr>
+<tr><td>C5</td>
+	<td>SAF</td>
+	<td>2014</td>
+	<td>2014</td>
+	<td><i>n</i>+6 for even <i>n</i> &gt; 4</td>
+	<td>2020</td>
+	<td>2020</td>
+	</tr>
+<tr><td>C6</td>
+	<td>KOR</td>
+	<td>2000</td>
+	<td>2000</td>
+	<td><i>n</i>+1 for <i>n</i> &gt; 2</td>
+	<td>2001</td>
+	<td>2001</td>
+	</tr>
+<tr><td>G1</td>
+	<td>USA</td>
+	<td>2001</td>
+	<td>USA</td>
+	<td>n/a</td>
+	<td>UNK</td>
+	<td>2002</td>
+	</tr>
+<tr><td>G2</td>
+	<td>ROU</td>
+	<td>2018</td>
+	<td>ROU</td>
+	<td>n/a</td>
+	<td>GER</td>
+	<td>2009</td>
+	</tr>
+<tr><td>G3</td>
+	<td>HKG</td>
+	<td>2016</td>
+	<td>HKG</td>
+	<td>n/a</td>
+	<td>HEL</td>
+	<td>2004</td>
+	</tr>
+<tr><td>G4</td>
+	<td>RUS</td>
+	<td>2020</td>
+	<td>RUS</td>
+	<td>n/a</td>
+	<td>ESP</td>
+	<td>2008</td>
+	</tr>
+<tr><td>G5</td>
+	<td>MEX</td>
+	<td>2005</td>
+	<td>MEX</td>
+	<td>n/a</td>
+	<td>VNM</td>
+	<td>2007</td>
+	</tr>
+<tr><td>NT1</td>
+	<td>BRA</td>
+	<td>2017</td>
+	<td>Rio de Janeiro (&minus;22.91, &minus;43.20)</td>
+	<td>(+74, +115)</td>
+	<td>Astana (+51.17, +71.43)</td>
+	<td>2010</td>
+	</tr>
+<tr><td>NT2</td>
+	<td>GER</td>
+	<td>2009</td>
+	<td>Bremen (+53.08, +8.8)</td>
+	<td>(&minus;31, +105)</td>
+	<td>Hong Kong (+22.3, +114.2)</td>
+	<td>2016</td>
+	</tr>
+<tr><td>NT3</td>
+	<td>SVN</td>
+	<td>2006</td>
+	<td>Ljubljana (+46.06, +14.51)</td>
+	<td>(+6, &minus;10)</td>
+	<td>Amsterdam (+52.34, +4.9)</td>
+	<td>2011</td>
+	</tr>
+<tr><td>NT4</td>
+	<td>COL</td>
+	<td>2013</td>
+	<td>Santa Marta (+11.24, &minus;74.21)</td>
+	<td>(+24, +214)</td>
+	<td>Tokyo (+35.69, +139.69)</td>
+	<td>2003</td>
+	</tr>
+</table>
+</center>
+
+<p>This bijection between the 21 hosts gives a full cycle.
+There is a bit of redundancy in this cycle for error checking:
+the problems of each section are in increasing order
+(e.g. A1 appears before A2, and so on).
+This also gives the starting point of the cycle:
+it should start at G1 and end at C6.</p>
+
+<p>The final insight is that the four letters A, C, G, T correspond to the
+<a href="https://en.wikipedia.org/wiki/DNA_and_RNA_codon_tables#ref_startI">genetic code</a>.
+This is clued by the use of &ldquo;NT&rdquo; instead of the more traditional &ldquo;N&rdquo;,
+as well as more subtly by the presence of &ldquo;stranded&rdquo; in the flavortext.
+One thus arrives at the following sequence.
+Indeed, there are 21 letters, and we can map each group of three
+to an amino acid, which has a canonical letter;
+hence we get seven letters.
+</p>
+
+<center>
+<table>
+	<tr>
+		<td></td>
+		<td>G1</td>
+		<td>&rarr;</td>
+		<td>A1</td>
+		<td>&rarr;</td>
+		<td>NT1</td>
+		<th>GAT [D]</th>
+	</tr>
+	<tr>
+		<td>&rarr;</td>
+		<td>C1</td>
+		<td>&rarr;</td>
+		<td>G2</td>
+		<td>&rarr;</td>
+		<td>NT2</td>
+		<th>CGT [R]</th>
+	</tr>
+	<tr>
+		<td>&rarr;</td>
+		<td>G3</td>
+		<td>&rarr;</td>
+		<td>A2</td>
+		<td>&rarr;</td>
+		<td>A3</td>
+		<th>GAA [E]</th>
+	</tr>
+	<tr>
+		<td>&rarr;</td>
+		<td>NT3</td>
+		<td>&rarr;</td>
+		<td>C2</td>
+		<td>&rarr;</td>
+		<td>C3</td>
+		<th>TCC [S]</th>
+	</tr>
+	<tr>
+		<td>&rarr;</td>
+		<td>NT4</td>
+		<td>&rarr;</td>
+		<td>C4</td>
+		<td>&rarr;</td>
+		<td>C5</td>
+		<th>TCC [S]</th>
+	</tr>
+	<tr>
+		<td>&rarr;</td>
+		<td>G4</td>
+		<td>&rarr;</td>
+		<td>A4</td>
+		<td>&rarr;</td>
+		<td>A5</td>
+		<th>GAA [E]</th>
+	</tr>
+	<tr>
+		<td>&rarr;</td>
+		<td>G5</td>
+		<td>&rarr;</td>
+		<td>A6</td>
+		<td>&rarr;</td>
+		<td>C6</td>
+		<th>GAC [D]</th>
+	</tr>
+</table>
+</center>
+
+<p>Reading the seven letters gives the answer <span class="answer">DRESSED</span>.</p>

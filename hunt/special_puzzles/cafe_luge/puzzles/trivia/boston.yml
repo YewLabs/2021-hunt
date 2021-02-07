@@ -1,0 +1,23 @@
+name: boston
+difficulty: 3/10
+coolness: 9/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What confection is Mike's Pastry most famous for?"
+
+        - answer: cannoli
+
+    - question:
+        - text: "What's the name of the ramen restaurant in Porter Square where the staff will yell \"Perfect!\" if you finish your bowl?"
+
+        - answer: yume wo katare
+
+    - question:
+        - text: "What's the first Red Line station (from the Alewife end) in which the inbound and outboard platforms are inaccessible from each other without leaving the station?"
+
+        - credit: rayhua
+
+        - answer: central
+        - answer: central station

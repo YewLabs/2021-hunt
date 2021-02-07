@@ -1,0 +1,34 @@
+<style>
+.script {
+  font-family: inherit;
+  white-space: pre-wrap;
+}
+
+.script b, .script sub {
+  display: inline-block;
+}
+</style>
+
+<p>We are asked to construct an 8-by-8 word search that satisfies various constraints. The specific constraints vary by puzzle, and come from the following list:</p>
+<ul>
+<li><span style="font-weight: bold;">Letter Set</span>: All the letters in the word search must belong to a given set of ~10 letters.&nbsp;</li>
+<li><span style="font-weight: bold;">Letter Bag</span>: You are given a set of letters with multiplicities summing to 64. The word search must use this distribution of letters.</li>
+<li><span style="font-weight: bold;">No Adjacent Equal Letters</span>: No two equal letters may be horizontally, vertically, or diagonally adjacent.</li>
+<li><span style="font-weight: bold;">No Knight&rsquo;s Move Letters</span>: No two equal letters may be a knight's move away.&nbsp;</li>
+<li><span style="font-weight: bold;">Distinct Rows and Columns: </span>No letter can appear twice in the same row or in the same column.</li>
+<li><span style="font-weight: bold;">Five Letter Words</span>: The word search can only contain five-letter words.</li>
+</ul>
+<p>In addition, each puzzle has a score threshold that solvers must meet, where we get L-3 points for each L-letter word we incorporate in the word search (we get no points for words of length 3 or fewer).&nbsp;</p>
+<p>These word searches can be made in a variety of ways. Here are some tips that were helpful to us:</p>
+<ul>
+<li>Start by making a plan for where to lay out the words to get enough points. It&rsquo;s easiest to plan to place horizontal and vertical words; typically one can place a couple of diagonal words among them afterwards if any gaps are left.</li>
+<li>For Letter Set, you&rsquo;ll likely need to use each letter at least a few times to meet any other constraints about nearby letters. Try to start by placing words with uncommon letters like X or Z, so that you can use the more common letters to fill in more constrained areas of the grid.</li>
+<li>By contrast, for the Letter Bag, you can likely get away with not using uncommon letters in any words, and having them be unused letters at the end. Focus instead of making words that contain the letters you have a lot of, and try to avoid running out of common letters like A and E before most of the grid is filled.</li>
+<li>When dealing with the more local No Adjacent Equal Letters and No Knight&rsquo;s Move Letters constraints, it helps to start in a corner of a grid and slowly fill in letters out from there. Placing words all over the grid at once can make it harder to keep track of all the local constraints.</li>
+<li>For any constraints, it helps to have something like Google Sheets formulas or conditional formatting to help keep track of what letters you have left, and flag any violated constraints. It&rsquo;s easy to miss violations of many of the constraints, and being alerted of it right away can help you to avoid wasting effort.</li>
+</ul>
+<p>Upon submitting a valid word search, solvers receive a list of numbers between -25 and +25, for example:</p>
+<pre class="script">
++4 +5 -1 +14 +10 +19 +11 -2 +12 +18
+</pre>
+<p>This list has the same length as the number of letters in the submitted word search which aren&rsquo;t used by any of our words. Applying these numbers as Caesar shifts to each unused letter in the word search (from left to right, top to bottom) reveals the answer to the puzzle. (If there are more unused letters than letters in the answer, the list will be padded with Xs. If there are fewer unused letters than letters in the answer, then at the end of the list there will be a comment indicating how many more letters in the answer remain).&nbsp;</p>

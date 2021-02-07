@@ -1,0 +1,132 @@
+<style>
+.grid td {
+  border: 1px solid black;
+  min-width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 28px;
+}
+
+.empty {
+  background-color: #000000;
+}
+</style>
+
+<p>This puzzle is a crossword puzzle with several twists.</p>
+<ul>
+    <li><p>First, instead of normal clues, we have a list of GIFs.</p></li>
+    <li><p>Second, instead of the traditional crossword numbering of squares from the top left to the bottom right, the role of numbers is taken by emoji.</p></li>
+    <li><p>Third, the words do not have to go from left to right or from top to bottom. Some words run right to left or bottom to top.</p></li>
+    <li><p>Fourth, the words in the crossword are extremely nonstandard. Each of the words is an onomatopoeia or sound, with conventional but not always universally standardized spelling.</p></li>
+</ul>
+
+<p>We start by identifying an onomatopoeia for each of the GIF clues. This is greatly assisted by the fact that these words are provided in alphabetic order.</p>
+<p>To put the words in the grid, we first have to figure out where in the grid they go. Some of the emojis in the clue list repeat. This can happen if an emoji is the start of both a horizontal and vertical word. It can also happen if the emoji repeats in the grid. In this case, the clue answers for the emoji must be disambiguated between the possible grid placements using the help of intersecting words.</p>
+<p>The left side of the grid is slightly easier to fill because it has more unique emojis than the right; particularly good areas to start placing words are the top middle and bottom left.</p>
+<p>The finished grid looks like this:</p>
+
+<table class="grid">
+<tr><td>H</td><td>H</td><td>G</td><td>A</td><td class="empty"></td><td class="empty"></td><td>Y</td><td>E</td><td>H</td><td class="empty"></td><td>H</td><td>A</td><td>P</td></tr>
+<tr><td>E</td><td>E</td><td>E</td><td>H</td><td>W</td><td class="empty"></td><td>E</td><td>R</td><td>O</td><td class="empty"></td><td>O</td><td>N</td><td>U</td></tr>
+<tr><td>E</td><td>H</td><td>E</td><td>H</td><td>E</td><td>H</td><td>E</td><td class="empty"></td><td>H</td><td>O</td><td>W</td><td>D</td><td>Y</td></tr>
+<tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td>E</td><td>E</td><td>T</td><td class="empty"></td><td>O</td><td>W</td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+<tr><td class="empty"></td><td>O</td><td>H</td><td>N</td><td>O</td><td class="empty"></td><td class="empty"></td><td>S</td><td>H</td><td>O</td><td>O</td><td>T</td><td class="empty"></td></tr>
+<tr><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>N</td><td>H</td><td>O</td><td class="empty"></td><td>K</td><td>S</td><td>T</td></tr>
+<tr><td>D</td><td>O</td><td class="empty"></td><td class="empty"></td><td>O</td><td>O</td><td>O</td><td>O</td><td>H</td><td class="empty"></td><td class="empty"></td><td>S</td><td>U</td></tr>
+<tr><td>I</td><td>O</td><td>M</td><td class="empty"></td><td>W</td><td>H</td><td>O</td><td>O</td><td>O</td><td>O</td><td>O</td><td>S</td><td>H</td></tr>
+<tr><td class="empty"></td><td>W</td><td>H</td><td>E</td><td>E</td><td>W</td><td class="empty"></td><td class="empty"></td><td>H</td><td>I</td><td>S</td><td>S</td><td class="empty"></td></tr>
+<tr><td class="empty"></td><td class="empty"></td><td class="empty"></td><td>E</td><td>E</td><td class="empty"></td><td>A</td><td>P</td><td>O</td><td class="empty"></td><td class="empty"></td><td class="empty"></td><td class="empty"></td></tr>
+<tr><td>M</td><td>M</td><td>M</td><td>M</td><td>O</td><td class="empty"></td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>H</td><td>A</td></tr>
+<tr><td>U</td><td>M</td><td>M</td><td class="empty"></td><td>O</td><td>L</td><td>E</td><td class="empty"></td><td>O</td><td>O</td><td>H</td><td>A</td><td>Y</td></tr>
+<tr><td>H</td><td>H</td><td>O</td><td class="empty"></td><td>O</td><td>O</td><td>M</td><td class="empty"></td><td class="empty"></td><td>D</td><td>U</td><td>H</td><td>T</td></tr>
+</table>
+
+<p>The last GIF in the clue list appears next to the thinking emoji, which is the title of the puzzle and does not appear in the grid, suggesting it's used for extraction. The different segments of this GIF each depict one of the emojis in this grid, along with a letter and a question mark adjacent to that letter. Among the answers for this emoji, the given letter appears exactly once. If we take the adjacent grid cell to this letter, we spell out the answer, <span class="answer">HUMMED</span>.</p>
+
+<table>
+<tr><th>Emoji in GIF</th><th>Shown letter</th><th>Letter in adjacent ? cell</th></tr>
+<tr><td>😸</td><td>S</td><td>H</td></tr>
+<tr><td>🤷</td><td>N</td><td>U</td></tr>
+<tr><td>❤️</td><td>E</td><td>M</td></tr>
+<tr><td>🏊</td><td>H</td><td>M</td></tr>
+<tr><td>🥬</td><td>G</td><td>E</td></tr>
+<tr><td>🐕</td><td>U</td><td>D</td></tr>
+</table>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>That's a lot of O's! I was very proud that one testsolver exclaimed, "this grid is such garbage!"</p>
+<p>This puzzle's design went through several failed extractions which were also garbage, before settling on this one which was not impossible.</p>
+</div>
+
+<p>Full clue answers:</p>
+
+<table>
+<tr><td>👾</td><td>AGHH</td></tr>
+<tr><td>🚳</td><td>AHEM</td></tr>
+<tr><td>👾</td><td>AHH</td></tr>
+<tr><td>🧱</td><td>AHHHHHH</td></tr>
+<tr><td>🤷</td><td>AND</td></tr>
+<tr><td>🧱</td><td>AYT</td></tr>
+<tr><td>🐕</td><td>DO</td></tr>
+<tr><td>🚕</td><td>DOH</td></tr>
+<tr><td>⛰️</td><td>EE</td></tr>
+<tr><td>&#x1f389;</td><td>EH</td></tr>
+<tr><td>💤</td><td>EHEHEHE</td></tr>
+<tr><td>&#x1f433;</td><td>ER</td></tr>
+<tr><td>🥬</td><td>GEE</td></tr>
+<tr><td>💯</td><td>HAH</td></tr>
+<tr><td>🎉</td><td>HEH</td></tr>
+<tr><td>&#x1f9e6;</td><td>HEY</td></tr>
+<tr><td>🐳</td><td>HISS</td></tr>
+<tr><td>❤️</td><td>HM</td></tr>
+<tr><td>✂️</td><td>HMM</td></tr>
+<tr><td>🐕</td><td>HOW</td></tr>
+<tr><td>❤️</td><td>HOWDY</td></tr>
+<tr><td>🌈</td><td>HUM</td></tr>
+<tr><td>🧦</td><td>HUT</td></tr>
+<tr><td>⛲</td><td>IDO</td></tr>
+<tr><td>🍭</td><td>LO</td></tr>
+<tr><td>&#x1f602;</td><td>MEE</td></tr>
+<tr><td>🌷</td><td>MOI</td></tr>
+<tr><td>✨</td><td>MOO</td></tr>
+<tr><td>🦈</td><td>NO</td></tr>
+<tr><td>🌷</td><td>NOO</td></tr>
+<tr><td>🤷</td><td>OH</td></tr>
+<tr><td>&#x1f36d;</td><td>OHH</td></tr>
+<tr><td>⭐</td><td>OHNO</td></tr>
+<tr><td>🤗</td><td>OHNOOOOOO</td></tr>
+<tr><td>🍭</td><td>OHOHOHOHOHOH</td></tr>
+<tr><td>📗</td><td>OI</td></tr>
+<tr><td>🗓️</td><td>OK</td></tr>
+<tr><td>❤️</td><td>OLE</td></tr>
+<tr><td>&#x1f36d;</td><td>OMM</td></tr>
+<tr><td>&#x1f988;</td><td>OMMMM</td></tr>
+<tr><td>🐎</td><td>OOOOH</td></tr>
+<tr><td>⭐</td><td>OOOOW</td></tr>
+<tr><td>🕓</td><td>OPA</td></tr>
+<tr><td>🏆</td><td>ORE</td></tr>
+<tr><td>🌵</td><td>OW</td></tr>
+<tr><td>⭐</td><td>OWO</td></tr>
+<tr><td>🥴</td><td>PAH</td></tr>
+<tr><td>😸</td><td>PH</td></tr>
+<tr><td>😎</td><td>SHOO</td></tr>
+<tr><td>😎</td><td>SHOOT</td></tr>
+<tr><td>💯</td><td>SO</td></tr>
+<tr><td>&#x1f4a4;,🥕</td><td>TEE-HEE</td></tr>
+<tr><td>🥬</td><td>THUD</td></tr>
+<tr><td>🌵</td><td>TSK</td></tr>
+<tr><td>🚕</td><td>TSSSS</td></tr>
+<tr><td>🐕</td><td>UHH</td></tr>
+<tr><td>🔥</td><td>UMM</td></tr>
+<tr><td>🚳</td><td>UNO</td></tr>
+<tr><td>🦈</td><td>US</td></tr>
+<tr><td>🧊</td><td>WEEOOOWEEOOO</td></tr>
+<tr><td>🧊</td><td>WHEEE</td></tr>
+<tr><td>🏊</td><td>WHEEW</td></tr>
+<tr><td>😂</td><td>WHOO</td></tr>
+<tr><td>😸</td><td>WHOOOOOSH</td></tr>
+<tr><td>🤷</td><td>YAHOO</td></tr>
+<tr><td>🎃</td><td>YEET</td></tr>
+<tr><td>🐳</td><td>YUP</td></tr>
+</table>

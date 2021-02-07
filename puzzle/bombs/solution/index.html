@@ -1,0 +1,60 @@
+<style>
+    .e {
+        background-color: gray;
+    }
+
+    .l {
+        background-color: #eb7373;
+    }
+
+    #minegrid td {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        border: 1px solid black;
+    }
+
+    .poster {
+        width: 200px;
+        height: 300px;
+    }
+
+    #movietable td {
+        text-align: center;
+    }
+
+
+</style>
+
+<p>Solvers are presented with a 9&times;8 grid with some cells shaded, as well as nine newspapers outlining events related to bombs. Each newspaper clues a specific movie that has been labelled as a “<a href="https://en.wikipedia.org/wiki/List_of_biggest_box-office_bombs">box office bomb</a>”: the article and newspaper name clue plot points and key names from the movie, and the given images are blurred versions of a poster for the movie. Also hidden in each article are two numbers between one and nine. By taking those numbers as X and Y values, each box office bomb can be plotted on the grid. </p>
+
+<p>As clued by the fact that none of the plotted movies border the shaded squares, and all the movies are bombs, we realize that the grid is a minesweeper grid, with the movies corresponding to individual mines. As in minesweeper, we can indicate in each blank cell of the grid how many mines are next to it. Then, as suggested by the flavourtext, we add up the mine adjacency values for the cells surrounding each mine. Indexing the sum into the corresponding movie’s title, we extract the answer <span class="answer">NET LOSSES</span>.</p>
+
+<table id="minegrid">
+    <tr><td class="e"></td><td>1</td><td>1</td><td>1</td><td class="e"></td><td class="e"></td><td class="e"></td><td>1</td><td class="l">E</td></tr>
+    <tr><td>1</td><td>2</td><td class="l">A</td><td>1</td><td class="e"></td><td>1</td><td>1</td><td>2</td><td>1</td></tr>
+    <tr><td>1</td><td class="l">H</td><td>2</td><td>1</td><td class="e"></td><td>1</td><td class="l">C</td><td>1</td><td class="e"></td></tr>
+    <tr><td>2</td><td>2</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td class="e"></td></tr>
+    <tr><td class="l">G</td><td>1</td><td>1</td><td class="l">I</td><td>2</td><td>1</td><td>1</td><td class="e"></td><td class="e"></td></tr>
+    <tr><td>1</td><td>2</td><td>2</td><td>2</td><td>2</td><td class="l">D</td><td>1</td><td class="e"></td><td class="e"></td></tr>
+    <tr><td class="e"></td><td>2</td><td class="l">B</td><td>2</td><td>1</td><td>1</td><td>1</td><td class="e"></td><td class="e"></td></tr>
+    <tr><td class="e"></td><td>2</td><td class="l">F</td><td>2</td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td><td class="e"></td></tr>
+</table>
+</br>
+<table id="movietable">
+    <tr><th>Table Letter</th><th>Newspaper</th><th>Coordinates</th><th>Box Office Bomb</th><th>Sum</th><th>Extracted Letter</th><th>Poster used</th></tr>
+    <tr><td>A</td><td>Smith’s Sun</td><td>(3,2)</td><td>Gemini Ma<b>n</b></td><td>9</td><td>N</td><td><img class="poster" src="{{sroot}}poster1.jpg"></td></tr>
+    <tr><td>B</td><td>The Times</td><td>(3,7)</td><td>A Wrinkle in Tim<b>e</b></td><td>14</td><td>E</td><td><img class="poster" src="{{sroot}}poster2.jpg"></td></tr>
+    <tr><td>C</td><td>Jamaica Observer</td><td>(7,3)</td><td>Cutthroa<b>t</b> Island</td><td>9</td><td>T</td><td><img class="poster" src="{{sroot}}poster3.jpg"></td></tr>
+    <tr><td>D</td><td>The Denver Post</td><td>(6,6)</td><td>Battlefie<b>l</b>d Earth</td><td>10</td><td>L</td><td><img class="poster" src="{{sroot}}poster4.jpg"></td></tr>
+    <tr><td>E</td><td>NNN News</td><td>(9,1)</td><td>Osm<b>o</b>sis Jones</td><td>4</td><td>O</td><td><img class="poster" src="{{sroot}}poster5.jpg"></td></tr>
+    <tr><td>F</td><td>Mill Valley Star</td><td>(3,8)</td><td>The Inva<b>s</b>ion</td><td>8</td><td>S</td><td><img class="poster" src="{{sroot}}poster6.jpg"></td></tr>
+    <tr><td>G</td><td>The Boston Globe</td><td>(1,5)</td><td>The Fine<b>s</b>t Hours</td><td>8</td><td>S</td><td><img class="poster" src="{{sroot}}poster7.jpg"></td></tr>
+    <tr><td>H</td><td>Euronews</td><td>(2,3)</td><td>Mortal Engin<b>e</b>s</td><td>12</td><td>E</td><td><img class="poster" src="{{sroot}}poster8.jpg"></td></tr>
+    <tr><td>I</td><td>Space Daily</td><td>(4,5)</td><td>Mars Needs Mom<b>s</b></td><td>13</td><td>S</td><td><img class="poster" src="{{sroot}}poster9.jpg"></td></tr>
+</table>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+    <p>Thanks to Alan Huang for the minesweeper idea.</p>
+</div>

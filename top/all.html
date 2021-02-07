@@ -1,0 +1,144 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+
+{% load hunt_state_tests %}
+
+{% block title %}All Puzzles &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block stylesheets %}
+<style>
+.info {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.info section {
+  margin: 25px 50px;
+}
+
+.info h3 {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.info table {
+  width: 100%;
+}
+
+.info td {
+  max-width: 400px;
+  word-break: break-word;
+}
+
+{% if mmo_unlocked %}
+.toc {
+  position: sticky;
+  top: 0;
+  padding-top: 25px;
+}
+
+.toc a {
+  text-decoration: none;
+}
+{% endif %}
+
+{% for round in rounds %}
+{% if round.round.url == "nano" and round.show_indent %}
+.indent {
+  margin: -5px 0 -5px 5px;
+  padding: 5px 0 5px 10px;
+  border-left: 2px dashed #80808080;
+  filter: contrast(0.75);
+}
+{% endif %}
+{% endfor %}
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+  {% if mmo_unlocked %}
+  <h1>How To Get Around &perp;IW</h1>
+  {% else %}
+  <h1>All Puzzles</h1>
+  {% endif %}
+  <main>
+    <div class="info">
+      {% if mmo_unlocked %}
+      <section class="toc">
+        {% for round in rounds %}
+        {% if round.round.url != "backup" and round.round.url != "infinite-template" and round.round.url != "infra" %}
+        <a href="#{{ round.url }}"><p>&#8618; {{ round.name }}</p></a>
+        {% endif %}
+        {% endfor %}
+      </section>
+      {% endif %}
+      <div>
+      {% for round in rounds %}
+      {% if round.round.url != "backup" and round.round.url != "infinite-template" and round.round.url != "infra" %}
+      <section>
+        <a href="{% url 'round_view' round.url %}" name="{{ round.url }}"><h3>{{ round.name }}</h3></a>
+        <table>
+          <tr><th>Puzzle</th><th>Answer</th></tr>
+          {% for puzzle in round.all_puzzles %}
+          {% if puzzle.puzzle.y2021puzzledata %}
+          <tr>
+            <td {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+              {% if round.round.url == "nano" and round.show_indent %}
+              {% if puzzle.indent > 0 %}<div class="indent">{% endif %}
+              {% if puzzle.indent > 1 %}<div class="indent">{% endif %}
+              {% if puzzle.indent > 2 %}<div class="indent">{% endif %}
+              {% endif %}
+              {% if puzzle.found %}
+              <a href="{% url 'puzzle_view' puzzle.puzzle.url %}">
+                {{puzzle.puzzle.name|safe}}
+              </a>
+              {% elif mmo_disabled %}
+              <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+                {{puzzle.puzzle.name|safe}}
+              </a>
+              {% else %}
+              <div class="mhtooltip">?????
+                {% if round.round.url == "charles-river" or round.round.url == "yew-labs" %}
+                {% elif round.round.url == "nano" %}
+                  {% if puzzle.indent == 1 %}
+                    <span class="mhtooltiptext">Find this puzzle in &perp;IW.giga!</span>
+                  {% elif puzzle.indent == 2 %}
+                    <span class="mhtooltiptext">Find this puzzle in &perp;IW.kilo!</span>
+                  {% elif puzzle.indent == 3 %}
+                    <span class="mhtooltiptext">Find this puzzle in &perp;IW.milli!</span>
+                  {% endif %}
+                {% elif round.round.url == "athletics" or round.round.url == "students" %}
+                <span class="mhtooltiptext">Find this puzzle in &perp;IW!</span>
+                {% elif round.round.url == "infinite-template" %}
+                <span class="mhtooltiptext">Find this puzzle in the &perp;IW Infinite Corridor!</span>
+                {% else %}
+                <span class="mhtooltiptext">Find this puzzle in the &perp;IW {{ round.round.name }}!</span>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% if round.round.url == "nano" and round.show_indent %}
+              {% if puzzle.indent > 2 %}</div>{% endif %}
+              {% if puzzle.indent > 1 %}</div>{% endif %}
+              {% if puzzle.indent > 0 %}</div>{% endif %}
+              {% endif %}
+            </td>
+            {% if puzzle.solved %}
+            <td>{{ puzzle.puzzle.answer|safe}}</td>
+            {% else %}
+            <td>
+            </td>
+            {% endif %}
+          </tr>
+          {% endif %}
+          {% endfor %}
+        </table>
+      </section>
+      {% endif %}
+      {% endfor %}
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

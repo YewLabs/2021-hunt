@@ -1,0 +1,73 @@
+<p>This is the metameta using the answers to the individual dorm row metas:</p>
+
+<table>
+    <tr><th>Dorm</th><th>Answer</th></tr>
+    <tr><td>Baker House</td><td>APOLLO</td></tr>
+    <tr><td>Burton-Conner</td><td>BUDDY CURRY</td></tr>
+    <tr><td>MacGregor House</td><td>WHITE FANG</td></tr>
+    <tr><td>Maseeh Hall</td><td>RICHARD THE FIRST</td></tr>
+    <tr><td>McCormick Hall</td><td>SPICE TWICE</td></tr>
+    <tr><td>New House</td><td>RAINBOW</td></tr>
+    <tr><td>Next House</td><td>PRANCER</td></tr>
+</table>
+
+<p>We are given an audio clip containing a series of pop songs. The fact that each of them abruptly cuts off in the middle of a line suggests finding the word immediately after the stop (this is also suggested by the reference to musical chairs, in which the music’s stopping point is very important). The songs and cut-off words are listed below:</p>
+
+<table>
+    <tr><th>Time</th><th>Song</th><th>Artist</th><th>Cut-off word</th></tr>
+    <tr><td>0:00&ndash;0:04</td><td>It Ain’t Me</td><td>Kygo & Selena Gomez</td><td>Growing</td></tr>
+    <tr><td>0:04&ndash;0:07</td><td>Fury of the Storm</td><td>Dragonforce</td><td>Fury</td></tr>
+    <tr><td>0:07&ndash;0:11</td><td>Can I Be Him</td><td>James Arthur</td><td>Unbroken</td></tr>
+    <tr><td>0:11&ndash;0:16</td><td>Will the Circle Be Unbroken?</td><td>Many artists, version is from Bioshock Infinite soundtrack</td><td>Unbroken</td></tr>
+    <tr><td>0:16&ndash;0:22</td><td>Follow the Leader</td><td>Eric B. & Rakim</td><td>Fury</td></tr>
+    <tr><td>0:22&ndash;0:28</td><td>Take Me to Church</td><td>Hozier</td><td>High</td></tr>
+    <tr><td>0:28&ndash;0:29</td><td>Take Me Home, Country Roads</td><td>John Denver</td><td>Growing</td></tr>
+    <tr><td>0:29&ndash;0:36</td><td>Baby It’s Cold Outside</td><td>Many artists, version by Idina Menzel and Michael Bubl&eacute;</td><td>Roar</td></tr>
+    <tr><td>0:36&ndash;0:44</td><td>Young, Dumb & Broke</td><td>Khalid</td><td>High</td></tr>
+    <tr><td>0:44&ndash;0:46</td><td>Bohemian Rhapsody</td><td>Queen</td><td>Family</td></tr>
+    <tr><td>0:46&ndash;0:55</td><td>ME!</td><td>Taylor Swift</td><td>Winter</td></tr>
+    <tr><td>0:55&ndash;1:01</td><td>See You Again</td><td>Wiz Khalifa ft. Charlie Puth</td><td>Family</td></tr>
+    <tr><td>1:01&ndash;1:09</td><td>Here Comes the Sun</td><td>The Beatles</td><td>Winter</td></tr>
+    <tr><td>1:09&ndash;1:23</td><td>Roar</td><td>Katy Perry</td><td>Roar</td></tr>
+</table>
+
+<p>Each of the seven unique cut-off words appears exactly twice among the 14 clips, confirming that they are relevant. From googling all these words together or recognizing the reference (“Winter is Coming” is probably the most famous), we find that each of them is part of the <a href="https://awoiaf.westeros.org/index.php/House_words">house words</a> of one of the seven Westeros houses in the <i>Song of Ice and Fire</i> books / <i>Game of Thrones</i> TV series. (This is also hinted by the flavor, as "musical chairs" is a "Game of Thrones" and "western rows" is phonetically similar to Westeros.) Each of these houses’ <a href="https://awoiaf.westeros.org/index.php/Heraldry">sigils</a> can be associated with a dorm answer, as follows:</p>
+
+<table>
+    <tr><th>Cut-off word</th><th>House</th><th>House words</th><th>Sigil</th><th>Dorm answer</th><th>Explanation</th></tr>
+    <tr><td>Growing</td><td>Tyrell</td><td>Growing Strong</td><td>Rose</td><td>SPICE TWICE</td><td>Spice Twice is a variety of rose</td></tr>
+    <tr><td>Fury</td><td>Baratheon</td><td>Ours is the Fury</td><td>Stag</td><td>PRANCER</td><td>Prancer is one of Santa’s reindeer</td></tr>
+    <tr><td>Unbroken</td><td>Martell</td><td>Unbowed, Unbent, Unbroken</td><td>Spear piercing a sun</td><td>APOLLO</td><td>Apollo is the Greek sun god</td></tr>
+    <tr><td>High</td><td>Arryn</td><td>As High as Honor</td><td>Falcon against a moon</td><td>BUDDY CURRY</td><td>Buddy Curry played for the Atlanta Falcons</td></tr>
+    <tr><td>Roar</td><td>Lannister</td><td>Hear Me Roar!</td><td>Lion</td><td>RICHARD THE FIRST</td><td>Richard I is also known as “the Lionheart”</td></tr>
+    <tr><td>Family</td><td>Tully</td><td>Family, Duty, Honor</td><td>Trout</td><td>RAINBOW</td><td>Rainbow is a variety of trout</td></tr>
+    <tr><td>Winter</td><td>Stark</td><td>Winter is Coming</td><td>Direwolf</td><td>WHITE FANG</td><td>White Fang is a fictional wolf(dog)</td></tr>
+</table>
+
+<p>The final step is to use the lengths of each of the clips, each of which is an exact integer number of seconds. This is also slightly hinted at by one of the clips being extremely short (Take Me Home, Country Roads) as well as the musical chairs theming (since you walk around the chairs for the length of the music). We index these lengths into the dorm answers:</p>
+
+<table>
+    <tr><th>Time</th><th>Length (seconds)</th><th>Cut-off word</th><th>Dorm answer</th><th>Indexed letter</th></tr>
+    <tr><td>0:00-0:04</td><td>4</td><td>Growing</td><td>SPICE TWICE</td><td>C</td></tr>
+    <tr><td>0:04-0:07</td><td>3</td><td>Fury</td><td>PRANCER</td><td>A</td></tr>
+    <tr><td>0:07-0:11</td><td>4</td><td>Unbroken</td><td>APOLLO</td><td>L</td></tr>
+    <tr><td>0:11-0:16</td><td>5</td><td>Unbroken</td><td>APOLLO</td><td>L</td></tr>
+    <tr><td>0:16-0:22</td><td>6</td><td>Fury</td><td>PRANCER</td><td>E</td></tr>
+    <tr><td>0:22-0:28</td><td>6</td><td>High</td><td>BUDDY CURRY</td><td>C</td></tr>
+    <tr><td>0:28-0:29</td><td>1</td><td>Growing</td><td>SPICE TWICE</td><td>S</td></tr>
+    <tr><td>0:29-0:36</td><td>7</td><td>Roar</td><td>RICHARD THE FIRST</td><td>D</td></tr>
+    <tr><td>0:36-0:44</td><td>8</td><td>High</td><td>BUDDY CURRY</td><td>R</td></tr>
+    <tr><td>0:44-0:46</td><td>2</td><td>Family</td><td>RAINBOW</td><td>A</td></tr>
+    <tr><td>0:46-0:55</td><td>9</td><td>Winter</td><td>WHITE FANG</td><td>G</td></tr>
+    <tr><td>0:55-1:01</td><td>6</td><td>Family</td><td>RAINBOW</td><td>O</td></tr>
+    <tr><td>1:01-1:09</td><td>8</td><td>Winter</td><td>WHITE FANG</td><td>N</td></tr>
+    <tr><td>1:09-1:23</td><td>14</td><td>Roar</td><td>RICHARD THE FIRST</td><td>S</td></tr>
+</table>
+
+<p>Dorm row needs to <span class="answer">CALL EC’S DRAGONS</span> (a pun on <a href="https://awoiaf.westeros.org/index.php/Khaleesi">Khaleesi</a>, the title of Daenerys Targaryen, who owns some <a href="https://awoiaf.westeros.org/index.php/Dragon#Recent_Events">dragons</a>; EC is how the MIT dorm East Campus is often called) to warm themselves up!</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+    <p>The 7 houses used in the puzzle are among the 9 <a href="https://awoiaf.westeros.org/index.php/Seven_Kingdoms#Houses_that_survived_the_Conquest">main houses</a> in the series, minus Greyjoy (which is not on the Westeros mainland) and Targaryen (which was kicked out of Westeros prior to the beginning and is referenced by the final answer)</p>
+    <p>This meta was constructed first based on the answer and west row/Westeros pun, with the other dorm metas (East Campus, Random, and Simmons) written afterwards in order to make a cycle.</p>
+</div>

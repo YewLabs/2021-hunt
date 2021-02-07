@@ -1,0 +1,104 @@
+name: wheel-of-fortune-landmark
+difficulty: 2/10
+coolness: 3/10
+time: 1:30
+
+questions:
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "? P??? O? ?O?OTES"
+
+        - text: "Category: Object"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: a pack of coyotes
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "HOLL??OO? ??L? O? ???E"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: hollywood walk of fame
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?O?NT ??L???N??RO"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: mount kilimanjaro
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "??S???L ?NSTR??ENT ??SE??"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: musical instrument museum
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "THE GRE?T P?R????S"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: the great pyramids
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "THE P?N? RO?? ??SE??"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: the punk rock museum
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "T??ES S???RE"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: times square
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "?ESLE??N ?N??ERS?T?"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: wesleyan university
+
+    - question:
+        - text: "What is the solution to this Wheel of Fortune puzzle?"
+
+        - text: "??ON N?T?ON?L P?R?"
+
+        - text: "Category: Landmark"
+
+        - text: "Letters already picked: EGHLNOPRST"
+
+        - answer: zion national park

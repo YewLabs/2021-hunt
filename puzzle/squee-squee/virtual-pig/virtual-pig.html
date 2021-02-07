@@ -1,0 +1,214 @@
+<style>
+#buttons {
+  position: absolute;
+}
+#virtual-pig-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+.pig {
+  perspective: 100px;
+  position: relative;
+  margin-bottom: 30px;
+}
+.pig-hole {
+  position: absolute;
+  width: 27%;
+  height: 15%;
+  top: 3%;
+  left: 33%;
+  box-sizing: border-box;
+}
+.pig-hole.dashed {
+  border: 5px dashed black;
+}
+.counter {
+  position: absolute;
+  top: calc(50% - 70px);
+  right: -150px;
+}
+.pig .scale {
+  background: #c1c2bf;
+  bottom: 0;
+  height: 20%;
+  transform: rotateX(40deg);
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+}
+.coins {
+  display: flex;
+}
+.coins p {
+  text-align: center;
+  width: 100%;
+}
+.coin {
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+.coin img {
+  border-radius: 50%;
+  position: absolute;
+  touch-action: none;
+  transform: scale(0.5);
+}
+img.highlight {
+  filter: contrast(140%);
+}
+.measurements {
+  margin-top: 1em;
+}
+.measurements p {
+  margin: 1em;
+}
+#coindrop {
+  left: 35%;
+  position: absolute;
+  top: -15%;
+  transition: opacity 0.2s;
+}
+</style>
+
+<div id="buttons">
+  <button onclick="showCoins()">show coins</button>
+  <button onclick="showScale()">hide coins, show scale</button>
+  <button onclick="smashing()">hide scale, activate smash mode</button>
+</div>
+
+<div id="virtual-pig-wrapper">
+  <div class="pig">
+    <img id="pig-image" src="pig.png" alt="A piggy bank." draggable="false" />
+    <img id="coindrop" src="coindrop.png" style="opacity: 0" />
+    <div class="pig-hole"></div>
+    <div class="counter">
+      <table>
+        <tr><td>Quarters</td><td id="quarter-count">0</td></tr>
+        <tr><td>Dimes</td><td id="dime-count">2</td></tr>
+        <tr><td>Nickles</td><td id="nickel-count">4</td></tr>
+        <tr><td>Pennies</td><td id="penny-count">3</td></tr>
+      </table>
+    </div>
+    <div class="scale" style="display: none">
+    </div>
+  </div>
+  <div class="coins" style="display: none">
+    <div class="coin"><img id="quarter" src="25.png" alt="A quarter." /></div>
+    <div class="coin"><img id="dime" src="10.png" alt="A dime." /></div>
+    <div class="coin"><img id="nickel" src="5.png" alt="A nickel." /></div>
+    <div class="coin"><img id="penny" src="1.png" alt="A penny." /></div>
+  </div>
+  <div class="measurements" style="display: none">
+    <p>Height: 7.0 cm</p>
+    <p>Girth: 19.5 cm</p>
+    <p>Weight: <span id="weight">0</span> g</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+<script>
+const gcnz = (c) => document.getElementsByClassName(c)[0]
+
+function showCoins() {
+  gcnz("coins").style.display = "flex";
+}
+
+function showScale() {
+  gcnz("coins").style.display = "none";
+  gcnz("scale").style.display = "block";
+  gcnz("measurements").style.display = "flex";
+  computeWeight();
+}
+
+function smashing() {
+  gcnz("scale").style.display = "none";
+  gcnz("measurements").style.display = "none";
+  smashModeOn();
+}
+</script>
+
+<script>
+interact(".coin img").draggable({
+  inertia: true,
+  listeners: {
+    move: dragMoveListener,
+  },
+});
+function dragMoveListener(e) {
+  const t = e.target;
+  const x = (parseFloat(t.getAttribute("data-x")) || 0) + e.dx;
+  const y = (parseFloat(t.getAttribute("data-y")) || 0) + e.dy;
+  t.style.transform = "translate(" + x + "px, " + y + "px) scale(0.5)";
+  t.setAttribute("data-x", x);
+  t.setAttribute("data-y", y);
+}
+
+function incrementCoin(coin) {
+  const elt = document.getElementById(`${coin}-count`);
+  elt.textContent = Number(elt.textContent) + 1;
+}
+
+function computeWeight() {
+  let total = 116;
+  [
+    ["quarter", 5.67],
+    ["dime", 2.268],
+    ["nickel", 5],
+    ["penny", 2.5],
+  ].forEach(([coin, weight]) => {
+    const elt = document.getElementById(`${coin}-count`);
+    total += Number(elt.textContent) * weight;
+  });
+  document.getElementById("weight").textContent = Math.round(total);
+}
+
+function smashModeOn() {
+  const elt = document.getElementById("pig-image");
+  elt.style.cursor = "pointer";
+  let i = 0;
+  elt.addEventListener("click", (e) => {
+    if (i < 6) {
+      elt.src = `pig${++i}.png`;
+      if (i === 6) elt.style.cursor = "default";
+    }
+  });
+}
+
+interact(".pig-hole").dropzone({
+  overlap: 0.1,
+  ondropactivate: function (e) {
+    e.target.classList.add("dashed");
+  },
+  ondragenter: function (e) {
+    e.relatedTarget.classList.add("highlight");
+  },
+  ondragleave: function (e) {
+    e.relatedTarget.classList.remove("highlight");
+  },
+  ondrop: function (e) {
+    const t = e.relatedTarget;
+    incrementCoin(t.id);
+    t.style.transform = "translate(0, 0) scale(0.5)";
+    t.setAttribute("data-x", 0);
+    t.setAttribute("data-y", 0); 
+    t.classList.remove("highlight");
+    const cd = document.getElementById("coindrop");
+    cd.style.opacity = "1";
+    setTimeout(() => {
+      cd.style.opacity = "0";
+    }, 500);
+  },
+  ondropdeactivate: function (e) {
+    e.target.classList.remove("dashed");
+  },
+});
+</script>

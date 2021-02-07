@@ -1,0 +1,40 @@
+Stacks: r1 w4 g5 y5 b5
+Alice: y1 g1 b1 w1
+Bobby: y1 g1 b1 r5
+Carol: r2 g2 y2 w5
+David: b2 r3 b3 b4
+Wins: 1
+Deck: r4 .. kt
+Line: dc .. r2 r3 r4 r5 w5
+Plan: P  U  F  F  U  P  S
+Display: Puff-ups
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[P] Turn  1 ..... Alice discards a stale card and draws [P] red 4
+[U] Turn  2 ..... Bobby stalls by spending a clue
+[F] Turn  3 ..... Carol plays [F] red 2 and draws any card
+[F] Turn  4 ..... David plays [K] red 3 on their last turn
+[U] Turn  5 ..... Alice plays [P] red 4 on their last turn
+[P] Turn  6 ..... Bobby plays [U] red 5 on their last turn
+[S] Turn  7 ..... Carol plays [Y] white 5 on their last turn
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+PROOF OF UNIQUENESS
+
+The initial pace is +1, so at most one discard is permitted.
+However, since Alice has no play on the first turn, she must discard.
+This brings pace to 0 and no more discards are allowed.
+Therefore, Bobby must spend a clue.
+
+Then, Carol must trigger the last round.
+If Carol plays w5, then no more red cards are playable.
+So Carol must play r2.
+Then David must play r3.
+Then Alice must play her drawn card, which can only be r4.
+Then Bobby plays r5, and Carol plays w5, and the game is won.
+
+Note the card that Carol drew when starting the last round is irrelevant.
+Exactly 1 of the 2 deck orderings (where r4 is the top card) leads to a win.

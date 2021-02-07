@@ -1,0 +1,113 @@
+{% extends "hunt/layout.tmpl" %}
+
+{% load tz %}
+
+{% block content %}
+
+<style>
+    html, body {
+        background: none;
+        min-width: 0;
+        height: auto;
+    }
+    form {
+        text-align: center;
+    }
+    .form-field {
+        display: inline;
+        text-align: left;
+        margin: 1em .75em;
+    }
+    td.checkmark {
+        text-align: center;
+    }
+    .error {
+        font-weight: bold;
+        color: #ff0000;
+    }
+</style>
+
+{% localtime on %}
+<p>
+    Select one person to receive an invite to this event at
+
+    {{ slots.1|date:"l f A" }},
+    {{ slots.2|date:"l f A" }}, or
+    {{ slots.3|date:"l f A" }} (all times {{ slots.0|date:"e" }}).
+
+    That person will receive an email to connect to the event server. In the
+    event that multiple people register for this event, one will be selected
+    semi-randomly.
+    
+    Please select multiple time slots if possible to aid with scheduling.
+
+    You can un-register by re-submitting the same
+    name and email combination.
+
+    We will be using Discord so if you are new to using Discord, check out <a href="https://docs.google.com/document/d/e/2PACX-1vSZUozBZb8jMnDeCg7aHDXCmOiP1CWO7XIqWNYNv6DmTZFZk0ml5bAhfaZM-3YTrXs7f80NOGz3kjVb/pub">our guide</a>!
+</p>
+
+<p>
+    We will begin processing registrations at
+    <b>{{ slots.0|date:"l f A e"}}</b>.
+</p>
+
+{% if data %}
+<p>
+    Your team has <b>{{ data|length }}</b> registration{{ data|length|pluralize}}:
+    <table>
+        <th>
+            <td>{{ slots.1|date:"f A" }}</td>
+            <td>{{ slots.2|date:"f A" }}</td>
+            <td>{{ slots.3|date:"f A" }}</td>
+        </th>
+        {% for reg in data %}
+        <tr>
+            <td><b>{{ reg.name }}</b></td>
+            <td class="checkmark">{{ reg.slot_7|yesno:"X," }}</td>
+            <td class="checkmark">{{ reg.slot_8|yesno:"X," }}</td>
+            <td class="checkmark">{{ reg.slot_9|yesno:"X," }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% comment %}{{ data }}{% endcomment %}
+</p>
+{% endif %}
+{% endlocaltime %}
+
+{% if error %}
+<p class="error">
+    {{ error }}
+</p>
+{% endif %}
+
+<form id="reg-form" method="POST">
+    {% csrf_token %}
+    <div class="form-field">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" value="" size="20"/>
+    </div>
+    <div class="form-field">
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" value="" size="30"/>
+    </div><br>
+    <div class="form-field">
+        <input id="slot-7" type="checkbox" name="times" value="slot-7"/>
+        <label for="slot-7">{{ slots.1|date:"l f A" }}</label>
+    </div>
+    <div class="form-field">
+        <input id="slot-8" type="checkbox" name="times" value="slot-8"/>
+        <label for="slot-8">{{ slots.2|date:"l f A" }}</label>
+    </div>
+    <div class="form-field">
+        <input id="slot-9" type="checkbox" name="times" value="slot-9"/>
+        <label for="slot-9">{{ slots.3|date:"l f A" }}</label>
+    </div>
+    <div class="form-field">
+        <input type="submit" value="Register/Unregister"/>
+    </div>
+</form>
+
+<script src="registration.js"></script>
+
+{% endblock %}

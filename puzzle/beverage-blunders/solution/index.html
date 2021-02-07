@@ -1,0 +1,100 @@
+<p>This puzzle contains some clues, followed by some images.</p>
+
+<p>We can start out by identifying the images at the bottom of the puzzle. Each is a drawing of a container of some brand of beverage. The colors and shape of the containers are probably most useful here, but the sizes of the containers relative to each other are also approximately correct.</p>
+
+<style>
+  .puzzle img {
+    width: 300px;
+    height: 100%;
+    margin: 10px;
+    border: solid black 1px;
+  }
+  .images {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .center {
+    text-align: center;
+  }
+</style>
+
+<div class="images">
+<img src="{{sroot}}1.png" alt="Mountain Dew">
+<img src="{{sroot}}2.png" alt="Swiss Miss">
+<img src="{{sroot}}3.png" alt="Propel">
+<img src="{{sroot}}4.png" alt="Kool-Aid">
+<img src="{{sroot}}5.png" alt="Ocean Spray">
+<img src="{{sroot}}6.png" alt="Pepsi">
+<img src="{{sroot}}7.png" alt="Tropicana">
+<img src="{{sroot}}8.png" alt="Gatorade">
+<img src="{{sroot}}9.png" alt="SunnyD">
+<img src="{{sroot}}10.png" alt="TruMoo">
+<img src="{{sroot}}11.png" alt="Orangina">
+<img src="{{sroot}}12.png" alt="Minute Maid">
+<img src="{{sroot}}13.png" alt="Canada Dry">
+<img src="{{sroot}}14.png" alt="Ovaltine">
+<img src="{{sroot}}15.png" alt="CapriSun">
+<img src="{{sroot}}16.png" alt="Nesquik">
+</div>
+
+
+<p>However, we still haven’t figured out what to do about the clues up top. The flavortext tells us that we “wanted drinks” but got something else instead, and we might also notice that the number of clues is equal to the number of drawings. Perhaps each one of the clues on top corresponds to one of the pictures at the bottom?</p>
+
+<p>In fact, these clues are all a single letter substitution away from the name of a drink (listed in alphabetical order).</p>
+
+<table>
+<tr><th>Clue</th><th>Clue Answer</th><th>Corresponding Drink</th></tr>
+<tr><td>Product containing 38 million people; some assembly required</td><td>CANADA DIY</td><td>CANADA DRY</td></tr>
+<tr><td>A moderately large car with four-wheel drive from Marina Piccola</td><td>CAPRI SUV</td><td>CAPRI SUN</td></tr>
+<tr><td>A physician who specializes in treating chest pain caused by reduced blood flow to the heart</td><td>DR ANGINA</td><td>ORANGINA</td></tr>
+<tr><td>Small droplets of morning condensation on a water bubbler</td><td>FOUNTAIN DEW</td><td>MOUNTAIN DEW</td></tr>
+<tr><td>The number of years that a crocodile-like creature has lived</td><td>GATOR AGE</td><td>GATORADE</td></tr>
+<tr><td>The noise that the protagonist of Despicable Me would make if he were to imitate a cow</td><td>GRU MOO</td><td>TRUMOO</td></tr>
+<tr><td>What a eucalyptus-eating marsupial shows at a bar</td><td>KOALA ID</td><td>KOOLAID</td></tr>
+<tr><td>A postal service that uses very small envelopes</td><td>MINUTE MAIL</td><td>MINUTE MAID</td></tr>
+<tr><td>A cephalopod from New England</td><td>NE SQUID</td><td>NESQUIK</td></tr>
+<tr><td>A theater script written by the actress who portrayed Nicole Roberts in Danger Bay</td><td>OCEANS PLAY</td><td>OCEAN SPRAY</td></tr>
+<tr><td>A short melody about an egg shape</td><td>OVAL TUNE</td><td>OVALTINE</td></tr>
+<tr><td>3.14 of a standard unit of tire pressure</td><td>PI PSI</td><td>PEPSI</td></tr>
+<tr><td>An expert legume</td><td>PRO PEA</td><td>PROPEL</td></tr>
+<tr><td>The way Sol gives nonverbal assent</td><td>SUN NOD</td><td>SUNNYD</td></tr>
+<tr><td>A lichen-like plant growing in the Alps</td><td>SWISS MOSS</td><td>SWISS MISS</td></tr>
+<tr><td>Genetic material from near the equator</td><td>TROPIC DNA</td><td>TROPICANA</td></tr>
+</table>
+
+<p>We notice that the pictures at the bottom weren’t in any particular order, while these clues are in alphabetical order. If we rearrange the clues to be in the same order as the pictures, and then read the letters from the original drinks which got substituted, we get:</p>
+
+<table>
+<tr><th>Clue Answer</th><th>Corresponding Drink</th><th>Extracted Letter</th></tr>
+<tr><td>FOUNTAIN DEW</td><td>MOUNTAIN DEW</td><td class="center">M</td></tr>
+<tr><td>SWISS MOSS</td><td>SWISS MISS</td><td class="center">I</td></tr>
+<tr><td>PRO PEA</td><td>PROPEL</td><td class="center">L</td></tr>
+<tr><td>KOALA ID</td><td>KOOL-AID</td><td class="center">O</td></tr>
+<tr><td>OCEANS PLAY</td><td>OCEAN SPRAY</td><td class="center">R</td></tr>
+<tr><td>PI PSI</td><td>PEPSI</td><td class="center">E</td></tr>
+<tr><td>TROPIC DNA</td><td>TROPICANA</td><td class="center">A</td></tr>
+<tr><td>GATOR AGE</td><td>GATORADE</td><td class="center">D</td></tr>
+<tr><td>SUN NOD</td><td>SUNNYD</td><td class="center">Y</td></tr>
+<tr><td>GRU MOO</td><td>TRUMOO</td><td class="center">T</td></tr>
+<tr><td>DR ANGINA</td><td>ORANGINA</td><td class="center">O</td></tr>
+<tr><td>MINUTE MAIL</td><td>MINUTE MAID</td><td class="center">D</td></tr>
+<tr><td>CANADA DIY</td><td>CANADA DRY</td><td class="center">R</td></tr>
+<tr><td>OVAL TUNE</td><td>OVALTINE</td><td class="center">I</td></tr>
+<tr><td>CAPRI SUV</td><td>CAPRISUN</td><td class="center">N</td></tr>
+<tr><td>NE SQUID</td><td>NESQUIK</td><td class="center">K</td></tr>
+</table>
+
+<p>The answer is <span class="answer">MILO READY TO DRINK</span>!</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+<p>
+This is the first puzzle that I’ve been the sole author on for a serious puzzle hunt. I went through a lot of iterations, and eventually settled on this mechanic and this set of clues with the help of many editors and test solvers.
+
+Many, many thanks to everyone who helped me along the way!
+</p>
+</div>

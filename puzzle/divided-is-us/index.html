@@ -1,0 +1,74 @@
+<p class="flavor">
+Thanks to <a href="https://www.hempuli.com/">Arvi "Hempuli" Teikari</a>
+for giving us permission to use the sprites and game concept for this puzzle.
+</p>
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<script>
+auth_token = "{{ puzzle.auth }}";
+</script>
+<div id="babaouter">
+    <div class="outers">
+        <div class="selector">
+            <div class="unclickable">Level</div>
+            <div id="l1" class="active last">1</div>
+            <div id="l2" class="hidden">2</div>
+            <div id="l3" class="hidden">3</div>
+            <div id="l4" class="hidden">4</div>
+            <div id="l5" class="hidden">5</div>
+            <div id="l6" class="hidden">6</div>
+            <div id="l7" class="hidden">7</div>
+            <div id="l8" class="hidden">8</div>
+            <div id="l9" class="hidden">9</div>
+        </div>
+        <div class="selector">
+            <div class="last" id="reset">Reset</div>
+        </div>
+        <div class="selector hidden" id="reload">
+            <div class="last" id="reload-button">Reload</div>
+        </div>
+    </div>
+    <!--
+    <div class="outers">
+        <div class="selector hidden" id="undo">
+            <div class="last" id="undo-button">Undo 1</div>
+        </div>
+        <div class="selector" id="rewind">
+            <div class="last" id="rewind-button">Rewind</div>
+        </div>
+    </div>
+    -->
+    <div class="outers hidden" id="rewind-controls">
+        <div class="selector hidden" id="cancel">
+            <div class="last" id="cancel-button">✖</div>
+        </div>
+        <div class="selector" id="minus-one">
+            <div class="last" id="minus-one-button">&lt;</div>
+        </div>
+        <h4 id="turn-counter">Turn <span id="turn-numerator">1</span> of <span id="turn-denominator">1</span></h4>
+        <div class="selector" id="plus-one">
+            <div class="last" id="plus-one-button">&gt;</div>
+        </div>
+        <div class="selector hidden" id="revert">
+            <div class="last" id="revert-button">✔</div>
+        </div>
+    </div>
+
+    <div id="baba" class="viewport"></div>
+    <hr />
+    <div id="minis">
+    <span id="baba-p1" class="viewport"></span>
+    <span id="baba-p2" class="viewport"></span>
+    <span id="baba-p3" class="viewport"></span>
+    <span id="baba-p4" class="viewport"></span>
+    </div>
+</div>
+<script src="baba.obf.js"></script>
+
+
+<link rel="stylesheet" href="{{sroot}}baba.css">
+<link rel="stylesheet" href="{{sroot}}baba-sprites.css">
+{% endif %}

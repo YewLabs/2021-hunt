@@ -1,0 +1,132 @@
+name: audio-identification
+difficulty: 3/10
+coolness: 5/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/phantom-of-the-opera.mp3
+
+        - answer: the phantom of the opera
+        - answer: phantom of the opera
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/bangarang.mp3
+
+        - answer: bangarang
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/feel-good-inc.mp3
+
+        - answer: feel good inc
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/free-bird.mp3
+
+        - answer: free bird
+
+    - question:
+        - text: "What is the name of the piece that this clip is from?"
+
+        - audio: audio-identification/la-campanella.mp3
+
+        - answer: la campanella
+
+    - question:
+        - text: "What is the name of the piece that this clip is from?"
+
+        - audio: audio-identification/reverie.mp3
+
+        - answer: reverie
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/reptilia.mp3
+
+        - answer: reptilia
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/take-five.mp3
+
+        - answer: take five
+
+    - question:
+        - text: "Who is the composer of the piece that this clip is from?"
+
+        - audio: audio-identification/rachmaninoff-2.mp3
+
+        - answer: rachmaninoff
+        - answer: rachmaninov
+        - answer: rakhmaninoff
+        - answer: rakhmaninov
+        - answer: sergei rachmaninoff
+        - answer: sergei rachmaninov
+        - answer: sergei rakhmaninoff
+        - answer: sergei rakhmaninov
+        - answer: sergey rachmaninoff
+        - answer: sergey rachmaninov
+        - answer: sergey rakhmaninoff
+        - answer: sergey rakhmaninov
+
+    - question:
+        - text: "What movie soundtrack is this clip from?"
+
+        - audio: audio-identification/spirited-away.mp3
+
+        - answer: spirited away
+        - answer: sen to chihiro no kamikakushi
+
+    - question:
+        - text: "This clip is a recurring theme from which video game series?"
+
+        - audio: audio-identification/halo.mp3
+
+        - answer: halo
+
+    - question:
+        - text: "This clip is a recurring theme from which video game series?"
+
+        - audio: audio-identification/final-fantasy.mp3
+
+        - answer: final fantasy
+
+    - question:
+        - text: "This clip is a recurring theme from which puzzling video game series?"
+
+        - audio: audio-identification/professor-layton.mp3
+
+        - answer: professor layton
+
+    - question:
+        - text: "Which video game franchise is this clip from?"
+
+        - audio: audio-identification/overwatch.mp3
+
+        - answer: overwatch
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/sweet-home-alabama.mp3
+
+        - answer: sweet home alabama
+
+    - question:
+        - text: "What is the name of the song that this clip is from?"
+
+        - audio: audio-identification/the-lion-sleeps-tonight.mp3
+
+        - answer: the lion sleeps tonight
+        - answer: wimoweh
+        - answer: mbube

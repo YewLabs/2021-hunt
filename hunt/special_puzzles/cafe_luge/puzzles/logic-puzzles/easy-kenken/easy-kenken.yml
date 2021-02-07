@@ -1,0 +1,121 @@
+name: easy-kenken
+difficulty: 2/10
+coolness: 4/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/1.jpg
+
+        - answer: 3142123443212413
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/2.jpg
+
+        - answer: 3412234112344123
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/3.jpg
+
+        - answer: 1342321424314123
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/4.jpg
+
+        - answer: 1234214343213412
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/5.jpg
+
+        - answer: 4123134224313214
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/6.jpg
+
+        - answer: 3214432121431432
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/7.jpg
+
+        - answer: 1342421321343421
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/8.jpg
+
+        - answer: 3412423121431324
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/9.jpg
+
+        - answer: 2341123441233412
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/10.jpg
+
+        - answer: 1423213443123241
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/11.jpg
+
+        - answer: 3241241341321324
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/12.jpg
+
+        - answer: 4132124323143421
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/13.jpg
+
+        - answer: 1243413223143421
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/14.jpg
+
+        - answer: 4321143221433214
+
+
+    - question:
+        - text: "What is the solution to this KenKen? Submit the sequence of 16 digits, left-to-right, top-to-bottom (so, the first 4 digits should be the top row)."
+
+        - image: logic-puzzles/easy-kenken/15.jpg
+
+        - answer: 4312124324313124

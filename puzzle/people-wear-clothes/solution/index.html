@@ -1,0 +1,383 @@
+<style>
+  .clothing {
+    font-weight: bold;
+    color: red;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  table.solution-table, table.solution-table tr, table.solution-table td {
+    border: 1px solid black;
+  }
+  td.person {
+    text-align: center;
+  }
+  pre.person {
+    display: inline-block;
+    text-align: left;
+  }
+</style>
+
+<p>Solvers are given 9 words and 9 crossword clues. The 9 words are arranged in the shapes of articles of clothing. Each word is a prefix for its category of clothing and describes a specific item in that category. A couple of examples are a <b>CROP</b> TOP or a <b>BULLETPROOF</b> VEST.</p>
+
+<p>Each of the 9 crossword clues takes the shape of a person. Each person can &ldquo;wear&rdquo; one of the articles of clothing by overlapping a subset of the letters in the clothing item with letters in the crossword clue.</p>
+
+<p>Combining the category of clothing with the answer to the crossword clue will yield a new word. Indexing into this word with the number in the clue gives the answer <span class="answer">DRESS CODE</span>.</p>
+
+<table class="solution-table">
+<tr>
+<td>Person Wearing Clothes</td> <td>Clothing Type</td> <td>Clothing Category</td> <td>Crossword Clue</td> <td>Crossword Clue Answer</td> <td>Combined Word</td> <td>Index</td> <td>Indexed Letter</td>
+</tr>
+<tr>
+<td class="person">
+<pre class="person">
+    <span class="clothing">PA
+   NAMA</span>
+    AG
+    NI
+FICENTCOLOR
+    TH
+    AT
+    IN
+    SP
+    IR
+   EDTA
+  YL  OR
+</pre>
+</td>
+<td>PANAMA</td>
+<td>HAT</td>
+<td>A magnificent color that inspired Taylor.</td>
+<td>RED</td>
+<td><u>HAT</u>RED</td>
+<td>6</td>
+<td>D</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+  TO<span class="clothing">PIN</span>EFO
+  RSLO<span class="clothing">WH</span>UG
+  SANDF<span class="clothing">EEL</span>
+  AMOROUSL
+     YI
+STYPICALFOR
+     TH
+     IS
+     PE
+    R  S
+   O    N
+</pre>
+</td>
+<td>
+PINWHEEL
+</td>
+<td>
+BOW
+</td>
+<td>
+To pine for slow hugs and feel amorously is typical for this person.
+</td>
+<td>
+LOVER
+</td>
+<td>
+<u>BOW</u>L OVER
+</td>
+<td>
+8
+</td>
+<td>
+R
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+     BREATHE
+     SIRREGU
+     LARLYAF
+   TERS<span class="clothing">KIP</span>ROPE
+ORA    S<span class="clothing">P</span>O    RTW
+       H<span class="clothing">E</span>R
+       E<span class="clothing">R</span>U
+       NNI
+       NGI
+       SIN
+      V   O
+      L   V
+     E     D 
+</pre>
+</td>
+<td>
+KIPPER
+</td>
+<td>
+TIE
+</td>
+<td>
+Breathes irregularly after skip rope or a sport where running is involved.
+</td>
+<td>
+PANTS
+</td>
+<td>
+PA<u>TIE</u>NTS
+</td>
+<td>
+5
+</td>
+<td>
+E
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+  ALIT  
+  TLEF
+   AB
+RI<span class="clothing">C</span>SC<span class="clothing">R</span>AP
+   <span class="clothing">OP</span>
+   TI
+   MA
+  LFOR
+  E  V
+  A  L
+UAT  ION
+</pre>
+<td>
+CROP
+</td>
+<td>
+TOP
+</td>
+<td>
+A little fabric scrap optimal for evaluation.
+</td>
+<td>
+SWATCH
+</td>
+<td>
+S<u>TOP</u>WATCH
+</td>
+<td>
+1
+</td>
+<td>
+S
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+      THISF
+      LATIT
+      EMISU
+      SEDIN
+        S
+        H
+ABUSHA<span class="clothing">BU</span>A<span class="clothing">LL</span>THETIM
+      <span class="clothing">ET</span>O<span class="clothing">PR</span>
+      <span class="clothing">O</span>PFO<span class="clothing">O</span>
+      DO<span class="clothing">F</span>TH
+       ERA
+       W V
+       A R
+      IE TY
+</pre>
+</td>
+<td>
+BULLETPROOF
+</td>
+<td>
+VEST
+</td>
+<td>
+This flat item is used in Shabu-shabu all the time to prop food of the raw variety.
+</td>
+<td>
+TRAY
+</td>
+<td>
+TRA<u>VEST</u>Y
+</td>
+<td>
+6
+</td>
+<td>
+S
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+    PER
+    HAP
+    SMA
+     D
+     E
+ARI<span class="clothing">CH</span>D<span class="clothing">ES</span>SER
+    <span class="clothing">T</span>B<span class="clothing">E</span>
+    <span class="clothing">R</span>E<span class="clothing">F</span>
+    <span class="clothing">I</span>N<span class="clothing">E</span>
+   <span class="clothing">L</span>DSU<span class="clothing">D</span>
+    C R
+    O S
+    E S
+    M O
+  THE RED
+</pre>
+</td>
+<td>
+CHESTERFIELD
+</td>
+<td>
+COAT
+</td>
+<td>
+Perhaps made a rich dessert be refined sucrose smothered.
+</td>
+<td>
+SUGARED
+</td>
+<td>
+SUGAR<u>COAT</u>ED
+</td>
+<td>
+6
+</td>
+<td>
+C
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+   DIREC
+   TIONO
+   FCENT
+   RIFUG
+     A
+     L
+   FORCE
+  F OLL O 
+ W  EDB  Y
+   <span class="clothing">WRAPA</span>
+   <span class="clothing">ROUND</span>
+   F   R
+EQUE   NTLY
+</pre>
+</td>
+<td>
+WRAP AROUND
+</td>
+<td>
+SKIRT
+</td>
+<td>
+Direction of centrifugal force, followed by &ldquo;ward&rdquo; frequently.
+</td>
+<td>
+OUT
+</td>
+<td>
+OUT<u>SKIRT</u>
+</td>
+<td>
+1
+</td>
+<td>
+O
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+   TOT
+   URN
+   ASK
+    E
+    I
+NINTOABAL
+   LIN
+   ORD
+   ERT
+   O W
+   O R
+   <span class="clothing">K N
+   E E</span>
+DLEP OINT
+</pre>
+</td>
+<td>
+KNEE
+</td>
+<td>
+SOCK
+</td>
+<td>
+To turn a skein into a ball in order to work needlepoint.
+</td>
+<td>
+WIND
+</td>
+<td>
+WIND<u>SOCK</u>
+</td>
+<td>
+4
+</td>
+<td>
+D
+</td>
+</tr>
+
+<tr>
+<td class="person">
+<pre class="person">
+  SWE
+  ETY
+  OUH
+   O
+LDINYOU
+  RMO
+  UTH
+  TOM
+  A S
+  T I
+  C A
+  <span class="clothing">T E
+ NN IS</span>
+</pre>
+</td>
+<td>
+TENNIS
+</td>
+<td>
+SHOE
+</td>
+<td>
+Sweet you hold in your mouth to masticate.
+</td>
+<td>
+GUM
+</td>
+<td>
+GUM<u>SHOE</u>
+</td>
+<td>
+7
+</td>
+<td>
+E
+</td>
+</tr>
+</table>

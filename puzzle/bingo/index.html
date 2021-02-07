@@ -1,0 +1,43 @@
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+Print out this page and take it with you to Mystery Hunt! Refresh the page to get a new Bingo board.
+
+<h2><span id="num"></span></h2>
+<table cellpadding="0" cellspacing="0" class="bingo grid">
+	{% for i in '01234'|make_list %}
+	<tr>
+		{% for j in '01234'|make_list %}
+		<td id="cell{{i}}{{j}}"></td>
+		{% endfor %}
+    	</tr>
+	{% endfor %}
+</table>
+<style>
+table.bingo td {
+	width: 125px;
+	height: 125px;
+	text-align: center;
+	vertical-align: middle;
+  border: 1px black solid;
+}
+
+</style>
+<script>
+  function getBoard() {
+    $.getJSON("dynamic", function(data) {
+      $("#num").html("Board #"+data["num"]);
+      for(i = 0;i<5;i++){
+          for(j = 0;j<5;j++){
+              console.log("#cell"+i+""+j);
+              $("#cell"+i+""+j).html(data["board"][i][j]);
+          }
+      }
+    });
+  }
+
+  getBoard();
+</script>
+{% endif %}

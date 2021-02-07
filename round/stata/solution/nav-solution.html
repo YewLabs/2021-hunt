@@ -1,0 +1,38 @@
+<style>
+.puzzle img {
+  width: 60%;
+  margin: 0 20%;
+}
+</style>
+
+<h4>by Ben Yang and Cami Ramirez-Arau</h4>
+
+<p>In the Stata Center, each of the stairways leads to a room with a certain number of connecting corridors. Taking any of the connections will lead us to another room with exactly the same shape and topology as the first room. These rooms function as a kind of maze that you need to solve appropriately to find Stata-sticians who have our puzzles.</p>
+
+<h3>Network 1: Maze</h3>
+<p>There is a poster on a wall of the inside of Stata showing a maze and its solution.</p>
+<p><img src="{{sroot}}image1.png"></p>
+<p>Each room has four connections (top, right, down, left) and if we follow the solution path shown in the maze (down, right, down, right, down, left, down, right, right, up, up, right, down, down, down, down) we&rsquo;ll arrive at our Stata-sticians.</p>
+
+<h3>Network 2: SET</h3>
+<p>Each of the four connections are labeled with cards from the card game <a href="https://www.setgame.com/welcome">SET</a>. It turns out that three of the four cards form a valid SET. We must go through the connection corresponding to the remaining card, and repeat this process 5 times before we can enter the room with the Stata-sticians. For example, in the first room shown below, we must go through the top-right connection, since the other three cards form a SET.</p>
+<p><img src="{{sroot}}image3.png"></p>
+
+<h3>Network 3: Compass</h3>
+<p>The person in the center of the room says, &ldquo;Confused? First, come to your senses&rdquo; and there is a compass rose on the floor of the room indicating that the four connections correspond to north, east, south and west. We should take the connections whose first letters of their corresponding cardinal directions spell out SENSES (South, East, North, South, East, South) to get to the Stata-sticians.</p>
+
+<h3>Network 4: Morse Code</h3>
+<p>The person in the center of the room says, &ldquo;Huh, you can&rsquo;t figure out this one? The answer is telegraphed clearly&rdquo; and there are two connections, one leading left and one leading right.</p>
+<p><img src="{{sroot}}image2.png"></p>
+<p>The right connection ends in a bar or dash while the left ends in a dot. Given the word &ldquo;telegraphed&rdquo; in the dialogue, we can conclude that we must spell out the word CLEARLY in Morse code by taking the respective connections for dots and dashes. </p>
+<p>CLEARLY in Morse is -.-. / .-.. / . / .- / .-. / .-.. / -.-- which corresponds to RLRLLRLLLLRLRLLRLLRLRR. Taking those connections brings us to the Stata-sticians.</p>
+
+<h3>Network 5: Binary</h3>
+<p>The person in the center of the room says, &ldquo;Huh, what year is it? It&rsquo;s 2021&rdquo; The room has 2 connections, which correspond to 0 and 1 (0 is left, 1 is right). We must enter the binary representation of 2021, 11111100101 by taking the left or right corridor respectively to reach the Stata-sticians.</p>
+
+<h3>Network 6: Semaphore</h3>
+<p>The person in the center of the room says, &ldquo;When you&rsquo;re on a boat and trying to reach your destination, what you need is a sail.&rdquo; The room has 8 connections, which correspond to the 8 semaphore directions. We can enter a letter by taking the two connections that correspond to the directions its semaphore signal flags are pointing (in any order). For example, to enter the letter S, we should go through the left, then bottom-right corridor (or bottom-right and then left). </p>
+<p>If we enter the letters of SAIL, we&rsquo;ll reach the Stata-sticians with our puzzles.</p>
+
+<h3>Network 7: Fibonacci</h3>
+<p>Each room has four connections that are each labelled with a number, and the four numbers are consecutive in some order. By exploring the sequence of options available to us at each room, we must realize that we can enter the first 9 Fibonacci numbers in order (0, 1, 1, 2, 3, 5, 8, 13, 21). Doing so takes us to the Stata-sticians.</p>

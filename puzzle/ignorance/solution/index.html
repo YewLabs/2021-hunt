@@ -1,0 +1,3706 @@
+<style>
+.puzzle {
+  background-color: white;
+}
+
+.puzzle img {
+  margin: 0 20%;
+  width: 60%;
+}
+
+.q {
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 1em;
+  background-color: #ccccf4;
+  font-style: italic;
+}
+
+.a {
+  margin-left: 2em;
+  margin-right: 2em;
+  padding: 1em;
+  background-color: #99ea99;
+}
+
+td {
+  border: 1px solid black;
+  min-width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+th {
+  border: none;
+}
+
+ol ol {
+  list-style: lower-alpha;
+}
+
+.c9{background-color:#000000}
+.c17{background-color:#ea9999}
+.c20{background-color:#f4cccc}
+.c23{text-align:center}
+.c23>table{display:inline-table}
+
+.puzzle h3, .puzzle h4 {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 1em 0;
+  margin: 0;
+  text-align: center;
+  overflow: hidden;
+}
+
+.puzzle h3 span, .puzzle h4 span {
+  position: relative;
+}
+
+.puzzle h3 span:before, .puzzle h3 span:after,
+.puzzle h4 span:before, .puzzle h4 span:after {
+  content: "";
+  height: 0;
+  border-top: 1px none black;
+  position: absolute;
+  top: 50%;
+  margin: 0 2em;
+}
+
+.puzzle h3 span:before, .puzzle h3 span:after {
+  width: 500px;
+  border-top-style: solid;
+}
+
+.puzzle h4 span:before, .puzzle h4 span:after {
+  width: 200px;
+  border-top-style: dotted;
+}
+
+.puzzle h3 span:before, .puzzle h4 span:before {
+  right: 100%;
+}
+
+.puzzle h3 span:after, .puzzle h4 span:after {
+  left: 100%;
+}
+</style>
+
+<p>This puzzle contains many logic puzzles similar in spirit to the famous <a href="https://en.wikipedia.org/wiki/Cheryl%27s_Birthday">Cheryl&rsquo;s Birthday problem</a>. Each logic puzzle starts with Cheryl (in one case, Denise) giving Albert and Bernard partial information about some piece of data (e.g., her birthday, a set of numbers, a nonogram, etc.). Albert and Bernard then have a conversation about what they know and don&rsquo;t know about the data. Based on this conversation, we can recover the original information given to Albert and Bernard by Cheryl, and more importantly, we can recover the values of the various italicized variables.</p>
+
+<p>At the end of the puzzle, Cheryl tells Albert the first half of the answer to this puzzle and Bernard the second half of the answer to this puzzle. Albert and Bernard then have one final conversation about the answer to this puzzle, but where bits and pieces of their conversation are replaced with variables referencing earlier subpuzzles; for example, in Albert&rsquo;s first line, Albert states &ldquo;I don&rsquo;t know if the answer contains exactly <i>product</i> vowels&rdquo;. By solving the 8th subpuzzle, we can find that the value of <i>product</i> is 4, so Albert (at the beginning of the conversation) does not know if the answer contains exactly 4 vowels. Solving this final puzzle gives us the answer to the puzzle, <span class="answer">BRUTES</span>.</p>
+
+<p>Below we provide full solutions to each of the subpuzzles and the final &ldquo;meta&rdquo; subpuzzle. Before we begin, some general tips that are useful across several of the subpuzzles:</p>
+
+<ul>
+<li>It&rsquo;s often useful to note that, at any point in any conversation, any deduction that you the solver can make is also something that all conversing parties can make, and furthermore that all conversing parties know that other parties can make and so on (that is, it&rsquo;s <i>common knowledge</i>.)</li>
+<li>In many of the subpuzzles, it is possible to represent the state of all knowledge (Albert&rsquo;s knowledge, Bernard&rsquo;s knowledge, and our knowledge) succinctly in a large table, where the rows correspond to Albert&rsquo;s partial information and the columns correspond to Bernard&rsquo;s partial information. In this table, we keep track of a subset of cells which could possibly correspond to the original piece of data. For example, in the original Cheryl&rsquo;s birthday puzzle (and the first subpuzzle), we keep track of the possible dates of Cheryl&rsquo;s birthday in a table where each row corresponds to a month (what Albert is told) and each column corresponds to day (what Bernard is told).<br><br>In this framing, whenever Albert makes a statement he reveals some information about the row of the table containing the answer, and this allows us to eliminate some rows. Similarly, whenever Bernard makes a statement, we can eliminate some columns.</li>
+<li>One common statement is when Albert (for example) says &ldquo;I don&rsquo;t know if X is true&rdquo;. In this case there has to be some choice of Bernard&rsquo;s column which causes X to be true, and some choice of column which causes X to be false, and we can eliminate all rows for which X is either always true or always false.</li>
+<li>Alternately, you might prefer to think about representing each problem as a bipartite graph, where the vertices on one side correspond to possibilities for what Albert is told, vertices on the other side correspond to possibilities for what Bernard is told, and there is an edge between two vertices <i>v</i> and <i>w</i> if it is simultaneously possible that Albert was told <i>v</i> and that Bernard was told <i>w</i>.<br><br>Statements now allow us to remove vertices (and their incident edges) from the graph. For example, if Albert says &ldquo;I don&rsquo;t know Bernard&rsquo;s piece of information&rdquo;, this allows us to remove all of Albert&rsquo;s vertices with degree 1.</li>
+</ul>
+
+<h3><span>Solutions to individual subpuzzles</span></h3>
+
+<div>
+<h4><span><i>birth<sub>month</sub></i> and <i>birth<sub>day</sub></i></span></h4>
+
+<p>This puzzle is actually isomorphic to the classic Cheryl&rsquo;s birthday problem (i.e. it can be obtained from the classic Cheryl&rsquo;s birthday problem by relabeling and reordering the months and the dates).</p>
+
+<p>We can solve this puzzle as follows. Recall that the starting set of possible dates is given by the following table:</p>
+
+<table class="grid">
+<tr>
+<th>May</th>
+<td class="c9"></td>
+<td>9</td>
+<td>10</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>June</th>
+<td>8</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>11</td>
+<td>12</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>July</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>11</td>
+<td>12</td>
+<td>13</td>
+</tr>
+<tr>
+<th>August</th>
+<td>8</td>
+<td class="c9"></td>
+<td>10</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p class="q">Albert: I don&#39;t know when Cheryl&#39;s birthday is, but I know that Bernard doesn&#39;t know too.</p>
+
+<p>No matter which month Cheryl&rsquo;s birthday lies in, there is no way for Albert to know when Cheryl&rsquo;s birthday is, so the first part of this statement gives us no information.</p>
+
+<p>However, the second part of Albert&rsquo;s statement (that he knows that Bernard does not know when Cheryl&rsquo;s birthday is) does provide us with some information. If Bernard does not know when Cheryl&rsquo;s birthday is, it must lie on a day that can possibly match with at least two different months. This immediately rules out the 9th and the 13th (which correspond uniquely to May and July respectively). Moreover, since Albert knows that Bernard doesn&rsquo;t know when Cheryl&rsquo;s birthday is, Cheryl&rsquo;s birthday cannot belong to May or July.</p>
+
+<p>We can therefore eliminate May 9, May 10, July 11, July 12, and July 13 as possible birthdays:</p>
+
+<table class="grid">
+<tr>
+<th>May</th>
+<td class="c9"></td>
+<td class="c17">9</td>
+<td class="c17">10</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>June</th>
+<td>8</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>11</td>
+<td>12</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>July</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c17">11</td>
+<td class="c17">12</td>
+<td class="c17">13</td>
+</tr>
+<tr>
+<th>August</th>
+<td>8</td>
+<td class="c9"></td>
+<td>10</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p class="q">Bernard: At first I didn&#39;t know when Cheryl&#39;s birthday is, but I know now. </p>
+
+<p>Since Bernard now knows when Cheryl&rsquo;s birthday is, it must now lie on a day which matches uniquely to a month. The only such days are the 10th, the 11th, and the 12th (which match with August, June, and June respectively). We can therefore eliminate June 8 and August 8:</p>
+
+<table class="grid">
+<tr>
+<th>May</th>
+<td class="c9"></td>
+<td class="c17">9</td>
+<td class="c17">10</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>June</th>
+<td class="c17">8</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>11</td>
+<td>12</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>July</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c17">11</td>
+<td class="c17">12</td>
+<td class="c17">13</td>
+</tr>
+<tr>
+<th>August</th>
+<td class="c17">8</td>
+<td class="c9"></td>
+<td>10</td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p class="q">Albert: Then I also know when Cheryl&#39;s birthday is.</p>
+
+<p>Since Albert knows when Cheryl&rsquo;s birthday is, Albert&rsquo;s month must contain only one possible date. Since June contains two possible dates (June 11 and June 12), Albert&rsquo;s month must be August, and Cheryl&rsquo;s birthday is August 10.</p>
+
+<p class="a"><b>Answer</b>: <i>birth<sub>month</sub></i> = 8, <i>birth<sub>day</sub></i> = 10</p>
+</div>
+
+<div>
+<h4><span><i>cell</i></span></h4>
+
+<p>For reference, here is the 10-by-10 table Cheryl starts with:</p>
+
+<table class="grid">
+<tr>
+<td>30</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>40</td>
+<td>4</td>
+<td class="c9">.</td>
+<td>33</td>
+<td>22</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>16</td>
+</tr>
+<tr>
+<td>35</td>
+<td class="c9">.</td>
+<td>3</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>32</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>11</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>14</td>
+<td class="c9">.</td>
+<td>31</td>
+<td class="c9"></td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>21</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>13</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>15</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>12</td>
+<td class="c9">.</td>
+<td>20</td>
+<td>34</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>26</td>
+<td class="c9">.</td>
+<td>9</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p class="q">Albert: I don&#39;t know the location of the cell.</p>
+
+<p>If Albert does not know the location of the cell, his row must contain at least two numbered squares. We can thus eliminate the first, fifth and eighth rows above (which only contain one numbered square) and obtain the following table:</p>
+
+<table class="grid">
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>40</td>
+<td>4</td>
+<td class="c9">.</td>
+<td>33</td>
+<td>22</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>16</td>
+</tr>
+<tr>
+<td>35</td>
+<td class="c9">.</td>
+<td>3</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>32</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>14</td>
+<td class="c9">.</td>
+<td>31</td>
+<td class="c9"></td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>21</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>13</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>12</td>
+<td class="c9">.</td>
+<td>20</td>
+<td>34</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>26</td>
+<td class="c9">.</td>
+<td>9</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p class="q">Bernard: I don&#39;t know the location of the cell.</p>
+
+<p>Similarly, we can eliminate columns with a unique numbered square. This allows us to eliminate columns 2, 4 and 8 above.</p>
+
+<table class="grid">
+<tr>
+<td class="c9">.</td>
+<td>40</td>
+<td class="c9">.</td>
+<td>33</td>
+<td>22</td>
+<td class="c9">.</td>
+<td>16</td>
+</tr>
+<tr>
+<td>35</td>
+<td>3</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>32</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>14</td>
+<td>31</td>
+<td class="c9"></td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>13</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>12</td>
+<td class="c9">.</td>
+<td>34</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>26</td>
+<td>9</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p class="q">Albert: I don&#39;t know the location of the cell.</p>
+
+<p>We again eliminate rows with a unique numbered square.</p>
+
+<table class="grid">
+<tr>
+<td class="c9">.</td>
+<td>40</td>
+<td class="c9">.</td>
+<td>33</td>
+<td>22</td>
+<td class="c9">.</td>
+<td>16</td>
+</tr>
+<tr>
+<td>35</td>
+<td>3</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>32</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>14</td>
+<td>31</td>
+<td class="c9"></td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>12</td>
+<td class="c9">.</td>
+<td>34</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>26</td>
+<td>9</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p class="q">Bernard: I don&#39;t know the location of the cell.</p>
+
+<p>We again eliminate columns with a unique numbered square.</p>
+
+<table class="grid">
+<tr>
+<td class="c9">.</td>
+<td>40</td>
+<td class="c9">.</td>
+<td>33</td>
+<td>22</td>
+<td>16</td>
+</tr>
+<tr>
+<td>35</td>
+<td>3</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>32</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>14</td>
+<td>31</td>
+<td class="c9"></td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>12</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>26</td>
+<td>9</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p class="q">Albert: We could continue this conversation indefinitely (by repeatedly saying &quot;I don&#39;t know the location of the cell&quot;) without either of us learning the location of the cell.</p>
+
+<p>We finally arrive at the core of this subpuzzle. To begin, let us understand what happens to this table if Albert and Bernard do continue this conversation indefinitely. If we do this, then we continue eliminating rows and columns from the table until we are left with a &ldquo;stable&rdquo; table, where the statement &ldquo;I don&rsquo;t know the location of the cell&rdquo; conveys no additional information (regardless of who says it). If we carry out this procedure, we end up eliminating the rows and columns highlighted below in red before arriving at this stable state.</p>
+
+<table class="grid">
+<tr>
+<td class="c9">.</td>
+<td>40</td>
+<td class="c9">.</td>
+<td class="c20">33</td>
+<td>22</td>
+<td>16</td>
+</tr>
+<tr>
+<td>35</td>
+<td>3</td>
+<td class="c9">.</td>
+<td class="c17"></td>
+<td>32</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c17"></td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>14</td>
+<td>31</td>
+<td class="c17"></td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c17"></td>
+<td class="c17"></td>
+<td class="c17"></td>
+<td class="c20">12</td>
+<td class="c17"></td>
+<td class="c17"></td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>26</td>
+<td>9</td>
+<td class="c17"></td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p>Note that the cells deleted in this process (the cells highlighted in red) are exactly the cells where Albert and Bernard would learn the location of the cell during this conversation (instead of eliminating the cell, at that point in the conversation one of Albert or Bernard would have to say that they <i>do</i> in fact know the location of the cell).</p>
+
+<p>Now, how can Albert know for a fact that he and Bernard can continue the conversation indefinitely? Albert must know that the true cell is not deleted in this process. Since the cells deleted in this process belong to the first and fifth rows, we can delete these rows from the table.</p>
+
+<table class="grid">
+<tr>
+<td>35</td>
+<td>3</td>
+<td class="c9">.</td>
+<td>32</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td>17</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+<td>18</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>14</td>
+<td>31</td>
+<td class="c9">.</td>
+<td class="c9">.</td>
+</tr>
+<tr>
+<td class="c9">.</td>
+<td>26</td>
+<td>9</td>
+<td class="c9">.</td>
+<td>23</td>
+</tr>
+</table>
+
+<p class="q">Bernard: I know the location of the cell.</p>
+
+<p>Bernard now knows the location of the cell. That must mean that Bernard&rsquo;s column contains a unique numbered cell. The only such column is the fourth column in the above table, which contains the cell numbered 32.</p>
+
+<p class="a"><b>Answer</b>: <i>cell</i> = 32</p>
+</div>
+
+<div>
+<h4><span><i>d<sub>1</sub></i>, <i> d<sub>2</sub></i>, and <i>d<sub>3</sub></i></span></h4>
+
+<p>Since there are 6 possibilities for each of <i>d<sub>1</sub></i>, <i>d<sub>2</sub></i>, and <i>d<sub>3</sub></i>, there are 216 possibilities for the numbers given to Albert, Bernard and Cheryl. While it&rsquo;s possible to solve this puzzle by keeping track of all 216 possibilities in a 6-by-6-by-6 table, we will take a different approach (which will greatly reduce the set of possibilities we need to consider).</p>
+
+<p>Let <i>A</i>, <i>B</i>, and <i>C</i> equal <i>d<sub>2</sub></i> <i> + d<sub>3</sub></i>, <i>d<sub>1</sub></i> <i> + d<sub>3</sub></i>, and <i>d<sub>1</sub></i> <i> + d<sub>2</sub></i> respectively.</p>
+
+<p class="q">Cheryl: I don&#39;t know if there are exactly two 1s among Denise&#39;s three numbers.</p>
+
+<p>Note that if Cheryl&rsquo;s number is larger than 7, it is impossible for either <i>d<sub>1</sub></i> or <i>d<sub>2</sub></i> to be equal to 1, so it is impossible for two of Denise&rsquo;s three numbers to equal 1. We therefore know that <i>C</i> is less than or equal to 7. (It is also easy to check that any number between 2 and 7 is possible for <i>C</i>, but we will not need this).</p>
+
+<p class="q">Bernard: I don&#39;t know if there are exactly zero 1s among Denise&#39;s three numbers.</p>
+
+<p>Note that if Bernard&rsquo;s number <i>B</i> was 2 or 3, then that would guarantee at least one 1 among the numbers <i>d<sub>1</sub></i> and <i>d<sub>3</sub></i>. It follows that <i>B</i> cannot be 2 or 3.</p>
+
+<p>Interestingly, <i>B</i> cannot be 12 either. Note that if Bernard&rsquo;s number is 12, <i>d<sub>1</sub></i> and <i>d<sub>3</sub></i> must both be 6. Then, if <i>d<sub>2</sub></i> &gt; 1, we would have that <i>C</i> = <i>d<sub>1</sub></i> <i> + d<sub>2</sub></i> &gt; 7, contradicting what we know from Cheryl&rsquo;s first statement.</p>
+
+<p>Any other value for <i>B</i> is possible. If 4 &le; <i>B</i> &le; 8, then (<i>d<sub>1</sub></i> <i>, d<sub>2</sub></i> <i>, d<sub>3</sub></i>) = (3, 1, <i>B</i>&minus;3) is one possible assignment where there is at least one 1, and (<i>d<sub>1</sub></i> <i>, d<sub>2</sub></i> <i>, d<sub>3</sub></i>) = (2, 2, <i>B</i>&minus;2) is a possible assignment where there are no 1&rsquo;s. Similarly, if 9 &le; <i>B</i> &le; 11, (<i>d<sub>1</sub></i> <i>, d<sub>2</sub></i> <i>, d<sub>3</sub></i>) = (5, 1, <i>B</i>&minus;5) is one possible assignment where there is at least one 1, and (<i>d<sub>1</sub></i> <i>, d<sub>2</sub></i> <i>, d<sub>3</sub></i>) = (5, 2, <i>B</i>&minus;5) is a possible assignment where there are no 1&rsquo;s.</p>
+
+<p class="q">Cheryl: I don&#39;t know if there are exactly two 6s among Denise&#39;s three numbers.</p>
+
+<p>Similarly as in the first step, this implies that <i>C</i> &ge; 7 (since if C &lt; 7, neither <i>d<sub>1</sub></i> nor <i>d<sub>2</sub></i> can be 6).</p>
+
+<p>But now we know both that <i>C</i> &le; 7 and <i>C</i> &ge; 7, so we must have that <i>C</i> = 7. It follows that <i>d<sub>2</sub></i> = 7 &minus; d<sub>1</sub>, so we can parametrize the triple (<i>d<sub>1</sub></i>, <i>d<sub>2</sub></i>, <i>d<sub>3</sub></i>) via just the value of <i>d<sub>1</sub></i> and <i>d<sub>3</sub></i>. We do so in the following table, where the row corresponds to the value of <i>d<sub>1</sub></i> and the column corresponds to the value of <i>d<sub>3</sub></i>.</p>
+
+<table class="grid">
+<tr>
+<td class="c17">(1, 6, 1)</td>
+<td class="c17">(2, 5, 1)</td>
+<td>(3, 4, 1)</td>
+<td>(4, 3, 1)</td>
+<td>(5, 2, 1)</td>
+<td>(6, 1, 1)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 2)</td>
+<td>(2, 5, 2)</td>
+<td>(3, 4, 2)</td>
+<td>(4, 3, 2)</td>
+<td>(5, 2, 2)</td>
+<td>(6, 1, 2)</td>
+</tr>
+<tr>
+<td>(1, 6, 3)</td>
+<td>(2, 5, 3)</td>
+<td>(3, 4, 3)</td>
+<td>(4, 3, 3)</td>
+<td>(5, 2, 3)</td>
+<td>(6, 1, 3)</td>
+</tr>
+<tr>
+<td>(1, 6, 4)</td>
+<td>(2, 5, 4)</td>
+<td>(3, 4, 4)</td>
+<td>(4, 3, 4)</td>
+<td>(5, 2, 4)</td>
+<td>(6, 1, 4)</td>
+</tr>
+<tr>
+<td>(1, 6, 5)</td>
+<td>(2, 5, 5)</td>
+<td>(3, 4, 5)</td>
+<td>(4, 3, 5)</td>
+<td>(5, 2, 5)</td>
+<td>(6, 1, 5)</td>
+</tr>
+<tr>
+<td>(1, 6, 6)</td>
+<td>(2, 5, 6)</td>
+<td>(3, 4, 6)</td>
+<td>(4, 3, 6)</td>
+<td>(5, 2, 6)</td>
+<td class="c17">(6, 1, 6)</td>
+</tr>
+</table>
+
+<p>We have highlighted in red the cells where <i>B</i> = 2, 3, or 12 (and are thus invalid). One nice feature of this table is that along the diagonals running from south-west to north-east, Bernard&rsquo;s value is fixed, and along the anti-diagonals running from north-west to south-east, Albert&rsquo;s value is fixed.</p>
+
+<p class="q">Albert: I don&#39;t know if there are exactly zero 6s among Denise&#39;s three numbers.</p>
+
+<p>It suffices to check which anti-diagonals both contain a valid cell with zero 6s and a valid cell with at least one 6 &mdash; we can eliminate all other anti-diagonals in the above table. In particular, we can eliminate the anti-diagonals with <i>A</i> = 2, 7, 11, and 12.</p>
+
+<table class="grid">
+<tr>
+<td class="c17">(1, 6, 1)</td>
+<td class="c17">(2, 5, 1)</td>
+<td>(3, 4, 1)</td>
+<td>(4, 3, 1)</td>
+<td>(5, 2, 1)</td>
+<td class="c17">(6, 1, 1)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 2)</td>
+<td class="c17">(2, 5, 2)</td>
+<td>(3, 4, 2)</td>
+<td>(4, 3, 2)</td>
+<td>(5, 2, 2)</td>
+<td>(6, 1, 2)</td>
+</tr>
+<tr>
+<td>(1, 6, 3)</td>
+<td>(2, 5, 3)</td>
+<td class="c17">(3, 4, 3)</td>
+<td>(4, 3, 3)</td>
+<td>(5, 2, 3)</td>
+<td>(6, 1, 3)</td>
+</tr>
+<tr>
+<td>(1, 6, 4)</td>
+<td>(2, 5, 4)</td>
+<td>(3, 4, 4)</td>
+<td class="c17">(4, 3, 4)</td>
+<td>(5, 2, 4)</td>
+<td>(6, 1, 4)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 5)</td>
+<td>(2, 5, 5)</td>
+<td>(3, 4, 5)</td>
+<td>(4, 3, 5)</td>
+<td class="c17">(5, 2, 5)</td>
+<td>(6, 1, 5)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 6)</td>
+<td class="c17">(2, 5, 6)</td>
+<td>(3, 4, 6)</td>
+<td>(4, 3, 6)</td>
+<td>(5, 2, 6)</td>
+<td class="c17">(6, 1, 6)</td>
+</tr>
+</table>
+
+<p class="q">Bernard: I don&#39;t know if there is exactly one 1 among Denise&#39;s three numbers.</p>
+
+<p>Similarly, we check which diagonals both contain a valid cell with exactly one 1, and a valid cell with zero or two 1s. This allows us to eliminate the cells with <i>B</i> = 4 and 7.</p>
+
+<table class="grid">
+<tr>
+<td class="c17">(1, 6, 1)</td>
+<td class="c17">(2, 5, 1)</td>
+<td class="c17">(3, 4, 1)</td>
+<td>(4, 3, 1)</td>
+<td>(5, 2, 1)</td>
+<td class="c17">(6, 1, 1)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 2)</td>
+<td class="c17">(2, 5, 2)</td>
+<td>(3, 4, 2)</td>
+<td>(4, 3, 2)</td>
+<td class="c17">(5, 2, 2)</td>
+<td>(6, 1, 2)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 3)</td>
+<td>(2, 5, 3)</td>
+<td class="c17">(3, 4, 3)</td>
+<td class="c17">(4, 3, 3)</td>
+<td>(5, 2, 3)</td>
+<td>(6, 1, 3)</td>
+</tr>
+<tr>
+<td>(1, 6, 4)</td>
+<td>(2, 5, 4)</td>
+<td class="c17">(3, 4, 4)</td>
+<td class="c17">(4, 3, 4)</td>
+<td>(5, 2, 4)</td>
+<td>(6, 1, 4)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 5)</td>
+<td class="c17">(2, 5, 5)</td>
+<td>(3, 4, 5)</td>
+<td>(4, 3, 5)</td>
+<td class="c17">(5, 2, 5)</td>
+<td>(6, 1, 5)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 6)</td>
+<td class="c17">(2, 5, 6)</td>
+<td>(3, 4, 6)</td>
+<td>(4, 3, 6)</td>
+<td>(5, 2, 6)</td>
+<td class="c17">(6, 1, 6)</td>
+</tr>
+</table>
+
+<p class="q">Albert: I don&#39;t know if there is exactly one 6 among Denise&#39;s three numbers.</p>
+
+<p>Again, we check for anti-diagonals which contain a valid cell with exactly one 6, and a valid cell with zero or two 6s. This allows us to eliminate the cells with <i>A</i> = 10.</p>
+
+<table class="grid">
+<tr>
+<td class="c17">(1, 6, 1)</td>
+<td class="c17">(2, 5, 1)</td>
+<td class="c17">(3, 4, 1)</td>
+<td>(4, 3, 1)</td>
+<td>(5, 2, 1)</td>
+<td class="c17">(6, 1, 1)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 2)</td>
+<td class="c17">(2, 5, 2)</td>
+<td>(3, 4, 2)</td>
+<td>(4, 3, 2)</td>
+<td class="c17">(5, 2, 2)</td>
+<td>(6, 1, 2)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 3)</td>
+<td>(2, 5, 3)</td>
+<td class="c17">(3, 4, 3)</td>
+<td class="c17">(4, 3, 3)</td>
+<td>(5, 2, 3)</td>
+<td>(6, 1, 3)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 4)</td>
+<td>(2, 5, 4)</td>
+<td class="c17">(3, 4, 4)</td>
+<td class="c17">(4, 3, 4)</td>
+<td>(5, 2, 4)</td>
+<td>(6, 1, 4)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 5)</td>
+<td class="c17">(2, 5, 5)</td>
+<td>(3, 4, 5)</td>
+<td>(4, 3, 5)</td>
+<td class="c17">(5, 2, 5)</td>
+<td>(6, 1, 5)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 6)</td>
+<td class="c17">(2, 5, 6)</td>
+<td class="c17">(3, 4, 6)</td>
+<td>(4, 3, 6)</td>
+<td>(5, 2, 6)</td>
+<td class="c17">(6, 1, 6)</td>
+</tr>
+</table>
+
+<p class="q">Bernard: The number I was given is even.</p>
+
+<p>We can eliminate all diagonals with an odd sum. In particular, we eliminate the remaining cells with <i>B</i> = 5, 9, and 11.</p>
+
+<table class="grid">
+<tr>
+<td class="c17">(1, 6, 1)</td>
+<td class="c17">(2, 5, 1)</td>
+<td class="c17">(3, 4, 1)</td>
+<td class="c17">(4, 3, 1)</td>
+<td>(5, 2, 1)</td>
+<td class="c17">(6, 1, 1)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 2)</td>
+<td class="c17">(2, 5, 2)</td>
+<td class="c17">(3, 4, 2)</td>
+<td>(4, 3, 2)</td>
+<td class="c17">(5, 2, 2)</td>
+<td>(6, 1, 2)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 3)</td>
+<td class="c17">(2, 5, 3)</td>
+<td class="c17">(3, 4, 3)</td>
+<td class="c17">(4, 3, 3)</td>
+<td>(5, 2, 3)</td>
+<td class="c17">(6, 1, 3)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 4)</td>
+<td>(2, 5, 4)</td>
+<td class="c17">(3, 4, 4)</td>
+<td class="c17">(4, 3, 4)</td>
+<td class="c17">(5, 2, 4)</td>
+<td>(6, 1, 4)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 5)</td>
+<td class="c17">(2, 5, 5)</td>
+<td>(3, 4, 5)</td>
+<td class="c17">(4, 3, 5)</td>
+<td class="c17">(5, 2, 5)</td>
+<td class="c17">(6, 1, 5)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 6)</td>
+<td class="c17">(2, 5, 6)</td>
+<td class="c17">(3, 4, 6)</td>
+<td>(4, 3, 6)</td>
+<td class="c17">(5, 2, 6)</td>
+<td class="c17">(6, 1, 6)</td>
+</tr>
+</table>
+
+<p class="q">Albert: The number I was given is prime.</p>
+
+<p>We can eliminate all non-prime anti-diagonals. In particular, we eliminate the remaining cells with <i>A</i> = 9.</p>
+
+<table class="grid">
+<tr>
+<td class="c17">(1, 6, 1)</td>
+<td class="c17">(2, 5, 1)</td>
+<td class="c17">(3, 4, 1)</td>
+<td class="c17">(4, 3, 1)</td>
+<td>(5, 2, 1)</td>
+<td class="c17">(6, 1, 1)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 2)</td>
+<td class="c17">(2, 5, 2)</td>
+<td class="c17">(3, 4, 2)</td>
+<td>(4, 3, 2)</td>
+<td class="c17">(5, 2, 2)</td>
+<td>(6, 1, 2)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 3)</td>
+<td class="c17">(2, 5, 3)</td>
+<td class="c17">(3, 4, 3)</td>
+<td class="c17">(4, 3, 3)</td>
+<td>(5, 2, 3)</td>
+<td class="c17">(6, 1, 3)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 4)</td>
+<td class="c17">(2, 5, 4)</td>
+<td class="c17">(3, 4, 4)</td>
+<td class="c17">(4, 3, 4)</td>
+<td class="c17">(5, 2, 4)</td>
+<td>(6, 1, 4)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 5)</td>
+<td class="c17">(2, 5, 5)</td>
+<td class="c17">(3, 4, 5)</td>
+<td class="c17">(4, 3, 5)</td>
+<td class="c17">(5, 2, 5)</td>
+<td class="c17">(6, 1, 5)</td>
+</tr>
+<tr>
+<td class="c17">(1, 6, 6)</td>
+<td class="c17">(2, 5, 6)</td>
+<td class="c17">(3, 4, 6)</td>
+<td class="c17">(4, 3, 6)</td>
+<td class="c17">(5, 2, 6)</td>
+<td class="c17">(6, 1, 6)</td>
+</tr>
+</table>
+
+<p class="q">Bernard: I now know Denise&#39;s three numbers.</p>
+
+<p>In order for Bernard to know Denise&rsquo;s three numbers, there must be a unique cell on the diagonal corresponding to Bernard&rsquo;s number. There is only one choice of diagonal with a unique cell, and that is the diagonal with <i>B</i> = 10. It follows that (<i>d<sub>1</sub></i>, <i>d<sub>2</sub></i>, <i>d<sub>3</sub></i>) = (6, 1, 4), the label of this unique cell.</p>
+
+<p class="a"><b>Answer</b>: <i>d<sub>1</sub></i> <i> = </i>6, <i>d<sub>2</sub></i> = 1, <i>d<sub>3</sub></i> = 4.</p>
+</div>
+
+<div>
+<h4><span><i>div<sub>1</sub></i> and <i>div<sub>2</sub></i></span></h4>
+
+<p>The possibilities for Albert&rsquo;s number (<i>div<sub>1</sub></i>) and Bernard&rsquo;s number (<i>div<sub>2</sub></i>) can be summarized in the following table of (<i>div<sub>1</sub></i>, <i>div<sub>2</sub></i>) pairs:</p>
+
+<table class="grid">
+<tr>
+<td class="c9"></td>
+<td>(1, 2)</td>
+<td>(1, 3)</td>
+<td>(1, 4)</td>
+<td>(1, 5)</td>
+<td>(1, 6)</td>
+<td>(1, 7)</td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>(2, 4)</td>
+<td class="c9"></td>
+<td>(2, 6)</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>(3, 6)</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p class="q">Albert: Bernard doesn&#39;t know my number.</p>
+
+<p>If <i>div<sub>2</sub></i> is prime, then Bernard knows that Albert&rsquo;s number must be 1. On the other hand, if <i>div</i><sub>2</sub> is composite, then Bernard does not know Albert&rsquo;s number (for example, it can be either 1 or the smallest prime divisor of Bernard&rsquo;s number). Therefore, if Bernard doesn&rsquo;t know Albert&rsquo;s number, <i>div<sub>2</sub></i> is composite.</p>
+
+<p>If Albert knows that Bernard doesn&rsquo;t know Albert&rsquo;s number, then Albert must know that Bernard&rsquo;s number is composite. For the numbers in this table, this is possible if and only if <i>div<sub>1</sub></i> = 2 or 3; we can thus eliminate all cells with <i>div<sub>1</sub></i> = 1:</p>
+
+<table class="grid">
+<tr>
+<td class="c9"></td>
+<td class="c17">(1, 2)</td>
+<td class="c17">(1, 3)</td>
+<td class="c17">(1, 4)</td>
+<td class="c17">(1, 5)</td>
+<td class="c17">(1, 6)</td>
+<td class="c17">(1, 7)</td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>(2, 4)</td>
+<td class="c9"></td>
+<td>(2, 6)</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td>(3, 6)</td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p class="q">Albert: Bernard still doesn&#39;t know my number.</p>
+
+<p>Again, from the above table, we can see that Bernard does not know Albert&rsquo;s number only if <i>div<sub>2</sub></i> = 6. In order for Albert to be sure that Bernard does not know Albert&rsquo;s number, Albert must know that <i>div<sub>2</sub></i> <i> = 6</i>; this is only possible if <i>div<sub>1</sub></i> <i> =</i> 3. It follows that (<i>div<sub>1</sub></i>, <i>div<sub>2</sub></i>) = (3, 6).</p>
+
+<p class="a"><b>Answer</b>: <i>div<sub>1</sub></i> = 3, <i>div<sub>2</sub></i> = 6.</p>
+</div>
+
+<div>
+<h4><span><i>edges</i></span></h4>
+
+<p>The first thing to understand in this puzzle is that there are edges which are impossible to uniquely specify given only the connectivity data of the graph, but no other distinguishing features. For example, the two edges labelled 7 in the below graph are indistinguishable:</p>
+
+<p><img src="{{sroot}}image5.png"></p>
+
+<p>In particular, any true statement one can make about one of the edges labelled 7 <i>that only uses the connectivity information of the graph</i> will also be a true statement about the other edge labelled 7 &mdash; for example &ldquo;this edge is adjacent to one vertex of degree 2 and one vertex of degree 6&rdquo; is true for both edges. Mathematically, two edges are indistinguishable if there exists a <a href="https://en.wikipedia.org/wiki/Graph_automorphism">graph automorphism</a> mapping one edge to the other. In the above drawing, we have highlighted all indistinguishable edges in red, and labelled edges which are indistinguishable from each other with the same number.</p>
+
+<p>In the analysis that follows, let us write <i>E</i> to denote Cheryl&rsquo;s edge, <i>A</i> to denote the vertex given to Albert, and <i>B</i> to denote the vertex given to Bernard.</p>
+
+<p class="q">Albert: I don&rsquo;t know if there&rsquo;s any conversation we can have where I will learn which edge is Cheryl&rsquo;s edge.</p>
+
+<p>When is it the case that Albert cannot figure out which edge is Cheryl&rsquo;s edge <i>E</i>? If <i>E</i>is distinguishable from all other edges, then Albert and Bernard can both figure out which edge this corresponds to in their drawing by combining their information. If <i>E</i> is indistinguishable from some other edge, then it might still be the case that Albert can still identify <i>E</i> &mdash; for example, if only one of those two edges are incident with <i>A</i>. However, if Cheryl&rsquo;s edge is indistinguishable from another edge incident with <i>A</i>, nothing Bernard can tell Albert can help Albert distinguish between the two edges (and identify <i>E</i>).</p>
+
+<p>In summary, Albert cannot identify <i>E</i> iff <i>A</i> belongs to two red edges with the same label, one of which is <i>E</i>. Since Albert does not know if it is possible for him to identify <i>E</i>, <i>A</i> must be adjacent to at least two red edges with the same label, and to at least one other edge that is &ldquo;distinguishable&rdquo; for Albert (either a black edge or a red edge with a unique label among the red edges incident with <i>A</i>). This allows us to reduce the set of possibilities for <i>A</i> to the green vertices in the following image:</p>
+
+<p><img src="{{sroot}}image4.png"></p>
+
+<p class="q">Bernard: I don&rsquo;t know if there&rsquo;s any conversation we can have where I will learn which edge is Cheryl&rsquo;s edge.</p>
+
+<p>Similarly, Bernard does not know if it is possible for him to identify <i>E</i>. Similar to before <i>B</i> must be adjacent to two red edges with the same label and at least one other &ldquo;distinguishable&rdquo; edge &mdash; however now it is additionally important that these edges are not eliminated by what Bernard knows about the possibilities for <i>A</i> from Albert&rsquo;s first statement (i.e. the other endpoints of these edges must be green vertices). From this, we can see that the only candidates for <i>B</i> are the purple diamonds in the following image:</p>
+
+<p><img src="{{sroot}}image2.png"></p>
+
+<p class="q">Albert: I know Cheryl&rsquo;s edge.</p>
+
+<p>Since each purple diamond is a possible candidate for <i>B</i>, in order for Albert to know Cheryl&rsquo;s edge (and thus <i>B</i>), <i>A</i> must be adjacent to a unique purple diamond. Since <i>A</i> must be either a green circle or purple diamond, this reduces the set of possibilities for <i>A</i> to the black crosses in the following image:</p>
+
+<p><img src="{{sroot}}image1.png"></p>
+
+<p class="q">Bernard: I know Cheryl&rsquo;s edge.</p>
+
+<p>Similarly, this means <i>B</i> must be adjacent to a unique candidate for <i>A</i> (black cross). The only purple diamond adjacent to a unique black cross is the one belonging to the two red edges labelled &ldquo;6&rdquo;. In particular, this lets us conclude that Cheryl&rsquo;s edge is the dashed blue edge in the following picture:</p>
+
+<p><img src="{{sroot}}image3.png"></p>
+
+<p>There are 8 edges in the graph that share exactly one endpoint with this edge.</p>
+
+<p class="a"><b>Answer</b>: <i>edges = 8</i></p>
+</div>
+
+<div>
+<h4><span><i>nonogram</i></span></h4>
+
+<p>Since there are a very large number of 5-by-5 nonograms (approximately 2<sup>25</sup> &approx; 32M), we will not keep track of the set of possible nonograms explicitly. Instead, we will make several deductions about properties of the nonogram as we go along.</p>
+
+<p class="q">Albert: I don&#39;t know whether the first two columns of the grid have any filled-in squares.</p>
+
+<p>If Albert doesn&rsquo;t know whether the first two columns of the grid have any filled-in squares, it must be possible for all of Albert&rsquo;s clues to fit within the last three columns of the grid (for example, the clue [1 1] fits within the last three columns of the grid, but the clue [2 2] does not). This means all of Albert&rsquo;s clues must belong to the set {[0], [1], [2], [3], [1 1]}.</p>
+
+<p>(Also, it cannot be the case that all of Albert&rsquo;s clues are [0], but this will also become evident from other clues).</p>
+
+<p>We will break Bernard&rsquo;s next statement into three parts.</p>
+
+<p class="q">Bernard: I already knew you didn&#39;t know that.</p>
+
+<p>How can Bernard possibly know that Albert&rsquo;s clues all fit within the last three columns of the grid? One way this is possible is if Bernard knows that all the cells in the solution lie within a span of 3 consecutive columns; in other words, if Bernard&rsquo;s 5 clues take the form (?, ?, ?, [0], [0]), ([0], ?, ?, ?, [0]), or ([0], [0], ?, ?, ?) where we use ? here to denote any possible clue. Another way it is possible is if Bernard has 2 or fewer non-zero clues; in this case regardless of the location of Bernard&rsquo;s non-zero clues, all of Albert&rsquo;s clues will belong to {[1 1], [2], [1], [0]} and therefore could fit within a span of three columns.</p>
+
+<p>We next claim that the above characterization is necessary. In particular, if Bernard has at least 3 non-zero clues, then Bernard has exactly 3 non-zero clues and they are in a span of 3 consecutive columns (i.e. Bernard&rsquo;s clues take one of the three forms listed above). If not, look at the locations of Bernard&rsquo;s non-zero clues; if these non-zero clues span a set of columns of width &gt; 3, then Bernard can imagine a consistent nonogram where one of Albert&rsquo;s clues has width &gt; 3, contradicting Albert&rsquo;s earlier statement. For example, if Bernard&rsquo;s clues were ([1 1] [0] [2 2] [3] [0]) then as far as Bernard knows at the very beginning of the conversation, the nonogram could be:</p>
+
+<table class="grid">
+<tr>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+
+<p>In this case, Albert&rsquo;s first clue is [1 2], which does not fit within a span of width 3. In general, Bernard can perform this trick of shifting his non-zero clues as high up as possible and cause Albert&rsquo;s first clue to have minimum width larger than 3.</p>
+
+<p class="q">Bernard: One of my clues is a 5.</p>
+
+<p>We further know that one of these three non-zero columns is completely filled in. As a side-effect, we now know that Albert cannot have any [0] clues.</p>
+
+<p class="q">Bernard: I don&#39;t know if the filled-in squares form an orthogonally-connected region.</p>
+
+<p>There are several deductions possible from this statement, but the most useful one is that the [5] cannot appear as the middle clue of the three non-zero columns &mdash; this is since if we place the [5] in the middle, no matter what we place on either side of the [5], the resulting set of black squares will be orthogonally-connected. Similarly, this rules out the possibility that there are fewer than 3 non-zero columns. We will also use the fact that this rules out the possibility that Bernard has two or more [5] clues; if so, the resulting region will be orthogonally-connected, no matter how we place the [5]s.</p>
+
+<p>Before proceeding onto Albert&rsquo;s next statement, let&rsquo;s take stock of what Albert now knows about the nonogram &mdash; as we will soon see, Albert knows quite a bit.</p>
+
+<p>We (and therefore Albert) know that:</p>
+
+<ul>
+<li>The filled-in squares of the nonogram fit into a smaller 5-by-3 region.</li>
+<li>In this 5-by-3 region, either the first column is completely filled in (and the last column is not), or the last column is completely filled in (and the first column is not).</li>
+</ul>
+
+<p>From now on, call this smaller 5-by-3 region the <i>subgrid</i>. We now claim that Albert knows the contents of this subgrid almost uniquely &mdash; in fact, we will show that Albert has exactly two possibilities for the contents of this subgrid, and they are horizontal reflections (across some vertical line) of one another.</p>
+
+<p>To see why, we claim that as soon as Albert fixes the location of the [5] in the subgrid, Albert can fill in the rest of the subgrid from his clues. In particular, recall that all of Albert&rsquo;s clues belong to the set {[1], [2], [3], [1 1]}. For each of these clues, specifying the location of the left-most black square and the fact that they have to fit within a span of three columns allows us to uniquely place the black squares:</p>
+
+<table class="grid">
+<tr>
+<th>[1]</th>
+<td class="c9"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>[2]</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<th>[3]</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>[1 1]</th>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p>Similarly, specifying the location of the right-most black square and the fact that they have to fit within a span of three columns also allows us to uniquely place the black squares, and in fact doing so results in a horizontal reflection of the solution we get in the first case.</p>
+
+<p>We have therefore shown that Albert knows the contents of the subgrid up to a horizontal reflection. Since the contents of the grid cannot be symmetric with respect to such a reflection (in particular, only one of the two side columns can be a [5]), Albert has exactly two possibilities for the content of the subgrid.</p>
+
+<p>Finally, what does Albert know about the location of the subgrid? If we look at Bernard&rsquo;s previous statement, we&rsquo;ll see that so far, the answer is nothing &mdash; if Bernard&rsquo;s statement is true for a specific nonogram, it is also true for the nonogram formed by shifting the subgrid horizontally in the main 5-by-5 grid. Since there are three possible 5-by-3 subgrids, this means that right now Albert has exactly 6 candidates for the solution to the nonogram.</p>
+
+<p class="q">Albert: I don&#39;t know if you know whether the center of the grid is filled in, but I know whether the center of the grid is filled in.</p>
+
+<p>Let us first focus on the fact that Albert knows whether the center of the grid is filled in. As we have just established, Albert knows the contents of the subgrid up to reflection, but does not know the location of the subgrid in the main grid. If Albert&rsquo;s center row is not a [3], then there is necessarily an empty square somewhere in the center row of the subgrid, and there is some translation of this subgrid which places this empty square at the very center of the grid. But similarly, since Albert&rsquo;s center row is not a [0], there is necessarily a filled-in square somewhere in the center row of the subgrid, and it&rsquo;s therefore also possible that the center is filled-in. It follows that the only way Albert can make this statement is if Albert&rsquo;s middle clue is a [3]. Note that this means that Albert actually knows the stronger statement that the center of the grid <i>is</i> filled in.</p>
+
+<p>Albert also does not know if Bernard knows whether the center of the grid is filled in. While it is possible to deduce some facts from this right now (for example, we can guarantee that Bernard&rsquo;s two other clues apart from the [5] are not both [3]s), we&rsquo;ll return to this fact later.</p>
+
+<p class="q">Bernard: I did not know whether the center of the grid was filled in, but I do now. In addition, I now know that the filled-in squares form an orthogonally-connected region. I don&#39;t know if you know the shape formed by this region (where two shapes are the same if they can be translated and rotated to match).</p>
+
+<p>Again, Bernard is saying several different things in this clue. We&rsquo;ll actually start with the last statement Bernard says &mdash; that Bernard does not know whether Albert knows the shape formed by the region of filled-in squares (up to rotation and translation).</p>
+
+<p>This is an interesting statement, since as noted above, we (and thus Bernard) know that Albert does know the shape formed by this region <i>up to reflection</i>. Moreover, without rotation, we know that Albert has two candidate possibilities for the shape, since we know the shape is not symmetric with respect to a horizontal reflection, and nothing Bernard has said so far distinguishes this nonogram from its horizontal reflection.</p>
+
+<p>So when is it the case that two distinct shapes that are (horizontal) reflections of each other can be transformed into one another by rotations / translations? The answer is when the shape <a href="https://en.wikipedia.org/wiki/Chirality_(mathematics)#Chirality_in_two_dimensions">possesses an axis of symmetry</a>. Since we know our shape does not have horizontal symmetry, if it has this property, it must have vertical symmetry.</p>
+
+<p>In particular, since Bernard does not know the shape formed by this region, Bernard must believe it is possible that the shape has vertical symmetry. In particular, it must be the case that each of Bernard&rsquo;s clues has the potential to be symmetric about the center row. This rules out many possible clues for Bernard, and leaves only {[1], [3], [1 1], [1 1 1]} as possible clues (in addition to the [5] which we know occurs exactly once. In fact, we can further rule out [1 1], since Bernard also knows (as we do) that from Albert&rsquo;s statements, the middle row of the subgrid is filled in. There is no way to place a [1 1] column clue symmetrically about the middle row while also filling in the middle square of the column. The remaining clues therefore must belong to the set {[1], [3], [1 1 1]}.</p>
+
+<p>Let us now revisit the other parts of Bernard&rsquo;s statement. Bernard begins by stating that he did not know whether the center of the grid was filled in, but he does now. This second bit (that he does now) conveys no information, since even we know that the center of the grid is filled in, but the fact that he did not originally tells us that whatever clue Bernard has for the center column (of the original grid, not the subgrid) must not reveal that the center is filled-in &mdash; in particular, it must be [1] (since [3] and [1 1 1] reveal this).</p>
+
+<p>We now know two of Bernard&rsquo;s clues are [1] and [5]. The remaining clue must be one of [1], [3], and [1 1 1]. In fact, Bernard&rsquo;s sequence of three non-zero clues (up to reflection) must be one of ([5], [1], [1]), ([5], [1], [3]), ([5], [3], [1]), ([5], [1 1 1], [1]). (We eliminated ([5], [1], [1 1 1]) since this cannot possibly be connected).</p>
+
+<p class="q">Albert: I do not. In particular, I do not know whether the cell in row 4 column 2 is filled in (although I do know that all four corners of the grid are empty).</p>
+
+<p>Albert does not know the shape, so Albert&rsquo;s clues (and thus the shape) must not actually be vertically symmetric. Note that this rules out ([5], [1 1 1], [1]) from the above list. This also rules out ([5], [1], [1]) since if the center row of the subgrid is filled in, this pattern is necessarily vertically symmetric. We are therefore down to ([5], [3], [1]) and ([5], [1], [3]) (up to reflection, so ([1], [3], [5]) and ([3], [1], [5]) are also still possible).</p>
+
+<p>Albert also tells us that all four corners of the grid are empty. Note that this is not possible if the pattern is ([5], [3], [1]) &mdash; if the pattern is ([5], [3], [1]) then in order for Bernard to not originally know whether the center is filled in, the [5] must occur in either the first column or last column, which would result in two corners being filled in. The clues for the subgrid are thus either ([5], [1], [3]) or ([3], [1], [5]), and the subgrid must be located in the middle three columns of the grid. Equivalently, Bernard&rsquo;s five clues for the grid must either be ([0], [5], [1], [3], [0]) or ([0], [3], [1], [5], [0]).</p>
+
+<p>Finally, we have our first bit of information that breaks symmetry &mdash; Albert states that he does not know whether the cell in row 4 column 2 is filled in. We will return to this bit of information shortly.</p>
+
+<p class="q">Bernard: Until you said that, I did not know whether the cell in row 4 column 2 was filled in, but now I know the solution to the nonogram.</p>
+
+<p>Bernard tells us that he also did not originally know whether the cell in row 4 column 2 was filled in. If Bernard&rsquo;s clues are ([0], [5], [1], [3], [0]) he knows that all of column 2 is filled in, so Bernard&rsquo;s clues must be ([0], [3], [1], [5], [0]).</p>
+
+<p>There are only three nonograms consistent with this set of Bernard&rsquo;s clues and the fact that the center is filled in:</p>
+
+<div class="c23">
+<table class="grid">
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+</table>
+
+<table class="grid">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+</table>
+
+<table class="grid">
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+</table>
+</div>
+
+<p>In the latter two of these, Albert&rsquo;s clue for row 4 is [1 1], and therefore Albert (in combination with the knowledge that the subgrid spans the middle three columns) knows that row 4 column 2 is filled in. It follows that the only possible nonogram is the first of these, namely:</p>
+
+<table class="grid">
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+</table>
+
+<p>This nonogram depicts the digit 4.</p>
+
+<p class="a"><b>Answer</b>: <i>nonogram</i> = 4</p>
+</div>
+
+<div>
+<h4><span><i>state</i></span></h4>
+
+<p>The state abbreviations of all 50 states are summarized by the black squares in the following table (where the row corresponds to the first letter of the state abbreviation, and the column corresponds to the second letter of the state abbreviation):</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+<th>L</th>
+<th>M</th>
+<th>N</th>
+<th>O</th>
+<th>R</th>
+<th>S</th>
+<th>T</th>
+<th>V</th>
+<th>X</th>
+<th>Y</th>
+<th>Z</th>
+</tr>
+<tr>
+<th>A</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>D</th>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>F</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>G</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>H</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>I</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>K</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+</tr>
+<tr>
+<th>L</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>M</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>N</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+</tr>
+<tr>
+<th>O</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>P</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>R</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>S</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>T</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>U</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+</tr>
+</table>
+
+<p class="q">Albert: I don&rsquo;t know the state.</p>
+
+<p>Albert&rsquo;s row of the table must contain at least 2 black squares. This lets us eliminate rows D, F, G, H, L, P, R, and U.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>H</th>
+<th>I</th>
+<th>J</th>
+<th>K</th>
+<th>L</th>
+<th>M</th>
+<th>N</th>
+<th>O</th>
+<th>R</th>
+<th>S</th>
+<th>T</th>
+<th>V</th>
+<th>X</th>
+<th>Y</th>
+<th>Z</th>
+</tr>
+<tr>
+<th>A</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>I</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>K</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+</tr>
+<tr>
+<th>M</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>N</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+</tr>
+<tr>
+<th>O</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>S</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>T</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+</tr>
+</table>
+
+<p class="q">Bernard: I don&#39;t know the state.</p>
+
+<p>Similarly, Bernard&rsquo;s column of the table must contain at least 2 black squares. This lets us eliminate columns J, M, X, and Z.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>H</th>
+<th>I</th>
+<th>K</th>
+<th>L</th>
+<th>N</th>
+<th>O</th>
+<th>R</th>
+<th>S</th>
+<th>T</th>
+<th>V</th>
+<th>Y</th>
+</tr>
+<tr>
+<th>A</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>I</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>K</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>M</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>N</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>O</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>S</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>T</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+</table>
+
+<p class="q">Albert: I don&#39;t know the state.</p>
+
+<p>Albert&rsquo;s row of the table must again contain at least 2 black squares. This lets us eliminate row T. Before we eliminate it, let&rsquo;s consider the next two statements as well.</p>
+
+<p class="q">Bernard: I already knew that.</p>
+
+<p>Bernard already knew that Albert didn&rsquo;t know the state &mdash; in other words, Bernard already knew that Albert&rsquo;s letter is not T. Since TN is the only state abbreviation where it is possible for Albert&rsquo;s letter to be T, this means that we can eliminate column N for Bernard.</p>
+
+<p class="q">Albert: Well I already knew that you already knew that.</p>
+
+<p>Albert already knew that Bernard already knew that Albert didn&rsquo;t know the state. From the above logic, this means that Albert already knew that Bernard&rsquo;s letter was not N. Since IN and MN are also states, this means that Albert cannot have the letter I or M.</p>
+
+<p>All in all, this lets us eliminate rows I, M, and T for Albert, and column N for bernard.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+<th>H</th>
+<th>I</th>
+<th>K</th>
+<th>L</th>
+<th>O</th>
+<th>R</th>
+<th>S</th>
+<th>T</th>
+<th>V</th>
+<th>Y</th>
+</tr>
+<tr>
+<th>A</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>K</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>N</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>O</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>S</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+</table>
+
+<p class="q">Bernard: I still don&#39;t know what the state is.</p>
+
+<p>We can eliminate columns with a unique black square. This allows us to eliminate columns E, I, L, O, and S.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>D</th>
+<th>H</th>
+<th>K</th>
+<th>R</th>
+<th>T</th>
+<th>V</th>
+<th>Y</th>
+</tr>
+<tr>
+<th>A</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>K</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>N</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>O</th>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>S</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+</table>
+
+<p class="q">Albert: I also don&#39;t know what the state is.</p>
+
+<p>We can eliminate rows with a unique black square. This allows us to eliminate row K.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>C</th>
+<th>D</th>
+<th>H</th>
+<th>K</th>
+<th>R</th>
+<th>T</th>
+<th>V</th>
+<th>Y</th>
+</tr>
+<tr>
+<th>A</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>N</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+<tr>
+<th>O</th>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>S</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+</table>
+
+<p class="q">Bernard: Again, I still don&#39;t know the state.</p>
+
+<p>Again, we can eliminate columns with a unique black square, but no such columns exist.</p>
+
+<p class="q">Albert: Well, I don&#39;t even know how many states you still think are possibly the correct state.</p>
+
+<p>The number of states Bernard possibly thinks are the correct state is equal to the number of black squares in Bernard&rsquo;s column. We therefore want to eliminate rows where each black square in the row contains the same number of black squares in its column.</p>
+
+<p>By inspection, this is true for rows A, N, O, and S, which we now eliminate (along with columns left with 0 remaining black squares).</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>A</th>
+<th>T</th>
+<th>V</th>
+<th>Y</th>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td class="c9">x</td>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+</table>
+
+<p class="q">Bernard: Well, I know how many possibilities you have narrowed down the state to.</p>
+
+<p>Similarly, we now want to eliminate columns where each black square in the column <i>does not</i> appear the same number of times in its row. This eliminates column A.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>T</th>
+<th>V</th>
+<th>Y</th>
+</tr>
+<tr>
+<th>C</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>V</th>
+<td class="c9">x</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>W</th>
+<td></td>
+<td class="c9">x</td>
+<td class="c9">x</td>
+</tr>
+</table>
+
+<p class="q">Albert: I now know the state. By the way, the state does not border Canada.</p>
+
+<p>Since Albert knows the state, Albert&rsquo;s row is C or V and the state is either CT or VT. Of these two states, Vermont (VT) borders Canada, whereas Connecticut (CT) does not, so the answer to this puzzle is CT. (The remaining line of dialogue conveys no further information).</p>
+
+<p class="a"><b>Answer</b>: CT</p>
+</div>
+
+<div>
+<h4><span><i>sum</i> and <i>product</i></span></h4>
+
+<p class="q">Albert: I don&rsquo;t know whether you know my number.</p>
+
+<p>Before this statement, Bernard knows Albert&rsquo;s number if and only if Bernard&rsquo;s number is a prime <i>p</i> (which would allow him to deduce that the set is {1, <i>p</i>} and that Albert&rsquo;s number is 1 + <i>p</i>) or a square of a prime <i>p</i><sup>2</sup> (which would allow him to deduce that the set is {1, <i>p</i><sup>2</sup>} and that Albert&rsquo;s number is 1 + <i>p</i><sup>2</sup>). (Note that Bernard&rsquo;s number can never be 1, which is not the product of two or more distinct positive integers.) Any other number <i>n</i> has a nontrivial factorization <i>n</i> = <i>pq</i> where <i>p</i> and <i>q</i> are distinct integers &gt; 1, and Bernard would not be able to distinguish between {1, <i>pq</i>} and {<i>p</i>, <i>q</i>}. So, if Albert believes it&rsquo;s possible that Bernard knows Albert&rsquo;s number, we know that Albert&rsquo;s number is of the form 1 + <i>p</i> or 1 + <i>p</i><sup>2</sup>.</p>
+
+<p>We can further eliminate some small cases for Albert&rsquo;s number. If Albert&rsquo;s number is 3, Albert can deduce that the set is {1, 2} and that Bernard&rsquo;s number is 2, which is also enough to deduce the set. In this case Albert would know that Bernard knows Albert&rsquo;s number, which is impossible.</p>
+
+<p>Similarly, if Albert&rsquo;s number is 4, Albert can deduce that the set is {1, 3} and that Bernard&rsquo;s number is 3, which is also enough to deduce the set, so this case can be eliminated as well.</p>
+
+<p>Larger numbers are still consistent, however: If Albert has 5, the set could be {1, 4} or {2, 3}, making Bernard&rsquo;s number 4 or 6. If Albert has 6, the set could be {1, 5}, {2, 4}, or {1, 2, 3}, making Bernard&rsquo;s number 5, 8, or 6. Larger numbers give even more possibilities for the set and for Bernard&rsquo;s number.</p>
+
+<p class="q">Bernard: I know your number, and now I know you know my number too.</p>
+
+<p>We&rsquo;ve already eliminated Albert&rsquo;s number being 3 or 4. We can check that, if the set is {1, 4} so that Albert&rsquo;s number is 5 and Bernard&rsquo;s number is 4, everything is consistent:</p>
+
+<ul>
+<li>As above, from Albert&rsquo;s initial point of view, the set could be {1, 4} or {2, 3}; Bernard would start out knowing Albert&rsquo;s number in the former case but not the latter.</li>
+<li>If the set were actually {2, 3}, Albert stating that he doesn&rsquo;t know whether Bernard knows his number does not allow Bernard to distinguish between {2, 3} and {1, 2, 3}, so Bernard cannot say that he knows Albert&rsquo;s number after the first statement.</li>
+<li>With the set actually being {1, 4}, however, Bernard can immediately deduce that the set is {1, 4} even before Albert&rsquo;s first statement.</li>
+<li>Therefore, Bernard stating that he knows Albert&rsquo;s number allows Albert to deduce Bernard&rsquo;s number, which Bernard also knows, and the conversation is fully consistent.</li>
+</ul>
+
+<p>If Albert&rsquo;s number is none of the above, it&rsquo;s at least 6 and is one more than either an odd prime or the square of an odd prime, so it must be an even number &ge; 6.</p>
+
+<p>If it&rsquo;s 6, we can actually check that when Bernard&rsquo;s number is either 5 or 8, Bernard can deduce the set and Albert&rsquo;s number:</p>
+
+<ul>
+<li>5 is definitely {1, 5}.</li>
+<li>8 could be {1, 8}, {2, 4}, or {1, 2, 4}, producing sums 9, 6, and 7. Of these, only 6 is one more than a prime or the square of a prime.</li>
+</ul>
+
+<p>Otherwise, Albert&rsquo;s number is an even number greater than 6, and we know that it&rsquo;s less than 4 &times; 10<sup>18</sup>. Let it be <i>A</i>. Here we will lean on empirical verification of a slightly strengthened version of <a href="http://sweet.ua.pt/tos/goldbach.html">Goldbach&rsquo;s conjecture</a>, and write <i>A</i> as the sum of two <i>distinct</i> primes <i>q</i> + <i>r</i>. Now:</p>
+
+<ul>
+<li>If Bernard&rsquo;s number were <i>A</i> &minus; 1 (which is a prime or square of a prime), the set would be {1, <i>A</i> &minus; 1} and Bernard would know Albert&rsquo;s number.</li>
+<li>But if Bernard&rsquo;s number were <i>qr</i>, Bernard could still conclude that the set is either {<i>q</i>, <i>r</i>} or {1, <i>qr</i>}. However, Bernard can eliminate the second case using Albert&rsquo;s first statement, as 1 + <i>qr</i> is not in fact one more than a prime or a square prime, and he would know Albert&rsquo;s number.</li>
+</ul>
+
+<p>Therefore, there are at least two possible values of Bernard&rsquo;s number that would enable him to say that Bernard knows Albert&rsquo;s number, so Albert cannot know Bernard&rsquo;s number after the first half of Bernard&rsquo;s statement, and Bernard certainly could not conclude that either.</p>
+
+<p>We have therefore eliminated all cases except the set {1, 4}, where Albert gets 5 and Bernard gets 4.</p>
+
+<p class="a"><b>Answer</b>: <i>sum</i> = 5, <i>product</i> = 4</p>
+</div>
+
+<div>
+<h4><span><i>whether</i></span></h4>
+
+<p>Before we start examining the conversation between Albert and Bernard, let&rsquo;s attempt to better understand what statements like &ldquo;Albert knows whether Bernard knows whether Albert knows the numbers&rdquo; imply about the numbers given to Albert and Bernard.</p>
+
+<p>As in the puzzle description, assume that Albert and Bernard are given positive integers <i>a</i> and <i>b</i> respectively such that either <i>a</i> = <i>b</i> or <i>a = b</i> + 1 (for now we will not worry about the upper bound on <i>a</i> and <i>b</i>). We will now define a statement <i>W</i>(<i>n</i>) for each non-negative integer <i>n</i> &ge; 0, such that the statement <i>W</i>(<i>n</i>) contains <i>n</i> &ldquo;whether&rdquo;s. Let <i>W</i>(0) be the statement &ldquo;Albert knows Bernard&rsquo;s number&rdquo;. Now for any <i>n</i> &gt; 0, let <i>W</i>(<i>n</i>) be the statement &ldquo;Bernard knows whether <i>W</i>(<i>n</i>&minus;1) is true&rdquo; if <i>n</i> is odd, and let <i>W</i>(<i>n</i>) be the statement &ldquo;Albert knows whether <i>W</i>(<i>n</i>&minus;1) is true&rdquo; if <i>n</i> is even. The first couple statements <i>W</i>(<i>n</i>) can be written out as follows:</p>
+
+<ul>
+<li><i>W</i>(0): &ldquo;Albert knows Bernard&rsquo;s number.&rdquo;</li>
+<li><i>W</i>(1): &ldquo;Bernard knows whether Albert knows Bernard&rsquo;s number.&rdquo;</li>
+<li><i>W</i>(2): &ldquo;Albert knows whether Bernard knows whether Albert knows Bernard&rsquo;s number.&rdquo;</li>
+<li>&hellip;</li>
+</ul>
+
+<p>What does the statement <i>W</i>(<i>n</i>) imply about <i>a</i> and <i>b</i>? To start, note that <i>W</i>(0) implies that <i>a</i> = 1 (and <i>b</i> = 1), since this is the only setting where Albert knows Bernard&rsquo;s number uniquely. Given this, we can reinterpret <i>W</i>(1) as &ldquo;Bernard knows whether <i>a</i> = 1&rdquo;. If <i>b</i> &gt; 1, then Bernard knows that <i>a</i> cannot possibly be 1; however if <i>b</i> = 1, <i>a</i> could be either 1 or 2 (so Bernard does not know the truth of <i>W</i>(0)). In particular, <i>W</i>(1) implies that <i>b</i> &ne; 1.</p>
+
+<p>Similarly, we can reinterpret <i>W</i>(2) as &ldquo;Albert knows whether <i>b</i> &ne; 1&rdquo;. Certainly if <i>a</i> = 1, Albert knows that <i>b</i> = 1 (and therefore whether <i> b</i> &ne; 1). Similarly, if <i>a</i> &gt; 2, Albert knows that <i>b</i> &gt; 1, and thus knows that <i>b</i> &ne; 1. However, if <i>a</i> = 2, Albert does not know if <i>b</i> = 1 or 2. <i>W</i>(2) therefore implies that <i>a</i> &ne; 2.</p>
+
+<p>We can continue onwards to figure out the implication of <i>W</i>(<i>n</i>) for ever increasing values of <i>n</i>. More succinctly, for each value of <i>W</i>(<i>n</i>), we learn either that <i>a</i> cannot belong to some set of values <i>S</i>(<i>n</i>) (if <i>n</i> is even), or that <i>b</i> cannot belong to some set of values <i>S</i>(<i>n</i>) (if <i>n</i> is odd). Moreover, the rule for constructing <i>S</i>(<i>n</i>) from <i>S</i>(<i>n</i>&minus;1) is relatively simple:</p>
+
+<ul>
+<li>If <i>n</i> is even, then <i>S</i>(<i>n</i>) contains all numbers x &gt; 1 such that exactly one of <i>x</i> and <i>x</i>&minus;1 belong to <i>S</i>(<i>n</i>&minus;1) (this is the set of values for <i>a</i> forbidden by the statement &ldquo;Albert knows whether <i>b</i> belongs to <i>S</i>(<i>n</i>&minus;1)&rdquo;).</li>
+<li>If <i>n</i> is odd, then <i>S</i>(<i>n</i>) contains all numbers x &gt; 0 such that exactly one of <i>x</i> and <i>x</i>+1 belong to <i>S</i>(<i>n</i>&minus;1) (this is the set of values for <i>b</i> forbidden by the statement &ldquo;Bernard knows whether <i>a</i> belongs to <i>S</i>(<i>n</i>&minus;1)&rdquo;).</li>
+</ul>
+
+<p>This lets us quickly construct the following table of sets <i>S</i>(<i>n</i>) (where a cell is filled-in if the corresponding element belongs to <i>S</i>(<i>n</i>)):</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+</tr>
+<tr>
+<th><i>S</i>(1)</th>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(2)</th>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(3)</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(4)</th>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(5)</th>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(6)</th>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(7)</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(8)</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(9)</th>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(10)</th>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(11)</th>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(12)</th>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(13)</th>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(14)</th>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(15)</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(16)</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(17)</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(18)</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(19)</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<th><i>S</i>(20)</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+</tr>
+</table>
+
+<p>(Observant solvers might notice that drawing out this table results in a fractal pattern similar to half of Sierpinski&rsquo;s triangle).</p>
+
+<p>We are now ready to analyze the conversation between Albert and Bernard.</p>
+
+<p class="q">Albert: I know whether you know my number.</p>
+
+<p>Bernard knows Albert&rsquo;s number only if <i>b</i> = 11, so we know that <i>a</i> &ne; 11.</p>
+
+<p class="q">Bernard: I know whether you know my number.</p>
+
+<p>Albert knows Bernard&rsquo;s number only if <i>a</i> = 1, so we know that <i>b</i> &ne; 1.</p>
+
+<p class="q">Albert: I know whether you know my number.</p>
+
+<p>We have a repeat of the first line, except now we (and Albert and Bernard) know that <i>a</i>&ne; 11 and <i>b</i> &ne; 1. This is equivalent to Cheryl originally choosing numbers between 2 and 10 inclusive for Albert and Bernard. It similarly follows that this implies that <i>a</i> &ne; 10.</p>
+
+<p class="q">Bernard: I know whether you know whether I know whether you know whether I know whether you know whether I know whether you know whether I know whether you know whether I know whether you know whether I know whether you know my number.</p>
+
+<p>We can verify that this statement is equivalent to <i>W</i>(13). Since we know that <i>b</i> &ne; 1, and <i>a</i> &ne; 10, 11, if we let <i>a&rsquo; = a</i> &minus; 1 and <i>b&rsquo;</i> = <i>b</i> &minus; 1, we can instead pretend that Cheryl gave Albert and Bernard numbers <i>a&rsquo;</i> and <i>b&rsquo;</i> between 1 and 8 inclusive with the property that either <i>a&rsquo;</i> = <i>b&rsquo;</i> or <i>a&rsquo;</i> = <i>b&rsquo;</i>+ 1.</p>
+
+<p>Reading off <i>S</i>(13) from the above table, we know that <i>W</i>(13) implies that <i>b&rsquo;</i> cannot equal 2, 3, 6, or 7. In particular, this means that <i>b</i> cannot equal 3, 4, 7, or 8.</p>
+
+<p class="q">Albert: I don&#39;t know your number.</p>
+
+<p>We now have the following remaining options for <i>a</i> and <i>b</i>. We know that <i>b</i> cannot equal 1, 3, 4, 7, or 8. We also know that <i>a</i> cannot equal 10 or 11. Together, this means that (<i>a</i>, <i>b</i>) must be one of (2, 2), (3, 2), (5, 5), (6, 5), (6, 6), (7, 6), or (9, 9). Of these possibilities, the only cases in which Albert cannot uniquely identify Bernard&rsquo;s number are if <i>a</i> = 6 and <i>b</i> = 5 or 6. It follows that Albert&rsquo;s number is 6.</p>
+
+<p class="a"><b>Answer</b>: <i>whether</i> = 6</p>
+</div>
+
+<div>
+<h4><span><i>whisper<sub>1</sub></i> and <i>whisper<sub>2</sub></i></span></h4>
+
+<p>At the beginning of this part of the puzzle, Cheryl whispers information to Albert. Afterward, Albert knows the exact value of <i>whisper<sub>1</sub></i> and may additionally have some information about the value of <i>whisper<sub>2</sub></i>. We&rsquo;ll approach this part of the puzzle by considering all possibilities for what Albert may know about the pair (<i>whisper<sub>1</sub></i>, <i>whisper<sub>2</sub></i>).</p>
+
+<p class="q">Albert: I don&rsquo;t know your number.</p>
+
+<p>At this point, there are nine possibilities for what Albert may know about the pair (<i>whisper<sub>1</sub></i>, <i>whisper<sub>2</sub></i>). Let us call them 1(a, b, c, d), 2(a, b, c, d), and 3. They are as follows.</p>
+
+<ol>
+<li><i>whisper<sub>1</sub></i> = 1</li>
+<ol>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 1, and he knows (from what Cheryl whispered to him) that <i>whisper<sub>2</sub></i> is 1 or 2.</li>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 1, and he knows that <i>whisper<sub>2</sub></i> is 2 or 3.</li>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 1, and he knows that <i>whisper<sub>2</sub></i> is 1 or 3.</li>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 1, and the information Cheryl whispered to Albert told him nothing about the value of <i>whisper<sub>2</sub></i>. So, Albert only knows that <i>whisper<sub>2</sub></i> can be 1, 2, or 3.</li>
+</ol>
+<li><i>whisper<sub>1</sub></i> = 2</li>
+<ol>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 2, and he knows that <i>whisper<sub>2</sub></i> is 2 or 3.</li>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 2, and he knows that <i>whisper<sub>2</sub></i> is 3 or 4.</li>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 2, and he knows that <i>whisper<sub>2</sub></i> is 2 or 4.</li>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 2, and he knows that <i>whisper<sub>2</sub></i> is 2, 3, or 4.</li>
+</ol>
+<li><i>whisper<sub>1</sub></i> = 3</li>
+<ol>
+<li>Albert knows that <i>whisper<sub>1</sub></i> = 3, and he knows that <i>whisper<sub>2</sub></i> is 1 or 5.</li>
+</ol>
+</ol>
+
+<p>These possibilities can be summarized in a table similar to the ones used in previous parts of this solution. The columns of the table correspond to the nine possibilities listed above (Albert&rsquo;s knowledge), and the rows of the table correspond to the five possible values of <i>whisper<sub>2</sub></i> (Bernard&rsquo;s knowledge). The white cells correspond to the possible states of Albert&rsquo;s and Bernard&rsquo;s knowledge.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>1(a)</th>
+<th>1(b)</th>
+<th>1(c)</th>
+<th>1(d)</th>
+<th>2(a)</th>
+<th>2(b)</th>
+<th>2(c)</th>
+<th>2(d)</th>
+<th>3</th>
+</tr>
+<tr>
+<th>1</th>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+<tr>
+<th>2</th>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>3</th>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+<td></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>4</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+<td></td>
+<td></td>
+<td class="c9"></td>
+</tr>
+<tr>
+<th>5</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+</table>
+
+<p class="q">Bernard: Then you don&rsquo;t know whether my number is greater than your number.</p>
+
+<p>Albert knows whether <i>whisper<sub>2</sub></i> &gt; <i>whisper<sub>1</sub></i> in exactly scenarios 1(b) and 2(b). So we remove rows 2, 3, and 4 of the table, because they contain a white cell in column 1(b) or 2(b). Let&rsquo;s also clean up the columns that have no remaining white cells.</p>
+
+<table class="grid">
+<tr>
+<th></th>
+<th>1(a)</th>
+<th>1(c)</th>
+<th>1(d)</th>
+<th>3</th>
+</tr>
+<tr>
+<th>1</th>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<th>5</th>
+<td class="c9"></td>
+<td class="c9"></td>
+<td class="c9"></td>
+<td></td>
+</tr>
+</table>
+
+<p class="q">Albert: I now know your number.</p>
+
+<p>We now remove any column that contains more than one white cell, leaving only the possibility that <i>whisper<sub>1</sub></i> = 1 and <i>whisper<sub>2</sub></i> = 1.</p>
+
+<p class="a"><b>Answer</b>: <i>whisper<sub>1</sub></i> = 1, <i>whisper<sub>2</sub></i> = 1</p>
+</div>
+
+<h3><span>Solution to the meta puzzle</span></h3>
+
+<p>By substituting in the answers from all the subpuzzles, we obtain the following conversation.</p>
+
+<p class="q">
+Albert: I don&#39;t know if the answer contains exactly <b>4</b> vowels.<br>
+Bernard: I don&#39;t know if the answer contains exactly <b>4</b> vowels.<br>
+Albert: I don&#39;t know if the answer contains <b>CT</b> as a substring.<br>
+Bernard: I don&#39;t know if the answer contains <b>CT</b> as a substring.<br>
+Albert: I don&#39;t know if the sum of the <b>1</b>st and <b>5</b>th letters (where A=1, B=2, ...) is at least <b>8</b>.<br>
+Bernard: I don&#39;t know if the sum of the <b>1</b>st and <b>5</b>th letters (where A=1, B=2, ...) is at least <b>10</b>.<br>
+Albert: I don&rsquo;t know if the Scrabble score of the answer is equal to <b>8</b>.<br>
+Bernard: I don&rsquo;t know if the Scrabble score of the answer is equal to <b>6</b>.<br>
+Albert: I don&#39;t know if the set of letters in the answer contains <b>4</b> consecutive letters.<br>
+Bernard: I don&#39;t know if the set of letters in the answer contains <b>4</b> consecutive letters.<br>
+Albert: I don&rsquo;t know if the <b>1</b>st letter, the <b>3</b>rd letter, and the <b>6</b>th letter of the answer form a common English word when concatenated.<br>
+Bernard: I don&rsquo;t know if the <b>6</b>th letter, the <b>1</b>st letter, and the <b>4</b>th letter of the answer form a common English word when concatenated.<br>
+Albert: I don&rsquo;t know if the product of all the letters (where A=1, B=2, ...) in the answer is divisible by <b>32</b>.<br>
+Cheryl: Oh, I forgot to tell you this earlier, but all the letters in the answer are distinct.<br>
+Bernard: I know the answer to this puzzle.<br>
+Albert: I know the answer to this puzzle.
+</p>
+
+<p>We now proceed as usual.</p>
+
+<p class="q">Albert: I don&#39;t know if the answer contains exactly <b>4</b> vowels.</p>
+
+<p>The only way Albert is sure that the answer does not contain exactly 4 vowels is if Albert&rsquo;s trigram contains no vowels. It follows that Albert&rsquo;s trigram must contain a vowel.</p>
+
+<p class="q">Bernard: I don&#39;t know if the answer contains exactly <b>4</b> vowels.</p>
+
+<p>Similarly, this is possible if and only if Bernard&rsquo;s trigram contains at least one vowel (even though Bernard knows that Albert&rsquo;s trigram contains at least one vowel, Bernard&rsquo;s trigram could still contain 1, 2, or 3 vowels and satisfy the constraint that the answer contains 4 vowels).</p>
+
+<p class="q">Albert: I don&#39;t know if the answer contains <b>CT</b> as a substring.</p>
+
+<p>This implies that Albert&rsquo;s trigram does not contain CT as a substring. If Albert&rsquo;s trigram does not contain CT, then CT can still occur as a substring of the answer either by occurring entirely within Bernard&rsquo;s trigram or occurring across trigram boundaries (as the 3rd and 4th letters).</p>
+
+<p class="q">Bernard: I don&#39;t know if the answer contains <b>CT</b> as a substring.</p>
+
+<p>Again, this implies that Bernard&rsquo;s trigram does not contain CT as a substring. Furthermore, since Bernard knows that Albert&rsquo;s trigram does not contain CT as a substring, it must be possible for CT to appear across trigram boundaries. This implies that the fourth letter of the answer (and the first letter of Bernard&rsquo;s trigram) is a T.</p>
+
+<p>Summarizing, so far we know that Albert&rsquo;s trigram is ??? (one letter of which must be a vowel), and Bernard&rsquo;s trigram is T?? (one letter of which must be a vowel).</p>
+
+<p class="q">Albert: I don&#39;t know if the sum of the <b>1</b>st and <b>5</b>th letters (where A=1, B=2, ...) is at least <b>8</b>.</p>
+
+<p>As far as Albert knows, the 5th letter can be any letter. In order for the sum to possibly be below 8, this means that the value of the first letter must be between 1 and 6, so the first letter of the answer is between A and F inclusive.</p>
+
+<p class="c23">[A-F]??, T??</p>
+
+<p class="q">Bernard: I don&#39;t know if the sum of the <b>1</b>st and <b>5</b>th letters (where A=1, B=2, ...) is at least <b>10</b>.</p>
+
+<p>Bernard knows that the first letter has value between 1 and 6. In order for it to be possible for the sum to both be below 10 and at least 10, the fifth letter of the answer (Bernard&rsquo;s second letter) must be between 4 and 8 in value. The fifth letter is thus between D and H inclusive.</p>
+
+<p class="c23">[A-F]??, T[D-H]?</p>
+
+<p class="q">Albert: I don&rsquo;t know if the Scrabble score of the answer is equal to <b>8</b>.</p>
+
+<p>It is useful here to recall the <a href="https://en.wikipedia.org/wiki/Scrabble_letter_distributions#English">mapping from letters to Scrabble values</a>:</p>
+
+<ul>
+<li>1 point: A, E, I, O, U, L, N, S, T, R</li>
+<li>2 points: D, G</li>
+<li>3 points: B, C, M, P</li>
+<li>4 points: F, H, V, W, Y</li>
+<li>5 points: K</li>
+<li>8 points: J, X</li>
+<li>10 points: Q, Z</li>
+</ul>
+
+<p>Note that there are very few possible ways a six-letter word can have a Scrabble score of 8; either it must contain five 1-point letters and one 3-point letter, or four 1-point letters and two 2-point letters. In particular, if Albert makes this claim, it is not possible for any of his letters to be worth 4 or more points (and as long as all of his letters are worth at most 5 points total, it is possible that this constraint is satisfied). In particular, Albert&rsquo;s first letter cannot be F.</p>
+
+<p class="c23">[A-E]??, T[D-H]?</p>
+
+<p class="q">Bernard: I don&rsquo;t know if the Scrabble score of the answer is equal to <b>6</b>.</p>
+
+<p>This is an even stronger statement &mdash; it implies that all of the letters in Bernard&rsquo;s trigram must be worth 1 point. This is true for the T, but reduces the possibilities for the second letter of Bernard&rsquo;s trigram to just E.</p>
+
+<p class="c23">[A-E]??, TE?</p>
+
+<p class="q">Albert: I don&#39;t know if the set of letters in the answer contains <b>4</b> consecutive letters.</p>
+
+<p>Let us think about the possible ways in which the answer can contain 4 consecutive letters. Any such streak of 4 consecutive letters must contain letters from both trigrams. Moreover, since the fourth and fifth letters (the T and the E) cannot belong to the same streak of length 4, this streak must contain at least two letters from Albert&rsquo;s trigram.</p>
+
+<p>Let&rsquo;s first consider the case where the streak contains 3 letters from Albert&rsquo;s trigram. Then the streak must contain a letter between A and E, so it must be one of ABCD, BCDE, CDEF, DEFG, or EFGH. However, since we can have at most one 3-point value letter and at most two 2-point value letters in our answer (and no letters of higher value), this rules out all these possibilities.</p>
+
+<p>The streak must then contain 2 letters from Albert&rsquo;s trigram and 2 letters from Bernard&rsquo;s trigram. As previously mentioned, the two letters from Bernard&rsquo;s trigram cannot be the fourth and fifth letters. Let us now consider the case that they are the fifth and sixth letters (i.e. the E and the ?). However, this case is impossible, since all streaks of length 4 containing an E have too high of a scrabble value.</p>
+
+<p>It follows that the streak must contain the fourth and sixth letters from Bernard&rsquo;s trigram, and (since the fourth letter is a T) be one of QRST, RSTU, STUV, TUVW. Of these choices, all have too high of a Scrabble value except for RSTU. Finally, since the first letter must be between A and E, the streak must contain the second and third letters (and therefore the second, third, fourth, and sixth letters must be RSTU in some order). In fact, since the fourth letter is the T, the second, third, and sixth letters must be RSU in some order.</p>
+
+<p>Importantly, this means that as long as Albert&rsquo;s second and third letters are two distinct letters from the set [RSU], it is possible that the answer contains 4 consecutive letters.</p>
+
+<p class="c23">[A-E][RSU][RSU], TE?</p>
+
+<p class="q">Bernard: I don&#39;t know if the set of letters in the answer contains <b>4</b> consecutive letters.</p>
+
+<p>By following the above logic, Bernard also knows that the only way the answer can contain 4 consecutive letters is if it contains all the letters in RSTU. From Albert&rsquo;s previous statement, Bernard knows that Albert has two of the letters in the set {R, S, U} as his second and third letter. In order for it to be possible that the answer contains 4 consecutive letters, Bernard must also have a letter in the set {R, S, U} as his third letter (and as the answer&rsquo;s sixth letter).</p>
+
+<p class="c23">[A-E][RSU][RSU], TE[RSU]</p>
+
+<p class="q">Albert: I don&rsquo;t know if the <b>1</b>st letter, the <b>3</b>rd letter, and the <b>6</b>th letter of the answer form a common English word when concatenated.</p>
+
+<p>There are fifteen possibilities for the bigram formed by the first and third letters of the answer: AR, AS, AU, BR, BS, BU, CR, CS, CU, DR, DS, DU, ER, ES, and EU. For each of these possibilities, let us look at whether it is possible for it to form a common English word when concatenated with the sixth letter (which is one of R, S, and U):</p>
+
+<ul>
+<li>AR: None of ARR, ARS, and ARU are common English words.</li>
+<li><b>AS</b>: ASS is a common English word (the other two possibilities are not).</li>
+<li>AU: None of AUR, AUS, and AUU are common English words.</li>
+<li>BR: None of BRR, BRS, and BRU are common English words.</li>
+<li>BS: None of BSR, BSS, and BSU are common English words.</li>
+<li><b>BU</b>: BUR and BUS are common English words, but BUU is not.</li>
+<li>CR: None of CRR, CRS, and CRU are common English words.</li>
+<li>CS: None of CSR, CSS, and CSU are common English words.</li>
+<li><b>CU</b>: CUR is a common English word (the other two possibilities are not).</li>
+<li>DR: None of DRR, DRS, and DRU are common English words.</li>
+<li>DS: None of DSR, DSS, and DSU are common English words.</li>
+<li>DU: None of DUR, DUS, and DUU are common English words.</li>
+<li><b>ER</b>: ERR is a common English word (ERS is probably not a common English word, and ERU is definitely not a common English word).</li>
+<li><b>ES</b>: ESS is a common English word (the other two possibilities are not).</li>
+<li>EU: None of EUR, EUS, and EUU are common English words.</li>
+</ul>
+
+<p>This bigram therefore must be one of AS, BU, CU, ER, or ES. In particular, the first letter cannot be D.</p>
+
+<p class="c23">[ABCE][RSU][RSU], TE[RSU]</p>
+
+<p class="q">Bernard: I don&rsquo;t know if the <b>6</b>th letter, the <b>1</b>st letter, and the <b>4</b>th letter of the answer form a common English word when concatenated.</p>
+
+<p>Bernard knows that the 6th letter is one of R, S, or U, and that the 4th letter is T. If the 6th letter is R, then Bernard knows it is possible for this concatenation to be RAT (which is a common English word) and also possible for it to be RBT (which is not a common english word). If the 6th letter is S, then Bernard knows it is possible for this concatenation to be SAT (a common English word) and also for it to be SBT (not a common English word).</p>
+
+<p>However, if the 6th letter is U, then no matter the choice of first letter in {A, B, C, E}, this concatenation will not form an English word &mdash; it will form one of UAT, UBT, UCT, and UET. It follows that the 6th letter cannot be U.</p>
+
+<p class="c23">[ABCE][RSU][RSU], TE[RS]</p>
+
+<p class="q">Albert: I don&rsquo;t know if the product of all the letters (where A=1, B=2, ...) in the answer is divisible by <b>32</b>.</p>
+
+<p>Albert knows that Bernard&rsquo;s trigram is either TER, with product 20 &times; 5 &times; 18 = 2<sup>3</sup> &times; 3<sup>2</sup> &times; 5<sup>2</sup>, or TES, with product 20 &times; 5 &times; 19 = 2<sup>2</sup> &times; 5<sup>2</sup> &times; 19. In order for Albert to not know whether the product of all the letters is divisible by 32, the highest power of two dividing Albert&rsquo;s trigram must be exactly 4; then if Bernard&rsquo;s trigram is TER, the overall product is divisible by 32, and if Bernard&rsquo;s trigram is TES, the overall product is not divisible by 32.</p>
+
+<p>Now, the only possible even-valued letters in Albert&rsquo;s trigram are B (with value 2), which can occur in the first position, and R (with value 18) which can occur in the second or third position (but not both, since the second and third letters must be distinct elements of {R, S, U}). Since both B and R just contribute a single power of 2 to the product, they must both appear in Albert&rsquo;s trigram &mdash; in particular, Albert&rsquo;s trigram begins with the letter B.</p>
+
+<p>From our earlier analysis of bigrams, we know that if the first letter of the answer is B, the third letter of the answer must be U. Since R must appear somewhere in Albert&rsquo;s trigram, the second letter of the answer is R.</p>
+
+<p class="c23">BRU, TE[RS]</p>
+
+<p class="q">Cheryl: Oh, I forgot to tell you this earlier, but all the letters in the answer are distinct.</p>
+
+<p>There are now exactly two possibilities available for the answer: BRUTES and BRUTER. Since Cheryl now tells us that all the letters are distinct, we can conclude (along with Albert and Bernard) that the answer to this puzzle is <span class="answer">BRUTES</span>.</p>

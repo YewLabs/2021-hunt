@@ -1,0 +1,5 @@
+{% if team.is_limited %}
+<a href="https://krawthekrow.github.io/yweiyst/">Open this puzzle</a>
+{% else %}
+<a href="https://krawthekrow.github.io/yweiyst/?token={{ team.name|urlencode }}">Open this puzzle</a>
+{% endif %}

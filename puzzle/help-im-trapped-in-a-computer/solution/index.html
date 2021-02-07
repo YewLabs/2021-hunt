@@ -1,0 +1,116 @@
+<p>In Minerva Cluster 1 there are 4 computers that when interacted with put us inside a text adventure. The text adventure is set in an "Aperture Science Enrichment Center" and we are able to interact with
+letter cubes and portals. Below is a list of commands we have available to us.</p>
+
+<div>
+<table>
+<tr>
+<th>Command</th>
+<th>Description</th>
+</tr>
+<tr>
+<td>LOOK</td>
+<td>This lets us see what letter cubes and portals are available and how many other players are in the same facility.</td>
+</tr>
+<tr>
+<td>SHOOT</td>
+<td>This lets us shoot a blue or orange portal. Only one blue and one orange portal may exist among all four facilities.</td>
+</tr>
+<tr>
+<td>GO</td>
+<td>This lets us enter a portal, transporting us to the facility the other portal is located in.</td>
+</tr>
+<tr>
+<td>TAKE</td>
+<td>This lets us pick up a letter cube. We can hold only one letter cube at a time.</td>
+</tr>
+<tr>
+<td>DROP</td>
+<td>This lets us drop a letter cube. Together with TAKE and portals, we can transport letter cubes across facilities.</td>
+</tr>
+<tr>
+<td>SPELL</td>
+<td>This lets us attempt to spell a word using the letter cubes available.</td>
+</tr>
+<tr>
+<td>RESET</td>
+<td>This lets us reset all facilities so that they contain their original letter cubes.</td>
+</tr>
+<tr>
+<td>QUIT</td>
+<td>This lets us leave the current text adventure and return to the Minerva Cluster.</td>
+</tr>
+</table>
+</div>
+
+<p>The state of each facility is synchronized across all our teammates so that we can collaborate on this puzzle. After a bit of experimentation we notice that we can shoot portals in different facilities in order to travel between them. Furthermore, we can pick up and drop letter cubes so that we can move the letters around the different facilities. Next, when we LOOK at our current facility we see some crossword clues. For example, in facility 1 (arbitrarily numbered) we see the clue [Mail (4) O-O Tremble (5)]. These crossword clues, their answers, and the initial set of letters cubes in each facility are shown in the table below (facilities are arbitrarily numbered).</p> 
+
+<div>
+<table>
+<tr>
+<th>Facility #</th>
+<th>Clue</th>
+<th>Answer</th>
+<th>Letter Cubes</th>
+</tr>
+<tr>
+<td>1</td>
+<td>Mail (4) O-O Tremble (5)</td>
+<td>POST and COWER</td>
+<td>C,P,S,T</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Robe (4) O-O Beldam (5)</td>
+<td>GOWN and CRONE</td>
+<td>E,O,R,R</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ricochet (7) O-O Cornet (4)</td>
+<td>REBOUND and HORN</td>
+<td>D,H,U</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Thematic object (6)</td>
+<td>PORTAL</td>
+</tr>
+</table>
+</div>
+
+<p>Strangely, each of our crossword clues contains the string "O-O". With the initial letters available to us, we could try to move an O over to facility 1 and spell POST. If we do so, we'll receive the message "The blocks shimmer briefly. Perhaps the word must be transformed somehow...". This field goal is about portals and each of our answer words contains a "portal", i.e. the letter O. If we treat the O's in each crossword answer as a portal connecting the two, we could transform them by swapping the substring that follows the letter O in each pair of words. In each case this produces a new pair of English words and these are the ones we wish to spell. The transformed words are shown in the table below.</p>
+
+<div>
+<table>
+<tr>
+<th>Original Words</th>
+<th>Transformed Words</th>
+</tr>
+<tr>
+<td>POST and COWER</td>
+<td>COST and POWER</td>
+</tr>
+<tr>
+<td>GOWN and CRONE</td>
+<td>GONE and CROWN</td>
+</tr>
+<tr>
+<td>REBOUND and HORN</td>
+<td>REBORN and HOUND</td>
+</tr>
+</table>
+</div>
+
+<p>Now if we try spelling the word COST in facility 1 we'll receive the message "The blocks shimmer and a new block appears." and we'll receive a new letter cube with the letter W on it. At this point, the structure of the field goal becomes clearer. We need to spell the right word in each facility in order to obtain new letters that will help us spell words we previously were unable to spell. This culminates in us having enough letters to spell the word PORTAL in facility 4 to complete the field goal. One possible ordering of words to spell is as follows.</p>
+
+<ul>
+<li>Move the O from facility 2 to facility 1 and spell COST to obtain a W.</li>
+<li>Move the E and an R from facility 2 to facility 1 and spell POWER to obtain an N.</li>
+<li>Move the C, N, O, R, and W from facility 1 to facility 2 and spell CROWN to obtain a G.</li>
+<li>Move the E from facility 1 to facility 2 and spell GONE to obtain an A.</li>
+<li>Move the O and N from facility 2 to facility 3 and spell HOUND to obtain a B.</li>
+<li>Move both R's and the E from facility 2 to facility 3 and spell REBORN to obtain an L.</li>
+<li>Move the P and T from facility 1 to facility 4. Move the A from facility 2 to facility 4. Move the O, an R, and the L from faciilty 3 to facility 4 and spell PORTAL to complete the field goal.</li>
+</ul>
+
+<p>Once we spell PORTAL in facility 4 we complete the field goal and obtain the answer <span class="answer">VIVIPARITY</span>.</p>

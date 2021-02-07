@@ -1,0 +1,134 @@
+<style>
+.c td {
+  border: none;
+}
+
+.c td:not(:last-child) {
+  font-family: monospace;
+}
+</style>
+
+<p>This puzzle is a listing of 53 lines of C code, very vaguely ordered by length. Some of the lines are identical; others are clearly not valid C. We may suspect that our goal is to construct a valid program that follows the rules in the opening comment, and then see what it does when run.</p>
+
+<p>Our first clue is the title and copyright year. <a href="https://en.wikipedia.org/wiki/In_C"><i>In C</i></a> is a piece of music composed in 1964 that consists of 53 melodic fragments, to be repeated any number of times or skipped at the discretion of each performer, but remaining in order. Each fragment thus corresponds to one line of the program; identical fragments give identical lines. The correspondence is based on the pitch of each note:</p>
+
+<table>
+<tr><td>A</td><td>hexadecimal number</td>
+<tr><td>B♭</td><td>control flow keyword</td>
+<tr><td>B</td><td>function</td>
+<tr><td>C</td><td>type or type-related keyword</td>
+<tr><td>D</td><td>character literal</td>
+<tr><td>E</td><td>variable</td>
+<tr><td>F</td><td>decimal number</td>
+<tr><td>F♯</td><td><tt>++/&minus;&minus;</tt> (variable increment/decrement)</td>
+<tr><td>G</td><td><tt>&/*</tt> (pointer reference/dereference)</td>
+<tr><td>rest</td><td>comment</td>
+</table>
+
+<p>In other words, the order in which these categories of thing appear in each line of C matches the order of the notes in the corresponding <i>In C</i> fragment. Things not in these categories (for example, parentheses and arithmetic or logical operators) have no musical counterpart; tied notes and consecutive rests count as one thing for matching purposes.</p>
+
+<p>Using the score of <i>In C</i>, we can match everything up and determine the correct ordering of the lines, but this does not form a valid program. We still have to figure out how many times to repeat each line. We can do this by going through step by step and examining what the lines do, using the comments as signposts, and remembering that we have to set all the array entries. The final order and repeat counts are:</p>
+
+<table class="c">
+<tr><td>1</td><td>int N; float Y; complex Z;</td><td>Declare scratch variables.</td></tr>
+<tr><td>1</td><td>float F[23] = {Y =</td><td>Declare the main array: 22 entries and a sentinel.</td></tr>
+<tr><td>1</td><td>/* The first array entry is used as scratch space, and so is one of the only entries that will be modified more than once. */ N = 41}; F[</td><td><tt>F[0]</tt> is comparatively easy to access via <tt>*F</tt>, so as the comment says, it houses some temporary values.</td></tr>
+<tr><td>1</td><td>/* This entry, around the middle of the array, is being set to its final value. */ N -= 32] = *F;</td><td>This sets <tt>F[9]</tt>.</td></tr>
+<tr><td>1</td><td>F[3] = *F; /* The value set here will, after the end of the program, be read as the letter E. */</td><td>This sets <tt>F[3]</tt>.</td></tr>
+<tr><td>1</td><td>typedef</td><td>This is the first line that is duplicated later on.</td></tr>
+<tr><td>1</td><td>/* The code up to here has run pretty normally, */ float T; T /* but this will soon no longer be true. */</td><td>These types are just here to soak up some Cs.</td></tr>
+<tr><td>1</td><td>*P = 10 +</td><td>OK: here we create <tt>P</tt> as a pointer into <tt>F</tt>, so it can move around over time and set various array entries.</td></tr>
+<tr><td>1</td><td>((isxdigit(*F) * /* The final program should not end up showing nondeterministic behavior. */</td><td><tt>isxdigit</tt> returns false, or 0, which cancels out the <tt>rand</tt> call...</td></tr>
+<tr><td>1</td><td>+rand())[&F]);</td><td>...so this really just puts <tt>P</tt> at <tt>F + 10</tt>.</td></tr>
+<tr><td>2</td><td>-8, *P = (abs(*P) << abs(*P))</td><td>The first repeated line. We need to fill this array entry, but running the line once leaves it at 0, and running it more than twice overflows, which is undefined behavior.</td></tr>
+<tr><td>1</td><td>% 69; *P /= fabs((float)</td><td>Afterward, we just do some arithmetic for a while. This sets <tt>F[10]</tt>.</td></tr>
+<tr><td>1</td><td>log(*P)); *(P + 4) = *P + /* The value set here will, after the end of the program, be read as the letter N. */ *F -</td><td>However, we do see here the first use of <tt>-~/~-</tt>, which is very useful to fudge integers by one without using up a numeric literal. This sets <tt>F[14]</tt>.</td></tr>
+<tr><td>1</td><td>~(int) asinh(*P); ++P;</td><td></td></tr>
+<tr><td>1</td><td>*P /* The value set here is a float that might not look exact, but will still pretty clearly give the letter S in the end. */</td><td>This sets <tt>F[11]</tt>.</td></tr>
+<tr><td>1</td><td>= *F * log10((int) trunc(</td><td></td></tr>
+<tr><td>0</td><td>free() volatile sin(); restrict exit() /* Uh-oh. */</td><td>This line is nonsense.</td></tr>
+<tr><td>1</td><td>Y)); N--; Z = ~-(--P - F) + N *</td><td></td></tr>
+<tr><td>1</td><td>/* At this time, 5 out of 22 array entries should be set to their final values. */ *F;</td><td></td></tr>
+<tr><td>1</td><td>Z += N-- - (F - --P); *(F + N) = Z++ / ~-N; N++; (P</td><td>From here we start using <tt>N</tt> as another index into <tt>F</tt>. This sets <tt>F[7]</tt>.</td></tr>
+<tr><td>3</td><td>, ++P</td><td>Here we increment <tt>P</tt> three times to skip past the already-set entries to the next blank one.</td></tr>
+<tr><td>1</td><td>)[N] = F[-~N]; Y = F[N--] = *F * 0x1.a895dp0; (exit</td><td>Hexadecimal float literals are valid C, but only if they have an exponent (in binary). This sets <tt>F[20]</tt> and <tt>F[8]</tt>.</td></tr>
+<tr><td>0</td><td>, F[--N] = ++N + N-- / (++P - P--) + *P - 0x.accp4, exit</td><td>This concurrent modification is undefined behavior, however.</td></tr>
+<tr><td>0</td><td>); F[--N] = *(P - &Y + &N) / *F + *(P + 0xf); exit;</td><td>And this is invalid pointer arithmetic.</td></tr>
+<tr><td>1</td><td>, F[--N] = *F + 0x1.b1aep21 / (0xdead + 0xbeef + 0xcafe + 0xf00d)), exit</td><td>This is fine. This sets <tt>F[6]</tt>.</td></tr>
+<tr><td>1</td><td>; F[--N] = *F = 0x.9b3p5; exit - exit + exit - exit + exit,</td><td>This is also fine (<tt>exit</tt> behaves as a pointer). This sets <tt>F[5]</tt> (and resets <tt>*F</tt>).</td></tr>
+<tr><td>1</td><td>Z -= N++; errno[P++] = *(F + -~N); *P = --Z / ~-N; (P++[N] = (</td><td><tt>errno</tt> is presumably 0 here, as nothing could have set it. This sets <tt>F[12]</tt> and <tt>F[13]</tt>. (Entry 19 is also set, but it will be modified again later.)</td></tr>
+<tr><td>1</td><td>Y)); N--; Z = ~-(--P - F) + N *</td><td>Here <tt>Z</tt> finally becomes a complex number by using the imaginary constant <tt>I</tt>.</td></tr>
+<tr><td>1</td><td>I; *(F - ~(int) (</td><td>This sets <tt>F[17]</tt>.</td></tr>
+<tr><td>0</td><td>typedef</td><td>Duplicated from before; invalid here.</td></tr>
+<tr><td>1</td><td>(*(F + 16) = *(F + lround(*F - tan(</td><td>This sets <tt>F[16]</tt>.</td></tr>
+<tr><td>1</td><td>58)))) / *F + 13)) = *P * tan(208); *F =</td><td>This sets <tt>F[0]</tt> (finally).</td></tr>
+<tr><td>2</td><td>*(P += 4); /* At this time, P should point to the last meaningful array entry. */</td><td>Run twice so that the comment is true.</td></tr>
+<tr><td>1</td><td>*P = 10 +</td><td>This sets <tt>F[21]</tt>.</td></tr>
+<tr><td>19</td><td>-81 + (*F + sin(*F - cos(*F - tan(*F - fabs(*F))))); /* This line sets two array entries to their final values, */ if(*P == 0x0) *P = fabs((0x.29c2p0 * *F) * Z) - *F; --P; /* for a total of 18 out of 22. */ Z *= .638424 *</td><td>Each repetition of this line sets <tt>*P</tt> if unset, then decrements <tt>P</tt>. This sets <tt>F[15]</tt> and <tt>F[4]</tt>, and also passes the 18th entry but does not give it its final value. We stop when <tt>P</tt> is in position at <tt>F + 2</tt> to fill in the next unset entry.</td></tr>
+<tr><td>2</td><td>-8, *P = (abs(*P) << abs(*P))</td><td>Repeat twice for the same reason as last time.</td></tr>
+<tr><td>1</td><td>-0; *P /=</td><td>This sets <tt>F[2]</tt>.</td></tr>
+<tr><td>2</td><td>-0.795 * *F + sqrt(</td><td>Repeat twice to make the parentheses line up.</td></tr>
+<tr><td>1</td><td>lround(*P)) + 3 ** P - !exit * (long) (</td><td>Not exponentiation, just pointer dereference.</td></tr>
+<tr><td>0</td><td>+raise(9)</td><td>Do not kill the program.</td></tr>
+<tr><td>1</td><td>+rand())[&F]);</td><td><tt>!exit</tt> gives 0 to cancel out the <tt>rand</tt> again.</td></tr>
+<tr><td>0</td><td>long time(); 0xe5cap3 void</td><td>This line is nonsense.</td></tr>
+<tr><td>1</td><td>18[F] = 1[F] = P[~-N] - (N ^ 12); Y</td><td>This sets <tt>F[18]</tt> and <tt>F[1]</tt>. <tt>Y</tt> is set to 9 / 5.</td></tr>
+<tr><td>1</td><td>= 9. / N; P -= (int)</td><td></td></tr>
+<tr><td>1</td><td>'}' - '{'; *(P</td><td></td></tr>
+<tr><td>0</td><td>) = *(F + 'b' - Y * '5') /* Parse the extraction as follows: */ = *F /* ???? ?? ???? ? ?????? ???? ? (N), */ = *F /* using the current value of N at this time. */ = *F = *F + '\0'; P -= '\x4';</td><td><tt>Y</tt> is a float and so invalid in pointer arithmetic. The comments are valid, however. At this point, <tt>N</tt> is 5; see the extraction below.</td></tr>
+<tr><td>1</td><td>+ '\x13') = (N = ' ',</td><td>This sets <tt>F[19]</tt>, the last entry. <tt>N</tt> is set to 32.</td></tr>
+<tr><td>1</td><td>*F - *P / 30);</td><td></td></tr>
+<tr><td>2</td><td>0[&N]; if(&Y) do { *P -=</td><td>Here starts the final loop. This line must repeat twice for the braces to line up. What the loop does is subtract <tt>N</tt> = 32 from each array entry...</td></tr>
+<tr><td>1</td><td>-0; *P /=</td><td>...and then divide it by <tt>Y</tt> = 9 / 5.</td></tr>
+<tr><td>1</td><td>0[&Y]; } while</td><td></td></tr>
+<tr><td>1</td><td>(!&N); continue; }</td><td><tt>&N</tt> is guaranteed to be true, which breaks the inner <tt>do-while</tt> immediately, but the first iteration still goes off.</td></tr>
+<tr><td>1</td><td>while (*(++P));</td><td>The outer <tt>do-while</tt> repeats until the sentinel at the end of <tt>F</tt>. (Using a <tt>G</tt> to represent a dereference of an increment is, technically, cheating, but it was the only reasonable way to make the loop work...)</td></tr>
+</table>
+
+<p>Note: Usually, this might be where you&rsquo;d expect a rigorous derivation or logical solve path. My confession is that I can&rsquo;t give you that. When I say that we need an array entry to be set, that only means that we should generally expect the program to do things that have an effect; given the long cluephrase and constrained code, there isn&rsquo;t much room to perform useless or redundant operations. I haven&rsquo;t demonstrated that there aren&rsquo;t other solutions that also leave the array filled but in a different state, and maybe that makes me a bad puzzle constructor.</p>
+
+<p>The final program is available <a href="{{sroot}}out.c">here</a>. When compiled and run, it leaves a sequence of 22 values in <tt>F</tt>; promisingly, these values are all close to integers, and the first four convincingly spell out LINE in A1Z26. But then there are some negative values &mdash; what&rsquo;s going on? Well, this is a C program, so it isn&rsquo;t just A1Z26; it's actually ASCII minus 64. Using this we can extract the rest of the message:</p>
+
+<table>
+<tr><td>0</td><td>12.001271</td><td>L</td></tr>
+<tr><td>1</td><td>8.999988</td><td>I</td></tr>
+<tr><td>2</td><td>14.015537</td><td>N</td></tr>
+<tr><td>3</td><td>5.000000</td><td>E</td></tr>
+<tr><td>4</td><td>-11.998359</td><td>4</td></tr>
+<tr><td>5</td><td>-7.000868</td><td>9</td></tr>
+<tr><td>6</td><td>13.999988</td><td>N</td></tr>
+<tr><td>7</td><td>15.000000</td><td>O</td></tr>
+<tr><td>8</td><td>19.999989</td><td>T</td></tr>
+<tr><td>9</td><td>5.000000</td><td>E</td></tr>
+<tr><td>10</td><td>-10.995931</td><td>5</td></tr>
+<tr><td>11</td><td>18.957855</td><td>S</td></tr>
+<tr><td>12</td><td>15.000000</td><td>O</td></tr>
+<tr><td>13</td><td>21.000002</td><td>U</td></tr>
+<tr><td>14</td><td>14.004070</td><td>N</td></tr>
+<tr><td>15</td><td>4.004642</td><td>D</td></tr>
+<tr><td>16</td><td>18.957855</td><td>S</td></tr>
+<tr><td>17</td><td>12.001271</td><td>L</td></tr>
+<tr><td>18</td><td>8.999988</td><td>I</td></tr>
+<tr><td>19</td><td>11.008636</td><td>K</td></tr>
+<tr><td>20</td><td>5.000000</td><td>E</td></tr>
+<tr><td>21</td><td>-27.956041</td><td>$</td></tr>
+<tr><td>22</td><td>0.000000</td><td></td></tr>
+</table>
+
+<p><i>In C</i> fragment 49 note 5 is a B♭, and it corresponds to the keyword <tt>do</tt> in the first line of the final loop. This is supposed to sound like something with five letters (according to the last comment) that means &ldquo;$&rdquo;. If we pronounce &ldquo;do&rdquo; as in C, we won&rsquo;t get anywhere. But if we pronounce it as in &ldquo;doe, a deer&rdquo; (fittingly representing C in fixed-note solfege), then it sounds like slang for money: <span class="answer">DOUGH</span>.</p>
+
+<div class="author-note">
+<h2>Author’s Notes</h2>
+
+<p>This was not originally intended to be a C esoterica puzzle. In my mind, the gold standard for this kind of puzzle is <a href="http://web.mit.edu/puzzle/www/2011/puzzles/katamari_damacy/efficiency/">Efficiency</a>, and I knew I wasn&rsquo;t nearly good enough at either logic puzzles or C to match it. However, I did want a puzzle titled &ldquo;In C&rdquo; to exist in the world, and that meant having 53 pieces of something that would have to be repeated 0 or more times in the right order. Maybe that something is the <i>input</i> to a C program, or maybe some other part of the puzzle tells you how many times to repeat each piece, or maybe you actually have a char * and have to perform 53 conundrum-like steps on it that each keep it a valid word. But I kept coming back to the simplest expression of the concept as just 53 fragments of code. In order to make the <i>In C</i> score relevant, there would be some rigid (therefore highly constraining) logical correspondence used for reordering; furthermore, there aren&rsquo;t really that many interesting ways to make solvers repeat a fragment N times. So I ended up having to pull a lot of dirty tricks; to quote this puzzle&rsquo;s editor: &ldquo;o god this code is a bit monstrous&rdquo;</p>
+
+<p>Here is a list of facts about the letter C.</p>
+
+<p>In mathematics, C represents the complex numbers. Complex numbers are related to angles using the e<sup>iθ</sup> = cos(θ) + i sin(θ) relation, which is occasionally abbreviated as cis(θ). &ldquo;cis&rdquo; in turn is occasionally found (Wikipedia says it&rsquo;s European) as an abbreviation for the note C♯ (which does not appear in <i>In C</i>). C♯ is also a programming language. Going back to angles, they are measured in degrees, and another thing measured in degrees is temperature, where C stands for Celsius. F stands for Fahrenheit and is also a note. In programming, C is a hexadecimal digit, as are A through F, and in music, C can stand for 4/4 meter or common time (<i>In C</i> has no defined meter). <i>In C</i> has 53 parts; there are 53 non-exponent bits in a double-precision floating point number. MIDI assigns values from 0 to 127 to pitches, with middle C being 60, which lines up pretty well with ASCII. <i>In C</i> sounds somewhat like ANSI (it also sounds like the last half of Efficiency). A circled C represents copyright, which starts off the program.</p>
+
+<p>Some traces of these remain in the puzzle. Z is a complex variable and the final loop converts Fahrenheit values to Celsius, both of which originally (when the concept was a bit simpler) the solver was supposed to figure out for themselves. Maybe plotting degrees as angles would have drawn out letters on the complex plane? It wasn&rsquo;t really clear.</p>
+
+<p>As long as I&rsquo;m talking about puzzles that I want to exist but am not good enough to write, this seems as good a place as any to make the following offer. If you&rsquo;re looking for an idea for a modern music crossover puzzle that goes as deep into the weeds as this one, you should write one about tone rows except they&rsquo;re linguistic tones. We even have a title for you: &ldquo;The Second Vietnamese School&rdquo;. You&rsquo;re welcome.</p>
+
+<p>Finally: please never write real code that looks like this.</p>
+</div>

@@ -1,0 +1,31 @@
+<style>
+.center {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+</style>
+
+{% load hunt_state_tests %}
+{% if not puzzle|minutesAvailable:30 %}
+<div class="fourthwall">
+
+<p>This is a physical puzzle involving the MYST conference T-shirt. If your team has access to the T-shirt swag, you should feel free to open and solve it now. If you believe any part of your physical puzzle is missing or damaged, or you have not received it even though you ordered it, please contact us immediately using the “Hints” link in the upper-right corner of the page.</p>
+
+<p>A virtual substitute for the physical portion of this puzzle will unlock in {{ puzzle|minutesRemaining:30 }} minutes.</p>
+</div>
+
+<p>Take the official MYST 2021 T-shirt tour on ClueKeeper! Get the ClueKeeper app, tap Enter Hunt Code, and enter the reusable code GREENTEE to download the T-shirt tour!</p>
+
+{% else %}
+<div class="fourthwall">
+
+<p>This is a physical puzzle involving the MYST conference T-shirt. If your team has access to the T-shirt swag, you should feel free to open and solve it now. If you believe any part of your physical puzzle is missing or damaged, please contact us immediately. We have unlocked hints for all physical puzzles for this purpose.</p>
+</div>
+
+<p>Take the official MYST 2021 T-shirt tour on ClueKeeper! Get the ClueKeeper app, tap Enter Hunt Code, and enter the reusable code GREENTEE to download the T-shirt tour!</p>
+
+<p>If you don't have the physical T-shirt, you can use this image of the T-shirt design instead:</p>
+<img src="{{sroot}}shirt_design.png" style="width: 70%" class="center">
+{% endif %}

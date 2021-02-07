@@ -1,0 +1,408 @@
+name: crosswords
+difficulty: 3/10
+coolness: 6/10
+time: 5:00
+
+questions:
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Coarse file
+                5. "Yum!"
+                6. Person with an I.O.U.
+                7. Chastise
+                8. Bind
+                9. Information unit
+
+            - text: |
+                *Down*
+                1. Cottontail
+                2. Keen
+                3. Feed, as a fire
+                4. Combustible heap
+                5. Itsy-bitsy
+                6. Clobber
+
+        - answer: TBUE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Speech problem
+                5. Pasta choice
+                6. Prayer book
+                7. Declare
+                8. Appropriate
+                9. Abound
+
+            - text: |
+                *Down*
+                1. Rent payer
+                2. Clothing line
+                3. Tangle
+                4. Bombard
+                5. Ski trail
+                6. It holds a yard
+
+        - answer: PSEL
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Bills, e.g.
+                5. Super-masculine
+                6. Greek monetary unit
+                7. Clothing
+                8. Horde
+                9. Times long past
+
+            - text: |
+                *Down*
+                1. One who takes prisoners
+                2. On the move
+                3. Beach
+                4. Fine tune
+                5. Geo model
+                6. Disney dog
+
+        - answer: MPIE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Big maker of riding mowers
+                5. Drag one's feet
+                6. Bully
+                7. Understanding
+                8. Brownish gray
+                9. "...or ___!"
+
+            - text: |
+                *Down*
+                1. Position
+                2. Appetite whetter
+                3. Matching in many ways
+                4. Delight
+                5. Calyx part
+                6. Quiet
+
+        - answer: SAAE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Stole material
+                5. Religious law
+                6. TV dog for 17 seasons
+                7. As a precaution
+                8. Backgammon piece
+                9. ___ bag
+
+            - text: |
+                *Down*
+                1. Yale's bulldog, for one
+                2. Crackers
+                3. Bing, bang or boom
+                4. "Trick" joint
+                5. "The Faerie Queene" division
+                6. "Schindler's ___"
+
+        - answer: CSAE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. A maul has it
+                5. "The Hunt for Red October" device
+                6. A way to end a lawsuit
+                7. Act as a go-between
+                8. How figure skaters skate
+                9. "#1" follows it
+
+            - text: |
+                *Down*
+                1. A lot of hooey
+                2. Act the Pied Piper
+                3. "A dagger of the mind, a ___ creation...": Macbeth
+                4. "A ___ Grows in Brooklyn"
+                5. "An American in Paris" river
+                6. "Children Playing" sign word
+
+        - answer: STIE
+
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Activity in a virtual room
+                5. "...scarce the soul of a ___": Kipling
+                6. "Blithe Spirit" event
+                7. Box
+                8. "Black" item
+                9. "___ I say more?"
+
+
+            - text: |
+                *Down*
+                1. Boorish
+                2. Didn't gather, perhaps
+                3. "Downton Abbey" neckwear
+                4. "90210" extra
+                5. "A new ___ on life"
+                6. Aim at the barcode
+
+        - answer: LATT
+
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Scotch fiddle"
+                5. "Blank" expression
+                6. "A ___ Is Gonna Come" (1964 Sam Cooke anthem)
+                7. "Jurassic Park" beast
+                8. A g-great d-deal?
+                9. "Bambi" setting
+
+
+            - text: |
+                *Down*
+                1. A word having five anagrams
+                2. Any Swiss state
+                3. Academese, e.g.
+                4. "A History of the World in Six Glasses" drink
+                5. "...and the truth ___ set you free"
+                6. A steep rugged rock
+
+        - answer: SATT
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Out on a ___" (Teena Marie tune)
+                5. "In the ___ Colony" (Kafka short story)
+                6. Brasserie
+                7. Affirm
+                8. "A Christmas Carol," e.g.
+                9. "...leave no ___ unstoned"
+
+
+            - text: |
+                *Down*
+                1. Any landlord
+                2. "The Year of the ___" (Robin Cook novel)
+                3. "And while ye may, go ___."
+                4. "...and if any ___ hath cleaved to mine hands" (Job 31:7)
+                5. Compacted ski run
+                6. Plant phloem
+
+        - answer: PSEY
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Floppy" PC insert of old
+                5. "Mass" news sources
+                6. 86, as a diner order
+                7. "Do, re, mi, fa, sol, la, ti, do" range
+                8. "...Philistines, to sharpen every man his ___"
+                9. "I ___ you so!"
+
+
+            - text: |
+                *Down*
+                1. Associated with choppers?
+                2. A bouncer might check it
+                3. "Jumblies" craft
+                4. "Superfood" veggie
+                5. "___ Man" (Village People hit)
+                6. "At no ___ to you"
+
+        - answer: MNAE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Ajax's target
+                5. "Avast!"
+                6. "Psycho" actor
+                7. "Closer to Fine" band ___ Girls
+                8. "___ Knows", Dion hit
+                9. "Graphic" opening
+
+
+            - text: |
+                *Down*
+                1. "Where ___ is heard a discouraging word"
+                2. "Loose slots" locale
+                3. "Elements of Style" subject
+                4. "Didn't you get the ___?"
+                5. "And the new moon for a ___"
+                6. Adhere
+
+        - answer: CLIE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Bye bye, ___ American Pie..."
+                5. "Flying carpet of the deep"
+                6. Potted, ornamental tree
+                7. Accept an R.S.V.P.
+                8. "...and carry a big ___"
+                9. "...a ___ of golden daffodils"
+
+
+            - text: |
+                *Down*
+                1. "Praying" insect
+                2. Aardwolf prey
+                3. Assaulted the nostrils
+                4. "'Nuff ___!"
+                5. "Alki," for Washington State
+                6. "The ___ Brothers" (Canseco and McGwire)
+
+        - answer: MNEK
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Luxurious" Spice Girl
+                5. "Two all-beef patties, special ___..."
+                6. Karaoke star
+                7. Elevated
+                8. "Dog Day Afternoon" event
+                9. Pig out
+
+
+            - text: |
+                *Down*
+                1. Bed
+                2. Big-time power failure
+                3. "Aaaaaand ___" (stereotypical cut-off for an actor)
+                4. Thundering group
+                5. "The Wizard of Oz" coloring
+                6. Big name in L.A. sports
+
+        - answer: SLAE
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. Cultivate
+                5. '89-'97 Ford hatchback model
+                6. Beach toy
+                7. "As ___ as the day..."
+                8. Bad Company song "___ the Knot"
+                9. "Animal" band ___ Trees
+
+
+            - text: |
+                *Down*
+                1. "(I need it) yesterday!"
+                2. '60s hippie gathering
+                3. "Equatorially" ample
+                4. A mosquito might leave one
+                5. "Dial M for Murder" prop
+                6. "...___ the frumious Bandersnatch!": Carroll
+
+        - answer: POEE
+
+
+    - question:
+        - text: What are the four letters on the main diagonal (from top-left to bottom-right) in the solution to this crossword puzzle?
+
+        - image: crosswords/puzz.png
+
+        - twocolumn:
+            - text: |
+                *Across*
+                1. "Amo, amas, I love a ___"
+                5. This is used for letter D in marine radio communications
+                6. "The Caped Crusader"
+                7. Beyond measure
+                8. "Aaaaaand ___" (stereotypical cut-off for an actor)
+                9. Zebra collection
+
+
+            - text: |
+                *Down*
+                1. "The Scarlet ___"
+                2. "Sometimes you feel like a nut" nut
+                3. Hackneyed
+                4. Castle material
+                5. "All You Wanna Do Is ___" ("Turnstiles" tune)
+                6. "Decision Points" author
+
+        - answer: DTOE
+

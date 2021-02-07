@@ -1,0 +1,102 @@
+<style>
+  img.slitherlink_solutions {
+    max-width: 80%;
+    width: auto;
+    height: auto;
+    margin: auto;
+  }
+</style>
+<p>As clued by the title and flavortext, these Slitherlink variants take place on a M&ouml;bius strip.
+Each strip should be joined with a half twist such that red and blue arrows line up. Notice that when solving
+on a M&ouml;bius strip, the Slitherlink loop may or may not be contractible. So in contrast with regular Slitherlinks where
+the number of horizontal segments in each vertical must always be even, the number of horizontal segments here may either
+always be even or always be odd. Three Slitherlink variants are given and their solutions are shown below.</p>
+
+<a href="{{sroot}}puzzle1.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle1.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle2.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle2.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle3.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle3.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle4.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle4.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle5.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle5.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle6.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle6.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle7.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle7.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle8.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle8.png"/></a>
+<br/>
+<a href="{{sroot}}puzzle9.png"><img class="slitherlink_solutions" src="{{sroot}}puzzle9.png"/></a>
+
+<p>While solving the Slitherlinks, we might notice that there are additional diagonal red and blue lines that have not yet been used.
+When the Slitherlinks are printed and assembled as M&ouml;bius strips, each red line is on the opposite side of a blue lines. The type
+of line dash pattern on the red lines indicate they are mountain folds and the line dash patterns on the blue lines indicate they are
+valley folds. Each M&ouml;bius strip can be folded along the 3 folds and flattened to form a shape similar to the universal recycling symbol.
+When the M&ouml;bius strips are folded and flattened, the solution the Slitherlink traces out a character on each flattened face. Below is
+a color coded M&ouml;bius strip and the flattened faces with the Slitherlink solutions traced.
+</p>
+
+<img class="slitherlink_solutions" src="{{sroot}}colored_strip.png"/>
+<br/>
+<img width="150px" src="{{sroot}}letters1.png"/>
+<img width="150px" src="{{sroot}}letters2.png"/>
+<img width="150px" src="{{sroot}}letters3.png"/>
+<img width="150px" src="{{sroot}}letters4.png"/>
+<img width="150px" src="{{sroot}}letters5.png"/>
+<img width="150px" src="{{sroot}}letters6.png"/>
+<img width="150px" src="{{sroot}}letters7.png"/>
+<img width="150px" src="{{sroot}}letters8.png"/>
+<img width="150px" src="{{sroot}}letters9.png"/>
+
+<p>This string of characters can be parsed as per the enumeration given by the blanks at the bottom of the puzzle page. Doing so gives us
+MU FUNC OF LENGTH MOD 3. Here, MU FUNC refers to the thematic M&ouml;bius function which is often denoted with the Greek letter mu. The M&ouml;bius
+function takes as input positive integers and returns either 0, 1, or -1. Applying the M&ouml;bius function to the length of loop in each Slitherlinks solution and
+taking the value modulo 3 gives us the following values.</p>
+
+<table>
+<tr>
+  <th>Loop Length</th>
+  <th>M&ouml;bius function value modulo 3</th>
+</tr>
+<tr>
+  <td>86</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>118</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>138</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>128</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>122</td>
+  <td>1</td>
+</tr>
+<tr>
+  <td>154</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>114</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>124</td>
+  <td>0</td>
+</tr>
+<tr>
+  <td>130</td>
+  <td>2</td>
+</tr>
+</table>
+
+<p>Each Slitherlink puzzle extracts to either 0, 1, or 2 and there are 3 Slitherlink puzzles per Slitherlink variant. This suggests extraction
+via ternary. Converting the numbers 112, 012, 202 in ternary produces the answer <span class="answer">NET</span>.</p>

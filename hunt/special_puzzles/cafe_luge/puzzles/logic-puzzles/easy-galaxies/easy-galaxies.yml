@@ -1,0 +1,75 @@
+name: easy-galaxies
+difficulty: 5/10
+coolness: 5/10
+time: 6:00
+
+questions:
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/1-Galaxies.jpg
+
+        - answer: 18
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/2-Galaxies.jpg
+
+        - answer: 22
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/3-Galaxies.jpg
+
+        - answer: 26
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/4-Galaxies.jpg
+
+        - answer: 18
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/5-Galaxies.jpg
+
+        - answer: 14
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/6-Galaxies.jpg
+
+        - answer: 20
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/7-Galaxies.jpg
+
+        - answer: 10
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/8-Galaxies.jpg
+
+        - answer: 26
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/9-Galaxies.jpg
+
+        - answer: 25
+
+    - question:
+        - text: "What is the largest number of squares in a galaxy in the solution of this Spiral Galaxies puzzle?"
+
+        - image: logic-puzzles/easy-galaxies/10-Galaxies.jpg
+
+        - answer: 16

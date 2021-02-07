@@ -1,0 +1,485 @@
+name: set
+difficulty: 3/10
+coolness: 9/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/ABI.png
+
+        - answer: abi
+        - answer: aib
+        - answer: bai
+        - answer: bia
+        - answer: iab
+        - answer: iba
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/ABJ.png
+
+        - answer: abj
+        - answer: ajb
+        - answer: baj
+        - answer: bja
+        - answer: jab
+        - answer: jba
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/ACD.png
+
+        - answer: acd
+        - answer: adc
+        - answer: cad
+        - answer: cda
+        - answer: dac
+        - answer: dca
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/ACF.png
+
+        - answer: acf
+        - answer: afc
+        - answer: caf
+        - answer: cfa
+        - answer: fac
+        - answer: fca
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/ACL.png
+
+        - answer: acl
+        - answer: alc
+        - answer: cal
+        - answer: cla
+        - answer: lac
+        - answer: lca
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/ADG.png
+
+        - answer: adg
+        - answer: agd
+        - answer: dag
+        - answer: dga
+        - answer: gad
+        - answer: gda
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/AEF.png
+
+        - answer: aef
+        - answer: afe
+        - answer: eaf
+        - answer: efa
+        - answer: fae
+        - answer: fea
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/AGI.png
+
+        - answer: agi
+        - answer: aig
+        - answer: gai
+        - answer: gia
+        - answer: iag
+        - answer: iga
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/BCJ.png
+
+        - answer: bcj
+        - answer: bjc
+        - answer: cbj
+        - answer: cjb
+        - answer: jbc
+        - answer: jcb
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/BDG.png
+
+        - answer: bdg
+        - answer: bgd
+        - answer: dbg
+        - answer: dgb
+        - answer: gbd
+        - answer: gdb
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/BGH.png
+
+        - answer: bgh
+        - answer: bhg
+        - answer: gbh
+        - answer: ghb
+        - answer: hbg
+        - answer: hgb
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/BGK.png
+
+        - answer: bgk
+        - answer: bkg
+        - answer: gbk
+        - answer: gkb
+        - answer: kbg
+        - answer: kgb
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/BHK.png
+
+        - answer: bhk
+        - answer: bkh
+        - answer: hbk
+        - answer: hkb
+        - answer: kbh
+        - answer: khb
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/BIK.png
+
+        - answer: bik
+        - answer: bki
+        - answer: ibk
+        - answer: ikb
+        - answer: kbi
+        - answer: kib
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/CEG.png
+
+        - answer: ceg
+        - answer: cge
+        - answer: ecg
+        - answer: egc
+        - answer: gce
+        - answer: gec
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/CEJ.png
+
+        - answer: cej
+        - answer: cje
+        - answer: ecj
+        - answer: ejc
+        - answer: jce
+        - answer: jec
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/CGL.png
+
+        - answer: cgl
+        - answer: clg
+        - answer: gcl
+        - answer: glc
+        - answer: lcg
+        - answer: lgc
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/CHI.png
+
+        - answer: chi
+        - answer: cih
+        - answer: hci
+        - answer: hic
+        - answer: ich
+        - answer: ihc
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/CHK.png
+
+        - answer: chk
+        - answer: ckh
+        - answer: hck
+        - answer: hkc
+        - answer: kch
+        - answer: khc
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/DEG.png
+
+        - answer: deg
+        - answer: dge
+        - answer: edg
+        - answer: egd
+        - answer: gde
+        - answer: ged
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/DEK.png
+
+        - answer: dek
+        - answer: dke
+        - answer: edk
+        - answer: ekd
+        - answer: kde
+        - answer: ked
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/DFI.png
+
+        - answer: dfi
+        - answer: dif
+        - answer: fdi
+        - answer: fid
+        - answer: idf
+        - answer: ifd
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/DFL.png
+
+        - answer: dfl
+        - answer: dlf
+        - answer: fdl
+        - answer: fld
+        - answer: ldf
+        - answer: lfd
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/DGL.png
+
+        - answer: dgl
+        - answer: dlg
+        - answer: gdl
+        - answer: gld
+        - answer: ldg
+        - answer: lgd
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/DJK.png
+
+        - answer: djk
+        - answer: dkj
+        - answer: jdk
+        - answer: jkd
+        - answer: kdj
+        - answer: kjd
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/EFI.png
+
+        - answer: efi
+        - answer: eif
+        - answer: fei
+        - answer: fie
+        - answer: ief
+        - answer: ife
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/EGL.png
+
+        - answer: egl
+        - answer: elg
+        - answer: gel
+        - answer: gle
+        - answer: leg
+        - answer: lge
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/EIJ.png
+
+        - answer: eij
+        - answer: eji
+        - answer: iej
+        - answer: ije
+        - answer: jei
+        - answer: jie
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/EIK.png
+
+        - answer: eik
+        - answer: eki
+        - answer: iek
+        - answer: ike
+        - answer: kei
+        - answer: kie
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/EJK.png
+
+        - answer: ejk
+        - answer: ekj
+        - answer: jek
+        - answer: jke
+        - answer: kej
+        - answer: kje
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/EJL.png
+
+        - answer: ejl
+        - answer: elj
+        - answer: jel
+        - answer: jle
+        - answer: lej
+        - answer: lje
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/FHI.png
+
+        - answer: fhi
+        - answer: fih
+        - answer: hfi
+        - answer: hif
+        - answer: ifh
+        - answer: ihf
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/FHK.png
+
+        - answer: fhk
+        - answer: fkh
+        - answer: hfk
+        - answer: hkf
+        - answer: kfh
+        - answer: khf
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/FHL.png
+
+        - answer: fhl
+        - answer: flh
+        - answer: hfl
+        - answer: hlf
+        - answer: lfh
+        - answer: lhf
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/FIJ.png
+
+        - answer: fij
+        - answer: fji
+        - answer: ifj
+        - answer: ijf
+        - answer: jfi
+        - answer: jif
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/GHJ.png
+
+        - answer: ghj
+        - answer: gjh
+        - answer: hgj
+        - answer: hjg
+        - answer: jgh
+        - answer: jhg
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/GIJ.png
+
+        - answer: gij
+        - answer: gji
+        - answer: igj
+        - answer: ijg
+        - answer: jgi
+        - answer: jig
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/GIL.png
+
+        - answer: gil
+        - answer: gli
+        - answer: igl
+        - answer: ilg
+        - answer: lgi
+        - answer: lig
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/HIK.png
+
+        - answer: hik
+        - answer: hki
+        - answer: ihk
+        - answer: ikh
+        - answer: khi
+        - answer: kih
+
+    - question:
+        - text: "What are the letters of the three cards that form a set in this image? (Enter your answer without a space, e.g. \"ABC\".)"
+
+        - image: set/IJK.png
+
+        - answer: ijk
+        - answer: ikj
+        - answer: jik
+        - answer: jki
+        - answer: kij
+        - answer: kji

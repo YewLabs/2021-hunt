@@ -1,0 +1,59 @@
+{% extends "round/athletics/puzzle/index.html.tmpl" %}
+{% load static %}
+
+{% block title %}So You Think You Can Count? &mdash; Leaderboard &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<style>
+    td.rank {
+        width: 2em;
+        text-align: center;
+    }
+    td.name {
+        width: 30em;
+        text-align: left;
+        font-weight: bold;
+    }
+    td.score {
+        text-align: right;
+    }
+    .solved > td {
+        font-weight: bold;
+    }
+    tr.first {
+        background-color: #8f9;
+    }
+    tr.even.solved {
+        background-color: #ffb;
+    }
+    tr.even {
+        background-color: #ffd;
+    }
+    tr.odd.solved {
+        background-color: #bfc;
+    }
+    tr.odd {
+        background-color: #cfd;
+    }
+</style>
+<div class="content">
+    <h1 class="puzzle-title-header">So You Think You Can Count? &mdash; Leaderboard</h1>
+    <main>
+        <div class="puzzle">
+            {% if leaderboard %}
+            <table>
+                {% for line in leaderboard %}
+                <tr class="{% if line.0 == 1 %}first{% else %}{% cycle 'even' 'odd' %}{% endif %}{% if line.2 >= 100 %} solved{% endif %}">
+                    <td class="rank">{{ line.0 }}</td>
+                    <td class="name">{{ line.1 }}</td>
+                    <td class="score">{{ line.2 }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <b>No one's even attempted this puzzle yet!</b>
+            {% endif %}
+        </div>
+    </main>
+</div>
+{% endblock %}

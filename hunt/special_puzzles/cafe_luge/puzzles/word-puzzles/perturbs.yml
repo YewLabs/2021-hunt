@@ -1,0 +1,54 @@
+name: perturbs
+difficulty: 6/10
+coolness: 8/10
+time: 4:00
+
+questions:
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "THOSNCEFINHESNGUUDNBIOGNITSN"
+
+        - answer: this cafe has good beignets
+
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "ZPUZLESTKMAEFETHIRWOLDEGOPURONDE"
+
+        - answer: puzzles make the world go round
+
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "ROPFESSORBOEWYBEISBIUTOBUHETREBROMSEWHEREBR"
+
+        - answer: professor yew is out there somewhere
+
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "RPOCAKPNAPNERPSQCIGSSQORPS"
+
+        - answer: rock paper scissors
+
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "YNLOEIFLNACLILKUOY"
+
+        - answer: only life can kill you
+
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "EREBASHOOKINBAGLBATAOBAUYIBADK"
+
+        - answer: heres looking at you kid
+
+    - question:
+        - text: "What is the message hidden below?"
+
+        - text: "UCNOEUROMEUTNUOUHTEUCAERBH"
+
+        - answer: once more unto the breach

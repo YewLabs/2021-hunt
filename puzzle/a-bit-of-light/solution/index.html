@@ -1,0 +1,1711 @@
+
+<ul>
+<li>First, ignoring the bottom row gives 2&times;3 Braille cells.
+	The first few letters say <b><tt>USE BRAILLE ASCII TO GET HEX. </tt></b> followed by more Braille,
+	but as specified, using the ASCII Braille format to encode numbers.
+	The rest of the Braille message is the hexadecimal string
+	<center><tt>696E743D3E6865783D3E535344</tt></center> which says
+	<center><b><tt>int=&gt;hex=&gt;SSD</tt></b>.</center>
+</li>
+<li>Following the electronic color code for resistor colors, each cell gives an eight-digit decimal number.</li>
+<li>These decimal numbers are converted to base 16, as indicated.
+	The base 16 strings are actually 1337-ified,
+	where A is replaced by 4, B replaced by 8, E replaced 3, and G replaced by 6.
+	Reverting this, we find that the numbers are a subset of the string ABCDEFG.</li>
+<li>The clue "SSD" means <b>seven-segment display</b>:
+	the letters indicate which LED's of a 7-segment display should be illuminated.
+	<center>
+	<img height="120" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/7_Segment_Display_with_Labeled_Segments.svg/800px-7_Segment_Display_with_Labeled_Segments.svg.png" />
+	</center>
+	Thus each of the SSD LED's gives an unambiguous hexadecimal letter.</li>
+<li>The initial segment of the 7SD gives
+	<center><b><tt>DA7E 1919 07 22 CA5E 1310719A </tt></b></center>
+	(with the spaces!)
+	followed by another hex string <tt>432221707726202b7e7b1d076e</tt>.
+<li>The initial segment is the date and United States patent number
+	issued to Gilbert Vernam for the <em>one-time pad</em>,
+	so this is just a roundabout way of saying to XOR the two hexadecimal strings
+	(which both have equal length).
+	Doing so gives another hex string
+	<tt>2A4C554D494E455343454E542A</tt> which then decrypts to the string
+	<center><b><tt>*LUMINESCENT*</tt></b></center>
+	which gives the answer <span class="answer">LUMINESCENT</span>.
+</ul>
+
+<p>Here is a complete breakdown of the puzzle.</p>
+
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	border: 3px solid black;
+}
+th, td {
+	border: 1px solid black;
+	padding: 4px;
+}
+</style>
+
+<table>
+<tr>
+<th>#</th>
+<th>Cell</th>
+<th>Braille letter</th>
+<th>ASCII</th>
+<th>Resistor colors</th>
+<th>In base 16</th>
+<th>7SD LED's</th>
+<th>7SD</th>
+<th>XOR</th>
+<th>ASCII</th>
+</tr>
+<tr>
+<td>#1</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:green;">0</span><span style="color:violet;">0</span>
+<br>
+<span style="color:blue;">1</span><span style="color:gray;">1</span>
+<br>
+<span style="color:red;">0</span><span style="color:red;">0</span>
+
+</td>
+<th>U</th>
+<td>n/a</td>
+<td>00576822</td>
+<td>8CD36</td>
+<td>BCDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#2</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:yellow;">1</span>
+<br>
+<span style="color:violet;">1</span><span style="color:blue;">0</span>
+<br>
+<span style="color:gray;">1</span><span style="color:violet;">0</span>
+<br>
+<span style="color:green;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>S</th>
+<td>n/a</td>
+<td>04768758</td>
+<td>48C3F6</td>
+<td>ABCEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#3</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>E</th>
+<td>n/a</td>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#4</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:orange;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:blue;">0</span>
+
+</td>
+<th> </th>
+<td>n/a</td>
+<td>00316406</td>
+<td>4D3F6</td>
+<td>ADEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#5</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>B</th>
+<td>n/a</td>
+<td>00000000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#6</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:brown;">0</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>R</th>
+<td>n/a</td>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#7</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:violet;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:orange;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>A</th>
+<td>n/a</td>
+<td>04771318</td>
+<td>48CDF6</td>
+<td>ABCDFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#8</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>I</th>
+<td>n/a</td>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#9</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">1</span><span style="color:violet;">0</span>
+<br>
+<span style="color:brown;">1</span><span style="color:orange;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>L</th>
+<td>n/a</td>
+<td>04771318</td>
+<td>48CDF6</td>
+<td>ABCDFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#10</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>L</th>
+<td>n/a</td>
+<td>00000000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#11</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:violet;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:orange;">0</span><span style="color:green;">0</span>
+
+</td>
+<th>E</th>
+<td>n/a</td>
+<td>04771135</td>
+<td>48CD3F</td>
+<td>ABCDEF</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#12</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th> </th>
+<td>n/a</td>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#13</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>A</th>
+<td>n/a</td>
+<td>00000000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#14</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:red;">1</span><span style="color:white;">0</span>
+<br>
+<span style="color:gray;">1</span><span style="color:red;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>S</th>
+<td>n/a</td>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#15</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:red;">0</span><span style="color:white;">0</span>
+<br>
+<span style="color:gray;">0</span><span style="color:red;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>C</th>
+<td>n/a</td>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#16</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>I</th>
+<td>n/a</td>
+<td>00000000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#17</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:brown;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:violet;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:green;">0</span>
+
+</td>
+<th>I</th>
+<td>n/a</td>
+<td>00019775</td>
+<td>4D3F</td>
+<td>ADEF</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#18</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:blue;">0</span>
+<br>
+<span style="color:gray;">0</span><span style="color:violet;">0</span>
+<br>
+<span style="color:green;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th> </th>
+<td>n/a</td>
+<td>04768758</td>
+<td>48C3F6</td>
+<td>ABCEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#19</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:orange;">1</span><span style="color:brown;">1</span>
+<br>
+<span style="color:yellow;">1</span><span style="color:gray;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>T</th>
+<td>n/a</td>
+<td>00314870</td>
+<td>4CDF6</td>
+<td>ACDFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#20</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:orange;">0</span><span style="color:brown;">1</span>
+<br>
+<span style="color:blue;">1</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:blue;">0</span>
+
+</td>
+<th>O</th>
+<td>n/a</td>
+<td>00316406</td>
+<td>4D3F6</td>
+<td>ADEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#21</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+
+</td>
+<th> </th>
+<td>n/a</td>
+<td>00000000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#22</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>G</th>
+<td>n/a</td>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#23</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">0</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>E</th>
+<td>n/a</td>
+<td>00298198</td>
+<td>48CD6</td>
+<td>ABCDG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#24</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">1</span><span style="color:brown;">0</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>T</th>
+<td>n/a</td>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#25</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:violet;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:orange;">0</span><span style="color:green;">0</span>
+
+</td>
+<th> </th>
+<td>n/a</td>
+<td>04771135</td>
+<td>48CD3F</td>
+<td>ABCDEF</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#26</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>H</th>
+<td>n/a</td>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#27</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>E</th>
+<td>n/a</td>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#28</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:yellow;">1</span>
+<br>
+<span style="color:violet;">0</span><span style="color:violet;">0</span>
+<br>
+<span style="color:brown;">1</span><span style="color:orange;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>X</th>
+<td>n/a</td>
+<td>04771318</td>
+<td>48CDF6</td>
+<td>ABCDFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#29</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">0</span><span style="color:blue;">1</span>
+<br>
+<span style="color:gray;">0</span><span style="color:violet;">1</span>
+<br>
+<span style="color:green;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>.</th>
+<td>n/a</td>
+<td>04768758</td>
+<td>48C3F6</td>
+<td>ABCEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#30</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">0</span>
+
+</td>
+<th> </th>
+<td>n/a</td>
+<td>00000000</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>#31</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:orange;">1</span>
+<br>
+<span style="color:blue;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:gray;">0</span><span style="color:blue;">0</span>
+
+</td>
+<th>6</th>
+<th rowspan="2">i</th>
+<td>00036086</td>
+<td>8CF6</td>
+<td>BCFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>2</th>
+<th rowspan="2">*</th>
+</tr>
+<tr>
+<td>#32</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">0</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">1</span><span style="color:brown;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>9</th>
+<td>00298198</td>
+<td>48CD6</td>
+<td>ABCDG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>A</th>
+</tr>
+<tr>
+<td>#33</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">1</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">1</span><span style="color:red;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>6</th>
+<th rowspan="2">n</th>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">L</th>
+</tr>
+<tr>
+<td>#34</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">0</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">0</span><span style="color:red;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>E</th>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>C</th>
+</tr>
+<tr>
+<td>#35</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">1</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">1</span><span style="color:red;">1</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>7</th>
+<th rowspan="2">t</th>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>5</th>
+<th rowspan="2">U</th>
+</tr>
+<tr>
+<td>#36</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:black;">0</span><span style="color:brown;">1</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>4</th>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>5</th>
+</tr>
+<tr>
+<td>#37</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>3</th>
+<th rowspan="2">=</th>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">M</th>
+</tr>
+<tr>
+<td>#38</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:yellow;">1</span>
+<br>
+<span style="color:violet;">0</span><span style="color:violet;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:orange;">0</span><span style="color:green;">0</span>
+
+</td>
+<th>D</th>
+<td>04771135</td>
+<td>48CD3F</td>
+<td>ABCDEF</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>D</th>
+</tr>
+<tr>
+<td>#39</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>3</th>
+<th rowspan="2">></th>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">I</th>
+</tr>
+<tr>
+<td>#40</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>E</th>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>9</th>
+</tr>
+<tr>
+<td>#41</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">1</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">1</span><span style="color:red;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>6</th>
+<th rowspan="2">h</th>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">N</th>
+</tr>
+<tr>
+<td>#42</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:green;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:orange;">0</span>
+<br>
+<span style="color:yellow;">1</span><span style="color:white;">1</span>
+<br>
+<span style="color:white;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>8</th>
+<td>05034998</td>
+<td>4CD3F6</td>
+<td>ACDEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>E</th>
+</tr>
+<tr>
+<td>#43</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">1</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">1</span><span style="color:red;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>6</th>
+<th rowspan="2">e</th>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">E</th>
+</tr>
+<tr>
+<td>#44</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">1</span><span style="color:violet;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">1</span>
+<br>
+<span style="color:orange;">0</span><span style="color:green;">0</span>
+
+</td>
+<th>5</th>
+<td>04771135</td>
+<td>48CD3F</td>
+<td>ABCDEF</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>5</th>
+</tr>
+<tr>
+<td>#45</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:red;">1</span><span style="color:white;">1</span>
+<br>
+<span style="color:gray;">1</span><span style="color:red;">1</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>7</th>
+<th rowspan="2">x</th>
+<td>00298294</td>
+<td>48D36</td>
+<td>ABDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>5</th>
+<th rowspan="2">S</th>
+</tr>
+<tr>
+<td>#46</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:gray;">1</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:blue;">1</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>8</th>
+<td>00840694</td>
+<td>CD3F6</td>
+<td>CDEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>3</th>
+</tr>
+<tr>
+<td>#47</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>3</th>
+<th rowspan="2">=</th>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">C</th>
+</tr>
+<tr>
+<td>#48</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:orange;">0</span><span style="color:brown;">1</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:blue;">0</span>
+
+</td>
+<th>D</th>
+<td>00316406</td>
+<td>4D3F6</td>
+<td>ADEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>3</th>
+</tr>
+<tr>
+<td>#49</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>3</th>
+<th rowspan="2">></th>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">E</th>
+</tr>
+<tr>
+<td>#50</td>
+<td class="monospace">
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:gray;">0</span><span style="color:yellow;">1</span>
+<br>
+<span style="color:black;">0</span><span style="color:blue;">0</span>
+<br>
+<span style="color:white;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>E</th>
+<td>00840694</td>
+<td>CD3F6</td>
+<td>CDEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>5</th>
+</tr>
+<tr>
+<td>#51</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">0</span><span style="color:brown;">1</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:black;">0</span>
+
+</td>
+<th>5</th>
+<th rowspan="2">S</th>
+<td>00000140</td>
+<td>8C</td>
+<td>BC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>4</th>
+<th rowspan="2">N</th>
+</tr>
+<tr>
+<td>#52</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:green;">1</span><span style="color:violet;">1</span>
+<br>
+<span style="color:blue;">0</span><span style="color:gray;">0</span>
+<br>
+<span style="color:red;">0</span><span style="color:red;">0</span>
+
+</td>
+<th>3</th>
+<td>00576822</td>
+<td>8CD36</td>
+<td>BCDEG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#EEEEEE"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>E</th>
+</tr>
+<tr>
+<td>#53</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:yellow;">0</span>
+<br>
+<span style="color:violet;">1</span><span style="color:violet;">0</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">1</span>
+<br>
+<span style="color:orange;">0</span><span style="color:green;">0</span>
+
+</td>
+<th>5</th>
+<th rowspan="2">S</th>
+<td>04771135</td>
+<td>48CD3F</td>
+<td>ABCDEF</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>5</th>
+<th rowspan="2">T</th>
+</tr>
+<tr>
+<td>#54</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:black;">1</span>
+<br>
+<span style="color:brown;">0</span><span style="color:brown;">0</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">0</span>
+
+</td>
+<th>3</th>
+<td>00001164</td>
+<td>48C</td>
+<td>ABC</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#DD0000"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#EEEEEE"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#EEEEEE"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#EEEEEE"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#EEEEEE"/>
+</g>
+</svg></th>
+<th>4</th>
+</tr>
+<tr>
+<td>#55</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:green;">0</span>
+<br>
+<span style="color:black;">1</span><span style="color:orange;">1</span>
+<br>
+<span style="color:yellow;">0</span><span style="color:white;">1</span>
+<br>
+<span style="color:white;">0</span><span style="color:gray;">0</span>
+
+</td>
+<th>4</th>
+<th rowspan="2">D</th>
+<td>05034998</td>
+<td>4CD3F6</td>
+<td>ACDEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#DD0000"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>2</th>
+<th rowspan="2">*</th>
+</tr>
+<tr>
+<td>#56</td>
+<td class="monospace">
+<span style="color:black;">0</span><span style="color:black;">0</span>
+<br>
+<span style="color:orange;">1</span><span style="color:brown;">1</span>
+<br>
+<span style="color:blue;">0</span><span style="color:yellow;">1</span>
+<br>
+<span style="color:black;">0</span><span style="color:blue;">0</span>
+
+</td>
+<th>4</th>
+<td>00316406</td>
+<td>4D3F6</td>
+<td>ADEFG</td>
+<th><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="20px" viewBox="-1 -1 12 20">
+<g id="abcefg" style="fill-rule:evenodd; stroke:#FFFFFF; stroke-width:0.25; stroke-opacity:1; stroke-linecap:butt; stroke-linejoin:miter;">
+  <polygon id="a" points=" 1, 1  2, 0  8, 0  9, 1  8, 2  2, 2" fill="#DD0000"/>
+  <polygon id="b" points=" 9, 1 10, 2 10, 8  9, 9  8, 8  8, 2" fill="#EEEEEE"/>
+  <polygon id="c" points=" 9, 9 10,10 10,16  9,17  8,16  8,10" fill="#EEEEEE"/>
+  <polygon id="d" points=" 9,17  8,18  2,18  1,17  2,16  8,16" fill="#DD0000"/>
+  <polygon id="e" points=" 1,17  0,16  0,10  1, 9  2,10  2,16" fill="#DD0000"/>
+  <polygon id="f" points=" 1, 9  0, 8  0, 2  1, 1  2, 2  2, 8" fill="#DD0000"/>
+  <polygon id="g" points=" 1, 9  2, 8  8, 8  9, 9  8,10  2,10" fill="#DD0000"/>
+</g>
+</svg></th>
+<th>A</th>
+</tr>
+</table>

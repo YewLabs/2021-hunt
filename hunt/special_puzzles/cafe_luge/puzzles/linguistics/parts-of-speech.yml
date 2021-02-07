@@ -1,0 +1,13 @@
+name: parts-of-speech
+difficulty: 3/10
+coolness: 6/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "In the sentence \"That puzzle seems interesting, so I'll try it\", what is the participle?"
+        - answer: interesting
+
+    - question:
+        - text: "What part of speech is a gerund?"
+        - answer: noun

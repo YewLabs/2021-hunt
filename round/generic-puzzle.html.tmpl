@@ -1,0 +1,68 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+{% load static %}
+
+{% block title %}{{ puzzle.puzzle.name|safe }} &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1 class="puzzle-title-header">{{ puzzle.puzzle.name }}</h1>
+  <main>
+    <div class="puzzle-header">
+      <div style="width: 100%">
+        {% if show_solutions %}
+        <h4 style="float: right">
+          <a href="{% url 'puzzle_solution' puzzle.puzzle.url %}">View Solution</a>
+        </h4>
+        {% endif %}
+        {% if not team.is_limited %}
+        {% if puzzle.solved %}
+        <h4>Answer: <span class="answer">{{ puzzle.puzzle.answer }}</span></h4>
+        {% endif %}
+        {% endif %}
+        {% if canned_hints %}
+        <details style="margin: 1.33em 0">
+          <summary><b>Show canned hints</b></summary>
+          <div class="canned-hints" style="width: 100%; max-height: 400px; overflow: auto">
+            <table style="width: 100%">
+              <tr><th>Keywords</th><th>Content</th></tr>
+              {% for h in canned_hints %}
+              <tr>
+                <td class="spoiler" onclick="this.classList.toggle('spoiler')">{{ h.1|join:', ' }}</td>
+                <td class="spoiler" onclick="this.classList.toggle('spoiler')">{{ h.2|linebreaks }}</td>
+              </tr>
+            {% endfor %}
+            </table>
+          </div>
+        </details>
+        {% endif %}
+        {% if iframe_submissions %}
+        <iframe class="submit-iframe" src="/embed{% url 'submit_puzzle' puzzle.puzzle.url %}"></iframe>
+        {% else %}
+        {% if puzzle.solved %}
+        <h4><a href="{% url 'submit_puzzle' puzzle.puzzle.url %}">Answer Log</a></h4>
+        {% else %}
+        <h4><a href="{% url 'submit_puzzle' puzzle.puzzle.url %}">Submit Answer</a></h4>
+        {% endif %}
+        {% endif %}
+      </div>
+    </div>
+    <div class="puzzle">
+      <!-- Puzzle content begins here -->
+      {{ index_html|safe }}
+      <!-- Puzzle content ends here -->
+    </div>
+  </main>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{% static 'grid_copy.js' %}?rand={{ rand }}"></script>
+<script src="{% static 'scripts/copyjack.js' %}"></script>
+<script>
+window.onload=function() {
+  if (typeof puzzleOnLoad !== 'undefined') {
+    puzzleOnLoad();
+  }
+}
+</script>
+{% endblock %}

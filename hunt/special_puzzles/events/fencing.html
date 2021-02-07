@@ -1,0 +1,133 @@
+{% extends "hunt/layout.tmpl" %}
+
+{% block content %}
+<style>
+html, body {
+  background: none;
+  min-width: 0;
+  height: auto;
+}
+form {
+    text-align: center;
+}
+.form-field {
+    display: inline;
+    text-align: left;
+    margin: 1em .75em;
+}
+.error {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+h3.section {
+  text-align: center;
+}
+</style>
+
+<h3 class="section">&#x1F3B2; Freeplay &#x1F3B2;</h3>
+
+<p>
+    Register 1&ndash;4 members of your team here who like crosswords. In the
+    event that more than 4 people register for this event, 4 will be selected
+    semi-randomly.
+</p>
+<p>
+    Individuals can un-register by re-submitting the same name and email
+    combination. Participants also solve for the answer during the event.
+</p>
+<p>
+    We will be using Discord so if you are new to using Discord, check out <a href="https://docs.google.com/document/d/e/2PACX-1vSZUozBZb8jMnDeCg7aHDXCmOiP1CWO7XIqWNYNv6DmTZFZk0ml5bAhfaZM-3YTrXs7f80NOGz3kjVb/pub">our guide</a>!
+</p>
+
+{% if casual_data %}
+<p>
+    Your team has <b>{{ casual_data|length }}</b> registration{{ casual_data|length|pluralize}}:
+    <table>
+        {% for datum in casual_data %}
+        <tr><td><b>{{ datum.name }}</b></td></tr>
+        {% endfor %}
+    </table>
+</p>
+{% else %}
+<p>
+    <b>No one from your team has registered for this event yet.</b>
+</p>
+{% endif %}
+
+{% if new_registration %}
+<p>
+    Thanks for registering! This is a one-time message
+    that only shows up when you register, so make sure
+    to write it down.
+</p>
+<p>
+    This is the invite link to this event's Discord server: <a href="https://discord.gg/W2GAgRAPhV" target="top">https://discord.gg/W2GAgRAPhV</a>
+</p>
+{% endif %}
+
+{% if error %}
+<p class="error">
+    {{ error }}
+</p>
+{% endif %}
+
+<form action="casual_register" id="reg-form" method="POST">
+    {% csrf_token %}
+    <div class="form-field">
+        <label for="name">Name:</label>
+        <input id="name" type="text" name="name" value="" size="20"/>
+    </div>
+    <div class="form-field">
+        <label for="email">Email:</label>
+        <input id="email" type="text" name="email" value="" size="30"/>
+    </div>
+    <div class="form-field">
+        <input type="submit" value="Register/Unregister"/>
+    </div>
+</form>
+
+<hr/>
+
+<h3 class="section">&#x1F3C6; Tournament (optional) &#x1F3C6;</h3>
+
+
+{% if tourney_data.url == "BYE" %}
+<p class="fourthwall">You have a <b>bye</b> in this round of the tournament.
+Feel free to relax for a few minutes!</p>
+{% elif tourney_data.url %}
+<p class="fourthwall">
+Your current tournament game link is:
+<b><a href="https://fencing.perpendicular.institute/{{ tourney_data.url }}" target="_blank">{{ tourney_data.url }}</a></b>
+<br><br>Remember, the competitive tournament is for 1 person from each team.
+You may not get help from other teammates or outside resources, although you can
+share your link within your team for spectating. We can&rsquo;t enforce this,
+but we hope you&rsquo;ll play fair and have fun!</p>
+{% endif %}
+
+<p>You are <b>{% if not tourney_data.registered %}not {% endif %}registered</b> for the
+competitive tournament bracket.</p>
+
+{% if cutoff > now %}
+{% if tourney_data.registered %}
+<p>Keep an eye on announcements in the discord server you joined for
+the Freeplay section of this event.</p>
+{% else %}
+<p>Do you want to register? The tournament is <b>separate from the main Fencing
+event</b> and is for 1 person from each team who particularly likes crosswords.
+Your team is free to not participate in the tournament <b>with no penalty toward
+progressing through the hunt</b>. The top 4 participants in this tournament will receive
+a t-shirt as a prize. Later rounds may be livestreamed. Please
+register before <b>{{ cutoff|date:"l f A e" }}</b>.</p>
+{% endif %}
+
+<form action="tourney_register" method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="registered" value="{{ tourney_data.registered|yesno:",true" }}">
+  <button>{{ tourney_data.registered|yesno:"Unregister,Register" }}</button>
+</form>
+{% endif %}
+
+<script src="registration.js"></script>
+
+{% endblock %}

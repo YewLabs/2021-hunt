@@ -1,0 +1,128 @@
+<h4>by Anderson Wang and Jon Schneider</h4>
+
+<h3>General</h3>
+<p>There are four Athena (or Minerva, no one can decide on the name!) clusters around campus. Each one requires entering a certain passcode on a numerical keypad to get in, and the passcode itself is always given to you by a person nearby. However, if we try to input the digits, different digits (or even non-digits in one case) show up on the 7-segment display. We need to figure out how the keypads actually operate in order to enter the desired passcode.</p>
+
+<p>This is what the keypad looks like:<br><img src="{{sroot}}image1.png" style="width: 60%; margin: 0 20%;" alt="Image of cluster keypad."></p>
+
+<h3>Building 4</h3>
+<p>This is the first cluster to be unlocked. Outside the door is a person who tells us that the code is <b>8675309</b>, that the keypads have recently gotten difficult to use, and that you can press the asterisk to start over.</p>
+
+<p>For this keypad, the first digit you enter always shows up as intended, but subsequent digits are often totally wrong. After some experimentation, we can see that if you first input the digit X and then input Y, the actual digit that shows up is the units digit of X+Y (so if you type in &ldquo;75&rdquo;, then &ldquo;72&rdquo; actually shows up because 2 is the units digit of 7+5=12). It turns out that whenever you enter a digit, the actual digit that appears is the units digit of the sum of all current displayed digits and your input digit.</p>
+
+<p>So, in order to get 8675309 to show up on a keypad, we must first enter 8, and then another 8 (because 8+8=16), then 3 (because 8+6+3=17), and so on. The full input is &ldquo;<b>8834710</b>&rdquo;.</p>
+
+<h3>Building 3</h3>
+<p>The code for this cluster is <b>5726418</b>.</p>
+
+<p>For this keypad, each digit performs a certain transformation on the current number and then adds itself to the end. Perhaps one of the clearest examples of this is 8, which reverses the number (and then appends an 8 at the end), so if the current code is &ldquo;12345&rdquo; and you input 8, the result is &ldquo;543218&rdquo;. With some experimentation, we can figure out what each digit does:</p>
+
+<table>
+<tr>
+<td>0</td>
+<td>Do nothing (then add a 0 to the end)</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Delete the first digit (then add a 1 to the end)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Replace each digit X with 9-X (then add a 2 to the end)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Add 1 to every digit, with 9 turning into 0 (then add a 3 to the end)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>If there are any consecutive equal digits, remove all but one of them (then add a 4 to the end). For example, &ldquo;334555&rdquo; would turn into &ldquo;3454&rdquo;.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Move the first digit to the end (then add a 5 to the end)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Change every digit to a 6 (then add a 6 to the end)</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Replace the current number with the count of lit segments on the seven-segment display (then add a 7 to the end). For example &ldquo;888&rdquo; would turn into &ldquo;217&rdquo; because &ldquo;8&rdquo; has all seven lit segments, so the total number of lit segments is 8*3=21</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Reverse the number (then add an 8 to the end)</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Delete the last digit (then add a 9 to the end). This is the same as replacing the last digit with a 9.</td>
+</tr>
+</table>
+
+<p>In order to input 5726418, we can go backwards from the end. Because the last digit of this code is 8, the last digit we type in also has to be 8 (because every number adds itself to the end), so the code right before that has to be 146275. Then, the second-to-last digit we type in has to be 5, and the code right before that has to be 71462. Then we must have typed a 2, and the code before that has to be 2853. And then the code before typing in a 3 has to be 174.</p>
+
+<p>From here we have a little more freedom, because the code before typing in the 4 could be any of &ldquo;17&rdquo;, &ldquo;117&rdquo;, &ldquo;177&rdquo;, &ldquo;1177&rdquo;, etc. The one tricky thing is that &ldquo;17&rdquo; is actually impossible to get, because there is no digit with only 1 lit segment. There are many possible ways to achieve this: for example, &ldquo;84&rdquo; has 11 lit segments, so one potential solution is &ldquo;<b>84743258</b>&rdquo;.</p>
+
+<h3>Building 10</h3>
+<p>We are told that the code is <b>PEACHES</b>, in upper-case.</p>
+
+<p>For this keypad, inputting a digit toggles all of the corresponding segments of that digit in the display. So, for example, inputting 0 will make the display read 0, and inputting a 0 again turns the display empty again because it toggles all the same segments. Inputting 0, then 1, makes the display a capital &ldquo;C&rdquo;, because the two rightmost segments (the ones that make up &ldquo;1&rdquo;) are toggled off in the &ldquo;0&rdquo;. Equivalently, the segments are <a href="https://en.wikipedia.org/wiki/Exclusive_or">XORed</a> with the existing segments.</p>
+
+<p>The &ldquo;active&rdquo; digit can be shifted to the right by pressing the pound symbol (i.e. at the beginning all inputted digits only affect the first slot on the display, and then if you press pound, it will affect the second slot, and so on).</p>
+
+<p>We can determine how to make each letter in &ldquo;PEACHES&rdquo; either by trial and error, or more systematically by coming up with a sequence of digits that achieves each individual segment. For example, you can immediately get the middle segment with &ldquo;80&rdquo;, the bottom-left segment with &ldquo;89&rdquo;, and the top-right segment with &ldquo;86&rdquo;. Then you can get the top-left segment by noting that &ldquo;83&rdquo; gives you both the bottom-left and top-left segments, but we already know that &ldquo;89&rdquo; gives just the bottom-left segment, so we can get just the top-left segment with &ldquo;8389&rdquo; (or equivalently, just &ldquo;39&rdquo;).</p>
+
+<p>One possible solution is &ldquo;<b>013678#18#037#01#489#18#5</b>&rdquo;.</p>
+
+<h3>Building 1</h3>
+<p>The code for this cluster is <b>201608</b>.</p>
+
+<p>Playing around, we notice that inputs generally happen in pairs: if we input two digits that sum to less than 10 then it will display their sum, and if we continue typing in pairs of digits that sum to less than 10, the previous pair sums get pushed to the left, showing at most 3 at a time. Here is a sample sequence of inputs:</p>
+
+<table>
+<tr>
+<th>Input</th>
+<th>Result</th>
+</tr>
+<tr>
+<td>4</td>
+<td>04</td>
+</tr>
+<tr>
+<td>3</td>
+<td>07</td>
+</tr>
+<tr>
+<td>4</td>
+<td>0704</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0705</td>
+</tr>
+<tr>
+<td>8</td>
+<td>070508</td>
+</tr>
+<tr>
+<td>1</td>
+<td>070509</td>
+</tr>
+<tr>
+<td>2</td>
+<td>050902</td>
+</tr>
+<tr>
+<td>6</td>
+<td>050908</td>
+</tr>
+</table>
+
+<p>Additionally, if the pair of digits sums to greater than 10, then the code immediately resets to blank, suggesting that&rsquo;s not allowed for some reason. However, if the sum is exactly 10, the behavior is a little weird: it will display 10, but upon entering the next digit, that digit also gets added to the 10. For example, if you type in 64 the display will say &ldquo;10&rdquo;, and then typing 7 will result in &ldquo;1707&rdquo; (and then typing 1 will give &ldquo;1708&rdquo;).</p>
+
+<p>Finally, if we press the pound sign, the display will also say &ldquo;10&rdquo;, but the next <i>two</i> inputted digits also get added to it.</p>
+
+<p>From this information, we can realize that this is a game of bowling, where inputting digits counts as hitting that many pins, and the pound sign is a strike. The display shows the point values of each of three consecutive frames, which is why getting a spare or strike causes future inputs to get added to the 10.</p>
+
+<p>To achieve 201608, we note that the second frame (16) can only be from a spare, and in particular we need 6+2 points in the third frame, so that the 6 is added to the second frame. This implies that the first frame (20) has to be a strike, where you get 10 points plus 10 more for the spare on the second frame. One sequence of inputs representing this is &ldquo;<b>#4662</b>&rdquo;, but anything with a spare on the second frame works.</p>

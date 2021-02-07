@@ -1,0 +1,10 @@
+<h2>Bonus Event (optional)</h2>
+
+<p class="flavor">This event takes (took) place on <b>Sun Jan 17, 1&ndash;2pm EST</b>.</p>
+{% if team.is_limited %}
+<div class="fourthwall">
+  This puzzle isn't currently available.
+</div>
+{% else %}
+<iframe src="register" height="500" style="border: none; width: 100%;"></iframe>
+{% endif %}

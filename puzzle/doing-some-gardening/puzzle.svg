@@ -1,0 +1,1039 @@
+   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-outer" data-name="Layer 1"
+      viewBox="0 0 387 331.94">
+      <defs>
+         <style>
+            .cls-1,
+            .edge,
+            .horizline,
+            .outer {
+               fill: none;
+            }
+
+            .horizline {
+               stroke: lightblue;
+               stroke-width: 5px;
+            }
+
+            .cls-3 {
+               clip-path: url(rose_garden.html);
+            }
+
+            .bluecircle {
+               fill: lightblue;
+            }
+
+            .grayarea {
+               fill: #bbbbbb;
+            }
+
+            .edge,
+            .outer {
+               stroke: #231f20;
+            }
+
+            .outer {
+               stroke-width: 2px;
+            }
+
+            .graycenter {
+               fill: #333333;
+            }
+
+            .pinkarea {
+               fill: pink;
+            }
+
+            .redcenter {
+               fill: #ff2222;
+            }
+
+            .whitearea {
+               fill: #fff;
+            }
+
+            .edge {
+               stroke-width: 0.5px;
+            }
+
+            .letter {
+               font-size: 12.3px;
+               fill: #231f20;
+               font-weight: 700;
+               width: 30px;
+               text-align: center;
+            }
+         </style>
+         <clipPath id="clip-path" transform="translate(-5 -2.25)">
+            <rect class="cls-1" x="-184" y="-103" width="612" height="792" />
+         </clipPath>
+      </defs>
+      <title>rows</title>
+      <line class="horizline" x1="387" y1="42.25" x2="10" y2="42.25" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,54.5a10,10,0,1,0-10-10,10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="69.76" x2="10" y2="69.76" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,82A10,10,0,1,0,5,72,10,10,0,0,0,15,82" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="97.26" x2="10" y2="97.26" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,109.51a10,10,0,1,0-10-10,10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="124.77" x2="10" y2="124.77" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,137A10,10,0,1,0,5,127a10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="152.27" x2="10" y2="152.27" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,164.52a10,10,0,1,0-10-10,10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="179.77" x2="10" y2="179.77" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,192A10,10,0,1,0,5,182a10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="207.28" x2="10" y2="207.28" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,219.53a10,10,0,1,0-10-10,10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="234.78" x2="10" y2="234.78" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,247A10,10,0,1,0,5,237a10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="262.29" x2="10" y2="262.29" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,274.54a10,10,0,1,0-10-10,10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="289.79" x2="10" y2="289.79" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,302A10,10,0,1,0,5,292a10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <line class="horizline" x1="387" y1="317.3" x2="10" y2="317.3" />
+      <g class="cls-3">
+         <path class="bluecircle" d="M15,329.55a10,10,0,1,0-10-10,10,10,0,0,0,10,10" transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="grayarea"
+         points="77.15 28.56 45.43 28.56 29.57 56.03 45.43 83.5 77.15 83.5 93.01 56.03 77.15 28.56" />
+      <polygon class="outer"
+         points="77.15 28.56 45.43 28.56 29.57 56.03 45.43 83.5 77.15 83.5 93.01 56.03 77.15 28.56" />
+      <line class="outer" x1="45.68" y1="28.69" x2="77.12" y2="83.41" />
+      <line class="outer" x1="76.92" y1="28.69" x2="45.62" y2="83.51" />
+      <line class="outer" x1="29.56" y1="56" x2="92.86" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M66.29,62.56A4.28,4.28,0,1,0,62,58.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="66.29" cy="58.28" r="4.28" transform="translate(-13.48 9.12) rotate(-9.22)" />
+      </g>
+      <polygon class="pinkarea" points="124.43 1 92.71 1 76.85 28.47 92.71 55.94 124.43 55.94 140.29 28.47 124.43 1" />
+      <polygon class="outer" points="124.43 1 92.71 1 76.85 28.47 92.71 55.94 124.43 55.94 140.29 28.47 124.43 1" />
+      <line class="outer" x1="92.96" y1="1.13" x2="124.4" y2="55.85" />
+      <line class="outer" x1="124.2" y1="1.13" x2="92.9" y2="55.95" />
+      <line class="outer" x1="76.84" y1="28.44" x2="140.14" y2="28.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M113.57,35a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,113.57,35"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="113.57" cy="30.72" r="4.28" transform="translate(-8.11 43.55) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="171.95 28.56 140.23 28.56 124.37 56.03 140.23 83.5 171.95 83.5 187.81 56.03 171.95 28.56" />
+      <polygon class="outer"
+         points="171.95 28.56 140.23 28.56 124.37 56.03 140.23 83.5 171.95 83.5 187.81 56.03 171.95 28.56" />
+      <line class="outer" x1="140.48" y1="28.69" x2="171.92" y2="83.41" />
+      <line class="outer" x1="171.72" y1="28.69" x2="140.42" y2="83.51" />
+      <line class="outer" x1="124.36" y1="56" x2="187.66" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M161.09,62.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="161.09" cy="58.28" r="4.28" transform="translate(-15.04 63.83) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="219.33 1 187.61 1 171.75 28.47 187.61 55.94 219.33 55.94 235.19 28.47 219.33 1" />
+      <polygon class="outer" points="219.33 1 187.61 1 171.75 28.47 187.61 55.94 219.33 55.94 235.19 28.47 219.33 1" />
+      <line class="outer" x1="187.86" y1="1.13" x2="219.3" y2="55.85" />
+      <line class="outer" x1="219.11" y1="1.13" x2="187.8" y2="55.95" />
+      <line class="outer" x1="171.74" y1="28.44" x2="235.04" y2="28.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M208.47,35a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,208.47,35"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="208.47" cy="30.72" r="4.28" transform="translate(-0.89 79.87) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="266.85 28.56 235.13 28.56 219.27 56.03 235.13 83.5 266.85 83.5 282.71 56.03 266.85 28.56" />
+      <polygon class="outer"
+         points="266.85 28.56 235.13 28.56 219.27 56.03 235.13 83.5 266.85 83.5 282.71 56.03 266.85 28.56" />
+      <line class="outer" x1="235.38" y1="28.69" x2="266.82" y2="83.41" />
+      <line class="outer" x1="266.63" y1="28.69" x2="235.32" y2="83.51" />
+      <line class="outer" x1="219.26" y1="56" x2="282.56" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M256,62.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,256,62.56"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="255.99" cy="58.28" r="4.28" transform="translate(-7.82 100.15) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="314.37 1 282.65 1 266.79 28.47 282.65 55.94 314.37 55.94 330.23 28.47 314.37 1" />
+      <polygon class="outer" points="314.37 1 282.65 1 266.79 28.47 282.65 55.94 314.37 55.94 330.23 28.47 314.37 1" />
+      <line class="outer" x1="282.9" y1="1.13" x2="314.34" y2="55.85" />
+      <line class="outer" x1="314.14" y1="1.13" x2="282.84" y2="55.95" />
+      <line class="outer" x1="266.78" y1="28.44" x2="330.08" y2="28.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M303.51,35a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,303.51,35"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="303.51" cy="30.72" r="4.28" transform="translate(6.35 116.24) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="361.89 28.56 330.17 28.56 314.31 56.03 330.17 83.5 361.89 83.5 377.75 56.03 361.89 28.56" />
+      <polygon class="outer"
+         points="361.89 28.56 330.17 28.56 314.31 56.03 330.17 83.5 361.89 83.5 377.75 56.03 361.89 28.56" />
+      <line class="outer" x1="330.42" y1="28.69" x2="361.86" y2="83.41" />
+      <line class="outer" x1="361.66" y1="28.69" x2="330.36" y2="83.51" />
+      <line class="outer" x1="314.3" y1="56" x2="377.6" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M351,62.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,62.56"
+            transform="translate(-5 -2.25)" />
+         <path class="outer" d="M351,62.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,62.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="pinkarea"
+         points="77.15 83.56 45.43 83.56 29.57 111.03 45.43 138.5 77.15 138.5 93.01 111.03 77.15 83.56" />
+      <polygon class="outer"
+         points="77.15 83.56 45.43 83.56 29.57 111.03 45.43 138.5 77.15 138.5 93.01 111.03 77.15 83.56" />
+      <line class="outer" x1="45.68" y1="83.69" x2="77.12" y2="138.41" />
+      <line class="outer" x1="76.92" y1="83.69" x2="45.62" y2="138.51" />
+      <line class="outer" x1="29.56" y1="111" x2="92.86" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M66.29,117.56A4.28,4.28,0,1,0,62,113.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="66.29" cy="113.28" r="4.28" transform="translate(-22.29 9.83) rotate(-9.22)" />
+      </g>
+      <polygon class="whitearea"
+         points="124.43 56 92.71 56 76.85 83.47 92.71 110.94 124.43 110.94 140.29 83.47 124.43 56" />
+      <polygon class="outer"
+         points="124.43 56 92.71 56 76.85 83.47 92.71 110.94 124.43 110.94 140.29 83.47 124.43 56" />
+      <line class="outer" x1="92.96" y1="56.13" x2="124.4" y2="110.85" />
+      <line class="outer" x1="124.2" y1="56.13" x2="92.9" y2="110.95" />
+      <line class="outer" x1="76.84" y1="83.44" x2="140.14" y2="83.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M113.57,90a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,113.57,90"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="113.57" cy="85.72" r="4.28" transform="translate(-29.16 47.74) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="171.95 83.56 140.23 83.56 124.37 111.03 140.23 138.5 171.95 138.5 187.81 111.03 171.95 83.56" />
+      <polygon class="outer"
+         points="171.95 83.56 140.23 83.56 124.37 111.03 140.23 138.5 171.95 138.5 187.81 111.03 171.95 83.56" />
+      <line class="outer" x1="140.48" y1="83.69" x2="171.92" y2="138.41" />
+      <line class="outer" x1="171.72" y1="83.69" x2="140.42" y2="138.51" />
+      <line class="outer" x1="124.36" y1="111" x2="187.66" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M161.09,117.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="161.09" cy="113.28" r="4.28" transform="translate(-36.09 68.02) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="219.33 56 187.61 56 171.75 83.47 187.61 110.94 219.33 110.94 235.19 83.47 219.33 56" />
+      <polygon class="outer"
+         points="219.33 56 187.61 56 171.75 83.47 187.61 110.94 219.33 110.94 235.19 83.47 219.33 56" />
+      <line class="outer" x1="187.86" y1="56.13" x2="219.3" y2="110.85" />
+      <line class="outer" x1="219.11" y1="56.13" x2="187.8" y2="110.95" />
+      <line class="outer" x1="171.74" y1="83.44" x2="235.04" y2="83.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M208.47,90a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,208.47,90"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="208.47" cy="85.72" r="4.28" transform="translate(-21.93 84.05) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="266.85 83.56 235.13 83.56 219.27 111.03 235.13 138.5 266.85 138.5 282.71 111.03 266.85 83.56" />
+      <polygon class="outer"
+         points="266.85 83.56 235.13 83.56 219.27 111.03 235.13 138.5 266.85 138.5 282.71 111.03 266.85 83.56" />
+      <line class="outer" x1="235.38" y1="83.69" x2="266.82" y2="138.41" />
+      <line class="outer" x1="266.63" y1="83.69" x2="235.32" y2="138.51" />
+      <line class="outer" x1="219.26" y1="111" x2="282.56" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M256,117.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="255.99" cy="113.28" r="4.28" transform="translate(-28.86 104.34) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="314.37 56 282.65 56 266.79 83.47 282.65 110.94 314.37 110.94 330.23 83.47 314.37 56" />
+      <polygon class="outer"
+         points="314.37 56 282.65 56 266.79 83.47 282.65 110.94 314.37 110.94 330.23 83.47 314.37 56" />
+      <line class="outer" x1="282.9" y1="56.13" x2="314.34" y2="110.85" />
+      <line class="outer" x1="314.14" y1="56.13" x2="282.84" y2="110.95" />
+      <line class="outer" x1="266.78" y1="83.44" x2="330.08" y2="83.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M303.51,90a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,303.51,90"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="303.51" cy="85.72" r="4.28" transform="translate(-14.7 120.42) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="361.89 83.56 330.17 83.56 314.31 111.03 330.17 138.5 361.89 138.5 377.75 111.03 361.89 83.56" />
+      <polygon class="outer"
+         points="361.89 83.56 330.17 83.56 314.31 111.03 330.17 138.5 361.89 138.5 377.75 111.03 361.89 83.56" />
+      <line class="outer" x1="330.42" y1="83.69" x2="361.86" y2="138.41" />
+      <line class="outer" x1="361.66" y1="83.69" x2="330.36" y2="138.51" />
+      <line class="outer" x1="314.3" y1="111" x2="377.6" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M351,117.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="outer" d="M351,117.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,117.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="whitearea"
+         points="77.15 138.56 45.43 138.56 29.57 166.03 45.43 193.5 77.15 193.5 93.01 166.03 77.15 138.56" />
+      <polygon class="outer"
+         points="77.15 138.56 45.43 138.56 29.57 166.03 45.43 193.5 77.15 193.5 93.01 166.03 77.15 138.56" />
+      <line class="outer" x1="45.68" y1="138.69" x2="77.12" y2="193.41" />
+      <line class="outer" x1="76.92" y1="138.69" x2="45.62" y2="193.51" />
+      <line class="outer" x1="29.56" y1="166" x2="92.86" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M66.29,172.56A4.28,4.28,0,1,0,62,168.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="66.29" cy="168.28" r="4.28" transform="translate(-31.1 10.54) rotate(-9.22)" />
+      </g>
+      <polygon class="grayarea"
+         points="124.43 111 92.71 111 76.85 138.47 92.71 165.94 124.43 165.94 140.29 138.47 124.43 111" />
+      <polygon class="outer"
+         points="124.43 111 92.71 111 76.85 138.47 92.71 165.94 124.43 165.94 140.29 138.47 124.43 111" />
+      <line class="outer" x1="92.96" y1="111.13" x2="124.4" y2="165.85" />
+      <line class="outer" x1="124.2" y1="111.13" x2="92.9" y2="165.95" />
+      <line class="outer" x1="76.84" y1="138.44" x2="140.14" y2="138.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M113.57,145a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="113.57" cy="140.72" r="4.28" transform="translate(-50.21 51.92) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="171.95 138.56 140.23 138.56 124.37 166.03 140.23 193.5 171.95 193.5 187.81 166.03 171.95 138.56" />
+      <polygon class="outer"
+         points="171.95 138.56 140.23 138.56 124.37 166.03 140.23 193.5 171.95 193.5 187.81 166.03 171.95 138.56" />
+      <line class="outer" x1="140.48" y1="138.69" x2="171.92" y2="193.41" />
+      <line class="outer" x1="171.72" y1="138.69" x2="140.42" y2="193.51" />
+      <line class="outer" x1="124.36" y1="166" x2="187.66" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M161.09,172.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="161.09" cy="168.28" r="4.28" transform="translate(-57.14 72.21) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="219.33 111 187.61 111 171.75 138.47 187.61 165.94 219.33 165.94 235.19 138.47 219.33 111" />
+      <polygon class="outer"
+         points="219.33 111 187.61 111 171.75 138.47 187.61 165.94 219.33 165.94 235.19 138.47 219.33 111" />
+      <line class="outer" x1="187.86" y1="111.13" x2="219.3" y2="165.85" />
+      <line class="outer" x1="219.11" y1="111.13" x2="187.8" y2="165.95" />
+      <line class="outer" x1="171.74" y1="138.44" x2="235.04" y2="138.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M208.47,145a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="208.47" cy="140.72" r="4.28" transform="translate(-42.98 88.24) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="266.85 138.56 235.13 138.56 219.27 166.03 235.13 193.5 266.85 193.5 282.71 166.03 266.85 138.56" />
+      <polygon class="outer"
+         points="266.85 138.56 235.13 138.56 219.27 166.03 235.13 193.5 266.85 193.5 282.71 166.03 266.85 138.56" />
+      <line class="outer" x1="235.38" y1="138.69" x2="266.82" y2="193.41" />
+      <line class="outer" x1="266.63" y1="138.69" x2="235.32" y2="193.51" />
+      <line class="outer" x1="219.26" y1="166" x2="282.56" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M256,172.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="255.99" cy="168.28" r="4.28" transform="translate(-49.91 108.52) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="314.37 111 282.65 111 266.79 138.47 282.65 165.94 314.37 165.94 330.23 138.47 314.37 111" />
+      <polygon class="outer"
+         points="314.37 111 282.65 111 266.79 138.47 282.65 165.94 314.37 165.94 330.23 138.47 314.37 111" />
+      <line class="outer" x1="282.9" y1="111.13" x2="314.34" y2="165.85" />
+      <line class="outer" x1="314.14" y1="111.13" x2="282.84" y2="165.95" />
+      <line class="outer" x1="266.78" y1="138.44" x2="330.08" y2="138.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M303.51,145a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="303.51" cy="140.72" r="4.28" transform="translate(-35.75 124.61) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="361.89 138.56 330.17 138.56 314.31 166.03 330.17 193.5 361.89 193.5 377.75 166.03 361.89 138.56" />
+      <polygon class="outer"
+         points="361.89 138.56 330.17 138.56 314.31 166.03 330.17 193.5 361.89 193.5 377.75 166.03 361.89 138.56" />
+      <line class="outer" x1="330.42" y1="138.69" x2="361.86" y2="193.41" />
+      <line class="outer" x1="361.66" y1="138.69" x2="330.36" y2="193.51" />
+      <line class="outer" x1="314.3" y1="166" x2="377.6" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M351,172.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="outer" d="M351,172.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,172.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="grayarea"
+         points="77.15 193.56 45.43 193.56 29.57 221.03 45.43 248.5 77.15 248.5 93.01 221.03 77.15 193.56" />
+      <polygon class="outer"
+         points="77.15 193.56 45.43 193.56 29.57 221.03 45.43 248.5 77.15 248.5 93.01 221.03 77.15 193.56" />
+      <line class="outer" x1="45.68" y1="193.69" x2="77.12" y2="248.41" />
+      <line class="outer" x1="76.92" y1="193.69" x2="45.62" y2="248.51" />
+      <line class="outer" x1="29.56" y1="221" x2="92.86" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M66.29,227.56A4.28,4.28,0,1,0,62,223.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="61.29" cy="221.03" r="4.28" />
+      </g>
+      <polygon class="pinkarea"
+         points="124.43 166 92.71 166 76.85 193.47 92.71 220.94 124.43 220.94 140.29 193.47 124.43 166" />
+      <polygon class="outer"
+         points="124.43 166 92.71 166 76.85 193.47 92.71 220.94 124.43 220.94 140.29 193.47 124.43 166" />
+      <line class="outer" x1="92.96" y1="166.13" x2="124.4" y2="220.85" />
+      <line class="outer" x1="124.2" y1="166.13" x2="92.9" y2="220.95" />
+      <line class="outer" x1="76.84" y1="193.44" x2="140.14" y2="193.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M113.57,200a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="113.57" cy="195.72" r="4.28" transform="translate(-115.71 223.49) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="171.95 193.56 140.23 193.56 124.37 221.03 140.23 248.5 171.95 248.5 187.81 221.03 171.95 193.56" />
+      <polygon class="outer"
+         points="171.95 193.56 140.23 193.56 124.37 221.03 140.23 248.5 171.95 248.5 187.81 221.03 171.95 193.56" />
+      <line class="outer" x1="140.48" y1="193.69" x2="171.92" y2="248.41" />
+      <line class="outer" x1="171.72" y1="193.69" x2="140.42" y2="248.51" />
+      <line class="outer" x1="124.36" y1="221" x2="187.66" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M161.09,227.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="161.09" cy="223.28" r="4.28" transform="translate(-111.84 284.41) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="219.33 166 187.61 166 171.75 193.47 187.61 220.94 219.33 220.94 235.19 193.47 219.33 166" />
+      <polygon class="outer"
+         points="219.33 166 187.61 166 171.75 193.47 187.61 220.94 219.33 220.94 235.19 193.47 219.33 166" />
+      <line class="outer" x1="187.86" y1="166.13" x2="219.3" y2="220.85" />
+      <line class="outer" x1="219.11" y1="166.13" x2="187.8" y2="220.95" />
+      <line class="outer" x1="171.74" y1="193.44" x2="235.04" y2="193.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M208.47,200a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="208.47" cy="195.72" r="4.28" transform="translate(-57.13 311.17) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="266.85 193.56 235.13 193.56 219.27 221.03 235.13 248.5 266.85 248.5 282.71 221.03 266.85 193.56" />
+      <polygon class="outer"
+         points="266.85 193.56 235.13 193.56 219.27 221.03 235.13 248.5 266.85 248.5 282.71 221.03 266.85 193.56" />
+      <line class="outer" x1="235.38" y1="193.69" x2="266.82" y2="248.41" />
+      <line class="outer" x1="266.63" y1="193.69" x2="235.32" y2="248.51" />
+      <line class="outer" x1="219.26" y1="221" x2="282.56" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M256,227.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="255.99" cy="223.28" r="4.28" transform="translate(-53.26 372.09) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="314.37 166 282.65 166 266.79 193.47 282.65 220.94 314.37 220.94 330.23 193.47 314.37 166" />
+      <polygon class="outer"
+         points="314.37 166 282.65 166 266.79 193.47 282.65 220.94 314.37 220.94 330.23 193.47 314.37 166" />
+      <line class="outer" x1="282.9" y1="166.13" x2="314.34" y2="220.85" />
+      <line class="outer" x1="314.14" y1="166.13" x2="282.84" y2="220.95" />
+      <line class="outer" x1="266.78" y1="193.44" x2="330.08" y2="193.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M303.51,200a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="303.51" cy="195.72" r="4.28" transform="translate(1.54 398.98) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="361.89 193.56 330.17 193.56 314.31 221.03 330.17 248.5 361.89 248.5 377.75 221.03 361.89 193.56" />
+      <polygon class="outer"
+         points="361.89 193.56 330.17 193.56 314.31 221.03 330.17 248.5 361.89 248.5 377.75 221.03 361.89 193.56" />
+      <line class="outer" x1="330.42" y1="193.69" x2="361.86" y2="248.41" />
+      <line class="outer" x1="361.66" y1="193.69" x2="330.36" y2="248.51" />
+      <line class="outer" x1="314.3" y1="221" x2="377.6" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M351,227.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="outer" d="M351,227.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,227.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="pinkarea"
+         points="77.15 248.56 45.43 248.56 29.57 276.03 45.43 303.5 77.15 303.5 93.01 276.03 77.15 248.56" />
+      <polygon class="outer"
+         points="77.15 248.56 45.43 248.56 29.57 276.03 45.43 303.5 77.15 303.5 93.01 276.03 77.15 248.56" />
+      <line class="outer" x1="45.68" y1="248.69" x2="77.12" y2="303.41" />
+      <line class="outer" x1="76.92" y1="248.69" x2="45.62" y2="303.51" />
+      <line class="outer" x1="29.56" y1="276" x2="92.86" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M66.29,282.56A4.28,4.28,0,1,0,62,278.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="61.29" cy="276.03" r="4.28" />
+      </g>
+      <polygon class="whitearea"
+         points="124.43 221 92.71 221 76.85 248.47 92.71 275.94 124.43 275.94 140.29 248.47 124.43 221" />
+      <polygon class="outer"
+         points="124.43 221 92.71 221 76.85 248.47 92.71 275.94 124.43 275.94 140.29 248.47 124.43 221" />
+      <line class="outer" x1="92.96" y1="221.13" x2="124.4" y2="275.85" />
+      <line class="outer" x1="124.2" y1="221.13" x2="92.9" y2="275.95" />
+      <line class="outer" x1="76.84" y1="248.44" x2="140.14" y2="248.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M113.57,255a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="113.57" cy="250.72" r="4.28" transform="translate(-166.53 257.45) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="171.95 248.56 140.23 248.56 124.37 276.03 140.23 303.5 171.95 303.5 187.81 276.03 171.95 248.56" />
+      <polygon class="outer"
+         points="171.95 248.56 140.23 248.56 124.37 276.03 140.23 303.5 171.95 303.5 187.81 276.03 171.95 248.56" />
+      <line class="outer" x1="140.48" y1="248.69" x2="171.92" y2="303.41" />
+      <line class="outer" x1="171.72" y1="248.69" x2="140.42" y2="303.51" />
+      <line class="outer" x1="124.36" y1="276" x2="187.66" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M161.09,282.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="161.09" cy="278.28" r="4.28" transform="translate(-162.65 318.36) rotate(-67.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="219.33 221 187.61 221 171.75 248.47 187.61 275.94 219.33 275.94 235.19 248.47 219.33 221" />
+      <polygon class="outer"
+         points="219.33 221 187.61 221 171.75 248.47 187.61 275.94 219.33 275.94 235.19 248.47 219.33 221" />
+      <line class="outer" x1="187.86" y1="221.13" x2="219.3" y2="275.85" />
+      <line class="outer" x1="219.11" y1="221.13" x2="187.8" y2="275.95" />
+      <line class="outer" x1="171.74" y1="248.44" x2="235.04" y2="248.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M208.47,255a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="208.47" cy="250.72" r="4.28" transform="translate(-107.94 345.13) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="266.85 248.56 235.13 248.56 219.27 276.03 235.13 303.5 266.85 303.5 282.71 276.03 266.85 248.56" />
+      <polygon class="outer"
+         points="266.85 248.56 235.13 248.56 219.27 276.03 235.13 303.5 266.85 303.5 282.71 276.03 266.85 248.56" />
+      <line class="outer" x1="235.38" y1="248.69" x2="266.82" y2="303.41" />
+      <line class="outer" x1="266.63" y1="248.69" x2="235.32" y2="303.51" />
+      <line class="outer" x1="219.26" y1="276" x2="282.56" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M256,282.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="255.99" cy="278.28" r="4.28" transform="translate(-104.07 406.04) rotate(-67.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="314.37 221 282.65 221 266.79 248.47 282.65 275.94 314.37 275.94 330.23 248.47 314.37 221" />
+      <polygon class="outer"
+         points="314.37 221 282.65 221 266.79 248.47 282.65 275.94 314.37 275.94 330.23 248.47 314.37 221" />
+      <line class="outer" x1="282.9" y1="221.13" x2="314.34" y2="275.85" />
+      <line class="outer" x1="314.14" y1="221.13" x2="282.84" y2="275.95" />
+      <line class="outer" x1="266.78" y1="248.44" x2="330.08" y2="248.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M303.51,255a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="303.51" cy="250.72" r="4.28" transform="translate(-49.27 432.93) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="361.89 248.56 330.17 248.56 314.31 276.03 330.17 303.5 361.89 303.5 377.75 276.03 361.89 248.56" />
+      <polygon class="outer"
+         points="361.89 248.56 330.17 248.56 314.31 276.03 330.17 303.5 361.89 303.5 377.75 276.03 361.89 248.56" />
+      <line class="outer" x1="330.42" y1="248.69" x2="361.86" y2="303.41" />
+      <line class="outer" x1="361.66" y1="248.69" x2="330.36" y2="303.51" />
+      <line class="outer" x1="314.3" y1="276" x2="377.6" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M351,282.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="outer" d="M351,282.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,282.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="grayarea"
+         points="124.43 276 92.71 276 76.85 303.47 92.71 330.94 124.43 330.94 140.29 303.47 124.43 276" />
+      <polygon class="outer"
+         points="124.43 276 92.71 276 76.85 303.47 92.71 330.94 124.43 330.94 140.29 303.47 124.43 276" />
+      <line class="outer" x1="92.96" y1="276.13" x2="124.4" y2="330.85" />
+      <line class="outer" x1="124.2" y1="276.13" x2="92.9" y2="330.95" />
+      <line class="outer" x1="76.84" y1="303.44" x2="140.14" y2="303.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M113.57,310a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="113.57" cy="305.72" r="4.28" transform="translate(-217.34 291.4) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="219.33 276 187.61 276 171.75 303.47 187.61 330.94 219.33 330.94 235.19 303.47 219.33 276" />
+      <polygon class="outer"
+         points="219.33 276 187.61 276 171.75 303.47 187.61 330.94 219.33 330.94 235.19 303.47 219.33 276" />
+      <line class="outer" x1="187.86" y1="276.13" x2="219.3" y2="330.85" />
+      <line class="outer" x1="219.11" y1="276.13" x2="187.8" y2="330.95" />
+      <line class="outer" x1="171.74" y1="303.44" x2="235.04" y2="303.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M208.47,310a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="208.47" cy="305.72" r="4.28" transform="translate(-158.76 379.08) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="314.37 276 282.65 276 266.79 303.47 282.65 330.94 314.37 330.94 330.23 303.47 314.37 276" />
+      <polygon class="outer"
+         points="314.37 276 282.65 276 266.79 303.47 282.65 330.94 314.37 330.94 330.23 303.47 314.37 276" />
+      <line class="outer" x1="282.9" y1="276.13" x2="314.34" y2="330.85" />
+      <line class="outer" x1="314.14" y1="276.13" x2="282.84" y2="330.95" />
+      <line class="outer" x1="266.78" y1="303.44" x2="330.08" y2="303.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M303.51,310a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="outer" cx="303.51" cy="305.72" r="4.28" transform="translate(-100.09 466.88) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="77.15 28.56 45.43 28.56 29.57 56.03 45.43 83.5 77.15 83.5 93.01 56.03 77.15 28.56" />
+      <polygon class="edge"
+         points="77.15 28.56 45.43 28.56 29.57 56.03 45.43 83.5 77.15 83.5 93.01 56.03 77.15 28.56" />
+      <line class="edge" x1="45.68" y1="28.69" x2="77.12" y2="83.41" />
+      <line class="edge" x1="76.92" y1="28.69" x2="45.62" y2="83.51" />
+      <line class="edge" x1="29.56" y1="56" x2="92.86" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M66.29,62.56A4.28,4.28,0,1,0,62,58.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="66.29" cy="58.28" r="4.28" transform="translate(-13.48 9.12) rotate(-9.22)" />
+      </g>
+      <polygon class="pinkarea" points="124.43 1 92.71 1 76.85 28.47 92.71 55.94 124.43 55.94 140.29 28.47 124.43 1" />
+      <polygon class="edge" points="124.43 1 92.71 1 76.85 28.47 92.71 55.94 124.43 55.94 140.29 28.47 124.43 1" />
+      <line class="edge" x1="92.96" y1="1.13" x2="124.4" y2="55.85" />
+      <line class="edge" x1="124.2" y1="1.13" x2="92.9" y2="55.95" />
+      <line class="edge" x1="76.84" y1="28.44" x2="140.14" y2="28.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M113.57,35a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,113.57,35"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="113.57" cy="30.72" r="4.28" transform="translate(-8.11 43.55) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="171.95 28.56 140.23 28.56 124.37 56.03 140.23 83.5 171.95 83.5 187.81 56.03 171.95 28.56" />
+      <polygon class="edge"
+         points="171.95 28.56 140.23 28.56 124.37 56.03 140.23 83.5 171.95 83.5 187.81 56.03 171.95 28.56" />
+      <line class="edge" x1="140.48" y1="28.69" x2="171.92" y2="83.41" />
+      <line class="edge" x1="171.72" y1="28.69" x2="140.42" y2="83.51" />
+      <line class="edge" x1="124.36" y1="56" x2="187.66" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M161.09,62.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="161.09" cy="58.28" r="4.28" transform="translate(-15.04 63.83) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="219.33 1 187.61 1 171.75 28.47 187.61 55.94 219.33 55.94 235.19 28.47 219.33 1" />
+      <polygon class="edge" points="219.33 1 187.61 1 171.75 28.47 187.61 55.94 219.33 55.94 235.19 28.47 219.33 1" />
+      <line class="edge" x1="187.86" y1="1.13" x2="219.3" y2="55.85" />
+      <line class="edge" x1="219.11" y1="1.13" x2="187.8" y2="55.95" />
+      <line class="edge" x1="171.74" y1="28.44" x2="235.04" y2="28.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M208.47,35a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,208.47,35"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="208.47" cy="30.72" r="4.28" transform="translate(-0.89 79.87) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="266.85 28.56 235.13 28.56 219.27 56.03 235.13 83.5 266.85 83.5 282.71 56.03 266.85 28.56" />
+      <polygon class="edge"
+         points="266.85 28.56 235.13 28.56 219.27 56.03 235.13 83.5 266.85 83.5 282.71 56.03 266.85 28.56" />
+      <line class="edge" x1="235.38" y1="28.69" x2="266.82" y2="83.41" />
+      <line class="edge" x1="266.63" y1="28.69" x2="235.32" y2="83.51" />
+      <line class="edge" x1="219.26" y1="56" x2="282.56" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M256,62.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,256,62.56"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="255.99" cy="58.28" r="4.28" transform="translate(-7.82 100.15) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="314.37 1 282.65 1 266.79 28.47 282.65 55.94 314.37 55.94 330.23 28.47 314.37 1" />
+      <polygon class="edge" points="314.37 1 282.65 1 266.79 28.47 282.65 55.94 314.37 55.94 330.23 28.47 314.37 1" />
+      <line class="edge" x1="282.9" y1="1.13" x2="314.34" y2="55.85" />
+      <line class="edge" x1="314.14" y1="1.13" x2="282.84" y2="55.95" />
+      <line class="edge" x1="266.78" y1="28.44" x2="330.08" y2="28.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M303.51,35a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,303.51,35"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="303.51" cy="30.72" r="4.28" transform="translate(6.35 116.24) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="361.89 28.56 330.17 28.56 314.31 56.03 330.17 83.5 361.89 83.5 377.75 56.03 361.89 28.56" />
+      <polygon class="edge"
+         points="361.89 28.56 330.17 28.56 314.31 56.03 330.17 83.5 361.89 83.5 377.75 56.03 361.89 28.56" />
+      <line class="edge" x1="330.42" y1="28.69" x2="361.86" y2="83.41" />
+      <line class="edge" x1="361.66" y1="28.69" x2="330.36" y2="83.51" />
+      <line class="edge" x1="314.3" y1="56" x2="377.6" y2="56" />
+      <g class="cls-3">
+         <path class="graycenter" d="M351,62.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,62.56"
+            transform="translate(-5 -2.25)" />
+         <path class="edge" d="M351,62.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,62.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="pinkarea"
+         points="77.15 83.56 45.43 83.56 29.57 111.03 45.43 138.5 77.15 138.5 93.01 111.03 77.15 83.56" />
+      <polygon class="edge"
+         points="77.15 83.56 45.43 83.56 29.57 111.03 45.43 138.5 77.15 138.5 93.01 111.03 77.15 83.56" />
+      <line class="edge" x1="45.68" y1="83.69" x2="77.12" y2="138.41" />
+      <line class="edge" x1="76.92" y1="83.69" x2="45.62" y2="138.51" />
+      <line class="edge" x1="29.56" y1="111" x2="92.86" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M66.29,117.56A4.28,4.28,0,1,0,62,113.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="66.29" cy="113.28" r="4.28" transform="translate(-22.29 9.83) rotate(-9.22)" />
+      </g>
+      <polygon class="whitearea"
+         points="124.43 56 92.71 56 76.85 83.47 92.71 110.94 124.43 110.94 140.29 83.47 124.43 56" />
+      <polygon class="edge" points="124.43 56 92.71 56 76.85 83.47 92.71 110.94 124.43 110.94 140.29 83.47 124.43 56" />
+      <line class="edge" x1="92.96" y1="56.13" x2="124.4" y2="110.85" />
+      <line class="edge" x1="124.2" y1="56.13" x2="92.9" y2="110.95" />
+      <line class="edge" x1="76.84" y1="83.44" x2="140.14" y2="83.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M113.57,90a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,113.57,90"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="113.57" cy="85.72" r="4.28" transform="translate(-29.16 47.74) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="171.95 83.56 140.23 83.56 124.37 111.03 140.23 138.5 171.95 138.5 187.81 111.03 171.95 83.56" />
+      <polygon class="edge"
+         points="171.95 83.56 140.23 83.56 124.37 111.03 140.23 138.5 171.95 138.5 187.81 111.03 171.95 83.56" />
+      <line class="edge" x1="140.48" y1="83.69" x2="171.92" y2="138.41" />
+      <line class="edge" x1="171.72" y1="83.69" x2="140.42" y2="138.51" />
+      <line class="edge" x1="124.36" y1="111" x2="187.66" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M161.09,117.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="161.09" cy="113.28" r="4.28" transform="translate(-36.09 68.02) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="219.33 56 187.61 56 171.75 83.47 187.61 110.94 219.33 110.94 235.19 83.47 219.33 56" />
+      <polygon class="edge"
+         points="219.33 56 187.61 56 171.75 83.47 187.61 110.94 219.33 110.94 235.19 83.47 219.33 56" />
+      <line class="edge" x1="187.86" y1="56.13" x2="219.3" y2="110.85" />
+      <line class="edge" x1="219.11" y1="56.13" x2="187.8" y2="110.95" />
+      <line class="edge" x1="171.74" y1="83.44" x2="235.04" y2="83.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M208.47,90a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,208.47,90"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="208.47" cy="85.72" r="4.28" transform="translate(-21.93 84.05) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="266.85 83.56 235.13 83.56 219.27 111.03 235.13 138.5 266.85 138.5 282.71 111.03 266.85 83.56" />
+      <polygon class="edge"
+         points="266.85 83.56 235.13 83.56 219.27 111.03 235.13 138.5 266.85 138.5 282.71 111.03 266.85 83.56" />
+      <line class="edge" x1="235.38" y1="83.69" x2="266.82" y2="138.41" />
+      <line class="edge" x1="266.63" y1="83.69" x2="235.32" y2="138.51" />
+      <line class="edge" x1="219.26" y1="111" x2="282.56" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M256,117.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="255.99" cy="113.28" r="4.28" transform="translate(-28.86 104.34) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="314.37 56 282.65 56 266.79 83.47 282.65 110.94 314.37 110.94 330.23 83.47 314.37 56" />
+      <polygon class="edge"
+         points="314.37 56 282.65 56 266.79 83.47 282.65 110.94 314.37 110.94 330.23 83.47 314.37 56" />
+      <line class="edge" x1="282.9" y1="56.13" x2="314.34" y2="110.85" />
+      <line class="edge" x1="314.14" y1="56.13" x2="282.84" y2="110.95" />
+      <line class="edge" x1="266.78" y1="83.44" x2="330.08" y2="83.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M303.51,90a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,303.51,90"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="303.51" cy="85.72" r="4.28" transform="translate(-14.7 120.42) rotate(-22.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="361.89 83.56 330.17 83.56 314.31 111.03 330.17 138.5 361.89 138.5 377.75 111.03 361.89 83.56" />
+      <polygon class="edge"
+         points="361.89 83.56 330.17 83.56 314.31 111.03 330.17 138.5 361.89 138.5 377.75 111.03 361.89 83.56" />
+      <line class="edge" x1="330.42" y1="83.69" x2="361.86" y2="138.41" />
+      <line class="edge" x1="361.66" y1="83.69" x2="330.36" y2="138.51" />
+      <line class="edge" x1="314.3" y1="111" x2="377.6" y2="111" />
+      <g class="cls-3">
+         <path class="redcenter" d="M351,117.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="edge" d="M351,117.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,117.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="whitearea"
+         points="77.15 138.56 45.43 138.56 29.57 166.03 45.43 193.5 77.15 193.5 93.01 166.03 77.15 138.56" />
+      <polygon class="edge"
+         points="77.15 138.56 45.43 138.56 29.57 166.03 45.43 193.5 77.15 193.5 93.01 166.03 77.15 138.56" />
+      <line class="edge" x1="45.68" y1="138.69" x2="77.12" y2="193.41" />
+      <line class="edge" x1="76.92" y1="138.69" x2="45.62" y2="193.51" />
+      <line class="edge" x1="29.56" y1="166" x2="92.86" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M66.29,172.56A4.28,4.28,0,1,0,62,168.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="66.29" cy="168.28" r="4.28" transform="translate(-31.1 10.54) rotate(-9.22)" />
+      </g>
+      <polygon class="grayarea"
+         points="124.43 111 92.71 111 76.85 138.47 92.71 165.94 124.43 165.94 140.29 138.47 124.43 111" />
+      <polygon class="edge"
+         points="124.43 111 92.71 111 76.85 138.47 92.71 165.94 124.43 165.94 140.29 138.47 124.43 111" />
+      <line class="edge" x1="92.96" y1="111.13" x2="124.4" y2="165.85" />
+      <line class="edge" x1="124.2" y1="111.13" x2="92.9" y2="165.95" />
+      <line class="edge" x1="76.84" y1="138.44" x2="140.14" y2="138.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M113.57,145a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="113.57" cy="140.72" r="4.28" transform="translate(-50.21 51.92) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="171.95 138.56 140.23 138.56 124.37 166.03 140.23 193.5 171.95 193.5 187.81 166.03 171.95 138.56" />
+      <polygon class="edge"
+         points="171.95 138.56 140.23 138.56 124.37 166.03 140.23 193.5 171.95 193.5 187.81 166.03 171.95 138.56" />
+      <line class="edge" x1="140.48" y1="138.69" x2="171.92" y2="193.41" />
+      <line class="edge" x1="171.72" y1="138.69" x2="140.42" y2="193.51" />
+      <line class="edge" x1="124.36" y1="166" x2="187.66" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M161.09,172.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="161.09" cy="168.28" r="4.28" transform="translate(-57.14 72.21) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="219.33 111 187.61 111 171.75 138.47 187.61 165.94 219.33 165.94 235.19 138.47 219.33 111" />
+      <polygon class="edge"
+         points="219.33 111 187.61 111 171.75 138.47 187.61 165.94 219.33 165.94 235.19 138.47 219.33 111" />
+      <line class="edge" x1="187.86" y1="111.13" x2="219.3" y2="165.85" />
+      <line class="edge" x1="219.11" y1="111.13" x2="187.8" y2="165.95" />
+      <line class="edge" x1="171.74" y1="138.44" x2="235.04" y2="138.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M208.47,145a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="208.47" cy="140.72" r="4.28" transform="translate(-42.98 88.24) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="266.85 138.56 235.13 138.56 219.27 166.03 235.13 193.5 266.85 193.5 282.71 166.03 266.85 138.56" />
+      <polygon class="edge"
+         points="266.85 138.56 235.13 138.56 219.27 166.03 235.13 193.5 266.85 193.5 282.71 166.03 266.85 138.56" />
+      <line class="edge" x1="235.38" y1="138.69" x2="266.82" y2="193.41" />
+      <line class="edge" x1="266.63" y1="138.69" x2="235.32" y2="193.51" />
+      <line class="edge" x1="219.26" y1="166" x2="282.56" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M256,172.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="255.99" cy="168.28" r="4.28" transform="translate(-49.91 108.52) rotate(-22.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="314.37 111 282.65 111 266.79 138.47 282.65 165.94 314.37 165.94 330.23 138.47 314.37 111" />
+      <polygon class="edge"
+         points="314.37 111 282.65 111 266.79 138.47 282.65 165.94 314.37 165.94 330.23 138.47 314.37 111" />
+      <line class="edge" x1="282.9" y1="111.13" x2="314.34" y2="165.85" />
+      <line class="edge" x1="314.14" y1="111.13" x2="282.84" y2="165.95" />
+      <line class="edge" x1="266.78" y1="138.44" x2="330.08" y2="138.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M303.51,145a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="303.51" cy="140.72" r="4.28" transform="translate(-35.75 124.61) rotate(-22.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="361.89 138.56 330.17 138.56 314.31 166.03 330.17 193.5 361.89 193.5 377.75 166.03 361.89 138.56" />
+      <polygon class="edge"
+         points="361.89 138.56 330.17 138.56 314.31 166.03 330.17 193.5 361.89 193.5 377.75 166.03 361.89 138.56" />
+      <line class="edge" x1="330.42" y1="138.69" x2="361.86" y2="193.41" />
+      <line class="edge" x1="361.66" y1="138.69" x2="330.36" y2="193.51" />
+      <line class="edge" x1="314.3" y1="166" x2="377.6" y2="166" />
+      <g class="cls-3">
+         <path class="whitearea" d="M351,172.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="edge" d="M351,172.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,172.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="grayarea"
+         points="77.15 193.56 45.43 193.56 29.57 221.03 45.43 248.5 77.15 248.5 93.01 221.03 77.15 193.56" />
+      <polygon class="edge"
+         points="77.15 193.56 45.43 193.56 29.57 221.03 45.43 248.5 77.15 248.5 93.01 221.03 77.15 193.56" />
+      <line class="edge" x1="45.68" y1="193.69" x2="77.12" y2="248.41" />
+      <line class="edge" x1="76.92" y1="193.69" x2="45.62" y2="248.51" />
+      <line class="edge" x1="29.56" y1="221" x2="92.86" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M66.29,227.56A4.28,4.28,0,1,0,62,223.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="61.29" cy="221.03" r="4.28" />
+      </g>
+      <polygon class="pinkarea"
+         points="124.43 166 92.71 166 76.85 193.47 92.71 220.94 124.43 220.94 140.29 193.47 124.43 166" />
+      <polygon class="edge"
+         points="124.43 166 92.71 166 76.85 193.47 92.71 220.94 124.43 220.94 140.29 193.47 124.43 166" />
+      <line class="edge" x1="92.96" y1="166.13" x2="124.4" y2="220.85" />
+      <line class="edge" x1="124.2" y1="166.13" x2="92.9" y2="220.95" />
+      <line class="edge" x1="76.84" y1="193.44" x2="140.14" y2="193.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M113.57,200a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="113.57" cy="195.72" r="4.28" transform="translate(-115.71 223.49) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="171.95 193.56 140.23 193.56 124.37 221.03 140.23 248.5 171.95 248.5 187.81 221.03 171.95 193.56" />
+      <polygon class="edge"
+         points="171.95 193.56 140.23 193.56 124.37 221.03 140.23 248.5 171.95 248.5 187.81 221.03 171.95 193.56" />
+      <line class="edge" x1="140.48" y1="193.69" x2="171.92" y2="248.41" />
+      <line class="edge" x1="171.72" y1="193.69" x2="140.42" y2="248.51" />
+      <line class="edge" x1="124.36" y1="221" x2="187.66" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M161.09,227.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="161.09" cy="223.28" r="4.28" transform="translate(-111.84 284.41) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="219.33 166 187.61 166 171.75 193.47 187.61 220.94 219.33 220.94 235.19 193.47 219.33 166" />
+      <polygon class="edge"
+         points="219.33 166 187.61 166 171.75 193.47 187.61 220.94 219.33 220.94 235.19 193.47 219.33 166" />
+      <line class="edge" x1="187.86" y1="166.13" x2="219.3" y2="220.85" />
+      <line class="edge" x1="219.11" y1="166.13" x2="187.8" y2="220.95" />
+      <line class="edge" x1="171.74" y1="193.44" x2="235.04" y2="193.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M208.47,200a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="208.47" cy="195.72" r="4.28" transform="translate(-57.13 311.17) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="266.85 193.56 235.13 193.56 219.27 221.03 235.13 248.5 266.85 248.5 282.71 221.03 266.85 193.56" />
+      <polygon class="edge"
+         points="266.85 193.56 235.13 193.56 219.27 221.03 235.13 248.5 266.85 248.5 282.71 221.03 266.85 193.56" />
+      <line class="edge" x1="235.38" y1="193.69" x2="266.82" y2="248.41" />
+      <line class="edge" x1="266.63" y1="193.69" x2="235.32" y2="248.51" />
+      <line class="edge" x1="219.26" y1="221" x2="282.56" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M256,227.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="255.99" cy="223.28" r="4.28" transform="translate(-53.26 372.09) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="314.37 166 282.65 166 266.79 193.47 282.65 220.94 314.37 220.94 330.23 193.47 314.37 166" />
+      <polygon class="edge"
+         points="314.37 166 282.65 166 266.79 193.47 282.65 220.94 314.37 220.94 330.23 193.47 314.37 166" />
+      <line class="edge" x1="282.9" y1="166.13" x2="314.34" y2="220.85" />
+      <line class="edge" x1="314.14" y1="166.13" x2="282.84" y2="220.95" />
+      <line class="edge" x1="266.78" y1="193.44" x2="330.08" y2="193.44" />
+      <g class="cls-3">
+         <path class="redcenter" d="M303.51,200a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="303.51" cy="195.72" r="4.28" transform="translate(1.54 398.98) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="361.89 193.56 330.17 193.56 314.31 221.03 330.17 248.5 361.89 248.5 377.75 221.03 361.89 193.56" />
+      <polygon class="edge"
+         points="361.89 193.56 330.17 193.56 314.31 221.03 330.17 248.5 361.89 248.5 377.75 221.03 361.89 193.56" />
+      <line class="edge" x1="330.42" y1="193.69" x2="361.86" y2="248.41" />
+      <line class="edge" x1="361.66" y1="193.69" x2="330.36" y2="248.51" />
+      <line class="edge" x1="314.3" y1="221" x2="377.6" y2="221" />
+      <g class="cls-3">
+         <path class="graycenter" d="M351,227.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="edge" d="M351,227.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,227.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="pinkarea"
+         points="77.15 248.56 45.43 248.56 29.57 276.03 45.43 303.5 77.15 303.5 93.01 276.03 77.15 248.56" />
+      <polygon class="edge"
+         points="77.15 248.56 45.43 248.56 29.57 276.03 45.43 303.5 77.15 303.5 93.01 276.03 77.15 248.56" />
+      <line class="edge" x1="45.68" y1="248.69" x2="77.12" y2="303.41" />
+      <line class="edge" x1="76.92" y1="248.69" x2="45.62" y2="303.51" />
+      <line class="edge" x1="29.56" y1="276" x2="92.86" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M66.29,282.56A4.28,4.28,0,1,0,62,278.28a4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="61.29" cy="276.03" r="4.28" />
+      </g>
+      <polygon class="whitearea"
+         points="124.43 221 92.71 221 76.85 248.47 92.71 275.94 124.43 275.94 140.29 248.47 124.43 221" />
+      <polygon class="edge"
+         points="124.43 221 92.71 221 76.85 248.47 92.71 275.94 124.43 275.94 140.29 248.47 124.43 221" />
+      <line class="edge" x1="92.96" y1="221.13" x2="124.4" y2="275.85" />
+      <line class="edge" x1="124.2" y1="221.13" x2="92.9" y2="275.95" />
+      <line class="edge" x1="76.84" y1="248.44" x2="140.14" y2="248.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M113.57,255a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="113.57" cy="250.72" r="4.28" transform="translate(-166.53 257.45) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="171.95 248.56 140.23 248.56 124.37 276.03 140.23 303.5 171.95 303.5 187.81 276.03 171.95 248.56" />
+      <polygon class="edge"
+         points="171.95 248.56 140.23 248.56 124.37 276.03 140.23 303.5 171.95 303.5 187.81 276.03 171.95 248.56" />
+      <line class="edge" x1="140.48" y1="248.69" x2="171.92" y2="303.41" />
+      <line class="edge" x1="171.72" y1="248.69" x2="140.42" y2="303.51" />
+      <line class="edge" x1="124.36" y1="276" x2="187.66" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M161.09,282.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="161.09" cy="278.28" r="4.28" transform="translate(-162.65 318.36) rotate(-67.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="219.33 221 187.61 221 171.75 248.47 187.61 275.94 219.33 275.94 235.19 248.47 219.33 221" />
+      <polygon class="edge"
+         points="219.33 221 187.61 221 171.75 248.47 187.61 275.94 219.33 275.94 235.19 248.47 219.33 221" />
+      <line class="edge" x1="187.86" y1="221.13" x2="219.3" y2="275.85" />
+      <line class="edge" x1="219.11" y1="221.13" x2="187.8" y2="275.95" />
+      <line class="edge" x1="171.74" y1="248.44" x2="235.04" y2="248.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M208.47,255a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="208.47" cy="250.72" r="4.28" transform="translate(-107.94 345.13) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="266.85 248.56 235.13 248.56 219.27 276.03 235.13 303.5 266.85 303.5 282.71 276.03 266.85 248.56" />
+      <polygon class="edge"
+         points="266.85 248.56 235.13 248.56 219.27 276.03 235.13 303.5 266.85 303.5 282.71 276.03 266.85 248.56" />
+      <line class="edge" x1="235.38" y1="248.69" x2="266.82" y2="303.41" />
+      <line class="edge" x1="266.63" y1="248.69" x2="235.32" y2="303.51" />
+      <line class="edge" x1="219.26" y1="276" x2="282.56" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M256,282.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="255.99" cy="278.28" r="4.28" transform="translate(-104.07 406.04) rotate(-67.5)" />
+      </g>
+      <polygon class="whitearea"
+         points="314.37 221 282.65 221 266.79 248.47 282.65 275.94 314.37 275.94 330.23 248.47 314.37 221" />
+      <polygon class="edge"
+         points="314.37 221 282.65 221 266.79 248.47 282.65 275.94 314.37 275.94 330.23 248.47 314.37 221" />
+      <line class="edge" x1="282.9" y1="221.13" x2="314.34" y2="275.85" />
+      <line class="edge" x1="314.14" y1="221.13" x2="282.84" y2="275.95" />
+      <line class="edge" x1="266.78" y1="248.44" x2="330.08" y2="248.44" />
+      <g class="cls-3">
+         <path class="whitearea" d="M303.51,255a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="303.51" cy="250.72" r="4.28" transform="translate(-49.27 432.93) rotate(-67.5)" />
+      </g>
+      <polygon class="pinkarea"
+         points="361.89 248.56 330.17 248.56 314.31 276.03 330.17 303.5 361.89 303.5 377.75 276.03 361.89 248.56" />
+      <polygon class="edge"
+         points="361.89 248.56 330.17 248.56 314.31 276.03 330.17 303.5 361.89 303.5 377.75 276.03 361.89 248.56" />
+      <line class="edge" x1="330.42" y1="248.69" x2="361.86" y2="303.41" />
+      <line class="edge" x1="361.66" y1="248.69" x2="330.36" y2="303.51" />
+      <line class="edge" x1="314.3" y1="276" x2="377.6" y2="276" />
+      <g class="cls-3">
+         <path class="redcenter" d="M351,282.56a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <path class="edge" d="M351,282.56a4.28,4.28,0,1,0-4.28-4.28A4.28,4.28,0,0,0,351,282.56Z"
+            transform="translate(-5 -2.25)" />
+      </g>
+      <polygon class="grayarea"
+         points="124.43 276 92.71 276 76.85 303.47 92.71 330.94 124.43 330.94 140.29 303.47 124.43 276" />
+      <polygon class="edge"
+         points="124.43 276 92.71 276 76.85 303.47 92.71 330.94 124.43 330.94 140.29 303.47 124.43 276" />
+      <line class="edge" x1="92.96" y1="276.13" x2="124.4" y2="330.85" />
+      <line class="edge" x1="124.2" y1="276.13" x2="92.9" y2="330.95" />
+      <line class="edge" x1="76.84" y1="303.44" x2="140.14" y2="303.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M113.57,310a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="113.57" cy="305.72" r="4.28" transform="translate(-217.34 291.4) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="219.33 276 187.61 276 171.75 303.47 187.61 330.94 219.33 330.94 235.19 303.47 219.33 276" />
+      <polygon class="edge"
+         points="219.33 276 187.61 276 171.75 303.47 187.61 330.94 219.33 330.94 235.19 303.47 219.33 276" />
+      <line class="edge" x1="187.86" y1="276.13" x2="219.3" y2="330.85" />
+      <line class="edge" x1="219.11" y1="276.13" x2="187.8" y2="330.95" />
+      <line class="edge" x1="171.74" y1="303.44" x2="235.04" y2="303.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M208.47,310a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="208.47" cy="305.72" r="4.28" transform="translate(-158.76 379.08) rotate(-67.5)" />
+      </g>
+      <polygon class="grayarea"
+         points="314.37 276 282.65 276 266.79 303.47 282.65 330.94 314.37 330.94 330.23 303.47 314.37 276" />
+      <polygon class="edge"
+         points="314.37 276 282.65 276 266.79 303.47 282.65 330.94 314.37 330.94 330.23 303.47 314.37 276" />
+      <line class="edge" x1="282.9" y1="276.13" x2="314.34" y2="330.85" />
+      <line class="edge" x1="314.14" y1="276.13" x2="282.84" y2="330.95" />
+      <line class="edge" x1="266.78" y1="303.44" x2="330.08" y2="303.44" />
+      <g class="cls-3">
+         <path class="graycenter" d="M303.51,310a4.28,4.28,0,1,0-4.28-4.28,4.28,4.28,0,0,0,4.28,4.28"
+            transform="translate(-5 -2.25)" />
+         <circle class="edge" cx="303.51" cy="305.72" r="4.28" transform="translate(-100.09 466.88) rotate(-67.5)" />
+      </g>
+      <text class="letter" transform="translate(5.27 45.9)">A</text>
+      <text class="letter" transform="translate(5.27 73.44)">B</text>
+      <text class="letter" transform="translate(5.27 100.99)">C</text>
+      <text class="letter" transform="translate(5.27 128.53)">D</text>
+      <text class="letter" transform="translate(5.6 156.08)">E</text>
+      <text class="letter" transform="translate(5.94 183.62)">F</text>
+      <text class="letter" transform="translate(4.93 211.17)">G</text>
+      <text class="letter" transform="translate(5.27 238.71)">H</text>
+      <text class="letter" transform="translate(8.33 266.26)">I</text>
+      <text class="letter" transform="translate(6.26 293.8)">J</text>
+      <text class="letter" transform="translate(5.27 321.35)">K</text>
+   </svg>

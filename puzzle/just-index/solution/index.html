@@ -1,0 +1,57 @@
+<p>We can start by solving the clues:</p>
+
+<table>
+<tr><td>Like an object that curves or bends light (5)</td><td>REFRACTIVE</td></tr>
+<tr><td>With &ldquo;the&rdquo;, a derisive sign also frequently called the bird (3)</td><td>FINGER</td></tr>
+<tr><td>Buried remains of a Dracorex or a Brachiosaurus, e.g. (4)</td><td>FOSSIL</td></tr>
+<tr><td>This determines the sum paid in a purchase (1-8i)</td><td>PRICE</td></tr>
+<tr><td>A king, ace, or jack is an example of this component of a deck (20)</td><td>CARD</td></tr>
+<tr><td>With &ldquo;crowd&rdquo;, to pay for a specific project as a large group (0)</td><td>FUND</td></tr>
+<tr><td>Relating to blood glucose levels (5-4i)</td><td>GLYCEMIC</td></tr>
+<tr><td>A finger that might be green or opposable (4i)</td><td>THUMB</td></tr>
+<tr><td>What an exothermic reaction produces as a side effect (-4)</td><td>HEAT</td></tr>
+<tr><td>Item traded on exchanges such as Euronext or Nasdaq (8)</td><td>STOCK</td></tr>
+<tr><td>A basic data structure that can be dynamic or associative (-2)</td><td>ARRAY</td></tr>
+<tr><td>It may be genitive, objective, dative, or ablative (3.5+0.5i)</td><td>CASE</td></tr>
+</table>
+
+<p>Each of the answers makes a two-word phrase with &ldquo;index&rdquo; (refractive index, index finger, etc.), which can help in solving the clues and confirming the answers.</p>
+
+<p>This (combined with the title) implies that we want to index into the answers somehow - if we index 5, 3, and 4 into REFRACTIVE, FINGER, and FOSSIL we get &ldquo;ANS&rdquo;, which is promisingly the start of &ldquo;ANSWER&rdquo;, though none of the other numbers work given they are too large, negative, or even complex.</p>
+
+<p>The next step is suggested by the monospace font and weird spacing: it turns out that each of the answers can be found word search-style within the clues themselves. For example, ARRAY is found reading down from the &ldquo;A&rdquo; in &ldquo;A finger that might be green or opposable&rdquo;, and CARD is found backwards in &ldquo;Dracorex&rdquo;. This lets us extend the indexing to numbers outside the normal range:</p>
+
+<ul>
+<li>For numbers larger than the length of the word, we count past the end of the word in the grid of clues to extract a letter. For example, with CARD, indexing 20 means going 16 letters past the D, which ends up at the &ldquo;e&rdquo; in &ldquo;Buried&rdquo;.</li>
+<li>Similarly, for negative numbers, we count backwards from the beginning of the word. Keep in mind that 0 corresponds to the letter immediately before the start of the word.</li>
+<li>Finally, for complex numbers, a multiple of i means to count that many characters in a 90 degrees counterclockwise direction (this is how the <a href="https://en.wikipedia.org/wiki/Complex_plane">complex plane</a> is represented). For example, THUMB is found reading in a northeast direction starting from the &ldquo;t&rdquo; in &ldquo;structure&rdquo;, so to index 4i, we start at 0, which is the second &ldquo;i&rdquo; in &ldquo;genitive&rdquo; (i.e. the letter immediately southwest of the &ldquo;t&rdquo;), and then count 4 spaces northwest to arrive at the &ldquo;e&rdquo; in &ldquo;finger&rdquo;.</li>
+</ul>
+
+<p>If we do this, we find that the 4th, 5th, and 6th clues give &ldquo;WER&rdquo;, which confirms that we&rsquo;re doing the right thing. Continuing indexing in this way, we get &ldquo;ANSWER <span class="answer">MERINO</span>&rdquo;.</p>
+
+<p>Here are all the words and corresponding indexed letters:</p>
+
+<table>
+<tr><td style="background-color: #f0a1a1">REFRACTIVE (5)</td><td>A</td></tr>
+<tr><td style="background-color: #f0975d">FINGER (3)</td><td>N</td></tr>
+<tr><td style="background-color: #f0ee3f">FOSSIL (4)</td><td>S</td></tr>
+<tr><td style="background-color: #4bf03f">PRICE (1-8i)</td><td>W</td></tr>
+<tr><td style="background-color: #3ff0e5">CARD (20)</td><td>E</td></tr>
+<tr><td style="background-color: #62c2f0">FUND (0)</td><td>R</td></tr>
+<tr><td style="background-color: #435cf0">GLYCEMIC (5-4i)</td><td>M</td></tr>
+<tr><td style="background-color: #c15ff0">THUMB (4i)</td><td>E</td></tr>
+<tr><td style="background-color: #ee48f0">HEAT (-4)</td><td>R</td></tr>
+<tr><td style="background-color: #b86464">STOCK (8)</td><td>I</td></tr>
+<tr><td style="background-color: #479854">ARRAY (-2)</td><td>N</td></tr>
+<tr><td style="background-color: #a6a6a6">CASE (3.5+0.5i)</td><td>O</td></tr>
+</table>
+
+<p><img src="{{sroot}}image1.png" style="width: 100%"></p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+<p>We wanted to make a puzzle that plays with indexing, a step that solvers often take for granted (sort of like how <a href="http://web.mit.edu/puzzle/www/2016/puzzle/identify_sort_index_solve/">identify, SORT, index, solve</a> from the 2016 Mystery Hunt plays with the &ldquo;sort&rdquo; step). Originally we considered ideas like providing a grid of some sort, but they all felt unsatisfyingly underconstrained, until we hit on the idea of hiding the words in the clues themselves. We then added the &ldquo;makes a two-word phrase with index&rdquo; constraint since we still had leeway and didn&rsquo;t want solvers to read into the words too much.</p>
+
+<p>At first we thought that it might be too constrained to fit in all the words while having reasonable-sounding clues, but it turned out to be surprisingly doable (it definitely helped that we put in both &ldquo;finger&rdquo; and &ldquo;card&rdquo; horizontally).</p>
+</div>

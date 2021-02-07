@@ -1,0 +1,36 @@
+> FLAG enable_snow_luge
+> background lugebg.jpg
+> music none
+
+> show snow_neutral.png
+SNOW: Let's go.
+You'll be on the bottom.
+So I can trust you to steer us, right?
+I hope you know the course!
+
+> background none
+
+PLAYER: (Here we go...)
+
+> do_run 1 perfect bad
+
+> label perfect
+
+SNOW: I'll steer the last couple turns.
+> background none 1.5
+SNOW: Wow, that was an incredible run!
+Maybe we should enter the doubles World Cup together!
+
+> FLAG snow_complete
+> good_end
+
+> label bad
+> background none
+
+SNOW: I'll steer the last couple turns.
+> background none 1.5
+SNOW: This was okay...
+Not good enough, though. I think you missed some turns.
+Gotta go practice more. Later!
+
+> bad_end

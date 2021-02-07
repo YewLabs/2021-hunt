@@ -1,0 +1,61 @@
+name: semaphore
+difficulty: 2/10
+coolness: 1/10
+time: 2:00
+
+questions:
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/ceramic.png
+
+        - answer: ceramic
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/chocolate.png
+
+        - answer: chocolate
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/grocery.png
+
+        - answer: grocery
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/message.png
+
+        - answer: message
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/overcoat.png
+
+        - answer: overcoat
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/perfect.png
+
+        - answer: perfect
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/scissors.png
+
+        - answer: scissors
+
+    - question:
+        - text: "What is the word represented in semaphore here?"
+
+        - image: simple-codes/semaphore/vacuum.png
+
+        - answer: vacuum

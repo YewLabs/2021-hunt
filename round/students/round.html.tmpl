@@ -1,0 +1,375 @@
+{% extends "round/layout.tmpl" %}
+{% load static %}
+
+{% load hunt_state_tests %}
+
+{% block round_styles %}
+<style>
+  body {
+    background-color: #BCBCC5;
+  }
+
+  .content {
+    background-image: url({% static 'art/studentsbg.png' %});
+    background-size: 100% auto;
+  }
+
+  .info {
+    background: none;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .round-table-container {
+    background-color: #ffffffe0;
+  }
+
+  .yearbook-container {
+    width: 120%;
+    position: relative;
+    left: -10%;
+    margin-bottom: 30px;
+  }
+
+  .yearbook-bg-image {
+    max-width: 100%;
+  }
+
+  .yearbook-text {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+  }
+
+  .yearbook-text-1,
+  .yearbook-text-2,
+  .yearbook-text-3,
+  .yearbook-text-4 {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .yearbook-text-1 {
+    top: 0%;
+    left: 5%;
+    width: 40%;
+    height: 45%;
+  }
+
+  .yearbook-text-2 {
+    top: 46%;
+    left: 5%;
+    width: 40%;
+    height: 45%;
+  }
+
+  .yearbook-text-3 {
+    top: 0%;
+    left: 55%;
+    width: 40%;
+    height: 45%;
+  }
+
+  .yearbook-text-4 {
+    top: 46%;
+    left: 55%;
+    width: 40%;
+    height: 45%;
+  }
+
+  .yearbook-text img {
+    max-width: 65%;
+    max-height: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .student-name {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-size: 1.25em;
+  }
+
+  .student-puzzle-name {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  .yearbook-left-arrow-container,
+  .yearbook-right-arrow-container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 0%;
+    width: 5%;
+    height: 100%;
+  }
+  .yearbook-left-arrow-container {
+    left: 8%;
+    align-items: flex-end;
+  }
+  .yearbook-right-arrow-container {
+    right: 8%;
+    align-items: flex-start;
+  }
+
+  .yearbook-left-arrow-button,
+  .yearbook-right-arrow-button {
+    border: none;
+    background: none;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-width: 24px 0;
+    cursor: pointer;
+    padding: 0;
+  }
+  .yearbook-left-arrow-button {
+    border-right: 24px solid #383120;
+  }
+  .yearbook-right-arrow-button {
+    border-left: 24px solid #383120;
+  }
+
+  .yearbook-left-arrow-button:hover {
+    border-right-color: #7F393F;
+  }
+  .yearbook-right-arrow-button:hover {
+    border-left-color: #7F393F;
+  }
+
+  .yearbook-left-arrow-button:disabled {
+    border-right-color: #CBC5D1;
+  }
+  .yearbook-right-arrow-button:disabled {
+    border-left-color: #CBC5D1;
+  }
+
+  .yearbook-jump-to-page-outer-container {
+    position: absolute;
+    bottom: 12%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .yearbook-jump-to-page-inner-container {
+    display: inline-block;
+    background-color: rgba(240, 237, 243, 0.8);
+    min-width: 100px;
+  }
+
+  .jump-to-page-link {
+    display: inline-block;
+    padding: 3px 10px;
+  }
+
+  .student-image {
+    border: 2px solid #383120;
+    box-shadow: 2px 4px 5px 1px rgba(56, 49, 32, 0.4);
+  }
+
+  .students-flavor {
+    margin-top: 0;
+    text-align: center;
+  }
+
+  .clubs-small {
+    font-size: 14px;
+  }
+</style>
+{% endblock %}
+
+{% block round_top %}
+<script>
+var studentDataForYearbook = [
+{% for puzzle in all_puzzles %}
+  {% if puzzle.puzzle.y2021puzzledata and not puzzle.puzzle.is_meta %}
+  {
+    {% if puzzle.found %}
+    puzzleName: "{{ puzzle.puzzle.name|safe }}",
+    puzzleUrl: "{% url 'puzzle_view' puzzle.puzzle.url %}",
+    {% else %}
+    puzzleName: "?????",
+    {% endif %}
+    studentName: "{{ puzzle.extra.npc_name }}",
+    puzzleImgUrl: "{{ puzzle.uimage }}",
+    puzzleSmallImgUrl: "{{ puzzle.uimage_small }}",
+  },
+  {% endif %}
+{% endfor %}
+];
+var studentsPerPage = 4;
+var pageIndex = 0;
+var numPages = Math.ceil(studentDataForYearbook.length / 4);
+function getStudentsForPage(pageI) {
+  return studentDataForYearbook.slice(studentsPerPage * pageI, studentsPerPage * (pageI + 1)).map((s) => {
+    if (s.studentName) {
+      s.studentName = s.studentName.trim();
+    }
+    return s;
+  });
+}
+function makeHtmlForStudent(student) {
+  return `
+  <div>
+  <a href="${student.puzzleImgUrl}"><img class="student-image" src="${student.puzzleSmallImgUrl}" /></a>
+  <div class="student-name">${student.studentName}</div>
+  ` +
+  (
+    student.puzzleUrl ?
+    `<div class="student-puzzle-name"><a href="${student.puzzleUrl}">${student.puzzleName}</a></div>` :
+    `<div class="student-puzzle-name">${student.puzzleName}</div>`
+  ) +
+  '</div>';
+}
+
+function makeJumpToPageHtml(pageI) {
+  let s = '';
+  for (let i = 0; i < numPages; i++) {
+    if (i == pageI) {
+      s += `<b class="jump-to-page-link">${i+1}</b>`;
+    } else {
+      s += `<a class="jump-to-page-link" id="jump-to-page-link-${i}" href="#">${i+1}</a>`;
+    }
+  }
+  return s;
+}
+
+function renderStudentPage(pageI) {
+  var students = getStudentsForPage(pageI);
+  var studentsHtml = students.map(makeHtmlForStudent);
+  for (var i = 0; i < studentsPerPage; i++) {
+    $(`.yearbook-text-${i+1}`).html('');
+  }
+  for (var i = 0; i < studentsHtml.length; i++) {
+    $(`.yearbook-text-${i+1}`).html(studentsHtml[i]);
+    $(`.yearbook-text-${i+1} .student-image`).css('transform', `rotate(${-4 + Math.random()*8}deg)`);
+  }
+
+  $('.yearbook-left-arrow-button').prop('disabled', pageI <= 0);
+  $('.yearbook-right-arrow-button').prop('disabled', pageI >= numPages-1);
+
+  if (numPages > 2) {
+    $('.yearbook-jump-to-page-inner-container').html(makeJumpToPageHtml(pageI));
+    setTimeout(() => {
+      for (let i = 0; i < numPages; i++) {
+        $(`#jump-to-page-link-${i}`).off('click');
+        $(`#jump-to-page-link-${i}`).on('click', e => {
+          pageIndex = i;
+          renderStudentPage(i);
+          e.preventDefault();
+        });
+      }
+    });
+  }
+}
+
+function flipPageLeft() {
+  if (pageIndex <= 0) {
+    return;
+  }
+  pageIndex--;
+  renderStudentPage(pageIndex);
+}
+
+function flipPageRight() {
+  if (pageIndex >= numPages-1) {
+    return;
+  }
+  pageIndex++;
+  renderStudentPage(pageIndex);
+}
+
+$(() => {
+  renderStudentPage(0);
+  $('.yearbook-right-arrow-button').click(() => {
+    flipPageRight();
+  });
+  $('.yearbook-left-arrow-button').click(() => {
+    flipPageLeft();
+  });
+});
+</script>
+<div class="yearbook-container">
+  <img class="yearbook-bg-image" src="{% static 'art/yearbook.png'%}"></img>
+  <div class="yearbook-text">
+    <div class="yearbook-text-1">
+    </div>
+    <div class="yearbook-text-2">
+    </div>
+    <div class="yearbook-text-3">
+    </div>
+    <div class="yearbook-text-4">
+    </div>
+  </div>
+  <div class="yearbook-left-arrow-container">
+    <button class="yearbook-left-arrow-button" title="Flip to previous yearbook page"></button>
+  </div>
+  <div class="yearbook-right-arrow-container">
+    <button class="yearbook-right-arrow-button" title="Flip to next yearbook page"></button>
+  </div>
+  <div class="yearbook-jump-to-page-outer-container">
+    <div class="yearbook-jump-to-page-inner-container">
+    </div>
+  </div>
+</div>
+<h3 class="students-flavor">*These pictures are only for helping you locate the students and are otherwise not used in any puzzle.</h3>
+{% endblock %}
+
+{% block puzzle_row %}
+{% if puzzle.found %}
+{{ block.super }}
+{% else %}
+<tr>
+  <td colspan={% if normal_round_solved > 0 %}5{% else %}3{% endif %}>
+    {% if mmo_disabled %}
+    <a href="{% url 'find_puzzle' puzzle.puzzle.url puzzle.puzzle.y2021puzzledata.obfuscated_id %}" {% if puzzle.puzzle.is_meta %}class="meta"{% endif %}>
+      {{puzzle.puzzle.name|safe}}
+    </a>
+    {% elif puzzle.puzzle.is_meta %}
+    <div class="mhtooltip">?????
+      <span class="mhtooltiptext">Find this puzzle in &perp;IW!</span>
+    </div>
+    {% else %}
+    <center><a href="{{ puzzle.uimage }}" target="_blank"><img alt="Find this puzzle in ⊥IW!" style="width:128px;" src="{{ puzzle.uimage_small }}"></a></center>
+    {% endif %}
+  </td>
+</tr>
+{% endif %}
+{% endblock %}
+
+{% block puzzle_extra_header %}
+<th>Name</th>{% if normal_round_solved > 0 %}<th>Dorm</th>
+{% if student_center_meta_unlocked %}
+<th>Clubs</th>
+{% endif %}
+{% endif %}
+{% endblock %}
+
+{% block puzzle_extra %}
+<td>
+  {{ puzzle.extra.npc_name }}
+</td>
+{% if normal_round_solved > 0 %}
+<td>
+  {% if puzzle.solved %}
+  {{ puzzle.extra.dorm }}
+  {% endif %}
+</td>
+{% if student_center_meta_unlocked %}
+<td class="clubs-small">
+  {% if puzzle.solved %}
+  {{ puzzle.extra.clubs }}
+  {% endif %}
+</td>
+{% endif %}
+{% endif %}
+{% endblock %}

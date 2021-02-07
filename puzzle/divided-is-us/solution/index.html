@@ -1,0 +1,452 @@
+<h2>Figuring out the rules</h2>
+<p>For this <em>teamwork time</em> puzzle,
+we are presented with a clone of
+<a href="https://www.hempuli.com/">Arvi Teikari</a>'s
+famous puzzle game
+<a href="https://en.wikipedia.org/wiki/Baba_Is_You">Baba Is You</a>,
+except instead of one player, there are up to four players.
+Each player has a separate screen.</p>
+<p>After playing with the easy first level,
+we figure out the goal is for player 1 (<code>YOU</code>) to reach a <code>WIN</code> object,
+and that the rules in one screen affect all other screens.
+(It is neither necessary nor sufficient
+for other players to reach a <code>WIN</code> object.)
+The other rules of the game are fairly similar to the original,
+although there are some differences;
+most notably, NOUN IS NOUN statements are not valid.
+To be specific, the properties that appear in the game
+(which are drawn inside colored blocks) are:</p>
+<ul>
+<li><code>YOU</code>: player 1 controls this icon.</li>
+<li><code>WIN</code>: the level is won once an icon controlled by player 1 starts a turn on this cell.</li>
+<li><code>TWO</code>: player 2 controls this icon.</li>
+<li><code>THREE</code>: player 3 controls this icon.</li>
+<li><code>FOUR</code>: player 4 controls this icon.</li>
+<li><code>PUSH</code>: players can push this block around.</li>
+<li><code>STOP</code>: block cannot be moved or moved into.</li>
+<li><code>DEFEAT</code>: an icon controlled by a player which moves onto this cell is removed.</li>
+<li><code>MELT</code> and <code>HOT</code>: if an icon is <code>MELT</code> and shares a cell
+  with a <code>HOT</code> icon, the one labeled <code>MELT</code> is removed.</li>
+<li><code>OPEN</code> and <code>SHUT</code>: when an icon with <code>OPEN</code> shares
+  a cell with an icon with <code>SHUT</code>, both are removed.
+  (Fine print: unlike the original game, all icons on that cell are removed
+  if there are more than one.)</li>
+<li><code>SINK</code>: if an icon with <code>SINK</code> shares a cell with a different icon, both are removed.</li>
+<li><code>WEAK</code>: if an icon with <code>WEAK</code> shares a cell with a different icon, it is removed.</li>
+</ul>
+<p>There are several nouns, plus two special ones:</p>
+<ul>
+<li><code>TEXT</code> refers to all text blocks</li>
+<li><code>EMPTY</code> refers to any cell without a block.</li>
+</ul>
+<p>Detailed solutions to the game itself are deferred to the
+<a href="#appendix">appendix</a>.</p>
+<h2>Extraction</h2>
+<p>Initially, it looks like all the players are playing essentially separate regions.
+However, over the course of the levels,
+it is gradually revealed that in fact,
+the players are actually seeing portions of the <em>same</em> world,
+with the four quadrants in reading order,
+and in fact players can even move into each others' screens
+if <code>WALL IS STOP</code> is not active.</p>
+<p>Throughout the game, we might also notice that there are some
+unusually placed flags which are either unnecessary or unusable for the level;
+the same is true for several dots starting at level 4.
+In fact, when we put together the world,
+we see that they give <em>semaphore</em> and <em>braille</em> letters.</p>
+<p>This gives us the table below (click an image to enlarge it).</p>
+<table style="text-align:center;">
+<tr>
+    <th>Level</th>
+    <th>Image</th>
+    <th>Flags</th>
+    <th>Semaphore</th>
+    <th>Dots</th>
+    <th>Braille</th>
+</tr>
+
+<tr>
+    <th>Lv. 1</th>
+    <td><a href="{{sroot}}level1.png"><img src="{{sroot}}level1.png" alt="Level 1 layout" width="200" /></a></td>
+    <td>SE+W</td>
+    <td>S</td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <th>Lv. 2</th>
+    <td><a href="{{sroot}}level2.png"><img src="{{sroot}}level2.png" alt="Level 2 layout" width="200" /></a></td>
+    <td>NE+S</td>
+    <td>E</td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <th>Lv. 3</th>
+    <td><a href="{{sroot}}level3.png"><img src="{{sroot}}level3.png" alt="Level 3 layout" width="200" /></a></td>
+    <td>NW+S</td>
+    <td>C</td>
+    <td></td>
+    <td></td>
+</tr>
+
+<tr>
+    <th>Lv. 4</th>
+    <td><a href="{{sroot}}level4.png"><img src="{{sroot}}level4.png" alt="Level 4 layout" width="200" /></a></td>
+    <td>NW+W</td>
+    <td>O</td>
+    <td>1234</td>
+    <td>G</td>
+</tr>
+
+<tr>
+    <th>Lv. 5</th>
+    <td><a href="{{sroot}}level5.png"><img src="{{sroot}}level5.png" alt="Level 5 layout" width="200" /></a></td>
+    <td>SW+SE</td>
+    <td>N</td>
+    <td>1345</td>
+    <td>R</td>
+</tr>
+
+
+<tr>
+    <th>Lv. 6</th>
+    <td><a href="{{sroot}}level6.png"><img src="{{sroot}}level6.png" alt="Level 6 layout" width="200" /></a></td>
+    <td>N+S</td>
+    <td>D</td>
+    <td>1</td>
+    <td>A</td>
+</tr>
+
+
+<tr>
+    <th>Lv. 7</th>
+    <td><a href="{{sroot}}level7.png"><img src="{{sroot}}level7.png" alt="Level 7 layout" width="200" /></a></td>
+    <td></td>
+    <td></td>
+    <td>1245</td>
+    <td>N</td>
+</tr>
+
+
+<tr>
+    <th>Lv. 8</th>
+    <td><a href="{{sroot}}level8.png"><img src="{{sroot}}level8.png" alt="Level 8 layout" width="200" /></a></td>
+    <td></td>
+    <td></td>
+    <td>124</td>
+    <td>D</td>
+</tr>
+
+</table>
+
+<p>When we complete the eighth level,
+we get a ninth meta-level which has no game content,
+but is instead meant for extraction.</p>
+<ul>
+<li>Player 1 just sees a flag,
+  so the first word of the answer is <code>SECOND</code>,
+  spelled by the earlier semaphore letters.</li>
+<li>Player 2 just sees a dot,
+  so the second word of the answer is <code>GRAND</code>,
+  spelled by the earlier Braille letters.</li>
+<li>Player 3 sees a sequence of icons.</li>
+<li>Player 4 sees the word END, which is not used
+  (it indicates there is no more puzzle content).</li>
+</ul>
+<p><center>
+<a href="{{sroot}}level9.png"><img src="{{sroot}}level9.png" alt="Level 9 layout" width="400" /></a>
+</center></p>
+<p>We only need to find the last word.
+Each of the icons on player 3's screen
+is an icon that appeared exactly once in an earlier level,
+and was assigned to a player.
+Since each of the items is four letters long,
+we index by the player number to get the following table
+(or alternatively, <a href="https://nutrimatic.org/?q=%5Bleaf%5D%5Bbolt%5D%5Blove%5D%5Bfish%5D%5Blamp%5D%5Bmoon%5D%5Bcrab%5D%5Bcake%5D&amp;go=Go]">just use Nutrimatic</a>).</p>
+<style type="text/css">
+img.icon {
+    background-color: #000a32;
+}
+
+</style>
+
+<table style="text-align:center;">
+<tr>
+    <th>Level</th>
+    <th>Icon</th>
+    <th>Name</th>
+    <th>Player</th>
+    <th>Indexed</th>
+</tr>
+
+<tr>
+    <th>Lv. 1</th>
+    <td><img src="{{sproot}}sprites/icon/LEAF.gif" alt="Leaf icon" class="icon" /></td>
+    <td>LEAF</td>
+    <td>3</td>
+    <td>A</td>
+</tr>
+<tr>
+    <th>Lv. 2</th>
+    <td><img src="{{sproot}}sprites/icon/BOLT.gif" alt="Bolt icon" class="icon" /></td>
+    <td>BOLT</td>
+    <td>3</td>
+    <td>L</td>
+</tr>
+<tr>
+    <th>Lv. 3</th>
+    <td><img src="{{sproot}}sprites/icon/LOVE.gif" alt="Love icon" class="icon" /></td>
+    <td>LOVE</td>
+    <td>1</td>
+    <td>L</td>
+</tr>
+<tr>
+    <th>Lv. 4</th>
+    <td><img src="{{sproot}}sprites/icon/FISH.gif" alt="Fish icon" class="icon" /></td>
+    <td>FISH</td>
+    <td>2</td>
+    <td>I</td>
+</tr>
+<tr>
+    <th>Lv. 5</th>
+    <td><img src="{{sproot}}sprites/icon/LAMP.gif" alt="Lamp icon" class="icon" /></td>
+    <td>LAMP</td>
+    <td>2</td>
+    <td>A</td>
+</tr>
+<tr>
+    <th>Lv. 6</th>
+    <td><img src="{{sproot}}sprites/icon/MOON.gif" alt="Moon icon" class="icon" /></td>
+    <td>MOON</td>
+    <td>4</td>
+    <td>N</td>
+</tr>
+<tr>
+    <th>Lv. 7</th>
+    <td><img src="{{sproot}}sprites/icon/CRAB.gif" alt="Crab icon" class="icon" /></td>
+    <td>CRAB</td>
+    <td>1</td>
+    <td>C</td>
+</tr>
+<tr>
+    <th>Lv. 8</th>
+    <td><img src="{{sproot}}sprites/icon/CAKE.gif" alt="Cake icon" class="icon" /></td>
+    <td>CAKE</td>
+    <td>4</td>
+    <td>E</td>
+</tr>
+</table>
+
+<p>Hence the third word is ALLIANCE.
+Combining the three words gives the answer <span class="answer">SECOND GRAND ALLIANCE</span>.</p><h2>Appendix: Solving the levels</h2>
+<a id="appendix"></a>
+
+<style type="text/css">
+ul.outline {
+	max-width: 400px;
+}
+</style>
+
+<table>
+<tr>
+	<th>Level</th>
+	<th>Picture</th>
+	<th>Outline of solve</th>
+</tr>
+
+<tr>
+	<th>Lv. 1</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level1sol.mp4" type="video/mp4">
+		</video>
+	<td>
+	<ul class="outline">
+	<li>WATER cancels ROCK IS STOP and creates FLAG IS WIN.</li>
+	<li>LAVA cancels ROCK IS DEFEAT.</li>
+	<li>Move BABA to FLAG.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 2</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level2sol.mp4" type="video/mp4">
+		</video>
+	<td>
+	<ul class="outline">
+	<li>BOLT cancels LAVA IS DEFEAT.</li>
+	<li>FLAG creates ROCK IS FOUR.</li>
+	<li>ROCK moves up out of the way.</li>
+	<li>FLAG creates FLAG IS WIN.</li>
+	<li>BABA moves to FLAG.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 3</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level3sol.mp4">
+		</video>
+	</td>
+	<td>
+	<ul class="outline">
+	<li>UFO cancels CRYSTAL IS DEFEAT.</li>
+	<li>WIND creates DOOR IS SHUT by pushing blocks past the rocks.</li>
+	<li>BOAT creates ICE IS MELT.</li>
+	<li>LOVE creates ICE IS HOT by moving LOVE IS YOU to the right and then down.</li>
+	<li>CRYSTAL and UFO alternate being TWO to make CRYSTAL IS OPEN and CRYSTAL IS TWO
+	and then UFO IS OPEN and UFO IS TWO, breaking both doors.</li>
+	<li>FLAG creates WATER IS DEFEAT by cancelling WATER IS STOP.</li>
+	<li>BOAT pushes WATER IS SINK into water to create an opening and moves WIN
+	across the river, then pushes it back to create LOVE IS WIN.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 4</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level4sol.mp4">
+		</video>
+	</td>
+	<td>
+	<ul class="outline">
+	<li>KEKE sets up IS OPEN below the dot.</li>
+	<li>FISH pushes DOOR downwards onto the dot, making DOOR IS OPEN.</li>
+	<li>GHOST pushes IS through dot upwards so BABA can make FLAG IS WIN.</li>
+	<li>BABA moves to FLAG.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 5</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level5sol.mp4">
+		</video>
+	</td>
+	<td>
+	<ul class="outline">
+	<li>KEKE creates KEY IS HOT and all other players burn fences with KEYs. (LAMP and BABA burn all fences except for the ones next to walls, and ORB burns an outer fence to the left of IS.)</li>
+	<li>LAMP cancels KEY IS SHUT and creates DOOR IS SHUT.</li>
+	<li>KEKE creates KEKE IS HOT and eliminates fences.</li>
+	<li>KEKE creates KEY IS OPEN.</li>
+	<li>LAMP and BABA both open a door to retrieve WATER.</li>
+	<li>BABA creates WATER IS PUSH.</li>
+	<li>KEKE creates WATER IS OPEN and then obtains FENCE.</li>
+	<li>KEKE creates FENCE IS OPEN; LAMP creates WATER IS SHUT.</li>
+	<li>ORB uses a KEY to push water into a fence, removing two layers.</li>
+	<li>KEKE creates KEY IS OPEN; LAMP creates DOOR IS SHUT.</li>
+	<li>ORB uses the KEY to open the DOOR and retrieve both IS and WIN to create ORB IS WIN.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 6</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level6sol.mp4">
+		</video>
+	</td>
+	<td>
+	<ul class="outline">
+	<li>JELLY creates WALL IS PUSH.</li>
+	<li>BABA and TRAIN remove the highest available wall between them.</li>
+	<li>BABA pushes the WALL next to the FLAG onto the FLAG so that TILE can be pushed.</li>
+	<li>MOON creates TILE IS PUSH.</li>
+	<li>BABA moves into the DOT and works with TRAIN
+	to push both TILES out.</li>
+	<li>One TILE is used to break the wall between TRAIN and MOON.</li>
+	<li>All three of BABA, TRAIN, MOON cooperate to push the other freed TILE
+	onto the corner ROCK in the rectangle.</li>
+	<li>JELLY now pushes WALL and TILE until WALL IS PUSH is shown
+	(and TILE no longer has a modifier).</li>
+	<li>BABA walks to the FLAG.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 7</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level7sol.mp4">
+		</video>
+	</td>
+	<td>
+	<ul class="outline">
+	<li>CRAB sets up BABA IS THREE and PLANE IS TWO.</li>
+	<li>PLANES cancel LAVA IS STOP.</li>
+	<li>BABA sets up the tiles into a 3&times;7 rectangle
+	(except for the three cells with the words of FLAG IS WIN),
+	and stands next to the rectangle.</li>
+	<li>PLANES align on the same row as TEXT, one on each side.</li>
+	<li>CRAB stands on the row containing the flag.</li>
+	<li>SUN takes a deep breath and then creates EMPTY IS PUSH!</li>
+	<li>PLANE moves one cell left to cancel TEXT IS MELT.</li>
+	<li>BABA creates FLAG IS WIN by carefully pushing the lava out of the way.</li>
+	<li>CRAB moves one cell right to create LAVA IS YOU and also
+	push one LAVA onto the FLAG (through EMPTY), winning the game.</li>
+	</ul>
+	</td>
+</tr>
+
+<tr>
+	<th>Lv. 8</th>
+	<td>
+		<video controls width="400">
+			<source src="{{sroot}}level8sol.mp4">
+		</video>
+	</td>
+	<td>
+	<ul class="outline">
+	<li>MONITOR pushes IS through the bottom DOT.</li>
+	<li>MONITOR and CAKE work together to make STAR IS FOUR.</li>
+	<li>STAR and LIZARD move to the leftmost wall
+	and LIZARD pushes WALL IS STOP onto STAR.</li>
+	<li>STAR moves to cancel WALL IS STOP.</li>
+	<li>BAT cancels DOT IS DEFEAT, creates CAKE IS WIN, and moves onto CAKE.</li>
+	</ul>
+	</td>
+</tr>
+</table>
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>This was the very last puzzle to be written for the 2021 MIT Mystery Hunt.
+At a meeting in late December,
+the editors announced there was exactly one answer remaining,
+and it was a teamwork time puzzle.
+As it happens, I was thinking earlier that day how we didn't
+have our obligatory <em>Baba</em> puzzle yet,
+and the idea for the puzzle was born.</p>
+<p>Ironically, during test-solving, we commented that
+even the standard single-player <em>Baba Is You</em> game
+would probably make a good teamwork time puzzle,
+because it's so easy to "miss" an idea that is needed to solve a level,
+and hence having other people watching is really valuable.
+(Not to mention the game is just plain hard.)</p>
+<p>We made the decision to hide the undo button until level 1 was cleared
+and the small screens until level 5 was cleared,
+to maximize the effect of the "a-ha" when players realize
+that they are actually looking at the same world.</p>
+<h2>Acknowledgments</h2>
+<p>On the backend, the game logic uses a modified version of the
+<a href="https://github.com/utilForever/baba-is-auto">baba-is-auto</a> library
+developed by Chris Ohk (released under the MIT license).
+The artwork and sprites in the puzzle are used
+with permission from <a href="https://www.hempuli.com/">Arvi Teikari</a>,
+the author of the original game.
+The authors thank Arvi for granting us permission
+to keep this puzzle in the Mystery Hunt archive.</p>
+</div>

@@ -1,0 +1,57 @@
+name: boardgames
+difficulty: 6/10
+coolness: 4/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What game's cards are shown in this picture?"
+
+        - image: trivia/love-letter.jpg
+
+        - answer: love letter
+
+    - question:
+        - text: "What game's player board is shown in this picture?"
+
+        - image: trivia/puerto-rico.jpg
+
+        - answer: puerto rico
+
+    - question:
+        - text: "What game's components are shown in this picture?"
+
+        - image: trivia/azul.png
+
+        - answer: azul
+
+    - question:
+        - text: "What creature, which first appeared in Attack of the Clones, is depicted by these figurines?"
+
+        - image: trivia/nexu.jpg
+
+        - answer: nexu
+        - answer: a nexu
+
+    - question:
+        - text: "What game is shown in this picture?"
+
+        - image: trivia/netrunner.jpg
+
+        - answer: android netrunner
+        - answer: "android: netrunner"
+        - answer: netrunner
+
+    - question:
+        - text: "What card's art is shown in this picture?"
+
+        - image: trivia/trendsetters.png
+
+        - answer: galactic trendsetters
+
+    - question:
+        - text: "What game is shown in this picture?"
+
+        - image: trivia/carcassonne.jpg
+
+        - answer: carcassonne

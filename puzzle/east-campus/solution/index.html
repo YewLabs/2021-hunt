@@ -1,0 +1,230 @@
+<p>We are presented with a binary tree where some nodes have letters. When going up the tree, all the edges to the left
+    are brown, and all edges to the right are black.
+
+<p>Reading all the letters from left to right (or, equivalently, doing an <a
+        href="https://en.wikipedia.org/wiki/Tree_traversal#In-order_(LNR)">in-order tree traversal</a>) gives the
+    message BE
+    QUICK DO THIS GO SEE THE WEST PARALLEL CHECK OUT ITS NORTHERNMOST SECTION READ NAME GOOD JOB GO OFF BACK TO ANSWERS.
+    MIT's East Campus dormitory consists of two parallels, west and east, and the northernmost section of the west
+    parallel
+    is called &ldquo;Wood&rdquo; (this can be seen on <a
+        href="https://www.google.com/maps/@42.3604941,-71.0887335,20.23z">Google Maps</a> or by going there in person).
+
+<p>The &ldquo;WOOD&rdquo; message, combined with the weird capitalization in the East Campus logo (which spells out
+    &ldquo;EAT PUS&rdquo; and
+    &ldquo;scam&rdquo;) hints at the main aha: each answer can be unwoven into two words, one of which is an object made
+    of wood.
+    For example, <tt>
+        <bn>B</bn>ITE M<bn>ARK</bn>
+    </tt> can be split into <tt>
+        <bn>BARK</bn>
+    </tt> and <tt>ITEM</tt>.
+
+<p>Now that we have split the answers, we can return to the tree. Going left along the tree where the next letter of the
+    word is wooden (along a brown edge), and going right where the next letter is not wooden (along a black edge), we
+    find that each answer passes through exactly three letters. The paths and letters are listed below:
+
+<table>
+    <tr>
+        <th>Answer</th>
+        <th>Wood word</th>
+        <th>Other word</th>
+        <th>L/R sequence (L=wood, R=non-wood)</th>
+        <th>Result of following the L/R sequence in the tree</th>
+    </tr>
+    <tr>
+        <td>BITE MARK</td>
+        <td>BARK</td>
+        <td>ITEM</td>
+        <td>L R R R R L L L</td>
+        <td>_ _ _ K I _ U _</td>
+    </tr>
+    <tr>
+        <td>BOAT RIDE</td>
+        <td>BOARD</td>
+        <td>TIE</td>
+        <td>L L L R L R L R</td>
+        <td>_ _ B _ Q _ D _</td>
+    </tr>
+    <tr>
+        <td>CALANTHE</td>
+        <td>LATH</td>
+        <td>CANE</td>
+        <td>R R L L R L L R</td>
+        <td>_ _ G R _ _ _ N</td>
+    </tr>
+    <tr>
+        <td>LA DODGERS</td>
+        <td>LOG</td>
+        <td>ADDERS</td>
+        <td>L R R L R L R R R</td>
+        <td>_ _ _ E _ _ P L _</td>
+    </tr>
+    <tr>
+        <td>POUND STERLING</td>
+        <td>POST</td>
+        <td>UNDERLING</td>
+        <td>L L R R R L L R R R R R R</td>
+        <td>_ _ H O _ _ S _ _ _ _ _ _</td>
+    </tr>
+    <tr>
+        <td>SEA BREAM</td>
+        <td>BEAM</td>
+        <td>SEAR</td>
+        <td>R R R L R L L L</td>
+        <td>_ _ _ J A _ _ F</td>
+    </tr>
+    <tr>
+        <td>STOWING</td>
+        <td>TWIG</td>
+        <td>SON</td>
+        <td>R L R L L R L</td>
+        <td>_ _ T _ _ C M</td>
+    </tr>
+</table>
+
+<p>(The L=<bn>wood</bn>, R=non-wood correspondence is meant to be clued by the coloring, but it's easily verified &mdash; if R
+    and L are switched, most of
+    the paths cannot be drawn on the tree.)
+
+<p>When we've done this for enough of the answers, we notice that the letters are all unique and go from A to U, using
+    each of those 21 letters once. We can take the letter of the answer corresponding to the A extracted from the tree,
+    then the letter corresponding to the B, and so on (for example, A corresponds to the 5th letter in SEA BREAM, which
+    is R):
+
+
+<table>
+    <tr>
+        <th>Letter in tree</th>
+        <th>Corresponding letter in answer</th>
+    </tr>
+    <tr>
+        <td>A</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>B</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>C</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>D</td>
+        <td>D</td>
+    </tr>
+    <tr>
+        <td>E</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>F</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td>G</td>
+        <td>L</td>
+    </tr>
+    <tr>
+        <td>H</td>
+        <td>U</td>
+    </tr>
+    <tr>
+        <td>I</td>
+        <td>M</td>
+    </tr>
+    <tr>
+        <td>J</td>
+        <td>B</td>
+    </tr>
+    <tr>
+        <td>K</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>L</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>M</td>
+        <td>G</td>
+    </tr>
+    <tr>
+        <td>N</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>O</td>
+        <td>N</td>
+    </tr>
+    <tr>
+        <td>P</td>
+        <td>E</td>
+    </tr>
+    <tr>
+        <td>Q</td>
+        <td>R</td>
+    </tr>
+    <tr>
+        <td>R</td>
+        <td>A</td>
+    </tr>
+    <tr>
+        <td>S</td>
+        <td>T</td>
+    </tr>
+    <tr>
+        <td>T</td>
+        <td>O</td>
+    </tr>
+    <tr>
+        <td>U</td>
+        <td>R</td>
+    </tr>
+</table>
+
+<p>
+    East Campus needs a <span class="answer">RANDOM LUMBER GENERATOR</span> to keep its fire burning!
+
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+
+    <p> This puzzle went through many many iterations before settling on this version. Early versions used the numbers
+        1&ndash;21
+        instead of letters A&ndash;U (and no extraneous numbers), but this made the 7 paths very obvious, and one testsolving
+        group managed to solve the meta by brute-forcing all 7! matchings of answers to paths. Another issue was that
+        solvers mainly focused on analyzing the tree instead of looking for the commonality between the answers. We
+        tried to
+        rectify this by making an interactive game instead of an image, the intent being to discourage searching through
+        the
+        tree before understanding where to go, but our testers brute-forced their way through the tree to find all the
+        numbers anyways.
+
+    <p>Eventually we decided that including extraneous numbers would be the best way of addressing this issue, but it
+        felt
+        inelegant to have numbers that weren't used for anything. This finally led to using letters instead of numbers,
+        which let us add an additional cluephrase that also told solvers to look at the answers. The cluephrase did need
+        to
+        include 21 specific letters in relative positions, which is why it had things like BE QUICK and GOOD JOB.
+
+    <p>Additionally, the original version of this puzzle used tree names instead of things made of wood (we really liked
+        <tt>SC<bn>HOL</bn>AR<bn>LY</bn> = <bn>HOLLY</bn> + SCAR</tt>), but at some point we noticed that it was somewhat
+        similar to the <a href="http://web.mit.edu/puzzle/www/2019/problem/valentines_day_arbor_day.html">Arbor
+            Day/Valentine's Day
+            meta from the 2019 MH</a>. As a result, it was changed to words that could go before WOOD, like DEAD or
+        SANDAL, but
+        this
+        aha proved too difficult in testsolving, so we finally settled on this version.
+
+    <p>The tree presentation of this puzzle was originally intended to look like a fire, but in styling the interactive
+        HTML version of it (since reading letters from the enormous-image version was a huge pain) we found it much
+        easier to make something that looked like a tree than a fire.</p>
+</div>
+
+<style>
+    bn {
+        color: brown;
+    }
+</style>

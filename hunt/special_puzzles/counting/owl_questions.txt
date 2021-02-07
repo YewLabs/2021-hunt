@@ -1,0 +1,369 @@
+01|According to Stefán Karl Stefánsson et al., what number are they?
+01|According to Three Dog Night, what is the loneliest number?
+01|In a standard deck of cards, what is the numeric value of a low ace?
+01|What MIT course number contains the class Introduction to Coastal Engineering?
+01|What MIT course number contains the class Micromechanics and Durability of Solids?
+01|What MIT course number contains the class Tools for Sustainable Design?
+01|What MIT course number contains the class Water Resource Systems?
+01|What is the MIT course number for civil and environmental engineering?
+01|What is the atomic number of hydrogen?
+01|What positive number is neither prime nor composite?
+02|How many faces is Roman god Janus said to have?
+02|What MIT course number contains the class Fundamentals of Photovoltaics?
+02|What MIT course number contains the class Intermediate Heat and Mass Transfer?
+02|What MIT course number contains the class Internal Combustion Engines?
+02|What MIT course number contains the class Optics?
+02|What is the MIT course number for mechanical engineering?
+02|What is the mass number of deuterium?
+03|How many stripes are there on an Italian flag?
+03|In Texas hold 'em, how many cards are revealed during the flop?
+03|What MIT course number contains the class Fracture and Fatigue?
+03|What MIT course number contains the class Introduction to Solid-State Chemistry?
+03|What MIT course number contains the class Magnetic Materials?
+03|What MIT course number contains the class Sustainable Chemical Metallurgy?
+03|What is the MIT course number for materials science and engineering?
+04|How many attributes are on each card in a SET deck?
+04|How many letters are in the answer to this question?
+04|What MIT course number contains the class Introduction to Shape Grammars I?
+04|What MIT course number contains the class Materials and Fabrication for Architecture?
+04|What MIT course number contains the class Orientalism, Colonialism, and Representation?
+04|What MIT course number contains the class Visual Communication Fundamentals?
+04|What is the MIT course number for Architecture?
+05|What MIT course number contains the class Advanced NMR Spectroscopy?
+05|What MIT course number contains the class Fast-flow Peptide and Protein Synthesis?
+05|What MIT course number contains the class Introductory Quantum Mechanics?
+05|What is the MIT course number for chemistry?
+05|What is the length of the hypotenuse of a right triangle with legs of length 3 and 4?
+06|How many sides does a hexagon have?
+06|What MIT course number contains the class Design and Analysis of Algorithms?
+06|What MIT course number contains the class Power Electronics Laboratory?
+06|What MIT course number contains the class Principles of Wireless Communication?
+06|What MIT course number contains the class Software Studio?
+06|What is the MIT course number for computer science and electrical engineering?
+06|What is the third triangular number?
+06|What's the average value of d4 + d6 (assuming fair dice)?
+07|What MIT course number contains the class COVID-19, SARS-CoV-2 and the Pandemic?
+07|What MIT course number contains the class Modern Biostatistics?
+07|What MIT course number contains the class Principles of Human Disease and Aging?
+07|What MIT course number contains the class Topics in the Behavior of Marine Animals?
+07|What is the MIT course number for Biology?
+07|What retail version of Windows came after Vista?
+07|As of 2015, how many kingdoms are recognized in the classification of organisms?
+08|How many prime numbers are there on a d20?
+08|How many squares are accessible in a single move for a knight in the center of a chessboard?
+08|How many symbols are on the perimeter on a bagua?
+08|What MIT course number contains the class Forty-Three Orders of Magnitude?
+08|What MIT course number contains the class Introduction to Particle Accelerators?
+08|What MIT course number contains the class Relativity?
+08|What MIT course number contains the class The Early Universe?
+08|What comes next in this sequence: 0, 1, 1, 2, 3, 5?
+08|What is the MIT course number for physics?
+08|What is the atomic number of oxygen?
+09|How many branches are there on a Hanukkah menorah?
+09|How many squares are on a normal tic-tac-toe board?
+09|What MIT course number contains the class Computational Psycholinguistics?
+09|What MIT course number contains the class Current Topics in Developmental Neurobiology?
+09|What MIT course number contains the class Disorders and Diseases of the Nervous System?
+09|What MIT course number contains the class Sensory Systems?
+09|What is the MIT course number for the brain and cognitive sciences?
+10|What MIT course number contains the class Electrochemical Energy Systems?
+10|What MIT course number contains the class Engineering Nanotechnology?
+10|What MIT course number contains the class Molecular Engineering?
+10|What MIT course number contains the class Polymer Science Laboratory?
+10|What is the MIT course number for chemical engineering?
+10|What is the fourth triangular number?
+11|How many composite numbers are there on a d20?
+11|How many time zones does Russia span?
+11|What MIT course number contains the class Behavioral Science and Urban Mobility?
+11|What MIT course number contains the class Geography of the Global Economy?
+11|What MIT course number contains the class Poverty and Economic Security?
+11|What MIT course number contains the class The Art and Science of Negotiation?
+11|What is the MIT course number for urban studies and planning?
+12|How many faces are there on dodecahedron?
+12|To the nearest whole number, how many ounces are in 355 milliliters?
+12|What MIT course number contains the class Atmospheric Radiation and Convection?
+12|What MIT course number contains the class Geochemistry of Natural Waters?
+12|What MIT course number contains the class Geomorphology?
+12|What MIT course number contains the class Modeling Environmental Complexity?
+12|What is the MIT course number for earth, atmospheric, and planetary sciences?
+12|How many pentominoes are there, not counting rotations or reflections?
+13|What is the length of the hypotenuse of a right triangle with legs of length 5 and 12?
+14|How many cups are in a gallon minus a pint?
+14|How many days are in a fortnight?
+14|What MIT course number contains the class Econometric Data Science?
+14|What MIT course number contains the class Environmental Policy and Economics?
+14|What MIT course number contains the class Game Theory?
+14|What MIT course number contains the class Market Design?
+14|What is the MIT course number for economics?
+14|When rolling two standard six-sided dice, what is the sum of the two least probable rolls?
+15|What MIT course number contains the class Corporate Financial Strategy?
+15|What MIT course number contains the class Platform Strategy and Entrepreneurship?
+15|What MIT course number contains the class Predictive Data Analytics and Statistical Modeling?
+15|What MIT course number contains the class Pricing?
+15|What is the MIT course number for Management?
+15|What is the fifth triangular number?
+15|What number denotes a musical interval of two octaves?
+15|What score comes after love in tennis?
+15|What's the average value of d8 + d20 (assuming fair dice)?
+16|What MIT course number contains the class Air Traffic Control?
+16|What MIT course number contains the class Astrodynamics?
+16|What MIT course number contains the class Flight Vehicle Aerodynamics?
+16|What MIT course number contains the class Spacecraft and Aircraft Sensors and Instrumentation?
+16|What is the MIT course number for aerospace engineering?
+16|What is the fourth square number?
+17|According to MIT lore, what is the least random number?
+17|What MIT course number contains the class Causes and Prevention of War?
+17|What MIT course number contains the class Mass Incarceration in the United States?
+17|What MIT course number contains the class The Politics of Nuclear Proliferation?
+17|What MIT course number contains the class Varieties of Capitalism and Social Inequality?
+17|What is the MIT course number for political science?
+17|What is the length of the hypotenuse of a right triangle with legs of length 8 and 15?
+17|What is the minimum number of points on which a blackjack dealer must stand?
+18|To the nearest gram, how much does a mole of water weigh?
+18|What MIT course number contains the class Combinatorial Optimization?
+18|What MIT course number contains the class Elliptic Curves?
+18|What MIT course number contains the class Measure Theory and Analysis?
+18|What MIT course number contains the class Topics in Several Complex Variables?
+19|How many spaces are on each individual side of a standard Go board?
+20|In bowling, when a strike is followed by a spare, what is the value of the strike?
+20|What MIT course number contains the class Foundations of Cell Therapy Manufacturing?
+20|What MIT course number contains the class Fundamentals of Drug Development?
+20|What MIT course number contains the class Genome Stability and Engineering in the Context of Diseases, Drugs, and Public Health?
+20|What MIT course number contains the class Metakaryotic Stem Cells in Carcinogenesis: Origins and Cures?
+20|What is the MIT course number for biological engineering?
+21|What MIT course number contains the class Africa and the Politics of Knowledge?
+21|What MIT course number contains the class Apocalyptic Storytelling?
+21|What MIT course number contains the class Classics of Chinese Literature in Translation?
+21|What MIT course number contains the class Culture and Ethics in Science Fiction Worlds?
+21|What MIT course number contains the class Darwin and Design?
+21|What MIT course number contains the class How to Stage a Revolution?
+21|What MIT course number contains the class Introduction to Russian Politics and Society?
+21|What MIT course number contains the class Science Journalism?
+21|What MIT course number contains the class The Art of the Probable?
+21|What MIT course number contains the class The Black Radical Tradition in America?
+21|What MIT course number contains the class The Meaning of Life?
+21|What is the MIT course number for writing, music, history, literature, and anthropology?
+21|What is the sixth triangular number?
+21|Which day of December did the most recent winter solstice occur on?
+22|How many cups are in five quarts and a pint?
+22|How many major arcana are there in a standard 78-card tarot deck?
+22|What MIT course number contains the class Fusion Energy?
+22|What MIT course number contains the class Plasma Turbulence and Transport?
+22|What MIT course number contains the class Radiation Biophysics?
+22|What is the MIT course number for nuclear science and engineering?
+22|What is the largest number of players that can legally be on a soccer field during play?
+22|What is the smallest card total at which a Blackjack player busts?
+22|What is the standard port number for SSH?
+23|How many chromosomes are in a typical human gamete?
+23|If A is 1, what number is W?
+23|In scientific notation, what is the exponent in Avogadro's number?
+24|What MIT course number contains the class ConLangs: How to Construct a Language?
+24|What MIT course number contains the class Decisions, Games, and Rational Choice?
+24|What MIT course number contains the class Experiential Ethics?
+24|What MIT course number contains the class Metaphysics?
+24|What is four factorial?
+24|What is the MIT course number for philosophy and linguistics?
+25|What denomination of poker chip is conventionally colored green?
+25|What is the fifth square number?
+25|What is the length of the hypotenuse of a right triangle with legs of length 7 and 24?
+25|What is the two-digit graduation year of students who enter MIT this fall?
+26|How many protons are in a molecule of ethanol?
+26|How many red cards are there in a standard deck of playing cards?
+26|To the nearest whole mile, how long is a marathon?
+27|To the nearest whole number, what is 10 e?
+28|What is the second smallest perfect number?
+28|What is the seventh triangular number?
+28|How many dominoes are there in a standard domino set?
+29|How many days were in February of 2000?
+30|How many days are in June?
+30|To the nearest whole number, how many milliliters are in a fluid ounce?
+31|How many days are in August?
+31|How many days are in January?
+31|To the nearest whole number, what is 10 pi?
+31|What is the third prime of the form 2^n - 1?
+32|In Fahrenheit, what is the freezing point of water?
+32|In feet per second squared, what is any object's acceleration due to the Earth's gravity near its surface?
+32|What building number is the Stata Center?
+33|John Cage's most famous experimental piece lasts for four minutes and how many seconds?
+34|What is the ninth Fibonacci number (where 2 is the third)?
+35|How many hexominoes are there, not counting rotations or reflections?
+35|How many days are there in five weeks?
+36|How many degrees are in one tenth of a full revolution?
+36|What is the eighth triangular number?
+36|What is the sixth square number?
+37|What is considered 'body temperature' in degrees Celsius?
+37|What is the length of the hypotenuse of a right triangle with legs of length 12 and 35?
+38|What percent alcohol by volume is a spirit that is 76 proof?
+40|How many spaces are in a full lap around a standard Monopoly board?
+40|In tennis, a tie at what score within a game is denoted "Deuce"?
+41|What percent alcohol by volume is a spirit that is 82 proof?
+41|Which number Mystery Hunt is this?
+42|According to Deep Thought, what is the answer to the ultimate question of life, the universe, and everything?
+43|If you can order in discrete boxes of 6, 9, and 20 chicken nuggets, what is the maximum number of nuggets that you cannot order?
+44|Which number president of the United States was Barack Obama?
+45|What is the ninth triangular number?
+45|What is the sum of the digits in one row of a standard sudoku?
+46|How many chromosomes are in a typical human skin cell?
+46|Which number president of the United States is Joseph Biden?
+47|What number is associated with the main character of the Hitman video game series?
+48|How many hours are there in two days?
+48|How many states are there in the contiguous US?
+48|To the nearest whole number, how many ounces are there in three pounds?
+49|What is the seventh square number?
+49|What number names the San Francisco NFL team?
+49|What latitude, in degrees, defines most of the western border between Canada and the continental United States?
+50|What is ten times a perfect GPA at MIT?
+50|What number, repeated, refers to a situation in which two outcomes are equally likely?
+51|How many standard playing cards are not the seven of diamonds?
+51|What is the length of the hypotenuse of a right triangle with legs of length 24 and 45?
+51|What number names a rumored secret facility in southern Nevada?
+52|How many playing cards are there in a standard deck, without the Jokers?
+53|What is the length of the hypotenuse of a right triangle with legs of length 28 and 45?
+54|How many cards are there in a standard deck, including Jokers?
+54|How many colored cells are there on the surface of a standard Rubik's cube?
+54|What is number is assigned to the MIT Green Building?
+55|What is the length of the hypotenuse of a right triangle with legs of length 33 and 44?
+55|What is the tenth triangular number?
+56|How many distinct subsets of size three does a set of size eight have?
+57|The Heinz Company advertises that they have how many varieties?
+58|What percent alcohol by volume is a spirit that is 116 proof?
+59|How many characters are in this sentence, including spaces?
+59|What is the highest number that may be displayed in a clock's minutes field?
+60|What is the area of a triangle with side length 8, 15, and 17?
+61|To the nearest whole number, how many centimeters are in two feet?
+61|What year of the nineteenth century was MIT established?
+62|What alcohol proof is a spirit that is 31% alcohol by volume?
+62|How many characters are matched by the regex [A-Za-z0-9]?
+63|How many pips are there in total on three standard dice?
+64|What is the eighth square number?
+64|What number is associated with the Nintendo console that had a three-pronged controller?
+64|How many distinct RNA codons are there?
+65|How many million years ago are the dinosaurs thought to have gone extinct?
+65|What is the traditional retirement age in the US?
+66|What number is the MIT building that has a 30-60-90 triangle footprint?
+66|What is the eleventh triangular number?
+68|To the nearest whole number, what percentage of a normally distributed data set is within one standard deviation of the mean?
+70|What alcohol proof is a spirit that is 35% alcohol by volume?
+70|What percent alcohol by volume is a spirit that is 140 proof?
+71|To the nearest whole number, what percentage of the Earth's surface is covered in water?
+72|How many degrees are in one fifth of a full revolution?
+72|How many spaces are on the edge of a standard Go board?
+72|How many tablespoons are in four and a half cups?
+72|How many numbers less than 117 are relatively prime to it?
+73|What is the second prime after 67?
+74|What is the length of the hypotenuse of a right triangle with legs of length 24 and 70?
+75|How many hours (rounded down) was the longest Mystery Hunt?
+76|What number is part of an Overwatch playable character's name, after "Soldier"?
+76|What number names the Philadelphia NBA team?
+77|What is Lobby 7's street number (and the street number used in the generic address for MIT)?
+78|How many cards are in a standard tarot deck?
+78|What is the twelfth triangular number?
+79|What is the second prime after 71?
+80|What is the standard port number for HTTP?
+81|How many cards are there in a SET deck?
+81|What is the ninth square number?
+81|What year of the twentieth century was the second Mystery Hunt?
+82|What alcohol proof is a spirit that is 41% alcohol by volume?
+82|How many natural numbers less than 83 are relatively prime to it?
+83|What year of the twentieth century was the fourth Mystery Hunt?
+84|How many ways are there to select three distinct objects from a set of nine?
+84|What is the Student Center's street number?
+86|What numeric American slang refers to an unavailable item or an unwelcome person in an establishment?
+87|How many years elapsed between the signing of the U.S. Declaration of Independence and the Gettysburg Address?
+88|How many keys are on a standard piano?
+89|What is the eleventh Fibonacci number (where 2 is the third)?
+90|How many degrees are in a right angle?
+90|How many pounds more than the empty bar is being lifted by a person benching "one plate"?
+90|What U.S. Interstate number designates the highway connecting Seattle and Boston?
+91|What is the length of the hypotenuse of a right triangle with legs of length 35 and 84?
+91|What is the thirteenth triangular number?
+92|What is the atomic number of uranium?
+92|What was the model number of the large Texas Instruments graphing calculator that had a QWERTY keyboard?
+93|About how many million miles are there between the Earth and the Sun?
+94|What alcohol proof is a spirit that is 47% alcohol by volume?
+95|To the nearest whole number, what percentage of a normally distributed data set is within two standard deviations of the mean?
+96|How many months are in eight years?
+98|What retail version of Windows came between NT 4.0 and 2000?
+99|How many puppies does Cruella De Vil plan to skin to make fur coats?
+99|How many red balloons does Nena describe as "sailing in the summer sky"?
+
+100|How many millimeters are in ten centimeters?
+100|How many yards long is an American football field, excluding its end zones?
+100|What is the boiling point of pure water at sea level, in Celsius?
+100|What is the smallest natural number whose English spelling contains a "d"?
+101|What number names the supertall skyscraper in Taipei?
+101|What number usually denotes an introductory college course (at places that aren't MIT)?
+101|What room number is Winston Smith taken to for torture in 1984?
+102|How many numbers less than 103 are relatively prime to it?
+102|How many stories tall is the Empire State Building?
+108|How many cards are there in a standard UNO deck?
+108|How many degrees is an interior angle of a regular pentagon?
+108|How many distinct heptominoes are there, up to rotation and reflection?
+110|What is the emergency number for the police in China and Japan?
+117|What is the ninth pentagonal number?
+118|As of 2021, how many elements on the periodic table have been discovered?
+119|What is the emergency number for the fire brigade in China and Japan?
+120|What is five factorial?
+120|What is the eighth hexagonal number?
+125|What is five cubed?
+127|What is the fourth Mersenne prime?
+128|How many distinct ways are there to light up a seven-segment display?
+140|What was Twitter's character limit when it first launched?
+142|To the nearest integer, what is 1000 pi modulo 1000?
+144|Other than 0 and 1, what is the only number that is both a Fibonacci number and a square number?
+145|What is the tenth pentagonal number?
+151|How many first-generation Pokemon are there?
+153|What is the ninth hexagonal number?
+159|To the nearest integer, what is 100000 pi modulo 1000?
+169|What is the thirteenth square number?
+170|What subject number follows "6" for the class Software Studio (formerly Laboratory in Software Engineering)?
+176|What is the eleventh pentagonal number?
+190|What is the tenth hexagonal number?
+196|What is the fourteenth square number?
+210|What is the twelfth pentagonal number?
+225|What is the fifteenth square number?
+231|What is the eleventh hexagonal number?
+247|What is the thirteenth pentagonal number?
+255|What decimal number is represented in hexadecimal as FF?
+256|What is the sixteenth square number?
+270|What subject number follows "6" for the IAP event that resembles Battlebots?
+276|What is the twelfth hexagonal number?
+287|What is the fourteenth pentagonal number?
+289|What is the seventeenth square number?
+324|What is the eighteenth square number?
+325|What is the thirteenth hexagonal number?
+330|What is the fifteenth pentagonal number?
+361|What is the nineteenth square number?
+366|How many calendar days were there in 2000?
+370|What subject number follows "6" for the IAP event Battlecode?
+376|What is the sixteenth pentagonal number?
+378|What is the fourteenth hexagonal number?
+400|What is the twentieth square number?
+425|What is the seventeenth pentagonal number?
+435|What is the fifteenth hexagonal number?
+441|What is the twenty-first square number?
+477|What is the eighteenth pentagonal number?
+484|What is the twenty-second square number?
+496|What is the sixteenth hexagonal number?
+529|What is the twenty-third square number?
+532|What is the nineteenth pentagonal number?
+561|What is the seventeenth hexagonal number?
+576|What is the twenty-fourth square number?
+590|What is the twentieth pentagonal number?
+625|What is the twenty-fifth square number?
+630|What is the eighteenth hexagonal number?
+651|What is the twenty-first pentagonal number?
+676|What is the twenty-sixth square number?
+703|What is the nineteenth hexagonal number?
+715|What is the twenty-second pentagonal number?
+729|What is the twenty-seventh square number?
+780|What is the twentieth hexagonal number?
+782|What is the twenty-third pentagonal number?
+784|What is the twenty-eighth square number?
+841|What is the twenty-ninth square number?
+852|What is the twenty-fourth pentagonal number?
+861|What is the twenty-first hexagonal number?
+900|What is the thirtieth square number?
+925|What is the twenty-fifth pentagonal number?
+946|What is the twenty-second hexagonal number?
+961|What is the thirty-first square number?

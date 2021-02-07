@@ -1,0 +1,88 @@
+<style>
+    #chat-window .chat-send {
+        background: #39a1f9;
+        text-shadow: 1px 1px 0 #1b96fc;
+        margin-right: 24px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        float: right;
+        color: #fff;
+        display: inline-block;
+        padding: 12px 18px;
+        max-width: 270px;
+        min-height: 26px;
+        min-width: 14px;
+        font-size: 24px;
+        line-height: 26px;
+        position: relative;
+        overflow-wrap: break-word;
+        border-radius: 20px 20px 20px 20px;
+        -moz-border-radius: 20px 20px 20px 20px;
+        -webkit-border-radius: 20px 20px 20px 20px;
+    }
+
+    #chat-window .chat-receive {
+        background: #e5e5ea;
+        text-shadow: 1px 1px 0 #f3f3f4;
+        margin-left: 24px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        color: #000;
+        display: inline-block;
+        padding: 12px 18px;
+        max-width: 270px;
+        min-height: 26px;
+        min-width: 14px;
+        font-size: 24px;
+        line-height: 26px;
+        position: relative;
+        overflow-wrap: break-word;
+        border-radius: 20px 20px 20px 20px;
+        -moz-border-radius: 20px 20px 20px 20px;
+        -webkit-border-radius: 20px 20px 20px 20px;
+    }
+
+    #chat-window .bubblewrap {
+        clear: both;
+        top: 0px;
+    }
+</style>
+
+<div id="chat-window" style="width: 500px; margin: auto; display: block; border: solid 1px black; height: 800px; overflow-y: auto;">
+</div>
+</br>
+<div class="input-fields" style="display: block; text-align: center;"><input maxlength="1000" type="text" id="msg"> <button onclick="sendMessage()">Send</button></div>
+
+<script>
+    var level = localStorage.level || "0";
+    var cwindow = document.getElementById("chat-window");
+
+    var msgbox = document.getElementById('msg');
+    msgbox.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            sendMessage();
+        }
+    })
+
+    function sendMessage() {
+        var message = document.getElementById('msg').value;
+        if (message != "") {
+            var m = document.createElement("div");
+            m.className = "bubblewrap";
+            m.innerHTML = "<div class=\"chat-send\">"+message.replaceAll('\n','</br>')+"</div>";
+            cwindow.appendChild(m);
+            cwindow.scrollTop = cwindow.scrollHeight;
+            message = encodeURIComponent(message);
+            document.getElementById('msg').value = "";
+
+            fetch("/puzzle/✏️/dynamic?level="+level+"&message="+message).then(response => response.json()).then(data => {
+                localStorage.level = level = data.level;
+                var m = document.createElement("div");
+                m.className = "bubblewrap";
+                m.innerHTML = "<div class=\"chat-receive\">"+data.message.replaceAll('\n','</br>')+"</div>";
+                cwindow.scrollTop = cwindow.scrollHeight;
+                cwindow.appendChild(m);
+        });
+      }
+    }
+</script>

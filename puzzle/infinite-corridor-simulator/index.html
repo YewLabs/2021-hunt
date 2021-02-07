@@ -1,0 +1,41 @@
+<center>
+  <button id="load-data">Load Data</button>
+  <br/>
+  <br/>
+  <div id="data">
+  </div>
+</center>
+
+<script>
+  var loaded = false;
+
+  var puzzle_mapping = {
+    "A": "Cafe Five",
+    "B": "Unchained",
+    "C": "Make Your Own Word Search",
+    "D": "Library of Images",
+    "E": "Infinite Corridor Simulator"
+  }
+
+  function updateData(data) {
+    var output = "<table>";
+    data.forEach(function(e) {
+      output += "<tr><td> Puzzle " + e[0] + " (" + puzzle_mapping[e[1]] + ")</td><td>" + e[2] + "</td></tr>";
+    });
+    output += "</table>";
+    $("#data").html(output);
+    loaded = true;
+  }
+  var url = "{{extra.ics_url}}";
+  $("#load-data").click(
+    function() {
+      loaded = false;
+      $("#data").text("Loading... (this may take a few seconds)");
+      $.get(url, function(data) {
+        updateData(data);
+      }).fail(function() {
+        $("#data").text("Error loading data.");
+      });
+    }
+  );
+</script>

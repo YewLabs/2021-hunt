@@ -1,0 +1,49 @@
+name: mit
+difficulty: 3/10
+coolness: 10/10
+time: 3:00
+
+questions:
+    - question:
+        - text: "What is the name of the white statue of a man's upper body near the Student Center?"
+
+        - answer: alchemist
+        - answer: the alchemist
+
+    - question:
+        - text: "What is the name of the art exhibit within building 6C, designed by Sol LeWitt?"
+
+        - answer: bars of color within squares
+
+    - question:
+        - text: "Which MIT building is named after a person who died on a NASA mission?"
+
+        - credit: rayhua
+
+        - answer: 37
+        - answer: building 37
+        - answer: mcnair
+        - answer: mcnair building
+
+    - question:
+        - text: "The artist of the floor tile art in Building 6C is also the creator of another work of art on campus. Which building is his other piece in?"
+
+        - credit: rayhua
+
+        - answer: e62
+        - answer: building e62
+
+    - question:
+        - text: "Which politician's signature can you find on a piece of laboratory equipment on the 3rd floor of Building 13?"
+
+        - credit: rayhua
+
+        - answer: obama
+        - answer: barack obama
+
+    - question:
+        - text: "MIT's Building 32 directly connects to four other buildings. In increasing numeric order, what are they?"
+
+        - credit: rayhua
+
+        - answer: 26 36 57 76

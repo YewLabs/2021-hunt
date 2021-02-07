@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg:svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="490.90909"
+   height="300"
+   version="1.1"
+   id="svg952"
+   sodipodi:docname="3-finland.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)">
+  <svg:metadata
+     id="metadata958">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </svg:metadata>
+  <svg:defs
+     id="defs956" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1227"
+     inkscape:window-height="1044"
+     id="namedview954"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="1.6311111"
+     inkscape:cx="242.33909"
+     inkscape:cy="154.26041"
+     inkscape:window-x="2609"
+     inkscape:window-y="16"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg952" />
+  <svg:g
+     id="g963"
+     transform="scale(0.27272727)">
+    <svg:rect
+       id="rect946"
+       height="1100"
+       width="1800"
+       x="0"
+       y="0"
+       style="fill:#ffffff" />
+    <svg:rect
+       id="rect948"
+       y="400"
+       height="300"
+       width="1800"
+       x="0"
+       style="fill:#003580" />
+    <svg:rect
+       id="rect950"
+       x="500"
+       height="1100"
+       width="300"
+       y="0"
+       style="fill:#003580" />
+  </svg:g>
+  <svg:path
+     style="fill:none;stroke:#ff00ff;stroke-width:16;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="M 91.348774,62.12534 H 264.23706 L 97.479564,228.88283 H 268.52861"
+     id="path965"
+     inkscape:connector-curvature="0"
+     sodipodi:nodetypes="cccc" />
+  <script>try {
+                        Object.defineProperty(screen, &quot;availTop&quot;, { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;availLeft&quot;, { value: 0 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;availWidth&quot;, { value: 1920 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;availHeight&quot;, { value: 1080 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;colorDepth&quot;, { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(screen, &quot;pixelDepth&quot;, { value: 24 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, &quot;hardwareConcurrency&quot;, { value: 8 });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, &quot;appVersion&quot;, { value: &quot;5.0 (X11)&quot; });
+                    } catch (e) {}
+                    try {
+                        Object.defineProperty(navigator, &quot;doNotTrack&quot;, { value: &quot;unspecified&quot; });
+                    } catch (e) {}
+                    
+            try {
+                window.screenY = 16
+            } catch (e) { }
+        
+            try {
+                window.screenTop = 16
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerHeight = 1044
+            } catch (e) { }
+        
+            try {
+                window.screenX = 0
+            } catch (e) { }
+        
+            try {
+                window.screenLeft = 0
+            } catch (e) { }
+        
+            try {
+                window.top.window.outerWidth = 1251
+            } catch (e) { }
+        </script>
+</svg:svg>

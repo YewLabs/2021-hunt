@@ -1,0 +1,52 @@
+{% extends "hunt/layout_with_nav.tmpl" %}
+{% load static %}
+
+{% block title %}Endgame &mdash; MIT Mystery Hunt 2021{% endblock %}
+
+{% block content %}
+<div class="content">
+  <h1>
+    Endgame
+    <a class="subtitle" href="{% url 'endgame_solution' %}">View Solution</a>
+  </h1>
+  <main>
+    <div class="info">
+
+<p>The other universe is in trouble! There must be some matter from this universe that is still causing disturbances over there. Professor Hemlock has dispatched researchers around &perp;IW to pinpoint the source, and they report the following measurements:</p>
+
+<table>
+<tr><th>Round</th><th>Measurement (in meters)</th></tr>
+<tr><td>Athletics</td><td>The number of eggs to deliver times the number of goose tasks, plus the numbers of violet coins in space, legendary fish, and football routes.</td></tr>
+<tr><td>Students</td><td>The product of the atomic numbers of Joshua and Anderson.</td></tr>
+<tr><td>Tunnels</td><td>The number of ghost passages on the outside border times the number of skeletons (don&#39;t forget the meta!), plus the total number of ghost passages.</td></tr>
+<tr><td>Yew Labs</td><td>AUO SNTD UAALJIYL PUE PAJPUNY OML. Hmm, I think that may have gotten flipped...</td></tr>
+<tr><td>Infinite Corridor</td><td>The number of the first puzzle with answer FINELY.</td></tr>
+<tr><td>&perp;IW.nano</td><td>5 times the sum of the number of puzzle-giving kilotechnicians and the number of puzzle-giving milli bots.</td></tr>
+<tr><td>Stata Center</td><td>4 times the sum of the length of the paths in the room with a compass on the floor and the room mentioning &ldquo;what you need is a sail&quot;.</td></tr>
+<tr><td>Clusters</td><td>The number you would get if the building 3 keypad said &quot;145&quot; and you then pressed &quot;7&quot;.</td></tr>
+<tr><td>Green Building</td><td>The number you would get if you put &quot;red green white&quot; on a telephone.</td></tr>
+<tr><td>Charles River</td><td>The three-digit number that would take the string &quot;PLICAS&quot; to the word &quot;REPLICATE&quot; (using only common words along the way).</td></tr>
+</table>
+
+<p>Meanwhile, Yew Labs researchers are criss-crossing MIT to collect measurements from this side:</p>
+
+<table>
+<tr><th>Round</th><th>Location</th><th>Measurement (in meters)</th></tr>
+<tr><td>Athletics</td><td>Entrance to Z center (building W35)</td><td>223</td></tr>
+<tr><td>Students</td><td>East entrance to Student Center (building W20, right next to Anna&rsquo;s Taqueria)</td><td>222</td></tr>
+<tr><td>Tunnels</td><td>Accessible entrance to building 7 basement</td><td>151</td></tr>
+<tr><td>Yew Labs</td><td>Beneath the walkway between building 9 and 33</td><td>114</td></tr>
+<tr><td>Infinite Corridor</td><td>Entrance to the infinite corridor in Lobby 7 (right next to MIT seal)</td><td>150</td></tr>
+<tr><td>&perp;IW.nano</td><td>Northeast corner of the exterior of MIT.nano (building 12)</td><td>25</td></tr>
+<tr><td>Stata Center</td><td>The bottom of the ramp/stairs in front of Stata Center (building 32)</td><td>16</td></tr>
+<tr><td>Clusters</td><td>Northeast corner of the exterior of building 56</td><td>27</td></tr>
+<tr><td>Green Building</td><td>Center of the Dot (the circular grass patch in front of Green Building/building 54)</td><td>29</td></tr>
+<tr><td>Charles River</td><td>Northeast corner of Sailing Pavilion (building 51)</td><td>198</td></tr>
+</table>
+
+<p>Where is the problem localized?</p>
+
+    </div>
+  </main>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+<style>
+  tr:not(:last-child) td {
+      border: 1px black solid;
+      font-family: Source Code Pro, monospace;
+  }
+
+  tr:last-child td {
+      border-bottom: none;
+  }
+
+  tr td {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+
+</style>
+
+<p>Answers in this round:
+<pre>
+BITTER BLOW
+DATA BACKUP
+GRADE LEVEL
+HYPOCERCAL
+MASS MATRIX
+NINJA BOOTS
+O'DONOGHUE'S
+ROUGHING UP
+THINKING OF
+VIVIPARITY
+XY RECORDER
+</pre>
+
+<p>In this round, all of the answers are ten letters long, and the puzzle titles are all listed next to a grid. Naturally, the first step is to place all of the answers in the grid:</p>
+
+<table class="grid">
+    <tr><td>R</td><td>O</td><td>U</td><td>G</td><td>H</td><td>I</td><td>N</td><td>G</td><td>U</td><td>P</td></tr>
+    <tr><td>V</td><td>I</td><td>V</td><td>I</td><td>P</td><td>A</td><td>R</td><td>I</td><td>T</td><td>Y</td></tr>
+    <tr><td>G</td><td>R</td><td>A</td><td>D</td><td>E</td><td>L</td><td>E</td><td>V</td><td>E</td><td>L</td></tr>
+    <tr><td>T</td><td>H</td><td>I</td><td>N</td><td>K</td><td>I</td><td>N</td><td>G</td><td>O</td><td>F</td></tr>
+    <tr><td>X</td><td>Y</td><td>R</td><td>E</td><td>C</td><td>O</td><td>R</td><td>D</td><td>E</td><td>R</td></tr>
+    <tr><td>N</td><td>I</td><td>N</td><td>J</td><td>A</td><td>B</td><td>O</td><td>O</td><td>T</td><td>S</td></tr>
+    <tr><td>D</td><td>A</td><td>T</td><td>A</td><td>B</td><td>A</td><td>C</td><td>K</td><td>U</td><td>P</td></tr>
+    <tr><td>B</td><td>I</td><td>T</td><td>T</td><td>E</td><td>R</td><td>B</td><td>L</td><td>O</td><td>W</td></tr>
+    <tr><td>M</td><td>A</td><td>S</td><td>S</td><td>M</td><td>A</td><td>T</td><td>R</td><td>I</td><td>X</td></tr>
+    <tr><td>O</td><td>D</td><td>O</td><td>N</td><td>O</td><td>G</td><td>H</td><td>U</td><td>E</td><td>S</td></tr>
+    <tr><td>H</td><td>Y</td><td>P</td><td>O</td><td>C</td><td>E</td><td>R</td><td>C</td><td>A</td><td>L</td></tr>
+    <tr><td></td><td></td><td>5</td><td>2</td><td>3</td><td></td><td>4</td><td>1</td><td>7</td><td>6</td></tr>
+</table>
+
+<p>The flavortext discusses “running up the field”, and it turns out that a word can be read upwards in each of the numbered columns: from left to right, they are POST, DIG, COMEBACK, CORNER, CURL, OUT, and FLY. Each of these is a <a href="https://en.wikipedia.org/wiki/Route_(gridiron_football)">route</a> in American football.</p>
+
+<p>When following a route, a receiver runs up the field for some length before turning and heading in a new direction (with the exception of fly, which is straight up the whole time). This suggests that we can do something similar with the letters in the grid: each route is read straight up, so from the last letter, we can move in the appropriate direction and take the letter found there. For example, the curl route involves running forward and then diagonally back towards the middle of the field, so within the grid we would move down and to the left from the L in CURL to get to a T. Note that we moved to the left because CURL is on the right half of the field.</p>
+
+<p>Here is the grid with all of the routes colored and corresponding extracted letters bolded:</p>
+
+<table class="grid">
+    <tr><td>R</td><td>O</td><td>U</td><td bgcolor="orange">G</td><td bgcolor="orange"><b>H</b></td><td>I</td><td>N</td><td bgcolor="green"><b>G</b></td><td>U</td><td bgcolor="plum"><b>P</b></td></tr>
+    <tr><td>V</td><td>I</td><td>V</td><td bgcolor="orange">I</td><td>P</td><td>A</td><td bgcolor="green">R</td><td>I</td><td>T</td><td bgcolor="plum">Y</td></tr>
+    <tr><td>G</td><td>R</td><td>A</td><td bgcolor="orange">D</td><td>E</td><td>L</td><td bgcolor="green">E</td><td>V</td><td>E</td><td bgcolor="plum">L</td></tr>
+    <tr><td>T</td><td>H</td><td>I</td><td>N</td><td bgcolor="yellow">K</td><td>I</td><td bgcolor="green">N</td><td>G</td><td>O</td><td bgcolor="plum">F</td></tr>
+    <tr><td>X</td><td>Y</td><td>R</td><td bgcolor="yellow"><b>E</b></td><td bgcolor="yellow">C</td><td>O</td><td bgcolor="green">R</td><td>D</td><td>E</td><td>R</td></tr>
+    <tr><td>N</td><td>I</td><td>N</td><td>J</td><td bgcolor="yellow">A</td><td>B</td><td bgcolor="green">O</td><td>O</td><td bgcolor="violet">T</td><td bgcolor="violet"><b>S</b></td></tr>
+    <tr><td>D</td><td>A</td><td>T</td><td bgcolor="lightblue"><b>A</b></td><td bgcolor="yellow">B</td><td>A</td><td bgcolor="green">C</td><td>K</td><td bgcolor="violet">U</td><td>P</td></tr>
+    <tr><td>B</td><td>I</td><td bgcolor="lightblue">T</td><td>T</td><td bgcolor="yellow">E</td><td>R</td><td>B</td><td bgcolor="red">L</td><td bgcolor="violet">O</td><td>W</td></tr>
+    <tr><td>M</td><td>A</td><td bgcolor="lightblue">S</td><td>S</td><td bgcolor="yellow">M</td><td>A</td><td bgcolor="red"><b>T</b></td><td bgcolor="red">R</td><td>I</td><td>X</td></tr>
+    <tr><td>O</td><td>D</td><td bgcolor="lightblue">O</td><td>N</td><td bgcolor="yellow">O</td><td>G</td><td>H</td><td bgcolor="red">U</td><td>E</td><td>S</td></tr>
+    <tr><td>H</td><td>Y</td><td bgcolor="lightblue">P</td><td>O</td><td bgcolor="yellow">C</td><td>E</td><td>R</td><td bgcolor="red">C</td><td>A</td><td>L</td></tr>
+    <tr><td></td><td></td><td>5</td><td>2</td><td>3</td><td></td><td>4</td><td>1</td><td>7</td><td>6</td></tr>
+</table>
+
+<p>In the order of the given numbers, the “next” letters in the routes spell out the answer <span class="answer">THE GAPS</span>, something that certainly should be kept in “mind”!</p>
+
+<div class="author-note">
+<h2>Authors’ Notes</h2>
+<p>The original idea for this puzzle was a pure meta that required solvers to figure out the right order to place answers into a grid, but felt too unmotivated to solvers, especially given the American football theming</p>
+
+<p>Earlier versions of this idea involved the routes actually turning in the grid, but this made the words much harder to spot/confirm, and we couldn’t come up with a satisfactory way to hint at the route shapes without giving too much away. Eventually, we realized that just having all the routes read straight up would fix many of our issues.</p>
+
+<p>For a while we were planning on using the answer HOLES because we thought it would be too difficult to construct with even a couple more routes, but after lots of trial and error we managed to fit these 7 in, though many of the answers are not great (HYPOCERCAL is particularly egregious). We still felt it was a miracle that we managed to make the construction work at all, given all the letter constraints in addition to the first letter constraint from the Athletics supermeta.</p>
+</div>
